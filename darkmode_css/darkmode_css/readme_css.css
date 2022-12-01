@@ -1,0 +1,341 @@
+/*.markdown-body h2 { font-weight:700; }*/
+
+html:not(.useReactApp) nav#hub-sidebar>ul>li>a.active, 
+html:not(.useReactApp) nav#hub-sidebar ul>li.subnav-expanded> a {
+  color: white!important; 
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.td {
+  border: 1px solid #eee !important;
+}
+
+.content-body code {
+  display: inline;
+  word-break: normal;
+}
+
+.updated-at {
+  display: none;
+}
+
+/* (Sharif) Removed because it was hiding the Suggest Edits button. /*
+/* (Original) Hide "Ask a question" button on Discussion forum */
+/*
+#content-head a {
+  display: none;
+}
+*/
+
+/* Give images just a *little* more of a margin */
+img {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* Fixes the subpage text color when the background is red */
+a.subpage.active .link-title {
+  color: white!important;
+}
+
+/* Give glossary items a RC theme */
+.glossary-item.highlight {
+  color: #4449c3;
+  border-bottom: 1px dashed #4449c3;
+}
+
+/* Change color of top boarder */
+.theme-line header#hub-header #header-top {
+  border-bottom-color: #FFFFFF;
+}
+
+/* Style for doc header */
+h1 {
+  color: #292929 !important;
+  font-weight: 800;
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* Fixing header font sizes and weights, as well as spacing */
+.heading-1 .heading-text {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  color: #292929;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.heading-2 .heading-text {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  color: #292929;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.heading-3 .heading-text {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.heading-4 .heading-text {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.heading-5 .heading-text {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: #292929;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.heading-6 .heading-text {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: #292929;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Adjusting paragraph styles */
+p {
+  display: block;
+  margin-bottom: 0px;
+  margin-top: 0;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif !important;
+  color: #292929;
+}
+
+/* Fixing bullet point style to match paragraph */
+.field-description li, .markdown-body li {
+  font-size: 15px !important;
+  color: #292929;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* ReadMe is redesigning their docs and some default 
+settings will override the link typography under "Theme Editor".
+This code snippet will override link colors if our project gets
+the new redesign.
+.field-description a, .markdown-body a {
+color: #df434b !important;
+}
+*/
+
+/* For buttons under "See it in action" */
+.button-text {
+  padding: 0px 22px 0px 0px;
+  border-width: 0px;
+  background-color: transparent;
+  background-image: url("https://assets-global.website-files.com/60706bf8c762975d9275ea4c/6070a422148280456aaf1c39_Group%2051.svg");
+  background-position: 100% 50%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  transition: all 400ms ease;
+  text-decoration: none;
+  color: #df434b;
+  line-height: 16px;
+  font-weight: 700;
+  margin-right: 15px;
+  border: 3px solid transparent;
+}
+/* Hovering will move button up */
+.button-text:hover {
+  position: relative;
+  bottom: 3px;
+}
+
+/* Buttons for links ('text here ->') */
+.button-text-links {
+  padding: 0px 22px 0px 0px;
+  border-width: 0px;
+  background-color: transparent;
+  background-image: url("https://assets-global.website-files.com/60706bf8c762975d9275ea4c/6070a422148280456aaf1c39_Group%2051.svg");
+  background-position: 100% 50%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  transition: all 400ms ease;
+  text-decoration: none;
+  color: #df434b;
+  line-height: 16px;
+  font-weight: 700;
+  margin-right: 15px;
+  border: 3px solid transparent;
+}
+
+/* Hovering will push arrow to the right */
+.button-text-links:hover {
+  padding-right: 30px;
+  position: relative;
+}
+
+.field-description li, .markdown-body li {
+  font-size: 13px;
+  color: #292929;
+  font-family: 'Open Sans',sans-serif!important;
+}
+
+/* redesign updates 11/24/2021 */
+
+html.useReactApp .rm-Header {
+  --header-logo-height: 40px;
+	--Header-border-width: 0px;
+  --Header-background: #f6f7f8;
+  --Header-button-hover: #f6f7f8;
+}
+
+html.useReactApp .rm-Sidebar {
+  --Sidebar-link-color: #ffffff;
+  --Sidebar-link-background: #4449c3;
+  
+  /* Sometimes the statuspage alert covered sections of the
+  	sidebar, so this just adds some extra padding
+  */
+  padding-bottom: 120px;
+  
+}
+
+html.useReactApp .rm-Header .rm-Logo img {
+  margin-bottom: 24px;
+}
+
+html.useReactApp .rm-Header-top {
+  background: #ffffff;
+}
+
+html.useReactApp .rm-Guides #updated-at,
+html.useReactApp #updated-at {
+  padding-top: 60px;
+}
+
+/* there's some kind of bug in the new ReadMe where in the Search List, 
+the first element's background jitters even when you're selecting a different 
+element and this is my attempt to make it less noticeable */
+
+html.useReactApp .rm-Header .SearchResults-list > a:active,
+html.useReactApp .rm-Header .SearchResults-list > a:focus {
+  background-color: inherit;
+	color: inherit;
+}
+
+/* below trying to remove the obnoxious focus, active effects. can be removed
+if this is not desired */
+
+html.useReactApp .rm-Header-top .rm-Logo:active,
+html.useReactApp .rm-Header-top .rm-Logo:focus,
+html.useReactApp .rm-Header-top-link.Button:active, 
+html.useReactApp .rm-Header-top-link.Button:focus, 
+html.useReactApp .rm-Header-bottom-link.Button:active, 
+html.useReactApp .rm-Header-bottom-link.Button:focus {
+  box-shadow: none;
+	background: transparent;
+	border-color: transparent;
+}
+
+html.useReactApp .rm-Header-top-link.Button:hover, 
+html.useReactApp .rm-Header-bottom-link.Button:hover {
+	background: #f6f7f8;
+	box-shadow: none;
+	border-color: transparent;
+}
+
+/* mobile menu links */
+html.useReactApp .rm-Flyout a:hover,
+html.useReactApp .rm-Flyout a:active,
+html.useReactApp .rm-Flyout a:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* mobile menu dropdown */
+html.useReactApp .rm-Header-top .icon-menu:hover,
+html.useReactApp .rm-Header-top .icon-menu:active,
+html.useReactApp .rm-Header-top .icon-menu:focus,
+html.useReactApp .rm-Flyout .Select_md:hover,
+html.useReactApp .rm-Flyout .Select_md:active,
+html.useReactApp .rm-Flyout .Select_md:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+html.useReactApp .Button_graphite_text:not(:disabled):active, 
+html.useReactApp .Button_graphite_text:not(:disabled):focus {
+	box-shadow: none;
+  border-color: transparent;
+}
+
+html.useReactApp .App .rm-Guides .heading:focus-within, 
+html.useReactApp .App .rm-ReferenceMain .heading:focus-within, 
+html.useReactApp .App .rm-Changelog .heading:focus-within {
+	outline: 0px;
+}
+
+span.img img {
+	margin-top:0px;
+  margin-bottom:0px;
+}
+
+/* [WIP] Testing custom HTML elements - [CK] */
+
+ .side-box{
+   margin-top: 20px;
+   margin-right: 8px;
+   border: 1px solid #e3e4ec;
+   padding: 24px;
+   border-radius: 8px;
+   display: inline-block;
+   transition: all 500ms ease;
+   vertical-align: top;
+ }
+  
+  .side-box.small {
+		width: 33%;
+  }
+  
+  .side-box.wide {
+		width: 50%;
+  }
+  
+  .side-box h3 {
+		margin-top: 4px;
+  }
+
+ .side-box a {
+   text-decoration:none!important;
+ }
+  
+ .side-box a.btn {
+   background-color: #df434b;
+   color: white;
+   border-color: rgba(0,0,0,0.25);
+   font-size: 13px;
+   transition: all 500ms ease;
+   word-wrap: break-word;
+ }
+  
+ .side-box:hover a.btn {
+   transform: translateY(-3px);
+ }
+ 
+ .side-box .context{
+   margin-top: 8px;
+   overflow-wrap: break-word;
+ }
+  
+.side-box:hover {
+   border: 1px solid rgba(0,0,0,0.25);
+
+}
