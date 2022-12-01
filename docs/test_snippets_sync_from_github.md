@@ -7,7 +7,7 @@ hidden: true
 
 ###  Test Snippets synced from local code
 
-This was synced from Andy's computer
+This was synced from GitHub actions when merging to main
 
 
 ```swift
