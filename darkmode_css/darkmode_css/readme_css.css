@@ -348,6 +348,12 @@ span.img img {
   --flyout-background: white;
 }
 
+@media (prefers-color-scheme: light) {
+   :root {
+      --Header-button-color: white;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: white;
@@ -381,4 +387,8 @@ span.img img {
 
 [data-color-mode="dark"] .rm-Flyout {
   --Flyout-background: var(--flyout-background) !important;
+}
+
+[data-color-mode="dark"] html.useReactApp .rm-Header {
+  --Header-background: clear;
 }
