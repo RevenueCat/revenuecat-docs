@@ -1,0 +1,125 @@
+---
+title: "macOS / Catalyst"
+slug: "macos"
+excerpt: "Instructions for installing Purchases SDK for macOS / Catalyst"
+hidden: false
+metadata: 
+  title: "macOS / Catalyst Purchases SDK – RevenueCat"
+  description: "The RevenueCat Purchases SDK handles the pain points of in-app purchases and subscriptions, so you can get back to building your app."
+  image: 
+    0: "https://files.readme.io/23d811b-OG_image.png"
+    1: "OG image.png"
+    2: 1200
+    3: 627
+    4: "#e9acb0"
+createdAt: {}
+updatedAt: "2021-06-01T22:18:24.092Z"
+---
+# What is RevenueCat?
+
+RevenueCat is a secure, reliable, and free to use in-app purchase server with cross-platform support. With the RevenueCat SDK, you can build and manage your app business on any platform without having to maintain purchase infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/where-does-revenuecat-fit-in-your-app) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
+
+As of March 2020, RevenueCat only supports [universal purchases](https://developer.apple.com/support/universal-purchase/) for macOS apps. This allows you to seamlessly share purchases between iOS, tvOS, watchOS, and macOS versions of your apps. If you need support for the legacy Mac App Store purchases, contact support. 
+
+# Requirements
+
+Xcode 10.2+
+Minimum target: macOS 10.12+
+
+# Installation
+
+The Purchases iOS SDK is also compatible with macOS, and can be installed either via [CocoaPods](doc:macos#section-install-via-cocoapods) or [Swift Package Manager](macos#section-install-via-swift-package-manager). 
+[block:callout]
+{
+  "type": "warning",
+  "title": "Carthage is currently incompatible with Catalyst",
+  "body": "Once Carthage is updated to support Catalyst, installing with Carthage will be restored. The recommended way to install the Purchases iOS SDK for Catalyst projects is to use [Swift Package Manager](macos#section-install-via-swift-package-manager)."
+}
+[/block]
+## Install via CocoaPods
+
+To always use the latest release, add the following to your Podfile:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "pod 'Purchases'",
+      "language": "ruby",
+      "name": "Podfile"
+    }
+  ]
+}
+[/block]
+Alternatively, pin to a specific minor version (e.g. 3.10):
+[block:code]
+{
+  "codes": [
+    {
+      "code": "pod 'Purchases', '~> 3.11.1'",
+      "language": "ruby"
+    }
+  ]
+}
+[/block]
+And then run:
+[block:code]
+{
+  "codes": [
+    {
+      "code": "pod install",
+      "language": "ruby",
+      "name": "Terminal"
+    }
+  ]
+}
+[/block]
+This will add `Purchases.framework` to your workspace.
+
+## Install via Swift Package Manager
+
+You can use Swift Package Manager to add Purchases to your Xcode project. Select `File » Swift Packages » Add Package Dependency...` and specify the repository URL of the `Purchases` library: https://github.com/RevenueCat/purchases-ios.git. Set the version to `Up to next major` and choose the target where you want to use it. The library should have been added to the Swift Package Dependencies section and you should be able to import it now.
+
+# Import Purchases
+
+You should now be able to `import Purchases`
+[block:code]
+{
+  "codes": [
+    {
+      "code": "import Purchases",
+      "language": "swift"
+    },
+    {
+      "code": "#import \"RCPurchases.h\"",
+      "language": "objectivec"
+    }
+  ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "title": "Enable In-App Purchase for your project",
+  "body": "Don't forget to enable the In-App Purchase capability for your project under `Project Target -> Capabilities -> In-App Purchase`"
+}
+[/block]
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
+        "Screen Shot 2018-12-18 at 9.15.09 AM.png",
+        668,
+        107,
+        "#fafafc"
+      ]
+    }
+  ]
+}
+[/block]
+# Next Steps
+
+* Now that you've installed the Purchases SDK in your macOS app, get started by [configuring an instance of Purchases :fa-arrow-right:](doc:getting-started-1#section-configure-purchases)
