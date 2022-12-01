@@ -20,4 +20,4 @@ jobs:
       - name: Run `docs` command 🚀
         uses: readmeio/rdme@v8
         with:
-          rdme: docs docs/test_snippets_sync_from_github.md --key=${{ secrets.README_API_KEY }} --version=4.0 --dryRun
+          rdme: docs docs/test_snippets_sync_from_github.md --key=${{ secrets.README_API_KEY }} --version=4.0
