@@ -9,12 +9,8 @@ hidden: true
 
 This was synced from GitHub actions when merging to main
 
+```swift:../src/sample.py [4-6]
 
-```swift
-// some swift code here
-class Foo { 
-    let bar: Bar
-}
 ```
 ```kotlin
 // here goes the kotlin equivalent
