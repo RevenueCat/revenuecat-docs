@@ -41,7 +41,7 @@ end
 
 lane :sync_files_to_readme do
     Dir.chdir("../") do
-        sh "rdme", "docs", "rendered_docs", "--version=4.0", "--key=$secrets.README_API_KEY"
+        sh "rdme docs rendered_docs --version\=4.0 --key\=#{ENV['secrets.README_API_KEY']}", log: false
     end
 end
 
