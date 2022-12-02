@@ -1,11 +1,11 @@
 import XCTest
-@testable import iOS
+@testable import SwiftSnippets
 
-final class iOSTests: XCTestCase {
+final class SwiftTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(iOS().text, "Hello, World!")
+//        XCTAssertEqual(().text, "Hello, World!")
     }
 }
