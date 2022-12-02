@@ -23,7 +23,7 @@ If this is your first time integrating RevenueCat into your app, we recommend fo
 [/block]
 # Basic Configuration
 ## Initialization
-
+asdf
 Once you've [installed](https://docs.revenuecat.com/docs/installation) the SDK for your app, it's time to initialize and configure it.
 
 You should only configure *Purchases* once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
