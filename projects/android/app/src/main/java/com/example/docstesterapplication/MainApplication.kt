@@ -12,9 +12,9 @@ class MainApplication: Application() {
         Purchases.debugLogsEnabled = true
 
         if (STORE == "amazon") {
-            Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key", "anoldparameter").build())
+            Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
         } else if (STORE == "google") {
-            Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key", "anoldparameter").build())
+            Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
         }
     }
 }
