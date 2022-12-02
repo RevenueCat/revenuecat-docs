@@ -12,6 +12,7 @@ on:
 
 jobs:
   rdme-docs:
+    name: Sync Docs
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo 📚
