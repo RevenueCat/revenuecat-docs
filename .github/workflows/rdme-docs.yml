@@ -8,24 +8,9 @@ on:
       # This workflow will run every time you push code to the following branch: `main`
       # Check out GitHub's docs for more info on configuring this:
       # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows
-      - render-in-github-action
+      - main
 
 jobs:
-  embed_code:
-    name: Embed Code
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with: 
-          node-version: 14
-      - run: npm install -g embedme
-      - run: cp -r docs_source/** rendered_docs/
-      - run: embedme "rendered_docs/**/*.md"
-      - uses: EndBug/add-and-commit@v9.1.1
-        with:
-          add: "rendered_docs"
-
   rdme-docs:
     runs-on: ubuntu-latest
     steps:

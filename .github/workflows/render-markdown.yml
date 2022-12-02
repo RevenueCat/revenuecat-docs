@@ -1,0 +1,31 @@
+name: Render Markdown 📝
+
+on:
+  push
+
+jobs:
+  embed_code:
+    name: Embed Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: 14
+      - run: npm install -g embedme
+      - run: cp -r docs_source/** rendered_docs/
+      - run: embedme "rendered_docs/**/*.md"
+      - uses: EndBug/add-and-commit@v9.1.1
+        with:
+          add: "rendered_docs"
+
+  rdme-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo 📚
+        uses: actions/checkout@v3
+
+      - name: Run `docs` command 🚀
+        uses: readmeio/rdme@v8
+        with:
+          rdme: docs rendered_docs/test_snippets_sync_from_github.md --key=${{ secrets.README_API_KEY }} --version=4.0
