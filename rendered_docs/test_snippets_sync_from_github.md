@@ -25,7 +25,6 @@ func application(_ application: UIApplication,
 }
 
 ```
-
 ```kotlin
 class MainApplicationOnlyPlayStore: Application() {
     override fun onCreate() {
@@ -51,7 +50,6 @@ If you're building for the Amazon Appstore, you can use flavors to determine whi
     }
 }
 ```
-
 ```kotlin
 class MainApplication: Application() {
     override fun onCreate() {
