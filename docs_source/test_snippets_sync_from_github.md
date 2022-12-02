@@ -9,13 +9,11 @@ hidden: true
 
 This was synced from GitHub actions when merging to main
 
+Here is the code to configure the SDK:
 
 ```swift
-// some swift code here
-class Foo { 
-    let bar: Bar
-}
+// ../code_snippets/Swift/configure-1.swift
 ```
 ```kotlin
-// here goes the kotlin equivalent
+// ../code_snippets/Kotlin/configure-1.kt
 ```
