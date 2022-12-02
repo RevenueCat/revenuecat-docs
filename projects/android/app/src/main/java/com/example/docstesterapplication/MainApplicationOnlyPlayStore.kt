@@ -1,7 +1,6 @@
 package com.example.docstesterapplication
 
 import android.app.Application
-import com.revenuecat.purchases.PurchaserInfo
 import com.revenuecat.purchases.Purchases
 import com.revenuecat.purchases.PurchasesConfiguration
 
