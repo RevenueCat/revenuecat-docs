@@ -8,13 +8,17 @@ jobs:
     name: Embed Code
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with: 
           node-version: 14
-      - run: npm install -g embedme
-      - run: cp -r docs_source/** rendered_docs/
-      - run: embedme "rendered_docs/**/*.md"
+      - name: Install gem dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: bundle install
+      - run: bundle exec fastlane bootstrap
+      - run: bundle exec fastlane render_docs readme_api_key:${{ secrets.README_API_KEY }}
       - uses: EndBug/add-and-commit@v9.1.1
         with:
           add: "rendered_docs"

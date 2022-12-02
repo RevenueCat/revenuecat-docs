@@ -1,0 +1,74 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+desc "Install dependencies"
+lane :bootstrap do
+    sh "npm", "install", "-g", "rdme"
+    sh "npm", "install", "-g", "embedme"
+end
+
+desc "Description of what the lane does"
+lane :render_docs do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.error("Missing README API key") unless readme_api_key
+    return unless readme_api_key
+
+    copy_docs_source_to_render_folder
+    files_to_render.each do |file|
+        render_markdown_file(file)
+    end
+    sync_files_to_readme readme_api_key: readme_api_key
+end
+
+def files_to_render
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(parent_dir) do
+        Dir.glob("docs_source/*.md")
+    end
+end
+
+lane :ios_tests do
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(File.join(parent_dir, "projects", "iOS")) do
+        sh "xcodebuild -scheme iOS -destination 'generic/platform=iOS' "
+    end
+end
+
+lane :copy_docs_source_to_render_folder do
+    source_folder = "docs_source"
+    render_folder = "rendered_docs"
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(parent_dir) do
+        FileUtils.copy_entry source_folder, render_folder
+    end
+end
+
+lane :sync_files_to_readme do |options|
+    Dir.chdir("../") do
+        sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}", log: false
+    end
+end
+
+def render_markdown_file(file)
+    puts "rendering file #{file}"
+    file_without_path = File.basename(file)
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(parent_dir) do
+        puts Dir.pwd
+        sh "embedme #{file} --strip-embed-comment --stdout > rendered_docs/#{file_without_path}"
+    end
+end
