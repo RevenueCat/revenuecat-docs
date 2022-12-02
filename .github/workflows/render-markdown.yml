@@ -12,9 +12,9 @@ jobs:
       - uses: actions/setup-node@v3
         with: 
           node-version: 14
-      - uses: ruby/setup-ruby@v1
+      - name: Install gem dependencies
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0' # supposedly not needed with a .ruby-version file, but it fails without this ¯\_(ツ)_/¯
           bundler-cache: true
       - run: bundle install
       - run: bundle exec fastlane bootstrap
