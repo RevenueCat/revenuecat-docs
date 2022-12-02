@@ -18,14 +18,3 @@ jobs:
       - uses: EndBug/add-and-commit@v9.1.1
         with:
           add: "rendered_docs"
-
-  rdme-docs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repo 📚
-        uses: actions/checkout@v3
-
-      - name: Run `docs` command 🚀
-        uses: readmeio/rdme@v8
-        with:
-          rdme: docs rendered_docs/test_snippets_sync_from_github.md --key=${{ secrets.README_API_KEY }} --version=4.0
