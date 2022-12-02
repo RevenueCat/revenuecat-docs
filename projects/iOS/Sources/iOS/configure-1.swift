@@ -9,7 +9,7 @@ struct Constants {
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   
-    Purchases.logLevel = .debug
+    Purchases.debugLogsEnabled = true
     Purchases.configure(
     with: Configuration.Builder(withAPIKey: Constants.apiKey)
               .with(appUserID: "<app_user_id>")
