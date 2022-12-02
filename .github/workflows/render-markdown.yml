@@ -17,7 +17,7 @@ jobs:
           bundler-cache: true
       - run: bundle install
       - run: bundle exec fastlane bootstrap
-      - run: bundle exec fastlane render_docs
+      - run: bundle exec fastlane render_docs readme_api_key:${{ secrets.README_API_KEY }}
       - uses: EndBug/add-and-commit@v9.1.1
         with:
           add: "rendered_docs"
