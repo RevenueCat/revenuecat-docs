@@ -2,7 +2,7 @@
 
 html:not(.useReactApp) nav#hub-sidebar>ul>li>a.active, 
 html:not(.useReactApp) nav#hub-sidebar ul>li.subnav-expanded> a {
-  color: white!important; 
+  color: var(--color-text) !important; 
 }
 
 .table {
@@ -38,7 +38,7 @@ img {
 
 /* Fixes the subpage text color when the background is red */
 a.subpage.active .link-title {
-  color: white!important;
+  color: var(--color-text) !important;
 }
 
 /* Give glossary items a RC theme */
@@ -49,12 +49,12 @@ a.subpage.active .link-title {
 
 /* Change color of top boarder */
 .theme-line header#hub-header #header-top {
-  border-bottom-color: #FFFFFF;
+  border-bottom-color: var(--color-text);
 }
 
 /* Style for doc header */
 h1 {
-  color: #292929 !important;
+  color: var(--text-color) !important;
   font-weight: 800;
   font-size: 28px;
   font-family: 'Open Sans', sans-serif !important;
@@ -64,7 +64,7 @@ h1 {
 .heading-1 .heading-text {
   margin-top: 8px;
   margin-bottom: 0px;
-  color: #292929;
+  color: var(--text-color);
   font-size: 22px;
   font-weight: 800;
 }
@@ -72,7 +72,7 @@ h1 {
 .heading-2 .heading-text {
   margin-top: 8px;
   margin-bottom: 0px;
-  color: #292929;
+  color: var(--text-color);
   font-size: 18px;
   font-weight: 600;
 }
@@ -80,7 +80,7 @@ h1 {
 .heading-3 .heading-text {
   margin-top: 20px;
   margin-bottom: 0px;
-  color: #292929;
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 600;
 }
@@ -88,7 +88,7 @@ h1 {
 .heading-4 .heading-text {
   margin-top: 10px;
   margin-bottom: 0px;
-  color: #292929;
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 600;
 }
@@ -96,7 +96,7 @@ h1 {
 .heading-5 .heading-text {
   margin-top: 20px;
   margin-bottom: 0px;
-  color: #292929;
+  color: var(--text-color);
   font-size: 14px;
   font-weight: 600;
 }
@@ -104,7 +104,7 @@ h1 {
 .heading-6 .heading-text {
   margin-top: 20px;
   margin-bottom: 0px;
-  color: #292929;
+  color: var(--text-color);
   font-size: 12px;
   font-weight: 600;
 }
@@ -116,13 +116,13 @@ p {
   margin-top: 0;
   font-size: 15px;
   font-family: 'Open Sans', sans-serif !important;
-  color: #292929;
+  color: var(--text-color);
 }
 
 /* Fixing bullet point style to match paragraph */
 .field-description li, .markdown-body li {
   font-size: 15px !important;
-  color: #292929;
+  color: var(--text-color);
   font-family: 'Open Sans', sans-serif !important;
 }
 
@@ -184,7 +184,7 @@ color: #df434b !important;
 
 .field-description li, .markdown-body li {
   font-size: 13px;
-  color: #292929;
+  color: var(--text-color);
   font-family: 'Open Sans',sans-serif!important;
 }
 
@@ -192,17 +192,17 @@ color: #df434b !important;
 
 html.useReactApp .rm-Header {
   --header-logo-height: 40px;
-	--Header-border-width: 0px;
+    --Header-border-width: 0px;
   --Header-background: #f6f7f8;
   --Header-button-hover: #f6f7f8;
 }
 
 html.useReactApp .rm-Sidebar {
-  --Sidebar-link-color: #ffffff;
+  --Sidebar-link-color: var(--color-text);
   --Sidebar-link-background: #4449c3;
   
   /* Sometimes the statuspage alert covered sections of the
-  	sidebar, so this just adds some extra padding
+    sidebar, so this just adds some extra padding
   */
   padding-bottom: 120px;
   
@@ -213,7 +213,7 @@ html.useReactApp .rm-Header .rm-Logo img {
 }
 
 html.useReactApp .rm-Header-top {
-  background: #ffffff;
+  background: var(--color-text);
 }
 
 html.useReactApp .rm-Guides #updated-at,
@@ -228,7 +228,7 @@ element and this is my attempt to make it less noticeable */
 html.useReactApp .rm-Header .SearchResults-list > a:active,
 html.useReactApp .rm-Header .SearchResults-list > a:focus {
   background-color: inherit;
-	color: inherit;
+    color: inherit;
 }
 
 /* below trying to remove the obnoxious focus, active effects. can be removed
@@ -241,15 +241,15 @@ html.useReactApp .rm-Header-top-link.Button:focus,
 html.useReactApp .rm-Header-bottom-link.Button:active, 
 html.useReactApp .rm-Header-bottom-link.Button:focus {
   box-shadow: none;
-	background: transparent;
-	border-color: transparent;
+    background: transparent;
+    border-color: transparent;
 }
 
 html.useReactApp .rm-Header-top-link.Button:hover, 
 html.useReactApp .rm-Header-bottom-link.Button:hover {
-	background: #f6f7f8;
-	box-shadow: none;
-	border-color: transparent;
+    background: #f6f7f8;
+    box-shadow: none;
+    border-color: transparent;
 }
 
 /* mobile menu links */
@@ -273,18 +273,18 @@ html.useReactApp .rm-Flyout .Select_md:focus {
 
 html.useReactApp .Button_graphite_text:not(:disabled):active, 
 html.useReactApp .Button_graphite_text:not(:disabled):focus {
-	box-shadow: none;
+    box-shadow: none;
   border-color: transparent;
 }
 
 html.useReactApp .App .rm-Guides .heading:focus-within, 
 html.useReactApp .App .rm-ReferenceMain .heading:focus-within, 
 html.useReactApp .App .rm-Changelog .heading:focus-within {
-	outline: 0px;
+    outline: 0px;
 }
 
 span.img img {
-	margin-top:0px;
+    margin-top:0px;
   margin-bottom:0px;
 }
 
@@ -302,15 +302,15 @@ span.img img {
  }
   
   .side-box.small {
-		width: 33%;
+        width: 33%;
   }
   
   .side-box.wide {
-		width: 50%;
+        width: 50%;
   }
   
   .side-box h3 {
-		margin-top: 4px;
+        margin-top: 4px;
   }
 
  .side-box a {
@@ -319,7 +319,7 @@ span.img img {
   
  .side-box a.btn {
    background-color: #df434b;
-   color: white;
+   color: var(--color-text);
    border-color: rgba(0,0,0,0.25);
    font-size: 13px;
    transition: all 500ms ease;
@@ -338,4 +338,57 @@ span.img img {
 .side-box:hover {
    border: 1px solid rgba(0,0,0,0.25);
 
+}
+
+/* --------- Dark Mode CSS --------- */
+
+:root {
+  --color-text: #384248;
+  --color-background: white;
+  --flyout-background: white;
+}
+
+@media (prefers-color-scheme: light) {
+   :root {
+      --Header-button-color: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: white;
+    --color-background: #3a4348;
+  }
+
+  html.useReactApp .rm-Sidebar,
+  .NavItem-item {
+    --Sidebar-link-color: var(--color-background);
+  }
+
+  .rm-Flyout {
+    --Flyout-background: var(--flyout-background) !important;
+  }
+
+}
+
+[data-color-mode="dark"] :root {
+  --color-text: white;
+  --color-background: #3a4348;
+}
+
+[data-color-mode="dark"] .rm-Header, .icon-guides > span { 
+  color: #384248;
+}
+
+[data-color-mode="dark"] html.useReactApp .rm-Sidebar,
+[data-color-mode="dark"] .NavItem-item {
+  --Sidebar-link-color: var(--color-background);
+}
+
+[data-color-mode="dark"] .rm-Flyout {
+  --Flyout-background: var(--flyout-background) !important;
+}
+
+[data-color-mode="dark"] html.useReactApp .rm-Header {
+  --Header-background: clear;
 }
