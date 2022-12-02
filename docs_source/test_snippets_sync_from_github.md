@@ -14,7 +14,6 @@ Here is the code to configure the SDK:
 ```swift
 // ../projects/iOS/Sources/iOS/configure-1.swift#L9-L20
 ```
-
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
 ```
@@ -24,7 +23,6 @@ If you're building for the Amazon Appstore, you can use flavors to determine whi
 ```txt
 // ../projects/android/app/build.gradle#L37-L47
 ```
-
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
 ```
