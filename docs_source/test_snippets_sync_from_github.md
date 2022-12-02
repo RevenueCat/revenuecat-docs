@@ -14,6 +14,17 @@ Here is the code to configure the SDK:
 ```swift
 // ../code_snippets/Swift/configure-1.swift
 ```
+
 ```kotlin
-// ../code_snippets/Kotlin/configure-1.kt
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
+```
+
+If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
+
+```txt
+// ../projects/android/app/build.gradle#L37-L47
+```
+
+```kotlin
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
 ```

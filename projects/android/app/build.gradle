@@ -33,8 +33,7 @@ android {
     buildFeatures {
         viewBinding true
     }
-    // If you're building for the Amazon Appstore, you can use flavors to determine which keys to use
-    // In your build.gradle:
+
     flavorDimensions "store"
     productFlavors {
         amazon {

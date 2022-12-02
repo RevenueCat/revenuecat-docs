@@ -25,41 +25,48 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   
 }
 ```
-```kotlin
-// ../code_snippets/Kotlin/configure-1.kt
 
-// If you're targeting only Google Play Store
-class MainApplication: Application() {
+```kotlin
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
+
+class MainApplicationOnlyPlayStore: Application() {
     override fun onCreate() {
         super.onCreate()
         Purchases.debugLogsEnabled = true
         Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
     }
 }
+```
 
-// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use
-// In your build.gradle:
-flavorDimensions "store"
-productFlavors {
-    amazon {
-        buildConfigField "String", "STORE", "\"amazon\""
+If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
+
+```txt
+// ../projects/android/app/build.gradle#L37-L47
+
+    flavorDimensions "store"
+    productFlavors {
+        amazon {
+            buildConfigField "String", "STORE", "\"amazon\""
+        }
+
+        google {
+            buildConfigField "String", "STORE", "\"google\""
+        }
     }
-
-    google {
-        buildConfigField "String", "STORE", "\"google\""
-    }       
 }
+```
 
-///...
+```kotlin
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
 
 class MainApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         Purchases.debugLogsEnabled = true
-          
-        if (BuildConfig.STORE.equals("amazon")) {
+
+        if (STORE == "amazon") {
             Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
-        } else if (BuildConfig.STORE.equals("google")) {
+        } else if (STORE == "google") {
             Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
         }
     }
