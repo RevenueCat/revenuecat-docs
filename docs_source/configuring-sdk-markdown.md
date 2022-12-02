@@ -30,7 +30,10 @@ You should only configure `Purchases` once, usually early in your application li
 
 Make sure you configure `Purchases` with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 ```swift
-// ../projects/iOS/Sources/iOS/configure-1.swift#L9-L20
+// ../projects/iOS/Sources/SwiftSnippets/configure-1.swift#L9-L20
+```
+```objective-c
+// ../projects/iOS/Sources/ObjcSnippets/configure-1.swift#L15-L24
 ```
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
