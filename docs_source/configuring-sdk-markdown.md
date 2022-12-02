@@ -38,6 +38,21 @@ Make sure you configure `Purchases` with your public SDK key only. You can read 
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
 ```
+```java
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/ConfigureJava.java#L10-L39
+```
+```txt
+// ../projects/flutter/configure.dart
+```
+```ts
+// ../projects/react-native/configure.ts
+```
+```ts
+// ../projects/cordova/configure.ts
+```
+```cs
+// ../projects/unity/Configure.cs
+```
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
