@@ -59,7 +59,7 @@ end
 
 lane :sync_files_to_readme do |options|
     Dir.chdir("../") do
-        sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}", log: false
+        sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
     end
 end
 
