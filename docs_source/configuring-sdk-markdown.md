@@ -33,7 +33,7 @@ Make sure you configure `Purchases` with your public SDK key only. You can read 
 // ../projects/iOS/Sources/SwiftSnippets/configure-1.swift#L9-L20
 ```
 ```objectivec
-// ../projects/iOS/Sources/ObjcSnippets/configure-1.swift#L15-L24
+// ../projects/iOS/Sources/ObjcSnippets/RCConfigure1.m#L15-L24
 ```
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14

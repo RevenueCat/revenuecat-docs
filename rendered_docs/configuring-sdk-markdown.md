@@ -43,8 +43,17 @@ func application(_ application: UIApplication,
 }
 
 ```
-```objective-c
-// ../projects/iOS/Sources/ObjcSnippets/configure-1.swift#L15-L24
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+
+    RCPurchases.logLevel = RCLogLevelDebug;
+    RCConfigurationBuilder *configuration = [RCConfiguration builderWithAPIKey:@"public_sdk_key"];
+    configuration = [configuration withAppUserID:@"<app_user_id>"];
+    [RCPurchases configureWithConfiguration:[configuration build]];
+
+    return YES;
+}
 ```
 ```kotlin
 class MainApplicationOnlyPlayStore: Application() {
@@ -54,6 +63,109 @@ class MainApplicationOnlyPlayStore: Application() {
         Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
     }
 }
+```
+```java
+// If you're targeting only Google Play Store
+public class MainApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Purchases.setDebugLogsEnabled(true);
+        Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
+    }
+}
+
+// If you're building for the Amazon Appstore,
+// click the Kotlin tab to see how to set up flavors in your build.gradle:
+///...
+
+public class MainApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Purchases.setDebugLogsEnabled(true);
+
+
+        if (STORE.equals("amazon")) {
+            AmazonConfiguration.Builder builder = new AmazonConfiguration.Builder(this, "public_amazon_sdk_key");
+        } else if (STORE.equals("google")) {
+            PurchasesConfiguration.Builder builder = new PurchasesConfiguration.Builder(this, "public_google_sdk_key");
+            Purchases.configure(builder.build());
+        }
+
+    }
+}
+```
+```txt
+import 'dart:io' show Platform;
+
+//...
+
+Future<void> initPlatformState() async {
+  await Purchases.setDebugLogsEnabled(true);
+
+  PurchasesConfiguration configuration;
+  if (Platform.isAndroid) {
+    configuration = PurchasesConfiguration("public_google_sdk_key");
+    if (buildingForAmazon) {
+      // use your preferred way to determine if this build is for Amazon store
+      // checkout our MagicWeather sample for a suggestion
+      configuration = AmazonConfiguration("public_amazon_sdk_key");
+    }
+  } else if (Platform.isIOS) {
+    configuration = PurchasesConfiguration("public_ios_sdk_key");
+  }
+  await Purchases.configure(configuration);
+}
+```
+```ts
+import { Platform } from 'react-native';
+
+//...
+
+export default class App extends React.Component {
+
+    componentDidMount() {
+        Purchases.setDebugLogsEnabled(true);
+
+        if (Platform.OS === 'ios') {
+            await Purchases.configure({ apiKey: "public_ios_sdk_key" });
+        } else if (Platform.OS === 'android') {
+            await Purchases.configure({ apiKey: "public_google_sdk_key" });
+
+            // OR: if building for Amazon, be sure to follow the installation instructions then:
+            await Purchases.configure({ apiKey: "public_amazon_sdk_key", useAmazon: true });
+        }
+
+    }
+}
+```
+```ts
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    Purchases.setDebugLogsEnabled(true);
+    if (window.cordova.platformId === 'ios') {
+        Purchases.setup("public_ios_sdk_key");
+    } else if (window.cordova.platformId === 'android') {
+        Purchases.setup("public_google_sdk_key");
+    }
+    // OR: if building for Amazon, be sure to follow the installation instructions then:
+    await Purchases.setup({ apiKey: "public_amazon_sdk_key", useAmazon: true });
+}
+```
+```cs
+// The SDK can be configured through the Unity Editor.
+// See Unity installation instructions https://docs.revenuecat.com/docs/unity
+
+// If you'd like to configure the SDK programmatically,
+// make sure to check "Use runtime setup" in the Unity Editor, and then:
+
+Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init("api_key");
+Purchases.PurchasesConfiguration purchasesConfiguration =
+    .SetAppUserId(appUserId)
+    .Build();
+purchases.Configure(purchasesConfiguration);
 ```
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
