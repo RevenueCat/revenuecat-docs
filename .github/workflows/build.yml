@@ -3,9 +3,7 @@
 name: ReadMe GitHub Action 🦉
 
 on:
-  pull_request:
-    types:
-      - opened
+  push
 
 jobs:
   build-project:
