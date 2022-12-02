@@ -20,8 +20,8 @@ Here is the code to configure the SDK:
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
-```txt
-// ../projects/android/app/build.gradle#L37-L47
+```groovy
+// ../projects/android/app/build.gradle#L37-L46
 ```
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20

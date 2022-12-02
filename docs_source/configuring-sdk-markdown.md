@@ -29,6 +29,13 @@ Once you've [installed](https://docs.revenuecat.com/docs/installation) the SDK f
 You should only configure `Purchases` once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
 
 Make sure you configure `Purchases` with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
+```swift
+// ../projects/iOS/Sources/iOS/configure-1.swift#L9-L20
+```
+```kotlin
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
+```
+
 [block:code]
 {
   "codes": [
