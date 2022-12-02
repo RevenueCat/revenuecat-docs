@@ -494,3 +494,7 @@ doc/api/
 
 .idea/*
 *.DS_Store
+*.swiftpm/
+
+# explicitly ignore resolved Package so we always get the latest version from SPM
+projects/iOS/Package.resolved

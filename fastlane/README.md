@@ -29,6 +29,14 @@ Install dependencies
 
 Description of what the lane does
 
+### ios_tests
+
+```sh
+[bundle exec] fastlane ios_tests
+```
+
+
+
 ### copy_docs_source_to_render_folder
 
 ```sh
