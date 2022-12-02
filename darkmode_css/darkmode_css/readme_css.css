@@ -198,7 +198,7 @@ html.useReactApp .rm-Header {
 }
 
 html.useReactApp .rm-Sidebar {
-  --Sidebar-link-color: var(--color-text);
+  --Sidebar-link-color: white;
   --Sidebar-link-background: #4449c3;
   
   /* Sometimes the statuspage alert covered sections of the
@@ -354,6 +354,7 @@ span.img img {
     }
 }
 
+/* --- Dark Mode Enabled through OS --- */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: white;
@@ -363,14 +364,33 @@ span.img img {
   html.useReactApp .rm-Sidebar,
   .NavItem-item {
     --Sidebar-link-color: var(--color-background);
+    --Sidebar-link-hover-background: #4449c3;
+
+  /* Sometimes the statuspage alert covered sections of the
+     sidebar, so this just adds some extra padding
+  */
+  padding-bottom: 120px;
   }
 
   .rm-Flyout {
     --Flyout-background: var(--flyout-background) !important;
   }
 
+  /* Link color in paragraphs */
+  .field-description a[href], 
+  .field-description a:not([href=""]), 
+  .markdown-body a[href],
+  .markdown-body a:not([href=""]) {
+    color: #F4E971 !important;
+  }
+
+  /* Selected sidebar item background */
+  .reference-redesign .Sidebar-link2Dsha-r-GKh2:active, .reference-redesign .Sidebar-link2Dsha-r-GKh2.active {
+    background: #4449c3 !important;
+  }
 }
 
+/* --- Dark Mode Enabled through Toggle in Readme --- */
 [data-color-mode="dark"] :root {
   --color-text: white;
   --color-background: #3a4348;
@@ -383,6 +403,25 @@ span.img img {
 [data-color-mode="dark"] html.useReactApp .rm-Sidebar,
 [data-color-mode="dark"] .NavItem-item {
   --Sidebar-link-color: var(--color-background);
+  --Sidebar-link-hover-background: #4449c3;
+  
+  /* Sometimes the statuspage alert covered sections of the
+    sidebar, so this just adds some extra padding
+  */
+  padding-bottom: 120px;
+}
+
+/* Link color in paragraphs */
+[data-color-mode="dark"] .field-description a[href], 
+[data-color-mode="dark"] .field-description a:not([href=""]), 
+[data-color-mode="dark"] .markdown-body a[href], 
+[data-color-mode="dark"] .markdown-body a:not([href=""]) {
+  color: #F4E971 !important;
+}
+
+/* Selected sidebar item background */
+.reference-redesign .Sidebar-link2Dsha-r-GKh2:active, .reference-redesign .Sidebar-link2Dsha-r-GKh2.active {
+  background: #4449c3 !important;
 }
 
 [data-color-mode="dark"] .rm-Flyout {
