@@ -12,7 +12,7 @@ This was synced from GitHub actions when merging to main
 Here is the code to configure the SDK:
 
 ```swift
-// ../projects/iOS/Sources/iOS/configure-1.swift#L9-L20
+// ../projects/iOS/Sources/SwiftSnippets/configure-1.swift#L9-L20
 ```
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
