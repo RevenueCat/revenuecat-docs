@@ -22,7 +22,7 @@ lane :bootstrap do
 end
 
 desc "Description of what the lane does"
-lane :render_docs do
+lane :render_docs do |options|
     copy_docs_source_to_render_folder
     files_to_render = Dir.glob("rendered_docs/*.md")
     files_to_render.each do |file|
@@ -41,7 +41,9 @@ end
 
 lane :sync_files_to_readme do
     Dir.chdir("../") do
-        sh "rdme", "docs", "rendered_docs", "--key=${{ secrets.README_API_KEY }}", "--version=4.0"
+        # readme expects the env variable to be README_API_KEY, but GH actions uses secrets.README_API_KEY
+        sh "export README_API_KEY=$secrets.README_API_KEY"
+        sh "rdme", "docs", "rendered_docs", "--version=4.0"
     end
 end
 
