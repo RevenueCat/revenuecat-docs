@@ -22,10 +22,6 @@ let package = Package(
                 .unsafeFlags(["-warnings-as-errors"])
             ]
         ),
-        .testTarget(
-            name: "SwiftTests",
-            dependencies: ["SwiftSnippets"]
-        ),
 
         .executableTarget(
             name: "ObjcSnippets",
@@ -34,8 +30,5 @@ let package = Package(
                 .unsafeFlags(["-warnings-as-errors"])
             ]
         ),
-//        .testTarget(
-//            name: "ObjcTests",
-//            dependencies: ["ObjcSnippets"]),
     ]
 )
