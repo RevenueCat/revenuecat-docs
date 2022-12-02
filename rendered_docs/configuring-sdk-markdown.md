@@ -43,6 +43,9 @@ func application(_ application: UIApplication,
 }
 
 ```
+```objective-c
+// ../projects/iOS/Sources/ObjcSnippets/configure-1.swift#L15-L24
+```
 ```kotlin
 class MainApplicationOnlyPlayStore: Application() {
     override fun onCreate() {
@@ -52,6 +55,36 @@ class MainApplicationOnlyPlayStore: Application() {
     }
 }
 ```
+
+If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
+
+```kotlin
+flavorDimensions "store"
+productFlavors {
+    amazon {
+        buildConfigField "String", "STORE", "\"amazon\""
+    }
+
+    google {
+        buildConfigField "String", "STORE", "\"google\""
+    }
+}
+```
+```kotlin
+class MainApplication: Application() {
+    override fun onCreate() {
+        super.onCreate()
+        Purchases.debugLogsEnabled = true
+
+        if (STORE == "amazon") {
+            Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
+        } else if (STORE == "google") {
+            Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
+        }
+    }
+}
+```
+
 
 [block:code]
 {
