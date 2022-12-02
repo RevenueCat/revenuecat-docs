@@ -18,11 +18,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   
     Purchases.logLevel = .debug
     Purchases.configure(
-     with: Configuration.Builder(withAPIKey: Constants.apiKey)
+    with: Configuration.Builder(withAPIKey: Constants.apiKey)
               .with(appUserID: "<app_user_id>")
               .build()
-     )
-  
+    )
+
 }
 ```
 
