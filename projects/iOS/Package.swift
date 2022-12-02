@@ -17,7 +17,11 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "iOS",
-            dependencies: ["RevenueCat"]),
+            dependencies: ["RevenueCat"],
+            swiftSettings: [
+                .unsafeFlags(["-warnings-as-errors"])
+            ]
+        ),
         .testTarget(
             name: "iOSTests",
             dependencies: ["iOS"]),

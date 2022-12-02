@@ -44,7 +44,7 @@ end
 lane :ios_tests do
     parent_dir = File.dirname(Dir.pwd)
     Dir.chdir(File.join(parent_dir, "projects", "iOS")) do
-        sh "xcodebuild -scheme iOS -destination 'generic/platform=iOS' "
+        sh "xcodebuild -scheme iOS -destination 'generic/platform=iOS'"
     end
 end
 
