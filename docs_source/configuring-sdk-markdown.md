@@ -32,7 +32,7 @@ Make sure you configure `Purchases` with your public SDK key only. You can read 
 ```swift
 // ../projects/iOS/Sources/SwiftSnippets/configure-1.swift#L9-L20
 ```
-```objective-c
+```objectivec
 // ../projects/iOS/Sources/ObjcSnippets/configure-1.swift#L15-L24
 ```
 ```kotlin
