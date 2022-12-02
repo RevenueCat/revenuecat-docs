@@ -29,6 +29,30 @@ Once you've [installed](https://docs.revenuecat.com/docs/installation) the SDK f
 You should only configure `Purchases` once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
 
 Make sure you configure `Purchases` with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
+```swift
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  
+    Purchases.logLevel = .debug
+    Purchases.configure(
+    with: Configuration.Builder(withAPIKey: Constants.apiKey)
+              .with(appUserID: "<app_user_id>")
+              .build()
+    )
+    return true
+}
+
+```
+```kotlin
+class MainApplicationOnlyPlayStore: Application() {
+    override fun onCreate() {
+        super.onCreate()
+        Purchases.debugLogsEnabled = true
+        Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
+    }
+}
+```
+
 [block:code]
 {
   "codes": [
