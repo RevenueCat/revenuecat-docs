@@ -3,6 +3,7 @@ Repository to hold the Hackathon project for syncing snippets with Readme
 
 
 ### how to sync docs to readme: 
+- `bundle install`
 - `npm install -g rdme`
 - `npm install -g embedme`
 - log in, project `revenuecat`
