@@ -15,6 +15,5 @@ func application(_ application: UIApplication,
               .with(appUserID: "<app_user_id>")
               .build()
     )
-    adding code that breaks
     return true
 }
