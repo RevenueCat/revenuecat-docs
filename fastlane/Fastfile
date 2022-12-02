@@ -25,12 +25,20 @@ desc "Description of what the lane does"
 lane :render_docs do |options|
     readme_api_key = options[:readme_api_key]
     UI.error("Missing README API key") unless readme_api_key
+    return unless readme_api_key
+
     copy_docs_source_to_render_folder
-    files_to_render = Dir.glob("rendered_docs/*.md")
     files_to_render.each do |file|
         render_markdown_file(file)
     end
     sync_files_to_readme readme_api_key: readme_api_key
+end
+
+def files_to_render
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(parent_dir) do
+        Dir.glob("docs_source/*.md")
+    end
 end
 
 lane :ios_tests do
@@ -56,5 +64,11 @@ lane :sync_files_to_readme do |options|
 end
 
 def render_markdown_file(file)
-    sh "embedme", "#{file}", "--strip-embed-comment", "--stdout", "> #{file}.md"
+    puts "rendering file #{file}"
+    file_without_path = File.basename(file)
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(parent_dir) do
+        puts Dir.pwd
+        sh "embedme #{file} --strip-embed-comment --stdout > rendered_docs/#{file_without_path}"
+    end
 end

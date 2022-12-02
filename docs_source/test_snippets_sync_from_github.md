@@ -12,7 +12,7 @@ This was synced from GitHub actions when merging to main
 Here is the code to configure the SDK:
 
 ```swift
-// ../code_snippets/Swift/configure-1.swift
+// ../projects/iOS/Sources/iOS/configure-1.swift#L9-L20
 ```
 
 ```kotlin
