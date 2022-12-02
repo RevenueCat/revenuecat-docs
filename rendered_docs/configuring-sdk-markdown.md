@@ -4,7 +4,7 @@ slug: "configuring-sdk-markdown"
 hidden: false
 metadata:
   title: "Configuring the SDK – RevenueCat"
-  description: "You should only configure Purchases once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK."
+  description: "You should only configure Purchases once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK."
   image:
     0: "https://files.readme.io/7afb78b-RevenueCat_Docs_OG.png"
     1: "RevenueCat Docs OG.png"
@@ -23,12 +23,12 @@ If this is your first time integrating RevenueCat into your app, we recommend fo
 [/block]
 # Basic Configuration
 ## Initialization
-asdf
+
 Once you've [installed](https://docs.revenuecat.com/docs/installation) the SDK for your app, it's time to initialize and configure it.
 
-You should only configure *Purchases* once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
+You should only configure `Purchases` once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
 
-Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
+Make sure you configure `Purchases` with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 [block:code]
 {
   "codes": [
