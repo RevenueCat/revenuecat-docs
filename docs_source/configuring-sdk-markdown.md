@@ -63,7 +63,7 @@ If you're building for the Amazon Appstore, you can use flavors to determine whi
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
 ```
 ```java
-// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationJavaAmazon.kt#L9-L22
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationJavaAmazon.java#L9-L22
 ```
 
 [block:callout]
