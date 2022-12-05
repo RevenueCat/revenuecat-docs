@@ -74,29 +74,122 @@ public class MainApplicationJava extends Application {
         Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
     }
 }
+```
 ```txt
-// ../projects/flutter/configure.dart
+import 'dart:io' show Platform;
+
+//...
+
+Future<void> initPlatformState() async {
+  await Purchases.setDebugLogsEnabled(true);
+
+  PurchasesConfiguration configuration;
+  if (Platform.isAndroid) {
+    configuration = PurchasesConfiguration("public_google_sdk_key");
+    if (buildingForAmazon) {
+      // use your preferred way to determine if this build is for Amazon store
+      // checkout our MagicWeather sample for a suggestion
+      configuration = AmazonConfiguration("public_amazon_sdk_key");
+    }
+  } else if (Platform.isIOS) {
+    configuration = PurchasesConfiguration("public_ios_sdk_key");
+  }
+  await Purchases.configure(configuration);
+}
 ```
 ```ts
-// ../projects/react-native/configure.ts
+import { Platform } from 'react-native';
+
+//...
+
+export default class App extends React.Component {
+
+    componentDidMount() {
+        Purchases.setDebugLogsEnabled(true);
+
+        if (Platform.OS === 'ios') {
+            await Purchases.configure({ apiKey: "public_ios_sdk_key" });
+        } else if (Platform.OS === 'android') {
+            await Purchases.configure({ apiKey: "public_google_sdk_key" });
+
+            // OR: if building for Amazon, be sure to follow the installation instructions then:
+            await Purchases.configure({ apiKey: "public_amazon_sdk_key", useAmazon: true });
+        }
+
+    }
+}
 ```
 ```ts
-// ../projects/cordova/configure.ts
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    Purchases.setDebugLogsEnabled(true);
+    if (window.cordova.platformId === 'ios') {
+        Purchases.setup("public_ios_sdk_key");
+    } else if (window.cordova.platformId === 'android') {
+        Purchases.setup("public_google_sdk_key");
+    }
+    // OR: if building for Amazon, be sure to follow the installation instructions then:
+    await Purchases.setup({ apiKey: "public_amazon_sdk_key", useAmazon: true });
+}
 ```
 ```cs
-// ../projects/unity/Configure.cs
+// The SDK can be configured through the Unity Editor.
+// See Unity installation instructions https://docs.revenuecat.com/docs/unity
+
+// If you'd like to configure the SDK programmatically,
+// make sure to check "Use runtime setup" in the Unity Editor, and then:
+
+Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init("api_key");
+Purchases.PurchasesConfiguration purchasesConfiguration =
+    .SetAppUserId(appUserId)
+    .Build();
+purchases.Configure(purchasesConfiguration);
 ```
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
 ```kotlin
-// ../projects/android/app/build.gradle#L37-L46
+flavorDimensions "store"
+productFlavors {
+    amazon {
+        buildConfigField "String", "STORE", "\"amazon\""
+    }
+
+    google {
+        buildConfigField "String", "STORE", "\"google\""
+    }
+}
 ```
 ```kotlin
-// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
+    override fun onCreate() {
+        super.onCreate()
+        Purchases.debugLogsEnabled = true
+
+        if (BuildConfig.STORE == "amazon") {
+            Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
+        } else if (BuildConfig.STORE == "google") {
+            Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
+        }
+    }
+}
+
 ```
 ```java
-// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationJavaAmazon.kt#L9-L22
+public class MainApplicationJavaAmazon extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Purchases.setDebugLogsEnabled(true);
+
+        if (BuildConfig.STORE.equals("amazon")) {
+            AmazonConfiguration.Builder builder = new AmazonConfiguration.Builder(this, "public_amazon_sdk_key");
+        } else if (BuildConfig.STORE.equals("google")) {
+            PurchasesConfiguration.Builder builder = new PurchasesConfiguration.Builder(this, "public_google_sdk_key");
+            Purchases.configure(builder.build());
+        }
+    }
+}
 ```
 
 [block:callout]
