@@ -10,7 +10,7 @@ public class MainApplicationJava extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Purchases.setDebugLogsEnabled(true);
+        Purchases.debugLogsEnabled = true;
         Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
     }
 }
