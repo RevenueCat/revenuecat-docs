@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.revenuecat.purchases.Purchases;
 import com.revenuecat.purchases.PurchasesConfiguration;
-import com.revenuecat.purchases.amazon.AmazonConfiguration;
 
 // If you're targeting only Google Play Store
 public class MainApplicationJava extends Application {
@@ -15,4 +14,3 @@ public class MainApplicationJava extends Application {
         Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
     }
 }
-
