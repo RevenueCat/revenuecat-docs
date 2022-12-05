@@ -66,33 +66,12 @@ class MainApplicationOnlyPlayStore: Application() {
 ```
 ```java
 // If you're targeting only Google Play Store
-public class MainApplication extends Application {
+public class MainApplicationJava extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         Purchases.setDebugLogsEnabled(true);
         Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
-    }
-}
-
-// If you're building for the Amazon Appstore,
-// click the Kotlin tab to see how to set up flavors in your build.gradle:
-///...
-
-public class MainApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Purchases.setDebugLogsEnabled(true);
-
-
-        if (STORE.equals("amazon")) {
-            AmazonConfiguration.Builder builder = new AmazonConfiguration.Builder(this, "public_amazon_sdk_key");
-        } else if (STORE.equals("google")) {
-            PurchasesConfiguration.Builder builder = new PurchasesConfiguration.Builder(this, "public_google_sdk_key");
-            Purchases.configure(builder.build());
-        }
-
     }
 }
 ```
@@ -183,15 +162,31 @@ productFlavors {
 }
 ```
 ```kotlin
-class MainApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         Purchases.debugLogsEnabled = true
 
-        if (STORE == "amazon") {
+        if (BuildConfig.STORE == "amazon") {
             Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
-        } else if (STORE == "google") {
+        } else if (BuildConfig.STORE == "google") {
             Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
+        }
+    }
+}
+
+```
+```java
+public class MainApplicationJavaAmazon extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Purchases.setDebugLogsEnabled(true);
+
+        if (BuildConfig.STORE.equals("amazon")) {
+            AmazonConfiguration.Builder builder = new AmazonConfiguration.Builder(this, "public_amazon_sdk_key");
+        } else if (BuildConfig.STORE.equals("google")) {
+            PurchasesConfiguration.Builder builder = new PurchasesConfiguration.Builder(this, "public_google_sdk_key");
+            Purchases.configure(builder.build());
         }
     }
 }

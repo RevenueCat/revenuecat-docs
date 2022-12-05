@@ -39,7 +39,7 @@ Make sure you configure `Purchases` with your public SDK key only. You can read 
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationOnlyPlayStore.kt#L8-L14
 ```
 ```java
-// ../projects/android/app/src/main/java/com/example/docstesterapplication/ConfigureJava.java#L10-L39
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationJava.java#L8-L16
 ```
 ```txt
 // ../projects/flutter/configure.dart
@@ -61,6 +61,9 @@ If you're building for the Amazon Appstore, you can use flavors to determine whi
 ```
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
+```
+```java
+// ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationJavaAmazon.java#L9-L22
 ```
 
 [block:callout]
