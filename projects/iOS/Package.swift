@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "iOS",
+    name: "ApplePlatforms",
     platforms: [
         .macOS(.v10_13),
         .watchOS("6.2"),
@@ -16,14 +16,19 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "iOS",
+            name: "SwiftSnippets",
             dependencies: ["RevenueCat"],
             swiftSettings: [
                 .unsafeFlags(["-warnings-as-errors"])
             ]
         ),
-        .testTarget(
-            name: "iOSTests",
-            dependencies: ["iOS"]),
+
+        .executableTarget(
+            name: "ObjcSnippets",
+            dependencies: ["RevenueCat"],
+            swiftSettings: [
+                .unsafeFlags(["-warnings-as-errors"])
+            ]
+        ),
     ]
 )

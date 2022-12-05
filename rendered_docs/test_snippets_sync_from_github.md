@@ -37,16 +37,15 @@ class MainApplicationOnlyPlayStore: Application() {
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
-```txt
-    flavorDimensions "store"
-    productFlavors {
-        amazon {
-            buildConfigField "String", "STORE", "\"amazon\""
-        }
+```kotlin
+flavorDimensions "store"
+productFlavors {
+    amazon {
+        buildConfigField "String", "STORE", "\"amazon\""
+    }
 
-        google {
-            buildConfigField "String", "STORE", "\"google\""
-        }
+    google {
+        buildConfigField "String", "STORE", "\"google\""
     }
 }
 ```
