@@ -40,6 +40,7 @@ Make sure you configure `Purchases` with your public SDK key only. You can read 
 ```
 ```java
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplicationJava.java#L8-L16
+```
 ```txt
 // ../projects/flutter/configure.dart
 ```
