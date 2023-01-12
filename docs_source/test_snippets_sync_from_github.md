@@ -26,3 +26,7 @@ If you're building for the Amazon Appstore, you can use flavors to determine whi
 ```kotlin
 // ../projects/android/app/src/main/java/com/example/docstesterapplication/MainApplication.kt#L9-L20
 ```
+
+
+Test image:
+![alt text](/assets/img.png)

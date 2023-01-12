@@ -63,3 +63,7 @@ productFlavors {
 }
 
 ```
+
+
+Test image:
+![alt text](/assets/img.png)
