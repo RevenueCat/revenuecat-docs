@@ -72,4 +72,4 @@ Test image (absolute path):
 ![alt text](https://github.com/RevenueCat/revenuecat-docs/blob/main/assets/img.png)
 
 Test image (github share link/drag and drop):
-~[offerings](https://user-images.githubusercontent.com/110489217/217067941-269a5db7-5dc6-41d3-b2b6-860363afb23a.png)
+![offerings](https://user-images.githubusercontent.com/110489217/217067941-269a5db7-5dc6-41d3-b2b6-860363afb23a.png)
