@@ -72,4 +72,4 @@ Test image (absolute path):
 ~[alt text](https://github.com/RevenueCat/revenuecat-docs/blob/main/assets/img.png)
 
 Test image (readme block format):
-[block:image] { "images": [ { "image": [ "https://github.com/RevenueCat/revenuecat-docs/blob/main/assets/img.png", “<Image title>”, 790, 518, "#000000" ], "sizing": "80", "border": true, "caption": “<“Caption> } ] } [/block]
+[block:image] { "images": [ { "image": [ "https://github.com/RevenueCat/revenuecat-docs/blob/main/assets/img.png", “<Image title>”, 790, 518, "#000000" ], "sizing": "80", "border": true, "caption": “<Caption>" } ] } [/block]
