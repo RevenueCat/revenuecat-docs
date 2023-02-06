@@ -65,5 +65,9 @@ productFlavors {
 ```
 
 
-Test image:
+Test image (relative path):
 ![alt text](/assets/img.png)
+
+Test image (absolute path):
+~[alt text](https://github.com/RevenueCat/revenuecat-docs/blob/main/assets/img.png)
+
