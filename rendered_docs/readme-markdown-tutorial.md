@@ -67,9 +67,9 @@ Typical markdown image formatting `![alt text](url)` can be used, but the image 
 # Font Awesome Icons
 [Font Awesome](https://fontawesome.com/search?m=free&o=r) icons are commonly used in the repo, especially when a link will take a user to a different document:
 
-`[Quickstart :fa-right-arrow:](doc:getting-started)`
+`[Quickstart :fa-arrow-right:](doc:getting-started)`
 
-[Quickstart :fa-right-arrow:](doc:getting-started)
+[Quickstart :fa-arrow-right:](doc:getting-started)
 
 
 # Callouts
