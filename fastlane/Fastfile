@@ -12,6 +12,8 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
+require 'json'
+require 'fileutils'
 
 default_platform(:ios)
 
@@ -61,6 +63,155 @@ lane :sync_files_to_readme do |options|
     Dir.chdir("../") do
         sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
     end
+end
+
+desc "Extracts code blocks from within the [block:code] and [/block] tags and saves each code block to a file"
+desc "folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project."
+lane :extract_code_blocks do |options|
+    folder_to_process = options[:folder]
+
+    parent_dir = File.dirname(Dir.pwd)
+
+    Dir.chdir(parent_dir) do
+        Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
+            next if file_name == '.' || file_name == '..'
+
+            current_folder = File.dirname(file_name)
+            output_dir = "output/#{current_folder}"
+
+            file_contents = File.read(file_name)
+
+            FileUtils.mkdir_p(output_dir)
+
+            file_contents.scan(/\[block:code\].*?\[\/block\]/m).each_with_index.map do |block, index|
+                UI.message("🔨 Processing code block #{index} in #{file_name}...")
+
+                filename_without_ext = File.basename(file_name, ".md")
+                converted_block = extract_block_to_file(output_dir, filename_without_ext, block, index)
+                language_to_extracted_file_map = converted_block.map do |lang, file_path|
+                    "#{lang}->#{file_path}"
+                end.join("\n")
+
+                file_contents.gsub!("#{block}", "[block:file]\n#{language_to_extracted_file_map}\n[/block]")
+            end
+
+            File.write(file_name, file_contents)
+        end
+    end
+end
+
+
+desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
+desc "folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project."
+lane :embed_code_blocks do |options|
+    folder_to_process = options[:folder]
+
+    parent_dir = File.dirname(Dir.pwd)
+
+    Dir.chdir(parent_dir) do
+        Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
+            next if file_name == '.' || file_name == '..'
+            file_contents = File.read(file_name)
+
+            file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
+                UI.message("🔨 Processing file block #{index} in #{file_name}...")
+                code_to_embed = embed_code_from_files(block)
+                file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
+                if file_name == "revenuecat-2022-12-1/v4.0/-- Customers/customer-info.md"
+                    p block
+                    p code_to_embed
+                end
+            end
+
+            File.write(file_name, file_contents)
+        end
+    end
+end
+
+##
+# Embeds all files within the [block:file] and [/block] tags and adds the content of the file as a code block
+# @param code_block [String] the input string containing the code block. This is the entire string that contains the
+# file block including the [block:file] and [/block] tags
+# @return [String] a string containing the code blocks from all the files within the file block
+def embed_code_from_files(code_block)
+    block_start = code_block.index("[block:file]")
+    block_end = code_block.index("[/block]", block_start)
+    block = code_block[block_start..block_end].strip
+
+    new_content = []
+
+    block.each_line do |line|
+        next if line.start_with?("[")
+        file_tag_content = line.strip
+        file_type, file_path = file_tag_content.split('->')
+        next unless File.exist?(file_path)
+
+        file_content = File.read(file_path)
+        new_content.push "```#{file_type}\n#{file_content}\n```"
+    end
+
+    new_content.join("\n").strip
+end
+
+##
+# Extracts all code blocks from within the [block:code] and [/block] tags and saves each code block to a file, with the
+# correct extension
+# @param output_dir [String] the output directory to save the file
+# @param file_name_no_ext [String] the name of the file where this code block lives, without extension
+# @param code_block [String] the input string containing the code block. This is the entire string that contains the
+# code block including the [block:code] and [/block] tags
+# @param index [Integer] the index of the code block within the file. This is used to create a unique file name for each
+# code block
+# @return [Hash] a hash of language to file paths for the extracted code blocks
+def extract_block_to_file(output_dir, file_name_no_ext, code_block, index)
+    block_start = code_block.index("[block:code]")
+    block_end = code_block.index("[/block]", block_start)
+    block = code_block[block_start..block_end]
+
+    json = block[block.index("{")..block.rindex("}")]
+    data = JSON.parse(json)
+    codes = data["codes"]
+
+    result = {}
+
+    codes.each do |code|
+        language = code["language"]
+        code = code["code"].strip
+        extension = determine_extension(language)
+        new_file = "#{output_dir}/#{file_name_no_ext}_#{index + 1}.#{extension}"
+        File.write(new_file, code)
+        UI.message("⚙️  Creating #{new_file}...")
+        result[language] = new_file
+    end
+
+    result
+end
+
+##
+# A map of languages to their corresponding file extensions
+LANGUAGE_EXTENSIONS = {
+    "objectivec" => "m",
+    "kotlin" => "kt",
+    "javascript" => "js",
+    "typescript" => "ts",
+    "csharp" => "cs",
+    "text" => "txt"
+}
+
+##
+# Determines the file extension for a given language
+# @param lang [String] the language
+# @return [String] the file extension
+def determine_extension(lang)
+    LANGUAGE_EXTENSIONS[lang] || lang
+end
+
+##
+# Determines the language for a given file extension
+# @param extension [String] the file extension
+# @return [String] the language
+def determine_language(extension)
+    LANGUAGE_EXTENSIONS.key(extension) || extension
 end
 
 def render_markdown_file(file)
