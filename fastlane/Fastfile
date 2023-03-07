@@ -18,7 +18,6 @@ default_platform(:ios)
 desc "Install dependencies"
 lane :bootstrap do
     sh "npm", "install", "-g", "rdme"
-    sh "npm", "install", "-g", "embedme"
 end
 
 desc "Description of what the lane does"
@@ -60,15 +59,5 @@ end
 lane :sync_files_to_readme do |options|
     Dir.chdir("../") do
         sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
-    end
-end
-
-def render_markdown_file(file)
-    puts "rendering file #{file}"
-    file_without_path = File.basename(file)
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
-        puts Dir.pwd
-        sh "embedme #{file} --strip-embed-comment --stdout > rendered_docs/#{file_without_path}"
     end
 end
