@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-06-20T21:57:39.646Z"
+updatedAt: "2023-01-12T19:28:50.437Z"
 ---
 If you've [configured Offerings](doc:entitlements) in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates.
 [block:image]
@@ -169,7 +169,7 @@ Packages help abstract platform-specific products by grouping equivalent product
     "0-0": "Identifier",
     "1-0": "Type",
     "2-0": "Product",
-    "2-1": "The underlying product that is mapped to this package. Either an [SKProduct](https://developer.apple.com/documentation/storekit/skproduct?language=objc) (iOS) or [SkuDetails](https://developer.android.com/reference/com/android/billingclient/api/SkuDetails) (Android).",
+    "2-1": "The underlying product that is mapped to this package which includes details about the price and duration.",
     "1-1": "The type of the package:\n- `UNKNOWN`\n- `CUSTOM`\n- `LIFETIME`\n- `ANNUAL`\n- `SIX_MONTH`\n- `THREE_MONTH`\n- `TWO_MONTH`\n- `MONTHLY`\n- `WEEKLY`",
     "h-0": "Name",
     "h-1": "Description",
@@ -179,7 +179,52 @@ Packages help abstract platform-specific products by grouping equivalent product
   "rows": 3
 }
 [/block]
+Packages can be access in a few different ways:
+
+1. via the `.availablePackages` property on an Offering.
+2. via the duration convenience property on an Offering
+3. via the package identifier directly
+[block:code]
+{
+  "codes": [
+    {
+      "code": "offerings.offering(identifier: \"experiment_group\").availablePackages\n// --\nofferings.offering(identifier: \"experiment_group\").monthly\n// --\nofferings.offering(identifier: \"experiment_group\").package(identifier: \"<package_id>\")",
+      "language": "swift"
+    },
+    {
+      "code": "[offerings offeringWithIdentifier:\"experiment_group\"].availablePackages\n// --\n[offerings offeringWithIdentifier:\"experiment_group\"].monthly\n// --\n[[offerings offeringWithIdentifier:\"experiment_group\"] packageWithIdentifier:@\"<package_id>\"]",
+      "language": "objectivec"
+    },
+    {
+      "code": "offerings[\"experiment_group\"]?.availablePackages\n// --\nofferings[\"experiment_group\"]?.monthly\n// --\nofferings[\"experiment_group\"]?.getPackage(identifier: \"<package_id>\")",
+      "language": "kotlin"
+    },
+    {
+      "code": "offerings.getOffering(\"experiment_group\").availablePackages\n// --\nofferings.getOffering(\"experiment_group\").monthly\n// --\nofferings.getOffering(\"experiment_group\").getPackage(\"<package_id>\")",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "offerings.all[\"experiment_group\"].availablePackages\n// --\nofferings.all(\"experiment_group\").monthly\n// --\nofferings.all(\"experiment_group\").package(\"<package_id>\")",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "offerings.all[\"experiment_group\"].availablePackages\n// --\nofferings.all(\"experiment_group\").monthly\n// --\nofferings.all(\"experiment_group\").package(\"<package_id>\")",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "offerings.All[\"experiment_group\"].AvailablePackages\n// --\nofferings.All[\"experiment_group\"].Monthly\n// --\n// Manually filter AvailablePackages by the custom package identifier",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
+[/block]
 ### Getting the Product from the Package
+
+Each Package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the `storeProduct` property:
 [block:code]
 {
   "codes": [

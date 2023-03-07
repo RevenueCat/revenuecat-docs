@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-09-30T19:39:43.580Z"
+updatedAt: "2023-01-18T15:28:02.326Z"
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:code]
@@ -28,7 +28,7 @@ The SDK has a simple method, `purchase(package:)`, that takes a package from the
       "language": "objectivec"
     },
     {
-      "code": "Purchases.sharedInstance.purchasePackage(\n  this,\n  aPackage,\n  onError = { error, userCancelled -> /* No purchase */ },\n  onSuccess = { product, customerInfo ->\n    if (customerInfo.entitlements[\"my_entitlement_identifier\"]?.isActive == true) {\n    // Unlock that great \"pro\" content\n  }\n})",
+      "code": "Purchases.sharedInstance.purchasePackageWith(\n  this,\n  aPackage,\n  onError = { error, userCancelled -> /* No purchase */ },\n  onSuccess = { product, customerInfo ->\n    if (customerInfo.entitlements[\"my_entitlement_identifier\"]?.isActive == true) {\n    // Unlock that great \"pro\" content\n  }\n})",
       "language": "kotlin"
     },
     {
@@ -78,4 +78,4 @@ The `userCancelled` boolean is a helper for handling user cancellation errors. T
 [/block]
 * Don't forget to provide some way for customers to [restore their purchases :fa-arrow-right:](doc:restoring-purchases)
 * With purchases coming through, make sure they're [linked to the correct user Id :fa-arrow-right:](doc:user-ids)
-* If you're ready to test, start with our guides on [sandbox testing :fa-arrow-right:](doc:debugging)
+* If you're ready to test, start with our guides on [sandbox testing :fa-arrow-right:](doc:sandbox)

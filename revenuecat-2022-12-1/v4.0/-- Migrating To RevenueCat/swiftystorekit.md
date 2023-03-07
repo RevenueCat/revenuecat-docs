@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-01-25T17:56:17.375Z"
+updatedAt: "2023-02-21T22:07:41.716Z"
 ---
 If you use SwiftyStoreKit in your iOS app and are looking for an alternative that includes receipt validation, server-side status tracking, cross-platform support and more - RevenueCat is the ideal choice for your app!
 
@@ -44,7 +44,7 @@ Apple recommends registering an `SKPaymentTransactionObserver` as soon as the ap
 {
   "codes": [
     {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n    Purchases.debugLogsEnabled = true\n    Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n    \n    return true\n}",
+      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n    Purchases.debugLogsEnabled = true\n    Purchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)\n    \n    return true\n}",
       "language": "swift",
       "name": "AppDelegate.swift"
     }
@@ -64,7 +64,7 @@ Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with t
 {
   "codes": [
     {
-      "code": "SwiftyStoreKit.retrieveProductsInfo([\"com.RevenueCat.Purchase1\"]) { result in\n    if let product = result.retrievedProducts.first {\n        let priceString = product.localizedPrice!\n        print(\"Product: \\(product.localizedDescription), price: \\(priceString)\")\n    }\n    else if let invalidProductId = result.invalidProductIDs.first {\n        print(\"Invalid product identifier: \\(invalidProductId)\")\n    }\n    else {\n        print(\"Error: \\(result.error)\")\n    }\n}",
+      "code": "SwiftyStoreKit.retrieveProductsInfo([<com.RevenueCat.Purchase1>]) { result in\n    if let product = result.retrievedProducts.first {\n        let priceString = product.localizedPrice!\n        print(\"Product: \\(product.localizedDescription), price: \\(priceString)\")\n    }\n    else if let invalidProductId = result.invalidProductIDs.first {\n        print(\"Invalid product identifier: \\(invalidProductId)\")\n    }\n    else {\n        print(\"Error: \\(result.error)\")\n    }\n}",
       "language": "swift"
     }
   ]
@@ -105,7 +105,7 @@ Products are automatically fetched and cached when the *Purchases SDK* is config
 {
   "codes": [
     {
-      "code": "Purchases.shared.purchase(package: package) { (transaction, info, error, cancelled) in\n    if cancelled {\n        print(\"User cancelled purchase\")\n        return\n    }\n\n    // Optionally handle specific purchase errors\n    if let err = error as NSError? {\n\n        // log error details\n        print(\"RCError: \\(err.userInfo[ReadableErrorCodeKey])\")\n        print(\"Message: \\(err.localizedDescription)\")\n        print(\"Underlying Error: \\(err.userInfo[NSUnderlyingErrorKey])\")\n\n        // handle specific errors from: https://docs.revenuecat.com/docs/errors\n        switch PurchasesErrorCode(_nsError: err).code {\n\n        case .purchaseNotAllowedError:\n            print(\"Purchases not allowed on this device.\")\n\n        case .purchaseInvalidError:\n            print(\"Purchase invalid, check payment source.\")\n\n        case .networkError:\n            print(\"Network error, check your connection and try again.\")\n\n        default:\n            break\n        }\n    } else if info?.entitlements.all[\"pro\"]?.isActive == true {\n        print(\"Unlocked Pro Cats 🎉\")\n    }\n\n}",
+      "code": "Purchases.shared.purchase(package: package) { (transaction, info, error, cancelled) in\n    if cancelled {\n        print(\"User cancelled purchase\")\n        return\n    }\n\n    // Optionally handle specific purchase errors\n    if let err = error as NSError? {\n\n        // log error details\n        print(\"RCError: \\(err.userInfo[ReadableErrorCodeKey])\")\n        print(\"Message: \\(err.localizedDescription)\")\n        print(\"Underlying Error: \\(err.userInfo[NSUnderlyingErrorKey])\")\n\n        // handle specific errors from: https://docs.revenuecat.com/docs/errors\n        switch PurchasesErrorCode(_nsError: err).code {\n\n        case .purchaseNotAllowedError:\n            print(\"Purchases not allowed on this device.\")\n\n        case .purchaseInvalidError:\n            print(\"Purchase invalid, check payment source.\")\n\n        case .networkError:\n            print(\"Network error, check your connection and try again.\")\n\n        default:\n            break\n        }\n    } else if info?.entitlements.all[<pro>]?.isActive == true {\n        print(\"Unlocked Pro Cats 🎉\")\n    }\n\n}",
       "language": "swift"
     }
   ]
@@ -136,7 +136,7 @@ To check if the subscription has been successfully activated, check if the `cust
 {
   "codes": [
     {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n  //...\n  Purchases.shared.delegate = self\n  //...\n\n}\n\nfunc purchases(_ purchases: Purchases, shouldPurchasePromoProduct product: SKProduct, defermentBlock makeDeferredPurchase: @escaping RCDeferredPromotionalPurchaseBlock) {\n\n    // Save the deferment block and call it later...\n    let defermentBlock = makeDeferredPurchase\n\n    // ...or call it right away to proceed with the purchase\n    defermentBlock { (transaction, customerInfo, error, cancelled) in\n                    \n          if customerInfo?.entitlements.all[\"pro\"]?.isActive == true {\n            // Unlock that great \"pro\" content\n          }\n    }\n}",
+      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n  //...\n  Purchases.shared.delegate = self\n  //...\n\n}\n\nfunc purchases(_ purchases: Purchases, shouldPurchasePromoProduct product: SKProduct, defermentBlock makeDeferredPurchase: @escaping RCDeferredPromotionalPurchaseBlock) {\n\n    // Save the deferment block and call it later...\n    let defermentBlock = makeDeferredPurchase\n\n    // ...or call it right away to proceed with the purchase\n    defermentBlock { (transaction, customerInfo, error, cancelled) in\n                    \n          if customerInfo?.entitlements.all[<pro>]?.isActive == true {\n            // Unlock that great \"pro\" content\n          }\n    }\n}",
       "language": "swift"
     }
   ]
@@ -186,7 +186,7 @@ Receipts are automatically verified by RevenueCat. You don't need any local or s
 {
   "codes": [
     {
-      "code": "let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: \"your-shared-secret\")\nSwiftyStoreKit.verifyReceipt(using: appleValidator) { result in\n    switch result {\n    case .success(let receipt):\n        let productId = \"my_product_identifier\"\n        // Verify the purchase of Consumable or NonConsumable\n        let purchaseResult = SwiftyStoreKit.verifyPurchase(\n            productId: productId,\n            inReceipt: receipt)\n            \n        switch purchaseResult {\n        case .purchased(let receiptItem):\n            print(\"\\(productId) is purchased: \\(receiptItem)\")\n        case .notPurchased:\n            print(\"The user has never purchased \\(productId)\")\n        }\n    case .error(let error):\n        print(\"Receipt verification failed: \\(error)\")\n    }\n}",
+      "code": "let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: <your-shared-secret>)\nSwiftyStoreKit.verifyReceipt(using: appleValidator) { result in\n    switch result {\n    case .success(let receipt):\n        let productId = <my_product_identifier>\n        // Verify the purchase of Consumable or NonConsumable\n        let purchaseResult = SwiftyStoreKit.verifyPurchase(\n            productId: productId,\n            inReceipt: receipt)\n            \n        switch purchaseResult {\n        case .purchased(let receiptItem):\n            print(\"\\(productId) is purchased: \\(receiptItem)\")\n        case .notPurchased:\n            print(\"The user has never purchased \\(productId)\")\n        }\n    case .error(let error):\n        print(\"Receipt verification failed: \\(error)\")\n    }\n}",
       "language": "swift"
     }
   ]
@@ -197,7 +197,7 @@ Receipts are automatically verified by RevenueCat. You don't need any local or s
 {
   "codes": [
     {
-      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    if customerInfo?.entitlements.all[\"pro\"]?.isActive == true {\n        // Grant user \"pro\" access\n    }\n}",
+      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    if customerInfo?.entitlements.all[<pro>]?.isActive == true {\n        // Grant user \"pro\" access\n    }\n}",
       "language": "swift"
     }
   ]

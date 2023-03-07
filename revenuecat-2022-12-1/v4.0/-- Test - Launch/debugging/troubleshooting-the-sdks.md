@@ -11,7 +11,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2021-05-03T18:59:17.242Z"
-updatedAt: "2022-11-28T17:19:59.049Z"
+updatedAt: "2023-02-17T19:36:02.332Z"
 ---
 Having trouble with our SDKs? This guide covers common issues and solutions. Go through each topic and see if it matches your issue. If you went through this guide and you're still having problems, reach out to us in any of the following channels:
 
@@ -95,8 +95,19 @@ You can find the latest version of our SDKs here:
 
 ## React-Native
 ** 1. ** Upgrade to the latest version of [react-native-purchases](https://github.com/revenuecat/react-native-purchases/releases/latest)
-** 2. ** Upgrade to the [latest version of React-Native](https://reactnative.dev/docs/upgrading). 
-** 3. ** Follow the [troubleshooting steps for iOS](doc:troubleshooting-the-sdks#ios).
+** 2. ** Upgrade to the [latest version of React-Native](https://reactnative.dev/docs/upgrading).
+** 3. ** If you're setting `BUILD_LIBRARY_FOR_DISTRIBUTION` in your Podfile, ensure RevenueCat's targets are excluded.
+[block:code]
+{
+  "codes": [
+    {
+      "code": "post_install do |installer|\n    react_native_post_install(installer)\n\n    installer.pods_project.targets.each do |target|\n      unless ['RevenueCat', 'PurchasesHybridCommon', 'RNPurchases'].include?(target.name)\n        target.build_configurations.each do |config|\n          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'\n          config.build_settings['ENABLE_BITCODE'] = 'NO'\n        end\n      end\n    end\n  end",
+      "language": "ruby"
+    }
+  ]
+}
+[/block]
+** 4. ** Follow the [troubleshooting steps for iOS](doc:troubleshooting-the-sdks#ios).
 
 # Common Issues
 

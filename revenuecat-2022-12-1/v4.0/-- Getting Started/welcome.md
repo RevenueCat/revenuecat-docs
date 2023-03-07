@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-08-15T18:23:47.389Z"
+updatedAt: "2023-02-21T21:39:29.998Z"
 ---
 RevenueCat is a powerful, reliable, and free to use in-app purchase server. Our open-source framework provides a backend and a wrapper around Apple's StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy.
 
@@ -35,7 +35,7 @@ With RevenueCat, you can keep track of all your app transactions in one place â€
 Here are a few ways to get started:
 
   * Adding subscriptions to a new app? Jump right in with our [Quickstart Guide](doc:getting-started-1).
-  * Already have an app with subscribers or purchases? The [Migration Guide](doc:migrating-existing-subscriptions) is useful if your moving an existing app's IAP infrastructure to RevenueCat. 
+  * Already have an app with subscribers or purchases? The [Migration Guide](doc:migrating-existing-subscriptions) is useful if you're moving an existing app's IAP infrastructure to RevenueCat. 
 
 # Ready to start building?
 

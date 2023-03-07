@@ -13,18 +13,18 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-06-03T12:17:49.843Z"
+updatedAt: "2023-03-02T00:23:20.506Z"
 ---
 # What is RevenueCat?
 
-RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/where-does-revenuecat-fit-in-your-app) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
+RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/growth/where-does-revenuecat-fit-in-your-app/) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
 
-As of March 2020, RevenueCat only supports [universal purchases](https://developer.apple.com/support/universal-purchase/) for macOS apps. This allows you to seamlessly share purchases between iOS, tvOS, watchOS, and macOS versions of your apps. If you need support for the legacy Mac App Store purchases, contact support. 
+As of March 2020, RevenueCat only supports [universal purchases](https://developer.apple.com/support/universal-purchase/) for macOS apps. This allows you to seamlessly share purchases between iOS, iPadOS, tvOS, watchOS, and macOS versions of your apps. If you need support for the legacy Mac App Store purchases, contact support. 
 
 # Requirements
 
-Xcode 13.2+
-Minimum target: macOS 10.13+
+Xcode 13.3.1+
+Minimum target: iOS 11.0+
 
 # Installation
 
@@ -55,7 +55,7 @@ Alternatively, pin to a specific minor version (e.g. 3.10):
 {
   "codes": [
     {
-      "code": "pod 'RevenueCat', '~> 3.10'",
+      "code": "pod 'RevenueCat', '~> 4.15'",
       "language": "ruby"
     }
   ]

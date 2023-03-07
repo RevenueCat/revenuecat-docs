@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-08-19T01:41:41.100Z"
+updatedAt: "2023-01-20T20:00:53.111Z"
 ---
 With our Branch integration you can:
 * Accurately track subscriptions generated from Branch campaigns, allowing you to know precisely how much revenue your campaigns generate.
@@ -29,7 +29,8 @@ With our Branch integration you can:
 
 In order to attach attribution data to the correct user, make sure the App User Ids for RevenueCat and Branch match. The easiest way to do this is to set the Branch SDK identity to match the *Purchases* App User Id whether you're providing your own ids or using our randomly generated ids. 
 
-If you prefer to keep a separate user identity between Branch and RevenueCat, use the `networkUserId` parameter when adding attribution to specify the Branch user ID to attach to.
+## (Optional) Set a separate identity in Branch and RevenueCat
+If you prefer to keep a separate user identity between Branch and RevenueCat, set a `$branchId` subscriber attribute in RevenueCat. If set, RevenueCat will use this identifier for Branch events instead of the App User Id.
 [block:callout]
 {
   "type": "info",
@@ -42,7 +43,7 @@ If you prefer to keep a separate user identity between Branch and RevenueCat, us
 {
   "codes": [
     {
-      "code": "// login\nBranch.getInstance().setIdentity(\"my_app_user_id\")\n\n// logout\nBranch.getInstance().logout()",
+      "code": "// login\nBranch.getInstance().setIdentity(\"my_app_user_id\")\n\n// Optional: Use a different App User ID between Branch and RevenueCat\nPurchases.shared.attribution.setAttributes([\"$branchId\" : \"<custom_branch_user_id\"])\n\n// logout\nBranch.getInstance().logout()",
       "language": "swift"
     },
     {

@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2021-09-30T01:49:47.596Z"
-updatedAt: "2022-10-31T19:23:15.706Z"
+updatedAt: "2023-02-21T15:01:57.564Z"
 ---
 [block:callout]
 {
@@ -46,21 +46,21 @@ The Airship integration tracks the following events:
     "4-0": "Renewal",
     "5-0": "Cancellation",
     "7-0": "Non Subscription Purchase",
-    "0-2": "The first purchase of an auto-renewing subscription product that does not contain a free trial.",
+    "0-2": "A new subscription has been purchased or a lapsed user has resubscribed.",
     "1-2": "The start of an auto-renewing subscription product free trial.",
     "2-2": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
     "3-2": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
-    "4-2": "When an auto-renewing subscription product renews OR a user repurchases the auto-renewing subscription product after a lapse in their subscription.",
-    "5-2": "When a user turns off renewals for an auto-renewing subscription product during the normal paid period.",
-    "7-2": "The purchase of any product that's not an auto-renewing subscription.",
+    "4-2": "An existing subscription has been renewed.",
+    "5-2": "A subscription or non-renewing purchase has been cancelled. See [cancellation reasons](https://www.revenuecat.com/docs/webhooks#cancellation-and-expiration-reasons) for more details.",
+    "7-2": "A customer has made a purchase that will not auto-renew.",
     "6-0": "Uncancellation",
-    "6-2": "When a user re-enables the auto-renew status for a subscription.",
+    "6-2": "A non-expired cancelled subscription has been re-enabled.",
     "8-0": "Subscription Paused",
-    "8-2": "When a subscription is paused. Available for Google Play subscriptions only.",
+    "8-2": "A subscription has been paused.",
     "9-0": "Expiration",
-    "9-2": "When a subscription expires.",
+    "9-2": "A subscription has expired and access should be removed.\n\nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.\n\nIf you do not have notifications configured, delays may be approximately 1 hour.",
     "10-0": "Billing Issue",
-    "10-2": "When a billing issue is detected.",
+    "10-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.\n\nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
     "h-1": "Default Event Name",
     "0-1": "`rc_initial_purchase_event`",
     "1-1": "`rc_trial_started_event`",
@@ -75,9 +75,74 @@ The Airship integration tracks the following events:
     "10-1": "`rc_billing_issue_event`",
     "11-0": "Product Change",
     "11-1": "`rc_product_change_event`",
-    "11-2": "When user has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](doc:managing-subscriptions) for more details on updates, downgrades, and crossgrades."
+    "11-2": "A subscriber has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](doc:managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "h-3": "App Store",
+    "h-4": "Play Store",
+    "h-5": "Amazon",
+    "h-6": "Web",
+    "h-7": "Promo",
+    "0-3": "✅",
+    "1-3": "✅",
+    "2-3": "✅",
+    "3-3": "✅",
+    "4-3": "✅",
+    "5-3": "✅",
+    "6-3": "✅",
+    "7-3": "✅",
+    "9-3": "✅",
+    "10-3": "✅",
+    "11-3": "✅",
+    "8-3": "❌",
+    "0-4": "✅",
+    "1-4": "✅",
+    "2-4": "✅",
+    "3-4": "✅",
+    "4-4": "✅",
+    "5-4": "✅",
+    "6-4": "✅",
+    "7-4": "✅",
+    "8-4": "✅",
+    "9-4": "✅",
+    "10-4": "✅",
+    "11-4": "✅",
+    "10-5": "✅",
+    "9-5": "✅",
+    "7-5": "✅",
+    "6-5": "✅",
+    "5-5": "✅",
+    "4-5": "✅",
+    "3-5": "✅",
+    "2-5": "✅",
+    "1-5": "✅",
+    "0-5": "✅",
+    "8-5": "❌",
+    "8-6": "❌",
+    "8-7": "❌",
+    "11-5": "❌",
+    "6-6": "❌",
+    "6-7": "❌",
+    "10-7": "❌",
+    "11-7": "❌",
+    "0-7": "❌",
+    "4-7": "❌",
+    "0-6": "✅",
+    "1-6": "✅",
+    "1-7": "✅",
+    "2-7": "✅",
+    "3-7": "✅",
+    "3-6": "✅",
+    "2-6": "✅",
+    "4-6": "✅",
+    "5-6": "✅",
+    "5-7": "✅",
+    "7-6": "✅",
+    "7-7": "✅",
+    "9-6": "✅",
+    "9-7": "✅",
+    "10-6": "✅",
+    "11-6": "✅"
   },
-  "cols": 3,
+  "cols": 8,
   "rows": 12
 }
 [/block]
@@ -204,7 +269,14 @@ Below are sample JSONs that are delivered to Airship for each event type.
       "code": "[\n  {\n    \"occurred\": \"2022-08-16T16:46:13Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    },\n    \"body\": {\n      \"name\": \"rc_uncancellation_event\",\n      \"value\": 0.0,\n      \"properties\": {\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"event_timestamp_ms\": 1660668373184,\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"product_id\": \"AutoRenewMonthlyBasic\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1660413184000,\n        \"expiration_at_ms\": 1663091584000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"price_in_purchased_currency\": 0.0,\n        \"subscriber_attributes\": {\n          \"$ip\": {\n            \"value\": \"123.45.67.89\",\n            \"updated_at_ms\": 1655130803273\n          },\n          \"$email\": {\n            \"value\": \"firstlast@gmail.com\",\n            \"updated_at_ms\": 1655162763950\n          },\n          \"$appsflyerId\": {\n            \"value\": \"1234567890123-1234567890123456789\",\n            \"updated_at_ms\": 1655130796226\n          }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7,\n        \"app_id\": \"1234567890\"\n      }\n    }\n  }\n]",
       "language": "json",
       "name": "Uncancellation"
-    },
+    }
+  ]
+}
+[/block]
+
+[block:code]
+{
+  "codes": [
     {
       "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_non_subscription_purchase_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_user_id\": \"1234567890\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1663031444913,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"original_app_user_id\": \"1234567890\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"PROMOTIONAL\",\n        \"price_in_purchased_currency\": 0,\n        \"product_id\": \"rc_promo_subscription_lifetime\",\n        \"purchased_at_ms\": 1663031444879,\n        \"store\": \"PROMOTIONAL\",\n        \"subscriber_attributes\": {\n          \"$email\": {\n            \"updated_at_ms\": 1663031444396,\n            \"value\": \"firstlast@gmail.com\"\n          }\n        },\n        \"takehome_percentage\": 1,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 9.99\n    },\n    \"occurred\": \"2022-09-13T01:10:44Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
       "language": "json",

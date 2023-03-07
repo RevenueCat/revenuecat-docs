@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2021-07-23T20:51:15.072Z"
+updatedAt: "2023-03-01T02:12:41.834Z"
 ---
 The RevenueCat dashboard lets you view basic customer information, including a timeline of their purchases, and allows you to grant promotional subscriptions. This can be a great way to debug issues and help with customer support.
 
@@ -23,11 +23,11 @@ To view a specific customer's information, you'll need to know their [App User I
   "images": [
     {
       "image": [
-        "https://files.readme.io/db496c5-2021-07-23_16.45.15_app.revenuecat.com_6432444e2948.png",
-        "2021-07-23 16.45.15 app.revenuecat.com 6432444e2948.png",
-        1007,
-        1678,
-        "#f7f8f8"
+        "https://files.readme.io/86059d7-2023-02-28_20.33.20_app.revenuecat.com_c9d9329de147.png",
+        "2023-02-28 20.33.20 app.revenuecat.com c9d9329de147.png",
+        1548,
+        2157,
+        "#000000"
       ]
     }
   ]
@@ -37,7 +37,7 @@ For detailed information on the components of the Customer View, refer to the fo
 
   * [Customer Details :fa-arrow-right:](doc:basic-information)
   * [Customer History :fa-arrow-right:](doc:customer-history)
-  * [Active Subscriptions :fa-arrow-right:](doc:active-subscriptions)
+  * [Active Entitlements :fa-arrow-right:](doc:active-entitlements)
   * [Offering Override :fa-arrow-right:](doc:offering-override)
   * [Promotionals :fa-arrow-right:](doc:promotionals)
   * [Attributes :fa-arrow-right:](doc:attributes)

@@ -13,11 +13,11 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-08-23T20:37:25.879Z"
+updatedAt: "2023-02-03T22:37:26.249Z"
 ---
 # What is RevenueCat?
 
-RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/where-does-revenuecat-fit-in-your-app) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
+RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/growth/where-does-revenuecat-fit-in-your-app/) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
 
 # Requirements
 
@@ -48,12 +48,12 @@ Alternatively run this command:
 The latest stable version of the Flutter SDK doesn't have support for the Amazon Appstore. If you would like to use our SDK with the Amazon Appstore, use the version tagged [amazon-latest](https://github.com/RevenueCat/purchases-flutter/releases/tag/amazon-latest) and follow the [AMAZON_INSTRUCTIONS.md](https://rev.cat/amazon-flutter-instructions) docs to get set up.
 
 ## iOS Deployment Target 
-RevenueCat is compatible with iOS 9.0 or higher. Flutter does not automatically set the iOS deployment target for your project. You need to make sure that the deployment target is set to 9.0 or higher. To do that, simply edit `ios/Podfile` and add the following line if it's not already there:
+RevenueCat is compatible with iOS 11.0 or higher. Flutter does not automatically set the iOS deployment target for your project. You need to make sure that the deployment target is set to 11.0 or higher. To do that, simply edit `ios/Podfile` and add the following line if it's not already there:
 
 ```
-platform :ios, '9.0'
+platform :ios, '11.0'
 ```
-Set it to 9.0 or a higher version for RevenueCat to work.
+Set it to 11.0 or a higher version for RevenueCat to work.
 
 ## iOS Swift Version
 RevenueCat requires Swift >= 5.0 to work. If the `Podfile` in your project's `ios` folder specifies a Swift version, make sure that it's at least 5.0, otherwise you may run into build issues.  

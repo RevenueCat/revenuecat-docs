@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-09-15T19:11:45.457Z"
+updatedAt: "2023-03-03T22:53:59.631Z"
 ---
 [block:callout]
 {
@@ -49,9 +49,14 @@ Subscription Offers are supported in the *Purchases SDK*, but require some addit
     "3-0": "⚠️ **Not recommended**\n[In-App Purchase Promo Codes](https://help.apple.com/app-store-connect/#/dev50869de4a)",
     "3-1": "New and Existing Users",
     "3-2": "Not Required",
-    "3-3": "Treated as a regular purchase, revenue will not be accurate in [Charts](doc:charts) and [Integrations](doc:webhooks) due to Apple/StoreKit limitations. Codes don't auto-renew, aren't compatible with `presentCodeRedemptionSheet`, restricted to non-commercial use, and restricted to [1,000 codes every 6 months](https://help.apple.com/app-store-connect/#/dev50869de4a)."
+    "3-3": "Treated as a regular purchase, revenue will not be accurate in [Charts](doc:charts) and [Integrations](doc:webhooks) due to Apple/StoreKit limitations. Codes don't auto-renew, aren't compatible with `presentCodeRedemptionSheet`, restricted to non-commercial use, and restricted to [1,000 codes every 6 months](https://help.apple.com/app-store-connect/#/dev50869de4a).",
+    "h-4": "Auto-Renewal",
+    "0-4": "✅",
+    "1-4": "✅",
+    "2-4": "✅",
+    "3-4": "❌"
   },
-  "cols": 4,
+  "cols": 5,
   "rows": 4
 }
 [/block]
@@ -165,11 +170,11 @@ After successfully fetching the `PromoOffer`, you can now display the Promotiona
 {
   "codes": [
     {
-      "code": "Purchases.shared.purchase(package: package, promotionalOffer: promoOffer) { transaction, customerInfo, error, userCancelled in\n\tif customerInfo?.entitlements.all[\"your_entitlement_id\"]?.isActive == true {\n\t\t// Unlock that great \"pro\" content\n\t}\n}",
+      "code": "Purchases.shared.purchase(package: package, promotionalOffer: promoOffer) { transaction, customerInfo, error, userCancelled in\n\tif customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {\n\t\t// Unlock that entitlemenets content\n\t}\n}",
       "language": "swift"
     },
     {
-      "code": "[RCPurchases.sharedPurchases purchasePackage:package withDiscount:discount\n                             completionBlock:^(RCStoreTransacction * _Nullable transaction, RCCustomerInfo * _Nullable purchaserInfo, NSError * _Nullable error, BOOL userCancelled) {\n  if (purchaserInfo.entitlements[\"your_entitlement_id\"].isActive) {\n    // Unlock that great \"pro\" content    \n  }\n}];",
+      "code": "[RCPurchases.sharedPurchases purchasePackage:package withDiscount:discount\n                             completionBlock:^(RCStoreTransacction * _Nullable transaction, RCCustomerInfo * _Nullable purchaserInfo, NSError * _Nullable error, BOOL userCancelled) {\n  if (purchaserInfo.entitlements[<your_entitlement_id>].isActive) {\n    // Unlock that great \"pro\" content    \n  }\n}];",
       "language": "objectivec",
       "name": "Objective-C"
     },
@@ -239,6 +244,8 @@ You can link to the App Store with a prefilled code for redemption with the foll
 ```https://apps.apple.com/redeem?ctx=offercodes&id={apple_app_id}&code={code}```
 
 You can find your Apple App ID in your app settings in App Store Connect (General -> App Information).
+
+When users click your link within your app to redeem the offer code, it will take them outside of the app to complete the purchase. It is important to call [syncPurchases](https://www.revenuecat.com/docs/restoring-purchases#syncpurchases) when the user returns back to your app to retrieve their purchase. This may be done by recording when the user leaves the app due to the link, and calling `syncPurchases` when the user returns to the app. If not, the user may need to [trigger a restore](https://www.revenuecat.com/docs/restoring-purchases) within your app when they come back.
 
 ## Considerations
 

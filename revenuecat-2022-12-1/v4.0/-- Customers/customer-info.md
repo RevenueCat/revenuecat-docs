@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-10-06T21:25:23.022Z"
+updatedAt: "2023-02-21T22:04:58.422Z"
 ---
 RevenueCat makes it easy to determine subscription status and more with the *Purchases SDK* and [REST API](https://docs.revenuecat.com/reference). 
 [block:image]
@@ -174,38 +174,38 @@ For most apps that only have one entitlement, the `isActive` status can be quick
 {
   "codes": [
     {
-      "code": "if customerInfo.entitlements[\"your_entitlement_id\"]?.isActive == true {\n  // user has access to \"your_entitlement_id\"                \n}",
+      "code": "if customerInfo.entitlements[<your_entitlement_id>]?.isActive == true {\n  // user has access to \"your_entitlement_id\"                \n}",
       "language": "swift"
     },
     {
-      "code": "if (customerInfo.entitlements[@\"your_entitlement_id\"].isActive) {\n  // user has access to \"your_entitlement_id\"\n}",
+      "code": "if (customerInfo.entitlements[@<your_entitlement_id>].isActive) {\n  // user has access to \"your_entitlement_id\"\n}",
       "language": "objectivec"
     },
     {
-      "code": "if (customerInfo.entitlements[\"your_entitlement_id\"]?.isActive == true) {\n\t// user has access to \"your_entitlement_id\"                \n}",
+      "code": "if (customerInfo.entitlements[<your_entitlement_id>]?.isActive == true) {\n\t// user has access to \"your_entitlement_id\"                \n}",
       "language": "kotlin"
     },
     {
-      "code": "if (customerInfo.getEntitlements().get(\"your_entitlement_id\").isActive()) {\n\t// user has access to \"your_entitlement_id\"\n}",
+      "code": "if (customerInfo.getEntitlements().get(<your_entitlement_id>).isActive()) {\n\t// user has access to \"your_entitlement_id\"\n}",
       "language": "java"
     },
     {
-      "code": "if (customerInfo.entitlements.all[\"my_entitlement_identifier\"].isActive) {\n  // Grant user \"pro\" access\n}",
+      "code": "if (customerInfo.entitlements.all[<my_entitlement_identifier>].isActive) {\n  // Grant user \"pro\" access\n}",
       "language": "javascript",
       "name": "Flutter"
     },
     {
-      "code": "if(typeof customerInfo.entitlements.active.my_entitlement_identifier !== \"undefined\") {\n  // Grant user \"pro\" access\n}",
+      "code": "if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== \"undefined\") {\n  // Grant user \"pro\" access\n}",
       "language": "javascript",
       "name": "React Native"
     },
     {
-      "code": "if(typeof customerInfo.entitlements.active.my_entitlement_identifier !== \"undefined\") {\n  // Grant user \"pro\" access\n}",
+      "code": "if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== \"undefined\") {\n  // Grant user \"pro\" access\n}",
       "language": "javascript",
       "name": "Cordova"
     },
     {
-      "code": "if (customerInfo.Entitlements.Active.ContainsKey(\"my_entitlement_identifier\")) {\n  // Unlock that great \"pro\" content\n}",
+      "code": "if (customerInfo.Entitlements.Active.ContainsKey(<my_entitlement_identifier>)) {\n  // Unlock that great \"pro\" content\n}",
       "language": "csharp",
       "name": "Unity"
     }
@@ -270,7 +270,7 @@ Depending on your app, it may be sufficient to ignore the delegate and simply ha
 {
   "codes": [
     {
-      "code": "// Additional configure setup\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n  \n    Purchases.logLevel = .debug\n    Purchases.configure(withAPIKey: \"public_sdk_key\")\n    Purchases.shared.delegate = self // make sure to set this after calling configure\n}\n\nextension AppDelegate: PurchasesDelegate {\n    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: Purchases.CustomerInfo) {\n        // handle any changes to customerInfo\n    }\n}",
+      "code": "// Additional configure setup\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n  \n    Purchases.logLevel = .debug\n    Purchases.configure(withAPIKey: <public_sdk_key>)\n    Purchases.shared.delegate = self // make sure to set this after calling configure\n}\n\nextension AppDelegate: PurchasesDelegate {\n    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: Purchases.CustomerInfo) {\n        // handle any changes to customerInfo\n    }\n}",
       "language": "swift"
     },
     {

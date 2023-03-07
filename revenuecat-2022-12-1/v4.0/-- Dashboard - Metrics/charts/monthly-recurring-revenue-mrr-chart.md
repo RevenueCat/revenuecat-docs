@@ -3,25 +3,104 @@ title: "Monthly Recurring Revenue (MRR) Chart"
 slug: "monthly-recurring-revenue-mrr-chart"
 hidden: false
 createdAt: "2022-10-19T15:33:28.776Z"
-updatedAt: "2022-10-19T15:57:21.909Z"
+updatedAt: "2023-02-24T20:51:41.877Z"
 ---
-## Monthly Recurring Revenue (MRR)
-**Segments:** Yes
-**Filters:** Yes
-The Monthly Recurring Revenue, or MRR, chart is a way of normalizing the scale of your business to better understand your velocity or size. It doesn't map directly to revenue, but it is a useful standardization.
+## Definition
+The Monthly Recurring Revenue (MRR) chart measures the normalized revenue of your active paid subscriptions down to a monthly value. It’s a way of normalizing the scale of your business to better understand your velocity or size outside of the fluctuations that may arise from varying subscription durations. It doesn't map directly to revenue, but it is a useful standardization.
 
-MRR is computed by "normalizing" subscriptions to a 1-month period. Non-recurring subscriptions, consumable, or one-time purchases are not computed in MRR. For example, a subscription that is $8 per month, will contribute $8 to MRR while it is active. An annual subscription that costs $120 per year will contribute $10 dollars per month to MRR for 12 months. This normalizing of all durations to a 1 month period makes it easier to compare different subscriptions of different durations together. Note that MRR calculations excludes store cuts.
+MRR is computed by "normalizing" subscriptions to a 1-month period. Non-recurring subscriptions, consumable, or one-time purchases are not computed in MRR. For example:
 
-MRR is an important measure because it not only captures the size of your subscriber base, but translates that into a real velocity metric for your business. MRR and ARR are considered the standard velocity metrics for subscription software companies. 
+* An active subscription that is $8/month will contribute $8 to MRR (price * 1) each month it remains active
+* While an active subscription that costs $120/year will contribute $10 dollars per month to MRR (price * 1/12) for 12 months each year it remains active
+
+This normalizing of all durations to a 1 month period makes it easier to compare the value of different subscriptions of different durations together.
+
+### Available settings
+
+* Filters: Yes
+* Segments: Yes
+
+## How to use Monthly Recurring Revenue (MRR) in your business
+MRR is an important measure because it not only captures the size of your subscriber base, but translates that into a real velocity metric for your business by normalizing different durations to a common “denominator” (monthly recurring revenue). MRR and [ARR](doc:annual-recurring-revenue-arr-chart) are considered the standard velocity metrics for subscription software companies.
+
+To understand how your subscriber cohorts are growing over time, try segmenting by first purchase month, changing the resolution to monthly, and creating a stacked area chart to see how monthly subscriber cohorts have translated into added MRR to your business over time. ([Explore here](https://app.revenuecat.com/charts/mrr?chart_type=Stacked%20area&conversion_timeframe=7%20days&customer_lifetime=30%20days&range=Last%20year&resolution=2&segment=first_purchase_month), and change the date range to meet your needs)
+
+## Calculation
+First, to convert a subscription payment to normalized monthly revenue, we apply the following conversion:
+[block:parameters]
+{
+  "data": {
+    "h-0": "Subscription Duration",
+    "h-1": "Normalized Monthly Revenue",
+    "0-0": "1 Day",
+    "0-1": "price * 30",
+    "1-0": "3 Days",
+    "1-1": "price * 10",
+    "2-0": "7 Days / 1 Week",
+    "2-1": "price * 4",
+    "3-0": "2 Weeks",
+    "3-1": "price * 2",
+    "4-0": "4 Weeks",
+    "4-1": "price * 1",
+    "5-0": "1 Month",
+    "5-1": "price * 1",
+    "6-0": "2 Months",
+    "6-1": "price * (1/2)",
+    "7-0": "3 Months",
+    "7-1": "price * (1/3)",
+    "8-0": "6 Months",
+    "8-1": "price * (1/6)",
+    "9-0": "1 Year",
+    "9-1": "price * (1/12)"
+  },
+  "cols": 2,
+  "rows": 10
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "body": "Weekly subscription durations will underestimate MRR over periods longer than 1 month (e.g. a 1 Week subscription would renew 17 times in a 4 month period, not 16), but given the high number of renewals before that extra revenue would be realized, we instead calculate what would be generated in a 1 month period."
+}
+[/block]
+For every [active paid subscription](doc:active-subscriptions-chart) in a given period, we sum their monthly recurring revenue value (e.g. `price * (1/12)` for a yearly subscription) to yield your total MRR for that period.
+
+For each period, MRR is calculated as a snapshot based on the count of active subscriptions at the end of the period. Therefore, at a daily resolution, MRR is calculated from the number of Active Subscriptions at the end of that day; whereas at a monthly resolution it is calculated from the number of Active Subscriptions at the end of that month.
+
+To understand how that snapshot is generated for each period, check out the [MRR Movement](doc:monthly-recurring-revenue-movement-chart) chart. 
+
+## FAQs
+[block:parameters]
+{
+  "data": {
+    "h-0": "Question",
+    "h-1": "Answer",
+    "0-0": "What counts as an active paid subscription for the MRR measurement?",
+    "0-1": "Any paid, unexpired subscription is considered active. [Learn more here](doc:active-subscriptions-chart).",
+    "1-0": "Does MRR exclude subscriptions with auto-renewal disabled?",
+    "1-1": "No, MRR includes normalized monthly revenue from all active paid subscriptions – even if their auto-renew status is currently disabled.",
+    "2-0": "Are non-recurring subscriptions, consumable, or one-time purchases included in MRR?",
+    "2-1": "No, since these purchases do not represent recurring revenue, they are not included in the MRR calculation.",
+    "3-0": "Is MRR calculated before commission and taxes?",
+    "3-1": "Yes, MRR is calculated using the gross price of your active subscriptions. Commission & taxes deducted by the stores would need to be additionally deducted from MRR to understand expected proceeds.",
+    "4-0": "Why does my monthly revenue not equal my MRR?",
+    "4-1": "MRR may differ from revenue due to renewals of various subscription lengths occurring within a given month. For example, you may have very few annual subscriptions renewing this month vs. last month, resulting in lower revenue captured this month simply due to those subscribers not being due to renew yet.\n\nBecause MRR is calculated in real-time based on currently active subscriptions, the number will fluctuate as new subscriptions are added and active subscribers churn out. If there are fewer new subscribers than churned subscriptions for a given period, MRR will go down and could be another reason actual revenue ends up being lower than recently calculated MRR."
+  },
+  "cols": 2,
+  "rows": 5
+}
+[/block]
+
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/bb9a32c-e130def-Screen_Shot_2021-11-01_at_10.09.56_AM.png",
-        "e130def-Screen_Shot_2021-11-01_at_10.09.56_AM.png",
-        1395,
-        750,
+        "https://files.readme.io/c963014-MRR.png",
+        "MRR.png",
+        1380,
+        816,
         "#000000"
       ]
     }

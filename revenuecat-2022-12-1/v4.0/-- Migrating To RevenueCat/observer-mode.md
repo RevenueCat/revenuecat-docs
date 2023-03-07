@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-09-27T21:19:45.511Z"
+updatedAt: "2023-02-21T22:06:33.561Z"
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
 
@@ -147,32 +147,32 @@ No special requirements
 {
   "codes": [
     {
-      "code": "Purchases.logLevel = .debug\nPurchases.configure(\n  with: Configuration.Builder(withAPIKey: Constants.apiKey)\n    .with(appUserID: \"<app_user_id>\")\n    .with(observerMode: true)\n    .build()\n)",
+      "code": "Purchases.logLevel = .debug\nPurchases.configure(\n  with: Configuration.Builder(withAPIKey: Constants.apiKey)\n    .with(appUserID: <app_user_id>)\n    .with(observerMode: true)\n    .build()\n)",
       "language": "swift",
       "name": "Swift"
     },
     {
-      "code": "RCPurchases.logLevel = RCLogLevelDebug;\nRCConfigurationBuilder *configuration = [RCConfiguration builderWithAPIKey:@\"public_sdk_key\"];\nconfiguration = [configuration withObserverMode:YES];\nconfiguration = [configuration withAppUserID:@\"<app_user_id>\"];\n[RCPurchases configureWithConfiguration:[configuration build]];",
+      "code": "RCPurchases.logLevel = RCLogLevelDebug;\nRCConfigurationBuilder *configuration = [RCConfiguration builderWithAPIKey:@<public_sdk_key>];\nconfiguration = [configuration withObserverMode:YES];\nconfiguration = [configuration withAppUserID:@<app_user_id>];\n[RCPurchases configureWithConfiguration:[configuration build]];",
       "language": "objectivec",
       "name": "Objective-C"
     },
     {
-      "code": "// If you're targeting only Google Play Store\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n        Purchases.configure(PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").observerMode(true).build())\n    }\n}\n\n// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use\n// In your build.gradle:\nflavorDimensions \"store\"\nproductFlavors {\n    amazon {\n        buildConfigField \"String\", \"STORE\", \"\\\"amazon\\\"\"\n    }\n\n    google {\n        buildConfigField \"String\", \"STORE\", \"\\\"google\\\"\"\n    }       \n}\n\n///...\n\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n          \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            Purchases.configure(AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\").observerMode(true).build())\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            Purchases.configure(PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").observerMode(true).build())\n        }\n    }\n}",
+      "code": "// If you're targeting only Google Play Store\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())\n    }\n}\n\n// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use\n// In your build.gradle:\nflavorDimensions \"store\"\nproductFlavors {\n    amazon {\n        buildConfigField \"String\", \"STORE\", \"\\\"amazon\\\"\"\n    }\n\n    google {\n        buildConfigField \"String\", \"STORE\", \"\\\"google\\\"\"\n    }       \n}\n\n///...\n\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n          \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).observerMode(true).build())\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())\n        }\n    }\n}",
       "language": "kotlin",
       "name": "Kotlin"
     },
     {
-      "code": "// If you're targeting only Google Play Store\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n        Purchases.configure(new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").observerMode(true).build());\n    }\n}\n\n// If you're building for the Amazon Appstore, \n// click the Kotlin tab to see how to set up flavors in your build.gradle:\n///...\n\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n      \n        PurchasesConfiguration.Builder builder = null;\n      \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            builder = new AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\");\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            builder = new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\");\n        }\n      \n        Purchases.configure(builder.observerMode(true).build());\n    }\n}",
+      "code": "// If you're targeting only Google Play Store\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n        Purchases.configure(new PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build());\n    }\n}\n\n// If you're building for the Amazon Appstore, \n// click the Kotlin tab to see how to set up flavors in your build.gradle:\n///...\n\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n      \n        PurchasesConfiguration.Builder builder = null;\n      \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            builder = new AmazonConfiguration.Builder(this, <public_amazon_sdk_key>);\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            builder = new PurchasesConfiguration.Builder(this, <public_google_sdk_key>);\n        }\n      \n        Purchases.configure(builder.observerMode(true).build());\n    }\n}",
       "language": "java",
       "name": "Java"
     },
     {
-      "code": "await Purchases.setup(\"my_api_key\", observerMode: true);",
+      "code": "await Purchases.setup(<my_api_key>, observerMode: true);",
       "language": "javascript",
       "name": "Flutter"
     },
     {
-      "code": "// Observer mode can be configured through the Unity Editor. \n// If you'd like to do it programmatically instead, \n// make sure to check \"Use runtime setup\" in the Unity Editor, and then:\n\nPurchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(\"api_key\");\nPurchases.PurchasesConfiguration purchasesConfiguration =\n    builder.SetUserDefaultsSuiteName(\"user_default\")\n    .SetObserverMode(true)\n    .SetAppUserId(appUserId)\n    .Build();\npurchases.Configure(purchasesConfiguration);",
+      "code": "// Observer mode can be configured through the Unity Editor. \n// If you'd like to do it programmatically instead, \n// make sure to check \"Use runtime setup\" in the Unity Editor, and then:\n\nPurchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(<api_key>);\nPurchases.PurchasesConfiguration purchasesConfiguration =\n    builder.SetUserDefaultsSuiteName(\"user_default\")\n    .SetObserverMode(true)\n    .SetAppUserId(appUserId)\n    .Build();\npurchases.Configure(purchasesConfiguration);",
       "language": "csharp",
       "name": "Unity"
     }

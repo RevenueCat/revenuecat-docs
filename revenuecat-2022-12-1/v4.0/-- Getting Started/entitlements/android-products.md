@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2020-06-26T22:04:24.057Z"
-updatedAt: "2022-11-16T21:28:44.628Z"
+updatedAt: "2023-02-09T15:51:53.540Z"
 ---
 # Google Subscription Model v2 - Current RevenueCat Support
 [block:callout]
@@ -142,7 +142,7 @@ After clicking Create, provide a couple pieces of metadata to Google:
 
 After you use a Product ID for one product in Google Play Console, **it can’t be used again across any of your apps, even if the product is deleted**. It helps to be a little organized here from the beginning - we recommend using a consistent naming scheme across all of your product identifiers such as:
 
->**`<app>_<price>_<duration>_<intro duration>_<intro price>`** 
+>**`<app>_<price>_<duration>_<intro duration><intro price>`** 
 
 - **app:** Some prefix that will be unique to your app, since the same product Id cannot but used in any future apps you create. 
 - **price:** The price you plan to charge for the product in your default currency.

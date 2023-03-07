@@ -13,13 +13,13 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2020-03-02T07:47:34.104Z"
-updatedAt: "2022-08-17T20:13:42.407Z"
+updatedAt: "2023-02-04T00:31:48.514Z"
 ---
 Subscriber attributes are useful for storing additional, structured information on a user. For example, you could store your user's email address and additional system identifiers directly in RevenueCat. Attributes will not be seen by your users unless you choose to explicitly show them yourself.
 [block:callout]
 {
   "type": "info",
-  "body": "Subscriber attributes are only synced with RevenueCat servers on app launch, app backgrounded, and when purchases are made or restored."
+  "body": "Subscriber attributes are only synced with RevenueCat servers when Purchases.configure() is called, app backgrounded, and when purchases are made or restored."
 }
 [/block]
 # Setting Attributes
@@ -95,19 +95,79 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
   "data": {
     "h-0": "Key",
     "h-1": "Description",
-    "0-0": "`$email`",
-    "0-1": "Email address for the user",
-    "1-0": "`$displayName`",
-    "1-1": "Name that should be used to reference the user",
-    "2-0": "`$phoneNumber`",
-    "2-1": "Phone number for the user",
-    "3-0": "`$apnsTokens`",
-    "3-1": "Apple push notification tokens for the user",
-    "4-0": "`$fcmTokens`",
-    "4-1": "Google push notification tokens for the user"
+    "0-0": "`$displayName`",
+    "0-1": "Name that should be used to reference the user",
+    "1-0": "`$apnsTokens`",
+    "1-1": "Apple push notification tokens for the user.",
+    "2-0": "`$fcmTokens`",
+    "2-1": "Google push notification tokens for the user.",
+    "3-0": "`$attConsentStatus`",
+    "3-1": "Apple App Tracking Transparency consent status for the user.",
+    "4-0": "`$ipAddress`",
+    "4-1": "Ip Address for the user.",
+    "5-0": "`$clevertapId `",
+    "5-1": "Clever Tap ID for the user.",
+    "6-0": "`$idfa`",
+    "7-0": "`$idfv`",
+    "8-0": "`$gpsAdId`",
+    "9-0": "`$androidId`",
+    "10-0": "`$amazonAdId`",
+    "11-0": "`$adjustId`",
+    "12-0": "`$amplitudeDeviceId`",
+    "13-0": "`$amplitudeUserId`",
+    "14-0": "`$appsflyerId`",
+    "15-0": "`$brazeAliasName`",
+    "16-0": "`$brazeAliasLabel`",
+    "17-0": "`$clevertapId`",
+    "18-0": "`$fbAnonId`",
+    "19-0": "`$attConsentStatus`",
+    "20-0": "`$mparticleId`",
+    "21-0": "`$onesignalId`",
+    "22-0": "`$airshipChannelId`",
+    "23-0": "`$iterableUserId`",
+    "24-0": "`$iterableCampaignId`",
+    "25-0": "`$iterableTemplateId`",
+    "26-0": "`$firebaseAppInstanceId`",
+    "27-0": "`$mixpanelDistinctId`",
+    "28-0": "`$ip`",
+    "29-0": "`$email`",
+    "30-0": "`$phoneNumber`",
+    "29-1": "Email address for the user.",
+    "6-1": "iOS advertising identifier UUID.",
+    "7-1": "iOS vender identifier UUID.",
+    "8-1": "The advertising ID that is provided by Google Play services.",
+    "9-1": "Android device identifier.",
+    "10-1": "Amazon Advertising ID.",
+    "11-1": "The unique Adjust identifier for the user.",
+    "12-1": "The Amplitude Device ID.",
+    "13-1": "The Amplitude User ID.",
+    "14-1": "Appsflyer Id. The unique Appsflyer identifier for the user.",
+    "28-1": "The IP address of the device.",
+    "15-1": "The Braze 'alias_name' in User Alias Object.",
+    "16-1": "The Braze 'alias_label' in User Alias Object.",
+    "17-1": "The CleverTap ID for the user.",
+    "18-1": "The Facebook Anonymous ID for the user.",
+    "19-1": "Apple App Tracking Transparency consent status for the user.",
+    "20-1": "The unique mParticle user identifier (mpid).",
+    "21-1": "The OneSignal Player Id for the user.",
+    "22-1": "The Airship channel ID for the user.",
+    "23-1": "The Iterable ID for the user.",
+    "24-1": "The Iterable campaign ID.",
+    "25-1": "The Iterable template ID.",
+    "26-1": "The Firebase instance identifier.",
+    "27-1": "The Mixpanel user identifier.",
+    "30-1": "Phone number for the user."
   },
   "cols": 2,
-  "rows": 5
+  "rows": 31
+}
+[/block]
+
+[block:callout]
+{
+  "type": "warning",
+  "body": "The RevenueCat SDK sends the current ATT status for the `$attConsentStatus` subscriber attribute regardless of if you are or aren't requesting any ATT permission. So just as a heads-up, you can expect to see this attribute filled.\n\nNote: The RevenueCat SDK reads the current App Tracking Transparency Consent Status for the user, but will not modify it or request for further permission.\n\nYou may see the following as a response from this attribute: \n* `restricted` - Can be returned if the user is using a mobile device management profile that disallows some aspects of tracking regardless of consent. This might be returned even if you never ask for permissions.\n* `denied` - Can be returned if the user’s phone has set “Ask Apps Not To Track” in OS Settings or denied access for the specific app.\n* `accepted` - Returned if you ask for permission and the permission gets accepted by the user. \n* `unknown` - The user hasn’t set “Ask Apps Not to Track” in OS Settings, and you have never asked the user for consent to track activity.",
+  "title": "attConsentStatus is populated regardless of requesting any permission"
 }
 [/block]
 ### Device Identifiers
@@ -123,10 +183,12 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
     "0-1": "Apple advertising identifier",
     "1-1": "Apple vendor identifier",
     "2-1": "Google advertising identifier",
-    "3-1": "Android device identifier"
+    "3-1": "Android device identifier",
+    "4-0": "`$ip`",
+    "4-1": "IP Address"
   },
   "cols": 2,
-  "rows": 4
+  "rows": 5
 }
 [/block]
 
@@ -149,21 +211,27 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
     "3-1": "[Appsflyer](https://www.appsflyer.com/) user identifier",
     "4-0": "`$fbAnonId`",
     "4-1": "[Facebook SDK](https://developers.facebook.com/docs/apis-and-sdks/) anonymous user identifier",
-    "7-0": "`$mparticleId`",
-    "7-1": "[mParticle](https://www.mparticle.com/) user identifier",
-    "8-0": "`$onesignalId`",
-    "8-1": "[OneSignal](https://onesignal.com/) player identifier",
-    "5-0": "`$iterableUserId`",
-    "5-1": "[Iterable](https://iterable.com/) user identifier",
-    "6-0": "`$mixpanelDistinctId`",
-    "6-1": "[Mixpanel](https://mixpanel.com) user identifier",
+    "8-0": "`$mparticleId`",
+    "8-1": "[mParticle](https://www.mparticle.com/) user identifier",
+    "9-0": "`$onesignalId`",
+    "9-1": "[OneSignal](https://onesignal.com/) player identifier",
+    "6-0": "`$iterableUserId`",
+    "6-1": "[Iterable](https://iterable.com/) user identifier",
+    "7-0": "`$mixpanelDistinctId`",
+    "7-1": "[Mixpanel](https://mixpanel.com) user identifier",
     "1-0": "`$amplitudeDeviceId`",
     "1-1": "[Amplitude](https://amplitude.com/) device identifier",
     "2-0": "`$amplitudeUserId`",
-    "2-1": "[Amplitude](https://amplitude.com/) user identifier"
+    "2-1": "[Amplitude](https://amplitude.com/) user identifier",
+    "5-0": "`$firebaseAppInstanceId`",
+    "5-1": "[Firebase](doc:firebase-integration) instance identifier",
+    "10-0": "`$clevertapId`",
+    "10-1": "[CleverTap](https://clevertap.com/) user identifier",
+    "11-0": "`$airshipChannelId`",
+    "11-1": "[Airship](https://www.airship.com/) channel identifier"
   },
   "cols": 2,
-  "rows": 9
+  "rows": 12
 }
 [/block]
 ### Braze User Alias Object

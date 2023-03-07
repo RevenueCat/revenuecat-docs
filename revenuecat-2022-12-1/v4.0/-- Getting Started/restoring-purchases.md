@@ -12,7 +12,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2021-04-28T16:33:56.375Z"
-updatedAt: "2022-10-03T15:41:11.044Z"
+updatedAt: "2023-02-03T19:49:22.343Z"
 ---
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).
 
@@ -37,7 +37,7 @@ It is recommended that all apps have some way for users to trigger the `restoreP
       "language": "java"
     },
     {
-      "code": "try {\n  PurchaserInfo restoredInfo = await Purchases.restoreTransactions();\n  // ... check restored purchaserInfo to see if entitlement is now active\n} on PlatformException catch (e) {\n  // Error restoring purchases\n}",
+      "code": "try {\n  CustomerInfo customerInfo = await Purchases.restorePurchases();\n  // ... check restored purchaserInfo to see if entitlement is now active\n} on PlatformException catch (e) {\n  // Error restoring purchases\n}",
       "language": "javascript",
       "name": "Flutter"
     },
@@ -59,7 +59,21 @@ It is recommended that all apps have some way for users to trigger the `restoreP
   ]
 }
 [/block]
-The `restorePurchases` method **should not** be triggered programmatically, since it may cause OS level sign-in prompts to appear, and should only be called from some user interaction (e.g. tapping a "Restore" button).
+The `restorePurchases` method **should not** be triggered programmatically, since it may cause OS level sign-in prompts to appear, and should only be called from some user interaction (e.g. tapping a "Restore" button.)
+[block:callout]
+{
+  "type": "warning",
+  "body": "If you are trying to restore a purchase programmatically, use `syncPurchases` instead. This will not cause OS level sign-in prompts to appear.",
+  "title": "Programmatically trigger a restore, by calling syncPurchases instead"
+}
+[/block]
+# syncPurchases
+
+syncPurchases is a method we provide in our SDK which allows you to programmatically trigger a restore. This method, much like restorePurchases, reactivates any content that had previously been purchased from the same store account (Apple, Google, or Amazon). 
+
+## syncPurchases considerations
+* syncPurchases is usually used for [migrating subscriptions](doc:migrating-existing-subscriptions)
+* Since this method simulates restoring a purchase, there is a risk of transferring/aliasing an anonymous user
 
 # Restore Behavior
 

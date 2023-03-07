@@ -4,7 +4,7 @@ slug: "receipts"
 excerpt: "Records a purchase for a user from iOS, Android, or Stripe and will create a user if they don't already exist."
 hidden: false
 createdAt: "2018-05-08T17:27:35.964Z"
-updatedAt: "2022-10-26T00:03:06.323Z"
+updatedAt: "2023-02-17T01:30:24.763Z"
 ---
 # Parameter Reference
 This is a complete reference of every parameter you can pass to this endpoint.
@@ -28,10 +28,10 @@ This is a complete reference of every parameter you can pass to this endpoint.
     "1-0": "`fetch_token`",
     "1-1": "The raw receipt or fetch token.",
     "1-2": "String",
-    "1-3": "Required ✅ (the base64 encoded receipt file)",
-    "1-4": "Required ✅ (the fetch token)",
-    "1-5": "Required ✅ (the receipt)",
-    "1-6": "Required ✅ (the Subscription ID or the Stripe Checkout Session ID)",
+    "1-3": "Required ✅\nSend the base64 encoded receipt file.",
+    "1-4": "Required ✅\nSend the fetch token. Its format is abcdefghijklmnopqrstuvwx.AO-J1OxxnCDwK...",
+    "1-5": "Required ✅\nSend the fetch token. Its format is aBCdefgHi-x-AsdFghjKlQw34erTyUioPzxCvbnm1As=:2:10",
+    "1-6": "Required ✅\nSend the subscription ID (sub_abcdefg) or the Stripe Checkout Session (cs_abcdefg)",
     "2-0": "`attributes`",
     "2-1": "Mapping of key names to subscriber attribute objects. See the [attributes object](ref:subscribers#the-subscriber-attribute-object).",
     "2-2": "Object",
@@ -129,10 +129,45 @@ This is a complete reference of every parameter you can pass to this endpoint.
     "15-3": "Optional 🆗",
     "15-4": "Not compatible ❌",
     "15-5": "Not compatible ❌",
-    "15-6": "Not compatible ❌"
+    "15-6": "Not compatible ❌",
+    "16-0": "`normal_duration`",
+    "17-0": "`intro_duration`",
+    "18-0": "`trial_duration`",
+    "19-0": "`store_country`",
+    "20-0": "`ip_address`",
+    "19-1": "The [ISO alpha 2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the store where the purchase was made. Currently only used iOS. This can help with estimating the correct currency (for example, when two countries use the same currency but different prices, this lets RevenueCat know which country's price to use.)",
+    "19-2": "String",
+    "19-3": "Optional 🆗",
+    "19-4": "Not compatible ❌",
+    "19-5": "Not compatible ❌",
+    "19-6": "Not compatible ❌",
+    "20-1": "The IP address of the device that made this purchase. If store_country, currency, or price are not provided, RevenueCat can try to infer it from the IP address provided. If both `store_country` and `ip_address` are provided, `store_country` always takes precedence over `ip_address`.",
+    "20-2": "String",
+    "20-3": "Optional 🆗",
+    "20-4": "Not compatible ❌",
+    "20-5": "Not compatible ❌",
+    "20-6": "Not compatible ❌",
+    "16-1": "The [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601) of the subscription. RevenueCat will estimate this for you if you don't provide it.",
+    "16-2": "String",
+    "16-3": "Optional 🆗",
+    "16-4": "Not compatible ❌",
+    "16-5": "Not compatible ❌",
+    "16-6": "Not compatible ❌",
+    "17-1": "The [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601) of the introductory period of the subscription. RevenueCat will estimate this for you if you don't provide it.",
+    "18-1": "The [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601) of the free trial period of the subscription. RevenueCat will estimate this for you if you don't provide it.",
+    "17-2": "String",
+    "18-2": "String",
+    "17-3": "Optional 🆗",
+    "18-3": "Optional 🆗",
+    "17-4": "Not compatible ❌",
+    "18-4": "Not compatible ❌",
+    "17-5": "Not compatible ❌",
+    "18-5": "Not compatible ❌",
+    "17-6": "Not compatible ❌",
+    "18-6": "Not compatible ❌"
   },
   "cols": 7,
-  "rows": 16
+  "rows": 21
 }
 [/block]
 

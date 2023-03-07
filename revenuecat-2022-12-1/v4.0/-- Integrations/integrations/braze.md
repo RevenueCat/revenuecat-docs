@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-10-25T16:27:35.639Z"
+updatedAt: "2023-02-27T20:33:34.770Z"
 ---
 [block:callout]
 {
@@ -37,7 +37,7 @@ The Braze integration tracks the following events:
 {
   "data": {
     "h-0": "Event",
-    "h-1": "Description",
+    "h-1": "Default Event Name",
     "0-0": "Initial Purchase",
     "1-0": "Trial Started",
     "2-0": "Trial Converted",
@@ -45,23 +45,95 @@ The Braze integration tracks the following events:
     "4-0": "Renewal",
     "5-0": "Cancellation",
     "7-0": "Non Subscription Purchase",
-    "0-1": "The first purchase of an auto-renewing subscription product that does not contain a free trial.",
-    "1-1": "The start of an auto-renewing subscription product free trial.",
-    "2-1": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
-    "3-1": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
-    "4-1": "When an auto-renewing subscription product renews OR a user repurchases the auto-renewing subscription product after a lapse in their subscription.",
-    "5-1": "When a user turns off renewals for an auto-renewing subscription product during the normal paid period.",
-    "7-1": "The purchase of any product that's not an auto-renewing subscription.",
+    "0-1": "rc_initial_purchase_event",
+    "1-1": "rc_trial_started_event",
+    "2-1": "rc_trial_converted_event",
+    "3-1": "rc_trial_cancelled_event",
+    "4-1": "rc_renewal_event",
+    "5-1": "rc_cancellation_event",
+    "7-1": "rc_non_subscription_purchase_event",
     "8-0": "Expiration",
-    "8-1": "A subscription has expired and access should be removed.",
+    "8-1": "rc_expiration_event",
     "9-0": "Billing Issues",
-    "9-1": "There has been a problem trying to charge the subscriber. \n \nThis does not mean the subscription has expired (in the case of a grace period enabled).",
-    "10-1": "When user has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](doc:managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "9-1": "rc_billing_issue_event",
+    "10-1": "rc_product_change_event",
     "10-0": "Product Change",
     "6-0": "Uncancellation",
-    "6-1": "When a user re-enables the auto-renew status for a subscription."
+    "6-1": "rc_uncancellation_event",
+    "h-2": "Description",
+    "h-3": "App Store",
+    "h-4": "Play Store",
+    "h-5": "Amazon",
+    "h-6": "Web",
+    "h-7": "Promo",
+    "0-2": "A new subscription has been purchased or a lapsed user has resubscribed.",
+    "1-2": "The start of an auto-renewing subscription product free trial",
+    "2-2": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
+    "3-2": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
+    "4-2": "An existing subscription has been renewed.",
+    "5-2": "A subscription or non-renewing purchase has been cancelled. See [cancellation reasons](https://www.revenuecat.com/docs/webhooks#cancellation-and-expiration-reasons) for more details.",
+    "6-2": "A non-expired cancelled subscription has been re-enabled.",
+    "7-2": "A customer has made a purchase that will not auto-renew.",
+    "8-2": "A subscription has expired and access should be removed.\n\nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.\n\nIf you do not have notifications configured, delays may be approximately 1 hour.",
+    "9-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.\n\nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
+    "10-2": "A subscriber has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](https://www.revenuecat.com/docs/managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "0-3": "✅",
+    "1-3": "✅",
+    "2-3": "✅",
+    "3-3": "✅",
+    "4-3": "✅",
+    "5-3": "✅",
+    "6-3": "✅",
+    "7-3": "✅",
+    "8-3": "✅",
+    "9-3": "✅",
+    "10-3": "✅",
+    "10-4": "✅",
+    "10-6": "✅",
+    "10-5": "❌",
+    "10-7": "❌",
+    "9-7": "❌",
+    "9-6": "✅",
+    "9-5": "✅",
+    "9-4": "✅",
+    "8-4": "✅",
+    "8-5": "✅",
+    "8-6": "✅",
+    "8-7": "✅",
+    "7-4": "✅",
+    "7-5": "✅",
+    "7-6": "✅",
+    "7-7": "✅",
+    "6-4": "✅",
+    "6-5": "✅",
+    "6-6": "❌",
+    "6-7": "❌",
+    "4-7": "❌",
+    "0-7": "❌",
+    "5-4": "✅",
+    "5-5": "✅",
+    "5-6": "✅",
+    "5-7": "✅",
+    "4-6": "✅",
+    "4-5": "✅",
+    "4-4": "✅",
+    "3-4": "✅",
+    "3-5": "✅",
+    "3-6": "✅",
+    "3-7": "✅",
+    "2-4": "✅",
+    "2-5": "✅",
+    "2-6": "✅",
+    "2-7": "✅",
+    "1-7": "✅",
+    "1-6": "✅",
+    "1-5": "✅",
+    "1-4": "✅",
+    "0-4": "✅",
+    "0-5": "✅",
+    "0-6": "✅"
   },
-  "cols": 2,
+  "cols": 8,
   "rows": 11
 }
 [/block]
@@ -167,14 +239,67 @@ After you've set up the *Purchases SDK* and Braze SDK to have the same user iden
   ]
 }
 [/block]
-# Sample event
-Below is the sample JSON that is delivered to Braze for a renewal event.
+# Sample events
+Below are sample JSONs that are delivered to Braze for most events.
 [block:code]
 {
   "codes": [
     {
-      "code": "{\n    \"events\":\n    [\n        {\n            \"name\": \"rc_renewal_event\",\n            \"time\": \"2022-10-19T11:02:13.000000\",\n            \"properties\":\n            {\n                \"product_id\": \"your_product_id\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 9.99,\n                \"app_id\": \"your_app_id\"\n            },\n            \"external_id\": \"app_user_id\"\n        }\n    ],\n    \"attributes\":\n    [\n        {\n            \"external_id\": \"app_user_id\",\n            \"email\": \"garfield@revenuecat.com\",\n            \"rc_customer_attribute_$displayName\": \"Garfield\",\n            \"rc_active_entitlements\":\n            [\n                \"Premium Cat\"\n            ]\n        }\n    ]\n}",
-      "language": "json"
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_initial_purchase_event\",\n            \"time\": \"2022-09-04T18: 06: 21.000000\",\n            \"properties\": {\n                \"product_id\": \"monthly.sub.1\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 7.99,\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Initial Purchase"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_trial_started_event\",\n            \"time\": \"2022-09-13T16: 16: 19.000000\",\n            \"properties\": {\n                \"product_id\": \"weekly.sub\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 0,\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Trial Started"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_trial_converted_event\",\n            \"time\": \"2022-09-13T16: 16: 39.000000\",\n            \"properties\": {\n                \"product_id\": \"weekly.sub\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 2.99,\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Trial Converted"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_trial_cancelled_event\",\n            \"time\": \"2022-09-13T16: 15: 48.000000\",\n            \"properties\": {\n                \"product_id\": \"monthly.sub.1\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 0,\n                \"cancel_reason\": \"UNSUBSCRIBE\",\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Trial Cancelled"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_renewal_event\",\n            \"time\": \"2022-09-14T00: 16: 36.000000\",\n            \"properties\": {\n                \"product_id\": \"monthly.sub.1\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 6.99,\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Renewal"
+    }
+  ]
+}
+[/block]
+
+[block:code]
+{
+  "codes": [
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_cancellation_event\",\n            \"time\": \"2022-09-13T16: 15: 19.000000\",\n            \"properties\": {\n                \"product_id\": \"yearly.sub\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 0,\n                \"cancel_reason\": \"UNSUBSCRIBE\",\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Cancellation"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_non_subscription_purchase_event\",\n            \"time\": \"2019-01-21T16: 55: 44.000000\",\n            \"properties\": {\n                \"product_id\": \"tokens.pack.100\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 4.99,\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Non Subscription Purchase"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_expiration_event\",\n            \"time\": \"2022-09-13T15: 45: 50.000000\",\n            \"properties\": {\n                \"product_id\": \"monthly.sub.1\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 0,\n                \"expiration_reason\": \"UNSUBSCRIBE\",\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Expiration"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_billing_issue_event\",\n            \"time\": \"2022-09-13T16: 18: 06.000000\",\n            \"properties\": {\n                \"product_id\": \"yearly,sub\",\n                \"store\": \"PLAY_STORE\",\n                \"revenue\": 0,\n                \"grace_period_expiration_at\": \"2022-09-27T15: 57: 26.000000\",\n                \"app_id\": \"1234567890\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Billing Issues"
+    },
+    {
+      "code": "{\n    \"events\": [\n        {\n            \"name\": \"rc_product_change_event\",\n            \"time\": \"2022-06-09T02: 30: 35.000000\",\n            \"properties\": {\n                \"product_id\": \"monthly.sub.1\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 0.0,\n                \"new_product_id\": \"yearly.sub\"\n            },\n            \"external_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Product Change"
     }
   ]
 }

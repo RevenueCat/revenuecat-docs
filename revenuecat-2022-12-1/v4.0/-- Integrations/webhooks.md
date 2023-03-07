@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-11-07T17:39:50.785Z"
+updatedAt: "2023-03-02T22:46:16.131Z"
 ---
 [block:callout]
 {
@@ -92,9 +92,9 @@ If you're receiving a webhook it's important to respond quickly so you don't acc
     "0-0": "`TEST`",
     "0-1": "Test event issued through the RevenueCat dashboard.",
     "3-0": "`RENEWAL`",
-    "3-1": "An existing subscription has been renewed. This may occur at the end of the current billing period or later if a lapsed user re-subscribes.",
+    "3-1": "An existing subscription has been renewed.",
     "4-0": "`PRODUCT_CHANGE`",
-    "4-1": "A **subscriber** has changed the product of their subscription.",
+    "4-1": "A **subscriber** has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](doc:managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
     "5-0": "`CANCELLATION`",
     "5-1": "A subscription or non-renewing purchase has been cancelled. See [cancellation reasons](doc:webhooks#cancellation-and-expiration-reasons) for more details.",
     "7-0": "`BILLING_ISSUE`",
@@ -112,7 +112,7 @@ If you're receiving a webhook it's important to respond quickly so you don't acc
     "3-3": "✅",
     "0-3": "✅",
     "1-0": "`INITIAL_PURCHASE`",
-    "1-1": "A new subscription has been purchased.",
+    "1-1": "A new subscription has been purchased or a lapsed user has resubscribed.",
     "1-2": "✅",
     "1-3": "✅",
     "8-0": "`SUBSCRIBER_ALIAS`",
@@ -148,7 +148,7 @@ If you're receiving a webhook it's important to respond quickly so you don't acc
     "6-4": "✅",
     "6-5": "❌",
     "9-0": "`SUBSCRIPTION_PAUSED`",
-    "9-1": "A subscription has been paused.",
+    "9-1": "The subscription has set to be paused at the end of the period. \n\nPlease note: You should not revoke access when receiving a `SUBSCRIPTION_PAUSED` event, but only when receiving an `EXPIRATION` event (which will have the [expiration reason](#cancellation-and-expiration-reasons) `SUBSCRIPTION_PAUSED`)",
     "9-3": "✅",
     "9-2": "❌",
     "9-4": "❌",
@@ -189,7 +189,7 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
 {
   "codes": [
     {
-      "code": "{\n  \"api_version\": \"1.0\",\n  \"event\": {\n    \"aliases\": [\n      \"yourCustomerAliasedID\",\n      \"yourCustomerAliasedID\"\n    ],\n    \"app_id\": \"yourAppID\",\n    \"app_user_id\": \"yourCustomerAppUserID\",\n    \"country_code\": \"US\",\n    \"currency\": \"USD\",\n    \"entitlement_id\": \"pro_cat\",\n    \"entitlement_ids\": [\n      \"pro_cat\"\n    ],\n    \"environment\": \"PRODUCTION\",\n    \"event_timestamp_ms\": 1591121855319,\n    \"expiration_at_ms\": 1591726653000,\n    \"id\": \"UniqueIdentifierOfEvent\",\n    \"is_family_share\": false,\n    \"offer_code\": \"free_month\",\n    \"original_app_user_id\": \"OriginalAppUserID\",\n    \"original_transaction_id\": \"1530648507000\",\n    \"period_type\": \"NORMAL\",\n    \"presented_offering_id\": \"OfferingID\",\n    \"price\": 2.49,\n    \"price_in_purchased_currency\": 2.49,\n    \"product_id\": \"onemonth_no_trial\",\n    \"purchased_at_ms\": 1591121853000,\n    \"store\": \"APP_STORE\",\n    \"subscriber_attributes\": {\n      \"$Favorite Cat\": {\n        \"updated_at_ms\": 1581121853000,\n        \"value\": \"Garfield\"\n      }\n    },\n    \"takehome_percentage\": 0.7,\n    \"transaction_id\": \"170000869511114\",\n    \"type\": \"INITIAL_PURCHASE\"\n  }\n}",
+      "code": "{\n  \"api_version\": \"1.0\",\n  \"event\": {\n    \"aliases\": [\n      \"yourCustomerAliasedID\",\n      \"yourCustomerAliasedID\"\n    ],\n    \"app_id\": \"yourAppID\",\n    \"app_user_id\": \"yourCustomerAppUserID\",\n    \"commission_percentage\": 0.3,\n    \"country_code\": \"US\",\n    \"currency\": \"USD\",\n    \"entitlement_id\": \"pro_cat\",\n    \"entitlement_ids\": [\n      \"pro_cat\"\n    ],\n    \"environment\": \"PRODUCTION\",\n    \"event_timestamp_ms\": 1591121855319,\n    \"expiration_at_ms\": 1591726653000,\n    \"id\": \"UniqueIdentifierOfEvent\",\n    \"is_family_share\": false,\n    \"offer_code\": \"free_month\",\n    \"original_app_user_id\": \"OriginalAppUserID\",\n    \"original_transaction_id\": \"1530648507000\",\n    \"period_type\": \"NORMAL\",\n    \"presented_offering_id\": \"OfferingID\",\n    \"price\": 2.49,\n    \"price_in_purchased_currency\": 2.49,\n    \"product_id\": \"onemonth_no_trial\",\n    \"purchased_at_ms\": 1591121853000,\n    \"store\": \"APP_STORE\",\n    \"subscriber_attributes\": {\n      \"$Favorite Cat\": {\n        \"updated_at_ms\": 1581121853000,\n        \"value\": \"Garfield\"\n      }\n    },\n    \"takehome_percentage\": 0.7,\n    \"tax_percentage\": 0.3,\n    \"transaction_id\": \"170000869511114\",\n    \"type\": \"INITIAL_PURCHASE\"\n  }\n}",
       "language": "json"
     }
   ]
@@ -212,7 +212,7 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
     "0-2": "[Type of the event](doc:webhooks#section-event-types).",
     "1-2": "Unique identifier of the event.",
     "4-2": "Last seen app user id of the subscriber.",
-    "0-3": "`TEST`\n\n`INITIAL_PURCHASE`\n\n`NON_RENEWING_PURCHASE`\n\n `RENEWAL`\n\n `PRODUCT_CHANGE`\n\n `CANCELLATION`\n\n `BILLING_ISSUE`\n\n`SUBSCRIBER_ALIAS`\n\n`SUBSCRIPTION_PAUSED`\n\n`TRANSFER`",
+    "0-3": "`TEST`\n\n`INITIAL_PURCHASE`\n\n`NON_RENEWING_PURCHASE`\n\n `RENEWAL`\n\n `PRODUCT_CHANGE`\n\n `CANCELLATION`\n\n `BILLING_ISSUE`\n\n`SUBSCRIBER_ALIAS`\n\n`SUBSCRIPTION_PAUSED`\n\n`UNCANCELLATION`\n\n`TRANSFER`",
     "6-0": "`aliases`",
     "6-1": "[String]",
     "6-2": "All app user ids ever used by the subscriber.",
@@ -359,10 +359,19 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
     "19-1": "Double",
     "19-2": "The estimated percentage of the transaction price that was deducted as a store commission / processing fee.",
     "18-3": "Can be `NULL` if the tax percentage is unknown.",
-    "19-3": "Can be `NULL` if the commission percentage is unknown."
+    "19-3": "Can be `NULL` if the commission percentage is unknown.",
+    "14-3": "Can be `NULL` if the purchase was made using purchaseProduct instead of purchasePackage or if the purchase was made outside of your app or before you integrated RevenueCat."
   },
   "cols": 4,
   "rows": 29
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "title": "Determine trial and subscription duration",
+  "body": "To get a trial or subscription's duration from a webhook, you can subtract purchased_at_ms from expiration_at_ms and you will get the duration of the trial in milliseconds."
 }
 [/block]
 ## Cancellation and Expiration Reasons
@@ -467,6 +476,9 @@ Most webhooks are usually delivered within 5 to 60 seconds of the event occurrin
 ## Future Proofing
 You should be able to handle webhooks that include additional fields to what's shown here, including new event types. We may add new fields or event types in the future without changing the API version. We *won't* remove fields or events without proper API versioning and deprecation.
 
+## Handle duplicate events
+RevenueCat makes our best effort for “at least one delivery” of webhooks. In some *rare* situations, your application may receive a webhook for the same event more than once, and it is something your webhook processing should be prepared to handle. We recommend you to guard against duplicated events by making your webhook processing idempotent. For example, you can keep track of the event `id` we send with each webhook to ensure you are processing the event only once. 
+
 # Sample Webhook Events
 
 These are some representative samples of webhooks you might receive from RevenueCat. Keep in mind that webhooks can include additional fields to what's shown here.
@@ -516,7 +528,7 @@ These are some representative samples of webhooks you might receive from Revenue
 {
   "codes": [
     {
-      "code": "{\n \"event\": {\n     \"type\": \"TRANSFER\",\n     \"id\": \"CD489E0E-5D52-4E03-966B-A7F17788E432\",\n     \"store\": \"APP_STORE\",\n     \"transferred_from\": [\"00005A1C-6091-4F81-BE77-F0A83A271AB6\"],\n     \"transferred_to\": [\"4BEDB450-8EF2-11E9-B475-0800200C9A66\"],\n     \"event_timestamp_ms\": 78789789798798\n },\n \"api_version\": \"1.0\"\n}",
+      "code": "{\n \"event\": {\n     \"app_id\": \"1234567890\",\n     \"event_timestamp_ms\": 78789789798798,\n     \"id\": \"CD489E0E-5D52-4E03-966B-A7F17788E432\",\n     \"store\": \"APP_STORE\",\n     \"transferred_from\": [\"00005A1C-6091-4F81-BE77-F0A83A271AB6\"],\n     \"transferred_to\": [\"4BEDB450-8EF2-11E9-B475-0800200C9A66\"],\n     \"type\": \"TRANSFER\",\n },\n \"api_version\": \"1.0\"\n}",
       "language": "json",
       "name": "Transfer"
     },

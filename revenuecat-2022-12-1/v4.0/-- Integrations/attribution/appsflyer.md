@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-11-29T01:52:17.779Z"
+updatedAt: "2023-02-06T18:34:34.580Z"
 ---
 With our AppsFlyer integration you can:
 * Accurately track subscriptions generated from AppsFlyer campaigns, allowing you to know precisely how much revenue your campaigns generate.
@@ -168,19 +168,22 @@ After you've set up the *Purchases SDK* to send attribution data from AppsFlyer 
 }
 [/block]
 2. Choose **AppsFlyer** from the Integrations menu
-3. Add your developer key and app Ids for iOS and/or Android
+3. Add your generic developer key if you use one AppsFlyer project for both iOS and android in the Developer Key field **OR** If you have specific developer keys for iOS and/or Android, add those in the associated UI fields
+4. If you have specific sandbox developer keys for iOS and/or Android, add those in the associated UI fields
 4. Enter the event names that RevenueCat will send or choose the default event names
 5. Select whether you want sales reported as gross revenue (before app store commission), or after store commission and/or estimated taxes.
+
+
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/a6f153c-AppsFlyer.png",
-        "AppsFlyer.png",
-        1807,
-        3900,
-        "#fbfcfc"
+        "https://files.readme.io/974687c-AppsFlyer_Integration.png",
+        "AppsFlyer Integration.png",
+        1683,
+        4323,
+        "#000000"
       ],
       "caption": "AppsFlyer configuration screen"
     }

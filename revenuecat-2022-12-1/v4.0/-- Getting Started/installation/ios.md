@@ -1,7 +1,7 @@
 ---
 title: "iOS"
 slug: "ios"
-excerpt: "Instructions for installing Purchases SDK for iOS"
+excerpt: "Instructions for installing RevenueCat SDK for iOS"
 hidden: false
 metadata: 
   title: "Install iOS SDK – RevenueCat"
@@ -13,20 +13,20 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-08-30T22:58:53.315Z"
+updatedAt: "2023-02-03T22:37:40.436Z"
 ---
 # What is RevenueCat?
 
-RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/where-does-revenuecat-fit-in-your-app) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
+RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/growth/where-does-revenuecat-fit-in-your-app/) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
 
 # Requirements
 
-Xcode 13.3.1+
+Xcode 13.2.0+
 Minimum target: iOS 11.0+
 
 # Installation
 
-Purchases for iOS can be installed either via [CocoaPods](doc:ios#section-install-via-cocoapods), [Carthage](ios#section-install-via-carthage), or [Swift Package Manager](doc:ios#section-install-via-swift-package-manager). 
+RevenueCat for iOS can be installed either via [CocoaPods](doc:ios#section-install-via-cocoapods), [Carthage](ios#section-install-via-carthage), or [Swift Package Manager](doc:ios#section-install-via-swift-package-manager). 
 [block:callout]
 {
   "type": "info",
@@ -45,7 +45,7 @@ Purchases for iOS can be installed either via [CocoaPods](doc:ios#section-instal
 [/block]
 ## Install via Swift Package Manager
 
-You can use Swift Package Manager to add Purchases to your Xcode project. Select `File » Swift Packages » Add Package Dependency...` and specify the repository URL of the `Purchases` library: `https://github.com/RevenueCat/purchases-ios.git`. Set the Dependency Rule to `Up to next major`, and the version number to `4.0.0 < 5.0.0`. Finally, choose the target where you want to use it. The library should have been added to the Swift Package Dependencies section and you should be able to import it now.
+You can use Swift Package Manager to add RevenueCat to your Xcode project. Select `File » Add Packages... ` and enter the repository URL of the `https://github.com/RevenueCat/purchases-ios.git` into the search bar (top right). Set the Dependency Rule to `Up to next major`, and the version number to `4.0.0 < 5.0.0`. Finally, choose the target where you want to use it. The library should have been added to the Swift Package Dependencies section and you should be able to import it now.
 [block:image]
 {
   "images": [
@@ -84,7 +84,7 @@ Alternatively, pin to a specific minor version:
 {
   "codes": [
     {
-      "code": "pod 'RevenueCat', '~> 4.0.0'",
+      "code": "pod 'RevenueCat', '~> 4.15'",
       "language": "ruby"
     }
   ]
@@ -106,12 +106,7 @@ This will add `RevenueCat.framework` to your workspace.
 
 
 ## Install via Carthage
-[block:callout]
-{
-  "type": "warning",
-  "body": "Note: We recommend using Carthage versions >= 0.37. \nCarthage versions < 0.37 have a bug which makes using `carthage update --no-use-binaries` produce build issues on Xcode 12. More information on this issue is available here http://github.com/Carthage/Carthage/issues/3019."
-}
-[/block]
+
 To always use the latest release, add the following to your Cartfile:
 [block:code]
 {
@@ -129,7 +124,7 @@ Alternatively, pin to a specific minor version:
 {
   "codes": [
     {
-      "code": "github \"revenuecat/purchases-ios\" ~> 4.0.0",
+      "code": "github \"revenuecat/purchases-ios\" ~> 4.15.0",
       "language": "text"
     }
   ]
@@ -137,7 +132,7 @@ Alternatively, pin to a specific minor version:
 [/block]
 ### Carthage with XCFrameworks
 
-If you're using Carthage version >= 0.37, you can use Purchases as an XCFramework instead of a Universal Framework. This makes setup easier, since you don't have to set up build phases at all. 
+If you're using Carthage version >= 0.37, you can use RevenueCat as an XCFramework instead of a Universal Framework. This makes setup easier, since you don't have to set up build phases at all. 
 To use XCFrameworks with Carthage, you need to pass in `--use-xcframeworks`.
 [block:code]
 {

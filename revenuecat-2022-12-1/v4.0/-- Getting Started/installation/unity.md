@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-08-03T21:29:36.336Z"
+updatedAt: "2023-02-02T14:21:39.075Z"
 ---
 # What is RevenueCat?
 
@@ -21,6 +21,61 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 # Installation
 
+We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the OpenUPM registry, or as a `.unitypackage`.
+
+## Install using OpenUPM
+  
+1. First you need to import the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) plugin into your project if you haven't already. This plugin will add all the Android and iOS dependencies automatically when building your project. To do this, you can:
+   - Download the `external-dependency-manager-latest.unitypackage` file from the root of the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) repo.
+   - [Import](https://docs.unity3d.com/Manual/AssetPackagesImport.html) the downloaded `unitypackage` to your project.
+2. Then, you can add the OpenUPM scoped registry. To do this, go to your project's settings -> Package Manager, and add a new scoped registry with URL `https://package.openupm.com` and scopes: `com.openupm` and `com.revenuecat.purchases-unity`. It should look like this:
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/2284314-project-settings-openupm.jpg",
+        "project-settings-openupm.jpg",
+        1570,
+        1104,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+3. Then, go to the Package Manager and from "My Registries", select the RevenueCat package and click on Install.
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/368ba43-package-manager-revenuecat.jpg",
+        "package-manager-revenuecat.jpg",
+        1598,
+        1196,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "info",
+  "title": "Using OpenUPM-CLI",
+  "body": "If you prefer, you can also use OpenUPM-CLI to add the scoped registry and the package through the command line. To do that, install the [OpenUPM-CLI](https://openupm.com/docs/getting-started.html) if you haven't already, then run `openupm add com.revenuecat.purchases-unity`. That should be it!"
+}
+[/block]
+
+[block:callout]
+{
+  "type": "warning",
+  "title": "If using UnityIAP alongside RevenueCat",
+  "body": "If you're using `UnityIAP`, you will need to install our SDK through the `Purchases-UnityIAP.unitypackage` method below. We currently don't distribute that version through UPM."
+}
+[/block]
 ## Import the Purchases Unity package
 
 Download the latest version of [**Purchases.unitypackage**](https://github.com/RevenueCat/purchases-unity/releases/latest/download/Purchases.unitypackage).
@@ -92,6 +147,10 @@ The Purchases behavior takes one additional parameter, a GameObject with a Purch
   ]
 }
 [/block]
+# Unity Editor
+
+Running the Purchases SDK is unsupported in the Unity Editor at this time, and may result in `NullReferenceException: Object reference not set to an instance of an object` errors. Please build and run your app instead.
+
 # Proguard rules
 
 If you have enabled Minify in Unity, make sure to add these custom rules to your `Assets/Plugins/Android/proguard-user.txt` and enable the Custom Proguard File setting in Publishing Settings:
@@ -171,6 +230,25 @@ Perform a clean up of the resolved dependencies using the `Assets/External Depen
 
 Also make sure to perform a resolve, so External Dependency Manager adds the right dependencies to the generated `build.gradle`.
 
+## Troubleshooting "ClassNotFoundException" errors at Runtime in Android
+
+When exporting your project to Android, in the Build Settings window, make sure you uncheck the `Symlink Sources` checkbox. That will make it so Unity actually uses the correct source files for our SDK.
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/98a2d95-unity-symlink-sources-unchecked.jpg",
+        "unity-symlink-sources-unchecked.jpg",
+        1276,
+        1254,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 # Next Steps
 
 * Now that you've installed the Purchases SDK in your Unity app, get started [building with Purchases :fa-arrow-right:](doc:getting-started-1#section-displaying-available-products)

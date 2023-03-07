@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2021-04-21T21:42:29.264Z"
-updatedAt: "2021-12-08T05:39:22.504Z"
+updatedAt: "2023-01-18T20:13:33.581Z"
 ---
 [block:callout]
 {
@@ -225,6 +225,9 @@ The code will then be applied when the user selects the subscription or In-App p
 # Considerations 
   * In the RevenueCat dashboard, when a promo code is used for a subscription, it will show up as the user is starting on a trial for the length your promotion has specified.
   * For In-app purchases, you will see your user has made a purchase, however, the reflected price will be $0.
+  * The purchase will come back from Google with the "purchaseType": 1, which, according to the [API docs](https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.products) means that it was completed with a promo code. 
+  * As of now, purchases with a promo code that come directly from Google don’t carry an orderId. 
+  * In general there is likely to be some info missing if the code is redeemed directly in the play store as a limitation from the information that we gather from Google.
 
 # Next Steps
 

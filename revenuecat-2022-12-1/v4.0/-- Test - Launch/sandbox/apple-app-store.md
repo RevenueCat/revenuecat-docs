@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-06-21T19:05:25.846Z"
+updatedAt: "2023-01-12T17:09:59.595Z"
 ---
 [block:callout]
 {
@@ -157,7 +157,7 @@ Testing on the simulator requires one of these SDK versions:
 {
   "type": "info",
   "title": "StoreKit testing requires running app from Xcode",
-  "body": "StoreKit testing only works if you are running your app directly through Xcode. Any command line tools that use the `xcodebuild` command to start running an app (like `flutter run` or Flutter's VSCode plugin) won't use the StoreKit Configuration File specified in your scheme. This is a known issue and we have file a feedback to Apple."
+  "body": "StoreKit testing only works if you are running your app directly through Xcode. Any command line tools that use the `xcodebuild` command to start running an app (like `flutter run` or Flutter's VSCode plugin) won't use the StoreKit Configuration File specified in your scheme. This is a known issue and we have filed a feedback to Apple."
 }
 [/block]
 
@@ -386,6 +386,17 @@ Because of the accelerated expiration and renewal rates, sometimes not all renew
 # Deleting Test Users
 
 When testing, it may be helpful to delete a customer and all their receipts from RevenueCat to simulate a new installation. You can delete a specific user from the customer dashboard in RevenueCat. See our [docs on deleting users](doc:customers#section-delete-users) for more information.
+
+# TestFlight
+
+TestFlight is a hybrid environment that uses production Apple IDs but purchases occur in sandbox, which can cause unexpected issues that are very likely undocumented by Apple.
+
+## Common Errors
+If you're getting the error "Account Not In This Store" when attempting to make a purchase on macOS, try to:
+- Switch your region to the recommended region
+- Sign out of the App Store
+- Relaunch the TestFlight app
+- Attempt to make the purchase again, and sign in when prompted
 [block:callout]
 {
   "type": "info",

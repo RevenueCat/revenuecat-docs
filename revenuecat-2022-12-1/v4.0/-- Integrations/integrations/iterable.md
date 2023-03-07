@@ -12,7 +12,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2022-01-31T17:07:33.480Z"
-updatedAt: "2022-08-19T01:36:06.514Z"
+updatedAt: "2023-02-28T01:20:43.702Z"
 ---
 [block:callout]
 {
@@ -33,9 +33,9 @@ The Iterable integration tracks the following events:
 [block:parameters]
 {
   "data": {
-    "h-0": "Event Type",
-    "h-1": "Description",
-    "h-2": "Iterable Event Type",
+    "h-0": "RevenueCat Event Type",
+    "h-1": "Iterable Event Type",
+    "h-2": "Default Event Name",
     "0-0": "Initial Purchase",
     "1-0": "Trial Started",
     "2-0": "Trial Converted",
@@ -47,33 +47,111 @@ The Iterable integration tracks the following events:
     "8-0": "Subscription Paused",
     "9-0": "Expiration",
     "10-0": "Billing Issue",
-    "0-1": "The first purchase of an auto-renewing subscription product that does not contain a free trial.",
-    "1-1": "The start of an auto-renewing subscription product free trial.",
-    "2-1": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
-    "3-1": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
-    "4-1": "When an auto-renewing subscription product renews OR a user repurchases the auto-renewing subscription product after a lapse in their subscription.",
-    "5-1": "When a user turns off renewals for an auto-renewing subscription product during the normal paid period.",
-    "6-1": "When a user re-enables the auto-renew status for a subscription.",
-    "7-1": "The purchase of any product that's not an auto-renewing subscription.",
-    "8-1": "When a subscription is paused. Available for Google Play subscriptions only.",
-    "9-1": "When a subscription expires.",
-    "10-1": "When a billing issue is detected.",
-    "0-2": "Purchase",
-    "1-2": "Purchase",
-    "2-2": "Purchase",
-    "4-2": "Purchase",
-    "3-2": "Custom",
-    "5-2": "Custom",
-    "6-2": "Custom",
-    "7-2": "Purchase",
-    "8-2": "Custom",
-    "9-2": "Custom",
-    "10-2": "Custom",
+    "0-1": "Purchase",
+    "1-1": "Purchase",
+    "2-1": "Purchase",
+    "3-1": "Custom",
+    "4-1": "Purchase",
+    "5-1": "Custom",
+    "6-1": "Custom",
+    "7-1": "Purchase",
+    "8-1": "Custom",
+    "9-1": "Custom",
+    "10-1": "Custom",
+    "0-2": "rc_initial_purchase_event",
+    "1-2": "rc_trial_started_event",
+    "2-2": "rc_trial_converted_event",
+    "4-2": "rc_renewal_event",
+    "3-2": "rc_trial_cancelled_event",
+    "5-2": "rc_cancellation_event",
+    "6-2": "rc_uncancellation_event",
+    "7-2": "rc_non_subscription_purchase_event",
+    "8-2": "rc_subscription_paused_event",
+    "9-2": "rc_expiration_event",
+    "10-2": "rc_billing_issue_event",
     "11-0": "Product Change",
-    "11-1": "When user has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](doc:managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
-    "11-2": "Custom"
+    "11-1": "Custom",
+    "11-2": "rc_product_change_event",
+    "h-3": "Description",
+    "h-4": "App Store",
+    "h-5": "Play Store",
+    "h-6": "Amazon",
+    "h-7": "Web",
+    "h-8": "Promo",
+    "11-4": "✅",
+    "10-4": "✅",
+    "9-4": "✅",
+    "8-4": "❌",
+    "7-4": "✅",
+    "6-4": "✅",
+    "5-4": "✅",
+    "4-4": "✅",
+    "3-4": "✅",
+    "2-4": "✅",
+    "1-4": "✅",
+    "0-4": "✅",
+    "11-5": "✅",
+    "11-7": "✅",
+    "11-6": "❌",
+    "11-8": "❌",
+    "10-8": "❌",
+    "10-7": "✅",
+    "10-6": "✅",
+    "10-5": "✅",
+    "9-5": "✅",
+    "9-6": "✅",
+    "9-7": "✅",
+    "9-8": "✅",
+    "8-5": "✅",
+    "8-6": "❌",
+    "8-7": "❌",
+    "8-8": "❌",
+    "6-7": "❌",
+    "6-8": "❌",
+    "4-8": "❌",
+    "0-8": "❌",
+    "7-5": "✅",
+    "7-6": "✅",
+    "7-7": "✅",
+    "7-8": "✅",
+    "6-6": "✅",
+    "6-5": "✅",
+    "5-5": "✅",
+    "5-6": "✅",
+    "5-7": "✅",
+    "5-8": "✅",
+    "4-7": "✅",
+    "4-6": "✅",
+    "4-5": "✅",
+    "2-5": "✅",
+    "3-5": "✅",
+    "3-6": "✅",
+    "3-7": "✅",
+    "3-8": "✅",
+    "2-8": "✅",
+    "2-7": "✅",
+    "2-6": "✅",
+    "1-5": "✅",
+    "1-6": "✅",
+    "1-7": "✅",
+    "1-8": "✅",
+    "0-7": "✅",
+    "0-6": "✅",
+    "0-5": "✅",
+    "0-3": "A new subscription has been purchased or a lapsed user has resubscribed.",
+    "1-3": "The start of an auto-renewing subscription product free trial.",
+    "2-3": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
+    "3-3": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
+    "4-3": "An existing subscription has been renewed.",
+    "5-3": "A subscription or non-renewing purchase has been cancelled. See [cancellation reasons](https://www.revenuecat.com/docs/webhooks#cancellation-and-expiration-reasons) for more details.",
+    "6-3": "A non-expired cancelled subscription has been re-enabled.",
+    "7-3": "A customer has made a purchase that will not auto-renew.",
+    "8-3": "A subscription has been paused.",
+    "9-3": "A subscription has expired and access should be removed.\n\nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.\n\nIf you do not have notifications configured, delays may be approximately 1 hour.",
+    "10-3": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.\n\nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
+    "11-3": "A subscriber has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](https://www.revenuecat.com/docs/managing-subscriptions) for more details on updates, downgrades, and crossgrades."
   },
-  "cols": 3,
+  "cols": 9,
   "rows": 12
 }
 [/block]
@@ -231,14 +309,77 @@ Navigate to your Iterable dashboard > Insights > Logs. To find Purchase events n
   ]
 }
 [/block]
-# Sample Event
-Below is a sample JSON that is delivered to Iterable for a trial started event. 
+# Sample Events
+Below are sample JSONs that are delivered to Iterable for events.
 [block:code]
 {
   "codes": [
     {
-      "code": "{\n  \"createdAt\": 1644624970000,\n  \"id\": \"1000000967584331\",\n  \"items\": [\n    {\n      \"dataFields\": {\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"pro\"\n        ],\n        \"environment\": \"SANDBOX\",\n        \"expiration_at_ms\": 1644625150000,\n        \"is_family_share\": false,\n        \"offer_code\": null,\n        \"original_transaction_id\": \"1000000967584331\",\n        \"period_type\": \"TRIAL\",\n        \"presented_offering_id\": \"default\",\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7\n      },\n      \"id\": \"rc_3999_1y_1w0\",\n      \"name\": \"rc_trial_started_event\",\n      \"price\": 0,\n      \"quantity\": 1\n    }\n  ],\n  \"total\": 0,\n  \"user\": {\n    \"dataFields\": {\n      \"app_user_id\": \"$RCAnonymousID:354629ce52324242a03a42f5efe7d020\",\n      \"original_app_user_id\": \"$RCAnonymousID:354629ce52324242a03a42f5efe7d020\",\n      \"subscriber_attributes\": {\n        \"$email\": {\n          \"updated_at_ms\": 1644624942354,\n          \"value\": \"test@gmail.com\"\n        }\n      }\n    },\n    \"email\": \"test@gmail.com\",\n    \"preferUserId\": true,\n    \"userId\": \"$RCAnonymousID:354629ce52324242a03a42f5efe7d020\"\n  }\n}",
-      "language": "json"
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"total\": 29.99,\n    \"user\": {\n        \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"preferUserId\": true,\n        \"dataFields\": {\n            \"subscriber_attributes\": {},\n            \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n            \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    },\n    \"items\": [\n        {\n            \"id\": \"premium_freetrial\",\n            \"name\": \"rc_initial_purchase_event\",\n            \"price\": 29.99,\n            \"quantity\": 1,\n            \"dataFields\": {\n                \"country_code\": \"US\",\n                \"currency\": \"USD\",\n                \"entitlement_ids\": [\n                    \"premium\"\n                ],\n                \"expiration_at_ms\": 1683233732021,\n                \"environment\": \"PRODUCTION\",\n                \"is_family_share\": false,\n                \"offer_code\": null,\n                \"period_type\": \"NORMAL\",\n                \"presented_offering_id\": null,\n                \"store\": \"PLAY_STORE\",\n                \"takehome_percentage\": 0.85,\n                \"original_transaction_id\": \"GPA.1234-5678-9012-34567\"\n            }\n        }\n    ],\n    \"createdAt\": 1651691577776\n}",
+      "language": "json",
+      "name": "Initial Purchase"
+    },
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"total\": 0,\n    \"user\": {\n        \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"preferUserId\": true,\n        \"dataFields\": {\n            \"subscriber_attributes\": {},\n            \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n            \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    },\n    \"items\": [\n        {\n            \"id\": \"annual_sub_1week_trial\",\n            \"name\": \"rc_trial_started_event\",\n            \"price\": 0,\n            \"quantity\": 1,\n            \"dataFields\": {\n                \"country_code\": \"US\",\n                \"currency\": \"USD\",\n                \"entitlement_ids\": null,\n                \"expiration_at_ms\": 1644623383000,\n                \"environment\": \"SANDBOX\",\n                \"is_family_share\": false,\n                \"offer_code\": null,\n                \"period_type\": \"TRIAL\",\n                \"presented_offering_id\": \"default\",\n                \"store\": \"APP_STORE\",\n                \"takehome_percentage\": 0.7,\n                \"original_transaction_id\": \"123456789012345\"\n            }\n        }\n    ],\n    \"createdAt\": 1644623203000\n}",
+      "language": "json",
+      "name": "Trial Started"
+    },
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"total\": 29.99,\n    \"user\": {\n        \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"preferUserId\": true,\n        \"dataFields\": {\n            \"subscriber_attributes\": {},\n            \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n            \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        }\n    },\n    \"items\": [\n        {\n            \"id\": \"annual_sub\",\n            \"name\": \"rc_trial_converted_event\",\n            \"price\": 29.99,\n            \"quantity\": 1,\n            \"dataFields\": {\n                \"country_code\": \"US\",\n                \"currency\": \"USD\",\n                \"entitlement_ids\": null,\n                \"expiration_at_ms\": 1644626983000,\n                \"environment\": \"SANDBOX\",\n                \"is_family_share\": false,\n                \"offer_code\": null,\n                \"period_type\": \"NORMAL\",\n                \"presented_offering_id\": \"default\",\n                \"store\": \"APP_STORE\",\n                \"takehome_percentage\": 0.7,\n                \"original_transaction_id\": \"123456789012345\"\n            }\n        }\n    ],\n    \"createdAt\": 1644623383000\n}",
+      "language": "json",
+      "name": "Trial Converted"
+    },
+    {
+      "code": "{\n    \"createdAt\": 1663964010781,\n    \"dataFields\": {\n        \"app_id\": \"app1234567890\",\n        \"event_properties\": {\n            \"cancel_reason\": \"BILLING_ERROR\",\n            \"environment\": \"PRODUCTION\",\n            \"expiration_at_ms\": 1664050410466,\n            \"original_transaction_id\": \"GPA.1234-5678-9012-34567\",\n            \"period_type\": \"TRIAL\",\n            \"product_id\": \"annual_sub_1week_trial\",\n            \"store\": \"PLAY_STORE\",\n            \"transaction_id\": \"GPA.1234-5678-9012-34567\",\n        }\n    },\n    \"email\": null,\n    \"eventName\": \"rc_trial_cancelled_event\",\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n}",
+      "language": "json",
+      "name": "Trial Cancelled"
+    },
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"total\": 29.99,\n    \"user\": {\n        \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"preferUserId\": true,\n        \"dataFields\": {\n            \"subscriber_attributes\": {\n                \"$email\": {\n                    \"value\": \"first_last@gmail.com\",\n                    \"updated_at_ms\": 1644624942354\n                },\n                \"$iterableCampaignId\": {\n                    \"value\": \"01234\",\n                    \"updated_at_ms\": 1644634297590\n                },\n                \"$iterableTemplateId\": {\n                    \"value\": \"5678\",\n                    \"updated_at_ms\": 1644634301306\n                }\n            },\n            \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n            \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        },\n        \"email\": \"first_last@gmail.com\"\n    },\n    \"items\": [\n        {\n            \"id\": \"annual_sub\",\n            \"name\": \"rc_renewal_event\",\n            \"price\": 29.99,\n            \"quantity\": 1,\n            \"dataFields\": {\n                \"country_code\": \"US\",\n                \"currency\": \"USD\",\n                \"entitlement_ids\": null,\n                \"expiration_at_ms\": 1644648719000,\n                \"environment\": \"SANDBOX\",\n                \"is_family_share\": false,\n                \"offer_code\": null,\n                \"period_type\": \"NORMAL\",\n                \"presented_offering_id\": \"default\",\n                \"store\": \"APP_STORE\",\n                \"takehome_percentage\": 0.7,\n                \"original_transaction_id\": \"123456789012345\"\n            }\n        }\n    ],\n    \"createdAt\": 1644645119000,\n    \"campaignId\": \"01234\",\n    \"templateId\": \"5678\"\n}",
+      "language": "json",
+      "name": "Renewal"
+    },
+    {
+      "code": "{\n    \"createdAt\": 1663963037855,\n    \"dataFields\": {\n        \"app_id\": \"app1234567890\",\n        \"event_properties\": {\n            \"cancel_reason\": \"UNSUBSCRIBE\",\n            \"environment\": \"PRODUCTION\",\n            \"expiration_at_ms\": 1666381224082,\n            \"original_transaction_id\": \"GPA.1234-5678-9012-34567\",\n            \"period_type\": \"NORMAL\",\n            \"product_id\": \"annual_sub\",\n            \"store\": \"PLAY_STORE\",\n            \"transaction_id\": \"GPA.1234-5678-9012-34567\",\n        }\n    },\n    \"email\": null,\n    \"eventName\": \"rc_cancellation_event\",\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n}",
+      "language": "json",
+      "name": "Cancellation"
+    },
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"eventName\": \"rc_uncancellation_event\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n    \"dataFields\": {\n        \"event_properties\": {\n            \"environment\": \"SANDBOX\",\n            \"expiration_at_ms\": 1646073127000,\n            \"original_transaction_id\": \"123456789012345\",\n            \"period_type\": \"NORMAL\",\n            \"product_id\": \"annual_sub\",\n            \"store\": \"APP_STORE\",\n            \"transaction_id\": \"123456789012345\",\n            \"email\": \"first_last@gmail.com\"\n        }\n    },\n    \"createdAt\": 1646069715718,\n    \"campaignId\": \"0123\",\n    \"templateId\": \"4564\"\n}",
+      "language": "json",
+      "name": "Uncancellation"
+    }
+  ]
+}
+[/block]
+
+[block:code]
+{
+  "codes": [
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"total\": 4.99,\n    \"user\": {\n        \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"preferUserId\": true,\n        \"dataFields\": {\n            \"subscriber_attributes\": {\n                \"$email\": {\n                    \"value\": \"first_last@gmail.com\",\n                    \"updated_at_ms\": 1659292070233\n                },\n                \"$iterableUserId\": {\n                    \"value\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n                    \"updated_at_ms\": 1659292070233\n                },\n            },\n            \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n            \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\"\n        },\n        \"email\": \"first_last@gmail.com\"\n    },\n    \"items\": [\n        {\n            \"id\": \"100_tokens\",\n            \"name\": \"rc_non_subscription_purchase_event\",\n            \"price\": 4.99,\n            \"quantity\": 1,\n            \"dataFields\": {\n                \"country_code\": null,\n                \"currency\": \"USD\",\n                \"entitlement_ids\": [\n                    \"pro\"\n                ],\n                \"expiration_at_ms\": 1659897848466,\n                \"environment\": \"PRODUCTION\",\n                \"is_family_share\": null,\n                \"offer_code\": null,\n                \"period_type\": \"NORMAL\",\n                \"presented_offering_id\": null,\n                \"store\": \"APP_STORE\",\n                \"takehome_percentage\": 1.0,\n                \"original_transaction_id\": \"123456789012345\"\n            }\n        }\n    ],\n    \"createdAt\": 1659293048466\n}",
+      "language": "json",
+      "name": "Non Subscription Purchase"
+    },
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"email\": null,\n    \"eventName\": \"rc_subscription_paused_event\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n    \"dataFields\": {\n        \"event_properties\": {\n            \"environment\": \"PRODUCTION\",\n            \"expiration_at_ms\": 1654366688509,\n            \"original_transaction_id\": \"GPA.1234-5678-9012-34567\",\n            \"period_type\": \"NORMAL\",\n            \"product_id\": \"monthly_sub_trial\",\n            \"store\": \"PLAY_STORE\",\n            \"transaction_id\": \"GPA.1234-5678-9012-34567\",\n            \"auto_resumes_at\": 1656951488509\n        }\n    },\n    \"createdAt\": 1651679019206\n}",
+      "language": "json",
+      "name": "Subscription Paused"
+    },
+    {
+      "code": "{\n    \"createdAt\": 1663963579936,\n    \"dataFields\": {\n        \"app_id\": \"app1234567890\",\n        \"event_properties\": {\n            \"environment\": \"PRODUCTION\",\n            \"expiration_at_ms\": 1663963579936,\n            \"expiration_reason\": \"UNSUBSCRIBE\",\n            \"original_transaction_id\": \"GPA.1234-5678-9012-34567\",\n            \"period_type\": \"NORMAL\",\n            \"product_id\": \"weekly_sub\",\n            \"store\": \"PLAY_STORE\",\n            \"transaction_id\": \"GPA.1234-5678-9012-34567\",\n        }\n    },\n    \"email\": null,\n    \"eventName\": \"rc_expiration_event\",\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n}",
+      "language": "json",
+      "name": "Expiration"
+    },
+    {
+      "code": "{\n    \"createdAt\": 1663964010781,\n    \"dataFields\": {\n        \"app_id\": \"app1234567890\",\n        \"event_properties\": {\n            \"environment\": \"PRODUCTION\",\n            \"expiration_at_ms\": 1664050410466,\n            \"grace_period_expires_at\": 1664580986800,\n            \"original_transaction_id\": \"GPA.1234-5678-9012-34567\",\n            \"period_type\": \"TRIAL\",\n            \"product_id\": \"annual_sub_one_week_trial\",\n            \"store\": \"PLAY_STORE\",\n            \"transaction_id\": \"GPA.1234-5678-9012-34567\",\n        }\n    },\n    \"email\": null,\n    \"eventName\": \"rc_billing_issue_event\",\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n}",
+      "language": "json",
+      "name": "Billing Issues"
+    },
+    {
+      "code": "{\n    \"id\": \"12345678-1234-1234-1234-123456789012\",\n    \"email\": null,\n    \"eventName\": \"rc_product_change_event\",\n    \"userId\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n    \"dataFields\": {\n        \"event_properties\": {\n            \"environment\": \"PRODUCTION\",\n            \"expiration_at_ms\": 1652327468000,\n            \"original_transaction_id\": \"123456789012345\",\n            \"period_type\": \"TRIAL\",\n            \"product_id\": \"annual_sub_trial\",\n            \"store\": \"APP_STORE\",\n            \"transaction_id\": \"123456789012345\",\n            \"new_product_id\": \"annual_sub_trial\"\n        }\n    },\n    \"createdAt\": 1651722668000\n}",
+      "language": "json",
+      "name": "Product Change"
     }
   ]
 }

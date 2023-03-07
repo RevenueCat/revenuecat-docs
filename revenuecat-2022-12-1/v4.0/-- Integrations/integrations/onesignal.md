@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2020-08-26T17:22:44.480Z"
-updatedAt: "2022-08-19T01:40:08.516Z"
+updatedAt: "2023-02-08T16:46:31.106Z"
 ---
 [block:callout]
 {
@@ -162,6 +162,59 @@ While still on the Customer View, click into the test purchase event in the [Cus
         224,
         "#f7f2f1"
       ]
+    }
+  ]
+}
+[/block]
+#Sample Events
+Below are sample JSONs that are delivered to OneSignal for events.
+[block:code]
+{
+  "codes": [
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at\": 1600016247,\n        \"expiration_at\": 1602608247,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"initial_purchase\",\n        \"last_event_at\": 1600016250,\n        \"product_id\": \"monthly_sub\",\n        \"entitlement_ids\": \"Pro\"\n    }\n}",
+      "language": "json",
+      "name": "Initial Purchase"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"TRIAL\",\n        \"purchased_at\": 1600031584,\n        \"expiration_at\": 1600290784,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"trial_started\",\n        \"last_event_at\": 1600031586,\n        \"product_id\": \"three_month_sub_trial\",\n        \"entitlement_ids\": \"Pro\"\n    }\n}",
+      "language": "json",
+      "name": "Trial Started"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"TRIAL\",\n        \"purchased_at\": 1602051920,\n        \"expiration_at\": 1602311120,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"trial_cancelled\",\n        \"last_event_at\": 1602129368,\n        \"product_id\": \"weekly_sub_trial\",\n        \"entitlement_ids\": null\n    }\n}",
+      "language": "json",
+      "name": "Trial Cancelled"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at\": 1602136340,\n        \"expiration_at\": 1602741140,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"trial_converted\",\n        \"last_event_at\": 1602114850,\n        \"product_id\": \"weekly_sub_trial\",\n        \"entitlement_ids\": null\n    }\n}",
+      "language": "json",
+      "name": "Trial Converted"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at\": 1602125078,\n        \"expiration_at\": 1604807078,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"renewal\",\n        \"last_event_at\": 1602122793,\n        \"product_id\": \"monthly_sub\",\n        \"entitlement_ids\": \"Pro\"\n    }\n}",
+      "language": "json",
+      "name": "Renewal"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at\": 1602086660,\n        \"expiration_at\": 1602691460,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"cancellation\",\n        \"last_event_at\": 1602118600,\n        \"product_id\": \"weekly_sub\",\n        \"entitlement_ids\": null\n    }\n}",
+      "language": "json",
+      "name": "Cancellation"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"TRIAL\",\n        \"purchased_at\": 1663445025,\n        \"expiration_at\": 1664049825,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"uncancellation\",\n        \"last_event_at\": 1663969096,\n        \"product_id\": \"annual_sub\",\n        \"entitlement_ids\": \"Premium\"\n    }\n}",
+      "language": "json",
+      "name": "Uncancellation"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"period_type\": \"NORMAL\",\n        \"purchased_at\": 1652374230,\n        \"expiration_at\": 1652979030,\n        \"last_event_type\": \"expiration\",\n        \"last_event_at\": 1652988735\n    }\n}",
+      "language": "json",
+      "name": "Expiration"
+    },
+    {
+      "code": "{\n    \"app_id\": \"12345678-1234-1234-1234-123456789012\",\n    \"tags\": {\n        \"app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"period_type\": \"TRIAL\",\n        \"purchased_at\": 1652383957,\n        \"expiration_at\": 1654371157,\n        \"store\": \"APP_STORE\",\n        \"environment\": \"PRODUCTION\",\n        \"last_event_type\": \"billing_issue\",\n        \"last_event_at\": 1652988776,\n        \"product_id\": \"annual_sub\",\n        \"entitlement_ids\": \"Premium\"\n    }\n}",
+      "language": "json",
+      "name": "Billing Issue"
     }
   ]
 }

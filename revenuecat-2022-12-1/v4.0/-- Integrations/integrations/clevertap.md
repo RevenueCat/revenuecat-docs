@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2020-10-23T02:20:59.696Z"
-updatedAt: "2022-08-23T17:21:11.975Z"
+updatedAt: "2023-02-27T20:53:58.006Z"
 ---
 [block:callout]
 {
@@ -36,7 +36,7 @@ The CleverTap integration tracks the following events:
 {
   "data": {
     "h-0": "Event",
-    "h-1": "Description",
+    "h-1": "Default Event Name",
     "0-0": "Initial Purchase",
     "1-0": "Trial Started",
     "2-0": "Trial Converted",
@@ -44,23 +44,95 @@ The CleverTap integration tracks the following events:
     "4-0": "Renewal",
     "5-0": "Cancellation",
     "7-0": "Non Subscription Purchase",
-    "0-1": "The first purchase of an auto-renewing subscription product that does not contain a free trial.",
-    "1-1": "The start of an auto-renewing subscription product free trial.",
-    "2-1": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
-    "3-1": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
-    "4-1": "When an auto-renewing subscription product renews OR a user repurchases the auto-renewing subscription product after a lapse in their subscription.",
-    "5-1": "When a user turns off renewals for an auto-renewing subscription product during the normal paid period.",
-    "7-1": "The purchase of any product that's not an auto-renewing subscription.",
+    "0-1": "rc_initial_purchase_event",
+    "1-1": "rc_trial_started_event",
+    "2-1": "rc_trial_converted_event",
+    "3-1": "rc_trial_cancelled_event",
+    "4-1": "rc_renewal_event",
+    "5-1": "rc_cancellation_event",
+    "7-1": "rc_non_subscription_purchase_event",
     "6-0": "Uncancellation",
-    "6-1": "When a user re-enables the auto-renew status for a subscription.",
+    "6-1": "rc_uncancellation_event",
     "8-0": "Expiration",
-    "8-1": "A subscription has expired and access should be removed.",
+    "8-1": "rc_expiration_event",
     "9-0": "Billing Issues",
-    "9-1": "There has been a problem trying to charge the subscriber. \n \nThis does not mean the subscription has expired (in the case of a grace period enabled).",
+    "9-1": "rc_billing_issue_event",
     "10-0": "Product Change",
-    "10-1": "When user has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](doc:managing-subscriptions) for more details on updates, downgrades, and crossgrades."
+    "10-1": "rc_product_change_event",
+    "h-7": "Promo",
+    "h-6": "Web",
+    "h-5": "Amazon",
+    "h-4": "Play Store",
+    "h-3": "App Store",
+    "h-2": "Description",
+    "0-2": "A new subscription has been purchased or a lapsed user has resubscribed.",
+    "0-3": "✅",
+    "0-4": "✅",
+    "0-5": "✅",
+    "0-6": "✅",
+    "0-7": "❌",
+    "1-2": "The start of an auto-renewing subscription product free trial.",
+    "2-2": "When an auto-renewing subscription product converts from a free trial to normal paid period.",
+    "1-3": "✅",
+    "1-4": "✅",
+    "2-3": "✅",
+    "2-4": "✅",
+    "2-5": "✅",
+    "1-5": "✅",
+    "1-6": "✅",
+    "2-6": "✅",
+    "2-7": "✅",
+    "1-7": "✅",
+    "3-7": "✅",
+    "3-6": "✅",
+    "3-5": "✅",
+    "3-4": "✅",
+    "3-3": "✅",
+    "3-2": "When a user turns off renewals for an auto-renewing subscription product during a free trial period.",
+    "4-2": "An existing subscription has been renewed.",
+    "4-3": "✅",
+    "4-4": "✅",
+    "4-5": "✅",
+    "4-6": "✅",
+    "4-7": "❌",
+    "5-2": "A subscription or non-renewing purchase has been cancelled. See [cancellation reasons](https://www.revenuecat.com/docs/webhooks#cancellation-and-expiration-reasons) for more details.",
+    "5-3": "✅",
+    "5-4": "✅",
+    "5-5": "✅",
+    "5-6": "✅",
+    "5-7": "✅",
+    "6-3": "✅",
+    "6-4": "✅",
+    "6-5": "✅",
+    "6-6": "❌",
+    "6-7": "❌",
+    "6-2": "A non-expired cancelled subscription has been re-enabled.",
+    "7-2": "A customer has made a purchase that will not auto-renew.",
+    "7-3": "✅",
+    "7-4": "✅",
+    "7-6": "✅",
+    "7-5": "✅",
+    "7-7": "✅",
+    "8-2": "A subscription has expired and access should be removed.\n\nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.\n\nIf you do not have notifications configured, delays may be approximately 1 hour.",
+    "8-3": "✅",
+    "8-4": "✅",
+    "8-5": "✅",
+    "8-6": "✅",
+    "8-7": "✅",
+    "9-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.\n\nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
+    "10-2": "A subscriber has changed the product of their subscription.\n\nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](https://www.revenuecat.com/docs/managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "9-3": "✅",
+    "9-4": "✅",
+    "9-5": "✅",
+    "9-6": "✅",
+    "10-6": "✅",
+    "10-4": "✅",
+    "10-3": "✅",
+    "10-5": "❌",
+    "10-7": "❌",
+    "9-7": "❌"
   },
-  "cols": 2,
+  "cols": 8,
   "rows": 11
 }
 [/block]
@@ -133,7 +205,7 @@ After you've set up the *Purchases SDK* and CleverTap SDK to have the same user 
 [/block]
 2. Choose **CleverTap** from the Integrations menu
 3. Add your [CleverTap Account ID and Passcode](https://developer.clevertap.com/docs/api-quickstart-guide).
-4. If you want to test in sandbox, also add your Passcode from your testing account.
+4. If you want to test in sandbox, also add your Sandbox Account ID and Passcode from your testing account.
 5. Enter the event names that RevenueCat will send or choose the default event names
 6. Select whether you want sales reported as gross revenue (before app store commission), or after store commission and/or estimated taxes.
 [block:image]
@@ -141,11 +213,11 @@ After you've set up the *Purchases SDK* and CleverTap SDK to have the same user 
   "images": [
     {
       "image": [
-        "https://files.readme.io/6911e45-CleverTap.png",
-        "CleverTap.png",
-        1798,
-        3556,
-        "#fbfcfc"
+        "https://files.readme.io/444dd1c-clevertap_screesnshot.png",
+        "clevertap screesnshot.png",
+        1710,
+        3601,
+        "#000000"
       ],
       "caption": "CleverTap configuration page"
     }
@@ -159,15 +231,72 @@ After you've set up the *Purchases SDK* and CleverTap SDK to have the same user 
   "body": "By default, RevenueCat sends data through CleverTap's EU data center. For CleverTap customers who have a regional data center configured, you can change your region in the dropdown selector under 'CleverTap Region'."
 }
 [/block]
-# Sample Event
-Below is sample JSON that is delivered to CleverTap for an initial purchase event.
+# Sample Events
+Below are sample JSONs that are delivered to CleverTap for most event types.
 [block:code]
 {
   "codes": [
     {
-      "code": "{\n    'd': [\n        {\n            'type': 'event',\n            'evtName': 'initial_purchase',\n            'evtData': {\n                'amount': 9.99,\n                'currency': 'USD',\n            },\n            'ts': 1580602110000,\n            'objectId': 'yourCustomClevertapId',\n        }\n    ]\n}",
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"amount\": 4.99,\n        \"app_id\": \"1234567890\",\n        \"currency\": \"USD\"\n      },\n      \"evtName\": \"rc_initial_purchase_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1662539769,\n      \"type\": \"event\"\n    }\n  ]\n}",
       "language": "json",
-      "name": "JSON"
+      "name": "Initial Purchase"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$adjustId\": \"12abc345d67e890fgh12j3lm456n7890\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 0,\n        \"app_id\": \"1234567890\",\n        \"currency\": \"EUR\"\n      },\n      \"evtName\": \"rc_trial_started_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1663045139,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Trial Started"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$adjustId\": \"12abc345d67e890fgh12j3lm456n7890\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 14.99,\n        \"app_id\": \"1234567890\",\n        \"currency\": \"EUR\"\n      },\n      \"evtName\": \"rc_trial_converted_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1663062898,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Trial Converted"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$adjustId\": \"12abc345d67e890fgh12j3lm456n7890\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 0,\n        \"app_id\": \"1234567890\",\n        \"cancel_reason\": \"BILLING_ERROR\",\n        \"currency\": \"EUR\"\n      },\n      \"evtName\": \"rc_trial_cancelled_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1663060098,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Trial Cancelled"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$appsflyerId\": \"1234567890123-1234567890123456789\",\n        \"$clevertapId\": \"12345678-1234-1234-1234-123456789012\",\n        \"$email\": \"firstLast@gmail.com\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 139.99,\n        \"app_id\": \"1234567890\",\n        \"currency\": \"INR\"\n      },\n      \"evtName\": \"rc_renewal_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1659935913,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Renewal"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$appsflyerId\": \"1234567890123-1234567890123456789\",\n        \"$clevertapId\": \"12345678-1234-1234-1234-123456789012\",\n        \"$email\": \"firstLast@gmail.com\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 0,\n        \"app_id\": \"1234567890\",\n        \"cancel_reason\": \"UNSUBSCRIBE\",\n        \"currency\": \"INR\"\n      },\n      \"evtName\": \"rc_cancellation_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1659936775,\n      \"type\": \"event\"\n    }\n  ]\n}{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$appsflyerId\": \"1234567890123-1234567890123456789\",\n        \"$clevertapId\": \"12345678-1234-1234-1234-123456789012\",\n        \"$email\": \"firstLast@gmail.com\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 0,\n        \"app_id\": \"1234567890\",\n        \"cancel_reason\": \"UNSUBSCRIBE\",\n        \"currency\": \"INR\"\n      },\n      \"evtName\": \"cancellation\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1659936775,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Cancellation"
+    }
+  ]
+}
+[/block]
+
+[block:code]
+{
+  "codes": [
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"type\": \"event\",\n      \"evtName\": \"rc_uncancellation_event\",\n      \"evtData\": {\n         \"$ip\": \"123.45.67.89\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n        \"$email\": \"firstLast@gmail.com\",\n        \"$adjustId\": \"12abc345d67e890fgh12j3lm456n7890\",\n        \"$displayName\": \"first last\",\n        \"$mediaSource\": \"Organic\",\n        \"amount\": 0.0,\n        \"currency\": \"USD\"\n      },\n      \"ts\": 1632188342,\n      \"objectId\": \"abCdEFg01HiJklMN2OpQ3RStu4v5\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Uncancellation"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$appsflyerId\": \"1234567890123-1234567890123456789\",\n        \"$clevertapId\": \"12345678-1234-1234-1234-123456789012\",\n        \"$email\": \"firstLast@gmail.com\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"age\": \"24\",\n        \"amount\": 0,\n        \"currency\": \"USD\"\n      },\n      \"evtName\": \"rc_non_subscription_purchase_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1660903862,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Non Subscription Purchase"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$appsflyerId\": \"1234567890123-1234567890123456789\",\n        \"$clevertapId\": \"12345678-1234-1234-1234-123456789012\",\n        \"$email\": \"firstLast@gmail.com\",\n        \"$idfa\": \"00000000-0000-0000-0000-000000000000\",\n        \"$idfv\": \"12345A6B-C789-0D1E-FG23-456H6I7J890K\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 0,\n        \"app_id\": \"1234567890\",\n        \"currency\": \"INR\",\n        \"expiration_reason\": \"UNSUBSCRIBE\"\n      },\n      \"evtName\": \"rc_expiration_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1659936813,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Expiration"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"evtData\": {\n        \"$adjustId\": \"12abc345d67e890fgh12j3lm456n7890\",\n         \"$ip\": \"123.45.67.89\",\n        \"amount\": 0,\n        \"app_id\": \"1234567890\",\n        \"currency\": \"EUR\",\n        \"grace_period_expiration_at\": 1663146497433\n      },\n      \"evtName\": \"rc_billing_issue_event\",\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n      \"ts\": 1663060098,\n      \"type\": \"event\"\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Billing Issue"
+    },
+    {
+      "code": "{\n  \"d\": [\n    {\n      \"type\": \"event\",\n      \"evtName\": \"rc_product_change_event\",\n      \"evtData\": {\n        \"amount\": 0.0,\n        \"currency\": \"USD\"\n      },\n      \"ts\": 1626283709,\n      \"identity\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n    }\n  ]\n}",
+      "language": "json",
+      "name": "Product Change"
     }
   ]
 }

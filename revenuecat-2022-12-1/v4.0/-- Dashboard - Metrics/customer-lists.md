@@ -12,7 +12,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2021-01-18T18:46:58.144Z"
-updatedAt: "2022-11-14T16:13:06.085Z"
+updatedAt: "2023-02-17T19:53:32.256Z"
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.
 
@@ -50,7 +50,7 @@ Lists are a segment of your customers inside RevenueCat, this can include both p
 [/block]
 # Find an Individual Customer
 
-You can look up an individual customer by an exact match of their App User ID, Transaction ID, Email Attribute, or Order ID (iOS only). To find a customer via Order ID, you can follow our guide on setting up [In-App Purchase Keys](https://docs.revenuecat.com/docs/in-app-purchase-key-configuration) to unlock this feature. The transaction must show as completed in the [Apple Purchase History](https://support.apple.com/en-gb/HT204088) to be considered a valid Order ID. 
+You can look up an individual customer by an exact match of their App User ID, Transaction ID, Email Attribute, or Order ID (iOS only). To find a customer via Order ID, you can follow our guide on setting up [In-App Purchase Keys](https://docs.revenuecat.com/docs/in-app-purchase-key-configuration) to unlock this feature. The transaction must show as completed in the [Apple Purchase History](https://support.apple.com/en-gb/HT204088) to be considered a valid Order ID. Note that Transaction ID refers to the identifier in Google Play console and order emails of GPA.1234.1223–, and for Stripe si_abcefg, whereas Order ID refers to the identifier from Apple's order emails.
 
 Looking up customers in RevenueCat is real-time, as soon as a customer exists in RevenueCat they will be searchable here.
 [block:image]
@@ -186,16 +186,25 @@ For each list, RevenueCat computes overview metrics for the cohort of customers.
     "0-0": "Customers",
     "0-1": "The total number of customers in the list.",
     "1-0": "Active Trials",
-    "1-1": "The total number of active trials.",
+    "1-1": "The total number of active trials. This includes trials which are cancelled, or in their grace period, and have not yet expired.",
     "2-0": "Active Subscriptions",
-    "2-1": "The total number of active subscriptions.",
+    "2-1": "The total number of active subscriptions. This includes subscriptions which are cancelled, or in their grace period, and have not yet expired.",
     "3-0": "Total Revenue",
-    "3-1": "The total revenue (USD) that the list of customers has generated"
+    "3-1": "The total revenue (USD) that the list of customers has generated, minus refunds."
   },
   "cols": 2,
   "rows": 4
 }
 [/block]
+
+[block:callout]
+{
+  "type": "info",
+  "body": "Active \"subscribers\" may be lower than your count of all active \"subscriptions\" (e.g. in Overview or Charts) if some customers have multiple active subscriptions.",
+  "title": "Active Subscribers vs. Active Subscriptions"
+}
+[/block]
+
 # List Data
 
 For each list, RevenueCat displays the 100 most recently seen customers in the dashboard.

@@ -4,7 +4,7 @@ slug: "taxes-and-commissions"
 excerpt: "How RevenueCat estimates taxes and commissions for transactions"
 hidden: false
 createdAt: "2022-06-07T20:41:47.792Z"
-updatedAt: "2022-11-17T16:49:58.327Z"
+updatedAt: "2023-03-06T15:45:20.131Z"
 ---
 RevenueCat can optionally report revenue after store commissions, or after taxes and commissions through various features like integrations, webhooks, and our Revenue chart; but there's some context you should be aware of when using RevenueCat's tax estimation to see your net revenue from a transaction.
 
@@ -45,11 +45,15 @@ For some stores, like the App Store, in most cases we can detect the store that 
 
 In some cases (for example, USD or EUR transactions on the Google Play Store), we have to estimate the country based on the customer's IP address. This means that we can't guarantee perfect accuracy (for example, if a customer is currently traveling from one Eurozone country to another, or using a VPN), but we have found the estimation to be 95% accurate in most circumstances.
 
-
 ### Store-specific logic
 
 Once we know the country we will base our tax estimation off of, then we apply the store-specific logic to estimate taxes.
-
+[block:callout]
+{
+  "type": "info",
+  "body": "We do not take your location as a developer into account when estimating taxes to be withheld, though some stores & countries may withhold differently on transactions in the country you're operating in."
+}
+[/block]
 **App Store**
 
 Apple charges both [Value-Added Tax](https://taxfoundation.org/tax-basics/value-added-tax-vat/#:~:text=A%20Value%2DAdded%20Tax%20(VAT)%20is%20a%20consumption%20tax,a%20tax%20on%20final%20consumption.) (VAT) and the [digital services taxes](https://taxfoundation.org/digital-tax-europe-2020/) (DST) that have been put in place by several countries. We use the provided pricing tables from Apple to estimate these tax rates in each country, and calculate them against either the gross or post-commission revenue as applicable.
@@ -111,4 +115,6 @@ To learn more about using our webhooks, [click here](https://docs.revenuecat.com
 
 ### ETL exports
 
-We currently do not support estimating taxes through ETL exports, but we expect to offer this support later this year.
+Our ETL exports offer the same two fields, <code>tax_percentage<strong> </strong></code>and <code>commission_percentage</code>, which can be use for estimating proceeds in the same manner through these exports.
+
+To learn more about using our ETL exports, [click here](https://www.revenuecat.com/docs/etl-exports).

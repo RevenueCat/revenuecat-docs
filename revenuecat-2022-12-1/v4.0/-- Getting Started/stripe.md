@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-10-06T10:07:28.963Z"
+updatedAt: "2023-01-11T19:40:56.017Z"
 ---
 RevenueCat currently supports web payments through Stripe. This allows you to let users subscribe on your own website, and automatically unlock access to the same subscription content through the *Purchases SDK*.
 
@@ -202,6 +202,14 @@ The subscriptions you create using this environment will be considered _sandbox 
       ]
     }
   ]
+}
+[/block]
+
+[block:callout]
+{
+  "type": "danger",
+  "title": "Stripe Test Clocks not fully supported",
+  "body": "Stripe allows using [test clocks](https://stripe.com/docs/billing/testing/test-clocks) to manipulate how subscriptions move through time. Since using test clocks lead to time divergences between Stripe and RevenueCat, data may not be accurately reflected in RevenueCat when using Stripe test clocks."
 }
 [/block]
 # Working with web payments

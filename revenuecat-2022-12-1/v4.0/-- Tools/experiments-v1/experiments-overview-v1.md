@@ -3,35 +3,50 @@ title: "Experiments Overview"
 slug: "experiments-overview-v1"
 hidden: false
 createdAt: "2022-10-13T18:43:40.091Z"
-updatedAt: "2022-11-30T20:37:18.811Z"
+updatedAt: "2023-03-01T21:04:14.252Z"
 ---
 Experiments allow you to answer questions about your users' behaviors and app's business by A/B testing two offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
 
 While price testing is one of the most common forms of A/B testing in mobile apps, Experiments are based on RevenueCat Offerings, allowing you A/B test more than just prices, including: trial length, subscription length, different groupings of products, etc.
+
+[block:callout]
+{
+  "type": "info",
+  "body": "Experiments is available to Pro & Enterprise customers. [Learn more about pricing here](https://www.revenuecat.com/pricing/)."
+}
+[/block]
+
 [block:api-header]
 {
   "title": "How does it work?"
 }
 [/block]
-After configuring the two Offerings you want and adding them to an Experiment, RevenueCat will randomly assign users to a cohort where they will only see one of the two Offerings. Everything is done server-side, so no changes to your app are required if you're already displaying the `current` offering in your app! If you need help making your paywall more dynamic, see [Displaying Products](doc:displaying-products). The [Swift sample app](https://github.com/RevenueCat/purchases-ios/tree/master/Examples/SwiftExample) has an example of a dynamic paywall that is Experiments-ready.
+After configuring the two Offerings you want and adding them to an Experiment, RevenueCat will randomly assign users to a cohort where they will only see one of the two Offerings. Everything is done server-side, so no changes to your app are required if you're already displaying the `current` offering in your app! If you need help making your paywall more dynamic, see [Displaying Products](doc:displaying-products). The [Swift sample app](https://github.com/RevenueCat/purchases-ios/tree/main/Examples) has an example of a [dynamic paywall](https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift) that is Experiments-ready. Dynamic paywall examples in other languages can be found within our other [sample apps](https://www.revenuecat.com/docs/sample-apps) as well.
+[block:callout]
+{
+  "type": "info",
+  "title": "",
+  "body": "To learn more about creating a new Offering to test, and some tips to keep in mind when creating new Products on the stores, [check out our guide here](doc:creating-offerings-to-test)."
+}
+[/block]
 
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/8762b45-sample-ab-test-users.png",
-        "sample-ab-test-users.png",
-        1800,
-        1634,
-        "#f09397"
+        "https://files.readme.io/34bba5f-ab-test.png",
+        "ab-test.png",
+        661,
+        722,
+        "#000000"
       ],
-      "caption": "Two different price points are being A/B tested. In this example, this was accomplished by creating two offerings each containing identical products except for the monthly products, which are two different products at different price points. RevenueCat randomly assign users to a cohort and show them one of the two offerings in the experiment by making that offering the `current` offering."
+      "caption": ""
     }
   ]
 }
 [/block]
-As soon as a customer is enrolled in an experiment, they'll be included in the "Customers" count on the Experiment Results page, and you'll see any trial starts, paid conversions, status changes, etc. represented in the corresponding metrics. (Learn more [here](doc:experiments-results-v1)
+As soon as a customer is enrolled in an experiment, they'll be included in the "Customers" count on the Experiment Results page, and you'll see any trial starts, paid conversions, status changes, etc. represented in the corresponding metrics. (Learn more [here](doc:experiments-results-v1))
 [block:api-header]
 {
   "title": "Implementation steps"

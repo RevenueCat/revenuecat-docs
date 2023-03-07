@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-08-19T01:41:00.858Z"
+updatedAt: "2023-01-05T20:13:32.491Z"
 ---
 With our Adjust integration you can:
 * Accurately track subscriptions generated from Adjust campaigns, allowing you to know precisely how much revenue your campaigns generate.
@@ -22,7 +22,7 @@ With our Adjust integration you can:
 
 # 1. Install Adjust SDK 
 
-Before RevenueCat can integrate with Adjust, your app should be running the latest Adjust SDK. Refer to the [Adjust developer documentation](https://help.adjust.com/sdk) for the latest installation instructions.
+Before RevenueCat can integrate with Adjust, your app should be running the latest Adjust SDK. Refer to the [Adjust developer documentation](https://help.adjust.com/en/article/sdk-releases) for the latest installation instructions.
 
 # 2. Send device data to RevenueCat
 

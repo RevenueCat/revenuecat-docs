@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2020-04-07T20:32:01.037Z"
-updatedAt: "2022-07-04T19:39:00.027Z"
+updatedAt: "2023-02-02T14:19:47.927Z"
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 [block:code]
@@ -51,7 +51,7 @@ Angular apps can use either Cordova or Capacitor to build native mobile apps. Fo
 {
   "codes": [
     {
-      "code": "import { Platform } from \"@ionic/angular\";\n import { Purchases } from \"@awesome-cordova-plugins/purchases/ngx\";\n\n constructor(public platform: Platform, private purchases: Purchases) {\n     platform.ready().then(() => {\n         this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs\n         this.purchases.setup(\"my_api_key\", \"my_app_user_id\");\n     }\n }",
+      "code": "import { Platform } from \"@ionic/angular\";\nimport { Purchases } from \"@awesome-cordova-plugins/purchases/ngx\";\n\nconstructor(public platform: Platform, private purchases: Purchases) {\n    platform.ready().then(() => {\n        this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs\n        this.purchases.configureWith({\n            apiKey: \"my_api_key\",\n            appUserID: \"my_app_user_id\"\n        });\n    }\n}",
       "language": "typescript"
     }
   ]
@@ -68,7 +68,7 @@ Import the plugin object then use its static methods:
 {
   "codes": [
     {
-      "code": "import { Purchases } from '@awesome-cordova-plugins/purchases';\n\nconst Tab1: React.FC = () => {\n  Purchases.setDebugLogsEnabled(true);\n  Purchases.setup(\"my_api_key\", \"my_app_user_id\");\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>Tab 1</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonButton onClick={openScanner}>Scan barcode</IonButton>\n      </IonContent>\n    </IonPage>\n  );\n};",
+      "code": "import { Purchases } from '@awesome-cordova-plugins/purchases';\n\nconst Tab1: React.FC = () => {\n  Purchases.setDebugLogsEnabled(true);\n  Purchases.purchases.configureWith({\n    apiKey: \"my_api_key\",\n    appUserID: \"my_app_user_id\"\n  });\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>Tab 1</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonButton onClick={openScanner}>Scan barcode</IonButton>\n      </IonContent>\n    </IonPage>\n  );\n};",
       "language": "typescript"
     }
   ]

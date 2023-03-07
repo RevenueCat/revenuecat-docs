@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-10-19T20:51:43.737Z"
+updatedAt: "2023-02-24T17:23:46.770Z"
 ---
 [block:callout]
 {
@@ -109,6 +109,104 @@ Segments allow you to break down the chart totals into underlying data segments.
   "type": "info",
   "title": "Filters do not affect 'New Customers' number",
   "body": "Filters and segments do not apply to the 'New Customers' number. It is possible for customers to jump between web, iOS, and Android devices, so these filters only apply to transactions, which always happen through a particular Store."
+}
+[/block]
+# Conversion Charts
+
+## Cohorting
+To ensure our conversion rate charts provide an accurate measurement of the conversion "funnel" that an individual customer experiences, they are cohorted by the earliest date that a customer:
+
+1. Was "first seen" (first opened your app), or
+2. Made their first purchase (for purchases made outside of your app, like promoted purchases in the App Store)
+
+**Example**: If a customer first opened your app on April 15th, 2022, but didn't make a purchase until May 21st, 2022, they would be included in the April 15th cohort.
+[block:callout]
+{
+  "type": "info",
+  "body": "Measuring conversion rates through a cohort of customers *from* a given period, as opposed to a count of events *within* a given period, is critical for accurate performance comparison."
+}
+[/block]
+## Understanding conversion rates
+We offer three conversion rate charts to measure different aspects of your conversion funnel:
+
+1. Initial Conversion: The proportion of new customers from a given period who subscribe to or purchase any product, including free trials.
+2. Conversion to Paying: The proportion of new customers from a given period who subscribe to or purchase any paid product.
+3. Trial Conversion: The proportion of new customers from a given period starting free trials, through their conversion into paying subscriptions.
+
+It's important to understand the relationships between these three charts, since depending on the nature of your product offerings, you may use these charts for different purposes.
+
+**If all of your products offer a free trial, then Initial Conversion = Trial Start Rate.**
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/1386416-image-20230224-130028.png",
+        "image-20230224-130028.png",
+        2008,
+        1286,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+**If all of your products begin with a paid subscription, then Initial Conversion = Conversion to Paying, and Trial Conversion is not applicable to your business.**
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/611728c-image-20230224-155039.png",
+        "image-20230224-155039.png",
+        1926,
+        1232,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+**If your products contain a mix of subscriptions with and without trials, then these charts will measure distinct conversion rates. Initial Conversion will equal ([Trial Starts] + [Paying Customers]) / [New Customers], while Conversion to Paying will equal ([Trial Conversions] + [Paying Customers]) / [New Customers].**
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/179324e-image-20230224-155057.png",
+        "image-20230224-155057.png",
+        1926,
+        1232,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+## Conversion Timeframes
+
+On our Initial Conversion and Conversion to Paying charts we offer a "Conversion Timeframe" selector that lets you choose how long to give each cohort to convert within to be included in the chart.
+
+Since these charts are cohorted by a customer's first seen date, earlier cohorts have had more opportunity to convert, which is one reason why the most recent periods in your chart might have lower reported conversion rates.
+
+By setting a Conversion Timeframe of 7 days, for example, you ensure that even periods which are much older than 7 days only include conversions that occurred within 7 complete days of customer's first seen date in the chart. If you compare that to a recent cohort that's also had 7 complete days to convert, that you're seeing an accurate comparison of performance within that defined time period.
+
+Here's a specific example using a 7 day Conversion Timeframe:
+* A cohort that is 14 days old would only include conversions that occurred within the first 7 complete days, but none that occurred after
+* A cohort that is 10 days old would include all conversions that occurred within the first 7 complete days, but none that occurred after, allowing for accurate comparison with the older cohort even though that cohort has had more opportunities to convert -- that additional time is excluded from this view.
+* While a cohort that is 5 days old would include all conversions that occurred thus far, since all have occurred within the first 7 complete days, and it would additionally be marked as incomplete, since that cohort still has remaining time before it reaches full maturity.
+
+[block:callout]
+{
+  "type": "info",
+  "body": "Select the \"Unbounded\" conversion timeframe to see all the conversions for a given cohort, regardless of when they occurred."
+}
+[/block]
+Additionally, cohorts that have not yet had the time fully mature (as defined by the Conversion Timeframe selected) will be marked as incomplete periods and styled accordingly. This ensures that you can interpret their performance accurately against other periods. Learn more about incomplete periods [here](doc:charts-feature-incomplete-periods).
+[block:callout]
+{
+  "type": "warning",
+  "body": "Conversion Timeframes are not yet supported on the Trial Conversion chart, but will be coming soon."
 }
 [/block]
 # Exporting Data

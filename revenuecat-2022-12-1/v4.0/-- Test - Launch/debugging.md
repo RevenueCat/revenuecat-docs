@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-11-07T19:48:37.380Z"
+updatedAt: "2023-02-21T22:09:31.225Z"
 ---
 [block:callout]
 {
@@ -28,28 +28,28 @@ RevenueCat's SDK will log important information and errors to help you understan
 {
   "codes": [
     {
-      "code": "Purchases.logLevel = .debug\nPurchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")",
+      "code": "Purchases.logLevel = .debug\nPurchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)",
       "language": "swift"
     },
     {
-      "code": "RCPurchases.logLevel = RCLogLevelDebug;\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];",
+      "code": "RCPurchases.logLevel = RCLogLevelDebug;\n[RCPurchases configureWithAPIKey:@<public_sdk_key> appUserID:@<my_app_user_id>];",
       "language": "objectivec"
     },
     {
-      "code": "Purchases.debugLogsEnabled = true\nPurchases.configure(PurchasesConfiguration.Builder(context, apiKey = \"\")\n            .appUserID(\"my_app_user_id\")\n            .build()",
+      "code": "Purchases.debugLogsEnabled = true\nPurchases.configure(PurchasesConfiguration.Builder(context, apiKey = \"\")\n            .appUserID(<my_app_user_id>)\n            .build()",
       "language": "kotlin"
     },
     {
-      "code": "Purchases.setDebugLogsEnabled(true);\nPurchases.configure(new PurchasesConfiguration.Builder(context, \"api_key\").appUserID(\"my_app_user_id\").build());",
+      "code": "Purchases.setDebugLogsEnabled(true);\nPurchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());",
       "language": "java"
     },
     {
-      "code": "Purchases.setDebugLogsEnabled(true);\nPurchases.setup(\"public_sdk_key\", \"my_app_user_id\");",
+      "code": "Purchases.setDebugLogsEnabled(true);\nPurchases.setup(<public_sdk_key>, <my_app_user_id>);",
       "language": "javascript",
       "name": "React Native"
     },
     {
-      "code": "await Purchases.setDebugLogsEnabled(true);\nPurchasesConfiguration pc = PurchasesConfiguration(\"public_sdk_key\");\nawait Purchases.configure(pc);",
+      "code": "await Purchases.setDebugLogsEnabled(true);\nPurchasesConfiguration pc = PurchasesConfiguration(<public_sdk_key>);\nawait Purchases.configure(pc);",
       "language": "javascript",
       "name": "Flutter"
     },
@@ -57,6 +57,11 @@ RevenueCat's SDK will log important information and errors to help you understan
       "code": "Purchases.SetDebugLogsEnabled(true);",
       "language": "javascript",
       "name": "Unity"
+    },
+    {
+      "code": "Purchases.setLogLevel(LOG_LEVEL.DEBUG);",
+      "language": "javascript",
+      "name": "Cordova"
     }
   ]
 }

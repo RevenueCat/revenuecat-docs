@@ -12,7 +12,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2020-06-29T17:25:26.484Z"
-updatedAt: "2022-09-28T04:02:32.313Z"
+updatedAt: "2023-02-28T21:11:07.211Z"
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 [block:callout]
@@ -27,45 +27,45 @@ If this is your first time integrating RevenueCat into your app, we recommend fo
 
 Once you've [installed](https://docs.revenuecat.com/docs/installation) the SDK for your app, it's time to initialize and configure it.
 
-You should only configure *Purchases* once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
+You should only configure *Purchases* once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
 
-Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
+Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 [block:code]
 {
   "codes": [
     {
-      "code": "func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n  \n    Purchases.logLevel = .debug\n    Purchases.configure(\n     with: Configuration.Builder(withAPIKey: Constants.apiKey)\n              .with(appUserID: \"<app_user_id>\")\n              .build()\n     )\n  \n}",
+      "code": "func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n  \n    Purchases.logLevel = .debug\n    Purchases.configure(withAPIKey: <public_apple_api_key>, appUserID: <app_user_id>)\n  \n}",
       "language": "swift"
     },
     {
-      "code": "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n  \t// Override point for customization after application launch.\n    \n  \tRCPurchases.logLevel = RCLogLevelDebug;\n  \tRCConfigurationBuilder *configuration = [RCConfiguration builderWithAPIKey:@\"public_sdk_key\"];\n  \tconfiguration = [configuration withAppUserID:@\"<app_user_id>\"];\n  \t[RCPurchases configureWithConfiguration:[configuration build]];\n    \n  \treturn YES;\n}",
+      "code": "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n  \t// Override point for customization after application launch.\n    \n  \tRCPurchases.logLevel = RCLogLevelDebug;\n        [RCPurchases configureWithAPIKey:<public_apple_api_key> appUserID:<app_user_id>];\n    \n  \treturn YES;\n}",
       "language": "objectivec"
     },
     {
-      "code": "// If you're targeting only Google Play Store\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n        Purchases.configure(PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").build())\n    }\n}\n\n// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use\n// In your build.gradle:\nflavorDimensions \"store\"\nproductFlavors {\n    amazon {\n        buildConfigField \"String\", \"STORE\", \"\\\"amazon\\\"\"\n    }\n\n    google {\n        buildConfigField \"String\", \"STORE\", \"\\\"google\\\"\"\n    }       \n}\n\n///...\n\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n          \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n        \tPurchases.configure(AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\").build())\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n        \tPurchases.configure(PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").build())\n        }\n    }\n}",
+      "code": "// If you're targeting only Google Play Store\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_api_key>).build())\n    }\n}\n\n// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use\n// In your build.gradle:\nflavorDimensions \"store\"\nproductFlavors {\n    amazon {\n        buildConfigField \"String\", \"STORE\", \"\\\"amazon\\\"\"\n    }\n\n    google {\n        buildConfigField \"String\", \"STORE\", \"\\\"google\\\"\"\n    }       \n}\n\n///...\n\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n          \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n        \tPurchases.configure(AmazonConfiguration.Builder(this, <public_amazon_api_key>).build())\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n        \tPurchases.configure(PurchasesConfiguration.Builder(this, <public_google_api_key>).build())\n        }\n    }\n}",
       "language": "kotlin"
     },
     {
-      "code": "// If you're targeting only Google Play Store\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n        Purchases.configure(new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").build());\n    }\n}\n\n// If you're building for the Amazon Appstore, \n// click the Kotlin tab to see how to set up flavors in your build.gradle:\n///...\n\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n      \n        PurchasesConfiguration.Builder builder = null;\n      \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            builder = new AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\");\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            builder = new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\");\n        }\n      \n        Purchases.configure(builder.build());\n    }\n}",
+      "code": "// If you're targeting only Google Play Store\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.setDebugLogsEnabled(true);\n        Purchases.configure(new PurchasesConfiguration.Builder(this, <public_google_api_key>).build());\n    }\n}\n\n// If you're building for the Amazon Appstore, \n// click the Kotlin tab to see how to set up flavors in your build.gradle:\n///...\n\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.setDebugLogsEnabled(true);\n      \n        PurchasesConfiguration.Builder builder = null;\n      \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            builder = new AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\");\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            builder = new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\");\n        }\n      \n        Purchases.configure(builder.build());\n    }\n}",
       "language": "java"
     },
     {
-      "code": "import 'dart:io' show Platform;\n\n//...\n\nFuture<void> initPlatformState() async {\n  await Purchases.setDebugLogsEnabled(true);\n  \n  PurchasesConfiguration configuration;\n  if (Platform.isAndroid) {\n    configuration = PurchasesConfiguration(\"public_google_sdk_key\");\n    if (buildingForAmazon) { \n      // use your preferred way to determine if this build is for Amazon store\n      // checkout our MagicWeather sample for a suggestion\n      configuration = AmazonConfiguration(\"public_amazon_sdk_key\");\n    }\n  } else if (Platform.isIOS) {\n    configuration = PurchasesConfiguration(\"public_ios_sdk_key\");\n  }\n  await Purchases.configure(configuration);\n}",
+      "code": "import 'dart:io' show Platform;\n\n//...\n\nFuture<void> initPlatformState() async {\n  await Purchases.setDebugLogsEnabled(true);\n  \n  PurchasesConfiguration configuration;\n  if (Platform.isAndroid) {\n    configuration = PurchasesConfiguration(<public_google_api_key>);\n    if (buildingForAmazon) { \n      // use your preferred way to determine if this build is for Amazon store\n      // checkout our MagicWeather sample for a suggestion\n      configuration = AmazonConfiguration(<public_amazon_api_key>);\n    }\n  } else if (Platform.isIOS) {\n    configuration = PurchasesConfiguration(<public_apple_api_key>);\n  }\n  await Purchases.configure(configuration);\n}",
       "language": "javascript",
       "name": "Flutter"
     },
     {
-      "code": "import { Platform } from 'react-native';\n\n//...\n\nexport default class App extends React.Component {\n \n  componentDidMount() {\n    Purchases.setDebugLogsEnabled(true);\n    \n    if (Platform.OS === 'ios') {\n    \tawait Purchases.configure({ apiKey: \"public_ios_sdk_key\" });\n    } else if (Platform.OS === 'android') {\n    \tawait Purchases.configure({ apiKey: \"public_google_sdk_key\" });\n      \n      // OR: if building for Amazon, be sure to follow the installation instructions then:\n    \tawait Purchases.configure({ apiKey: \"public_amazon_sdk_key\", useAmazon: true });\n    }\n    \n  }\n}",
+      "code": "import { Platform } from 'react-native';\n\n//...\n\nexport default class App extends React.Component {\n \n  componentDidMount() {\n    Purchases.setDebugLogsEnabled(true);\n    \n    if (Platform.OS === 'ios') {\n    \tawait Purchases.configure({ apiKey: <public_apple_api_key> });\n    } else if (Platform.OS === 'android') {\n    \tawait Purchases.configure({ apiKey: <public_google_api_key> });\n      \n      // OR: if building for Amazon, be sure to follow the installation instructions then:\n    \tawait Purchases.configure({ apiKey: <public_amazon_api_key>, useAmazon: true });\n    }\n    \n  }\n}",
       "language": "javascript",
       "name": "React Native"
     },
     {
-      "code": "document.addEventListener(\"deviceready\", onDeviceReady, false);\n\nfunction onDeviceReady() {\n    Purchases.setDebugLogsEnabled(true);\n    if (window.cordova.platformId === 'ios') {\n        Purchases.setup(\"public_ios_sdk_key\");\n    } else if (window.cordova.platformId === 'android') {\n        Purchases.setup(\"public_google_sdk_key\");\n    }\n    // OR: if building for Amazon, be sure to follow the installation instructions then:\n    await Purchases.setup({ apiKey: \"public_amazon_sdk_key\", useAmazon: true });\n}",
+      "code": "document.addEventListener(\"deviceready\", onDeviceReady, false);\n\nfunction onDeviceReady() {\n    Purchases.setDebugLogsEnabled(true);\n    if (window.cordova.platformId === 'ios') {\n        Purchases.configureWith({ apiKey: <public_apple_api_key> });\n    } else if (window.cordova.platformId === 'android') {\n        Purchases.configureWith({ apiKey: <public_google_api_key> });\n    }\n    // OR: if building for Amazon, be sure to follow the installation instructions then:\n    Purchases.configureWith({ apiKey: <public_amazon_api_key>, useAmazon: true });\n}",
       "language": "javascript",
       "name": "Cordova"
     },
     {
-      "code": "// The SDK can be configured through the Unity Editor.\n// See Unity installation instructions https://docs.revenuecat.com/docs/unity\n\n// If you'd like to configure the SDK programmatically, \n// make sure to check \"Use runtime setup\" in the Unity Editor, and then:\n\nPurchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(\"api_key\");\nPurchases.PurchasesConfiguration purchasesConfiguration =\n    .SetAppUserId(appUserId)\n    .Build();\npurchases.Configure(purchasesConfiguration);",
+      "code": "// The SDK can be configured through the Unity Editor.\n// See Unity installation instructions https://docs.revenuecat.com/docs/unity\n\n// If you'd like to configure the SDK programmatically, \n// make sure to check \"Use runtime setup\" in the Unity Editor, and then:\n\nPurchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(<public_api_key>);\nPurchases.PurchasesConfiguration purchasesConfiguration =\n    .SetAppUserId(<app_user_id>)\n    .Build();\npurchases.Configure(purchasesConfiguration);",
       "language": "csharp",
       "name": "Unity"
     }
@@ -104,7 +104,6 @@ The SDK allows additional configuration on first setup:
 - **App User ID (optional)**: An identifier for the current user. Pass `null` if you don't have a user identifier at the time of configuration and RevenueCat will generate an anonymous Id for you. See our [guide on identifying users](https://docs.revenuecat.com/docs/user-ids) for more information.
 - **Observer Mode (optional)**: A boolean value to set *Purchases* in [Observer Mode](https://docs.revenuecat.com/docs/observer-mode). Only pass true if you're using RevenueCat for analytics purposes, and you're handling making purchases and checking subscription status yourself.
 - **User Defaults (optional, iOS only)**: A key to override the standard user defaults used to cache `CustomerInfo`. This is required if you need to access `CustomerInfo` in an [iOS App Extension](https://developer.apple.com/app-extensions/).
-- **StoreKit 2 (optional, iOS only):** Defaults to enabled. StoreKit 2 APIs will be used under the hood for purchases in compatible devices. On devices that don't support StoreKit 2, StoreKit 1 will be used automatically instead. It can be manually disabled to always use StoreKit 1 by setting `usesStoreKit2IfAvailable` to `false`.
 
 If you're planning to use RevenueCat alongside your existing purchase code, check out our guide on [Observer Mode](https://docs.revenuecat.com/docs/observer-mode).
 

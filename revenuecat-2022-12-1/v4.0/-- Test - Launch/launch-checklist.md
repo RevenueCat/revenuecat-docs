@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-11-10T17:35:54.667Z"
+updatedAt: "2023-01-11T10:40:23.101Z"
 ---
 This document contains a checklist of things to consider before launching subscriptions in your app to production.
 [block:api-header]
@@ -27,7 +27,7 @@ This document contains a checklist of things to consider before launching subscr
   "data": {
     "h-0": "Plan Limits",
     "h-1": "iOS",
-    "0-0": "There are usage limits on the free Build plan. Hitting these limits may mean that purchases stop working. Consider upgrading to the Starter plan to remove these limits. See the [pricing page](https://www.revenuecat.com/pricing) for more details.",
+    "0-0": "There are usage limits on the free Build plan. When you hit the $10,000 MTR limit, we'll ask you to switch to a paid Starter or Pro plan. Consider upgrading beforehand and benefit from the Starter and Pro features from day 1. See the [pricing page](https://www.revenuecat.com/pricing) for more details.",
     "0-1": "✅",
     "0-2": "✅",
     "h-2": "Android"

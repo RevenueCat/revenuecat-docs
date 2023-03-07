@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: {}
-updatedAt: "2022-05-31T14:52:21.816Z"
+updatedAt: "2022-12-05T17:21:45.488Z"
 ---
 The RevenueCat dashboard allows you to specify what level of access each product should unlock for your users, which can greatly simplify your in-app code to check for subscription access. The dashboard also allows you to configure which in-app products are shown to your users remotely, so you can control how they're presented without the need to update your app. This is great for experimenting how different product configurations affect key subscription metrics.
 
@@ -274,6 +274,26 @@ The packages within an offering can be updated at any time, and their display or
         1256,
         780,
         "#fafafb"
+      ]
+    }
+  ]
+}
+[/block]
+## Removing Packages
+
+Packages can be removed from an Offering at any time. This can be useful if you want to update your paywall on-the-fly without an app update.
+
+Removing a package from an Offering **does not** remove the products from RevenueCat, remove transactions, or remove the products from any Entitlements. You can re-add a package and products at any time.
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/dff40c4-Screen_Shot_2022-12-05_at_12.12.05_PM.png",
+        "Screen Shot 2022-12-05 at 12.12.05 PM.png",
+        1878,
+        1032,
+        "#000000"
       ]
     }
   ]

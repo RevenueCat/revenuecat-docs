@@ -13,7 +13,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: "2022-06-21T21:53:53.114Z"
-updatedAt: "2022-10-19T02:37:50.583Z"
+updatedAt: "2023-03-06T19:18:50.848Z"
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.
 
@@ -74,6 +74,9 @@ Read more in our guide on [Google Play Promo Codes](doc:android-promo-codes).
 ## Amazon Appstore
 
 Amazon Appstore does not support subscription offers other than free trials.
+
+## Stripe
+Free trials can be added to subscriptions through Stripe's dashboard and API. See our [Stripe Free Trials](doc:stripe-free-trials) guide for instructions.
 
 # Considerations
 
