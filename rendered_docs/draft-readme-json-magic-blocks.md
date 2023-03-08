@@ -2,7 +2,7 @@
 title: "[Draft] Readme json magic-blocks"
 slug: "draft-readme-json-magic-blocks"
 hidden: true
-category: 61e6d1c8dc645600539687c7
+category: 640693567217bd001ec4fb81
 createdAt: "2023-03-03T21:31:29.059Z"
 updatedAt: "2023-03-03T21:31:29.059Z"
 ---
@@ -87,4 +87,4 @@ Plain text
 - Unordered
 - List
 
-Updated 2023-03-03 15:35
+Updated 2023-03-08 14:38
