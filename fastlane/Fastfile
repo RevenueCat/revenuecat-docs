@@ -117,10 +117,6 @@ lane :embed_code_blocks do |options|
                 UI.message("🔨 Processing file block #{index} in #{file_name}...")
                 code_to_embed = embed_code_from_files(block)
                 file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
-                if file_name == "revenuecat-2022-12-1/v4.0/-- Customers/customer-info.md"
-                    p block
-                    p code_to_embed
-                end
             end
 
             File.write(file_name, file_contents)
