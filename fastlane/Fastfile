@@ -77,7 +77,7 @@ lane :extract_code_blocks do |options|
             next if file_name == '.' || file_name == '..'
 
             current_folder = File.dirname(file_name)
-            output_dir = "output/#{current_folder}"
+            output_dir = "code_blocks/#{current_folder}"
 
             file_contents = File.read(file_name)
 
