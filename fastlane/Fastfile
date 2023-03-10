@@ -64,8 +64,10 @@ lane :sync_files_to_readme do |options|
     end
 end
 
-desc "Extracts code blocks from within the [block:code] and [/block] tags and saves each code block to a file"
-desc "folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project."
+desc <<-DESC
+Extracts code blocks from within the [block:code] and [/block] tags and saves each code block to a file
+folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
+DESC
 lane :extract_code_blocks do |options|
     folder_to_process = options[:folder]
     UI.error("Missing folder option") unless folder_to_process
@@ -102,8 +104,10 @@ lane :extract_code_blocks do |options|
 end
 
 
-desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
-desc "folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project."
+desc <<-DESC
+Embeds code blocks from all files within the [block:file] and [/block] tags
+folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+DESC
 lane :embed_code_blocks do |options|
     folder_to_process = options[:folder]
 
