@@ -68,6 +68,8 @@ desc "Extracts code blocks from within the [block:code] and [/block] tags and sa
 desc "folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project."
 lane :extract_code_blocks do |options|
     folder_to_process = options[:folder]
+    UI.error("Missing folder option") unless folder_to_process
+    return unless folder_to_process
 
     parent_dir = File.dirname(Dir.pwd)
 
@@ -125,6 +127,25 @@ end
 
 ##
 # Embeds all files within the [block:file] and [/block] tags and adds the content of the file as a code block
+#
+# For example this block in a markdown file named docs_source/v4.0.1/-- Resources/server-notifications/example.md:
+#
+# [block:file]
+# javascript->code_blocks/docs_source/v4.0.1/-- Resources/server-notifications/example_1.js
+# [/block]
+#
+# Will be converted to:
+# [block:code]
+# {
+#   "codes": [
+#     {
+#       "code": "var a = 1;",
+#       "language": "javascript"
+#     }
+#   ]
+# }
+# [/block]
+#
 # @param code_block [String] the input string containing the code block. This is the entire string that contains the
 # file block including the [block:file] and [/block] tags
 # @return [String] a string containing the code blocks from all the files within the file block
@@ -148,7 +169,27 @@ end
 
 ##
 # Extracts all code blocks from within the [block:code] and [/block] tags and saves each code block to a file, with the
-# correct extension
+# correct extension.
+#
+# For example this code block in a markdown file named docs_source/v4.0.1/-- Resources/server-notifications/example.md:
+#
+# [block:code]
+# {
+#   "codes": [
+#     {
+#       "code": "var a = 1;",
+#       "language": "javascript"
+#     }
+#   ]
+# }
+# [/block]
+#
+# Will be converted to:
+# [block:file]
+# javascript->code_blocks/docs_source/v4.0.1/-- Resources/server-notifications/example_1.js
+# [/block]
+#
+# And the code block will be saved to code_blocks/docs_source/v4.0.1/-- Resources/server-notifications/example_1.js
 # @param output_dir [String] the output directory to save the file
 # @param file_name_no_ext [String] the name of the file where this code block lives, without extension
 # @param code_block [String] the input string containing the code block. This is the entire string that contains the
