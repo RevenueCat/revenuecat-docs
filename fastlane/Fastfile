@@ -36,15 +36,15 @@ lane :render_docs do |options|
 end
 
 def files_to_render
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    root_dir = File.dirname(Dir.pwd)
+    Dir.chdir(root_dir) do
         Dir.glob("docs_source/*.md")
     end
 end
 
 lane :ios_tests do
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(File.join(parent_dir, "projects", "iOS")) do
+    root_dir = File.dirname(Dir.pwd)
+    Dir.chdir(File.join(root_dir, "projects", "iOS")) do
         sh "xcodebuild -scheme ApplePlatforms-Package -destination 'generic/platform=iOS'"
     end
 end
@@ -52,8 +52,8 @@ end
 lane :copy_docs_source_to_render_folder do
     source_folder = "docs_source"
     render_folder = "rendered_docs"
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    root_dir = File.dirname(Dir.pwd)
+    Dir.chdir(root_dir) do
         FileUtils.copy_entry source_folder, render_folder
     end
 end
@@ -73,9 +73,9 @@ lane :extract_code_blocks do |options|
     UI.error("Missing folder option") unless folder_to_process
     return unless folder_to_process
 
-    parent_dir = File.dirname(Dir.pwd)
+    root_dir = File.dirname(Dir.pwd)
 
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
             next if file_name == '.' || file_name == '..'
 
@@ -111,9 +111,9 @@ DESC
 lane :embed_code_blocks do |options|
     folder_to_process = options[:folder]
 
-    parent_dir = File.dirname(Dir.pwd)
+    root_dir = File.dirname(Dir.pwd)
 
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
             next if file_name == '.' || file_name == '..'
             file_contents = File.read(file_name)
