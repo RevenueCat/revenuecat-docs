@@ -77,8 +77,6 @@ lane :extract_code_blocks do |options|
 
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
-            next if file_name == '.' || file_name == '..'
-
             current_folder = File.dirname(file_name)
             output_dir = "code_blocks/#{current_folder}"
 
@@ -115,7 +113,6 @@ lane :embed_code_blocks do |options|
 
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
-            next if file_name == '.' || file_name == '..'
             file_contents = File.read(file_name)
 
             file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
