@@ -53,6 +53,26 @@ Description of what the lane does
 
 
 
+### extract_code_blocks
+
+```sh
+[bundle exec] fastlane extract_code_blocks
+```
+
+Extracts code blocks from within the [block:code] and [/block] tags and saves each code block to a file
+folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
+
+
+### embed_code_blocks
+
+```sh
+[bundle exec] fastlane embed_code_blocks
+```
+
+Embeds code blocks from all files within the [block:file] and [/block] tags
+folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
