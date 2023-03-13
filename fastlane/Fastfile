@@ -25,8 +25,7 @@ end
 desc "Description of what the lane does"
 lane :render_docs do |options|
     readme_api_key = options[:readme_api_key]
-    UI.error("Missing README API key") unless readme_api_key
-    return unless readme_api_key
+    UI.user_error!("Missing README API key") unless readme_api_key
 
     copy_docs_source_to_render_folder
     files_to_render.each do |file|
@@ -70,8 +69,7 @@ folder, STRING Folder to recurse through and extract code blocks from all markdo
 DESC
 lane :extract_code_blocks do |options|
     folder_to_process = options[:folder]
-    UI.error("Missing folder option") unless folder_to_process
-    return unless folder_to_process
+    UI.user_error!("Missing folder option") unless folder_to_process
 
     root_dir = File.dirname(Dir.pwd)
 
