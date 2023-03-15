@@ -25,6 +25,9 @@ VERSION_FILE = "docs_source/.version"
 
 update_fastlane
 
+SOURCE_DOCS_FOLDER = "docs_source"
+RENDERED_DOCS_FOLDER = "rendered_docs"
+
 default_platform(:ios)
 
 desc "Install dependencies"
@@ -57,10 +60,9 @@ lane :ios_tests do
 end
 
 lane :copy_docs_source_to_render_folder do
-    source_folder = "docs_source"
-    render_folder = "rendered_docs"
     Dir.chdir(root_dir) do
-        FileUtils.copy_entry source_folder, render_folder
+        FileUtils.rm_rf(RENDERED_DOCS_FOLDER)
+        FileUtils.copy_entry SOURCE_DOCS_FOLDER, RENDERED_DOCS_FOLDER
     end
 end
 
@@ -75,13 +77,10 @@ Extracts code blocks from within the [block:code] and [/block] tags and saves ea
 folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
 DESC
 lane :extract_code_blocks do |options|
-    folder_to_process = options[:folder]
-    UI.user_error!("Missing folder option") unless folder_to_process
-
     Dir.chdir(root_dir) do
-        Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
+        Dir.glob("#{SOURCE_DOCS_FOLDER}/**/*.md") do |file_name|
             current_folder = File.dirname(file_name)
-            folder_inside_docs_source = current_folder.sub(/^docs_source\//, "")
+            folder_inside_docs_source = current_folder.sub(/^#{SOURCE_DOCS_FOLDER}\//, "")
             output_dir = "code_blocks/#{folder_inside_docs_source}"
 
             file_contents = File.read(file_name)
@@ -109,12 +108,13 @@ end
 desc <<-DESC
 Embeds code blocks from all files within the [block:file] and [/block] tags
 folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+output_folder, STRING Folder to save the files with the embedded code blocks. Path is relative to the root of the project.
 DESC
 lane :embed_code_blocks do |options|
-    folder_to_process = options[:folder]
+    copy_docs_source_to_render_folder
 
     Dir.chdir(root_dir) do
-        Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
+        Dir.glob("#{RENDERED_DOCS_FOLDER}/**/*.md").each do |file_name|
             file_contents = File.read(file_name)
 
             file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|

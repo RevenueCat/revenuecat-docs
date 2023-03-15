@@ -1,0 +1,27 @@
+name: Render Markdown 📝
+
+on:
+  push
+
+jobs:
+  embed_code:
+    name: Embed Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: 14
+      - name: Install gem dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: bundle install
+      - run: bundle exec fastlane bootstrap
+      - run: bundle exec fastlane embed_code_blocks
+      - run: |
+          git config --global user.name "RCGitBot"
+          git config --global user.email "dev+RCGitBot@revenuecat.com"
+          git add rendered_docs
+          git commit -m "Added rendered docs"
+          git push
