@@ -238,7 +238,7 @@ lane :update_docs_categories do |options|
         category_name = file_without_folder_path.split("/")[0]
         UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
         category = categories.find { |category|
-            clean_category_title(category['title']) == category_name
+            category['title'] == category_name
         }
         if category != nil
             p "Category #{category_name} found for file #{file}"
