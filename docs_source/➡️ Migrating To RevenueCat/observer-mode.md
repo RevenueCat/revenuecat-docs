@@ -147,41 +147,13 @@ No special requirements
 No special requirements
 
 ## 1. Configure the SDK
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.logLevel = .debug\nPurchases.configure(\n  with: Configuration.Builder(withAPIKey: Constants.apiKey)\n    .with(appUserID: \"<app_user_id>\")\n    .with(observerMode: true)\n    .build()\n)",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "RCPurchases.logLevel = RCLogLevelDebug;\nRCConfigurationBuilder *configuration = [RCConfiguration builderWithAPIKey:@\"public_sdk_key\"];\nconfiguration = [configuration withObserverMode:YES];\nconfiguration = [configuration withAppUserID:@\"<app_user_id>\"];\n[RCPurchases configureWithConfiguration:[configuration build]];",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "// If you're targeting only Google Play Store\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n        Purchases.configure(PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").observerMode(true).build())\n    }\n}\n\n// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use\n// In your build.gradle:\nflavorDimensions \"store\"\nproductFlavors {\n    amazon {\n        buildConfigField \"String\", \"STORE\", \"\\\"amazon\\\"\"\n    }\n\n    google {\n        buildConfigField \"String\", \"STORE\", \"\\\"google\\\"\"\n    }       \n}\n\n///...\n\nclass MainApplication: Application() {\n    override fun onCreate() {\n        super.onCreate()\n        Purchases.debugLogsEnabled = true\n          \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            Purchases.configure(AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\").observerMode(true).build())\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            Purchases.configure(PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").observerMode(true).build())\n        }\n    }\n}",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "// If you're targeting only Google Play Store\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n        Purchases.configure(new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").observerMode(true).build());\n    }\n}\n\n// If you're building for the Amazon Appstore, \n// click the Kotlin tab to see how to set up flavors in your build.gradle:\n///...\n\npublic class MainApplication extends Application {\n    @Override\n    public void onCreate() {\n        super.onCreate();\n        Purchases.debugLogsEnabled = true;\n      \n        PurchasesConfiguration.Builder builder = null;\n      \n        if (BuildConfig.STORE.equals(\"amazon\")) {\n            builder = new AmazonConfiguration.Builder(this, \"public_amazon_sdk_key\");\n        } else if (BuildConfig.STORE.equals(\"google\")) {\n            builder = new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\");\n        }\n      \n        Purchases.configure(builder.observerMode(true).build());\n    }\n}",
-      "language": "java",
-      "name": "Java"
-    },
-    {
-      "code": "await Purchases.setup(\"my_api_key\", observerMode: true);",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "// Observer mode can be configured through the Unity Editor. \n// If you'd like to do it programmatically instead, \n// make sure to check \"Use runtime setup\" in the Unity Editor, and then:\n\nPurchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(\"api_key\");\nPurchases.PurchasesConfiguration purchasesConfiguration =\n    builder.SetUserDefaultsSuiteName(\"user_default\")\n    .SetObserverMode(true)\n    .SetAppUserId(appUserId)\n    .Build();\npurchases.Configure(purchasesConfiguration);",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift
+objectivec->code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.m
+kotlin->code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.kt
+java->code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.java
+javascript->code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.js
+csharp->code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.cs
 [/block]
 ### Enable Observer Mode in Unity Editor (Unity Only)
 
@@ -236,48 +208,19 @@ No special requirements
 ##2.1 Sync purchases with RevenueCat (Google Play only)
 
 On Android with Google Play (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.sharedInstance.syncPurchases()\n  ",
-      "language": "kotlin"
-    },
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.getSharedInstance().syncPurchases();\n",
-      "language": "java"
-    },
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.syncPurchases();",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nvar purchases = GetComponent<Purchases>();\npurchases.SyncPurchases();",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+kotlin->code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.kt
+java->code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.java
+javascript->code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.js
+csharp->code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.cs
 [/block]
 ##2.2 Sync purchases with RevenueCat (Amazon Store only)
 
 On Android with Amazon Store (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncObserverModeAmazonPurchase` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "public void OnInitialized(IStoreController controller, IExtensionProvider extensions)\n{\n   m_StoreController = controller;\n   storeExtensionProvider = extensions;\n   var purchases = GetComponent<Purchases>();\n   purchases.SetDebugLogsEnabled(true);\n   foreach (Product product in controller.products.all)\n   {\n       if (product.hasReceipt) {\n           var amazonExtensions = storeExtensionProvider.GetExtension<IAmazonExtensions>();\n           var userId = amazonExtensions.amazonUserId;\n           purchases.SyncObserverModeAmazonPurchase( \n               product.definition.id,\n               product.transactionID,\n               userId,\n               product.metadata.isoCurrencyCode,\n               Decimal.ToDouble(product.metadata.localizedPrice)\n           );\n       }\n   }\n}\n\npublic PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)\n{\n   var purchases = GetComponent<Purchases>();\n   \n   var amazonExtensions = storeExtensionProvider.GetExtension<IAmazonExtensions>();\n   var userId = amazonExtensions.amazonUserId;\n   purchases.SyncObserverModeAmazonPurchase(\n       e.purchasedProduct.definition.id,\n       e.purchasedProduct.transactionID,\n       userId,\n       e.purchasedProduct.metadata.isoCurrencyCode,\n       Decimal.ToDouble(e.purchasedProduct.metadata.localizedPrice)\n   );\n   return PurchaseProcessingResult.Complete;\n}",
-      "language": "csharp",
-      "name": "Unity"
-    },
-    {
-      "code": "Purchases.sharedInstance.syncObserverModeAmazonPurchase(\n  receipt.termSku,\n  receipt.receiptId,\n  userData.userId,\n  isoCurrencyCode,\n  storeProduct.price\n)",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+csharp->code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.cs
+kotlin->code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt
 [/block]
 # Configuring Integrations
 Certain integrations, such as most of the [Attribution Integrations](https://docs.revenuecat.com/docs/attribution), require some device data to work properly. **Observer Mode does not automatically collect any device data**.

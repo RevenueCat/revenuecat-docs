@@ -96,52 +96,20 @@ If you're using the Airship SDK, you can either send the channel ID to RevenueCa
 ### Set Airship User Identity Using Channel ID
 
 Setting the Airship channel ID in RevenueCat is the preferred way for identifying users in Airship. Call `setAirshipChannelID` on the Purchases SDK to have RevenueCat use the channel ID to send events to Airship.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n\n  // Configure Purchases\n  Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n  \n  // Initialize Airship\n  Airship.takeOff(launchOptions: launchOptions)\n  \n  // Set the Airship channel ID in Purchases\n  let channelID = Airship.channel.identifier\n  Purchases.shared.attribution.setAirshipChannelID(channelID)\n  \n  // ...\n\n  return true\n}",
-      "language": "swift"
-    },
-    {
-      "code": "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n\n  // Configure Purchases\n  [RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n  // Initialize Airship\n  [UAirship takeOffWithLaunchOptions:launchOptions];\n  \n  // Set the Airship channel ID in Purchases\n  NSString *channelID = UAirship.channel.identifier;\n  [[RCPurchases sharedPurchases] setAirshipChannelID:channelID];\n  \n  // ...\n\n  return YES;\n}",
-      "language": "objectivec"
-    },
-    {
-      "code": "override fun onCreate(savedInstanceState: Bundle?) {\n\n  super.onCreate(savedInstanceState)\n\n  // Configure Purchases SDK\n  Purchases.configure(this, \"public_sdk_key\", \"my_app_user_id\")\n\n  // Airship should already be initialized using Autopilot\n  // https://docs.airship.com/platform/android/getting-started/#takeoff\n\n  // Set the Airship channel ID in Purchases\n  val channelId = UAirship.shared().channel.id\n  Purchases.sharedInstance.setAirshipChannelID(channelId)\n\n  // ...\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "@Override\npublic void onCreate(Bundle savedInstanceState) {\n  \n  super.onCreate(savedInstanceState);\n\n  // Configure Purchases SDK\n  Purchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n  // Airship should already be initialized using Autopilot\n  // https://docs.airship.com/platform/android/getting-started/#takeoff\n\n  // Set the Airship channel ID in Purchases\n  String channelId = UAirship.shared().getChannel().getId();\n  Purchases.getSharedInstance().setAirshipChannelID(channelId);\n\n  // ...\n}",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/airship_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/airship_1.m
+kotlin->code_blocks/🔌 Integrations/integrations/airship_1.kt
+java->code_blocks/🔌 Integrations/integrations/airship_1.java
 [/block]
 ### [Advanced Alternative] Set Airship User Identity Using Named Users
 
 **Setting the Airship channel ID in RevenueCat is preferred over using Named Users, even if you have a user authentication system.** However, if you're already using Named Users in your Airship integration, you have the option to set the Named User in the Airship SDK as the same app user ID as RevenueCat. Ensure [Named Users is enabled in your Airship dashboard](https://docs.airship.com/guides/messaging/user-guide/project/enable-features/#named-users).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n\n  // Configure Purchases\n  Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n  \n  // Initialize Airship\n  Airship.takeOff(launchOptions: launchOptions)\n  \n  // Identify the user in Airship\n  Airship.contact.identify(\"my_app_user_id\")\n  \n  // ...\n\n  return true\n}",
-      "language": "swift"
-    },
-    {
-      "code": "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n\n  // Configure Purchases\n  [RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n  // Initialize Airship\n  [UAirship takeOffWithLaunchOptions:launchOptions];\n  \n  // Identify the user in Airship\n  [UAirship.contact identify:@\"my_app_user_id\"];\n  \n  // ...\n\n  return YES;\n}",
-      "language": "objectivec"
-    },
-    {
-      "code": "override fun onCreate(savedInstanceState: Bundle?) {\n\n  super.onCreate(savedInstanceState)\n\n  // Configure Purchases SDK\n  Purchases.configure(this, \"public_sdk_key\", \"my_app_user_id\")\n\n  // Airship should already be initialized using Autopilot\n  // https://docs.airship.com/platform/android/getting-started/#takeoff\n\n  // Set the Airship channel ID in Purchases\n  UAirship.shared().contact.identify(\"my_app_user_id\")\n\n  // ...\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "@Override\npublic void onCreate(Bundle savedInstanceState) {\n  \n  super.onCreate(savedInstanceState);\n\n  // Configure Purchases SDK\n  Purchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n  // Airship should already be initialized using Autopilot\n  // https://docs.airship.com/platform/android/getting-started/#takeoff\n\n  // Identify the user in Airship\n  UAirship.shared().getContact().identify(\"my_app_user_id\");\n\n  // ...\n}",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/airship_2.swift
+objectivec->code_blocks/🔌 Integrations/integrations/airship_2.m
+kotlin->code_blocks/🔌 Integrations/integrations/airship_2.kt
+java->code_blocks/🔌 Integrations/integrations/airship_2.java
 [/block]
 ## 2. Send RevenueCat Events to Airship
 
@@ -170,64 +138,6 @@ After you've set up the *Purchase* SDK and Airship SDK to have the same user ide
 [/block]
 # Sample Events
 Below are sample JSONs that are delivered to Airship for each event type.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[\n  {\n    \"occurred\": \"2022-08-17T22:24:09Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    },\n    \"body\": {\n      \"name\": \"rc_initial_purchase_event\",\n      \"value\": 5.051,\n      \"properties\": {\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"event_timestamp_ms\": 1660775073781,\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"product_id\": \"subscription.v0.monthly\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1660775049528,\n        \"expiration_at_ms\": 1660775464920,\n        \"environment\": \"SANDBOX\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"transaction_id\": \"GPA.1234-5678-9012-34567\", \n        \"original_transaction_id\": \"GPA.1234-5678-9012-34567\", \n        \"is_family_share\": false,\n        \"country_code\": \"BR\",\n        \"currency\": \"BRL\",\n        \"price_in_purchased_currency\": 25.99,\n        \"subscriber_attributes\": {\n          \"$ip\": {\n            \"value\": \"123.45.67.89\",\n            \"updated_at_ms\": 1660764263545\n          },\n          \"$gpsAdId\": {\n            \"value\": \"12345678-9012-3456-7890-123456789012\",\n            \"updated_at_ms\": 1660760899175\n          },\n          \"$fbAnonId\": {\n            \"value\": \"1234567890-1234-5678-9012-345678901234\",\n            \"updated_at_ms\": 1660760899262\n          },\n          \"$androidId\": {\n            \"value\": \"1234567890123456\",\n            \"updated_at_ms\": 1660760899175\n          },\n          \"$appsflyerId\": {\n            \"value\": \"1234567890123-1234567890123456789\",\n            \"updated_at_ms\": 1660760899175\n          }\n        },\n        \"store\": \"PLAY_STORE\",\n        \"takehome_percentage\": 0.85,\n        \"app_id\": \"1234567890\"\n      }\n    }\n  }\n]",
-      "language": "json",
-      "name": "Initial Purchase"
-    },
-    {
-      "code": "[\n  {\n      \"body\": {\n        \"name\": \"rc_trial_started_event\",\n        \"properties\": {\n          \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n          ],\n          \"app_id\": \"1234567890\",\n          \"app_user_id\": \"1234567890\",\n          \"currency\": \"USD\",\n          \"entitlement_ids\": [\n            \"Pro\"\n          ],\n          \"environment\": \"PRODUCTION\",\n          \"event_timestamp_ms\": 1662955146543,\n          \"expiration_at_ms\": 1663559941000,\n          \"id\": \"12345678-1234-1234-1234-123456789012\",\n          \"is_family_share\": false,\n          \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n          \"original_transaction_id\": \"123456789012345\",\n          \"period_type\": \"TRIAL\",\n          \"presented_offering_id\": \"default_offering\",\n          \"price_in_purchased_currency\": 0,\n          \"product_id\": \"1\",\n          \"purchased_at_ms\": 1662955141000,\n          \"store\": \"APP_STORE\",\n          \"subscriber_attributes\": {\n            \"$email\": {\n              \"updated_at_ms\": 1662955084635,\n              \"value\": \"firstlast@gmail.com\"\n          }\n        },\n        \"value\": 0\n      },\n      \"occurred\": \"2022-09-12T03:59:01Z\",\n      \"user\": {\n        \"named_user_id\": \"ZYXWVUTSRQ\"\n      }\n    }\n  }\n]",
-      "language": "json",
-      "name": "Trial Started"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_trial_converted_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_id\": \"1234567890\",\n        \"app_user_id\": \"1234567890\",\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1662985791349,\n        \"expiration_at_ms\": 1665579486000,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"is_family_share\": false,\n        \"is_trial_conversion\": true,\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"NORMAL\",\n        \"presented_offering_id\": \"default_offering\",\n        \"price_in_purchased_currency\": 5.99,\n        \"product_id\": \"1\",\n        \"purchased_at_ms\": 1662987486000,\n        \"store\": \"APP_STORE\",\n        \"subscriber_attributes\": {\n          \"$email\": {\n            \"updated_at_ms\": 1662955084635,\n            \"value\": \"firstlast@gmail.com\"\n          }\n        },\n      },\n      \"value\": 5.091\n    },\n    \"occurred\": \"2022-09-12T12:58:06Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Trial Converted"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_trial_cancelled_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_id\": \"1234567890\",\n        \"app_user_id\": \"123456789012345\",\n        \"cancel_reason\": \"UNSUBSCRIBE\",\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1662987212671,\n        \"expiration_at_ms\": 1663262049000,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"is_family_share\": false,\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"TRIAL\",\n        \"presented_offering_id\": \"default_offering\",\n        \"price_in_purchased_currency\": 0,\n        \"product_id\": \"1\",\n        \"purchased_at_ms\": 1662657249000,\n        \"store\": \"APP_STORE\",\n        \"subscriber_attributes\": {\n          \"$email\": {\n            \"updated_at_ms\": 1662955084635,\n            \"value\": \"firstlast@gmail.com\"\n          }\n        },\n        \"takehome_percentage\": 0.85,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 0\n    },\n    \"occurred\": \"2022-09-12T12:53:32Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Trial Cancelled"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_renewal_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_id\": \"1234567890\",\n        \"app_user_id\": \"1234567890\",\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1662951401457,\n        \"expiration_at_ms\": 1665540707000,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"is_family_share\": false,\n        \"is_trial_conversion\": false,\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"NORMAL\",\n        \"presented_offering_id\": \"default_offering\",\n        \"price_in_purchased_currency\": 5.99,\n        \"product_id\": \"1\",\n        \"purchased_at_ms\": 1662948707000,\n        \"store\": \"APP_STORE\",\n        \"subscriber_attributes\": {\n          \"$appsflyerId\": {\n            \"updated_at_ms\": 1651022873900,\n            \"value\": \"1234567890123-1234567890123456789\"\n          },\n          \"$email\": {\n            \"updated_at_ms\": 1660274406606,\n            \"value\": \"firstlast@gmail.com\"\n          },\n          \"$ip\": {\n            \"updated_at_ms\": 1651022873887,\n            \"value\": \"123.45.67.89\"\n          }\n        },\n        \"takehome_percentage\": 0.85,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 5.091\n    },\n    \"occurred\": \"2022-09-12T02:11:47Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Renewal"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_cancellation_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_id\": \"1234567890\",\n        \"app_user_id\": \"1234567890\",\n        \"cancel_reason\": \"BILLING_ERROR\",\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1663083538724,\n        \"expiration_at_ms\": 1664465906000,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"is_family_share\": false,\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"NORMAL\",\n        \"price_in_purchased_currency\": 0,\n        \"product_id\": \"AutoRenewMonthlyBasic\",\n        \"purchased_at_ms\": 1660405106000,\n        \"store\": \"APP_STORE\",\n        \"subscriber_attributes\": {\n          \"$appsflyerId\": {\n            \"updated_at_ms\": 1647104232082,\n            \"value\": \"1234567890123-1234567890123456789\"\n          },\n          \"$email\": {\n            \"updated_at_ms\": 1649936423436,\n            \"value\": \"firstlast@gmail.com\"\n          },\n          \"$ip\": {\n            \"updated_at_ms\": 1649936467544,\n            \"value\": \"123.45.67.89\"\n          }\n        },\n        \"takehome_percentage\": 0.7,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 0\n    },\n    \"occurred\": \"2022-09-13T15:38:58Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Cancellation"
-    },
-    {
-      "code": "[\n  {\n    \"occurred\": \"2022-08-16T16:46:13Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    },\n    \"body\": {\n      \"name\": \"rc_uncancellation_event\",\n      \"value\": 0.0,\n      \"properties\": {\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"event_timestamp_ms\": 1660668373184,\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"product_id\": \"AutoRenewMonthlyBasic\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1660413184000,\n        \"expiration_at_ms\": 1663091584000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"price_in_purchased_currency\": 0.0,\n        \"subscriber_attributes\": {\n          \"$ip\": {\n            \"value\": \"123.45.67.89\",\n            \"updated_at_ms\": 1655130803273\n          },\n          \"$email\": {\n            \"value\": \"firstlast@gmail.com\",\n            \"updated_at_ms\": 1655162763950\n          },\n          \"$appsflyerId\": {\n            \"value\": \"1234567890123-1234567890123456789\",\n            \"updated_at_ms\": 1655130796226\n          }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7,\n        \"app_id\": \"1234567890\"\n      }\n    }\n  }\n]",
-      "language": "json",
-      "name": "Uncancellation"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_non_subscription_purchase_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_user_id\": \"1234567890\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1663031444913,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"original_app_user_id\": \"1234567890\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"PROMOTIONAL\",\n        \"price_in_purchased_currency\": 0,\n        \"product_id\": \"rc_promo_subscription_lifetime\",\n        \"purchased_at_ms\": 1663031444879,\n        \"store\": \"PROMOTIONAL\",\n        \"subscriber_attributes\": {\n          \"$email\": {\n            \"updated_at_ms\": 1663031444396,\n            \"value\": \"firstlast@gmail.com\"\n          }\n        },\n        \"takehome_percentage\": 1,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 9.99\n    },\n    \"occurred\": \"2022-09-13T01:10:44Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Non Subscription Purchase"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_expiration_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_id\": \"1234567890\",\n        \"app_user_id\": \"1234567890\",\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"subscription\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1662950285264,\n        \"expiration_at_ms\": 1662948421000,\n        \"expiration_reason\": \"UNSUBSCRIBE\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"is_family_share\": false,\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"NORMAL\",\n        \"presented_offering_id\": \"default_offering\",\n        \"price_in_purchased_currency\": 0,\n        \"product_id\": \"1\",\n        \"purchased_at_ms\": 1660270021000,\n        \"store\": \"APP_STORE\",\n        \"subscriber_attributes\": {\n          \"$appsflyerId\": {\n            \"updated_at_ms\": 1659182049974,\n            \"value\": \"1234567890123-1234567890123456789\"\n          },\n          \"$email\": {\n            \"updated_at_ms\": 1662919930136,\n            \"value\": \"firstlast@gmail.com\"\n          },\n          \"$ip\": {\n            \"updated_at_ms\": 1659182049961,\n            \"value\": \"123.45.67.89\"\n          }\n        },\n        \"takehome_percentage\": 0.85,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 0\n    },\n    \"occurred\": \"2022-09-12T02:07:01Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Expiration"
-    },
-    {
-      "code": "[\n  {\n    \"body\": {\n      \"name\": \"rc_billing_issue_event\",\n      \"properties\": {\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"app_id\": \"1234567890\",\n        \"app_user_id\": \"1234567890\",\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"Pro\"\n        ],\n        \"environment\": \"PRODUCTION\",\n        \"event_timestamp_ms\": 1663083538724,\n        \"expiration_at_ms\": 1664465906000,\n        \"grace_period_expiration_at_ms\": 1664465906000,\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"is_family_share\": false,\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"period_type\": \"NORMAL\",\n        \"price_in_purchased_currency\": 0,\n        \"product_id\": \"AutoRenewMonthlyBasic\",\n        \"purchased_at_ms\": 1660405106000,\n        \"store\": \"APP_STORE\",\n        \"subscriber_attributes\": {\n          \"$appsflyerId\": {\n            \"updated_at_ms\": 1647104232082,\n            \"value\": \"1234567890123-1234567890123456789\"\n          },\n          \"$email\": {\n            \"updated_at_ms\": 1649936423436,\n            \"value\": \"firstlast@gmail.com\"\n          },\n          \"$ip\": {\n            \"updated_at_ms\": 1649936467544,\n            \"value\": \"123.45.67.89\"\n          }\n        },\n        \"takehome_percentage\": 0.7,\n        \"transaction_id\": \"123456789012345\"\n      },\n      \"value\": 0\n    },\n    \"occurred\": \"2022-09-13T15:38:58Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    }\n  }\n]",
-      "language": "json",
-      "name": "Billing Issue"
-    },
-    {
-      "code": "[\n  {\n    \"occurred\": \"2022-04-15T11:05:27Z\",\n    \"user\": {\n      \"named_user_id\": \"ZYXWVUTSRQ\"\n    },\n    \"body\": {\n      \"name\": \"rc_product_change_event\",\n      \"value\": 0.0,\n      \"properties\": {\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"event_timestamp_ms\": 1652324747722,\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n          \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"product_id\": \"1\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1650020727000,\n        \"expiration_at_ms\": 1652612727000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_ids\": [\n          \"subscription\"\n        ],\n        \"presented_offering_id\": \"default_offering\",\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"US\",\n        \"new_product_id\": \"2\",\n        \"currency\": \"USD\",\n        \"price_in_purchased_currency\": 0.0,\n        \"subscriber_attributes\": {\n          \"$ip\": {\n            \"value\": \"123.45.67.89\",\n            \"updated_at_ms\": 1650694978412\n          },\n          \"$email\": {\n            \"value\": \"firstlast@gmail.com\",\n            \"updated_at_ms\": 1650017723043\n          },\n          \"$appsflyerId\": {\n            \"value\": \"1234567890123-1234567890123456789\",\n            \"updated_at_ms\": 1650694978424\n          }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.85\n      }\n    }\n  }\n]",
-      "language": "json",
-      "name": "Product Change"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/airship_3.json
 [/block]

@@ -90,29 +90,11 @@ The CleverTap integration can send the CleverTap ID to CleverTap as the user ide
 [/block]
 This property can be set manually, like any other [Subscriber Attribute](doc:subscriber-attributes). If you do not set this property, the [App User ID](doc:user-ids) will be sent as the user identity to CleverTap.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n\n// Configure CleverTap SDK\nCleverTap.autoIntegrate()\n\n// ...\n\nif let cleverTapId = CleverTap.sharedInstance()?.profileGetCleverTapID() {\n  Purchases.shared.attribution.setCleverTapID(cleverTapId)\n}",
-      "language": "swift"
-    },
-    {
-      "code": "// Configure Purchases SDK\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n// Configure CleverTap SDK\n[CleverTap autoIntegrate];\n\n//...\n\nNSString *cleverTapId = [[CleverTap sharedInstance] profileGetCleverTapID];\nif (cleverTapId != nil) {\n  [[RCPurchases sharedPurchases] setCleverTapID: cleverTapId];\n}",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(this, \"public_sdk_key\", \"my_app_user_id\")\n\n// Configure CleverTap SDK\ncleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(this)\n\nval cleverTapId = cleverTapDefaultInstance?.cleverTapID?.also {\n   Purchases.sharedInstance.setAttributes(mapOf(\"$cleverTapId\" to it))\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n// Configure CleverTap SDK\nCleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(this);\n\nString cleverTapId = cleverTapDefaultInstance.getCleverTapId();\nif (cleverTapId != null) {\n  Map<String, String> attributes = new HashMap<String, String>();\n\tattributes.put(\"$cleverTapId\", cleverTapId);\n\n\tPurchases.getSharedInstance().setAttributes(attributes);\n}",
-      "language": "java",
-      "name": "Java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/clevertap_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/clevertap_1.m
+kotlin->code_blocks/🔌 Integrations/integrations/clevertap_1.kt
+java->code_blocks/🔌 Integrations/integrations/clevertap_1.java
 [/block]
 ## 2. Send RevenueCat Events to CleverTap
 
@@ -164,14 +146,6 @@ After you've set up the *Purchases SDK* and CleverTap SDK to have the same user 
 [/block]
 # Sample Event
 Below is sample JSON that is delivered to CleverTap for an initial purchase event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n    'd': [\n        {\n            'type': 'event',\n            'evtName': 'initial_purchase',\n            'evtData': {\n                'amount': 9.99,\n                'currency': 'USD',\n            },\n            'ts': 1580602110000,\n            'objectId': 'yourCustomClevertapId',\n        }\n    ]\n}",
-      "language": "json",
-      "name": "JSON"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/clevertap_2.json
 [/block]

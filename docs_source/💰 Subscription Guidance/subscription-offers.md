@@ -40,15 +40,8 @@ If the introductory offer isn't applied to the purchase in the system payment sh
 The Purchases SDK allows for easy checking of eligibility for introductory offers, so that you as the developer can display the proper subscription terms to your customers.
 
 RevenueCat uses a best-effort approach to checking eligibility based on previous purchases by the customer. The native store payment sheet will ultimately display the correct eligibility before the customer subscribes.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getOfferings { offerings, error in\n  if let product = offerings?.current?.availablePackages.first?.storeProduct {\n    Purchases.shared.checkTrialOrIntroDiscountEligibility(product: product) { eligibility in\n      if eligibility == .eligible {\n        // show trial/introductory terms\n      } else {\n        // user is not eligible, show non-trial/introductory terms\n      }\n    }\n  }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/💰 Subscription Guidance/subscription-offers_1.swift
 [/block]
 
 [block:callout]

@@ -83,23 +83,10 @@ RevenueCat will also send your customer's active entitlement ID(s) as an array o
 If you're using the Braze SDK, you can set the User Id to match the RevenueCat App User Id. This way, events sent from the Braze SDK and events sent from RevenueCat can be synced to the same user.
 
 Configure the Braze SDK with the same App User Id as RevenueCat or use the `.changeUser()` method on the Braze SDK.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n\n// Change user in Braze SDK\nAppboy.sharedInstance()?.changeUser(\"my_app_user_id\")\n\n// Optional User Alias Object attributes\nPurchases.shared.attribution.setAttributes([\"$brazeAliasName\" : \"name\", \n                             \"$brazeAliasLabel\" : \"label\"])",
-      "language": "swift"
-    },
-    {
-      "code": "// Configure Purchases SDK\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n// Change user in Braze SDK\n[[Appboy sharedInstance] changeUser:@\"my_app_user_id\"];\n\n// Optional User Alias Object attributes\n[[RCPurchases sharedPurchases] setAttributes:@{\n    @\"$brazeAliasName\": @\"name\",\n    @\"$brazeAliasLabel\": @\"label\"\n}];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n// Change user in Braze SDK\nBraze.getInstance(context).changeUser(my_app_user_id);\n\n// Optional User Alias Object attributes\nMap<String, String> attributes = new HashMap<String, String>();\nattributes.put(\"$brazeAliasName\", \"name\");\nattributes.put(\"$brazeAliasLabel\", \"label\");\n\nPurchases.getSharedInstance().setAttributes(attributes);",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/braze_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/braze_1.m
+java->code_blocks/🔌 Integrations/integrations/braze_1.java
 [/block]
 
 ## (Optional) Send User Alias Object fields to RevenueCat
@@ -173,13 +160,6 @@ After you've set up the *Purchases SDK* and Braze SDK to have the same user iden
 [/block]
 # Sample event
 Below is the sample JSON that is delivered to Braze for a renewal event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n    \"events\":\n    [\n        {\n            \"name\": \"rc_renewal_event\",\n            \"time\": \"2022-10-19T11:02:13.000000\",\n            \"properties\":\n            {\n                \"product_id\": \"your_product_id\",\n                \"store\": \"APP_STORE\",\n                \"revenue\": 9.99,\n                \"app_id\": \"your_app_id\"\n            },\n            \"external_id\": \"app_user_id\"\n        }\n    ],\n    \"attributes\":\n    [\n        {\n            \"external_id\": \"app_user_id\",\n            \"email\": \"garfield@revenuecat.com\",\n            \"rc_customer_attribute_$displayName\": \"Garfield\",\n            \"rc_active_entitlements\":\n            [\n                \"Premium Cat\"\n            ]\n        }\n    ]\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/braze_2.json
 [/block]

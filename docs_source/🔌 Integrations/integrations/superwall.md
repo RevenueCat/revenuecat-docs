@@ -144,15 +144,8 @@ Navigate to your Superwall dashboard > Users and search for the created app user
 [/block]
 # Sample Event
 Below is a sample JSON that is delivered to Superwall for a Trial Started event. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"api_version\": \"1.0\",\n  \"event\": {\n    \"aliases\": [\n      \"$RCAnonymousID:646c8236950c4ffdb7eda9618c32fe66\"\n    ],\n    \"app_id\": \"app83e93e5855\",\n    \"app_user_id\": \"$RCAnonymousID:646c8236950c4ffdb7eda9618c32fe66\",\n    \"country_code\": \"US\",\n    \"currency\": \"USD\",\n    \"entitlement_ids\": null,\n    \"environment\": \"SANDBOX\",\n    \"event_timestamp_ms\": 1644280494982,\n    \"expiration_at_ms\": 1644280667000,\n    \"id\": \"D492AA52-07ED-4948-BF22-04A86636DA1E\",\n    \"is_family_share\": false,\n    \"offer_code\": null,\n    \"original_app_user_id\": \"$RCAnonymousID:646c8236950c4ffdb7eda9618c32fe66\",\n    \"original_transaction_id\": \"1000000964160097\",\n    \"period_type\": \"TRIAL\",\n    \"presented_offering_id\": \"default\",\n    \"price\": 0,\n    \"price_in_purchased_currency\": 0,\n    \"product_id\": \"rc_3999_1y_1w0\",\n    \"purchased_at_ms\": 1644280487000,\n    \"store\": \"APP_STORE\",\n    \"subscriber_attributes\": {},\n    \"takehome_percentage\": 0.7,\n    \"transaction_id\": \"1000000964160097\",\n    \"type\": \"INITIAL_PURCHASE\"\n  }\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/superwall_1.json
 [/block]
 
 [block:callout]

@@ -93,32 +93,12 @@ In order to associate RevenueCat data with the Iterable User Profile, either the
 [/block]
 ## (optional) Set Iterable Campaign ID and/or Template ID
 To attribute an event to an Iterable Campaign ID and/or Template ID, set the `$iterableCampaignId` and/or `$iterableTemplateId` subscriber attributes through the RevenueCat SDK or [REST API](https://docs.revenuecat.com/reference/update-subscriber-attributes).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Configure Purchases\nPurchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n// Initialize Iterable\nIterableAPI.initialize(apiKey: \"<YOUR_API_KEY>\", launchOptions: launchOptions, config: config)\n\n// Setting Iterable email or userId\nIterableAPI.email = \"user@example.com\"\nIterableAPI.userId = \"user123\"\n\n\n// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId\nPurchases.shared.attribution.setAttributes([\"$email\" : IterableAPI.email],\n                               [\"$iterableUserId\" : IterableAPI.userId,\n                               [\"$iterableCampaignId\" : \"123\"],\n                               [\"$iterableTemplateId\" : \"123\"])\n\n",
-      "language": "swift"
-    },
-    {
-      "code": "// Configure Purchases\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\"];\n\n// Initialize Iterable\n[IterableAPI initializeWithApiKey:@\"<YOUR_API_KEY>\" launchOptions:launchOptions config:config]\n\n// Setting Iterable email or userId\nIterableAPI.email = @\"user@example.com\";\nIterableAPI.userId = @\"user123\";\n\n// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId\n[[RCPurchases sharedPurchases] setAttributes:@{\n  @\"$email\": IterableAPI.email,\n  @\"iterableUserId\": IterableAPI.userId ,\n  @\"$iterableCampaignId\": @\"123\",\n  @\"$iterableTemplateId\": @\"123\"\n}];\n",
-      "language": "objectivec"
-    },
-    {
-      "code": "// Configure Purchases\nPurchases.configure(new PurchasesConfiguration.Builder(this, \"public_google_sdk_key\").build());\n\n// Initialize Iterable\nIterableApi.initialize(context, \"<YOUR_API_KEY>\", config);\n\n// Setting Iterable email or userId\nIterableApi.getInstance().setEmail(\"user@example.com\");\nIterableApi.getInstance().setUserId(\"user123\");\n\n// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId\nMap<String, String> attributes = new HashMap<String, String>();\nattributes.put(\"$email\", IterableApi.getInstance().getEmail());\nattributes.put(\"$iterableUserId\", IterableApi.getInstance().getUserId());\nattributes.put(\"$iterableCampaignId\", \"123\");\nattributes.put(\"$iterableTemplateId\", \"123\");\nPurchases.getSharedInstance().setAttributes(attributes);\n\n",
-      "language": "java"
-    },
-    {
-      "code": "// Configure Purchases\nif (Platform.OS === 'ios') {\n\tawait Purchases.setup(\"public_ios_sdk_key\");\n} else if (Platform.OS === 'android') {\n\tawait Purchases.setup(\"public_google_sdk_key\");\n\t// OR: if building for Amazon, be sure to follow the installation instructions then:\n\tawait Purchases.setup({ apiKey: \"public_amazon_sdk_key\", useAmazon: true });\n}\n\n// Initialize Iterable\nIterable.initialize('<YOUR_API_KEY>', config);\n\n// Setting Iterable email or userId\nIterable.setEmail(\"user@example.com\");\nIterable.setUserId(\"user123\");\n\n// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId\nIterable.getEmail().then(email => {\n\tconsole.log(\"Current email: \" + email);\n  \tPurchases.setAttributes({ \"$email\" : email });\n});\n\nIterable.getUserId().then(userId => {\n\tconsole.log(\"Current userId: \" + userId);\n  \tPurchases.setAttributes({ \"$iterableUserId\" : userId });\n});\n\nPurchases.setAttributes({ \"$iterableCampaignId\" : \"123\", \"$iterableTemplateId\" : \"123\" });\n",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "curl --request POST \\\n  --url https://api.revenuecat.com/v1/subscribers/app_user_id/attributes \\\n  --header 'Authorization: Bearer ' \\\n  --header 'Content-Type: application/json' \\\n  --data \\ \n  '{ \n\t\"attributes\" :  {\n\t\t\"$iterableCampaignId\": {\n\t\t\t\"value\": \"123\"\n\t\t},\n\t\t\"$iterableTemplateId\": {\n\t\t\t\"value\": \"123\"\n\t\t}\n\t}\n}'",
-      "language": "curl"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/iterable_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/iterable_1.m
+java->code_blocks/🔌 Integrations/integrations/iterable_1.java
+javascript->code_blocks/🔌 Integrations/integrations/iterable_1.js
+curl->code_blocks/🔌 Integrations/integrations/iterable_1.curl
 [/block]
 ## 2. Send RevenueCat Events to Iterable
 After you've set up the Purchase SDK and Iterable SDK to have the same user identity, you can "turn on" the integration and configure the event names from the RevenueCat dashboard.
@@ -234,15 +214,8 @@ Navigate to your Iterable dashboard > Insights > Logs. To find Purchase events n
 [/block]
 # Sample Event
 Below is a sample JSON that is delivered to Iterable for a trial started event. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"createdAt\": 1644624970000,\n  \"id\": \"1000000967584331\",\n  \"items\": [\n    {\n      \"dataFields\": {\n        \"country_code\": \"US\",\n        \"currency\": \"USD\",\n        \"entitlement_ids\": [\n          \"pro\"\n        ],\n        \"environment\": \"SANDBOX\",\n        \"expiration_at_ms\": 1644625150000,\n        \"is_family_share\": false,\n        \"offer_code\": null,\n        \"original_transaction_id\": \"1000000967584331\",\n        \"period_type\": \"TRIAL\",\n        \"presented_offering_id\": \"default\",\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7\n      },\n      \"id\": \"rc_3999_1y_1w0\",\n      \"name\": \"rc_trial_started_event\",\n      \"price\": 0,\n      \"quantity\": 1\n    }\n  ],\n  \"total\": 0,\n  \"user\": {\n    \"dataFields\": {\n      \"app_user_id\": \"$RCAnonymousID:354629ce52324242a03a42f5efe7d020\",\n      \"original_app_user_id\": \"$RCAnonymousID:354629ce52324242a03a42f5efe7d020\",\n      \"subscriber_attributes\": {\n        \"$email\": {\n          \"updated_at_ms\": 1644624942354,\n          \"value\": \"test@gmail.com\"\n        }\n      }\n    },\n    \"email\": \"test@gmail.com\",\n    \"preferUserId\": true,\n    \"userId\": \"$RCAnonymousID:354629ce52324242a03a42f5efe7d020\"\n  }\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/iterable_2.json
 [/block]
 # Considerations
 ## Refunds

@@ -110,61 +110,22 @@ The mParticle integration also requires some device-specific data. RevenueCat wi
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods `collectDeviceIdentifiers()` and `setMparticleId()`. 
 
 Create an `identityRequest` and add it to the `MParticleOptions` that you pass to the `start()` method on the mParticle SDK to set the same App User Id that is set in RevenueCat.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n\n\n// Set App User Id in mParticle\nlet options = MParticleOptions(key: \"mParticle_app_key\",\n                               secret: \"mParticle_app_secret\")\nlet identityRequest = MPIdentityApiRequest.withEmptyUser()\nidentityRequest.email = \"user@example.com\"\nidentityRequest.customerId = \"123456\"\noptions.identifyRequest = identityRequest\noptions.onIdentifyComplete =  { (result: MPIdentityApiResult?, error: Error?) in\n    guard error == nil else {\n        // handle error\n        return\n    }\n    guard let result = result else {\n        // handle empty result\n        return\n    }\n    \n    // IMPORTANT: user identified successfully, get the mPID and send to RevenueCat\n    let mPid = result.user.userId\n    Purchases.shared.attribution.collectDeviceIdentifiers()\n    Purchases.shared.attribution.setMparticleID(mPid.stringValue)\n}\n\n// Start mParticle\nMParticle.sharedInstance().start(with: options)",
-      "language": "swift"
-    },
-    {
-      "code": "// Configure Purchases SDK\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n\n// Set App User Id in mParticle\nMParticleOptions *options = [MParticleOptions optionsWithKey:@\"mParticle_app_key\"\n                             secret:@\"mParticle_app_secret\"];\nMPIdentityApiRequest *identityRequest = [MPIdentityApiRequest requestWithEmptyUser];\nidentityRequest.email = @\"user@example.com\";\nidentityRequest.customerId = @\"123456\";\noptions.identifyRequest = identityRequest;\noptions.onIdentifyComplete = ^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {\n    if (error) {\n        // handle error\n        return;\n    }\n    if (apiResult == nil) {\n        // handle empty result\n        return;\n    }\n    // user identified successfully, get the mPID and send to RevenueCat\n    NSNumber *mPid = [apiResult.user userId];\n    [[RCPurchases sharedPurchases] collectDeviceIdentifiers];\n    [[RCPurchases sharedPurchases] setMparticleID:mPid.stringValue];\n};\n\n\n// Start mParticle\n[[MParticle sharedInstance] startWithOptions:options];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(this, \"my_api_key\", \"my_app_user_id\");\n\n\n// Set App User Id in mParticle\nIdentityApiRequest identityRequest = IdentityApiRequest.withEmptyUser()\n    .email(\"user@example.com\")\n    .customerId(\"123456\")\n    .build();\n\nBaseIdentityTask identifyTask = new BaseIdentityTask()\n    .addFailureListener(new TaskFailureListener() {\n      @Override\n      public void onFailure(IdentityHttpResponse identityHttpResponse) {\n        // handle failure\n      }\n    }).addSuccessListener(new TaskSuccessListener() {\n      @Override\n      public void onSuccess(IdentityApiResult identityApiResult) {\n        // user identified successfully, get the mPID and send to RevenueCat\n        long mPid = identityApiResult.getUser().getId();\n        Purchases.getSharedInstance().collectDeviceIdentifiers();\n        Purchases.getSharedInstance().setMparticleID(String.valueOf(mPid));\n      }\n    });\n\nMParticleOptions options = MParticleOptions.builder(this)\n    .credentials(\"mParticle_app_key\", \"mParticle_app_secret\")\n    .identify(identityRequest)\n    .identifyTask(identifyTask)\n    .build();\n\n\n// Start mParticle\nMParticle.start(options);",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/mparticle_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/mparticle_1.m
+java->code_blocks/🔌 Integrations/integrations/mparticle_1.java
 [/block]
 mParticle also allows you to log a user in after starting the SDK and log a user out; you should handle both of these cases:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// handle logging out\nMParticle.sharedInstance().identity.logout(completion: { (result: MPIdentityAPIResult?, error: Error?) in\n    Purchases.shared().reset()\n})",
-      "language": "swift"
-    },
-    {
-      "code": "// handle logging out\n[[[MParticle sharedInstance] identity] logoutWithCompletion:^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {\n    [[RCPurchases sharedPurchases] reset];\n}];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// handle logging out\nMParticle.getInstance().Identity().logout(identityRequest)\n    .addFailureListener(new TaskFailureListener() {\n        @Override\n        public void onFailure(IdentityHttpResponse identityHttpResponse) {\n            // handle error\n        }\n    })\n    .addSuccessListener(new TaskSuccessListener() {\n        @Override\n        public void onSuccess(IdentityApiResult identityApiResult) {\n          Purchases.getSharedInstance().reset();\n        }\n    });",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/mparticle_2.swift
+objectivec->code_blocks/🔌 Integrations/integrations/mparticle_2.m
+java->code_blocks/🔌 Integrations/integrations/mparticle_2.java
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// handle logging in\nMParticle.sharedInstance().identity.login(identityRequest, completion: { (result: MPIdentityAPIResult?, error: Error?) in \n    guard error == nil else {\n        // handle error\n        return\n    }\n    guard let result = result else {\n        // handle empty result\n        return\n    }\n    // user identified successfully, get the mPID and send to RevenueCat\n    let mPid = result.user.userId\n    Purchases.shared.attribution.collectDeviceIdentifiers()\n    Purchases.shared.attribution.setMparticleID(mPid.stringValue)\n})",
-      "language": "swift"
-    },
-    {
-      "code": "// handle logging in\n[[[MParticle sharedInstance] identity] login:identityRequest\n                                  completion:^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {\n    if (error) {\n        // handle error\n        return;\n    }\n    if (apiResult == nil) {\n        // handle empty result\n        return;\n    }\n    // user identified successfully, get the mPID and send to RevenueCat\n    NSNumber *mPid = [apiResult.user userId];\n    [RCPurchases shared] collectDeviceIdentifiers];\n    [RCPurchases shared] setMparticleID: [mPid stringValue]];\n}];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// handle logging in\nMParticle.getInstance().Identity().login(identityRequest)\n    .addFailureListener(new TaskFailureListener() {\n        @Override\n        public void onFailure(IdentityHttpResponse identityHttpResponse) {\n            // handle error\n        }\n    })\n    .addSuccessListener(new TaskSuccessListener() {\n        @Override\n        public void onSuccess(IdentityApiResult identityApiResult) {\n          // user identified successfully, get the mPID and send to RevenueCat\n        \tlong mPid = identityApiResult.getUser().getId();\n        \tPurchases.getSharedInstance().collectDeviceIdentifiers();\n          Purchases.getSharedInstance().setMparticleID(String.valueOf(mPid));\n        }\n    });",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/mparticle_3.swift
+objectivec->code_blocks/🔌 Integrations/integrations/mparticle_3.m
+java->code_blocks/🔌 Integrations/integrations/mparticle_3.java
 [/block]
 
 [block:callout]
@@ -284,13 +245,6 @@ While still on the Customer View, click into the test purchase event in the [Cus
 [/block]
 # Sample Event
 Below is sample JSON that is delivered to mParticle for a trial conversion event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"source_message_id\": \"df8bb4e6-148c-4bad-ac91-d4acdfe6a44b\",\n        \"timestamp_unixtime_ms\": 1592479792179,\n        \"custom_attributes\": {\n          \"revenuecat_product_id\": \"com.phillips-baldwin.dunn.elliott.monthly\",\n          \"revenuecat_event\": \"renewal\"\n        },\n        \"product_action\": {\n          \"action\": \"purchase\",\n          \"transaction_id\": null,\n          \"total_amount\": 29.995,\n          \"products\": [\n            {\n              \"id\": \"com.phillips-baldwin.dunn.elliott.monthly\",\n              \"price\": 29.995,\n              \"quantity\": 1,\n              \"total_product_amount\": 29.995\n            }\n          ]\n        },\n        \"currency_code\": \"USD\",\n        \"is_non_interactive\": true\n      },\n      \"event_type\": \"commerce_event\"\n    }\n  ],\n  \"source_request_id\": \"d28919c3-8243-46b6-9eed-3ef0723d3717\",\n  \"user_attributes\": {\n    \"revenuecat_color\": \"blue\",\n    \"revenuecat_size\": \"medium\",\n    \"$mobile\": \"+34666666666\",\n    \"$country\": \"ES\",\n    \"revenuecat_aliases\": [\n      \"alias1\",\n      \"alias2\"\n    ],\n    \"revenuecat_app_user_id\": \"user_vkEeY\",\n    \"revenuecat_original_app_user_id\": \"user_vkEeY\"\n  },\n  \"device_info\": {\n    \"platform\": \"iOS\",\n    \"ios_advertising_id\": \"EA555CD-A666-77BC-B888-99ECB9B99999\",\n    \"ios_idfv\": \"C555F5DB-66FC-777F-B8C8-BC99E9B999D9\"\n  },\n  \"application_info\": {\n    \"application_name\": \"Rivera-Chambers\",\n    \"package\": \"com.phillips-baldwin.dunn.elliott\"\n  },\n  \"user_identities\": {\n    \"email\": \"subscriber@example.com\"\n  },\n  \"schema_version\": 2,\n  \"environment\": \"development\",\n  \"mpid\": \"000000000000000000\"\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/mparticle_4.json
 [/block]

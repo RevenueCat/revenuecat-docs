@@ -113,19 +113,9 @@ As of August 27, Google requires developers to allow customers to cancel a subsc
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    let managementURL = customerInfo.managementURL\n    // display the managementURL in your app\n}",
-      "language": "swift"
-    },
-    {
-      "code": "Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->\n    val managementURL = customerInfo.managementURL\n    // display the managementURL in your app\n}",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/💰 Subscription Guidance/managing-subscriptions_1.swift
+kotlin->code_blocks/💰 Subscription Guidance/managing-subscriptions_1.kt
 [/block]
 
 [block:callout]

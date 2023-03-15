@@ -188,15 +188,8 @@ If you're receiving a webhook it's important to respond quickly so you don't acc
 ## Events Format
 
 Webhook events are serialized in JSON. The body of a `POST` request to your server will contain the serialized event, as well as the API version. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"api_version\": \"1.0\",\n  \"event\": {\n    \"aliases\": [\n      \"yourCustomerAliasedID\",\n      \"yourCustomerAliasedID\"\n    ],\n    \"app_id\": \"yourAppID\",\n    \"app_user_id\": \"yourCustomerAppUserID\",\n    \"commission_percentage\": 0.3,\n    \"country_code\": \"US\",\n    \"currency\": \"USD\",\n    \"entitlement_id\": \"pro_cat\",\n    \"entitlement_ids\": [\n      \"pro_cat\"\n    ],\n    \"environment\": \"PRODUCTION\",\n    \"event_timestamp_ms\": 1591121855319,\n    \"expiration_at_ms\": 1591726653000,\n    \"id\": \"UniqueIdentifierOfEvent\",\n    \"is_family_share\": false,\n    \"offer_code\": \"free_month\",\n    \"original_app_user_id\": \"OriginalAppUserID\",\n    \"original_transaction_id\": \"1530648507000\",\n    \"period_type\": \"NORMAL\",\n    \"presented_offering_id\": \"OfferingID\",\n    \"price\": 2.49,\n    \"price_in_purchased_currency\": 2.49,\n    \"product_id\": \"onemonth_no_trial\",\n    \"purchased_at_ms\": 1591121853000,\n    \"store\": \"APP_STORE\",\n    \"subscriber_attributes\": {\n      \"$Favorite Cat\": {\n        \"updated_at_ms\": 1581121853000,\n        \"value\": \"Garfield\"\n      }\n    },\n    \"takehome_percentage\": 0.7,\n    \"tax_percentage\": 0.3,\n    \"transaction_id\": \"170000869511114\",\n    \"type\": \"INITIAL_PURCHASE\"\n  }\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/webhooks_1.json
 [/block]
 ## Common Fields
 [block:parameters]
@@ -474,83 +467,14 @@ You should be able to handle webhooks that include additional fields to what's s
 # Sample Webhook Events
 
 These are some representative samples of webhooks you might receive from RevenueCat. Keep in mind that webhooks can include additional fields to what's shown here.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1658726378679,\n        \"product_id\": \"com.subscription.weekly\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1658726374000,\n        \"expiration_at_ms\": 1659331174000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": null,\n        \"entitlement_ids\": [\n            \"pro\"\n        ],\n        \"presented_offering_id\": null,\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"US\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"currency\": \"USD\",\n        \"price\": 4.99,\n        \"price_in_purchased_currency\": 4.99,\n        \"subscriber_attributes\": {\n            \"$email\": {\n                \"updated_at_ms\": 1662955084635,\n                \"value\": \"firstlast@gmail.com\"\n            }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7,\n        \"offer_code\": null,\n        \"type\": \"INITIAL_PURCHASE\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Initial Purchase"
-    },
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1658726522314,\n        \"product_id\": \"2100_tokens\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1658726519000,\n        \"expiration_at_ms\": null,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": null,\n        \"entitlement_ids\": [\n            \"pro\"\n        ],\n        \"presented_offering_id\": \"coins\",\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"CA\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"currency\": \"CAD\",\n        \"price\": 25.487,\n        \"price_in_purchased_currency\": 32.99,\n        \"subscriber_attributes\": {\n            \"$email\": {\n                \"updated_at_ms\": 1662955084635,\n                \"value\": \"firstlast@gmail.com\"\n            }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.85,\n        \"offer_code\": null,\n        \"type\": \"NON_RENEWING_PURCHASE\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Non Renewing Purchase"
-    },
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1658726405017,\n        \"product_id\": \"com.subscription.weekly\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1658755132000,\n        \"expiration_at_ms\": 1659359932000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": null,\n        \"entitlement_ids\": [\n            \"pro\"\n        ],\n        \"presented_offering_id\": null,\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"DE\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"currency\": \"EUR\",\n        \"is_trial_conversion\": false,\n        \"price\": 8.14,\n        \"price_in_purchased_currency\": 7.99,\n        \"subscriber_attributes\": {\n            \"$email\": {\n                \"updated_at_ms\": 1662955084635,\n                \"value\": \"firstlast@gmail.com\"\n            }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7,\n        \"offer_code\": null,\n        \"type\": \"RENEWAL\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Renewal"
-    },
-    {
-      "code": "{\n  \"event\": {\n    \"event_timestamp_ms\": 1601337615995,\n    \"product_id\": \"com.revenuecat.myapp.weekly\",\n    \"period_type\": \"NORMAL\",\n    \"purchased_at_ms\": 1601417766000,\n    \"expiration_at_ms\": 1602022566000,\n    \"environment\": \"PRODUCTION\",\n    \"entitlement_id\": \"pro\",\n    \"entitlement_ids\": [\n      \"pro\"\n    ],\n    \"presented_offering_id\": \"defaultoffering\",\n    \"transaction_id\": \"100000000000002\",\n    \"original_transaction_id\": \"100000000000000\",\n    \"app_user_id\": \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n    \"aliases\": [\n      \"$RCAnonymousID:12345678-1234-ABCD-1234-123456789123\",\n      \"user_1234\"\n    ],\n    \"offer_code\": \"free_month\",\n    \"original_app_user_id\": \"$RCAnonymousID:12345678-1234-ABCD-1234-123456789123\",\n    \"cancel_reason\": \"UNSUBSCRIBE\",\n    \"currency\": \"USD\",\n    \"price\": 0.0,\n    \"price_in_purchased_currency\": 0.0,\n    \"subscriber_attributes\": {\n      \"$idfa\": {\n        \"value\": \"12345678-1234-1234-1234-12345678912x\",\n        \"updated_at_ms\": 1578018408238\n      },\n      \"$appsflyerId\": {\n        \"value\": \"1234567891234-1234567\",\n        \"updated_at_ms\": 1578018408238\n      },\n      \"favorite_food\": {\n        \"value\": \"pizza\",\n        \"updated_at_ms\": 1578018408238\n      }\n    },\n    \"store\": \"APP_STORE\",\n    \"takehome_percentage\": 0.7,\n    \"type\": \"CANCELLATION\",\n    \"id\": \"12345678-ABCD-1234-ABCD-12345678912\"\n  },\n  \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Cancellation"
-    },
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1663982135337,\n        \"product_id\": \"com.subscription.monthly\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1662643092000,\n        \"expiration_at_ms\": 1665235092000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": null,\n        \"entitlement_ids\": [\n            \"plus\"\n        ],\n        \"presented_offering_id\": \"plus\",\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"US\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"currency\": \"USD\",\n        \"price\": 0.0,\n        \"price_in_purchased_currency\": 0.0,\n        \"subscriber_attributes\": {},\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7,\n        \"offer_code\": null,\n        \"tax_percentage\": 0.0,\n        \"commission_percentage\": 0.3,\n        \"type\": \"UNCANCELLATION\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Uncancellation"
-    },
-    {
-      "code": "{\n  \"event\" : {\n    \"event_timestamp_ms\" : 1601337601013,\n    \"product_id\" : \"com.revenuecat.myapp.monthly\",\n    \"period_type\" : \"NORMAL\",\n    \"purchased_at_ms\" : 1598640647000,\n    \"expiration_at_ms\" : 1601319047000,\n    \"environment\" : \"PRODUCTION\",\n    \"entitlement_id\" : \"pro\",\n    \"entitlement_ids\" : [\n      \"pro\"\n    ],\n    \"presented_offering_id\" : \"defaultoffering\",\n    \"transaction_id\" : \"100000000000002\",\n    \"original_transaction_id\" : \"100000000000000\",\n    \"app_user_id\" : \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n    \"aliases\" : [\n      \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\"\n    ],\n    \"offer_code\": \"summer_special\",\n    \"original_app_user_id\" : \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n    \"currency\" : \"USD\",\n    \"price\" : 0,\n    \"price_in_purchased_currency\" : 0,\n    \"subscriber_attributes\" : {\n      \"$idfa\" : {\n        \"value\" : \"12345678-1234-1234-1234-12345678912x\",\n        \"updated_at_ms\" : 1578018408238\n      },\n      \"$appsflyerId\" : {\n        \"value\" : \"1234567891234-1234567\",\n        \"updated_at_ms\" : 1578018408238\n      }\n    },\n    \"store\" : \"APP_STORE\",\n    \"takehome_percentage\" : 0.7,\n    \"tax_percentage\": null,\n    \"commission_percentage\": null,\n    \"type\" : \"BILLING_ISSUE\",\n    \"id\" : \"12345678-1234-1234-1234-12345678912\"\n  },\n  \"api_version\" : \"1.0\"\n}",
-      "language": "json",
-      "name": "Billing Issue"
-    },
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1652796516000,\n        \"product_id\": \"premium\",\n        \"period_type\": \"NORMAL\",\n        \"purchased_at_ms\": 1652681048845,\n        \"expiration_at_ms\": 1655366648845,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": \"Premium1\",\n        \"entitlement_ids\": [\n            \"Premium1\"\n        ],\n        \"presented_offering_id\": \"premium\",\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"US\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"auto_resume_at_ms\": 1657951448845,\n        \"currency\": \"USD\",\n        \"price\": 0.0,\n        \"price_in_purchased_currency\": 0.0,\n        \"subscriber_attributes\": {\n            \"$email\": {\n                \"updated_at_ms\": 1662955084635,\n                \"value\": \"firstlast@gmail.com\"\n            }\n        },\n        \"store\": \"PLAY_STORE\",\n        \"takehome_percentage\": 0.85,\n        \"offer_code\": null,\n        \"type\": \"SUBSCRIPTION_PAUSED\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Subscription Paused"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/webhooks_2.json
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n \"event\": {\n     \"app_id\": \"1234567890\",\n     \"event_timestamp_ms\": 78789789798798,\n     \"id\": \"CD489E0E-5D52-4E03-966B-A7F17788E432\",\n     \"store\": \"APP_STORE\",\n     \"transferred_from\": [\"00005A1C-6091-4F81-BE77-F0A83A271AB6\"],\n     \"transferred_to\": [\"4BEDB450-8EF2-11E9-B475-0800200C9A66\"],\n     \"type\": \"TRANSFER\",\n },\n \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Transfer"
-    },
-    {
-      "code": "{\n  \"event\" : {\n    \"event_timestamp_ms\" : 1601337615995,\n    \"product_id\" : \"com.revenuecat.myapp.monthly\",\n    \"period_type\" : \"NORMAL\",\n    \"purchased_at_ms\" : 1601258901000,\n    \"expiration_at_ms\" : 1601336705000,\n    \"environment\" : \"PRODUCTION\",\n    \"entitlement_id\" : \"pro\",\n    \"entitlement_ids\" : [\n      \"pro\"\n    ],\n    \"presented_offering_id\" : \"defaultoffering\",\n    \"transaction_id\" : \"100000000000000\",\n    \"original_transaction_id\" : \"100000000000000\",\n    \"app_user_id\" : \"$RCAnonymousID:12345678-1234-ABCD-1234-123456789123\",\n    \"aliases\" : [\n      \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n      \"user_1234\"\n    ],\n    \"offer_code\": null,\n    \"original_app_user_id\" : \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n    \"cancel_reason\" : \"CUSTOMER_SUPPORT\",\n    \"currency\" : \"USD\",\n    \"price\" : -9.99,\n    \"price_in_purchased_currency\" : -9.99,\n    \"subscriber_attributes\" : {\n      \"$idfa\" : {\n        \"value\" : \"12345678-1234-1234-1234-12345678912x\",\n        \"updated_at_ms\" : 1578018408238\n      },\n      \"$appsflyerId\" : {\n        \"value\" : \"1234567891234-1234567\",\n        \"updated_at_ms\" : 1578018408238\n      }\n    },\n    \"store\" : \"APP_STORE\",\n    \"takehome_percentage\" : 0.7,\n    \"tax_percentage\": 0.1109,\n    \"commission_percentage\": 0.15,\n    \"type\" : \"CANCELLATION\",\n    \"id\" : \"12345678-1234-1234-1234-12345678912\"\n  },\n  \"api_version\" : \"1.0\"\n}",
-      "language": "json",
-      "name": "Refund"
-    },
-    {
-      "code": "{\n  \"event\" : {\n    \"event_timestamp_ms\" : 1601338594769,\n    \"product_id\" : \"com.revenuecat.myapp.monthly\",\n    \"period_type\" : \"NORMAL\",\n    \"purchased_at_ms\" : 1601304429682,\n    \"expiration_at_ms\" : 1601311606660,\n    \"environment\" : \"PRODUCTION\",\n    \"entitlement_id\" : \"subscription\",\n    \"entitlement_ids\" : [\n      \"subscription\"\n    ],\n    \"presented_offering_id\" : \"defaultoffering\",\n    \"transaction_id\" : \"GPA.1234-1234-1234-12345\",\n    \"original_transaction_id\" : \"GPA.1234-1234-1234-12345\",\n    \"app_user_id\" : \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n    \"aliases\" : [\n      \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\"\n    ],\n    \"offer_code\": null,\n    \"original_app_user_id\" : \"$RCAnonymousID:12345678-1234-1234-1234-123456789123\",\n    \"new_product_id\" : \"com.revenuecat.myapp.yearly\",\n    \"currency\" : \"USD\",\n    \"price\" : 0,\n    \"price_in_purchased_currency\" : 0,\n    \"subscriber_attributes\" : {},\n    \"store\" : \"PLAY_STORE\",\n    \"takehome_percentage\" : 0.70,\n    \"type\" : \"PRODUCT_CHANGE\",\n    \"id\" : \"12345678-1234-1234-1234-12345678912\"\n  },\n  \"api_version\" : \"1.0\"\n}",
-      "language": "json",
-      "name": "Product Change"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/webhooks_3.json
 [/block]
 Here are events you will see regarding trials:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1658726366696,\n        \"product_id\": \"com.subscription.yearly\",\n        \"period_type\": \"TRIAL\",\n        \"purchased_at_ms\": 1658726358573,\n        \"expiration_at_ms\": 1658992117958,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": null,\n        \"entitlement_ids\": [\n            \"pro\"\n        ],\n        \"presented_offering_id\": \"standard\",\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"PH\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"currency\": \"PHP\",\n        \"price\": 0,\n        \"price_in_purchased_currency\": 0,\n        \"subscriber_attributes\": {\n            \"$email\": {\n                \"updated_at_ms\": 1662955084635,\n                \"value\": \"firstlast@gmail.com\"\n            }\n        },\n        \"store\": \"PLAY_STORE\",\n        \"takehome_percentage\": 0.85,\n        \"offer_code\": null,\n        \"type\": \"INITIAL_PURCHASE\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Trial Started"
-    },
-    {
-      "code": "{\n    \"event\": {\n        \"event_timestamp_ms\": 1658726482659,\n        \"product_id\": \"com.subscription.weekly\",\n        \"period_type\": \"TRIAL\",\n        \"purchased_at_ms\": 1658725349000,\n        \"expiration_at_ms\": 1658984549000,\n        \"environment\": \"PRODUCTION\",\n        \"entitlement_id\": null,\n        \"entitlement_ids\": [\n            \"Premium\"\n        ],\n        \"presented_offering_id\": null,\n        \"transaction_id\": \"123456789012345\",\n        \"original_transaction_id\": \"123456789012345\",\n        \"is_family_share\": false,\n        \"country_code\": \"CN\",\n        \"app_user_id\": \"1234567890\",\n        \"aliases\": [\n            \"$RCAnonymousID:8069238d6049ce87cc529853916d624c\"\n        ],\n        \"original_app_user_id\": \"$RCAnonymousID:87c6049c58069238dce29853916d624c\",\n        \"cancel_reason\": \"UNSUBSCRIBE\",\n        \"currency\": \"CNY\",\n        \"price\": 0.0,\n        \"price_in_purchased_currency\": 0.0,\n        \"subscriber_attributes\": {\n            \"$email\": {\n                \"updated_at_ms\": 1662955084635,\n                \"value\": \"firstlast@gmail.com\"\n            }\n        },\n        \"store\": \"APP_STORE\",\n        \"takehome_percentage\": 0.7,\n        \"offer_code\": null,\n        \"type\": \"CANCELLATION\",\n        \"id\": \"12345678-1234-1234-1234-123456789012\",\n        \"app_id\": \"1234567890\"\n    },\n    \"api_version\": \"1.0\"\n}",
-      "language": "json",
-      "name": "Trial Cancelled"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/webhooks_4.json
 [/block]

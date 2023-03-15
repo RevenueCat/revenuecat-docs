@@ -79,23 +79,10 @@ For events that have revenue, such as trial conversions and renewals, RevenueCat
 If you're using the Segment SDK, you can set the User ID to match the RevenueCat App User Id. This way, events sent from the Segment SDK and events sent from RevenueCat can be synced to the same user.
 
 Use the `.identify()` method on the Segment SDK to set the same App User Id that is set in RevenueCat.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n\n// Set App User Id in Segment\nSEGAnalytics.sharedAnalytics().identify(\"my_app_user_id\")",
-      "language": "swift"
-    },
-    {
-      "code": "// Configure Purchases SDK\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n// Set App User Id in Segment\n[[SEGAnalytics sharedAnalytics] identify:@\"my_app_user_id\"];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n// Set App User Id in Segment\nAnalytics.with(context).identify(\"my_app_user_id\", null, null);",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/segment_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/segment_1.m
+java->code_blocks/🔌 Integrations/integrations/segment_1.java
 [/block]
 ## 2. Generate a Segment Write Key
 
@@ -159,13 +146,6 @@ After you've set up the *Purchases SDK* and Segment SDK to have the same user id
 [/block]
 # Sample Event
 Below is sample JSON that is delivered to Segment for a renewal event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"identify\": {\n    \"context\": {\n      \"environment\": \"production\",\n      \"library\": {\n        \"name\": \"RevenueCat Segment events\",\n        \"version\": \"1.0\"\n      }\n    },\n    \"timestamp\": \"2021-03-20T00:00:02\",\n    \"traits\": {\n      \"aliases\": [\n        \"$RCAnonymousID:0123456789abcdefghij0123456789ab\",\n        \"myCustomAppUserId\"\n      ],\n      \"last_seen_app_user_id\": \"myCustomAppUserId\"\n    },\n    \"userId\": \"$RCAnonymousID:0123456789abcdefghij0123456789ab\"\n  },\n  \"track_event\": {\n    \"context\": {\n      \"environment\": \"production\",\n      \"library\": {\n        \"name\": \"RevenueCat Segment events\",\n        \"version\": \"1.0\"\n      }\n    },\n    \"event\": \"renewal_event\",\n    \"properties\": {\n      \"app_user_id\": \"myCustomAppUserId\",\n      \"currency\": \"USD\",\n      \"entitlements\": [\n        \"your_entitlement_id\"\n      ],\n      \"entitlement\": \"your_entitlement_id\",\n      \"expires_at\": 1647734402,\n      \"original_app_user_id\": \"$RCAnonymousID:0123456789abcdefghij0123456789ab\",\n      \"product_id\": \"your_product_id\",\n      \"revenue\": 9.99,\n      \"store\": \"APP_STORE\",\n      \"purchased_at\": 1616198402,\n      \"subscriber_attributes\": {\n        \"$ip\": \"000.00.00.000\",\n        \"$idfa\": \"12345678-1234-1234-1234-123456789abc\",\n        \"$idfv\": \"12345678-1234-1234-1234-123456789abc\",\n        \"$email\": \"name@gmail.com\",\n        \"$fbAnonId\": \"12345678-1234-1234-1234-123456789abc\",\n        \"$apnsTokens\": \"fY1kOQ0bMl8:APA91bG_rM-ub0xg:DNjP553d8O8gTYs9iNWsYxZMLyzv46IhB--2qz810LRUhCIXTJE4_Umx-irs-FD6ET_qMCXyNeny7B6xn2-X0v69Be014Qa4BHv2XSTwrmF5PZ2L_LPxw4sL2_s1\",\n        \"$appsflyerId\": \"0123456789012-0123456\",\n        \"favorite_food\": \"pizza\"\n      },\n      \"period_type\": \"NORMAL\",\n      \"environment\": \"PRODUCTION\",\n      \"presented_offering_id\": \"default\",\n      \"transaction_id\": \"012345678912345\",\n      \"original_transaction_id\": \"987654321098765\",\n      \"aliases\": [\n        \"$RCAnonymousID:0123456789abcdefghij0123456789ab\",\n        \"myCustomAppUserId\"\n      ],\n      \"offer_code\": \"3_month_discount\"\n    },\n    \"timestamp\": \"2021-03-20T00:00:02\",\n    \"userId\": \"$RCAnonymousID:0123456789abcdefghij0123456789ab\"\n    }\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/segment_2.json
 [/block]

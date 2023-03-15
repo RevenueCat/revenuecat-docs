@@ -90,15 +90,8 @@ If you are going to add an iOS app, enter the iOS/universal Mac app's bundle ID 
 # 3. Update your universal app code
 
 This step is only required if you have both a legacy Mac app and an iOS/universal Mac app. In the **universal Mac app**, add this line of code right before `Purchases.configure`:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.setForceUniversalAppStore(true)\nPurchases.configure()\n// ...",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/📙 Platform Resources/apple-platform-resources/legacy-mac-apps_1.swift
 [/block]
 
 [block:callout]

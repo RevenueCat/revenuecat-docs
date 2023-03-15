@@ -47,48 +47,13 @@ If you've [configured Offerings](doc:entitlements) in RevenueCat, you can contro
 Offerings are fetched through the SDK based on their [configuration](doc:entitlements) in the RevenueCat dashboard.
 
 The `getOfferings` method will fetch the Offerings from RevenueCat. These are pre-fetched in most cases on app launch, so the completion block to get offerings won't need to make a network request in most cases. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getOfferings { (offerings, error) in\n    if let packages = offerings?.current?.availablePackages {\n        // Display packages for sale\n    }\n}",
-      "language": "swift"
-    },
-    {
-      "code": "[[RCPurchases sharedPurchases] getOfferingsWithCompletion:^(RCOfferings *offerings, NSError *error) {\n  if (offerings.current && offerings.current.availablePackages.count != 0) {\n    // Display packages for sale\n  } else if (error) {\n    // optional error handling\n  }\n}];",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "Purchases.sharedInstance.getOfferingsWith({ error ->\n  // An error occurred\n}) { offerings ->\n  offerings.current?.availablePackages?.takeUnless { it.isNullOrEmpty() }?.let {\n    // Display packages for sale\n  }\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsListener() {\n  @Override\n  public void onReceived(@NonNull Offerings offerings) {\n    if (offerings.getCurrent() != null) {\n      List<Package> availablePackages = offerings.getCurrent().getAvailablePackages();\n      // Display packages for sale\n    }\n  }\n  \n  @Override\n  public void onError(@NonNull PurchasesError error) {\n    // An error occurred\n  }\n});",
-      "language": "java"
-    },
-    {
-      "code": "try {\n  Offerings offerings = await Purchases.getOfferings();\n  if (offerings.current != null && offerings.current.availablePackages.isNotEmpty) {\n    // Display packages for sale\n  }\n} on PlatformException catch (e) {\n\t// optional error handling\n} ",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "try {\n  const offerings = await Purchases.getOfferings();\n  if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {\n    // Display packages for sale\n  }\n} catch (e) {\n \n}",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "func displayUpsellScreen() {\n  Purchases.getOfferings(\n      offerings => {\n        if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {  \n\t\t\t    // Display packages for sale\n        }\n      },\n      error => {\n\n      }\n  );\n}",
-      "language": "javascript",
-      "name": "Cordova"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\npurchases.GetOfferings((offerings, error) =>\n{\n  if (offerings.Current != null && offerings.Current.AvailablePackages.Count != 0){\n    // Display packages for sale\n  }\n});",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🚀 Get Started/displaying-products_1.swift
+objectivec->code_blocks/🚀 Get Started/displaying-products_1.m
+kotlin->code_blocks/🚀 Get Started/displaying-products_1.kt
+java->code_blocks/🚀 Get Started/displaying-products_1.java
+javascript->code_blocks/🚀 Get Started/displaying-products_1.js
+csharp->code_blocks/🚀 Get Started/displaying-products_1.cs
 [/block]
 
 [block:callout]
@@ -121,48 +86,13 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 ## Custom Offering identifiers
 It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getOfferings { (offerings, error) in\n    if let packages = offerings?.offering(identifier: \"experiment_group\").availablePackages {\n        // Display packages for sale\n    }\n}",
-      "language": "swift"
-    },
-    {
-      "code": "[[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {\n\tNSArray<RCPackage *> *availablePackages = [offerings offeringWithIdentifier:\"experiment_group\"].availablePackages;\n  if (availablePackages) {\n    // Display packages for sale\n  }\n}];",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "Purchases.sharedInstance.getOfferingsWith({ error ->\n  // An error occurred\n}) { offerings ->\n  offerings[\"experiment_group\"]?.availablePackages?.takeUnless { it.isNullOrEmpty() }?.let {\n    // Display packages for sale\n  }\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsListener() {\n  @Override\n  public void onReceived(@NonNull Offerings offerings) {\n    if (offerings.get(\"experiment_group\") != null) {\n      List<Package> availablePackages = offerings.get(\"experiment_group\").getAvailablePackages();\n      // Display packages for sale\n    }\n  }\n  \n  @Override\n  public void onError(@NonNull PurchasesError error) {\n    // An error occurred\n  }\n});",
-      "language": "java"
-    },
-    {
-      "code": "try {\n  Offerings offerings = await Purchases.getOfferings();\n  if (offerings.getOffering(\"experiment_group\").availablePackages.isNotEmpty) {\n    // Display packages for sale\n  }\n} on PlatformException catch (e) {\n\t// optional error handling\n} ",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "try {\n  const offerings = await Purchases.getOfferings();\n  if (offerings.all[\"experiment_group\"].availablePackages.length !== 0) {\n    // Display packages for sale\n  }\n} catch (e) {\n \n}",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "Purchases.getOfferings(\n      offerings => {\n        if (offerings.all[\"experiment_group\"].availablePackages.length !== 0) {\n\t\t\t    // Display packages for sale\n        }\n      },\n      error => {\n\n      }\n  );",
-      "language": "javascript",
-      "name": "Cordova"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\npurchases.GetOfferings((offerings, error) =>\n{\n  if (offerings.All.ContainsKey(\"experiment_group\") && offerings.All[\"experiment_group\"].AvailablePackages.Count != 0) {\n  \t// Display packages for sale\n  }\n});",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🚀 Get Started/displaying-products_2.swift
+objectivec->code_blocks/🚀 Get Started/displaying-products_2.m
+kotlin->code_blocks/🚀 Get Started/displaying-products_2.kt
+java->code_blocks/🚀 Get Started/displaying-products_2.java
+javascript->code_blocks/🚀 Get Started/displaying-products_2.js
+csharp->code_blocks/🚀 Get Started/displaying-products_2.cs
 [/block]
 # Displaying Packages
 
@@ -184,51 +114,13 @@ Packages help abstract platform-specific products by grouping equivalent product
 }
 [/block]
 ### Getting the Product from the Package
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Accessing the monthly product\n\nPurchases.shared.getOfferings { (offerings, error) in\n    if let package = offerings?.current?.monthly?.storeProduct {\n        // Get the price and introductory period from the StoreProduct\n    }\n}",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "// Accessing the monthly product\n\n[[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {\n  if (offerings.current && offerings.current.monthly) {\n    SKProduct *product = offerings.current.monthly.storeProduct;\n    // Get the price and introductory period from the StoreProduct\n  } else if (error) {\n    // optional error handling\n  }\n}];",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "// Accessing the monthly product\n\nPurchases.sharedInstance.getOfferingsWith({ error ->\n  // An error occurred\n}) { offerings ->\n  val product = offerings.current?.monthly?.product?.also {\n    // Get the price and introductory period from the SkuDetails\n  }\n}",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "// Accessing the monthly product\n\nPurchases.getSharedInstance().getOfferings(new ReceiveOfferingsListener() {\n  @Override\n  public void onReceived(@NonNull Offerings offerings) {\n    if (offerings.getCurrent() != null and offerings.getCurrent().monthly != null) {\n      SkuDetails product = offerings.getCurrent().monthly.product;\n      // Get the price and introductory period from the SkuDetails\n    }\n  }\n  \n  @Override\n  public void onError(@NonNull PurchasesError error) {\n    // An error occurred\n  }\n});",
-      "language": "java",
-      "name": "Java"
-    },
-    {
-      "code": "// Accessing the monthly product// Displaying the monthly product\n\ntry {\n  Offerings offerings = await Purchases.getOfferings();\n  if (offerings.current != null && offerings.current.monthly != null) {\n    Product product = offerings.current.monthly.product;\n    // Get the price and introductory period from the Product\n  }\n} on PlatformException catch (e) {\n\t// optional error handling\n} ",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "// Accessing the monthly product// Displaying the monthly product\n\ntry {\n  const offerings = await Purchases.getOfferings();\n  if (offerings.current && offerings.current.monthly) {\n    const product = offerings.current.monthly;\n    // Get the price and introductory period from the PurchasesProduct\n  }\n} catch (e) {\n \n}",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "// Accessing the monthly product\n\nfunc displayUpsellScreen() {\n  Purchases.getOfferings(\n      offerings => {\n        if (offerings.current && offerings.current.monthly) {  \n          const product = offerings.current.monthly;\n\t\t\t    // Get the price and introductory period from the PurchasesProduct\n        }\n      },\n      error => {\n\n      }\n  );\n}",
-      "language": "javascript",
-      "name": "Cordova"
-    },
-    {
-      "code": "// Accessing the monthly product\n\nvar purchases = GetComponent<Purchases>();\npurchases.GetOfferings((offerings, error) =>\n{\n  if (offerings.Current != null && offerings.Current.Monthly != null){\n    var product = offerings.Current.Monthly.Product;\n    // Get the price and introductory period from the Product\n  }\n});",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🚀 Get Started/displaying-products_3.swift
+objectivec->code_blocks/🚀 Get Started/displaying-products_3.m
+kotlin->code_blocks/🚀 Get Started/displaying-products_3.kt
+java->code_blocks/🚀 Get Started/displaying-products_3.java
+javascript->code_blocks/🚀 Get Started/displaying-products_3.js
+csharp->code_blocks/🚀 Get Started/displaying-products_3.cs
 [/block]
 # Choosing which Offering to display
 
@@ -237,49 +129,13 @@ In practice, you may not want to display the default current Offering to every u
 For example, displaying a higher priced Offering to users that came from [paid acquisition](doc:attribution) to help recover ad costs, or a specific Offering designed to show [iOS Subscription Offers](doc:ios-subscription-offers) when a user has [cancelled their subscription](doc:purchaserinfo#section-get-entitlement-information). 
 
 This can be accomplished with custom Offering identifiers for each of these "cohorts".
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getOfferings { (offerings, error) in\n    var packages : [Package]?\n    \n    if user.isPaidDownload {\n        packages = offerings?.offering(identifier: \"paid_download_offer\")?.availablePackages\n    } else if user.signedUpOver30DaysAgo {\n        packages = offerings?.offering(identifier: \"long_term_offer\")?.availablePackages\n    } else if user.recentlyChurned {\n        packages = offerings?.offering(identifier: \"ios_subscription_offer\")?.availablePackages\n    }\n    \n    // Present your paywall\n}",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "[[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {\n  NSArray<RCPackage *> *packages;\n  \n  if (user.isPaidDownload) {\n    packages = [offerings offeringWithIdentifier:\"paid_download_offer\"].availablePackages;\n  } else if (user.signedUpOver30DaysAgo) {\n    packages = [offerings offeringWithIdentifier:\"long_term_offer\"].availablePackages;\n  } else if (user.recentlyChurned) {\n    packages = [offerings offeringWithIdentifier:\"ios_subscription_offer\"].availablePackages;\n  }\n  \n  [self presentPaywallWithPackages:packages];\n}];",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "Purchases.sharedInstance.getOfferingsWith({ error ->\n  // An error occurred\n}) { offerings ->\n  val packages: Package? = when {\n    user.isPaidDownload -> offerings[\"paid_download_offer\"]?.availablePackages\n    user.signedUpOver30DaysAgo -> offerings[\"long_term_offer\"]?.availablePackages\n    user.recentlyChurned -> offerings[\"ios_subscription_offer\"].availablePackages\n    else -> null\n  }\n\tpresentPaywall(packages)\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsListener() {\n  @Override\n  public void onReceived(@NonNull Offerings offerings) {\n    List<Package> packages = null;\n    if (user.isPaidDownload) {\n      if (offerings.get(\"paid_download_offer\") != null) {\n        packages = offerings.get(\"paid_download_offer\").getAvailablePackages();\n      }\n    } else if (user.signedUpOver30DaysAgo) {\n      if (offerings.get(\"long_term_offer\") != null) {\n        packages = offerings.get(\"long_term_offer\").getAvailablePackages();\n      }\n    }\n    presentPaywall(packages);\n  }\n  \n  @Override\n  public void onError(@NonNull PurchasesError error) {\n    // An error occurred\n  }\n});",
-      "language": "java"
-    },
-    {
-      "code": "try {\n  Offerings offerings = await Purchases.getOfferings();\n  var packages;\n  if (user.isPaidDownload) {\n    packages = offerings?.getOffering(\"paid_download_offer\")?.availablePackages;\n  } else if (user.signedUpOver30DaysAgo) {\n    packages = offerings?.getOffering(\"long_term_offer\")?.availablePackages;\n  } else if (user.recentlyChurned) {\n    packages = offerings?.getOffering(\"ios_subscription_offer\")?.availablePackages;\n  }\n  presentPaywall(packages);\n} on PlatformException catch (e) {\n\t// optional error handling\n} ",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "try {\n  const offerings = await Purchases.getOfferings();\n  let packages;\n  if (user.isPaidDownload) {\n    packages = offerings.all[\"paid_download_offer\"].availablePackages;\n  } else if (user.signedUpOver30DaysAgo) {\n    packages = offerings.all[\"long_term_offer\"].availablePackages;\n  } else if (user.recentlyChurned) {\n    packages = offerings.all[\"ios_subscription_offer\"].availablePackages;\n  }\n  presentPaywall(packages);\n} catch (e) {\n \n}",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "  Purchases.getOfferings(\n      offerings => {\n        let packages;\n        if (user.isPaidDownload) {\n          packages = offerings.all[\"paid_download_offer\"].availablePackages;\n        } else if (user.signedUpOver30DaysAgo) {\n          packages = offerings.all[\"long_term_offer\"].availablePackages;\n        } else if (user.recentlyChurned) {\n          packages = offerings.all[\"ios_subscription_offer\"].availablePackages;\n        }\n        presentPaywall(packages);\n      },\n      error => {\n\n      }\n  );",
-      "language": "javascript",
-      "name": "Cordova"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\npurchases.GetOfferings((offerings, error) =>\n{\n  List<Purchases.Package> packages;\n  if (user.isPaidDownload) {\n    packages = offerings.All[\"paid_download_offer\"].AvailablePackages;\n  } else if (user.signedUpOver30DaysAgo) {\n    packages = offerings.All[\"long_term_offer\"].AvailablePackages;\n  } else if (user.recentlyChurned) {\n    packages = offerings.All[\"ios_subscription_offer\"].AvailablePackages;\n  }\n  presentPaywall(packages);\n});",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🚀 Get Started/displaying-products_4.swift
+objectivec->code_blocks/🚀 Get Started/displaying-products_4.m
+kotlin->code_blocks/🚀 Get Started/displaying-products_4.kt
+java->code_blocks/🚀 Get Started/displaying-products_4.java
+javascript->code_blocks/🚀 Get Started/displaying-products_4.js
+csharp->code_blocks/🚀 Get Started/displaying-products_4.cs
 [/block]
 
 [block:callout]

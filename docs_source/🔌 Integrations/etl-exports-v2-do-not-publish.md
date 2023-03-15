@@ -127,24 +127,6 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample Queries
 
 The following sample queries are in Postgresql.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "-- Active Trials as of [targeted_date]\nSELECT\n  COUNT(*)\nFROM\n  [your_table_name]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'true'\n  AND start_time BETWEEN '2008-07-10' AND [targeted_date]\n  AND (end_time IS NULL OR DATE_DIFF('s', start_time, end_time)::float > 0)\n  AND (ownership_type IS NULL OR ownership_type != 'FAMILY_SHARED')\n  AND store != 'promotional'\n  AND is_sandbox <> 'true'\n\n-- The RevenueCat Active Trials chart excludes\n-- promotional transactions and transactions resulting from family sharing\n-- since they do not reflect auto-renewing future payments.",
-      "language": "pgsql",
-      "name": "Active Trials"
-    },
-    {
-      "code": "-- Active Subscriptions as of [targeted_date]\nSELECT\n  COUNT(*)\nFROM\n  [your_table_name]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'false'\n  AND start_time BETWEEN '2008-07-10' AND [targeted_date]\n  AND (end_time IS NULL OR DATE_DIFF('s', start_time, end_time)::float > 0)\n  AND (ownership_type IS NULL OR ownership_type != 'FAMILY_SHARED')\n  AND store != 'promotional'\n  AND is_sandbox <> 'true'\n\n-- The RevenueCat Active Subscriptions chart excludes trials,\n-- promotional transactions, and transactions resulting from family sharing\n-- since they do not reflect auto-renewing future payments.",
-      "language": "pgsql",
-      "name": "Active Subscriptions"
-    },
-    {
-      "code": "-- Revenue generated on [targeted_date]\nSELECT\n  SUM(price) as revenue,\n  (SUM(price) * (1 - tax_percentage - commission_percentage)) as proceeds\nFROM\n  [your_table_name]\nWHERE date(start_time) = [targeted_date]\n  AND is_trial_period = 'false'\n  AND purchase_date BETWEEN '2008-07-10' AND [targeted_date]\n  AND (end_date IS NULL OR DATE_DIFF('s', start_date, end_date)::float > 0)\n  AND (ownership_type IS NULL OR ownership_type != 'FAMILY_SHARED')\n  AND store != 'promotional'\n  AND is_sandbox <> 'true'\n\n-- Transactions which are refunded can be identified through the refunded_at field.\n-- Once refunded, price will be set to $0, so revenue will always be net of refunds.",
-      "language": "pgsql",
-      "name": "Revenue"
-    }
-  ]
-}
+[block:file]
+pgsql->code_blocks/🔌 Integrations/etl-exports-v2-do-not-publish_1.pgsql
 [/block]

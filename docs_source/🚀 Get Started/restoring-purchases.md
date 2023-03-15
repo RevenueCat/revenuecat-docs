@@ -18,47 +18,13 @@ category: 640a7bef79274d00428d102b
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).
 
 It is recommended that all apps have some way for users to trigger the `restorePurchases` method, even if you require all customers to create accounts. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.restorePurchases { customerInfo, error in\n    //... check customerInfo to see if entitlement is now active\n}",
-      "language": "swift"
-    },
-    {
-      "code": "[[RCPurchases sharedPurchases] restorePurchasesWithCompletion:^(RCCustomerInfo *customerInfo, NSError *error) {\n    //... check customerInfo to see if entitlement is now active\n}];",
-      "language": "objectivec"
-    },
-    {
-      "code": "Purchases.sharedInstance.restorePurchases(::showError) { customerInfo ->\n    //... check customerInfo to see if entitlement is now active\n}",
-      "language": "kotlin"
-    },
-    {
-      "code": "Purchases.getSharedInstance().restorePurchases(new ReceiveCustomerInfoCallback() {\n\t@Override\n\tpublic void onReceived(@android.support.annotation.Nullable CustomerInfo customerInfo, @android.support.annotation.Nullable PurchasesError error) {\n    //... check customerInfo to see if entitlement is now active \t\n  }\n});",
-      "language": "java"
-    },
-    {
-      "code": "try {\n  PurchaserInfo restoredInfo = await Purchases.restoreTransactions();\n  // ... check restored purchaserInfo to see if entitlement is now active\n} on PlatformException catch (e) {\n  // Error restoring purchases\n}",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "try {\n  const restore = await Purchases.restorePurchases();\n  // ... check restored purchaserInfo to see if entitlement is now active\n} catch (e) {\n\n}",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "Purchases.restoreTransactions(\n  info => {\n    //... check customerInfo to see if entitlement is now active\n  },\n  error => {\n    // Error restoring purchases\n  }\n);",
-      "language": "javascript",
-      "name": "Cordova"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\npurchases.RestorePurchases((info, error) =>\n{\n    //... check purchaserInfo to see if entitlement is now active\n});",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🚀 Get Started/restoring-purchases_1.swift
+objectivec->code_blocks/🚀 Get Started/restoring-purchases_1.m
+kotlin->code_blocks/🚀 Get Started/restoring-purchases_1.kt
+java->code_blocks/🚀 Get Started/restoring-purchases_1.java
+javascript->code_blocks/🚀 Get Started/restoring-purchases_1.js
+csharp->code_blocks/🚀 Get Started/restoring-purchases_1.cs
 [/block]
 The `restorePurchases` method **should not** be triggered programmatically, since it may cause OS level sign-in prompts to appear, and should only be called from some user interaction (e.g. tapping a "Restore" button.)
 

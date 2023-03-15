@@ -32,21 +32,9 @@ With our Apple Search Ads integration you can:
 
 The *Purchases SDK* can automatically collect Apple Search Ads attribution data as long as you import the iAd framework to your Xcode project and set `automaticAttributionCollection = true`.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import iAd\n...\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n\t\t\n    Purchases.automaticAppleSearchAdsAttributionCollection = true\n    Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n    \n    return true\n}",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "#import <iAd/iAd.h>\n... \n- (BOOL)application:(UIApplication *)application \n  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n  \n  RCPurchases.automaticAppleSearchAdsAttributionCollection = YES;\n  [RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n}",
-      "language": "objectivec",
-      "name": "Objective-C"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/apple-search-ads-legacy_1.swift
+objectivec->code_blocks/🔌 Integrations/attribution/apple-search-ads-legacy_1.m
 [/block]
 Don't forget to import the iAd framework to your XCode project.
 [block:image]

@@ -63,15 +63,8 @@ Before installing this extension, set up the following Firebase services in your
 # 2. Set Firebase User Identity in RevenueCat 
 You should make sure to use the Firebase UID as the RevenueCat app user ID when setting the Firebase user identity in RevenueCat. This step is optional, but highly recommended as a best practice for the Google Analytics portion of this integration. The Firebase Extension portion **requires** this step to be completed.
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import FirebaseAuth\nimport RevenueCat\n\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {\n    \n    // Configure Purchases before Firebase\n    Purchases.configure(withAPIKey: \"public_sdk_key\")\n    Purchases.shared.delegate = self\n    \n    // Add state change listener for Firebase Authentication\n    Auth.auth().addStateDidChangeListener { (auth, user) in\n    \n            \n        if let uid = user?.uid {\n            \n            // identify Purchases SDK with new Firebase user\n            Purchases.shared.logIn(uid, { (info, created, error) in\n                if let e = error {\n                    print(\"Sign in error: \\(e.localizedDescription)\")\n                } else {\n                    print(\"User \\(uid) signed in\")\n                }\n            })\n        }\n    }\n    return true\n}\n",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/firebase-integration_1.swift
 [/block]
 
 
@@ -82,15 +75,8 @@ In order to send subscriber lifecycle events to Google Analytics, you must set t
 ## Set `$firebaseAppInstanceId` as a subscriber attribute
 
 Please ensure you're getting the app instance ID from the [Firebase Analytics](https://firebase.google.com/docs/analytics/get-started) package.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import FirebaseAuth\nimport RevenueCat\n\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {\n    \n    // Configure Purchases before Firebase\n    Purchases.configure(withAPIKey: \"public_sdk_key\")\n    Purchases.shared.delegate = self\n\n    // Set the reserved $firebaseAppInstanceId subscriber attribute from Firebase Analytics\n    let instanceID = Analytics.appInstanceID();\n    if let unwrapped = instanceID {\n      print(\"Instance ID -> \" + unwrapped);\n     \tprint(\"Setting Attributes\");\n      Purchases.shared.attribution.setFirebaseAppInstanceID(unwrapped)\n     } else {\n     \tprint(\"Instance ID -> NOT FOUND!\");\n     }\n    \n    return true\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/firebase-integration_2.swift
 [/block]
 
 [block:callout]
@@ -273,15 +259,8 @@ You will be charged a small amount (typically around $0.01/month) for the Fireba
 
 ### Set your Cloud Firestore security rules
 Set your security rules so that only authenticated users can access customer information, and that each user can only access their own information. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /${param:REVENUECAT_CUSTOMERS_COLLECTION}/{uid} {\n      allow read: if request.auth.uid == uid;\n    }\n\n    match /${param:REVENUECAT_EVENTS_COLLECTION}/{id} {\n      allow read: if request.auth.uid == resource.app_user_id\n    }\n  }\n}",
-      "language": "text"
-    }
-  ]
-}
+[block:file]
+text->code_blocks/🔌 Integrations/integrations/firebase-integration_3.txt
 [/block]
 ## Enable Firebase Extension
 You can install this extension either through the [Firebase Console](doc:firebase-integration#install-firebase-extension-through-firebase-console) or [CLI](doc:firebase-integration#install-firebase-extension-through-cli) on your OS.
@@ -784,42 +763,21 @@ Navigate to your Firebase dashboard > Firestore Database to find events sent for
 [/block]
 ### Sample Event
 Below is a sample JSON that is delivered to Firestore Database for a renewal event. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"request_body\": \"{\\\"event\\\": {\\\"event_timestamp_ms\\\": 1650416910722, \\\"product_id\\\": \\\"monthly_pro\\\", \\\"period_type\\\": \\\"NORMAL\\\", \\\"purchased_at_ms\\\": 1650416898000, \\\"expiration_at_ms\\\": 1650417198000, \\\"environment\\\": \\\"SANDBOX\\\", \\\"entitlement_id\\\": null, \\\"entitlement_ids\\\": [\\\"pro\\\"], \\\"presented_offering_id\\\": \\\"default\\\", \\\"transaction_id\\\": \\\"2000000036373963\\\", \\\"original_transaction_id\\\": \\\"1000000976812525\\\", \\\"is_family_share\\\": false, \\\"country_code\\\": \\\"US\\\", \\\"app_user_id\\\": \\\"21kYSQxa0Ga61JqXtup1T2tibAe2\\\", \\\"aliases\\\": [\\\"$RCAnonymousID:7fd423d73f8240edbc186360f14a3f97\\\", \\\"21kYSQxa0Ga61JqXtup1T2tibAe2\\\"], \\\"original_app_user_id\\\": \\\"$RCAnonymousID:7fd423d73f8240edbc186360f14a3f97\\\", \\\"currency\\\": \\\"USD\\\", \\\"is_trial_conversion\\\": false, \\\"price\\\": 2.49, \\\"price_in_purchased_currency\\\": 2.49, \\\"subscriber_attributes\\\": {\\\"$attConsentStatus\\\": {\\\"value\\\": \\\"notDetermined\\\", \\\"updated_at_ms\\\": 1650416909148}}, \\\"store\\\": \\\"APP_STORE\\\", \\\"takehome_percentage\\\": 0.7, \\\"offer_code\\\": null, \\\"type\\\": \\\"RENEWAL\\\", \\\"id\\\": \\\"2700D251-95AF-4A28-A460-130A7CC23F66\\\", \\\"app_id\\\": \\\"app5b6fd8d088\\\"}, \\\"customer_info\\\": {\\\"original_app_user_id\\\": \\\"$RCAnonymousID:7fd423d73f8240edbc186360f14a3f97\\\", \\\"first_seen\\\": \\\"2022-04-20T00:11:30Z\\\", \\\"last_seen\\\": \\\"2022-04-20T01:06:49Z\\\", \\\"subscriptions\\\": {\\\"monthly_pro\\\": {\\\"purchase_date\\\": \\\"2022-04-20T01:08:18Z\\\", \\\"expires_date\\\": \\\"2022-04-20T01:13:18Z\\\", \\\"period_type\\\": \\\"normal\\\", \\\"original_purchase_date\\\": \\\"2022-02-25T04:21:45Z\\\", \\\"store\\\": \\\"app_store\\\", \\\"is_sandbox\\\": true, \\\"unsubscribe_detected_at\\\": null, \\\"billing_issues_detected_at\\\": null, \\\"grace_period_expires_date\\\": null, \\\"ownership_type\\\": \\\"PURCHASED\\\"}}, \\\"non_subscriptions\\\": {}, \\\"other_purchases\\\": {}, \\\"original_application_version\\\": \\\"1.0\\\", \\\"original_purchase_date\\\": \\\"2013-08-01T07:00:00Z\\\", \\\"entitlements\\\": {\\\"pro\\\": {\\\"expires_date\\\": \\\"2022-04-20T01:13:18Z\\\", \\\"purchase_date\\\": \\\"2022-04-20T01:08:18Z\\\", \\\"product_identifier\\\": \\\"monthly_pro\\\", \\\"grace_period_expires_date\\\": null}}, \\\"management_url\\\": \\\"https://apps.apple.com/account/subscriptions\\\"}, \\\"api_version\\\": \\\"1.0.0\\\"}\",\n  \"signed_jws_body\": \"{\\\"token\\\": \\\"...\\\"}\"\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/firebase-integration_4.json
 [/block]
 ## Using the Extension 
 
 ### Checking Entitlement access
 To check access to entitlements, you can either [use the RevenueCat SDK](https://docs.revenuecat.com/docs/getting-started#10-get-subscription-status) or use Firebase Authentication custom claims. For example, to check whether the current user has access to an entitlement called `premium`, you could use the following Firebase code:
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "getAuth().currentUser.getIdTokenResult()\n  .then((idTokenResult) => {\n     // Confirm the user has a premium entitlement.\n     if (!!idTokenResult.claims.activeEntitlements.includes(\"premium\")) {\n       // Show premium UI.\n       showPremiumUI();\n     } else {\n       // Show regular user UI.\n       showFreeUI();\n     }\n  })\n  .catch((error) => {\n    console.log(error);\n  });",
-      "language": "javascript"
-    }
-  ]
-}
+[block:file]
+javascript->code_blocks/🔌 Integrations/integrations/firebase-integration_5.js
 [/block]
 ### List a user's active subscriptions
 To list a user's active subscriptions, you could use the following Firebase code:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "getDoc(doc(db, \"${param:REVENUECAT_CUSTOMERS_COLLECTION}\", getAuth().currentUser.uid))\n  .then((snapshot) => {\n    if (snapshot.exists()) {\n      snapshot.subscriptions\n        .filter(subscription => new Date(subscription.expires_date) >= new Date())\n        .forEach(subscription => console.log(JSON.stringify(subscription)));\n    }\n  });",
-      "language": "javascript"
-    }
-  ]
-}
+[block:file]
+javascript->code_blocks/🔌 Integrations/integrations/firebase-integration_6.js
 [/block]
 ### React to subscription lifecycle events
 Subscription lifecycle events get stored as events in the Firestore collection `${param:REVENUECAT_EVENTS_COLLECTION}`. By listening to changes in this collection, for example, through [Cloud Firestore triggered Firebase Cloud Functions](https://firebase.google.com/docs/functions/firestore-events), you can trigger any custom behavior that you want. An example could be sending push notifications to customers with billing issues to prompt them to update their credit cards. To do that, you would:

@@ -93,15 +93,8 @@ The OneSignal integration requires some device-specific data. RevenueCat will on
 This property can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `setOnesignalID()`. 
 
 You can listen for changes to the OneSignal Id through their SDK, and send the value to RevenueCat. If you already have OneSignal set up, you should make sure that you're also sending the OneSignal Id for users that are updating to the latest version of your app.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {\n\n    var window: UIWindow?\n\n    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {\n            \n        Purchases.configure(withAPIKey: \"<revenuecat_api_key>\", appUserID: nil)\n        \n        OneSignal.initWithLaunchOptions(launchOptions, appId: \"<onesignal_app_id>\")\n        OneSignal.add(self as OSSubscriptionObserver)\n        \n        // If you've already set up OneSignal, then users should already have\n        // a OneSignal Id. We can check if it's available and send it to RevenueCat\n        if let onesignalId = OneSignal.getUserDevice()?.getUserId() {\n            Purchases.shared.attribution.setOnesignalID(onesignalId)\n        }\n        \n        return true\n    }\n\n    // Add this method to update the $onesignalId in RevenueCat whenever it changes\n    // This code should be sufficient to capture all new users if you're setting\n    // up OneSignal for the first time.\n    func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {\n        if !stateChanges.from.subscribed && stateChanges.to.subscribed {\n            // The user is subscribed\n            // Either the user subscribed for the first time\n            Purchases.shared.attribution.setOnesignalID(stateChanges.to.userId)\n        }\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/onesignal_1.swift
 [/block]
 # 2. Send RevenueCat events into OneSignal
 

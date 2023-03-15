@@ -15,16 +15,8 @@ category: 640a7bf3b3df0b003dc5ec62
 Authentication for the RevenueCat REST API is achieved by setting the `Authorization` header with a valid API key. You'll find two types of API keys in your RevenueCat dashboard: *public* and *secret*.
 
 Certain endpoints require secret keys, which should be kept out of any publicly accessible areas such as GitHub, client-side code, and so forth. See our [Authentication guide](doc:authentication) for more information.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Authorization: Bearer YOUR_REVENUECAT_API_KEY",
-      "language": "text",
-      "name": "Authorization Header"
-    }
-  ]
-}
+[block:file]
+text->code_blocks/RevenueCat API v1/basic_1.txt
 [/block]
 
 [block:api-header]
@@ -33,28 +25,12 @@ Certain endpoints require secret keys, which should be kept out of any publicly 
 }
 [/block]
 The body of the `POST` requests should be encoded in JSON and have the 'Content-Type' header set to 'application/json'.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Content-Type: application/json",
-      "language": "text",
-      "name": "Content-Type Header"
-    }
-  ]
-}
+[block:file]
+text->code_blocks/RevenueCat API v1/basic_2.txt
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"app_user_id\": \"user-1456\",\n  \"fetch_token\": \"MQABC...EFH1234=\"\n}",
-      "language": "json",
-      "name": "sample body"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/RevenueCat API v1/basic_3.json
 [/block]
 
 [block:api-header]

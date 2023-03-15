@@ -27,16 +27,8 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 Purchases for Android (Google Play and Amazon Appstore) is available on Maven and can be included via Gradle.
 
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
-[block:code]
-{
-  "codes": [
-    {
-      "code": "implementation 'com.revenuecat.purchases:purchases:5.4.0'",
-      "language": "groovy",
-      "name": "build.gradle"
-    }
-  ]
-}
+[block:file]
+groovy->code_blocks/🚀 Get Started/installation/android_1.groovy
 [/block]
 
 [block:callout]
@@ -49,15 +41,8 @@ Purchases for Android (Google Play and Amazon Appstore) is available on Maven an
 ## Import Purchases
 
 You should now be able to import `Purchases`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import com.android.billingclient.api.SkuDetails;\nimport com.revenuecat.purchases.Entitlement;\nimport com.revenuecat.purchases.Offering;\nimport com.revenuecat.purchases.PurchaserInfo;\nimport com.revenuecat.purchases.Purchases;",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+java->code_blocks/🚀 Get Started/installation/android_2.java
 [/block]
 ## Configure Proguard
 
@@ -68,16 +53,8 @@ You should add `-keep class com.revenuecat.purchases.** { *; }` to your Proguard
 ## Additional Dependencies
 
 Add a new dependency to the build.gradle apart from the regular `purchases` dependency. These new dependencies have the classes needed to use Amazon IAP:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "implementation 'com.revenuecat.purchases:purchases:5.4.0'\nimplementation 'com.revenuecat.purchases:purchases-store-amazon:5.4.0'",
-      "language": "groovy",
-      "name": "build.gradle"
-    }
-  ]
-}
+[block:file]
+groovy->code_blocks/🚀 Get Started/installation/android_3.groovy
 [/block]
 
 ## Add Amazon public key
