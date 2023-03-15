@@ -84,23 +84,10 @@ Use the `.identify()` method on the Mixpanel SDK to set the same App User ID tha
 We recommend keeping the Mixpanel SDK identifier the same as RevenueCat's App User ID as described above. Alternatively, if you want Mixpanel events tied to a different identifier, you can set a subscriber attribute for `$mixpanelDistinctId` that is sent with events instead of RevenueCat's App User ID.
 
 If a user has that subscriber attribute set it will be used instead of the RevenueCat App User ID in the Mixpanel events.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n\n// Option 1: Match Mixpanel's SDK identity to RevenueCat's App User ID\nMixpanel.mainInstance().identify(distinctId: \"my_app_user_id\")\n\n// Option 2: Set different Mixpanel identifier in RevenueCat\nPurchases.shared.attribution.setMixpanelDistinctID(Mixpanel.mainInstance().distinctId)",
-      "language": "swift"
-    },
-    {
-      "code": "// Configure Purchases SDK\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n\n// Set App User Id in Mixpanel\n[[Mixpanel sharedInstance] identify:@\"my_app_user_id\"];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// Configure Purchases SDK\nPurchases.configure(this, \"public_sdk_key\", \"my_app_user_id\");\n\n// Set App User Id in Mixpanel\nMixpanelAPI mixpanel =\n    MixpanelAPI.getInstance(context, MIXPANEL_TOKEN);\n\nmixpanel.identify(\"my_app_user_id\");",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/integrations/mixpanel_1.swift
+objectivec->code_blocks/🔌 Integrations/integrations/mixpanel_1.m
+java->code_blocks/🔌 Integrations/integrations/mixpanel_1.java
 [/block]
 ## 2. Send RevenueCat Events to Mixpanel
 
@@ -144,24 +131,10 @@ After you've set up the *Purchases SDK* and Mixpanel SDK, you can "turn on" the 
 [/block]
 # Sample Event
 Below is the sample JSON that is delivered to Mixpanel for a renewal event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[\n  {\n    \"$append\": {\n      \"$transactions\": {\n        \"$amount\": 9.99,\n        \"$time\": \"2019-07-26T20:48:56\",\n        \"product_id\": \"your_product_id\",\n        \"store\": \"PLAY_STORE\"\n      }\n    },\n    \"$distinct_id\": \"myCustomAppUserId\",\n    \"$token\": \"abcdefghijklmnopqrstuvwxyz\"\n  },\n  {\n    \"$add\": {\n      \"Total Tracked Revenue\": 9.99\n    },\n    \"$distinct_id\": \"myCustomAppUserId\",\n    \"$token\": \"abcdefghijklmnopqrstuvwxyz\"\n  }\n]",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/mixpanel_2.json
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"event\": \"Renewal Event\",\n  \"properties\": {\n    \"$insert_id\": \"23456789\",\n    \"distinct_id\": \"myCustomAppUserId\",\n    \"product_id\": \"your_product_id\",\n    \"revenue\": 9.99,\n    \"store\": \"PLAY_STORE\",\n    \"subscriber_attributes\": {},\n    \"time\": 1581674623,\n    \"token\": \"123456789abcdefghijk\"\n  }\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/mixpanel_3.json
 [/block]

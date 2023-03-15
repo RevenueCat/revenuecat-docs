@@ -75,25 +75,10 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import AdSupport\n\n// ...\nPurchases.configure(withAPIKey: \"public_sdk_key\")\n// ...\n\n// Automatically collect the $idfa, $idfv, and $ip values\nPurchases.shared.attribution.collectDeviceIdentifiers() \n\n// REQUIRED: Set the Facebook anonymous Id\nPurchases.shared.attribution.setFBAnonymousID(FBSDKCoreKit.AppEvents.anonymousID)\n\n// Optionally set additional user data\nPurchases.shared.attribution.setEmail(\"test@example.com\")\nPurchases.shared.attribution.setPhoneNumber(\"+16505551234\")",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "//..\nPurchases.configure(this, \"public_sdk_key\")\n//..\n  \n// Automatically collect the $gpsAdId, $androidId, and $ip values\nPurchases.sharedInstance.collectDeviceIdentifiers()\n\n// Optionally set additional user data\nPurchases.sharedInstance.setEmail(\"test@example.com\")\nPurchases.sharedInstance.setPhoneNumber(\"+16505551234\")",
-      "language": "kotlin"
-    },
-    {
-      "code": "// NOTE: Facebook has officially ended support for their React Native SDK. You can read more about this here: https://developers.facebook.com/blog/post/2021/01/19/introducing-facebook-platform-sdk-version-9/\n\n// NOTE: You can find a community-supported alternative for the SDK here: https://github.com/facebookarchive/react-native-fbsdk\n\n// The following docs are left in place for reference\n\nimport FBSDK from \"react-native-fbsdk\"\n\n//...\nPurchases.setDebugLogsEnabled(true);\nPurchases.setup(\"public_sdk_key\");\n//...\n\n// Automatically collect the $idfa, $idfv, and $ip values\nPurchases.collectDeviceIdentifiers();\n\n// REQUIRED: Set the Facebook anonymous Id\nconst anonymousId = await FBSDK.AppEventsLogger.getAnonymousID();\nPurchases.setFBAnonymousID(anonymousId);\n\n// Optionally set additional user data\nPurchases.setEmail(\"test@example.com\");\nPurchases.setPhoneNumber(\"+16505551234\");",
-      "language": "javascript",
-      "name": "React Native"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/facebook-ads_1.swift
+kotlin->code_blocks/🔌 Integrations/attribution/facebook-ads_1.kt
+javascript->code_blocks/🔌 Integrations/attribution/facebook-ads_1.js
 [/block]
 You should make sure to set attributes after the *Purchases SDK* is configured, and before the first purchase occurs. It's safe to set this multiple times, as only the new/updated values will be sent to RevenueCat.
 [block:callout]
@@ -130,15 +115,8 @@ You should make sure to set attributes after the *Purchases SDK* is configured, 
 ## Track Install and Usage Events
 
 As noted above, you'll need to disable all client side tracking of revenue to prevent double counting of revenue in Facebook Ads Manager. To continue tracking install and usage events, you'll need to call Facebook's 'activate app' event after configuration:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// disable automatic tracking\nFBSDKCoreKit.Settings.isAutoLogAppEventsEnabled = false\n\n// optional: call activateApp\nFBSDKCoreKit.AppEvents.activateApp()",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/facebook-ads_2.swift
 [/block]
 You can see Facebook's App Events Reference [here](https://developers.facebook.com/docs/app-events/reference).
 

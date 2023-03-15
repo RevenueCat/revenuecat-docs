@@ -60,20 +60,9 @@ The Appsflyer integration requires some device-specific data. RevenueCat will on
 }
 [/block]
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods to `collectDeviceIdentifiers()` and `setAppsflyerId()`. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import AdSupport\n// ...\nPurchases.configure(withAPIKey: \"public_sdk_key\")\n// ...\n\n// Automatically collect the $idfa, $idfv, and $ip values\nPurchases.shared.attribution.collectDeviceIdentifiers() \n\n// Set the Appsflyer Id\nPurchases.shared.attribution.setAppsflyerID(AppsFlyerLib.shared().getAppsFlyerUID())",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "//..\nPurchases.configure(this, \"public_sdk_key\")\n//..\n  \n// Automatically collect the $gpsAdId, $androidId, and $ip values\nPurchases.sharedInstance.collectDeviceIdentifiers()\n  \n// Set the Appsflyer Id\nPurchases.sharedInstance.setAppsflyerID(AppsFlyerLib.getInstance().getAppsFlyerUID(this));",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/appsflyer_1.swift
+kotlin->code_blocks/🔌 Integrations/attribution/appsflyer_1.kt
 [/block]
 You should make sure to set attributes after the *Purchases SDK* is configured, and before the first purchase occurs. It's safe to set this multiple times, as only the new/updated values will be sent to RevenueCat.
 [block:callout]

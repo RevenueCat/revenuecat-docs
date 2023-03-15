@@ -76,7 +76,8 @@ lane :extract_code_blocks do |options|
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
             current_folder = File.dirname(file_name)
-            output_dir = "code_blocks/#{current_folder}"
+            folder_inside_docs_source = current_folder.sub(/^docs_source\//, "")
+            output_dir = "code_blocks/#{folder_inside_docs_source}"
 
             file_contents = File.read(file_name)
 

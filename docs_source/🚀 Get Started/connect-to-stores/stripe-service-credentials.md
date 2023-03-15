@@ -158,15 +158,8 @@ Stripe subscriptions are automatically refreshed by RevenueCat the same way as s
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "curl -X POST \\\n  https://api.revenuecat.com/v1/receipts \\\n  -H 'Content-Type: application/json' \\\n  -H 'X-Platform: stripe' \\\n  -H 'Authorization: Bearer YOUR_REVENUECAT_STRIPE_APP_PUBLIC_API_KEY' \\\n  -d '{ \"app_user_id\": \"my_app_user_id\",\n  \"fetch_token\": \"sub_xxxxxxxxxx\"\n  }'",
-      "language": "curl"
-    }
-  ]
-}
+[block:file]
+curl->code_blocks/🚀 Get Started/connect-to-stores/stripe-service-credentials_1.curl
 [/block]
 
 [block:callout]

@@ -41,28 +41,11 @@ If you prefer to keep a separate user identity between Branch and RevenueCat, us
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// login\nBranch.getInstance().setIdentity(\"my_app_user_id\")\n\n// logout\nBranch.getInstance().logout()",
-      "language": "swift"
-    },
-    {
-      "code": "// login\n[[Branch getInstance] setIdentity:@\"my_app_user_id\"];\n\n// logout\n[[Branch getInstance] logout];",
-      "language": "objectivec"
-    },
-    {
-      "code": "// login\nBranch.getInstance().setIdentity(\"my_app_user_id\");\n\n// logout\nBranch.getInstance().logout();",
-      "language": "java"
-    },
-    {
-      "code": "// login\nbranch.setIdentity(\"my_app_user_id\")\n\n// logout\nbranch.logout()",
-      "language": "javascript",
-      "name": "React Native"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/branch_1.swift
+objectivec->code_blocks/🔌 Integrations/attribution/branch_1.m
+java->code_blocks/🔌 Integrations/attribution/branch_1.java
+javascript->code_blocks/🔌 Integrations/attribution/branch_1.js
 [/block]
 # 2. Send device data to RevenueCat
 
@@ -94,25 +77,10 @@ The Branch integration accepts some device-specific data that can be sent to Rev
 }
 [/block]
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `collectDeviceIdentifiers()`. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import AdSupport\n// ...\nPurchases.configure(withAPIKey: \"public_sdk_key\")\n// ...\nPurchases.shared.attribution.collectDeviceIdentifiers()",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "// ...\n[RCPurchases configureWithAPIKey:@\"public_sdk_key\"];\n// ...\n[[RCPurchases sharedPurchases] collectDeviceIdentifiers];",
-      "language": "objectivec",
-      "name": "Objective C"
-    },
-    {
-      "code": "//..\nPurchases.configure(this, \"public_sdk_key\")\n//..\nPurchases.sharedInstance.collectDeviceIdentifiers()",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/branch_2.swift
+objectivec->code_blocks/🔌 Integrations/attribution/branch_2.m
+kotlin->code_blocks/🔌 Integrations/attribution/branch_2.kt
 [/block]
 You should make sure to call `collectDeviceIdentifiers()` after the *Purchases SDK* is configured, and before the first purchase occurs. It's safe to call this multiple times, as only the new/updated values will be sent to RevenueCat.
 

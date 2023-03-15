@@ -139,15 +139,8 @@ The Purchases package will include a MonoBehavior called Purchases. This will be
 ## Subclass Purchases.Listener MonoBehavior
 
 The Purchases behavior takes one additional parameter, a GameObject with a Purchases.Listener component. This will be where you handle purchase events, and updated subscriber information from RevenueCat. Here is a simple example:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "using System;\nusing System.Collections.Generic;\nusing UnityEngine;\n\npublic class PurchasesListener : Purchases.UpdatedCustomerInfoListener\n{\n    public override void CustomerInfoReceived(Purchases.CustomerInfo customerInfo)\n    {\n        // display new CustomerInfo\n    }\n\n    private void Start()\n    {\n        var purchases = GetComponent<Purchases>();\n        purchases.SetDebugLogsEnabled(true);\n        purchases.GetOfferings((offerings, error) =>\n        {\n            if (error != null)\n            {\n                // show error\n            }\n            else\n            {\n                // show offering\n            }\n        });\n    }\n\n    public void BeginPurchase(Purchases.Package package)\n    {\n        var purchases = GetComponent<Purchases>();\n        purchases.PurchasePackage(package, (productIdentifier, customerInfo, userCancelled, error) =>\n        {\n            if (!userCancelled)\n            {\n                if (error != null)\n                {\n                    // show error\n                }\n                else\n                {\n                    // show updated Customer Info\n                }\n            }\n            else\n            {\n                // user cancelled, don't show an error\n            }\n        });\n    }\n\n    void RestoreClicked()\n    {\n        var purchases = GetComponent<Purchases>();\n        purchases.RestorePurchases((customerInfo, error) =>\n        {\n            if (error != null)\n            {\n                // show error\n            }\n            else\n            {\n                // show updated Customer Info\n            }\n        });\n    }\n}",
-      "language": "csharp"
-    }
-  ]
-}
+[block:file]
+csharp->code_blocks/🚀 Get Started/installation/unity_1.cs
 [/block]
 # Proguard rules
 
@@ -214,15 +207,8 @@ In order to do that, make sure you have `Custom Main Gradle Template` selected i
 }
 [/block]
 Modify the `mainTemplate.gradle` to include the following at the end of the dependencies block:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "dependencies {\n    ...\n    \n    // ** ADD THIS **\n    configurations.all {\n        exclude group: 'com.android.billingclient', module: 'billing'\n    }\n}",
-      "language": "groovy"
-    }
-  ]
-}
+[block:file]
+groovy->code_blocks/🚀 Get Started/installation/unity_2.groovy
 [/block]
 Perform a clean up of the resolved dependencies using the `Assets/External Dependency Manager/Android Resolver/Delete Resolved Libraries` menu. This will cleanup the previously downloaded .aars in `Assets/Plugins/Android`. Otherwise you could end up with duplicated classes errors. 
 

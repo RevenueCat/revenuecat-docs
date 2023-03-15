@@ -28,46 +28,13 @@ Subscriber attributes are useful for storing additional, structured information 
 # Setting Attributes
 
 Subscriber attributes can be set through the SDK by passing a dictionary of strings to the `setAttributes()` method on the shared Purchases instance. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.setAttributes([\"age\" : \"24\", \n                             \"custom_group_id\" : \"abc123\"])",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "[[RCPurchases sharedPurchases] setAttributes:@{\n    @\"age\": @\"24\",\n    @\"custom_group_id\": @\"abc123\"\n}];\n    ",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "Purchases.sharedInstance.setAttributes(mapOf(\"age\" to \"24\", \"custom_group_id\" to \"abc123\"))",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "Map<String, String> attributes = new HashMap<String, String>();\nattributes.put(\"age\", \"24\");\nattributes.put(\"custom_group_id\", \"abc123\");\n\nPurchases.getSharedInstance().setAttributes(attributes);",
-      "language": "java",
-      "name": "Java"
-    },
-    {
-      "code": "Purchases.setAttributes({ \"age\" : \"24\", \"custom_group_id\" : \"abc123\" });",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "Purchases.setAttributes({ \"age\" : \"24\", \"custom_group_id\" : \"abc123\" });",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\nvar attributes = new Dictionary<string, string>\n{\n    { \"age\", \"24\" }, \n    { \"custom_group_id\", \"abc123\" }\n};\npurchases.SetAttributes(attributes);",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/👥 Customers/subscriber-attributes_1.swift
+objectivec->code_blocks/👥 Customers/subscriber-attributes_1.m
+kotlin->code_blocks/👥 Customers/subscriber-attributes_1.kt
+java->code_blocks/👥 Customers/subscriber-attributes_1.java
+javascript->code_blocks/👥 Customers/subscriber-attributes_1.js
+csharp->code_blocks/👥 Customers/subscriber-attributes_1.cs
 [/block]
 
 [block:callout]
@@ -232,103 +199,28 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
 }
 [/block]
 Reserved attributes can be written directly by setting the key (don't forget the `$` prefix) or with special helper methods:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.setEmail(\"test@example.com\")\nPurchases.shared.setPhoneNumber(\"+16505551234\")\nPurchases.shared.setDisplayName(\"John Appleseed\")",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "Purchases.sharedInstance.setEmail(\"test@example.com\")\nPurchases.sharedInstance.setPhoneNumber(\"+16505551234\")\nPurchases.sharedInstance.setDisplayName(\"John Appleseed\")",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "Purchases.setEmail(\"test@example.com\")\nPurchases.setPhoneNumber(\"+16505551234\")\nPurchases.setDisplayName(\"John Appleseed\")",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "Purchases.setEmail(\"test@example.com\")\nPurchases.setPhoneNumber(\"+16505551234\")\nPurchases.setDisplayName(\"John Appleseed\")",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\npurchases.SetEmail(\"asdf@asdfa.com\");\npurchases.SetPhoneNumber(\"asdga\");\npurchases.SetDisplayName(\"asdgas\");",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/👥 Customers/subscriber-attributes_2.swift
+kotlin->code_blocks/👥 Customers/subscriber-attributes_2.kt
+javascript->code_blocks/👥 Customers/subscriber-attributes_2.js
+csharp->code_blocks/👥 Customers/subscriber-attributes_2.cs
 [/block]
 ## Setting push tokens
 Push tokens can be used to engage with your users through Apple apns or Google cloud messaging. These can be saved in RevenueCat through system callbacks after the user accepts the push notification permissions in your app.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {\n    Purchases.shared.setPushToken(deviceToken)\n}",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "Purchases.sharedInstance.setPushToken(deviceToken)",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "Purchases.setPushToken(deviceToken);",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "Purchases.setPushToken(deviceToken)",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\npurchases.SetPushToken(deviceToken);",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/👥 Customers/subscriber-attributes_3.swift
+kotlin->code_blocks/👥 Customers/subscriber-attributes_3.kt
+javascript->code_blocks/👥 Customers/subscriber-attributes_3.js
+csharp->code_blocks/👥 Customers/subscriber-attributes_3.cs
 [/block]
 # Deleting Attributes
 
 Any attribute can be cleared by passing `null` or an empty string as the key value. Individual attributes can also be cleared for a specific user in their [customer view](doc:customers).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.setAttributes([\"age\" : \"\"])",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "Purchases.sharedInstance.setAttributes(mapOf(\"age\" to \"\"))",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "Purchases.setAttributes({\"age\" : \"\"});",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "Purchases.setAttributes({\"age\" : \"\"})",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "var purchases = GetComponent<Purchases>();\nvar attributes = new Dictionary<string, string>\n{\n    { \"age\", \"\" }, \n    { \"custom_group_id\", \"\" }\n};\npurchases.SetAttributes(attributes);",
-      "language": "csharp",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/👥 Customers/subscriber-attributes_4.swift
+kotlin->code_blocks/👥 Customers/subscriber-attributes_4.kt
+javascript->code_blocks/👥 Customers/subscriber-attributes_4.js
+csharp->code_blocks/👥 Customers/subscriber-attributes_4.cs
 [/block]
 # Reading Attributes
 

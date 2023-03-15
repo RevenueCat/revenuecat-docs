@@ -1,0 +1,13 @@
+{
+  "event": "Renewal Event",
+  "properties": {
+    "$insert_id": "23456789",
+    "distinct_id": "myCustomAppUserId",
+    "product_id": "your_product_id",
+    "revenue": 9.99,
+    "store": "PLAY_STORE",
+    "subscriber_attributes": {},
+    "time": 1581674623,
+    "token": "123456789abcdefghijk"
+  }
+}

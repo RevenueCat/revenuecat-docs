@@ -1,0 +1,21 @@
+[
+  {
+    "$append": {
+      "$transactions": {
+        "$amount": 9.99,
+        "$time": "2019-07-26T20:48:56",
+        "product_id": "your_product_id",
+        "store": "PLAY_STORE"
+      }
+    },
+    "$distinct_id": "myCustomAppUserId",
+    "$token": "abcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    "$add": {
+      "Total Tracked Revenue": 9.99
+    },
+    "$distinct_id": "myCustomAppUserId",
+    "$token": "abcdefghijklmnopqrstuvwxyz"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "identify": {
+    "context": {
+      "environment": "production",
+      "library": {
+        "name": "RevenueCat Segment events",
+        "version": "1.0"
+      }
+    },
+    "timestamp": "2021-03-20T00:00:02",
+    "traits": {
+      "aliases": [
+        "$RCAnonymousID:0123456789abcdefghij0123456789ab",
+        "myCustomAppUserId"
+      ],
+      "last_seen_app_user_id": "myCustomAppUserId"
+    },
+    "userId": "$RCAnonymousID:0123456789abcdefghij0123456789ab"
+  },
+  "track_event": {
+    "context": {
+      "environment": "production",
+      "library": {
+        "name": "RevenueCat Segment events",
+        "version": "1.0"
+      }
+    },
+    "event": "renewal_event",
+    "properties": {
+      "app_user_id": "myCustomAppUserId",
+      "currency": "USD",
+      "entitlements": [
+        "your_entitlement_id"
+      ],
+      "entitlement": "your_entitlement_id",
+      "expires_at": 1647734402,
+      "original_app_user_id": "$RCAnonymousID:0123456789abcdefghij0123456789ab",
+      "product_id": "your_product_id",
+      "revenue": 9.99,
+      "store": "APP_STORE",
+      "purchased_at": 1616198402,
+      "subscriber_attributes": {
+        "$ip": "000.00.00.000",
+        "$idfa": "12345678-1234-1234-1234-123456789abc",
+        "$idfv": "12345678-1234-1234-1234-123456789abc",
+        "$email": "name@gmail.com",
+        "$fbAnonId": "12345678-1234-1234-1234-123456789abc",
+        "$apnsTokens": "fY1kOQ0bMl8:APA91bG_rM-ub0xg:DNjP553d8O8gTYs9iNWsYxZMLyzv46IhB--2qz810LRUhCIXTJE4_Umx-irs-FD6ET_qMCXyNeny7B6xn2-X0v69Be014Qa4BHv2XSTwrmF5PZ2L_LPxw4sL2_s1",
+        "$appsflyerId": "0123456789012-0123456",
+        "favorite_food": "pizza"
+      },
+      "period_type": "NORMAL",
+      "environment": "PRODUCTION",
+      "presented_offering_id": "default",
+      "transaction_id": "012345678912345",
+      "original_transaction_id": "987654321098765",
+      "aliases": [
+        "$RCAnonymousID:0123456789abcdefghij0123456789ab",
+        "myCustomAppUserId"
+      ],
+      "offer_code": "3_month_discount"
+    },
+    "timestamp": "2021-03-20T00:00:02",
+    "userId": "$RCAnonymousID:0123456789abcdefghij0123456789ab"
+    }
+}

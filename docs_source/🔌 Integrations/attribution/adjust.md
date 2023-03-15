@@ -60,20 +60,9 @@ The Adjust integration requires some device-specific data. RevenueCat will only 
 }
 [/block]
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods to `collectDeviceIdentifiers()` and `setAdjustId()`. 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import AdSupport\n\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {\n  \n  \tPurchases.configure(withAPIKey: \"public_sdk_key\")\n  \n  \t// ... Configure Adjust SDK and set delegate\n\n\n\t// Automatically collect the $idfa, $idfv, and $ip values\n\tPurchases.shared.attribution.collectDeviceIdentifiers() \n\n\t// Set the Adjust Id on app launch if it exists\n  \tif let adjustId = Adjust.adid() {\n    \tPurchases.shared.attribution.setAdjustID(adjustId)\n\t}\n  \n  // ..\n}\n\n\n// IMPORTANT: - Set the Adjust Id when it becomes available, if it\n// didn't exist on app launch\nextension AppDelegate: AdjustDelegate {\n    func adjustAttributionChanged(_ attribution: ADJAttribution?) {\n        if let adjustId = attribution?.adid {\n            Purchases.shared.attribution.collectDeviceIdentifiers()\n          \tPurchases.shared.attribution.setAdjustID(adjustId)\n        }\n    }\n}",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "Purchases.configure(this, \"my_api_key\");\n\n\n// Automatically collect the $gpsAdId, $androidId, and $ip values\nPurchases.getSharedInstance().collectDeviceIdentifiers();\n\n// Set the Adjust Id on app launch if it exists\nif (Adjust.getAdid() != Null) {\n\tPurchases.getSharedInstance().setAdjustID(Adjust.getAdid());\n}\n\n\n// IMPORTANT: - Set the Adjust Id when it becomes available, if it\n// didn't exist on app launch\nconfig.setOnAttributionChangedListener(new OnAttributionChangedListener() {\n    @Override\n    public void onAttributionChanged(AdjustAttribution attribution) {\n        Map<String, String> data = new HashMap<String, String>();\n      \n      \tPurchases.getSharedInstance().collectDeviceIdentifiers();\n      \tPurchases.getSharedInstance().setAdjustID(attribution.adid);\n    }\n});",
-      "language": "java"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/adjust_1.swift
+java->code_blocks/🔌 Integrations/attribution/adjust_1.java
 [/block]
 You should make sure to set attributes after the *Purchases SDK* is configured, and before the first purchase occurs. It's safe to set this multiple times, as only the new/updated values will be sent to RevenueCat.
 
@@ -252,13 +241,6 @@ Adjust [does not accept events with revenue less than 0.001](https://help.adjust
 # Sample Event
 
 Below is a sample event sent to Adjust. The type of the event (e.g. initial purchase) is defined by the `event_token`. Note that product identifiers, subscriber attributes, app user IDs, etc. don't get sent to Adjust.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"app_token\": \"abcdefg\",\n  \"event_token\": \"abcdefg\",\n  \"s2s\": 1,\n  \"created_at_unix\": 1640995185,\n  \"adid\": \"00000000000000000000000000000000\",\n  \"environment\": \"production\",\n  \"currency\": \"USD\",\n  \"revenue\": 34.511,\n  \"idfa\": \"00000000-0000-0000-0000-000000000000\",\n  \"idfv\": \"00000000-0000-0000-0000-000000000000\",\n  \"ip_address\": \"00.0.000.000\"\n}",
-      "language": "json"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/attribution/adjust_2.json
 [/block]

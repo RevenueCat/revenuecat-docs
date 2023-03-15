@@ -151,16 +151,8 @@ Navigate to your Statsig app > Metrics. You will see events RevenueCat has dispa
 [/block]
 # Sample Event
 Below is sample JSON that is delivered to Statsig for a Trial Started event.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "{\n  \"api_version\": \"1.0\",\n  \"event\": {\n    \"aliases\": [\n      \"yourCustomerAliasedID\"\n    ],\n    \"app_id\": \"yourAppID\",\n    \"app_user_id\": \"yourCustomerAppUserID\",\n    \"country_code\": \"US\",\n    \"currency\": \"USD\",\n    \"entitlement_ids\": [\n      \"pro_cat\"\n    ],\n    \"environment\": \"SANDBOX\",\n    \"event_timestamp_ms\": 1636388733968,\n    \"expiration_at_ms\": 1636388909000,\n    \"id\": \"UniqueIdentifierOfEvent\",\n    \"is_family_share\": false,\n    \"offer_code\": null,\n    \"original_app_user_id\": \"OriginalAppUserID\",\n    \"original_transaction_id\": \"1000000906455653\",\n    \"period_type\": \"TRIAL\",\n    \"presented_offering_id\": \"OfferingID\",\n    \"price\": 0,\n    \"price_in_purchased_currency\": 0,\n    \"product_id\": \"com.revenuecat.monthly_4.99.1_week_intro\",\n    \"purchased_at_ms\": 1636388729000,\n    \"store\": \"APP_STORE\",\n    \"subscriber_attributes\": {},\n    \"takehome_percentage\": 0.7,\n    \"transaction_id\": \"1000000906455653\",\n    \"type\": \"INITIAL_PURCHASE\"\n  }\n}",
-      "language": "json",
-      "name": "JSON"
-    }
-  ]
-}
+[block:file]
+json->code_blocks/🔌 Integrations/integrations/statsig_1.json
 [/block]
 
 [block:callout]

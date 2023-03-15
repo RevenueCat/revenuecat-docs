@@ -1,0 +1,29 @@
+{
+    "events":
+    [
+        {
+            "name": "rc_renewal_event",
+            "time": "2022-10-19T11:02:13.000000",
+            "properties":
+            {
+                "product_id": "your_product_id",
+                "store": "APP_STORE",
+                "revenue": 9.99,
+                "app_id": "your_app_id"
+            },
+            "external_id": "app_user_id"
+        }
+    ],
+    "attributes":
+    [
+        {
+            "external_id": "app_user_id",
+            "email": "garfield@revenuecat.com",
+            "rc_customer_attribute_$displayName": "Garfield",
+            "rc_active_entitlements":
+            [
+                "Premium Cat"
+            ]
+        }
+    ]
+}

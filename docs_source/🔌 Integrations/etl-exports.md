@@ -138,24 +138,6 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample Queries
 
 The following sample queries are in Postgresql.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "-- Active trials\nSELECT\n  COUNT(*)\nFROM\n  transactions\nWHERE\n  end_time > NOW()\n  AND is_trial_period = TRUE\n  AND renewal_number = 1\n  AND is_sandbox = FALSE\n  AND refunded_at IS NULL;",
-      "language": "sql",
-      "name": "Active Trials"
-    },
-    {
-      "code": "-- Active subscriptions\nSELECT\n  COUNT(*)\nFROM\n  transactions\nWHERE\n  end_time > NOW()\n  AND is_trial_period = FALSE\n  AND is_in_intro_offer_period = FALSE\n  AND is_sandbox = FALSE\n  AND refunded_at IS NULL\n  AND price != 0;\n\n-- The RevenueCat charts exclude promotional transactions.\n-- you can include the following filter to exclude promotional\n-- transactions from your queries as well\nproduct_identifier NOT ILIKE 'rc_promo%'",
-      "language": "sql",
-      "name": "Active Subscriptions"
-    },
-    {
-      "code": "-- Revenue past 28 days (USD)\nSELECT\n  SUM(price_in_usd)\nFROM\n  transactions\nWHERE\n  start_time > (CURRENT_DATE - INTERVAL '28 days')\n  AND is_sandbox = false;",
-      "language": "sql",
-      "name": "Revenue"
-    }
-  ]
-}
+[block:file]
+sql->code_blocks/🔌 Integrations/etl-exports_1.sql
 [/block]

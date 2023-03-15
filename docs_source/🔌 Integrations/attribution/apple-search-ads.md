@@ -155,36 +155,10 @@ Apple Search Ads provides two different types of attribution data, one a Standar
 [/block]
 ## Standard
 The standard attribution data collection does not require user consent and can be enabled by calling `Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()` after calling `configure`:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n\t\t\n    Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n    Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()\n    \n    return true\n}",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "- (BOOL)application:(UIApplication *)application \n  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n  \n  RCPurchases *purchases = [RCPurchases configureWithAPIKey:@\"public_sdk_key\" appUserID:@\"my_app_user_id\"];\n  [purchases.attribution enableAdServicesAttributionTokenCollection];\n\n}",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "Future<void> initPlatformState() async {\n  await Purchases.setDebugLogsEnabled(true);\n  \n  if (Platform.isAndroid) {\n    await Purchases.setup(\"public_google_sdk_key\");\n  } else if (Platform.isIOS) {\n    await Purchases.setup(\"public_ios_sdk_key\");\n    \n    // OR: if building for Amazon, be sure to follow the installation instructions then:\n    await Purchases.setup(\"public_amazon_sdk_key\", useAmazon: true);\n  }\n\n  await Purchases.enableAdServicesAttributionTokenCollection();\n  \n}",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "export default class App extends React.Component {\n \n  componentDidMount() {\n    Purchases.setDebugLogsEnabled(true);\n    \n    if (Platform.OS === 'ios') {\n    \tawait Purchases.setup(\"public_ios_sdk_key\");\n    } else if (Platform.OS === 'android') {\n    \tawait Purchases.setup(\"public_google_sdk_key\");\n      \n      // OR: if building for Amazon, be sure to follow the installation instructions then:\n    \tawait Purchases.setup({ apiKey: \"public_amazon_sdk_key\", useAmazon: true });\n    }\n    \n    await Purchases.enableAdServicesAttributionTokenCollection();\n    \n  }\n}",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "function onDeviceReady() {\n    Purchases.setDebugLogsEnabled(true);\n    if (window.cordova.platformId === 'ios') {\n        Purchases.setup(\"public_ios_sdk_key\");\n    } else if (window.cordova.platformId === 'android') {\n        Purchases.setup(\"public_google_sdk_key\");\n    }\n  \n    Purchases.enableAdServicesAttributionTokenCollection();\n}",
-      "language": "javascript",
-      "name": "Cordova"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/apple-search-ads_1.swift
+objectivec->code_blocks/🔌 Integrations/attribution/apple-search-ads_1.m
+javascript->code_blocks/🔌 Integrations/attribution/apple-search-ads_1.js
 [/block]
 That's it! The Purchases SDK will collect the attribution token and send it to RevenueCat in the background.
 
@@ -195,16 +169,8 @@ To collect Detailed attribution data, you'll need to first request consent from 
 If the user rejects tracking, the Standard attribution data can still be collected.
 
 To request consent from a user, implement the `requestTrackingAuthorization` method before enabling automatic collection:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import AdServices\n...\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n\n     Purchases.configure(withAPIKey: \"public_sdk_key\", appUserID: \"my_app_user_id\")\n  \n     if ATTrackingManager.trackingAuthorizationStatus != .notDetermined {\n     // The user has previously seen a tracking request, so enable automatic collection\n     // before configuring in order to to collect whichever token is available \n     Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()\n    }\n    \n    return true\n}\n\n// Later in your app's lifecycle, ask consent for tracking\nif ATTrackingManager.trackingAuthorizationStatus == .notDetermined {\n    ATTrackingManager.requestTrackingAuthorization { _ in\n        Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()\n    }\n}",
-      "language": "swift",
-      "name": "Swift"
-    }
-  ]
-}
+[block:file]
+swift->code_blocks/🔌 Integrations/attribution/apple-search-ads_2.swift
 [/block]
 After automatic collection is enabled, Purchases will sync the attribution token with the RevenueCat backend. Please note that if you enable automatic collection *before* requesting authorization, the attribution token will only be valid for Standard and not Detailed attribution data.
 [block:image]
