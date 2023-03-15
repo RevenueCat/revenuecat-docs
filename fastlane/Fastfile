@@ -226,30 +226,33 @@ lane :update_docs_categories do |options|
 
     parent_dir = File.dirname(Dir.pwd)
     folder_path = 'docs_source'
-    Dir.chdir(parent_dir) do
-        Dir.glob("#{folder_path}/**/*.md") do |file|
-            next if file == '.' || file == '..'
-            file_without_folder_path = file.gsub("#{folder_path}/", "")
-            category_name = file_without_folder_path.split("/")[0]
-            UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
-            category = categories.find { |category|
-                clean_category_title(category['title']) == category_name
-            }
-            if category != nil
-                p "Category #{category_name} found for file #{file}"
-                category_for_doc = category['id']
-            else
-                p "Category #{category_name} not found for file #{file}"
-                slug = File.basename(file, ".md")
-                category_for_doc_prod = get_category_id_for_doc(slug, readme_api_key)
-                p "Category retrieved from server: #{category_for_doc_prod}"
-                categories_map_file = File.read(CATEGORIES_MAP_FILE)
-                categories_map_from_file = JSON.parse(categories_map_file)
-                category_for_doc = categories_map_from_file[category_for_doc_prod]
-            end
 
-            update_category(file, category_for_doc)
+    markdown_files = []
+    Dir.chdir(parent_dir) do
+        markdown_files = Dir.glob("#{folder_path}/**/*.md")
+    end
+
+    markdown_files.each do |file|
+        next if file == '.' || file == '..'
+        file_without_folder_path = file.gsub("#{folder_path}/", "")
+        category_name = file_without_folder_path.split("/")[0]
+        UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
+        category = categories.find { |category|
+            clean_category_title(category['title']) == category_name
+        }
+        if category != nil
+            p "Category #{category_name} found for file #{file}"
+            category_for_doc = category['id']
+        else
+            p "Category #{category_name} not found for file #{file}"
+            slug = File.basename(file, ".md")
+            category_for_doc_prod = get_category_id_for_doc(slug, readme_api_key)
+            p "Category retrieved from server: #{category_for_doc_prod}"
+            categories_map_from_file = get_json_from_file(CATEGORIES_MAP_FILE)
+            category_for_doc = categories_map_from_file[category_for_doc_prod]
         end
+
+        update_category(file, category_for_doc)
     end
 end
 
@@ -483,20 +486,23 @@ end
 # @param [String] filename Name of the file to update
 # @param [String] category_id ID of the category to update the document with
 def update_category(filename, category_id)
-    file = File.read(filename)
-    yaml_header, content = file.split('---', 3)[1..-1]
-    yaml_data = YAML.load(yaml_header)
+    parent_dir = File.dirname(Dir.pwd)
+    Dir.chdir(parent_dir) do
+        file = File.read(filename)
+        yaml_header, content = file.split('---', 3)[1..-1]
+        yaml_data = YAML.load(yaml_header)
 
-    yaml_data['category'] = category_id
+        yaml_data['category'] = category_id
 
-    created_at = yaml_data['createdAt']
-    updated_at = yaml_data['updatedAt']
-    if created_at == {}
-        UI.message("Updating createdAt for #{filename} to #{updated_at}")
-        yaml_data['createdAt'] = updated_at
+        created_at = yaml_data['createdAt']
+        updated_at = yaml_data['updatedAt']
+        if created_at == {}
+            UI.message("Updating createdAt for #{filename} to #{updated_at}")
+            yaml_data['createdAt'] = updated_at
+        end
+
+        File.write(filename, "#{yaml_data.to_yaml}---#{content}")
     end
-
-    File.write(filename, "#{yaml_data.to_yaml}---#{content}")
 end
 
 # Replace emoji with -- to match how folders are exported from readme.
