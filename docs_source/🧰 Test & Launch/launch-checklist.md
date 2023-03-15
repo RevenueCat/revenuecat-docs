@@ -1,19 +1,21 @@
 ---
-title: "App Subscription Launch Checklist"
-slug: "launch-checklist"
-excerpt: "Purchases SDK pre-launch checklist"
+title: App Subscription Launch Checklist
+slug: launch-checklist
+excerpt: Purchases SDK pre-launch checklist
 hidden: false
-metadata: 
-  title: "In-App Purchase Launch Checklist – RevenueCat"
-  description: "This document contains a checklist of things to consider before launching your app to production."
-  image: 
-    0: "https://files.readme.io/4b5106e-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: In-App Purchase Launch Checklist – RevenueCat
+  description: This document contains a checklist of things to consider before launching
+    your app to production.
+  image:
+    0: https://files.readme.io/4b5106e-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-11-10T17:35:54.667Z"
+createdAt: '2022-11-10T17:35:54.667Z'
+updatedAt: '2022-11-10T17:35:54.667Z'
+category: 640a7bf096064f005a3e667a
 ---
 This document contains a checklist of things to consider before launching subscriptions in your app to production.
 [block:api-header]

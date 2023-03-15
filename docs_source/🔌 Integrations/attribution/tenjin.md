@@ -1,19 +1,22 @@
 ---
-title: "Tenjin"
-slug: "tenjin"
-excerpt: "Integrate Purchases SDK with Tenjin for precise revenue tracking"
+title: Tenjin
+slug: tenjin
+excerpt: Integrate Purchases SDK with Tenjin for precise revenue tracking
 hidden: false
-metadata: 
-  title: "Tenjin In-App Purchase Integration – RevenueCat"
-  description: "With our Tenjin integration, you can accurately track subscriptions generated from Tenjin campaigns, allowing you to know precisely how much revenue your campaigns generate."
-  image: 
-    0: "https://files.readme.io/1564c4f-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Tenjin In-App Purchase Integration – RevenueCat
+  description: With our Tenjin integration, you can accurately track subscriptions
+    generated from Tenjin campaigns, allowing you to know precisely how much revenue
+    your campaigns generate.
+  image:
+    0: https://files.readme.io/1564c4f-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-08-19T01:43:02.392Z"
+createdAt: '2022-08-19T01:43:02.392Z'
+updatedAt: '2022-08-19T01:43:02.392Z'
+category: 640a7bf1c7bae2004235517b
 ---
 With our Tenjin integration you can:
 * Accurately track subscriptions generated from Tenjin campaigns, allowing you to know precisely how much revenue your campaigns generate.

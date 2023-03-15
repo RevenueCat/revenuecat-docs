@@ -1,18 +1,21 @@
 ---
-title: "Attribution"
-slug: "attribution-card"
+title: Attribution
+slug: attribution-card
 hidden: false
-metadata: 
-  title: "In-app purchase attribution – RevenueCat"
-  description: "If you're sending attribution information to RevenueCat through the Purchases SDK, we will display the latest information in the 'Attribution' card for the customer."
-  image: 
-    0: "https://files.readme.io/d40e6e3-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: In-app purchase attribution – RevenueCat
+  description: If you're sending attribution information to RevenueCat through the
+    Purchases SDK, we will display the latest information in the 'Attribution' card
+    for the customer.
+  image:
+    0: https://files.readme.io/d40e6e3-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-04-06T21:46:08.734Z"
-updatedAt: "2021-12-06T00:49:52.638Z"
+createdAt: '2020-04-06T21:46:08.734Z'
+updatedAt: '2021-12-06T00:49:52.638Z'
+category: 640a7bf126512c00308b2f8d
 ---
 If you're sending attribution information to RevenueCat through the Purchases SDK, we will display the latest information from the network in the **Attribution** card for the customer. 
 [block:image]

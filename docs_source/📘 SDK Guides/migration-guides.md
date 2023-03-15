@@ -1,18 +1,19 @@
 ---
-title: "SDK Migration Guides"
-slug: "migration-guides"
-excerpt: "Making migrations as easy as possible"
+title: SDK Migration Guides
+slug: migration-guides
+excerpt: Making migrations as easy as possible
 hidden: false
-metadata: 
-  title: "SDK Migration Guides – RevenueCat"
-  image: 
-    0: "https://files.readme.io/67279ec-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: SDK Migration Guides – RevenueCat
+  image:
+    0: https://files.readme.io/67279ec-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-09-30T14:30:12.220Z"
-updatedAt: "2022-03-29T02:44:33.517Z"
+createdAt: '2021-09-30T14:30:12.220Z'
+updatedAt: '2022-03-29T02:44:33.517Z'
+category: 640a7bf45d4321003d59224e
 ---
 As RevenueCat's SDK evolves over time and continues to simplify purchasing logic across platforms, implementation changes can be required when upgrading from one major version to another. We've tried to simplify these migrations and make the process as easy as possible.
 

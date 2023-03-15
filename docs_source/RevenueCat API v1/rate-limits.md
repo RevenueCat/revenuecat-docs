@@ -1,9 +1,10 @@
 ---
-title: "Rate Limits"
-slug: "rate-limits"
+title: Rate Limits
+slug: rate-limits
 hidden: true
-createdAt: "2021-11-18T20:51:32.232Z"
-updatedAt: "2021-11-18T20:56:08.395Z"
+createdAt: '2021-11-18T20:51:32.232Z'
+updatedAt: '2021-11-18T20:56:08.395Z'
+category: 640a7bf3b3df0b003dc5ec62
 ---
 # Outline
 

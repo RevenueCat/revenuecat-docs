@@ -1,10 +1,11 @@
 ---
-title: "Stripe Service Credentials"
-slug: "stripe-service-credentials"
-excerpt: "Allow your users to subscribe to your app via Stripe"
+title: Stripe Service Credentials
+slug: stripe-service-credentials
+excerpt: Allow your users to subscribe to your app via Stripe
 hidden: false
-createdAt: "2023-01-06T19:42:27.944Z"
-updatedAt: "2023-01-06T19:43:32.419Z"
+createdAt: '2023-01-06T19:42:27.944Z'
+updatedAt: '2023-01-06T19:43:32.419Z'
+category: 640a7bef79274d00428d102b
 ---
 RevenueCat currently supports web payments through Stripe. This allows you to let users subscribe on your own website, and automatically unlock access to the same subscription content through the *Purchases SDK*.
 

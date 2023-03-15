@@ -1,19 +1,22 @@
 ---
-title: "Google Real-Time Developer Notifications"
-slug: "google-server-notifications"
-excerpt: "Sending Google Play server notifications to RevenueCat"
+title: Google Real-Time Developer Notifications
+slug: google-server-notifications
+excerpt: Sending Google Play server notifications to RevenueCat
 hidden: false
-metadata: 
-  title: "Google Play server notifications – RevenueCat"
-  description: "RevenueCat does not require server notifications from Google Play, however doing so can speed up webhook and integration delivery times and reduce lag time for Charts."
-  image: 
-    0: "https://files.readme.io/0417ecd-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Google Play server notifications – RevenueCat
+  description: RevenueCat does not require server notifications from Google Play,
+    however doing so can speed up webhook and integration delivery times and reduce
+    lag time for Charts.
+  image:
+    0: https://files.readme.io/0417ecd-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-09-29T15:21:39.999Z"
-updatedAt: "2022-12-16T16:01:33.511Z"
+createdAt: '2020-09-29T15:21:39.999Z'
+updatedAt: '2022-12-16T16:01:33.511Z'
+category: 640a7bf336aa500154bfceee
 ---
 RevenueCat does not require server notifications from Google Play, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 

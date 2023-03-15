@@ -1,19 +1,22 @@
 ---
-title: "CleverTap"
-slug: "clevertap"
-excerpt: "Integrate in-app subscription events from RevenueCat with CleverTap"
+title: CleverTap
+slug: clevertap
+excerpt: Integrate in-app subscription events from RevenueCat with CleverTap
 hidden: false
-metadata: 
-  title: "CleverTap Integration – RevenueCat"
-  description: "RevenueCat can automatically send subscription events into CleverTap. This is useful for seeing all events and revenue that occur for your app even if it's not active for a period of time."
-  image: 
-    0: "https://files.readme.io/8d4e0d7-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: CleverTap Integration – RevenueCat
+  description: RevenueCat can automatically send subscription events into CleverTap.
+    This is useful for seeing all events and revenue that occur for your app even
+    if it's not active for a period of time.
+  image:
+    0: https://files.readme.io/8d4e0d7-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-10-23T02:20:59.696Z"
-updatedAt: "2023-01-03T22:49:20.364Z"
+createdAt: '2020-10-23T02:20:59.696Z'
+updatedAt: '2023-01-03T22:49:20.364Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

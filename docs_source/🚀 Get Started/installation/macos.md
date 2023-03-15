@@ -1,19 +1,21 @@
 ---
-title: "macOS / Catalyst"
-slug: "macos"
-excerpt: "Instructions for installing Purchases SDK for macOS / Catalyst"
+title: macOS / Catalyst
+slug: macos
+excerpt: Instructions for installing Purchases SDK for macOS / Catalyst
 hidden: false
-metadata: 
-  title: "Install macOS / Catalyst SDK – RevenueCat"
-  description: "The RevenueCat Purchases SDK handles the pain points of in-app purchases and subscriptions, so you can get back to building your app."
-  image: 
-    0: "https://files.readme.io/fb59963-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Install macOS / Catalyst SDK – RevenueCat
+  description: The RevenueCat Purchases SDK handles the pain points of in-app purchases
+    and subscriptions, so you can get back to building your app.
+  image:
+    0: https://files.readme.io/fb59963-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-12-08T02:58:24.888Z"
+createdAt: '2022-12-08T02:58:24.888Z'
+updatedAt: '2022-12-08T02:58:24.888Z'
+category: 640a7bef79274d00428d102b
 ---
 # What is RevenueCat?
 

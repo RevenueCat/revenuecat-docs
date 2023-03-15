@@ -1,19 +1,21 @@
 ---
-title: "Unity"
-slug: "unity"
-excerpt: "Instructions for installing Purchases SDK for Unity"
+title: Unity
+slug: unity
+excerpt: Instructions for installing Purchases SDK for Unity
 hidden: false
-metadata: 
-  title: "Install Unity SDK – RevenueCat"
-  description: "The RevenueCat Purchases SDK handles the pain points of in-app purchases and subscriptions for Unity, so you can get back to building your app."
-  image: 
-    0: "https://files.readme.io/3bedede-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Install Unity SDK – RevenueCat
+  description: The RevenueCat Purchases SDK handles the pain points of in-app purchases
+    and subscriptions for Unity, so you can get back to building your app.
+  image:
+    0: https://files.readme.io/3bedede-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2023-01-04T20:38:54.780Z"
+createdAt: '2023-01-04T20:38:54.780Z'
+updatedAt: '2023-01-04T20:38:54.780Z'
+category: 640a7bef79274d00428d102b
 ---
 # What is RevenueCat?
 

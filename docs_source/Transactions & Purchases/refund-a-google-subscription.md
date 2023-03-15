@@ -1,10 +1,13 @@
 ---
-title: "Google Play: Refund and Revoke Purchase"
-slug: "refund-a-google-subscription"
-excerpt: "Issues a refund for the most recent purchase of a Google product and revokes access. Works for subscription and non-subscription purchases that occurred in the last 365 days."
+title: 'Google Play: Refund and Revoke Purchase'
+slug: refund-a-google-subscription
+excerpt: Issues a refund for the most recent purchase of a Google product and revokes
+  access. Works for subscription and non-subscription purchases that occurred in the
+  last 365 days.
 hidden: false
-createdAt: "2021-04-23T20:27:09.243Z"
-updatedAt: "2022-07-21T14:56:23.818Z"
+createdAt: '2021-04-23T20:27:09.243Z'
+updatedAt: '2022-07-21T14:56:23.818Z'
+category: 640a7bf5be4a66000b94ccc4
 ---
 [block:callout]
 {

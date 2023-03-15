@@ -1,9 +1,10 @@
 ---
-title: "Apple App Store Service Credentials"
-slug: "apple-service-credentials"
+title: Apple App Store Service Credentials
+slug: apple-service-credentials
 hidden: false
-createdAt: "2023-01-03T19:30:12.606Z"
-updatedAt: "2023-01-06T19:43:14.748Z"
+createdAt: '2023-01-03T19:30:12.606Z'
+updatedAt: '2023-01-06T19:43:14.748Z'
+category: 640a7bef79274d00428d102b
 ---
 You may upload an App Store Connect API key for RevenueCat to import products and prices from App Store Connect. 
 

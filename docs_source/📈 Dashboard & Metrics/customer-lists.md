@@ -1,18 +1,19 @@
 ---
-title: "Customer Lists"
-slug: "customer-lists"
-excerpt: "Cohort and export your customers"
+title: Customer Lists
+slug: customer-lists
+excerpt: Cohort and export your customers
 hidden: false
-metadata: 
-  title: "Customer Lists – RevenueCat"
-  image: 
-    0: "https://files.readme.io/327a3ea-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Customer Lists – RevenueCat
+  image:
+    0: https://files.readme.io/327a3ea-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-01-18T18:46:58.144Z"
-updatedAt: "2022-12-15T01:20:14.652Z"
+createdAt: '2021-01-18T18:46:58.144Z'
+updatedAt: '2022-12-15T01:20:14.652Z'
+category: 640a7bf126512c00308b2f8d
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.
 

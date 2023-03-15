@@ -1,19 +1,21 @@
 ---
-title: "Flutter"
-slug: "flutter"
-excerpt: "Instructions for installing Purchases SDK for Flutter"
+title: Flutter
+slug: flutter
+excerpt: Instructions for installing Purchases SDK for Flutter
 hidden: false
-metadata: 
-  title: "Install Flutter SDK – RevenueCat"
-  description: "The RevenueCat Purchases SDK handles the pain points of in-app purchases and subscriptions for Flutter, so you can get back to building your app."
-  image: 
-    0: "https://files.readme.io/a9ac1b7-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Install Flutter SDK – RevenueCat
+  description: The RevenueCat Purchases SDK handles the pain points of in-app purchases
+    and subscriptions for Flutter, so you can get back to building your app.
+  image:
+    0: https://files.readme.io/a9ac1b7-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-12-05T22:59:31.400Z"
+createdAt: '2022-12-05T22:59:31.400Z'
+updatedAt: '2022-12-05T22:59:31.400Z'
+category: 640a7bef79274d00428d102b
 ---
 # What is RevenueCat?
 

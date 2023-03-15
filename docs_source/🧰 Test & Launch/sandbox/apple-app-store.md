@@ -1,19 +1,22 @@
 ---
-title: "Apple App Store & TestFlight"
-slug: "apple-app-store"
-excerpt: "Testing purchases in App Store Sandbox"
+title: Apple App Store & TestFlight
+slug: apple-app-store
+excerpt: Testing purchases in App Store Sandbox
 hidden: false
-metadata: 
-  title: "App Store Sandbox Purchase Testing – RevenueCat"
-  description: "In order to test your purchases, you'll need a sandbox test account. You can create test accounts from your App Store Connect dashboard > Users and Access > Sandbox Testers."
-  image: 
-    0: "https://files.readme.io/fa8e623-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: App Store Sandbox Purchase Testing – RevenueCat
+  description: In order to test your purchases, you'll need a sandbox test account.
+    You can create test accounts from your App Store Connect dashboard > Users and
+    Access > Sandbox Testers.
+  image:
+    0: https://files.readme.io/fa8e623-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-12-16T21:25:10.255Z"
+createdAt: '2022-12-16T21:25:10.255Z'
+updatedAt: '2022-12-16T21:25:10.255Z'
+category: 640a7bf096064f005a3e667a
 ---
 [block:callout]
 {

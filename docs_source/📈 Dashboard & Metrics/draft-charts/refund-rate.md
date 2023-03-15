@@ -1,9 +1,10 @@
 ---
-title: "Refund Rate"
-slug: "refund-rate"
+title: Refund Rate
+slug: refund-rate
 hidden: true
-createdAt: "2022-06-28T21:08:07.413Z"
-updatedAt: "2022-06-28T21:08:07.413Z"
+createdAt: '2022-06-28T21:08:07.413Z'
+updatedAt: '2022-06-28T21:08:07.413Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Refund Rate
 **Segments:** Yes

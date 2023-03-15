@@ -1,9 +1,10 @@
 ---
-title: "Churn Chart"
-slug: "churn-chart"
+title: Churn Chart
+slug: churn-chart
 hidden: false
-createdAt: "2022-10-19T15:30:31.866Z"
-updatedAt: "2022-10-20T14:18:19.523Z"
+createdAt: '2022-10-19T15:30:31.866Z'
+updatedAt: '2022-10-20T14:18:19.523Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Churn
 **Segments**: Yes

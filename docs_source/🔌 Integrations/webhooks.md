@@ -1,19 +1,22 @@
 ---
-title: "Webhooks"
-slug: "webhooks"
-excerpt: "Enhanced server-to-server notifications from webhooks"
+title: Webhooks
+slug: webhooks
+excerpt: Enhanced server-to-server notifications from webhooks
 hidden: false
-metadata: 
-  title: "Webhooks for in-app purchases – RevenueCat"
-  description: "RevenueCat can send you notifications any time an event happens in your app. This is useful for subscription and purchase events, which will allow you to monitor state changes for your subscribers and react accordingly."
-  image: 
-    0: "https://files.readme.io/2df7f46-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Webhooks for in-app purchases – RevenueCat
+  description: RevenueCat can send you notifications any time an event happens in
+    your app. This is useful for subscription and purchase events, which will allow
+    you to monitor state changes for your subscribers and react accordingly.
+  image:
+    0: https://files.readme.io/2df7f46-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2023-01-05T14:28:40.399Z"
+createdAt: '2023-01-05T14:28:40.399Z'
+updatedAt: '2023-01-05T14:28:40.399Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

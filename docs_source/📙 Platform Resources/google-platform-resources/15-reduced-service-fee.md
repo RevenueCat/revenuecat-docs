@@ -1,18 +1,19 @@
 ---
-title: "15% Reduced Service Fee"
-slug: "15-reduced-service-fee"
-excerpt: "How to have the reduced commission rate reflected in RevenueCat"
+title: 15% Reduced Service Fee
+slug: 15-reduced-service-fee
+excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
-metadata: 
-  title: "15% Reduced Service Free – RevenueCat"
-  image: 
-    0: "https://files.readme.io/e2830c4-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: 15% Reduced Service Free – RevenueCat
+  image:
+    0: https://files.readme.io/e2830c4-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-10-05T15:55:44.276Z"
-updatedAt: "2021-10-05T15:58:31.270Z"
+createdAt: '2021-10-05T15:55:44.276Z'
+updatedAt: '2021-10-05T15:58:31.270Z'
+category: 640a7bf336aa500154bfceee
 ---
 Google recently announced a reduction in their service fee for the first $1,000,000 USD in revenue per developer per year (note that for 2021, this amount is prorated to $500,000 USD as the program started on July 1st, 2021).
 

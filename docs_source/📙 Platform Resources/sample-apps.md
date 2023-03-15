@@ -1,19 +1,22 @@
 ---
-title: "Sample Apps"
-slug: "sample-apps"
-excerpt: "Example usage of RevenueCat's SDK"
+title: Sample Apps
+slug: sample-apps
+excerpt: Example usage of RevenueCat's SDK
 hidden: true
-metadata: 
-  title: "Sample Apps – RevenueCat"
-  description: "Example usage of the Purchases SDK. Learn more about how to set up in-app purchases and subscriptions with RevenueCats simple to implement Purchases SDK."
-  image: 
-    0: "https://files.readme.io/cfe4041-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Sample Apps – RevenueCat
+  description: Example usage of the Purchases SDK. Learn more about how to set up
+    in-app purchases and subscriptions with RevenueCats simple to implement Purchases
+    SDK.
+  image:
+    0: https://files.readme.io/cfe4041-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-10-18T14:05:26.509Z"
+createdAt: '2022-10-18T14:05:26.509Z'
+updatedAt: '2022-10-18T14:05:26.509Z'
+category: 640a7bf336aa500154bfceee
 ---
 Sample apps are currently included in each SDK repository and demonstrate how to integrate the SDK in your own apps.
 

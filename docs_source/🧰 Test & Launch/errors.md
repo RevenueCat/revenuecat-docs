@@ -1,19 +1,23 @@
 ---
-title: "Error Handling"
-slug: "errors"
-excerpt: "Handling errors in Purchases SDK"
+title: Error Handling
+slug: errors
+excerpt: Handling errors in Purchases SDK
 hidden: false
-metadata: 
-  title: "Error Handling – RevenueCat"
-  description: "With the exception of NetworkError, PurchaseCancelledError or StoreProblemError, retrying a failed operation with the same arguments won't succeed. For failed purchases, assume the user wasn't charged, unless a `StoreProblemError` occurred - in which case the user may or may not have been charged."
-  image: 
-    0: "https://files.readme.io/a5a8894-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Error Handling – RevenueCat
+  description: With the exception of NetworkError, PurchaseCancelledError or StoreProblemError,
+    retrying a failed operation with the same arguments won't succeed. For failed
+    purchases, assume the user wasn't charged, unless a `StoreProblemError` occurred
+    - in which case the user may or may not have been charged.
+  image:
+    0: https://files.readme.io/a5a8894-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-04-06T18:47:10.352Z"
+createdAt: '2022-04-06T18:47:10.352Z'
+updatedAt: '2022-04-06T18:47:10.352Z'
+category: 640a7bf096064f005a3e667a
 ---
 [block:callout]
 {

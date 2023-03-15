@@ -1,18 +1,19 @@
 ---
-title: "Firebase"
-slug: "firebase-integration"
-excerpt: "Integrate in-app purchase events from RevenueCat with Firebase"
+title: Firebase
+slug: firebase-integration
+excerpt: Integrate in-app purchase events from RevenueCat with Firebase
 hidden: false
-metadata: 
-  title: "Firebase Integration – RevenueCat"
-  image: 
-    0: "https://files.readme.io/75a16dc-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Firebase Integration – RevenueCat
+  image:
+    0: https://files.readme.io/75a16dc-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2022-04-06T23:08:59.811Z"
-updatedAt: "2023-01-03T22:51:38.246Z"
+createdAt: '2022-04-06T23:08:59.811Z'
+updatedAt: '2023-01-03T22:51:38.246Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

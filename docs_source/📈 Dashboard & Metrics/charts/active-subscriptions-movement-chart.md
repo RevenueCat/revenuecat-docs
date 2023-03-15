@@ -1,9 +1,10 @@
 ---
-title: "Active Subscriptions Movement Chart"
-slug: "active-subscriptions-movement-chart"
+title: Active Subscriptions Movement Chart
+slug: active-subscriptions-movement-chart
 hidden: false
-createdAt: "2022-10-19T15:29:56.036Z"
-updatedAt: "2022-10-19T15:56:54.156Z"
+createdAt: '2022-10-19T15:29:56.036Z'
+updatedAt: '2022-10-19T15:56:54.156Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Active Subscriptions Movement
 **Segments:** No

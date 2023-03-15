@@ -1,10 +1,11 @@
 ---
-title: "🔢 Support First Steps"
-slug: "support-first-steps"
-excerpt: "We can help, but we need your help first."
+title: "\U0001F522 Support First Steps"
+slug: support-first-steps
+excerpt: We can help, but we need your help first.
 hidden: false
-createdAt: "2022-10-13T20:24:32.602Z"
-updatedAt: "2023-01-04T15:42:45.629Z"
+createdAt: '2022-10-13T20:24:32.602Z'
+updatedAt: '2023-01-04T15:42:45.629Z'
+category: 640a7bf32fbc9d0029be6bf6
 ---
 # Contacting Support
 

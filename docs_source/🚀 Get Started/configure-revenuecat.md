@@ -1,10 +1,11 @@
 ---
-title: "Configure RevenueCat"
-slug: "configure-revenuecat"
-excerpt: "Create an account and set up your Dashboard"
+title: Configure RevenueCat
+slug: configure-revenuecat
+excerpt: Create an account and set up your Dashboard
 hidden: false
-createdAt: "2023-01-05T20:29:32.042Z"
-updatedAt: "2023-01-06T19:37:55.803Z"
+createdAt: '2023-01-05T20:29:32.042Z'
+updatedAt: '2023-01-06T19:37:55.803Z'
+category: 640a7bef79274d00428d102b
 ---
 [block:callout]
 {

@@ -1,10 +1,11 @@
 ---
-title: "Add User Attribution Data"
-slug: "subscribersattribution"
-excerpt: "Attaches attribution data to a subscriber from specific supported networks."
+title: Add User Attribution Data
+slug: subscribersattribution
+excerpt: Attaches attribution data to a subscriber from specific supported networks.
 hidden: false
-createdAt: "2018-09-27T16:25:45.671Z"
-updatedAt: "2022-09-09T14:46:40.434Z"
+createdAt: '2018-09-27T16:25:45.671Z'
+updatedAt: '2022-09-09T14:46:40.434Z'
+category: 640a7bf411fadc001f4b8b09
 ---
 ###Attribution Source Network Codes
 [block:parameters]

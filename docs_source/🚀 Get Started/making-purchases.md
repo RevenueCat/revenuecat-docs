@@ -1,19 +1,22 @@
 ---
-title: "Making Purchases"
-slug: "making-purchases"
-excerpt: "Process a transaction with Apple or Google"
+title: Making Purchases
+slug: making-purchases
+excerpt: Process a transaction with Apple or Google
 hidden: false
-metadata: 
-  title: "Making in-app purchases using the SDK – RevenueCat"
-  description: "When it comes time to make a purchase, Purchases SDK has a simple method, `purchasePackage`, that takes a package from the fetched Offering and purchases the underlying product with Apple or Google."
-  image: 
-    0: "https://files.readme.io/222c22e-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Making in-app purchases using the SDK – RevenueCat
+  description: When it comes time to make a purchase, Purchases SDK has a simple method,
+    `purchasePackage`, that takes a package from the fetched Offering and purchases
+    the underlying product with Apple or Google.
+  image:
+    0: https://files.readme.io/222c22e-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-12-05T12:58:02.450Z"
+createdAt: '2022-12-05T12:58:02.450Z'
+updatedAt: '2022-12-05T12:58:02.450Z'
+category: 640a7bef79274d00428d102b
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:code]

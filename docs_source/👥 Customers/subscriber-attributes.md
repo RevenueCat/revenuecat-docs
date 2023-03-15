@@ -1,19 +1,22 @@
 ---
-title: "Subscriber Attributes"
-slug: "subscriber-attributes"
-excerpt: "Adding custom properties to users in RevenueCat"
+title: Subscriber Attributes
+slug: subscriber-attributes
+excerpt: Adding custom properties to users in RevenueCat
 hidden: false
-metadata: 
-  title: "Subscriber Attributes – RevenueCat"
-  description: "Subscriber attributes are useful for storing additional, structured information on a user. For example, you could store your user's email address and additional system identifiers directly in RevenueCat."
-  image: 
-    0: "https://files.readme.io/5a7533d-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Subscriber Attributes – RevenueCat
+  description: Subscriber attributes are useful for storing additional, structured
+    information on a user. For example, you could store your user's email address
+    and additional system identifiers directly in RevenueCat.
+  image:
+    0: https://files.readme.io/5a7533d-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-03-02T07:47:34.104Z"
-updatedAt: "2023-01-04T16:52:53.914Z"
+createdAt: '2020-03-02T07:47:34.104Z'
+updatedAt: '2023-01-04T16:52:53.914Z'
+category: 640a7bf0629e7e007422fdec
 ---
 Subscriber attributes are useful for storing additional, structured information on a user. For example, you could store your user's email address and additional system identifiers directly in RevenueCat. Attributes will not be seen by your users unless you choose to explicitly show them yourself.
 [block:callout]

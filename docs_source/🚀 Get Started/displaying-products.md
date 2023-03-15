@@ -1,19 +1,23 @@
 ---
-title: "Displaying Products"
-slug: "displaying-products"
-excerpt: "Build dynamic paywalls and control available products remotely"
+title: Displaying Products
+slug: displaying-products
+excerpt: Build dynamic paywalls and control available products remotely
 hidden: false
-metadata: 
-  title: "Displaying in-app purchase products | RevenueCat"
-  description: "If you've configured Offerings in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates."
-  image: 
-    0: "https://files.readme.io/600479c-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Displaying in-app purchase products | RevenueCat
+  description: If you've configured Offerings in RevenueCat, you can control which
+    products are shown to users without requiring an app update. Building paywalls
+    that are dynamic and can react to different product configurations gives you maximum
+    flexibility to make remote updates.
+  image:
+    0: https://files.readme.io/600479c-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-06-20T21:57:39.646Z"
+createdAt: '2022-06-20T21:57:39.646Z'
+updatedAt: '2022-06-20T21:57:39.646Z'
+category: 640a7bef79274d00428d102b
 ---
 If you've [configured Offerings](doc:entitlements) in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates.
 [block:image]

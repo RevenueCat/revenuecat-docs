@@ -1,9 +1,10 @@
 ---
-title: "Active Trials Movement Chart"
-slug: "active-trials-movement-chart"
+title: Active Trials Movement Chart
+slug: active-trials-movement-chart
 hidden: false
-createdAt: "2022-10-19T15:38:12.219Z"
-updatedAt: "2022-10-19T15:57:48.114Z"
+createdAt: '2022-10-19T15:38:12.219Z'
+updatedAt: '2022-10-19T15:57:48.114Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Active Trials Movement
 **Segments:** No

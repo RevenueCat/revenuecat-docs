@@ -1,19 +1,22 @@
 ---
-title: "Firebase Apps"
-slug: "firebase"
-excerpt: "Integrate your Firebase app with RevenueCat"
+title: Firebase Apps
+slug: firebase
+excerpt: Integrate your Firebase app with RevenueCat
 hidden: true
-metadata: 
-  title: "Firebase in-app purchases – RevenueCat"
-  description: "RevenueCat handles the pain points of in-app purchases and subscriptions, so you can get back to building your app. Have in-app purchases working in hours, not months."
-  image: 
-    0: "https://files.readme.io/847b8ae-OG_image.png"
-    1: "OG image.png"
+metadata:
+  title: Firebase in-app purchases – RevenueCat
+  description: RevenueCat handles the pain points of in-app purchases and subscriptions,
+    so you can get back to building your app. Have in-app purchases working in hours,
+    not months.
+  image:
+    0: https://files.readme.io/847b8ae-OG_image.png
+    1: OG image.png
     2: 1200
     3: 627
     4: "#e9acb0"
-createdAt: {}
-updatedAt: "2022-05-11T20:25:11.081Z"
+createdAt: '2022-05-11T20:25:11.081Z'
+updatedAt: '2022-05-11T20:25:11.081Z'
+category: 640a7bf336aa500154bfceee
 ---
 # What is RevenueCat?
 

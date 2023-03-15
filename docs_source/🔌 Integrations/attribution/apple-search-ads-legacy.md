@@ -1,19 +1,22 @@
 ---
-title: "Apple Search Ads (Legacy)"
-slug: "apple-search-ads-legacy"
-excerpt: "Collect and view Apple Search Ads attribution in RevenueCat using iAd"
+title: Apple Search Ads (Legacy)
+slug: apple-search-ads-legacy
+excerpt: Collect and view Apple Search Ads attribution in RevenueCat using iAd
 hidden: true
-metadata: 
-  title: "Apple Search Ads Attribution – RevenueCat"
-  description: "Precisely measure long-tail revenue driven from Apple Search Ad campaigns. With our Apple Search Ad integration, you can follow your campaign's install base for months even without an app open."
-  image: 
-    0: "https://files.readme.io/93beec0-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Apple Search Ads Attribution – RevenueCat
+  description: Precisely measure long-tail revenue driven from Apple Search Ad campaigns.
+    With our Apple Search Ad integration, you can follow your campaign's install base
+    for months even without an app open.
+  image:
+    0: https://files.readme.io/93beec0-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-08-08T18:37:59.872Z"
+createdAt: '2022-08-08T18:37:59.872Z'
+updatedAt: '2022-08-08T18:37:59.872Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

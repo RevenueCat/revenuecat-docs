@@ -1,19 +1,22 @@
 ---
-title: "Mixpanel"
-slug: "mixpanel"
-excerpt: "Integrate in-app subscription events from RevenueCat with Mixpanel"
+title: Mixpanel
+slug: mixpanel
+excerpt: Integrate in-app subscription events from RevenueCat with Mixpanel
 hidden: false
-metadata: 
-  title: "Mixpanel Integration – RevenueCat"
-  description: "RevenueCat can automatically send subscription events into Mixpanel. This is useful for seeing all events and revenue that occur for your app even if it's not active for a period of time."
-  image: 
-    0: "https://files.readme.io/9eb7e2d-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Mixpanel Integration – RevenueCat
+  description: RevenueCat can automatically send subscription events into Mixpanel.
+    This is useful for seeing all events and revenue that occur for your app even
+    if it's not active for a period of time.
+  image:
+    0: https://files.readme.io/9eb7e2d-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-08-19T01:36:58.272Z"
+createdAt: '2022-08-19T01:36:58.272Z'
+updatedAt: '2022-08-19T01:36:58.272Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

@@ -1,10 +1,11 @@
 ---
-title: "Google Play: Defer a Subscription"
-slug: "defer-a-google-subscription"
-excerpt: "Defers the purchase of a Google Subscription to a later date."
+title: 'Google Play: Defer a Subscription'
+slug: defer-a-google-subscription
+excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: false
-createdAt: "2020-09-23T22:55:40.021Z"
-updatedAt: "2022-07-21T14:55:12.429Z"
+createdAt: '2020-09-23T22:55:40.021Z'
+updatedAt: '2022-07-21T14:55:12.429Z'
+category: 640a7bf5be4a66000b94ccc4
 ---
 [block:callout]
 {

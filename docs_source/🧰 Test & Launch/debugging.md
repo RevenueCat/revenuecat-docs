@@ -1,19 +1,23 @@
 ---
-title: "Debugging"
-slug: "debugging"
-excerpt: "View and understand Purchases logs"
+title: Debugging
+slug: debugging
+excerpt: View and understand Purchases logs
 hidden: false
-metadata: 
-  title: "Debugging – RevenueCat"
-  description: "Purchases will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, before you configure Purchases."
-  image: 
-    0: "https://files.readme.io/126dacb-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Debugging – RevenueCat
+  description: Purchases will log important information and errors to help you understand
+    what is going on behind the scenes. You can enable more detailed debug logs with
+    the `debugLogsEnabled` flag. You can set this immediately in your app while testing,
+    before you configure Purchases.
+  image:
+    0: https://files.readme.io/126dacb-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-11-07T19:48:37.380Z"
+createdAt: '2022-11-07T19:48:37.380Z'
+updatedAt: '2022-11-07T19:48:37.380Z'
+category: 640a7bf096064f005a3e667a
 ---
 [block:callout]
 {

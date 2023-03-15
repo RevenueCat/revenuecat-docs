@@ -1,9 +1,10 @@
 ---
-title: "Initial Conversion Chart"
-slug: "initial-conversion-chart"
+title: Initial Conversion Chart
+slug: initial-conversion-chart
 hidden: false
-createdAt: "2022-10-19T15:35:52.758Z"
-updatedAt: "2022-11-04T14:33:55.895Z"
+createdAt: '2022-10-19T15:35:52.758Z'
+updatedAt: '2022-11-04T14:33:55.895Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Initial Conversion
 **Segments:** Yes

@@ -1,10 +1,11 @@
 ---
-title: "ETL Exports [V2 DO NOT PUBLISH]"
-slug: "etl-exports-v2-do-not-publish"
-excerpt: "Data deliveries of all of your apps' transaction data"
+title: ETL Exports [V2 DO NOT PUBLISH]
+slug: etl-exports-v2-do-not-publish
+excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
-createdAt: "2022-12-15T02:43:30.576Z"
-updatedAt: "2022-12-15T02:43:30.576Z"
+createdAt: '2022-12-15T02:43:30.576Z'
+updatedAt: '2022-12-15T02:43:30.576Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

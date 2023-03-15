@@ -1,10 +1,11 @@
 ---
-title: "Delete Subscriber"
-slug: "delete-subscriber"
-excerpt: "Permanently deletes a subscriber."
+title: Delete Subscriber
+slug: delete-subscriber
+excerpt: Permanently deletes a subscriber.
 hidden: false
-createdAt: "2019-08-09T05:20:54.035Z"
-updatedAt: "2021-11-24T03:05:25.661Z"
+createdAt: '2019-08-09T05:20:54.035Z'
+updatedAt: '2021-11-24T03:05:25.661Z'
+category: 640a7bf411fadc001f4b8b09
 ---
 [block:callout]
 {

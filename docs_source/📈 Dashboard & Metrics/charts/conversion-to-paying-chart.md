@@ -1,9 +1,10 @@
 ---
-title: "Conversion to Paying Chart"
-slug: "conversion-to-paying-chart"
+title: Conversion to Paying Chart
+slug: conversion-to-paying-chart
 hidden: false
-createdAt: "2022-10-19T15:35:15.210Z"
-updatedAt: "2022-11-04T14:32:32.852Z"
+createdAt: '2022-10-19T15:35:15.210Z'
+updatedAt: '2022-11-04T14:32:32.852Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Conversion to Paying
 **Segments:** Yes

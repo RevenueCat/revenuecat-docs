@@ -1,19 +1,22 @@
 ---
-title: "SearchAdsHQ"
-slug: "searchadshq"
-excerpt: "Integrate Purchases SDK with SearchAdsHQ for precise revenue tracking"
+title: SearchAdsHQ
+slug: searchadshq
+excerpt: Integrate Purchases SDK with SearchAdsHQ for precise revenue tracking
 hidden: true
-metadata: 
-  title: "SearchAdsHQ Revenue Integration – RevenueCat"
-  description: "With our SearchAdsHQ integration, you can accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate and more."
-  image: 
-    0: "https://files.readme.io/48556af-OG_image.png"
-    1: "OG image.png"
+metadata:
+  title: SearchAdsHQ Revenue Integration – RevenueCat
+  description: With our SearchAdsHQ integration, you can accurately track subscriptions
+    generated from Apple Search Ads campaigns, allowing you to know precisely how
+    much revenue your campaigns generate and more.
+  image:
+    0: https://files.readme.io/48556af-OG_image.png
+    1: OG image.png
     2: 1200
     3: 627
     4: "#e9acb0"
-createdAt: "2020-07-30T17:43:45.879Z"
-updatedAt: "2021-12-03T04:07:47.324Z"
+createdAt: '2020-07-30T17:43:45.879Z'
+updatedAt: '2021-12-03T04:07:47.324Z'
+category: 640a7bf1c7bae2004235517b
 ---
 With our SearchAdsHQ integration you can:
 * Accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate.

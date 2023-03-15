@@ -1,10 +1,11 @@
 ---
-title: "Taxes and Commissions"
-slug: "taxes-and-commissions"
-excerpt: "How RevenueCat estimates taxes and commissions for transactions"
+title: Taxes and Commissions
+slug: taxes-and-commissions
+excerpt: How RevenueCat estimates taxes and commissions for transactions
 hidden: false
-createdAt: "2022-06-07T20:41:47.792Z"
-updatedAt: "2022-11-17T16:49:58.327Z"
+createdAt: '2022-06-07T20:41:47.792Z'
+updatedAt: '2022-11-17T16:49:58.327Z'
+category: 640a7bf126512c00308b2f8d
 ---
 RevenueCat can optionally report revenue after store commissions, or after taxes and commissions through various features like integrations, webhooks, and our Revenue chart; but there's some context you should be aware of when using RevenueCat's tax estimation to see your net revenue from a transaction.
 

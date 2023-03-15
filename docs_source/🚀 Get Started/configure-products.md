@@ -1,19 +1,22 @@
 ---
-title: "Configure Products"
-slug: "configure-products"
-excerpt: "All your subscription/in-app purchases in one place"
+title: Configure Products
+slug: configure-products
+excerpt: All your subscription/in-app purchases in one place
 hidden: false
-metadata: 
-  title: "Configuring in-app products – RevenueCat"
-  description: "The RevenueCat dashboard allows you to configure your available in-app products remotely so you can control how they're presented without the need to update your app."
-  image: 
-    0: "https://files.readme.io/d9c46d9-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Configuring in-app products – RevenueCat
+  description: The RevenueCat dashboard allows you to configure your available in-app
+    products remotely so you can control how they're presented without the need to
+    update your app.
+  image:
+    0: https://files.readme.io/d9c46d9-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2023-01-09T15:42:05.505Z"
+createdAt: '2023-01-09T15:42:05.505Z'
+updatedAt: '2023-01-09T15:42:05.505Z'
+category: 640a7bef79274d00428d102b
 ---
 [block:callout]
 {

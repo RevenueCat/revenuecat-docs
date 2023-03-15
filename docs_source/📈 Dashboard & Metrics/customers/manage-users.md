@@ -1,18 +1,21 @@
 ---
-title: "Deleting Users"
-slug: "manage-users"
+title: Deleting Users
+slug: manage-users
 hidden: false
-metadata: 
-  title: "Deleting Users – RevenueCat"
-  description: "You can delete a user under the 'Manage' card at the bottom of the page. Deleting a user will also remove all their purchase history for sandbox and production data which could change how charts and reports appear."
-  image: 
-    0: "https://files.readme.io/480dc45-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Deleting Users – RevenueCat
+  description: You can delete a user under the 'Manage' card at the bottom of the
+    page. Deleting a user will also remove all their purchase history for sandbox
+    and production data which could change how charts and reports appear.
+  image:
+    0: https://files.readme.io/480dc45-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-04-06T21:46:08.709Z"
-updatedAt: "2020-12-18T20:03:08.304Z"
+createdAt: '2020-04-06T21:46:08.709Z'
+updatedAt: '2020-12-18T20:03:08.304Z'
+category: 640a7bf126512c00308b2f8d
 ---
 You can delete a user under the 'Manage' card at the bottom of the page. Deleting a user will also remove all their purchase history for sandbox and production data which could change how charts and reports appear. Deleting users should only be used to remove accounts you may have set up for testing.
 [block:image]

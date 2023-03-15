@@ -1,19 +1,22 @@
 ---
-title: "Slack"
-slug: "slack"
-excerpt: "Send in-app subscription events to Slack"
+title: Slack
+slug: slack
+excerpt: Send in-app subscription events to Slack
 hidden: false
-metadata: 
-  title: "Slack Integration – RevenueCat"
-  description: "RevenueCat can send you Slack message to a channel any time an event happens in your app. This lets you keep a close pulse on your app and celebrate those money making moments!"
-  image: 
-    0: "https://files.readme.io/7feca32-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Slack Integration – RevenueCat
+  description: RevenueCat can send you Slack message to a channel any time an event
+    happens in your app. This lets you keep a close pulse on your app and celebrate
+    those money making moments!
+  image:
+    0: https://files.readme.io/7feca32-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-06-02T21:38:50.161Z"
+createdAt: '2022-06-02T21:38:50.161Z'
+updatedAt: '2022-06-02T21:38:50.161Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

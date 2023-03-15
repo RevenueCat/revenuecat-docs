@@ -1,19 +1,22 @@
 ---
-title: "Amazon S3 (OLD)"
-slug: "amazon-s3"
-excerpt: "Setting up S3 access keys for data transfer"
+title: Amazon S3 (OLD)
+slug: amazon-s3
+excerpt: Setting up S3 access keys for data transfer
 hidden: true
-metadata: 
-  title: "S3 access keys for data transfer | RevenueCat"
-  description: "The below steps outline how to create an Access Key in your AWS console that RevenueCat will need to complete data deliveries. We’re excited to do business together!"
-  image: 
-    0: "https://files.readme.io/f79f02c-Reddit__E.jpg"
-    1: "Reddit – E.jpg"
+metadata:
+  title: S3 access keys for data transfer | RevenueCat
+  description: The below steps outline how to create an Access Key in your AWS console
+    that RevenueCat will need to complete data deliveries. We’re excited to do business
+    together!
+  image:
+    0: https://files.readme.io/f79f02c-Reddit__E.jpg
+    1: Reddit – E.jpg
     2: 1200
     3: 630
     4: "#fbabaf"
-createdAt: {}
-updatedAt: "2020-10-07T00:35:55.719Z"
+createdAt: '2020-10-07T00:35:55.719Z'
+updatedAt: '2020-10-07T00:35:55.719Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

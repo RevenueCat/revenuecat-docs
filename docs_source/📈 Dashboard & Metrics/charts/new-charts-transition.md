@@ -1,10 +1,11 @@
 ---
-title: "New Charts Transition"
-slug: "new-charts-transition"
-excerpt: "Migrating workflows from Original Charts to the New Charts beta"
+title: New Charts Transition
+slug: new-charts-transition
+excerpt: Migrating workflows from Original Charts to the New Charts beta
 hidden: true
-createdAt: "2021-06-10T16:41:59.584Z"
-updatedAt: "2021-11-02T15:58:52.846Z"
+createdAt: '2021-06-10T16:41:59.584Z'
+updatedAt: '2021-11-02T15:58:52.846Z'
+category: 640a7bf126512c00308b2f8d
 ---
 # Known Issues
 

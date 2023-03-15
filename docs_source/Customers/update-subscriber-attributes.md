@@ -1,10 +1,11 @@
 ---
-title: "Update Subscriber Attributes"
-slug: "update-subscriber-attributes"
-excerpt: "Updates subscriber attributes for a user."
+title: Update Subscriber Attributes
+slug: update-subscriber-attributes
+excerpt: Updates subscriber attributes for a user.
 hidden: false
-createdAt: "2020-03-10T01:14:10.675Z"
-updatedAt: "2020-12-04T01:39:50.154Z"
+createdAt: '2020-03-10T01:14:10.675Z'
+updatedAt: '2020-12-04T01:39:50.154Z'
+category: 640a7bf411fadc001f4b8b09
 ---
 [block:api-header]
 {

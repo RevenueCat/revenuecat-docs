@@ -1,19 +1,21 @@
 ---
-title: "Amazon S3"
-slug: "etl-s3"
-excerpt: "Setting up S3 access keys for data transfer"
+title: Amazon S3
+slug: etl-s3
+excerpt: Setting up S3 access keys for data transfer
 hidden: false
-metadata: 
-  title: "Amazon S3 – RevenueCat"
-  description: "Once you have this information, you can add it to the S3 integration settings for your app in RevenueCat."
-  image: 
-    0: "https://files.readme.io/9894d95-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Amazon S3 – RevenueCat
+  description: Once you have this information, you can add it to the S3 integration
+    settings for your app in RevenueCat.
+  image:
+    0: https://files.readme.io/9894d95-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-10-02T02:49:29.429Z"
-updatedAt: "2021-12-01T20:32:59.037Z"
+createdAt: '2020-10-02T02:49:29.429Z'
+updatedAt: '2021-12-01T20:32:59.037Z'
+category: 640a7bf1c7bae2004235517b
 ---
 To start receiving these deliveries, you'll need the following details:
 1. Access key ID

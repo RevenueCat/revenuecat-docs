@@ -1,10 +1,11 @@
 ---
-title: "Apple Search Ads"
-slug: "apple-search-ads"
-excerpt: "Collect and view Apple Search Ads attribution in RevenueCat using AdServices"
+title: Apple Search Ads
+slug: apple-search-ads
+excerpt: Collect and view Apple Search Ads attribution in RevenueCat using AdServices
 hidden: false
-createdAt: "2022-05-23T14:12:29.055Z"
-updatedAt: "2022-09-15T14:15:17.313Z"
+createdAt: '2022-05-23T14:12:29.055Z'
+updatedAt: '2022-09-15T14:15:17.313Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

@@ -1,19 +1,22 @@
 ---
-title: "Google Play Store"
-slug: "creating-play-service-credentials"
-excerpt: "Step-by-step guide for creating your Play service credentials"
+title: Google Play Store
+slug: creating-play-service-credentials
+excerpt: Step-by-step guide for creating your Play service credentials
 hidden: false
-metadata: 
-  title: "Play Store Service Credentials – RevenueCat"
-  description: "Step-by-step guide for creating your Play service credentials, These are needed in order for RevenueCat's servers to communicate with Google on your behalf."
-  image: 
-    0: "https://files.readme.io/c1c6ef3-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Play Store Service Credentials – RevenueCat
+  description: Step-by-step guide for creating your Play service credentials, These
+    are needed in order for RevenueCat's servers to communicate with Google on your
+    behalf.
+  image:
+    0: https://files.readme.io/c1c6ef3-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-11-09T13:20:47.338Z"
+createdAt: '2022-11-09T13:20:47.338Z'
+updatedAt: '2022-11-09T13:20:47.338Z'
+category: 640a7bf3494876005757685e
 ---
 In order for RevenueCat's servers to communicate with Google on your behalf, you need to provide a set of service credentials. The process for configuring these credentials is a bit complex, but the added level of control improves security by providing RevenueCat with only the access we need. 
 [block:callout]

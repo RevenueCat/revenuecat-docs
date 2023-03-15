@@ -1,19 +1,22 @@
 ---
-title: "Identifying Customers"
-slug: "user-ids"
-excerpt: "How RevenueCat handles user identity"
+title: Identifying Customers
+slug: user-ids
+excerpt: How RevenueCat handles user identity
 hidden: false
-metadata: 
-  title: "Identifying users – RevenueCat"
-  description: "RevenueCat provides a source of truth for a subscriber's status across different platforms. To do this, each subscriber has an App User ID that uniquely identifies them within your application."
-  image: 
-    0: "https://files.readme.io/f9d72a3-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Identifying users – RevenueCat
+  description: RevenueCat provides a source of truth for a subscriber's status across
+    different platforms. To do this, each subscriber has an App User ID that uniquely
+    identifies them within your application.
+  image:
+    0: https://files.readme.io/f9d72a3-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2023-01-04T17:08:40.411Z"
+createdAt: '2023-01-04T17:08:40.411Z'
+updatedAt: '2023-01-04T17:08:40.411Z'
+category: 640a7bf0629e7e007422fdec
 ---
 RevenueCat provides a source of truth for a subscriber's status across different platforms. To do this, each subscriber has an App User ID that uniquely identifies them within your application. 
 

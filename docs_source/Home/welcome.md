@@ -1,18 +1,22 @@
 ---
-title: "What is RevenueCat?"
-slug: "welcome"
+title: What is RevenueCat?
+slug: welcome
 hidden: false
-metadata: 
-  title: "Documentation – RevenueCat"
-  description: "Build a customized mobile subscription business with RevenueCat. We do the heavy lifting of normalizing subscribers from any source and maintain a single source of truth for subscription status, so you can get back to building your app."
-  image: 
-    0: "https://files.readme.io/afd3a3b-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Documentation – RevenueCat
+  description: Build a customized mobile subscription business with RevenueCat. We
+    do the heavy lifting of normalizing subscribers from any source and maintain a
+    single source of truth for subscription status, so you can get back to building
+    your app.
+  image:
+    0: https://files.readme.io/afd3a3b-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2023-01-06T18:52:16.803Z"
+createdAt: '2023-01-06T18:52:16.803Z'
+updatedAt: '2023-01-06T18:52:16.803Z'
+category: 640a7befd7cdfc010bbc6ef3
 ---
 [block:html]
 {

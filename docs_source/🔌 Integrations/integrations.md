@@ -1,18 +1,20 @@
 ---
-title: "Third-Party Integrations"
-slug: "integrations"
-excerpt: "RevenueCat can automatically send subscription events to the integration platform of your choice."
+title: Third-Party Integrations
+slug: integrations
+excerpt: RevenueCat can automatically send subscription events to the integration
+  platform of your choice.
 hidden: false
-metadata: 
-  title: "Third-Party Integrations – RevenueCat"
-  image: 
-    0: "https://files.readme.io/62bb76a-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Third-Party Integrations – RevenueCat
+  image:
+    0: https://files.readme.io/62bb76a-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2022-06-02T15:51:10.109Z"
-updatedAt: "2022-08-03T21:06:31.244Z"
+createdAt: '2022-06-02T15:51:10.109Z'
+updatedAt: '2022-08-03T21:06:31.244Z'
+category: 640a7bf1c7bae2004235517b
 ---
 With our integrations you can send subscription events and purchase data with the platform you already use, or choose one that fits your workflow. So whether you are looking for patterns in user behavior, ways to engage with and retain your customers, or product analytics that can help your marketing team level up, in-app purchase events can be sent by RevenueCat to the integration of your choice. 
 

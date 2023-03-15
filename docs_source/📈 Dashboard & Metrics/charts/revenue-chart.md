@@ -1,9 +1,10 @@
 ---
-title: "Revenue Chart"
-slug: "revenue-chart"
+title: Revenue Chart
+slug: revenue-chart
 hidden: false
-createdAt: "2022-10-19T15:34:40.122Z"
-updatedAt: "2022-11-17T16:50:16.926Z"
+createdAt: '2022-10-19T15:34:40.122Z'
+updatedAt: '2022-11-17T16:50:16.926Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Revenue
 **Segments:** Yes

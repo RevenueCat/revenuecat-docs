@@ -1,19 +1,22 @@
 ---
-title: "OneSignal"
-slug: "onesignal"
-excerpt: "Integrate RevenueCat subscription status with OneSignal"
+title: OneSignal
+slug: onesignal
+excerpt: Integrate RevenueCat subscription status with OneSignal
 hidden: false
-metadata: 
-  title: "OneSignal Integration – RevenueCat"
-  description: "RevenueCat can automatically update user tags in OneSignal with their latest subscription status. This can be helpful in understanding what stage a customer is in to react accordingly."
-  image: 
-    0: "https://files.readme.io/e804c32-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: OneSignal Integration – RevenueCat
+  description: RevenueCat can automatically update user tags in OneSignal with their
+    latest subscription status. This can be helpful in understanding what stage a
+    customer is in to react accordingly.
+  image:
+    0: https://files.readme.io/e804c32-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-08-26T17:22:44.480Z"
-updatedAt: "2022-08-19T01:40:08.516Z"
+createdAt: '2020-08-26T17:22:44.480Z'
+updatedAt: '2022-08-19T01:40:08.516Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

@@ -1,19 +1,22 @@
 ---
-title: "Stripe Product Setup"
-slug: "stripe-products"
-excerpt: "Setting up products in the Stripe Dashboard"
+title: Stripe Product Setup
+slug: stripe-products
+excerpt: Setting up products in the Stripe Dashboard
 hidden: false
-metadata: 
-  title: "Setting up products in Stripe – RevenueCat"
-  description: "To set up products for Stripe, start by logging into the Stripe Dashboard. This guide assumes basic knowledge of Stripe and the Stripe Dashboard. For more information, visit Stripe's documentation and guides for the Dashboard."
-  image: 
-    0: "https://files.readme.io/f1a1b9f-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Setting up products in Stripe – RevenueCat
+  description: To set up products for Stripe, start by logging into the Stripe Dashboard.
+    This guide assumes basic knowledge of Stripe and the Stripe Dashboard. For more
+    information, visit Stripe's documentation and guides for the Dashboard.
+  image:
+    0: https://files.readme.io/f1a1b9f-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-07-01T20:11:18.247Z"
-updatedAt: "2022-11-16T21:29:11.159Z"
+createdAt: '2020-07-01T20:11:18.247Z'
+updatedAt: '2022-11-16T21:29:11.159Z'
+category: 640a7bef79274d00428d102b
 ---
 To set up products for Stripe, start by logging into the Stripe Dashboard. This guide assumes basic knowledge of Stripe and the Stripe Dashboard. For more information, visit Stripe's [documentation and guides for the Dashboard](https://stripe.com/docs/dashboard).
 

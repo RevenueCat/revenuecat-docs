@@ -1,19 +1,22 @@
 ---
-title: "AppsFlyer"
-slug: "appsflyer"
-excerpt: "Integrate Purchases SDK with AppsFlyer for precise revenue tracking"
+title: AppsFlyer
+slug: appsflyer
+excerpt: Integrate Purchases SDK with AppsFlyer for precise revenue tracking
 hidden: false
-metadata: 
-  title: "AppsFlyer In-App Purchase Integration – RevenueCat"
-  description: "With our AppsFlyer integration, you can accurately track subscriptions generated from AppsFlyer campaigns, allowing you to know precisely how much revenue your campaigns generate."
-  image: 
-    0: "https://files.readme.io/ffdf926-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: AppsFlyer In-App Purchase Integration – RevenueCat
+  description: With our AppsFlyer integration, you can accurately track subscriptions
+    generated from AppsFlyer campaigns, allowing you to know precisely how much revenue
+    your campaigns generate.
+  image:
+    0: https://files.readme.io/ffdf926-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-11-29T01:52:17.779Z"
+createdAt: '2022-11-29T01:52:17.779Z'
+updatedAt: '2022-11-29T01:52:17.779Z'
+category: 640a7bf1c7bae2004235517b
 ---
 With our AppsFlyer integration you can:
 * Accurately track subscriptions generated from AppsFlyer campaigns, allowing you to know precisely how much revenue your campaigns generate.

@@ -1,17 +1,18 @@
 ---
-title: "Implementation Responsibilities"
-slug: "implementation-responsibilities"
+title: Implementation Responsibilities
+slug: implementation-responsibilities
 hidden: false
-metadata: 
-  title: "Implementation Responsibilities – RevenueCat"
-  image: 
-    0: "https://files.readme.io/f747df0-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Implementation Responsibilities – RevenueCat
+  image:
+    0: https://files.readme.io/f747df0-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-10-14T18:30:27.528Z"
-updatedAt: "2022-01-25T17:23:22.312Z"
+createdAt: '2020-10-14T18:30:27.528Z'
+updatedAt: '2022-01-25T17:23:22.312Z'
+category: 640a7bf336aa500154bfceee
 ---
 # Overview
 RevenueCat is the single source-of-truth for your subscription status across iOS, Android, and web. The complicated process surrounding receipt validation and interacting with the various native frameworks like Apple's StoreKit and Google's BillingClient are handled automatically when using RevenueCat's SDK.

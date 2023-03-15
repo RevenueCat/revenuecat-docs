@@ -1,9 +1,10 @@
 ---
-title: "Subscription Retention Chart"
-slug: "subscription-retention-chart"
+title: Subscription Retention Chart
+slug: subscription-retention-chart
 hidden: false
-createdAt: "2022-10-19T15:37:02.622Z"
-updatedAt: "2022-11-02T20:56:06.027Z"
+createdAt: '2022-10-19T15:37:02.622Z'
+updatedAt: '2022-11-02T20:56:06.027Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Subscription Retention
 **Segments:** Yes

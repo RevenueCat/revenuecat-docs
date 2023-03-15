@@ -1,19 +1,21 @@
 ---
-title: "Offering Override"
-slug: "offering-override"
-excerpt: "Override the current offering that displays in your app"
+title: Offering Override
+slug: offering-override
+excerpt: Override the current offering that displays in your app
 hidden: false
-metadata: 
-  title: "Offering Override – RevenueCat"
-  description: "You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the 'Current Offering' card."
-  image: 
-    0: "https://files.readme.io/52983fa-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Offering Override – RevenueCat
+  description: You can override the current offering that displays in your app on
+    a per-user basis by selecting a different offering in the 'Current Offering' card.
+  image:
+    0: https://files.readme.io/52983fa-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-07-30T17:03:23.384Z"
-updatedAt: "2021-12-06T00:48:02.850Z"
+createdAt: '2020-07-30T17:03:23.384Z'
+updatedAt: '2021-12-06T00:48:02.850Z'
+category: 640a7bf126512c00308b2f8d
 ---
 You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the **Current Offering** card. This can be useful for:
 

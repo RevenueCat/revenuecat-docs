@@ -1,19 +1,23 @@
 ---
-title: "Observer Mode"
-slug: "observer-mode"
-excerpt: "Using RevenueCat without changing existing purchase code"
+title: Observer Mode
+slug: observer-mode
+excerpt: Using RevenueCat without changing existing purchase code
 hidden: false
-metadata: 
-  title: "Observer Mode – RevenueCat"
-  description: "In some cases, if you have already built a functioning subscription system, it may not be possible or feasible to use the Purchases SDK to make purchases. However, you can still use the SDK to get access to the advanced charting, webhooks, and attribution that RevenueCat can provide."
-  image: 
-    0: "https://files.readme.io/8301ff3-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Observer Mode – RevenueCat
+  description: In some cases, if you have already built a functioning subscription
+    system, it may not be possible or feasible to use the Purchases SDK to make purchases.
+    However, you can still use the SDK to get access to the advanced charting, webhooks,
+    and attribution that RevenueCat can provide.
+  image:
+    0: https://files.readme.io/8301ff3-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-09-27T21:19:45.511Z"
+createdAt: '2022-09-27T21:19:45.511Z'
+updatedAt: '2022-09-27T21:19:45.511Z'
+category: 640a7bf040bbe7040ab9360d
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
 

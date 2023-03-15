@@ -1,18 +1,21 @@
 ---
-title: "Active Entitlements"
-slug: "active-entitlements"
+title: Active Entitlements
+slug: active-entitlements
 hidden: false
-metadata: 
-  title: "Active Subscriptions – RevenueCat"
-  description: "The 'Active Subscriptions' card gives you a quick glance at the current subscription status for a user. You can see which product(s) or Entitlement(s) have been purchased, and when they'll renew or cancel."
-  image: 
-    0: "https://files.readme.io/445009d-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Active Subscriptions – RevenueCat
+  description: The 'Active Subscriptions' card gives you a quick glance at the current
+    subscription status for a user. You can see which product(s) or Entitlement(s)
+    have been purchased, and when they'll renew or cancel.
+  image:
+    0: https://files.readme.io/445009d-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-04-06T21:46:06.712Z"
-updatedAt: "2022-04-11T21:08:05.258Z"
+createdAt: '2020-04-06T21:46:06.712Z'
+updatedAt: '2022-04-11T21:08:05.258Z'
+category: 640a7bf126512c00308b2f8d
 ---
 The 'Entitlements' card gives you a quick glance at the current entitlement status for a user. You can see which product(s) or [Entitlement(s)](doc:entitlements) have been purchased, and when they'll renew or cancel.  
 

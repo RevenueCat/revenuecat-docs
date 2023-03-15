@@ -1,18 +1,19 @@
 ---
-title: "Statsig"
-slug: "statsig"
-excerpt: "Integrate in-app subscription events from RevenueCat with Statsig"
+title: Statsig
+slug: statsig
+excerpt: Integrate in-app subscription events from RevenueCat with Statsig
 hidden: false
-metadata: 
-  title: "Statsig Integration – RevenueCat"
-  image: 
-    0: "https://files.readme.io/765fe34-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Statsig Integration – RevenueCat
+  image:
+    0: https://files.readme.io/765fe34-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-10-06T16:01:28.989Z"
-updatedAt: "2022-06-02T21:40:31.740Z"
+createdAt: '2021-10-06T16:01:28.989Z'
+updatedAt: '2022-06-02T21:40:31.740Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

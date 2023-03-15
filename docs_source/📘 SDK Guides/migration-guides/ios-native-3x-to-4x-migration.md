@@ -1,17 +1,18 @@
 ---
-title: "iOS Native - 3.x to 4.x Migration"
-slug: "ios-native-3x-to-4x-migration"
+title: iOS Native - 3.x to 4.x Migration
+slug: ios-native-3x-to-4x-migration
 hidden: false
-metadata: 
-  title: "iOS Native - 3.x to 4.x Migration – RevenueCat"
-  image: 
-    0: "https://files.readme.io/ab5b836-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: iOS Native - 3.x to 4.x Migration – RevenueCat
+  image:
+    0: https://files.readme.io/ab5b836-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-09-30T14:32:30.784Z"
-updatedAt: "2022-09-26T15:59:38.079Z"
+createdAt: '2021-09-30T14:32:30.784Z'
+updatedAt: '2022-09-26T15:59:38.079Z'
+category: 640a7bf45d4321003d59224e
 ---
 [block:callout]
 {

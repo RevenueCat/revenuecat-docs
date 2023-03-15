@@ -1,19 +1,21 @@
 ---
-title: "Google Play Promo Codes"
-slug: "android-promo-codes"
-excerpt: "Setting up your promo codes in Google Play Console"
+title: Google Play Promo Codes
+slug: android-promo-codes
+excerpt: Setting up your promo codes in Google Play Console
 hidden: false
-metadata: 
-  title: "Google Promo Codes – RevenueCat"
-  description: "Google Promotions or *Promo Codes* to give app developers the ability to create codes that are redeemable for one-time products or trials to subscriptions."
-  image: 
-    0: "https://files.readme.io/0a48f07-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Google Promo Codes – RevenueCat
+  description: Google Promotions or *Promo Codes* to give app developers the ability
+    to create codes that are redeemable for one-time products or trials to subscriptions.
+  image:
+    0: https://files.readme.io/0a48f07-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-04-21T21:42:29.264Z"
-updatedAt: "2021-12-08T05:39:22.504Z"
+createdAt: '2021-04-21T21:42:29.264Z'
+updatedAt: '2021-12-08T05:39:22.504Z'
+category: 640a7bf19a17e2000b581d4c
 ---
 [block:callout]
 {

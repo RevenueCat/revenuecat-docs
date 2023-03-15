@@ -1,19 +1,22 @@
 ---
-title: "iOS Subscription Offers"
-slug: "ios-subscription-offers"
-excerpt: "Implementing iOS Subscription Offers with Purchases SDK"
+title: iOS Subscription Offers
+slug: ios-subscription-offers
+excerpt: Implementing iOS Subscription Offers with Purchases SDK
 hidden: false
-metadata: 
-  title: "Implementing iOS Subscription Offers – RevenueCat"
-  description: "In iOS 12.2, Apple announced a new feature for subscription developers called “Subscription Offers.” Subscription offers allow developers to apply custom pricing and trials to existing and lapsed subscriptions."
-  image: 
-    0: "https://files.readme.io/bbc86b3-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Implementing iOS Subscription Offers – RevenueCat
+  description: In iOS 12.2, Apple announced a new feature for subscription developers
+    called “Subscription Offers.” Subscription offers allow developers to apply custom
+    pricing and trials to existing and lapsed subscriptions.
+  image:
+    0: https://files.readme.io/bbc86b3-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-09-15T19:11:45.457Z"
+createdAt: '2022-09-15T19:11:45.457Z'
+updatedAt: '2022-09-15T19:11:45.457Z'
+category: 640a7bf19a17e2000b581d4c
 ---
 [block:callout]
 {

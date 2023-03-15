@@ -1,9 +1,10 @@
 ---
-title: "Monthly Recurring Revenue (MRR) Chart"
-slug: "monthly-recurring-revenue-mrr-chart"
+title: Monthly Recurring Revenue (MRR) Chart
+slug: monthly-recurring-revenue-mrr-chart
 hidden: false
-createdAt: "2022-10-19T15:33:28.776Z"
-updatedAt: "2022-10-19T15:57:21.909Z"
+createdAt: '2022-10-19T15:33:28.776Z'
+updatedAt: '2022-10-19T15:57:21.909Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Monthly Recurring Revenue (MRR)
 **Segments:** Yes

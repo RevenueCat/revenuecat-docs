@@ -1,17 +1,18 @@
 ---
-title: "Android Native - 4.x to 5.x Migration"
-slug: "android-native-4x-to-5x-migration"
+title: Android Native - 4.x to 5.x Migration
+slug: android-native-4x-to-5x-migration
 hidden: false
-metadata: 
-  title: "Android Native - 4.x to 5.x Migration – RevenueCat"
-  image: 
-    0: "https://files.readme.io/cce2f5a-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Android Native - 4.x to 5.x Migration – RevenueCat
+  image:
+    0: https://files.readme.io/cce2f5a-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2022-03-23T14:39:58.758Z"
-updatedAt: "2022-03-23T15:05:01.351Z"
+createdAt: '2022-03-23T14:39:58.758Z'
+updatedAt: '2022-03-23T15:05:01.351Z'
+category: 640a7bf45d4321003d59224e
 ---
 [block:callout]
 {

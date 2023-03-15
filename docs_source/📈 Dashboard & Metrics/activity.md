@@ -1,19 +1,21 @@
 ---
-title: "Activity"
-slug: "activity"
-excerpt: "Real-time transaction dashboard"
+title: Activity
+slug: activity
+excerpt: Real-time transaction dashboard
 hidden: true
-metadata: 
-  title: "Real-time in-app purchase feed – RevenueCat"
-  description: "The Activity table is a real-time activity feed of transactions being recorded for your apps. Each row represents a unique transaction."
-  image: 
-    0: "https://files.readme.io/e46db09-OG_image.png"
-    1: "OG image.png"
+metadata:
+  title: Real-time in-app purchase feed – RevenueCat
+  description: The Activity table is a real-time activity feed of transactions being
+    recorded for your apps. Each row represents a unique transaction.
+  image:
+    0: https://files.readme.io/e46db09-OG_image.png
+    1: OG image.png
     2: 1200
     3: 627
     4: "#e9acb0"
-createdAt: "2020-04-02T23:21:08.116Z"
-updatedAt: "2021-02-16T20:40:49.703Z"
+createdAt: '2020-04-02T23:21:08.116Z'
+updatedAt: '2021-02-16T20:40:49.703Z'
+category: 640a7bf126512c00308b2f8d
 ---
 [block:callout]
 {

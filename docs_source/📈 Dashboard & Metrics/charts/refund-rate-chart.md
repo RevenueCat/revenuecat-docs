@@ -1,9 +1,10 @@
 ---
-title: "Refund Rate Chart"
-slug: "refund-rate-chart"
+title: Refund Rate Chart
+slug: refund-rate-chart
 hidden: false
-createdAt: "2022-10-19T15:31:06.563Z"
-updatedAt: "2022-10-19T15:57:09.612Z"
+createdAt: '2022-10-19T15:31:06.563Z'
+updatedAt: '2022-10-19T15:57:09.612Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Refund Rate
 **Segments:** Yes

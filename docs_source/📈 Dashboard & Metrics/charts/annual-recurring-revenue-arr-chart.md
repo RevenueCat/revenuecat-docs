@@ -1,9 +1,10 @@
 ---
-title: "Annual Recurring Revenue (ARR) Chart"
-slug: "annual-recurring-revenue-arr-chart"
+title: Annual Recurring Revenue (ARR) Chart
+slug: annual-recurring-revenue-arr-chart
 hidden: false
-createdAt: "2022-10-19T15:31:46.168Z"
-updatedAt: "2022-12-15T00:01:39.292Z"
+createdAt: '2022-10-19T15:31:46.168Z'
+updatedAt: '2022-12-15T00:01:39.292Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Annual Recurring Revenue (ARR)
 **Segments:** Yes

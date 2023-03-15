@@ -1,18 +1,19 @@
 ---
-title: "Amazon Appstore"
-slug: "amazon-appstore-credentials"
-excerpt: "Getting your Amazon Appstore Shared Secret"
+title: Amazon Appstore
+slug: amazon-appstore-credentials
+excerpt: Getting your Amazon Appstore Shared Secret
 hidden: false
-metadata: 
-  title: "Amazon Appstore shared secret – RevenueCat"
-  image: 
-    0: "https://files.readme.io/0c365ae-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Amazon Appstore shared secret – RevenueCat
+  image:
+    0: https://files.readme.io/0c365ae-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-12-03T14:59:24.094Z"
-updatedAt: "2022-09-17T01:38:47.374Z"
+createdAt: '2021-12-03T14:59:24.094Z'
+updatedAt: '2022-09-17T01:38:47.374Z'
+category: 640a7bf3494876005757685e
 ---
 The Amazon Shared Secret allows RevenueCat to connect with Amazon on your behalf. 
 

@@ -1,19 +1,20 @@
 ---
-title: "Amazon Product Setup"
-slug: "amazon-product-setup"
-excerpt: "Setting up your in-app purchases in the Amazon Appstore"
+title: Amazon Product Setup
+slug: amazon-product-setup
+excerpt: Setting up your in-app purchases in the Amazon Appstore
 hidden: false
-metadata: 
-  title: "Amazon in-app product setup"
-  description: "Setting up your in-app purchases in the Amazon Appstore"
-  image: 
-    0: "https://files.readme.io/4cb68dc-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Amazon in-app product setup
+  description: Setting up your in-app purchases in the Amazon Appstore
+  image:
+    0: https://files.readme.io/4cb68dc-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2021-12-03T14:37:38.429Z"
-updatedAt: "2022-11-16T21:28:52.860Z"
+createdAt: '2021-12-03T14:37:38.429Z'
+updatedAt: '2022-11-16T21:28:52.860Z'
+category: 640a7bef79274d00428d102b
 ---
 To set up products for the Amazon Appstore, start by logging into your [Amazon developer account](https://developer.amazon.com/apps-and-games).
 

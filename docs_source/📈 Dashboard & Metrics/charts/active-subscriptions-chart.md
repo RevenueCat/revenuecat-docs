@@ -1,9 +1,10 @@
 ---
-title: "Active Subscriptions Chart"
-slug: "active-subscriptions-chart"
+title: Active Subscriptions Chart
+slug: active-subscriptions-chart
 hidden: false
-createdAt: "2022-10-19T15:26:14.770Z"
-updatedAt: "2022-12-05T22:57:09.306Z"
+createdAt: '2022-10-19T15:26:14.770Z'
+updatedAt: '2022-12-05T22:57:09.306Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Active Subscriptions
 **Segments:** Yes

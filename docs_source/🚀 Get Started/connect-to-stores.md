@@ -1,10 +1,11 @@
 ---
-title: "Connect to Stores"
-slug: "connect-to-stores"
-excerpt: "Let RevenueCat handle purchases for you"
+title: Connect to Stores
+slug: connect-to-stores
+excerpt: Let RevenueCat handle purchases for you
 hidden: false
-createdAt: "2023-01-06T19:34:26.872Z"
-updatedAt: "2023-02-06T20:51:26.615Z"
+createdAt: '2023-01-06T19:34:26.872Z'
+updatedAt: '2023-02-06T20:51:26.615Z'
+category: 640a7bef79274d00428d102b
 ---
 Although RevenueCat keeps all of your subscriptions/in-app purchases in one place, at the end of the day, the stores (Apple, Google, Amazon, Stripe) are the ones actually processing your users' payments and sending you money.
 

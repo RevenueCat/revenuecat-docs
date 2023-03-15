@@ -1,19 +1,22 @@
 ---
-title: "SwiftUI App Lifecycle"
-slug: "swiftui-app-lifecycle"
-excerpt: "Initializing the Purchases SDK in SwiftUI"
+title: SwiftUI App Lifecycle
+slug: swiftui-app-lifecycle
+excerpt: Initializing the Purchases SDK in SwiftUI
 hidden: true
-metadata: 
-  title: "SwiftUI App Lifecycle – RevenueCat"
-  description: "Without traditional delegate methods commonly used to initialize the SDK, it can seem a little confusing as to where the *Purchases* SDK should be initialized."
-  image: 
-    0: "https://files.readme.io/31cb629-OG_image.png"
-    1: "OG image.png"
+metadata:
+  title: SwiftUI App Lifecycle – RevenueCat
+  description: Without traditional delegate methods commonly used to initialize the
+    SDK, it can seem a little confusing as to where the *Purchases* SDK should be
+    initialized.
+  image:
+    0: https://files.readme.io/31cb629-OG_image.png
+    1: OG image.png
     2: 1200
     3: 627
     4: "#e9acb0"
-createdAt: "2020-06-30T18:43:10.805Z"
-updatedAt: "2022-01-28T19:49:27.529Z"
+createdAt: '2020-06-30T18:43:10.805Z'
+updatedAt: '2022-01-28T19:49:27.529Z'
+category: 640a7bf336aa500154bfceee
 ---
 With the next iteration of SwiftUI announced at WWDC 2020, entire apps can be created with just a simple struct conforming to the new `App` protocol, like so:
 

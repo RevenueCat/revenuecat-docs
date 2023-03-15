@@ -1,19 +1,21 @@
 ---
-title: "Apple App Store"
-slug: "itunesconnect-app-specific-shared-secret"
-excerpt: "Getting your App Store Connect App-Specific Shared Secret"
+title: Apple App Store
+slug: itunesconnect-app-specific-shared-secret
+excerpt: Getting your App Store Connect App-Specific Shared Secret
 hidden: false
-metadata: 
-  title: "Apple App-Specific Shared Secret – RevenueCat"
-  description: "The App-Specific Shared Secret allows RevenueCat to connect with Apple on your behalf. Here is where to find it in App Store Connect."
-  image: 
-    0: "https://files.readme.io/6855303-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Apple App-Specific Shared Secret – RevenueCat
+  description: The App-Specific Shared Secret allows RevenueCat to connect with Apple
+    on your behalf. Here is where to find it in App Store Connect.
+  image:
+    0: https://files.readme.io/6855303-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-05-18T15:51:57.411Z"
+createdAt: '2022-05-18T15:51:57.411Z'
+updatedAt: '2022-05-18T15:51:57.411Z'
+category: 640a7bf3494876005757685e
 ---
 The App-Specific Shared Secret allows RevenueCat to connect with Apple on your behalf. 
 

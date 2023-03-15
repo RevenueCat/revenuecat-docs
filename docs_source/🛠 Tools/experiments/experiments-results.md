@@ -1,18 +1,22 @@
 ---
-title: "Experiments Results"
-slug: "experiments-results"
+title: Experiments Results
+slug: experiments-results
 hidden: true
-metadata: 
-  title: "Experiment Results – RevenueCat"
-  description: "Once enough data has been collected, the LTV model will start making predictions. These predictions will be displayed on the experiment's page below it's details. It can take up to 24 hours for results to be displayed, but early data might not be representative of your user base."
-  image: 
-    0: "https://files.readme.io/f5971fd-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Experiment Results – RevenueCat
+  description: Once enough data has been collected, the LTV model will start making
+    predictions. These predictions will be displayed on the experiment's page below
+    it's details. It can take up to 24 hours for results to be displayed, but early
+    data might not be representative of your user base.
+  image:
+    0: https://files.readme.io/f5971fd-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-07-09T16:53:54.410Z"
-updatedAt: "2022-09-12T14:20:04.727Z"
+createdAt: '2020-07-09T16:53:54.410Z'
+updatedAt: '2022-09-12T14:20:04.727Z'
+category: 640a7bf230a8d70049145f84
 ---
 [block:callout]
 {

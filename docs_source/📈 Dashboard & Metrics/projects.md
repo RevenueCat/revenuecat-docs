@@ -1,18 +1,19 @@
 ---
-title: "Projects"
-slug: "projects"
-excerpt: "Configuring multiple Apps under a single Project"
+title: Projects
+slug: projects
+excerpt: Configuring multiple Apps under a single Project
 hidden: false
-metadata: 
-  title: "Projects – RevenueCat"
-  image: 
-    0: "https://files.readme.io/7d4314f-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Projects – RevenueCat
+  image:
+    0: https://files.readme.io/7d4314f-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2022-01-06T20:42:37.662Z"
-updatedAt: "2022-05-02T12:55:35.313Z"
+createdAt: '2022-01-06T20:42:37.662Z'
+updatedAt: '2022-05-02T12:55:35.313Z'
+category: 640a7bf126512c00308b2f8d
 ---
 A Project is a set of Apps, and Apps are paired with a single platform. For example, a typical Project might contain one iOS App and one Google Play Store App. All Apps within one Project share the same basic setup, including entitlements, offerings, integrations, and webhooks. 
 [block:image]

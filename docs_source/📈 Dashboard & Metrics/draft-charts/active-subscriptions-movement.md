@@ -1,9 +1,10 @@
 ---
-title: "Active Subscriptions Movement"
-slug: "active-subscriptions-movement"
+title: Active Subscriptions Movement
+slug: active-subscriptions-movement
 hidden: true
-createdAt: "2022-06-28T20:15:28.170Z"
-updatedAt: "2022-06-28T20:15:28.170Z"
+createdAt: '2022-06-28T20:15:28.170Z'
+updatedAt: '2022-06-28T20:15:28.170Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Active Subscriptions Movement
 **Segments:** No

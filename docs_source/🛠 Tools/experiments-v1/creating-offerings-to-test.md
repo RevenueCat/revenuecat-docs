@@ -1,9 +1,10 @@
 ---
-title: "Creating Offerings to Test"
-slug: "creating-offerings-to-test"
+title: Creating Offerings to Test
+slug: creating-offerings-to-test
 hidden: false
-createdAt: "2022-12-08T05:04:57.377Z"
-updatedAt: "2022-12-08T05:14:03.108Z"
+createdAt: '2022-12-08T05:04:57.377Z'
+updatedAt: '2022-12-08T05:14:03.108Z'
+category: 640a7bf230a8d70049145f84
 ---
 In this guide we'll cover how to craft your test hypothesis, and how to set up a new Offering in RevenueCat to test your hypothesis.
 

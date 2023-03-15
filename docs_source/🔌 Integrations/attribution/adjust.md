@@ -1,19 +1,22 @@
 ---
-title: "Adjust"
-slug: "adjust"
-excerpt: "Integrate Purchases SDK with Adjust for precise revenue tracking"
+title: Adjust
+slug: adjust
+excerpt: Integrate Purchases SDK with Adjust for precise revenue tracking
 hidden: false
-metadata: 
-  title: "Adjust In-App Purchase Integration – RevenueCat"
-  description: "With our Adjust integration, you can accurately track subscriptions generated from Adjust campaigns, allowing you to know precisely how much revenue your campaigns generate. And more!"
-  image: 
-    0: "https://files.readme.io/5df26a0-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Adjust In-App Purchase Integration – RevenueCat
+  description: With our Adjust integration, you can accurately track subscriptions
+    generated from Adjust campaigns, allowing you to know precisely how much revenue
+    your campaigns generate. And more!
+  image:
+    0: https://files.readme.io/5df26a0-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-08-19T01:41:00.858Z"
+createdAt: '2022-08-19T01:41:00.858Z'
+updatedAt: '2022-08-19T01:41:00.858Z'
+category: 640a7bf1c7bae2004235517b
 ---
 With our Adjust integration you can:
 * Accurately track subscriptions generated from Adjust campaigns, allowing you to know precisely how much revenue your campaigns generate.

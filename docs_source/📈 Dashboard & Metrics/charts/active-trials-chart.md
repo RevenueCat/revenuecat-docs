@@ -1,9 +1,10 @@
 ---
-title: "Active Trials Chart"
-slug: "active-trials-chart"
+title: Active Trials Chart
+slug: active-trials-chart
 hidden: false
-createdAt: "2022-10-19T15:37:33.630Z"
-updatedAt: "2022-10-19T15:57:44.838Z"
+createdAt: '2022-10-19T15:37:33.630Z'
+updatedAt: '2022-10-19T15:57:44.838Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Active Trials
 **Segments:** Yes

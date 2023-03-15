@@ -1,19 +1,22 @@
 ---
-title: "iOS"
-slug: "ios"
-excerpt: "Instructions for installing Purchases SDK for iOS"
+title: iOS
+slug: ios
+excerpt: Instructions for installing Purchases SDK for iOS
 hidden: false
-metadata: 
-  title: "Install iOS SDK – RevenueCat"
-  description: "RevenueCat handles the pain points of in-app purchases and subscriptions for iOS, so you can get back to building your app. All you need to get started is a free API key."
-  image: 
-    0: "https://files.readme.io/48b408b-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Install iOS SDK – RevenueCat
+  description: RevenueCat handles the pain points of in-app purchases and subscriptions
+    for iOS, so you can get back to building your app. All you need to get started
+    is a free API key.
+  image:
+    0: https://files.readme.io/48b408b-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-12-09T19:33:38.822Z"
+createdAt: '2022-12-09T19:33:38.822Z'
+updatedAt: '2022-12-09T19:33:38.822Z'
+category: 640a7bef79274d00428d102b
 ---
 # What is RevenueCat?
 

@@ -1,9 +1,10 @@
 ---
-title: "Churn"
-slug: "churn"
+title: Churn
+slug: churn
 hidden: true
-createdAt: "2022-06-28T21:07:31.798Z"
-updatedAt: "2022-06-28T21:07:31.798Z"
+createdAt: '2022-06-28T21:07:31.798Z'
+updatedAt: '2022-06-28T21:07:31.798Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Churn
 **Segments**: Yes

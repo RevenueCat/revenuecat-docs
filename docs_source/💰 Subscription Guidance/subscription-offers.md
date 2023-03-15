@@ -1,19 +1,22 @@
 ---
-title: "Free Trials & Promo Offers"
-slug: "subscription-offers"
-excerpt: "How to give your customers subscription discounts"
+title: Free Trials & Promo Offers
+slug: subscription-offers
+excerpt: How to give your customers subscription discounts
 hidden: false
-metadata: 
-  title: "Subscription Offers – RevenueCat"
-  description: "Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle."
-  image: 
-    0: "https://files.readme.io/3a69ef7-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Subscription Offers – RevenueCat
+  description: Subscription offers give you the opportunity to provide limited time
+    discounts in order to attract or retain subscribers and can be an important part
+    of a subscription lifecycle.
+  image:
+    0: https://files.readme.io/3a69ef7-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2022-06-21T21:53:53.114Z"
-updatedAt: "2022-10-19T02:37:50.583Z"
+createdAt: '2022-06-21T21:53:53.114Z'
+updatedAt: '2022-10-19T02:37:50.583Z'
+category: 640a7bf19a17e2000b581d4c
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.
 

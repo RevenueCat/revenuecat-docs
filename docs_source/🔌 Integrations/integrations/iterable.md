@@ -1,18 +1,19 @@
 ---
-title: "Iterable"
-slug: "iterable"
-excerpt: "Integrate in-app purchase events from RevenueCat with Iterable"
+title: Iterable
+slug: iterable
+excerpt: Integrate in-app purchase events from RevenueCat with Iterable
 hidden: false
-metadata: 
-  title: "Iterable Integration – RevenueCat"
-  image: 
-    0: "https://files.readme.io/61f2c22-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Iterable Integration – RevenueCat
+  image:
+    0: https://files.readme.io/61f2c22-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2022-01-31T17:07:33.480Z"
-updatedAt: "2023-01-03T23:03:16.082Z"
+createdAt: '2022-01-31T17:07:33.480Z'
+updatedAt: '2023-01-03T23:03:16.082Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

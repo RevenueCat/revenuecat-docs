@@ -1,18 +1,20 @@
 ---
-title: "Customer Details"
-slug: "basic-information"
+title: Customer Details
+slug: basic-information
 hidden: false
-metadata: 
-  title: "Customer Details – RevenueCat"
-  description: "Basic customer information, including their total amount spent in your app, is presented at the top of the page."
-  image: 
-    0: "https://files.readme.io/50936e2-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Customer Details – RevenueCat
+  description: Basic customer information, including their total amount spent in your
+    app, is presented at the top of the page.
+  image:
+    0: https://files.readme.io/50936e2-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-04-06T21:46:10.813Z"
-updatedAt: "2020-06-30T02:29:26.253Z"
+createdAt: '2020-04-06T21:46:10.813Z'
+updatedAt: '2020-06-30T02:29:26.253Z'
+category: 640a7bf126512c00308b2f8d
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

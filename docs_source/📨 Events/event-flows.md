@@ -1,10 +1,11 @@
 ---
-title: "Event Flows"
-slug: "event-flows"
-excerpt: "How events are sent from RevenueCat"
+title: Event Flows
+slug: event-flows
+excerpt: How events are sent from RevenueCat
 hidden: true
-createdAt: "2022-07-29T14:20:20.439Z"
-updatedAt: "2022-07-29T14:39:45.689Z"
+createdAt: '2022-07-29T14:20:20.439Z'
+updatedAt: '2022-07-29T14:39:45.689Z'
+category: 640a7bf1392177004a7824b8
 ---
 Although the various supported stores have different event systems and flows, RevenueCat aims to normalize the behavior in a way that's easy to understand and consume.
 

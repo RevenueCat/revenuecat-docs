@@ -1,10 +1,12 @@
 ---
-title: "Create a Purchase"
-slug: "receipts"
-excerpt: "Records a purchase for a user from iOS, Android, or Stripe and will create a user if they don't already exist."
+title: Create a Purchase
+slug: receipts
+excerpt: Records a purchase for a user from iOS, Android, or Stripe and will create
+  a user if they don't already exist.
 hidden: false
-createdAt: "2018-05-08T17:27:35.964Z"
-updatedAt: "2022-10-26T00:03:06.323Z"
+createdAt: '2018-05-08T17:27:35.964Z'
+updatedAt: '2022-10-26T00:03:06.323Z'
+category: 640a7bf5be4a66000b94ccc4
 ---
 # Parameter Reference
 This is a complete reference of every parameter you can pass to this endpoint.

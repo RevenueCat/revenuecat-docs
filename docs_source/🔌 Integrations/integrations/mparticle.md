@@ -1,19 +1,22 @@
 ---
-title: "mParticle"
-slug: "mparticle"
-excerpt: "Integrate in-app subscription events from RevenueCat with mParticle"
+title: mParticle
+slug: mparticle
+excerpt: Integrate in-app subscription events from RevenueCat with mParticle
 hidden: false
-metadata: 
-  title: "mParticle Integration – RevenueCat"
-  description: "RevenueCat can automatically send subscription events into mParticle. From there, you pass these events on to any of the hundreds of other integrations on their platform."
-  image: 
-    0: "https://files.readme.io/650ba44-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: mParticle Integration – RevenueCat
+  description: RevenueCat can automatically send subscription events into mParticle.
+    From there, you pass these events on to any of the hundreds of other integrations
+    on their platform.
+  image:
+    0: https://files.readme.io/650ba44-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-06-17T19:13:08.598Z"
-updatedAt: "2022-08-19T01:38:02.192Z"
+createdAt: '2020-06-17T19:13:08.598Z'
+updatedAt: '2022-08-19T01:38:02.192Z'
+category: 640a7bf1c7bae2004235517b
 ---
 [block:callout]
 {

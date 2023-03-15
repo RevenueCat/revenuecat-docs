@@ -1,19 +1,21 @@
 ---
-title: "Checking Subscription Status"
-slug: "customer-info"
-excerpt: "Determining the subscription status for a user."
+title: Checking Subscription Status
+slug: customer-info
+excerpt: Determining the subscription status for a user.
 hidden: false
-metadata: 
-  title: "Determining subscription status – RevenueCat"
-  description: "RevenueCat makes it easy to determine subscription status and more with the Purchases SDK and REST API."
-  image: 
-    0: "https://files.readme.io/1024ff2-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Determining subscription status – RevenueCat
+  description: RevenueCat makes it easy to determine subscription status and more
+    with the Purchases SDK and REST API.
+  image:
+    0: https://files.readme.io/1024ff2-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-10-06T21:25:23.022Z"
+createdAt: '2022-10-06T21:25:23.022Z'
+updatedAt: '2022-10-06T21:25:23.022Z'
+category: 640a7bf0629e7e007422fdec
 ---
 RevenueCat makes it easy to determine subscription status and more with the *Purchases SDK* and [REST API](https://docs.revenuecat.com/reference). 
 [block:image]

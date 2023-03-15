@@ -1,19 +1,22 @@
 ---
-title: "Attributes"
-slug: "attributes"
-excerpt: "Add new user attributes or edit existing ones"
+title: Attributes
+slug: attributes
+excerpt: Add new user attributes or edit existing ones
 hidden: false
-metadata: 
-  title: "Subscriber attributes – RevenueCat"
-  description: "The 'Attributes' card displays any Subscriber Attributes that have been saved for the user, and allows you to add new attributes or edit existing ones."
-  image: 
-    0: "https://files.readme.io/550f817-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Subscriber attributes – RevenueCat
+  description: The 'Attributes' card displays any Subscriber Attributes that have
+    been saved for the user, and allows you to add new attributes or edit existing
+    ones.
+  image:
+    0: https://files.readme.io/550f817-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-04-06T21:46:08.010Z"
-updatedAt: "2022-01-04T15:52:11.513Z"
+createdAt: '2020-04-06T21:46:08.010Z'
+updatedAt: '2022-01-04T15:52:11.513Z'
+category: 640a7bf126512c00308b2f8d
 ---
 The 'Attributes' card displays any [Subscriber Attributes](doc:subscriber-attributes) that have been saved for the user and allows you to add new attributes or edit existing ones.
 [block:image]

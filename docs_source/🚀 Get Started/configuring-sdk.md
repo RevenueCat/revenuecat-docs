@@ -1,18 +1,21 @@
 ---
-title: "Configuring the SDK"
-slug: "configuring-sdk"
+title: Configuring the SDK
+slug: configuring-sdk
 hidden: false
-metadata: 
-  title: "Configuring the SDK – RevenueCat"
-  description: "You should only configure Purchases once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK."
-  image: 
-    0: "https://files.readme.io/7afb78b-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Configuring the SDK – RevenueCat
+  description: You should only configure Purchases once, usually early in your application
+    lifecycle. After configuration, the same instance is shared throughout your app
+    by accessing the `.shared` instance in the SDK.
+  image:
+    0: https://files.readme.io/7afb78b-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-06-29T17:25:26.484Z"
-updatedAt: "2022-12-07T20:55:20.111Z"
+createdAt: '2020-06-29T17:25:26.484Z'
+updatedAt: '2022-12-07T20:55:20.111Z'
+category: 640a7bef79274d00428d102b
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 [block:callout]

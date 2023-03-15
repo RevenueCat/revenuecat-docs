@@ -1,9 +1,10 @@
 ---
-title: "Trial Conversion Chart"
-slug: "trial-conversion-chart"
+title: Trial Conversion Chart
+slug: trial-conversion-chart
 hidden: false
-createdAt: "2022-10-19T15:36:28.718Z"
-updatedAt: "2022-11-04T15:04:40.875Z"
+createdAt: '2022-10-19T15:36:28.718Z'
+updatedAt: '2022-11-04T15:04:40.875Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Trial Conversion
 **Segments:** No

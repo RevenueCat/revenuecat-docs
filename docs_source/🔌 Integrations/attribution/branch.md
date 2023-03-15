@@ -1,19 +1,22 @@
 ---
-title: "Branch"
-slug: "branch"
-excerpt: "Integrate Purchases SDK with Branch for precise revenue tracking"
+title: Branch
+slug: branch
+excerpt: Integrate Purchases SDK with Branch for precise revenue tracking
 hidden: false
-metadata: 
-  title: "Branch In-App Purchase Integration – RevenueCat"
-  description: "With our Branch integration, you can accurately track subscriptions generated from Branch campaigns, allowing you to know precisely how much revenue your campaigns generate. And more!"
-  image: 
-    0: "https://files.readme.io/73d6beb-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Branch In-App Purchase Integration – RevenueCat
+  description: With our Branch integration, you can accurately track subscriptions
+    generated from Branch campaigns, allowing you to know precisely how much revenue
+    your campaigns generate. And more!
+  image:
+    0: https://files.readme.io/73d6beb-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-08-19T01:41:41.100Z"
+createdAt: '2022-08-19T01:41:41.100Z'
+updatedAt: '2022-08-19T01:41:41.100Z'
+category: 640a7bf1c7bae2004235517b
 ---
 With our Branch integration you can:
 * Accurately track subscriptions generated from Branch campaigns, allowing you to know precisely how much revenue your campaigns generate.

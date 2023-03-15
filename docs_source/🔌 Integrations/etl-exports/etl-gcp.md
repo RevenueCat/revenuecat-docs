@@ -1,19 +1,22 @@
 ---
-title: "Google Cloud Storage"
-slug: "etl-gcp"
-excerpt: "Setting up Google Cloud Storage access keys for data transfer"
+title: Google Cloud Storage
+slug: etl-gcp
+excerpt: Setting up Google Cloud Storage access keys for data transfer
 hidden: false
-metadata: 
-  title: "Google Cloud Storage export – RevenueCat"
-  description: "RevenueCat can automatically send data deliveries of all of your apps' transaction data to a Google Cloud Storage bucket. These are in the form of .csv files delivered daily."
-  image: 
-    0: "https://files.readme.io/8a10059-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Google Cloud Storage export – RevenueCat
+  description: RevenueCat can automatically send data deliveries of all of your apps'
+    transaction data to a Google Cloud Storage bucket. These are in the form of .csv
+    files delivered daily.
+  image:
+    0: https://files.readme.io/8a10059-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-10-02T02:50:53.583Z"
-updatedAt: "2021-12-01T20:34:36.985Z"
+createdAt: '2020-10-02T02:50:53.583Z'
+updatedAt: '2021-12-01T20:34:36.985Z'
+category: 640a7bf1c7bae2004235517b
 ---
 RevenueCat can automatically send data deliveries of all of your apps' transaction data to a Google Cloud Storage bucket. These are in the form of .csv files delivered daily.
 

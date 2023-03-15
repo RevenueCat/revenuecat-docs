@@ -1,9 +1,10 @@
 ---
-title: "Realized LTV per Customer Chart"
-slug: "realized-ltv-per-customer-chart"
+title: Realized LTV per Customer Chart
+slug: realized-ltv-per-customer-chart
 hidden: false
-createdAt: "2022-10-19T15:32:27.383Z"
-updatedAt: "2022-10-19T15:57:15.431Z"
+createdAt: '2022-10-19T15:32:27.383Z'
+updatedAt: '2022-10-19T15:57:15.431Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Realized LTV per Customer
 **Segments:** Yes

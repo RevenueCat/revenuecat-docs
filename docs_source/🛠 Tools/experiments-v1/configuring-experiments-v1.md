@@ -1,9 +1,10 @@
 ---
-title: "Configuring Experiments"
-slug: "configuring-experiments-v1"
+title: Configuring Experiments
+slug: configuring-experiments-v1
 hidden: false
-createdAt: "2022-10-13T18:44:36.495Z"
-updatedAt: "2023-01-05T18:34:57.972Z"
+createdAt: '2022-10-13T18:44:36.495Z'
+updatedAt: '2023-01-05T18:34:57.972Z'
+category: 640a7bf230a8d70049145f84
 ---
 Before setting up an experiment, make sure you've created the products and offerings that you want to test and added any new products to the appropriate entitlements in your project (more on this below). You should also test the offerings you've chosen on any platform your app supports.
 

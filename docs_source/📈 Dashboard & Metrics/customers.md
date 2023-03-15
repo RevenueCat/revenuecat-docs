@@ -1,19 +1,22 @@
 ---
-title: "Customer View"
-slug: "customers"
-excerpt: "View and manage customers"
+title: Customer View
+slug: customers
+excerpt: View and manage customers
 hidden: false
-metadata: 
-  title: "Customer View – RevenueCat"
-  description: "The RevenueCat dashboard lets you view basic customer information, including a timeline of their purchases, and allows you to grant promotional subscriptions. This can be a great way to debug issues and help with customer support."
-  image: 
-    0: "https://files.readme.io/d7732ed-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Customer View – RevenueCat
+  description: The RevenueCat dashboard lets you view basic customer information,
+    including a timeline of their purchases, and allows you to grant promotional subscriptions.
+    This can be a great way to debug issues and help with customer support.
+  image:
+    0: https://files.readme.io/d7732ed-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2021-07-23T20:51:15.072Z"
+createdAt: '2021-07-23T20:51:15.072Z'
+updatedAt: '2021-07-23T20:51:15.072Z'
+category: 640a7bf126512c00308b2f8d
 ---
 The RevenueCat dashboard lets you view basic customer information, including a timeline of their purchases, and allows you to grant promotional subscriptions. This can be a great way to debug issues and help with customer support.
 

@@ -1,19 +1,22 @@
 ---
-title: "Stripe Server Notifications"
-slug: "stripe-server-notifications"
-excerpt: "Sending Stripe server notifications to RevenueCat"
+title: Stripe Server Notifications
+slug: stripe-server-notifications
+excerpt: Sending Stripe server notifications to RevenueCat
 hidden: false
-metadata: 
-  title: "Stripe server notifications – RevenueCat"
-  description: "RevenueCat does not require server notifications from Stripe, however doing so can speed up webhook and integration delivery times and reduce lag time for Charts."
-  image: 
-    0: "https://files.readme.io/88e607a-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Stripe server notifications – RevenueCat
+  description: RevenueCat does not require server notifications from Stripe, however
+    doing so can speed up webhook and integration delivery times and reduce lag time
+    for Charts.
+  image:
+    0: https://files.readme.io/88e607a-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2020-09-29T15:21:50.023Z"
-updatedAt: "2022-10-27T18:46:53.643Z"
+createdAt: '2020-09-29T15:21:50.023Z'
+updatedAt: '2022-10-27T18:46:53.643Z'
+category: 640a7bf336aa500154bfceee
 ---
 RevenueCat does not require server notifications from Stripe, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 [block:callout]

@@ -1,19 +1,22 @@
 ---
-title: "Google Play Store"
-slug: "google-play-store"
-excerpt: "Testing purchases in Play Store Sandbox"
+title: Google Play Store
+slug: google-play-store
+excerpt: Testing purchases in Play Store Sandbox
 hidden: false
-metadata: 
-  title: "Play Store Sandbox Purchase Testing – RevenueCat"
-  description: "Follow this guide to start making test purchases in your Android app. It'll walk you through creating a test user, publishing to a closed test track, making a sandbox purchase, and viewing it in your RevenueCat dashboard."
-  image: 
-    0: "https://files.readme.io/33edecb-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Play Store Sandbox Purchase Testing – RevenueCat
+  description: Follow this guide to start making test purchases in your Android app.
+    It'll walk you through creating a test user, publishing to a closed test track,
+    making a sandbox purchase, and viewing it in your RevenueCat dashboard.
+  image:
+    0: https://files.readme.io/33edecb-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-06-24T19:19:00.629Z"
+createdAt: '2022-06-24T19:19:00.629Z'
+updatedAt: '2022-06-24T19:19:00.629Z'
+category: 640a7bf096064f005a3e667a
 ---
 [block:callout]
 {

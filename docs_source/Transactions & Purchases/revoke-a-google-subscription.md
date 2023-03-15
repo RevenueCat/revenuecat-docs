@@ -1,10 +1,13 @@
 ---
-title: "Google Play: Refund and Revoke Subscription"
-slug: "revoke-a-google-subscription"
-excerpt: "Immediately revokes access to a Google Subscription and issues a refund for the last purchase. If you want to refund a one-time Google purchase, see [refund a Google purchase](ref:refund-a-google-subscription)."
+title: 'Google Play: Refund and Revoke Subscription'
+slug: revoke-a-google-subscription
+excerpt: Immediately revokes access to a Google Subscription and issues a refund for
+  the last purchase. If you want to refund a one-time Google purchase, see [refund
+  a Google purchase](ref:refund-a-google-subscription).
 hidden: false
-createdAt: "2020-03-04T21:44:22.200Z"
-updatedAt: "2022-07-21T14:54:56.889Z"
+createdAt: '2020-03-04T21:44:22.200Z'
+updatedAt: '2022-07-21T14:54:56.889Z'
+category: 640a7bf5be4a66000b94ccc4
 ---
 [block:callout]
 {

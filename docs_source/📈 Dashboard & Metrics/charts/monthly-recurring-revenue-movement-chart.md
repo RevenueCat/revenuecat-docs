@@ -1,9 +1,10 @@
 ---
-title: "Monthly Recurring Revenue Movement Chart"
-slug: "monthly-recurring-revenue-movement-chart"
+title: Monthly Recurring Revenue Movement Chart
+slug: monthly-recurring-revenue-movement-chart
 hidden: false
-createdAt: "2022-10-19T15:34:02.217Z"
-updatedAt: "2022-10-19T15:57:25.198Z"
+createdAt: '2022-10-19T15:34:02.217Z'
+updatedAt: '2022-10-19T15:57:25.198Z'
+category: 640a7bf126512c00308b2f8d
 ---
 ## Monthly Recurring Revenue Movement 
 **Segments:** No

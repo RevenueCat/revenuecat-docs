@@ -1,19 +1,22 @@
 ---
-title: "Add Collaborators"
-slug: "collaborators"
-excerpt: "Share RevenueCat apps with your team"
+title: Add Collaborators
+slug: collaborators
+excerpt: Share RevenueCat apps with your team
 hidden: false
-metadata: 
-  title: "Add Collaborators – RevenueCat"
-  description: "Collaborators allow you to share apps in RevenueCat with other people without having to share any login credentials. You can limit the access of specific collaborators to \"Admin\" or \"Read Only\"."
-  image: 
-    0: "https://files.readme.io/1b702da-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Add Collaborators – RevenueCat
+  description: Collaborators allow you to share apps in RevenueCat with other people
+    without having to share any login credentials. You can limit the access of specific
+    collaborators to "Admin" or "Read Only".
+  image:
+    0: https://files.readme.io/1b702da-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: {}
-updatedAt: "2022-07-05T23:19:16.919Z"
+createdAt: '2022-07-05T23:19:16.919Z'
+updatedAt: '2022-07-05T23:19:16.919Z'
+category: 640a7bf126512c00308b2f8d
 ---
 [block:callout]
 {

@@ -1,10 +1,11 @@
 ---
-title: "Refunds"
-slug: "refunds"
-excerpt: "Handling and reacting to refunded purchases"
+title: Refunds
+slug: refunds
+excerpt: Handling and reacting to refunded purchases
 hidden: false
-createdAt: "2022-09-15T18:57:27.264Z"
-updatedAt: "2022-09-15T19:25:55.915Z"
+createdAt: '2022-09-15T18:57:27.264Z'
+updatedAt: '2022-09-15T19:25:55.915Z'
+category: 640a7bf19a17e2000b581d4c
 ---
 Refunds are handled differently on each platform. It's recommended to set up [Platform Server Notifications](doc:server-notifications) for the best performance. 
 

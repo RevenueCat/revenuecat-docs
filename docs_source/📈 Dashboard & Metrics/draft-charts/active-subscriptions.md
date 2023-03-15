@@ -1,9 +1,10 @@
 ---
-title: "Active Subscriptions"
-slug: "active-subscriptions"
+title: Active Subscriptions
+slug: active-subscriptions
 hidden: true
-createdAt: "2022-06-28T20:13:26.756Z"
-updatedAt: "2022-06-28T20:15:39.648Z"
+createdAt: '2022-06-28T20:13:26.756Z'
+updatedAt: '2022-06-28T20:15:39.648Z'
+category: 640a7bf126512c00308b2f8d
 ---
 **Segments:** Yes
 **Filters:** Yes

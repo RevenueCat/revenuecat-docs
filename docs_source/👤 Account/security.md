@@ -1,19 +1,22 @@
 ---
-title: "Account Security"
-slug: "security"
-excerpt: "Enabling two-factor authentication for your RevenueCat account"
+title: Account Security
+slug: security
+excerpt: Enabling two-factor authentication for your RevenueCat account
 hidden: false
-metadata: 
-  title: "Two-factor authentication – RevenueCat"
-  description: "You can make things safer by enabling two-factor authentication in your RevenueCat account settings. Once you do, you'll need a code generated on your mobile device any time you log in to your RevenueCat account."
-  image: 
-    0: "https://files.readme.io/94d1820-RevenueCat_Docs_OG.png"
-    1: "RevenueCat Docs OG.png"
+metadata:
+  title: Two-factor authentication – RevenueCat
+  description: You can make things safer by enabling two-factor authentication in
+    your RevenueCat account settings. Once you do, you'll need a code generated on
+    your mobile device any time you log in to your RevenueCat account.
+  image:
+    0: https://files.readme.io/94d1820-RevenueCat_Docs_OG.png
+    1: RevenueCat Docs OG.png
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: "2019-12-20T21:05:57.489Z"
-updatedAt: "2021-12-22T16:34:52.629Z"
+createdAt: '2019-12-20T21:05:57.489Z'
+updatedAt: '2021-12-22T16:34:52.629Z'
+category: 640a7bf20de06100ed9b10ee
 ---
 It's a dangerous world out there! But you can make things much safer by enabling two-factor authentication in your RevenueCat account settings.
 

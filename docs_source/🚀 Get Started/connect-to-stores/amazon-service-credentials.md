@@ -1,10 +1,11 @@
 ---
-title: "Amazon Appstore Service Credentials"
-slug: "amazon-service-credentials"
-excerpt: "Getting your Amazon Appstore Shared Secret"
+title: Amazon Appstore Service Credentials
+slug: amazon-service-credentials
+excerpt: Getting your Amazon Appstore Shared Secret
 hidden: false
-createdAt: "2023-01-06T19:42:06.798Z"
-updatedAt: "2023-01-06T19:43:24.303Z"
+createdAt: '2023-01-06T19:42:06.798Z'
+updatedAt: '2023-01-06T19:43:24.303Z'
+category: 640a7bef79274d00428d102b
 ---
 The Amazon Shared Secret allows RevenueCat to connect with Amazon on your behalf. 
 
