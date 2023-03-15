@@ -1,10 +1,12 @@
 ---
-title: "Revoke Promotional Entitlements"
-slug: "revoke-promotional-entitlements"
-excerpt: "Revokes all promotional entitlements for a given entitlement identifier and app user ID."
+title: Revoke Promotional Entitlements
+slug: revoke-promotional-entitlements
+excerpt: Revokes all promotional entitlements for a given entitlement identifier and
+  app user ID.
 hidden: false
-createdAt: "2019-08-09T05:51:54.980Z"
-updatedAt: "2021-11-24T03:11:55.453Z"
+createdAt: '2019-08-09T05:51:54.980Z'
+updatedAt: '2021-11-24T03:11:55.453Z'
+category: 640a7bf59a17e2000b581d4f
 ---
 [block:callout]
 {

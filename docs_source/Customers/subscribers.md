@@ -1,10 +1,11 @@
 ---
-title: "Get or Create Subscriber"
-slug: "subscribers"
-excerpt: "Gets the latest subscriber info or creates one if it doesn't exist."
+title: Get or Create Subscriber
+slug: subscribers
+excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: false
-createdAt: "2018-05-08T17:13:32.048Z"
-updatedAt: "2022-11-15T19:57:24.648Z"
+createdAt: '2018-05-08T17:13:32.048Z'
+updatedAt: '2022-11-15T19:57:24.648Z'
+category: 640a7bf411fadc001f4b8b09
 ---
 [block:callout]
 {

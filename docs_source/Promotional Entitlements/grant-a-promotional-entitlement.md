@@ -1,10 +1,12 @@
 ---
-title: "Grant a Promotional Entitlement"
-slug: "grant-a-promotional-entitlement"
-excerpt: "Grants a user a promotional entitlement. Does not override or defer a store transaction, applied simultaneously."
+title: Grant a Promotional Entitlement
+slug: grant-a-promotional-entitlement
+excerpt: Grants a user a promotional entitlement. Does not override or defer a store
+  transaction, applied simultaneously.
 hidden: false
-createdAt: "2019-08-09T05:30:42.631Z"
-updatedAt: "2022-07-21T14:54:10.803Z"
+createdAt: '2019-08-09T05:30:42.631Z'
+updatedAt: '2022-07-21T14:54:10.803Z'
+category: 640a7bf59a17e2000b581d4f
 ---
 [block:callout]
 {

@@ -1,9 +1,10 @@
 ---
-title: "RevenueCat REST API"
-slug: "basic"
+title: RevenueCat REST API
+slug: basic
 hidden: false
-createdAt: "2018-10-01T11:03:55.483Z"
-updatedAt: "2021-11-18T04:25:55.235Z"
+createdAt: '2018-10-01T11:03:55.483Z'
+updatedAt: '2021-11-18T04:25:55.235Z'
+category: 640a7bf3b3df0b003dc5ec62
 ---
 [block:api-header]
 {

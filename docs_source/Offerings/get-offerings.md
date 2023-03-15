@@ -1,10 +1,11 @@
 ---
-title: "Get Offerings"
-slug: "get-offerings"
-excerpt: "Gets the offerings for your app."
+title: Get Offerings
+slug: get-offerings
+excerpt: Gets the offerings for your app.
 hidden: false
-createdAt: "2020-12-30T01:38:59.895Z"
-updatedAt: "2021-12-07T15:11:57.491Z"
+createdAt: '2020-12-30T01:38:59.895Z'
+updatedAt: '2021-12-07T15:11:57.491Z'
+category: 640a7bf4b817af006602af82
 ---
 [block:callout]
 {
