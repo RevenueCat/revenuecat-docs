@@ -11,9 +11,19 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
 require 'json'
 require 'fileutils'
+require 'uri'
+require 'net/http'
+require 'pathname'
+require 'yaml'
+
+CATEGORIES_FILE = "docs_source/categories.json"
+CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
+CATEGORIES_MAP_FILE = "docs_source/categories_map.json"
+VERSION_FILE = "docs_source/.version"
+
+update_fastlane
 
 default_platform(:ios)
 
@@ -35,14 +45,12 @@ lane :render_docs do |options|
 end
 
 def files_to_render
-    root_dir = File.dirname(Dir.pwd)
     Dir.chdir(root_dir) do
         Dir.glob("docs_source/*.md")
     end
 end
 
 lane :ios_tests do
-    root_dir = File.dirname(Dir.pwd)
     Dir.chdir(File.join(root_dir, "projects", "iOS")) do
         sh "xcodebuild -scheme ApplePlatforms-Package -destination 'generic/platform=iOS'"
     end
@@ -51,7 +59,6 @@ end
 lane :copy_docs_source_to_render_folder do
     source_folder = "docs_source"
     render_folder = "rendered_docs"
-    root_dir = File.dirname(Dir.pwd)
     Dir.chdir(root_dir) do
         FileUtils.copy_entry source_folder, render_folder
     end
@@ -70,8 +77,6 @@ DESC
 lane :extract_code_blocks do |options|
     folder_to_process = options[:folder]
     UI.user_error!("Missing folder option") unless folder_to_process
-
-    root_dir = File.dirname(Dir.pwd)
 
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
@@ -108,8 +113,6 @@ DESC
 lane :embed_code_blocks do |options|
     folder_to_process = options[:folder]
 
-    root_dir = File.dirname(Dir.pwd)
-
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
             file_contents = File.read(file_name)
@@ -121,6 +124,178 @@ lane :embed_code_blocks do |options|
             end
 
             File.write(file_name, file_contents)
+        end
+    end
+end
+
+# This is destructive and will delete all categories in the project
+# So in order to prevent misusage, it is commented out for now, just in case we need to clear the test
+# project. Will be removed when we are sure we don't need it anymore (when we switch to production)
+# lane :delete_test_categories do |options|
+#     readme_api_key_test = options[:readme_api_key_test]
+#     UI.user_error!("Missing README API key for test project") unless readme_api_key_test
+#
+#     get_json_from_file(CATEGORIES_TEST_FILE).each do |category|
+#         sleep(1)
+#         UI.message("Deleting category #{category['title']}")
+#         uri = URI("https://dash.readme.com/api/v1/categories/#{category['slug']}")
+#         request = Net::HTTP::Delete.new(uri)
+#         request.content_type = 'application/json'
+#         request.basic_auth(readme_api_key_test, '')
+#
+#         request['accept'] = 'application/json'
+#         request['x-readme-version'] = get_current_version
+#
+#         res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+#             http.request(request)
+#         end
+#         p res.code
+#     end
+#     update_categories_file(CATEGORIES_TEST_FILE, readme_api_key_test)
+# end
+
+desc <<-DESC
+Updates the JSON files containing the categories for a Readme.com project.
+readme_api_key, STRING Readme API key for the project
+readme_api_key_test STRING Readme API key for the test project
+DESC
+lane :update_categories_file do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
+    readme_api_key_test = options[:readme_api_key_test]
+    UI.user_error!("Missing README API key for test project") unless readme_api_key_test
+
+    update_categories_file(CATEGORIES_FILE, readme_api_key)
+    update_categories_file(CATEGORIES_TEST_FILE, readme_api_key_test)
+end
+
+desc <<-DESC
+Updates the JSON files containing the categories for a Readme.com project, including categories.json,
+categories_test_project.json and categories_map.json and creates matching categories in the readme test project.
+readme_api_key, STRING Readme API key for the project
+readme_api_key_test STRING Readme API key for the test project
+DESC
+lane :sync_categories_between_projects do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
+    readme_api_key_test = options[:readme_api_key_test]
+    UI.user_error!("Missing README API key for test project") unless readme_api_key_test
+
+    production_to_test_category_ids = {}
+    categories_from_production = update_categories_file(CATEGORIES_FILE, readme_api_key)
+    categories_from_production = categories_from_production.sort_by { |category| category['order'] }
+    categories_from_production.each do |category|
+        response = post_category(category['type'], category['title'], readme_api_key_test)
+
+        production_to_test_category_ids[category['id']] = JSON.parse(response.body)['id']
+    end
+
+    Dir.chdir(root_dir) do
+        File.open(CATEGORIES_MAP_FILE, 'w+') do |file|
+            file.write(JSON.pretty_generate(production_to_test_category_ids))
+        end
+    end
+    update_categories_file(CATEGORIES_TEST_FILE, readme_api_key_test)
+end
+
+desc <<-DESC
+Updates categories for all the docs in a folder. It tries to guess the category using the folder that contains the
+document and uses Readme's API as a backup
+readme_api_key, STRING Readme API key for the project
+force_update_categories BOOLEAN True will force the categories.json to be updated, false will use the existing categories.json
+DESC
+lane :update_docs_categories do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
+    force_update_categories = options[:force_update_categories]
+    if force_update_categories
+        update_categories_file(CATEGORIES_FILE, readme_api_key)
+    end
+
+    categories = get_json_from_file(CATEGORIES_TEST_FILE)
+
+    folder_path = 'docs_source'
+
+    markdown_files = []
+    Dir.chdir(root_dir) do
+        markdown_files = Dir.glob("#{folder_path}/**/*.md")
+    end
+
+    markdown_files.each do |file|
+        next if file == '.' || file == '..'
+        file_without_folder_path = file.gsub("#{folder_path}/", "")
+        category_name = file_without_folder_path.split("/")[0]
+        UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
+        category = categories.find { |category|
+            category['title'] == category_name
+        }
+        if category != nil
+            p "Category #{category_name} found for file #{file}"
+            category_for_doc = category['id']
+        else
+            p "Category #{category_name} not found for file #{file}"
+            slug = File.basename(file, ".md")
+            category_for_doc_prod = get_category_id_for_doc(slug, readme_api_key)
+            p "Category retrieved from server: #{category_for_doc_prod}"
+            categories_map_from_file = get_json_from_file(CATEGORIES_MAP_FILE)
+            category_for_doc = categories_map_from_file[category_for_doc_prod]
+        end
+
+        update_category(file, category_for_doc)
+    end
+end
+
+desc <<-DESC
+Updates categories for all the docs in a folder. It tries to guess the category using the folder that contains the
+document and uses Readme's API as a backup
+readme_api_key, STRING Readme API key for the project
+force_update_categories BOOLEAN True will force the categories.json to be updated, false will use the existing categories.json
+DESC
+lane :sync_order_with_test_project do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
+    readme_api_key_test = options[:readme_api_key_test]
+    UI.user_error!("Missing README API key for test project") unless readme_api_key_test
+
+    categories_prod = get_json_from_file(CATEGORIES_FILE)
+    categories_prod.each do |category|
+        category_id_test = get_json_from_file(CATEGORIES_MAP_FILE)[category['id']]
+        category_test = get_json_from_file(CATEGORIES_TEST_FILE).find { |category|
+            category['id'] == category_id_test
+        }
+
+        docs_for_category = get_docs_for_category(category['slug'], readme_api_key)
+        docs_for_category_test = get_docs_for_category(category_test['slug'], readme_api_key_test)
+
+        docs_for_category.each do |doc_prod|
+            doc_prod_title = doc_prod['title']
+            doc_test = docs_for_category_test.find { |doc_test| doc_test['title'] == doc_prod_title }
+            doc_order = doc_prod['order']
+            doc_children = doc_prod['children']
+
+            doc_slug_prod = doc_prod['slug']
+            doc_slug_test = doc_test['slug']
+
+            UI.message("Updating #{doc_prod_title}; prod_slug #{doc_slug_prod}; test_slug #{doc_slug_test}; order #{doc_order}")
+
+            update = update_doc(doc_slug_test, doc_order, nil, readme_api_key_test)
+            UI.message("Doc order updated to #{update['order']}")
+
+            if doc_children
+                doc_children.each do |child_doc|
+                    child_doc_title = child_doc['title']
+                    child_doc_order = child_doc['order']
+                    child_doc_slug = child_doc['slug']
+
+                    UI.message("Updating child doc #{child_doc_title}; #{child_doc_slug}; order #{child_doc_order}")
+                    update = update_doc(child_doc_slug, child_doc_order, doc_slug_test, readme_api_key_test)
+                    UI.message("Doc order updated to #{update['order']} and parentDoc to #{update['parentDoc']}")
+                end
+            end
         end
     end
 end
@@ -250,4 +425,177 @@ end
 # @return [String] the language
 def determine_language(extension)
     LANGUAGE_EXTENSIONS.key(extension) || extension
+end
+
+# Updates the order and parentDocSlug for a given doc.
+#
+# @param [String] doc_slug The slug of the doc to update
+# @param [String] doc_order The order of the doc
+# @param [String] parent_doc The parent doc's slug
+# @param [String] readme_api_key The ReadMe API key
+def update_doc(doc_slug, doc_order, parent_doc, readme_api_key)
+    url = URI("https://dash.readme.com/api/v1/docs/#{doc_slug}")
+    request = Net::HTTP::Put.new(url)
+    request.content_type = "application/json"
+    request.basic_auth(readme_api_key, '')
+    request["x-readme-version"] = get_current_version
+    request.body = JSON.dump({
+                                 "order" => doc_order,
+                                 "parentDocSlug" => parent_doc
+                             })
+
+    response = Net::HTTP.start(url.hostname, url.port, use_ssl: url.scheme == "https") do |http|
+        http.request(request)
+    end
+
+    JSON.parse(response.read_body)
+end
+
+# Retrieve all the docs for a given category using the ReadMe API.
+#
+# @param [String] category_slug Slug of the category for which to retrieve the docs.
+# @param [String] readme_api_key API key for the ReadMe account that has access to the categories.
+#
+# @return [JSON] Docs for the given category.
+def get_docs_for_category(category_slug, readme_api_key)
+    url = URI(URI::Parser.new.escape(("https://dash.readme.com/api/v1/categories/#{category_slug}/docs")))
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    request.basic_auth(readme_api_key, '')
+
+    request["x-readme-version"] = get_current_version
+
+    response = https.request(request)
+    JSON.parse(response.read_body)
+end
+
+# Updates the category for a given document.
+# It will also update the createdAt field if it's empty.
+# This is needed because the createdAt field is sometimes not exported from ReadMe.
+#
+# @param [String] filename Name of the file to update
+# @param [String] category_id ID of the category to update the document with
+def update_category(filename, category_id)
+    Dir.chdir(root_dir) do
+        file = File.read(filename)
+        yaml_header, content = file.split('---', 3)[1..-1]
+        yaml_data = YAML.load(yaml_header)
+
+        yaml_data['category'] = category_id
+
+        created_at = yaml_data['createdAt']
+        updated_at = yaml_data['updatedAt']
+        if created_at == {}
+            UI.message("Updating createdAt for #{filename} to #{updated_at}")
+            yaml_data['createdAt'] = updated_at
+        end
+
+        File.write(filename, "#{yaml_data.to_yaml}---#{content}")
+    end
+end
+
+# Replace emoji with -- to match how folders are exported from readme.
+# Also replaces & with - to match how folders are exported from readme.
+# This is needed because the folder names have emojis or & in their titles and Readme
+# doesn't add the emojis to the folder name.
+#
+# @param [String] text Text to clean
+def clean_category_title(text)
+    text.gsub(/\p{Emoji}/, "--").gsub(/&/, "-")
+end
+
+# Get the JSON from a file.
+#
+# @param [String] file Path to the file to read.
+def get_json_from_file(file)
+    Dir.chdir(root_dir) do
+        file = File.read(file)
+        JSON.parse(file)
+    end
+end
+
+def get_current_version
+    Dir.chdir(root_dir) do
+        File.read(VERSION_FILE)
+    end
+end
+
+# Retrieve a list of categories from the ReadMe API and save it to a file.
+#
+# @param [String] categories_file Path to the file where the categories will be saved.
+# @param [String] readme_api_key API key for the ReadMe account that has access to the categories.
+#
+# @return [JSON] Categories retrieved from the ReadMe API.
+def update_categories_file(categories_file, readme_api_key)
+    url = URI("https://dash.readme.com/api/v1/categories?perPage=100&page=1")
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    request.basic_auth(readme_api_key, '')
+
+    request["x-readme-version"] = get_current_version
+
+    response = https.request(request)
+    json_data = JSON.parse(response.read_body).sort_by { |category| category['order'] }
+    Dir.chdir(root_dir) do
+        File.open(categories_file, 'w+') do |file|
+            file.write(JSON.pretty_generate(json_data))
+        end
+    end
+    json_data
+end
+
+# Retrieve the category ID for a given document slug from the ReadMe API.
+#
+# @param [String] slug The slug of the document to retrieve the category ID for.
+# @param [String] readme_api_key API key for the ReadMe account that has access to the document.
+#
+# @return [String] ID of the category the document belongs to.
+def get_category_id_for_doc(slug, readme_api_key)
+    url = URI("https://dash.readme.com/api/v1/docs/#{slug}")
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    request.basic_auth(readme_api_key, '')
+
+    request["x-readme-version"] = get_current_version
+
+    response = https.request(request)
+    json_parse = JSON.parse(response.read_body)
+    json_parse["category"]
+end
+
+# Create a new category in the ReadMe API.
+#
+# @param [String] type The type of category to create
+# @param [String] title title of the new category
+# @param [String] readme_api_key API key for the ReadMe account that has access to create the category
+#
+# @return [Net::HTTP] Response from the ReadMe API
+def post_category(type, title, readme_api_key)
+    uri = URI('https://dash.readme.com/api/v1/categories')
+    request = Net::HTTP::Post.new(uri)
+    request.content_type = 'application/json'
+    request.basic_auth(readme_api_key, '')
+
+    request['accept'] = 'application/json'
+    request['x-readme-version'] = get_current_version
+    request.body = JSON.dump({
+                                 "type" => type,
+                                 "title" => title,
+                             })
+
+    Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+    end
+end
+
+def root_dir
+    File.dirname(Dir.pwd)
 end
