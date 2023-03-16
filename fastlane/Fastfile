@@ -107,8 +107,6 @@ end
 
 desc <<-DESC
 Embeds code blocks from all files within the [block:file] and [/block] tags
-folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
-output_folder, STRING Folder to save the files with the embedded code blocks. Path is relative to the root of the project.
 DESC
 lane :embed_code_blocks do |options|
     copy_docs_source_to_render_folder
