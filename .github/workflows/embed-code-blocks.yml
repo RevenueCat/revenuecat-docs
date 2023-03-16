@@ -23,5 +23,5 @@ jobs:
           git config --global user.name "RCGitBot"
           git config --global user.email "dev+RCGitBot@revenuecat.com"
           git add rendered_docs
-          git commit -m "Added rendered docs"
+          git diff-index --quiet --cached HEAD || git commit -m "Added rendered docs"
           git push
