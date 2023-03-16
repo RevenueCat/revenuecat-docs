@@ -45,14 +45,12 @@ lane :render_docs do |options|
 end
 
 def files_to_render
-    root_dir = File.dirname(Dir.pwd)
     Dir.chdir(root_dir) do
         Dir.glob("docs_source/*.md")
     end
 end
 
 lane :ios_tests do
-    root_dir = File.dirname(Dir.pwd)
     Dir.chdir(File.join(root_dir, "projects", "iOS")) do
         sh "xcodebuild -scheme ApplePlatforms-Package -destination 'generic/platform=iOS'"
     end
@@ -61,7 +59,6 @@ end
 lane :copy_docs_source_to_render_folder do
     source_folder = "docs_source"
     render_folder = "rendered_docs"
-    root_dir = File.dirname(Dir.pwd)
     Dir.chdir(root_dir) do
         FileUtils.copy_entry source_folder, render_folder
     end
@@ -80,8 +77,6 @@ DESC
 lane :extract_code_blocks do |options|
     folder_to_process = options[:folder]
     UI.user_error!("Missing folder option") unless folder_to_process
-
-    root_dir = File.dirname(Dir.pwd)
 
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
@@ -116,8 +111,6 @@ folder, STRING Folder to recurse through and embed code blocks from. Path is rel
 DESC
 lane :embed_code_blocks do |options|
     folder_to_process = options[:folder]
-
-    root_dir = File.dirname(Dir.pwd)
 
     Dir.chdir(root_dir) do
         Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
@@ -198,8 +191,7 @@ lane :sync_categories_between_projects do |options|
         production_to_test_category_ids[category['id']] = JSON.parse(response.body)['id']
     end
 
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         File.open(CATEGORIES_MAP_FILE, 'w+') do |file|
             file.write(JSON.pretty_generate(production_to_test_category_ids))
         end
@@ -224,11 +216,10 @@ lane :update_docs_categories do |options|
 
     categories = get_json_from_file(CATEGORIES_TEST_FILE)
 
-    parent_dir = File.dirname(Dir.pwd)
     folder_path = 'docs_source'
 
     markdown_files = []
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         markdown_files = Dir.glob("#{folder_path}/**/*.md")
     end
 
@@ -486,8 +477,7 @@ end
 # @param [String] filename Name of the file to update
 # @param [String] category_id ID of the category to update the document with
 def update_category(filename, category_id)
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         file = File.read(filename)
         yaml_header, content = file.split('---', 3)[1..-1]
         yaml_data = YAML.load(yaml_header)
@@ -519,16 +509,14 @@ end
 #
 # @param [String] file Path to the file to read.
 def get_json_from_file(file)
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         file = File.read(file)
         JSON.parse(file)
     end
 end
 
 def get_current_version
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         File.read(VERSION_FILE)
     end
 end
@@ -552,8 +540,7 @@ def update_categories_file(categories_file, readme_api_key)
 
     response = https.request(request)
     json_data = JSON.parse(response.read_body).sort_by { |category| category['order'] }
-    parent_dir = File.dirname(Dir.pwd)
-    Dir.chdir(parent_dir) do
+    Dir.chdir(root_dir) do
         File.open(categories_file, 'w+') do |file|
             file.write(JSON.pretty_generate(json_data))
         end
@@ -606,4 +593,8 @@ def post_category(type, title, readme_api_key)
     Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
     end
+end
+
+def root_dir
+    File.dirname(Dir.pwd)
 end
