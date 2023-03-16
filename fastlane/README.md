@@ -62,8 +62,6 @@ folder, STRING Folder to recurse through and extract code blocks from all markdo
 ```
 
 Embeds code blocks from all files within the [block:file] and [/block] tags
-folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
-output_folder, STRING Folder to save the files with the embedded code blocks. Path is relative to the root of the project.
 
 
 ### update_categories_file

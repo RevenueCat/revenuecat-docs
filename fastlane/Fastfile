@@ -35,24 +35,6 @@ lane :bootstrap do
     sh "npm", "install", "-g", "rdme"
 end
 
-desc "Description of what the lane does"
-lane :render_docs do |options|
-    readme_api_key = options[:readme_api_key]
-    UI.user_error!("Missing README API key") unless readme_api_key
-
-    copy_docs_source_to_render_folder
-    files_to_render.each do |file|
-        render_markdown_file(file)
-    end
-    sync_files_to_readme readme_api_key: readme_api_key
-end
-
-def files_to_render
-    Dir.chdir(root_dir) do
-        Dir.glob("docs_source/*.md")
-    end
-end
-
 lane :ios_tests do
     Dir.chdir(File.join(root_dir, "projects", "iOS")) do
         sh "xcodebuild -scheme ApplePlatforms-Package -destination 'generic/platform=iOS'"
@@ -62,7 +44,15 @@ end
 lane :copy_docs_source_to_render_folder do
     Dir.chdir(root_dir) do
         FileUtils.rm_rf(RENDERED_DOCS_FOLDER)
-        FileUtils.copy_entry SOURCE_DOCS_FOLDER, RENDERED_DOCS_FOLDER
+    end
+    markdown_source_files.each do |file|
+        file_without_folder_path = file.gsub("#{SOURCE_DOCS_FOLDER}/", "")
+        destination = File.join(RENDERED_DOCS_FOLDER, file_without_folder_path)
+        UI.message("🔨 Copying #{file} to #{destination}...")
+        Dir.chdir(root_dir) do
+            FileUtils.mkdir_p(File.dirname(destination))
+            FileUtils.copy_file(file, destination)
+        end
     end
 end
 
@@ -215,16 +205,9 @@ lane :update_docs_categories do |options|
 
     categories = get_json_from_file(CATEGORIES_TEST_FILE)
 
-    folder_path = 'docs_source'
-
-    markdown_files = []
-    Dir.chdir(root_dir) do
-        markdown_files = Dir.glob("#{folder_path}/**/*.md")
-    end
-
-    markdown_files.each do |file|
+    markdown_source_files.each do |file|
         next if file == '.' || file == '..'
-        file_without_folder_path = file.gsub("#{folder_path}/", "")
+        file_without_folder_path = file.gsub("#{SOURCE_DOCS_FOLDER}/", "")
         category_name = file_without_folder_path.split("/")[0]
         UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
         category = categories.find { |category|
@@ -596,4 +579,10 @@ end
 
 def root_dir
     File.dirname(Dir.pwd)
+end
+
+def markdown_source_files
+    Dir.chdir(root_dir) do
+        Dir.glob("#{SOURCE_DOCS_FOLDER}/**/*.md")
+    end
 end
