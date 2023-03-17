@@ -121,11 +121,12 @@ end
 
 def create_or_switch_to_branch(branch_name)
     local_branches = Actions.sh('git', 'branch', '--list', branch_name)
-    unless local_branches.empty?
+    if local_branches.empty?
+        sh("git checkout -b '#{branch_name}'")
+    else
         UI.message("Branch '#{branch_name}' already exists in local repository.")
-        Actions.sh("git checkout '#{branch_name}'")
+        sh("git checkout '#{branch_name}'")
     end
-    Actions.sh("git checkout -b '#{branch_name}'")
 end
 
 # Replace with fastlane plugin's
