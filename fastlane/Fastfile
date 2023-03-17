@@ -102,12 +102,17 @@ lane :open_syncing_pr do |options|
 
     create_or_switch_to_branch("sync/#{get_current_version}")
     embed_code_blocks
-    if is_git_repo_dirty
+    if git_repo_dirty?
         commit_changes_and_push_current_branch("Rendered docs for commit #{latest_commit_sha}")
         # create_pr_to_main(pr_title, body, repo_name, new_branch_name, github_pr_token, [label])
     else
         UI.message("Repository is clean. Nothing to commit.")
     end
+end
+
+def git_repo_dirty?
+    status = sh("git status --porcelain")
+    !status.empty?
 end
 
 def get_latest_commit_sha
