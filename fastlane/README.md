@@ -55,6 +55,15 @@ Extracts code blocks from within the [block:code] and [/block] tags and saves ea
 folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
 
 
+### open_syncing_pr
+
+```sh
+[bundle exec] fastlane open_syncing_pr
+```
+
+Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
+
+
 ### embed_code_blocks
 
 ```sh
@@ -62,7 +71,6 @@ folder, STRING Folder to recurse through and extract code blocks from all markdo
 ```
 
 Embeds code blocks from all files within the [block:file] and [/block] tags
-
 
 ### update_categories_file
 

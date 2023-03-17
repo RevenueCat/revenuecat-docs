@@ -94,10 +94,54 @@ lane :extract_code_blocks do |options|
     end
 end
 
-
 desc <<-DESC
-Embeds code blocks from all files within the [block:file] and [/block] tags
+Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
 DESC
+lane :open_syncing_pr do |options|
+    latest_commit_sha = get_latest_commit_sha
+    create_new_branch_and_checkout("sync/#{get_current_version}_#{latest_commit_sha}")
+    embed_code_blocks
+    commit_changes_and_push_current_branch("Rendered docs for #{latest_commit_sha}")
+    # create_pr_to_main(pr_title, body, repo_name, new_branch_name, github_pr_token, [label])
+end
+
+def get_latest_commit_sha
+    Actions.sh("git rev-parse --short HEAD").strip
+end
+
+# Replace with fastlane plugin's
+def create_new_branch_and_checkout(branch_name)
+    Actions.sh("git checkout -b '#{branch_name}'")
+end
+
+# Replace with fastlane plugin's
+def commit_changes_and_push_current_branch(commit_message)
+    commit_current_changes(commit_message)
+    Actions::PushToGitRemoteAction.run(remote: 'origin')
+end
+
+# Replace with fastlane plugin's
+def commit_current_changes(commit_message)
+    Actions.sh('git add -u')
+    Actions.sh("git commit -m '#{commit_message}'")
+end
+
+def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labels = [])
+    Actions::CreatePullRequestAction.run(
+        api_token: github_pr_token,
+        title: title,
+        base: 'main',
+        body: body,
+        repo: "RevenueCat/#{repo_name}",
+        head: head_branch,
+        api_url: 'https://api.github.com',
+        labels: labels,
+        # TODO: Add team reviewers
+        team_reviewers: ['']
+    )
+end
+
+desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
 lane :embed_code_blocks do |options|
     copy_docs_source_to_render_folder
 
