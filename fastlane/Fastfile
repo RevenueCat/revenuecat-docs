@@ -99,18 +99,27 @@ Embeds code blocks from all files and opens a pull request preparing the docs fo
 DESC
 lane :open_syncing_pr do |options|
     latest_commit_sha = get_latest_commit_sha
-    create_new_branch_and_checkout("sync/#{get_current_version}_#{latest_commit_sha}")
+
+    create_or_switch_to_branch("sync/#{get_current_version}")
     embed_code_blocks
-    commit_changes_and_push_current_branch("Rendered docs for #{latest_commit_sha}")
-    # create_pr_to_main(pr_title, body, repo_name, new_branch_name, github_pr_token, [label])
+    if is_git_repo_dirty
+        commit_changes_and_push_current_branch("Rendered docs for commit #{latest_commit_sha}")
+        # create_pr_to_main(pr_title, body, repo_name, new_branch_name, github_pr_token, [label])
+    else
+        UI.message("Repository is clean. Nothing to commit.")
+    end
 end
 
 def get_latest_commit_sha
     Actions.sh("git rev-parse --short HEAD").strip
 end
 
-# Replace with fastlane plugin's
-def create_new_branch_and_checkout(branch_name)
+def create_or_switch_to_branch(branch_name)
+    local_branches = Actions.sh('git', 'branch', '--list', new_branch)
+    unless local_branches.empty?
+        UI.message("Branch '#{new_branch}' already exists in local repository.")
+        Actions.sh("git checkout '#{branch_name}'")
+    end
     Actions.sh("git checkout -b '#{branch_name}'")
 end
 
@@ -120,10 +129,8 @@ def commit_changes_and_push_current_branch(commit_message)
     Actions::PushToGitRemoteAction.run(remote: 'origin')
 end
 
-# Replace with fastlane plugin's
 def commit_current_changes(commit_message)
-    Actions.sh('git add -u')
-    Actions.sh("git commit -m '#{commit_message}'")
+    Actions.sh("git commit -am '#{commit_message}'")
 end
 
 def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labels = [])
