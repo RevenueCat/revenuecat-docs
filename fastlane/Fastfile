@@ -115,9 +115,9 @@ def get_latest_commit_sha
 end
 
 def create_or_switch_to_branch(branch_name)
-    local_branches = Actions.sh('git', 'branch', '--list', new_branch)
+    local_branches = Actions.sh('git', 'branch', '--list', branch_name)
     unless local_branches.empty?
-        UI.message("Branch '#{new_branch}' already exists in local repository.")
+        UI.message("Branch '#{branch_name}' already exists in local repository.")
         Actions.sh("git checkout '#{branch_name}'")
     end
     Actions.sh("git checkout -b '#{branch_name}'")
