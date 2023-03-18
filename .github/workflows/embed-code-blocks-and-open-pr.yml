@@ -20,4 +20,4 @@ jobs:
       - run: bundle install
       - run: bundle exec fastlane bootstrap
       - run: |
-          bundle exec fastlane open_syncing_pr github_pr_token: ${{ secrets.PR_TOKEN }}
+          bundle exec fastlane open_syncing_pr github_pr_token: ${{ secrets.REPO_TOKEN }}
