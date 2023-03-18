@@ -57,9 +57,11 @@ lane :copy_docs_source_to_render_folder do
 end
 
 lane :sync_files_to_readme do |options|
-    Dir.chdir("../") do
-        sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
-    end
+    # Commented out for now
+    # Dir.chdir("../") do
+    #     sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
+    # end
+    UI.message("🔨 Syncing files to Readme...")
 end
 
 desc <<-DESC
