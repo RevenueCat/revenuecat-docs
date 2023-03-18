@@ -21,4 +21,7 @@ jobs:
       - run: bundle install
       - run: bundle exec fastlane bootstrap
       - run: |
+          git config --global user.name "RCGitBot"
+          git config --global user.email "dev+RCGitBot@revenuecat.com"
+      - run: |
           bundle exec fastlane open_syncing_pr github_pr_token:${{ secrets.PR_TOKEN }}
