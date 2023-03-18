@@ -1,1 +1,1 @@
-Authorization: Bearer YOUR_REVENUECAT_API_KEY
+Authorization: Bearer 
