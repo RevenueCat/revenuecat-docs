@@ -1,7 +1,9 @@
 name: Render Markdown 📝
 
 on:
-  push
+  push:
+    branches:
+      - embed-code-blocks
 
 jobs:
   embed_code:
