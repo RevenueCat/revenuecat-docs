@@ -7,6 +7,7 @@ jobs:
   embed_code:
     name: Open Syncing Pull Request
     runs-on: ubuntu-latest
+    environment: testing
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -18,4 +19,5 @@ jobs:
           bundler-cache: true
       - run: bundle install
       - run: bundle exec fastlane bootstrap
-      - run: bundle exec fastlane open_syncing_pr
+      - run: |
+          bundle exec fastlane open_syncing_pr github_pr_token: ${{ secrets.PR_TOKEN }}
