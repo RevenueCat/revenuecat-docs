@@ -16,7 +16,7 @@ Authentication for the RevenueCat REST API is achieved by setting the `Authoriza
 
 Certain endpoints require secret keys, which should be kept out of any publicly accessible areas such as GitHub, client-side code, and so forth. See our [Authentication guide](doc:authentication) for more information.
 ```text
-Authorization: Bearer YOUR_REVENUECAT_API_KEY
+Authorization: Bearer 
 ```
 
 [block:api-header]
