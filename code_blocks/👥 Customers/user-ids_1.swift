@@ -1,1 +1,1 @@
-Purchases.configure(withAPIKey: "my_api_key")
+Purchases.configure(withAPIKey: <my_api_key>)

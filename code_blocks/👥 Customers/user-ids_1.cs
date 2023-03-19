@@ -4,6 +4,6 @@
 // If you'd like to do it programmatically instead, 
 // make sure to check "Use runtime setup" in the Editor and then: 
 
-Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init("api_key");
+Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(<my_api_key>);
 Purchases.PurchasesConfiguration purchasesConfiguration = builder.Build();
 purchases.Configure(purchasesConfiguration);

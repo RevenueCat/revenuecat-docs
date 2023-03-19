@@ -1,1 +1,1 @@
-[RCPurchases configureWithAPIKey:@"my_api_key"];
+[RCPurchases configureWithAPIKey:@<my_api_key>];

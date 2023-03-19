@@ -1,1 +1,1 @@
-Purchases.configure(new PurchasesConfiguration.Builder(context, "api_key").build());
+Purchases.configure(new PurchasesConfiguration.Builder(context, <my_api_key>).build());

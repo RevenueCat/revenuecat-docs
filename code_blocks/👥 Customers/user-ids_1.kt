@@ -1,1 +1,1 @@
-Purchases.configure(PurchasesConfiguration.Builder(this, "api_key").build())
+Purchases.configure(PurchasesConfiguration.Builder(this, <my_api_key>).build())

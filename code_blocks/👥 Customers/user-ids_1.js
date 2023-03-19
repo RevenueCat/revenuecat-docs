@@ -1,1 +1,1 @@
-Purchases.setup("public_sdk_key");
+Purchases.setup(<my_api_key>);
