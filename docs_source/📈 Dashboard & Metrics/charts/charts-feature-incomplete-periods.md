@@ -3,16 +3,16 @@ title: 'Charts Feature: Incomplete Periods'
 slug: charts-feature-incomplete-periods
 hidden: false
 createdAt: '2022-12-23T06:33:08.471Z'
-updatedAt: '2023-01-03T20:33:35.134Z'
-category: 640a7bf126512c00308b2f8d
+updatedAt: '2023-02-03T14:28:50.679Z'
+category: 64515c3ca06fe500680740de
 ---
-## Summary
+# Summary
 Our Charts render incomplete periods distinctly to ensure that it's easy to quickly and accurately interpret your data. Incomplete periods are important to recognize because they represent cohorts that are not yet fully mature, and that therefore may behave differently when compared to complete periods.
 
-## What is an incomplete period?
+# What is an incomplete period?
 An incomplete period is one where its cohort has not yet fully matured. The definition of a "mature" cohort varies based on the chart, though.
 
-### Event date cohorting
+## Event date cohorting
 For example, Charts such as Active Subscriptions, MRR, and Revenue, where data is cohorted by event date, the incomplete period will always be the current one (today, this week, etc). This is especially important to recognize when measuring large periods, such as your Revenue by month, where the value halfway through the month may be quite different from what the previous complete data points would show.
 
 [block:image]
@@ -30,8 +30,8 @@ For example, Charts such as Active Subscriptions, MRR, and Revenue, where data i
   ]
 }
 [/block]
-### First seen date cohorting
-On the other hand, for Charts such as Realized LTV per Customer, which is cohorted by a customer's first seen date, the incomplete period is a function of the current date and the specified Customer Lifetime.
+## First seen date cohorting
+On the other hand, for Charts such as Realized LTV per Customer and Initial Conversion, which are cohorted by a customer's first seen date, the incomplete period is a function of the current date and the specified Customer Lifetime or Conversion Timeframe.
 [block:image]
 {
   "images": [
@@ -47,9 +47,12 @@ On the other hand, for Charts such as Realized LTV per Customer, which is cohort
   ]
 }
 [/block]
-In this case, to accurately compare current periods with previous ones, the periods must be given equivalent opportunity to mature. A specified Customer Lifetime of 30 days means that any revenue generated within the first 30 days of a customer's lifetime will be included in their Realized LTV, so a period is not complete until its cohort is at least 30 days old.
+### Customer Lifetime in Realized LTV Charts
+The Customer Lifetime selector limits the time that a cohort has to mature in order for its revenue to be include in lifetime value (LTV). This allows for accurate comparisons of realized LTV between periods, where each cohort has been given equal time to mature.
 
-Therefore, if you change the Customer Lifetime selection to be shorter or longer, the length of the periods which will be marked as incomplete will move in the same direction.
+A specified Customer Lifetime of 30 days means that any revenue generated within the first 30 complete days of a customer's lifetime will be included in their Realized LTV. Therefore, a period is not considered complete until its cohort is at least as old as the selected Customer Lifetime (in this case, 30 days).
+
+If you change the Customer Lifetime selection to be shorter or longer, the length of the periods which will be marked as incomplete will move in the same direction.
 [block:image]
 {
   "images": [
@@ -65,12 +68,16 @@ Therefore, if you change the Customer Lifetime selection to be shorter or longer
   ]
 }
 [/block]
+### Conversion Timeframe in Conversion Charts
+Similarly, the Conversion Timeframe selector limits the time that a cohort has to convert within in order to be counted in the measured conversion rate. This allows for accurate comparisons between periods, where each cohort has been given equal time to convert.
 
+A specified Conversion Timeframe of 7 days means that any conversions that occur within the first 7 complete days since the customer's first seen date will be included in the count of conversions and the conversion rate for that cohort. Therefore, that period will not be considered complete until its cohort is at least as old as the selected Conversion Timeframe (in this case, 7 days).
+
+If you change the Conversion Timeframe to be longer or shorter, the length of the periods which will be marked as incomplete will move in the same direction.
 [block:callout]
 {
   "type": "warning",
-  "title": "",
-  "body": "Conversion charts do not currently support visualizing incomplete periods, but will in the near future."
+  "body": "Conversion Timeframes are not yet available for the Trial Conversion chart, but will be soon."
 }
 [/block]
 ## How should I use incomplete periods?

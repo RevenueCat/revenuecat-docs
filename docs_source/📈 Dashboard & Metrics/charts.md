@@ -15,9 +15,9 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2022-10-19T20:51:43.737Z'
-updatedAt: '2022-10-19T20:51:43.737Z'
-category: 640a7bf126512c00308b2f8d
+createdAt: '2023-03-27T21:48:14.553Z'
+updatedAt: '2023-03-27T21:48:14.553Z'
+category: 64515c3ca06fe500680740de
 ---
 [block:callout]
 {
@@ -115,6 +115,104 @@ Segments allow you to break down the chart totals into underlying data segments.
   "body": "Filters and segments do not apply to the 'New Customers' number. It is possible for customers to jump between web, iOS, and Android devices, so these filters only apply to transactions, which always happen through a particular Store."
 }
 [/block]
+# Conversion Charts
+
+## Cohorting
+To ensure our conversion rate charts provide an accurate measurement of the conversion "funnel" that an individual customer experiences, they are cohorted by the earliest date that a customer:
+
+1. Was "first seen" (first opened your app), or
+2. Made their first purchase (for purchases made outside of your app, like promoted purchases in the App Store)
+
+**Example**: If a customer first opened your app on April 15th, 2022, but didn't make a purchase until May 21st, 2022, they would be included in the April 15th cohort.
+[block:callout]
+{
+  "type": "info",
+  "body": "Measuring conversion rates through a cohort of customers *from* a given period, as opposed to a count of events *within* a given period, is critical for accurate performance comparison."
+}
+[/block]
+## Understanding conversion rates
+We offer three conversion rate charts to measure different aspects of your conversion funnel:
+
+1. Initial Conversion: The proportion of new customers from a given period who subscribe to or purchase any product, including free trials.
+2. Conversion to Paying: The proportion of new customers from a given period who subscribe to or purchase any paid product.
+3. Trial Conversion: The proportion of new customers from a given period starting free trials, through their conversion into paying subscriptions.
+
+It's important to understand the relationships between these three charts, since depending on the nature of your product offerings, you may use these charts for different purposes.
+
+**If all of your products offer a free trial, then Initial Conversion = Trial Start Rate.**
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/1386416-image-20230224-130028.png",
+        "image-20230224-130028.png",
+        2008,
+        1286,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+**If all of your products begin with a paid subscription, then Initial Conversion = Conversion to Paying, and Trial Conversion is not applicable to your business.**
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/611728c-image-20230224-155039.png",
+        "image-20230224-155039.png",
+        1926,
+        1232,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+**If your products contain a mix of subscriptions with and without trials, then these charts will measure distinct conversion rates. Initial Conversion will equal ([Trial Starts] + [Paying Customers]) / [New Customers], while Conversion to Paying will equal ([Trial Conversions] + [Paying Customers]) / [New Customers].**
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/179324e-image-20230224-155057.png",
+        "image-20230224-155057.png",
+        1926,
+        1232,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
+## Conversion Timeframes
+
+On our Initial Conversion and Conversion to Paying charts we offer a "Conversion Timeframe" selector that lets you choose how long to give each cohort to convert within to be included in the chart.
+
+Since these charts are cohorted by a customer's first seen date, earlier cohorts have had more opportunity to convert, which is one reason why the most recent periods in your chart might have lower reported conversion rates.
+
+By setting a Conversion Timeframe of 7 days, for example, you ensure that even periods which are much older than 7 days only include conversions that occurred within 7 complete days of customer's first seen date in the chart. If you compare that to a recent cohort that's also had 7 complete days to convert, that you're seeing an accurate comparison of performance within that defined time period.
+
+Here's a specific example using a 7 day Conversion Timeframe:
+* A cohort that is 14 days old would only include conversions that occurred within the first 7 complete days, but none that occurred after
+* A cohort that is 10 days old would include all conversions that occurred within the first 7 complete days, but none that occurred after, allowing for accurate comparison with the older cohort even though that cohort has had more opportunities to convert -- that additional time is excluded from this view.
+* While a cohort that is 5 days old would include all conversions that occurred thus far, since all have occurred within the first 7 complete days, and it would additionally be marked as incomplete, since that cohort still has remaining time before it reaches full maturity.
+
+[block:callout]
+{
+  "type": "info",
+  "body": "Select the \"Unbounded\" conversion timeframe to see all the conversions for a given cohort, regardless of when they occurred."
+}
+[/block]
+Additionally, cohorts that have not yet had the time fully mature (as defined by the Conversion Timeframe selected) will be marked as incomplete periods and styled accordingly. This ensures that you can interpret their performance accurately against other periods. Learn more about incomplete periods [here](doc:charts-feature-incomplete-periods).
+[block:callout]
+{
+  "type": "warning",
+  "body": "Conversion Timeframes are not yet supported on the Trial Conversion chart, but will be coming soon."
+}
+[/block]
 # Exporting Data
 
 The underlying chart data can be exported in .csv format by clicking the *Export CSV* button.
@@ -123,11 +221,11 @@ The underlying chart data can be exported in .csv format by clicking the *Export
   "images": [
     {
       "image": [
-        "https://files.readme.io/1cdf29d-Screenshot_at_Sep_10_12-47-41.png",
-        "Screenshot at Sep 10 12-47-41.png",
-        1238,
-        134,
-        "#fcfcfc"
+        "https://files.readme.io/90cf474-demo.revenuecat.com_.png",
+        "demo.revenuecat.com_.png",
+        921,
+        143,
+        "#000000"
       ]
     }
   ]
@@ -141,11 +239,11 @@ Your most frequently used chart configurations can be saved by clicking on the *
   "images": [
     {
       "image": [
-        "https://files.readme.io/cf66c88-f598340-Screen_Shot_2022-04-29_at_11.24.05_AM.png",
-        "f598340-Screen_Shot_2022-04-29_at_11.24.05_AM.png",
-        1408,
-        627,
-        "#f1f2fc"
+        "https://files.readme.io/bbfca79-Screenshot_2023-03-27_at_2.35.10_PM.png",
+        "Screenshot 2023-03-27 at 2.35.10 PM.png",
+        965,
+        648,
+        "#000000"
       ]
     }
   ]
@@ -159,11 +257,11 @@ Give it a name and select *Save*, your chart will be saved on the left-hand side
   "images": [
     {
       "image": [
-        "https://files.readme.io/93ad014-3fa504c-Screen_Shot_2022-04-29_at_11.24.20_AM.png",
-        "3fa504c-Screen_Shot_2022-04-29_at_11.24.20_AM.png",
-        618,
-        357,
-        "#f0f0f1"
+        "https://files.readme.io/e1ba744-Screenshot_2023-03-27_at_2.36.33_PM.png",
+        "Screenshot 2023-03-27 at 2.36.33 PM.png",
+        617,
+        331,
+        "#000000"
       ]
     }
   ]
@@ -175,11 +273,11 @@ Give it a name and select *Save*, your chart will be saved on the left-hand side
   "images": [
     {
       "image": [
-        "https://files.readme.io/58997e5-a1e12fd-Screen_Shot_2022-04-29_at_11.22.54_AM.png",
-        "a1e12fd-Screen_Shot_2022-04-29_at_11.22.54_AM.png",
-        464,
-        350,
-        "#f7f7f7"
+        "https://files.readme.io/878cc0f-demo.revenuecat.com__1.png",
+        "demo.revenuecat.com_ (1).png",
+        302,
+        315,
+        "#000000"
       ]
     }
   ]
@@ -193,11 +291,11 @@ Choose the the date range for the x-axis of the charts.
   "images": [
     {
       "image": [
-        "https://files.readme.io/bc3a956-Screen_Shot_2021-09-10_at_12.48.20_PM.png",
-        "Screen Shot 2021-09-10 at 12.48.20 PM.png",
-        335,
-        418,
-        "#fafafb"
+        "https://files.readme.io/60cba96-Screenshot_2023-03-27_at_2.44.10_PM.png",
+        "Screenshot 2023-03-27 at 2.44.10 PM.png",
+        187,
+        433,
+        "#000000"
       ]
     }
   ]
@@ -210,11 +308,11 @@ Choose the time scale for the x-axis of the charts. Use a *day* timescale to see
   "images": [
     {
       "image": [
-        "https://files.readme.io/6858457-Screen_Shot_2021-09-10_at_12.48.56_PM.png",
-        "Screen Shot 2021-09-10 at 12.48.56 PM.png",
-        378,
-        249,
-        "#f8f8f9"
+        "https://files.readme.io/15462d2-Screenshot_2023-03-27_at_2.46.13_PM.png",
+        "Screenshot 2023-03-27 at 2.46.13 PM.png",
+        180,
+        175,
+        "#000000"
       ]
     }
   ]
@@ -224,24 +322,6 @@ Choose the time scale for the x-axis of the charts. Use a *day* timescale to see
 
 All charts are displayed in UTC time.
 
-# Sandbox Data
-
-Due to the limitations of the sandbox environments, charts can only display production transaction data.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0d0ccea-Screen_Shot_2020-04-06_at_4.29.08_PM.png",
-        "Screen Shot 2020-04-06 at 4.29.08 PM.png",
-        243,
-        52,
-        "#f8f2ef"
-      ]
-    }
-  ]
-}
-[/block]
 # Refunds
 Whenever a subscription is refunded, that subscription is counted as active between its start date and the refund date. Any refunded revenue is removed from all revenue-based charts. You can use the [Refund Rate](#refund-rate) chart to gain additional insights into how many of your subscriptions get refunded, and how that refund rate develops over time.
 

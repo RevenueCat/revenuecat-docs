@@ -3,8 +3,8 @@ title: Experiments Overview
 slug: experiments-overview-v1
 hidden: false
 createdAt: '2022-10-13T18:43:40.091Z'
-updatedAt: '2022-12-09T15:59:22.233Z'
-category: 640a7bf230a8d70049145f84
+updatedAt: '2023-03-01T21:04:14.252Z'
+category: 64515c3d1a6415003c998b82
 ---
 Experiments allow you to answer questions about your users' behaviors and app's business by A/B testing two offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
 
@@ -22,7 +22,7 @@ While price testing is one of the most common forms of A/B testing in mobile app
   "title": "How does it work?"
 }
 [/block]
-After configuring the two Offerings you want and adding them to an Experiment, RevenueCat will randomly assign users to a cohort where they will only see one of the two Offerings. Everything is done server-side, so no changes to your app are required if you're already displaying the `current` offering in your app! If you need help making your paywall more dynamic, see [Displaying Products](doc:displaying-products). The [Swift sample app](https://github.com/RevenueCat/purchases-ios/tree/master/Examples/SwiftExample) has an example of a dynamic paywall that is Experiments-ready.
+After configuring the two Offerings you want and adding them to an Experiment, RevenueCat will randomly assign users to a cohort where they will only see one of the two Offerings. Everything is done server-side, so no changes to your app are required if you're already displaying the `current` offering in your app! If you need help making your paywall more dynamic, see [Displaying Products](doc:displaying-products). The [Swift sample app](https://github.com/RevenueCat/purchases-ios/tree/main/Examples) has an example of a [dynamic paywall](https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift) that is Experiments-ready. Dynamic paywall examples in other languages can be found within our other [sample apps](https://www.revenuecat.com/docs/sample-apps) as well.
 [block:callout]
 {
   "type": "info",

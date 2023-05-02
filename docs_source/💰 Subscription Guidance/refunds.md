@@ -1,11 +1,11 @@
 ---
-title: Refunds
+title: Handling Refunds
 slug: refunds
 excerpt: Handling and reacting to refunded purchases
 hidden: false
 createdAt: '2022-09-15T18:57:27.264Z'
-updatedAt: '2022-09-15T19:25:55.915Z'
-category: 640a7bf19a17e2000b581d4c
+updatedAt: '2023-04-13T01:25:43.727Z'
+category: 64515c3b6f91d900446f01f3
 ---
 Refunds are handled differently on each platform. It's recommended to set up [Platform Server Notifications](doc:server-notifications) for the best performance. 
 
@@ -43,10 +43,10 @@ Apple doesn’t allow developers to grant refunds themselves, only through Apple
   "images": [
     {
       "image": [
-        "https://files.readme.io/1912800-6fc40df-Screen_Shot_2020-06-01_at_7.46.14_AM.png",
-        "6fc40df-Screen_Shot_2020-06-01_at_7.46.14_AM.png",
-        703,
-        243,
+        "https://files.readme.io/9def41e-app.revenuecat.com_activity_270f6f8f_event_909c784d-ba27-4e33-8e7c-020e4db714ef_2.png",
+        "app.revenuecat.com_activity_270f6f8f_event_909c784d-ba27-4e33-8e7c-020e4db714ef (2).png",
+        1232,
+        223,
         "#000000"
       ]
     }

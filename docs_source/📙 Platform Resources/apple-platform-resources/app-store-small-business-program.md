@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-12-11T16:33:54.497Z'
-updatedAt: '2021-12-08T06:12:50.985Z'
-category: 640a7bf336aa500154bfceee
+updatedAt: '2023-04-04T20:51:10.874Z'
+category: 64515c3ecacdcd0050abf7a5
 ---
 Apple recently announced the new App Store Small Business Program, aiming to reduce Apple's commission of App Store sales for small businesses from 30% to 15%.
 
@@ -37,35 +37,21 @@ Once you enroll you should receive a confirmation email that your enrollment is 
 Since a developer could have multiple apps from different companies represented in their RevenueCat account, the Small Business Program membership status is set on a **per-app basis** in the RevenueCat dashboard.
 
 Visit your app settings in the RevenueCat dashboard (**Project Settings > Apps**) and expand the **Apple Small Business Program** dropdown.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5dbc6bc-image_3.png",
-        "image (3).png",
-        1098,
-        372,
-        "#f8f8f8"
-      ],
-      "sizing": "80",
-      "border": true
-    }
-  ]
-}
-[/block]
+
+![](https://files.readme.io/f7a4192-app.revenuecat.com_projects_85ff18c7_apps_app71b4cc0fea.png)
+
+
+
 ### Entry Date
 
 Enter the effective date of entry for your membership in the Small Business Program. Can be any date in the past or future.
 
 This field is required if you add an **Exit Date**.
-[block:callout]
-{
-  "type": "info",
-  "title": "Early Enrollers",
-  "body": "If you applied before December 18, 2020 and were notified of your status by December 30, 2020, enter **January 1, 2021**."
-}
-[/block]
+
+> 📘 Early Enrollers
+> 
+> If you applied before December 18, 2020 and were notified of your status by December 30, 2020, enter **January 1, 2021**.
+
 ### Exit Date
 
 If you leave or have been removed from the program, enter the effective exit date.

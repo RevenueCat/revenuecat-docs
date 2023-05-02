@@ -1,5 +1,5 @@
 ---
-title: Price Changes
+title: Changing Prices
 slug: price-changes
 excerpt: Adjusting your pricing model
 hidden: false
@@ -15,18 +15,17 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-07-01T18:49:02.585Z'
-updatedAt: '2022-06-22T17:44:32.167Z'
-category: 640a7bf19a17e2000b581d4c
+updatedAt: '2023-04-13T01:25:27.246Z'
+category: 64515c3b6f91d900446f01f3
 ---
 If subscription prices are changed via App Store Connect or Google Play, any active subscribers may need to opt-in to the new price. If the user does not opt-in, their subscription may be canceled by [Apple](https://help.apple.com/app-store-connect/#/devc9870599e) or [Google](https://support.google.com/googleplay/android-developer/answer/140504?hl=en).
 
 # Store Products
-[block:callout]
-{
-  "type": "warning",
-  "body": "Price changes can take 24 hours to propagate the App Store and Google Play."
-}
-[/block]
+
+> 🚧 
+> 
+> Price changes can take 24 hours to propagate the App Store and Google Play.
+
 ## App Store Price Changes
 
 When you increase the price of a subscription, Apple informs affected subscribers via email and push notification and may require them to agree to the new price. Smaller, infrequent price increases may not require opt-in by customers.
@@ -48,15 +47,21 @@ After you change the price of an existing subscription, here’s how it affects 
 - Existing subscribers receiving a price decrease will be notified and receive the lower price on their next renewal date.
 
 For more information about Google Play price changes, see [Google Play Support](https://support.google.com/googleplay/android-developer/answer/140504?hl=en).
-[block:callout]
-{
-  "type": "info",
-  "title": "Pro Tip ☝️",
-  "body": "We almost always recommend creating a new product instead of changing the price of an existing product."
-}
-[/block]
+
+## Stripe Price Changes
+
+Once you change the price of a product in Stripe, as soon as that user is charged the new price, it will be reflected in the RevenueCat dashboard. This is because we are able to take this price information directly from the Stripe purchase unlike in the other stores. 
+
+For more information about Stripe Price changes, see [Stripe Support](https://stripe.com/docs/billing/subscriptions/change).
+
+> 📘 Pro Tip ☝️
+> 
+> We almost always recommend creating a new product instead of changing the price of an existing product.
+
 # Prices in RevenueCat
 
-The app stores do not make individual transaction prices directly available to developers, so RevenueCat tracks prices at the time of purchase and assumes any subscriptions will renew at this purchase price. Therefore, if you ever raise the price of a product, RevenueCat's reporting will be accurate if you choose to grandfather existing subscriptions at the current price.
+The app stores do not make individual transaction prices directly available to developers, so RevenueCat tracks prices at the time of purchase and assumes any subscriptions will renew at this purchase price. Therefore, if you ever raise the price of a product, RevenueCat's reporting will be accurate if you choose to grandfather existing subscriptions at the current price. 
+
+We are able to track the individual transaction prices directly with Stripe transactions, so if a price change happens for a Stripe product, we will track that price change accordingly.
 
 For more information about Charts and Overview data, see [Charts](https://docs.revenuecat.com/docs/charts) and [Overview](https://docs.revenuecat.com/docs/overview) documentation.

@@ -4,11 +4,10 @@ slug: taxes-and-commissions
 excerpt: How RevenueCat estimates taxes and commissions for transactions
 hidden: false
 createdAt: '2022-06-07T20:41:47.792Z'
-updatedAt: '2022-11-17T16:49:58.327Z'
-category: 640a7bf126512c00308b2f8d
+updatedAt: '2023-03-27T15:05:00.617Z'
+category: 64515c3ca06fe500680740de
 ---
 RevenueCat can optionally report revenue after store commissions, or after taxes and commissions through various features like integrations, webhooks, and our Revenue chart; but there's some context you should be aware of when using RevenueCat's tax estimation to see your net revenue from a transaction.
-
 
 ## How we estimate commissions
 
@@ -34,9 +33,7 @@ We apply a 30% store commission to all transactions from the Amazon Appstore.
 
 Stripe’s API provides the necessary details to calculate the various fees which might be charged in a transaction, and we sum these fees to calculate the commission charged by Stripe for a given transaction.
 
-
 ## How we estimate taxes
-
 
 ### Transaction country estimation
 
@@ -46,10 +43,13 @@ For some stores, like the App Store, in most cases we can detect the store that 
 
 In some cases (for example, USD or EUR transactions on the Google Play Store), we have to estimate the country based on the customer's IP address. This means that we can't guarantee perfect accuracy (for example, if a customer is currently traveling from one Eurozone country to another, or using a VPN), but we have found the estimation to be 95% accurate in most circumstances.
 
-
 ### Store-specific logic
 
 Once we know the country we will base our tax estimation off of, then we apply the store-specific logic to estimate taxes.
+
+> 📘 
+> 
+> We do not take your location as a developer into account when estimating taxes to be withheld, though some stores & countries may withhold differently on transactions in the country you're operating in.
 
 **App Store**
 
@@ -65,19 +65,16 @@ If you have enabled Stripe Tax in your Stripe developer account, we will retriev
 
 To learn more about enabling Stripe Tax in your Stripe developer account, [click here](https://stripe.com/tax).
 
+> 📘 VAT handling in different stores
+> 
+> Keep in mind that not all stores handle VAT the same way. Apple applies VAT to the post-commission revenue from a transaction, while Google applies VAT to the full amount, yielding different tax percentages (e.g. different values for the `tax_percentage` field).
 
-[block:callout]
-{
-  "type": "info",
-  "title": "VAT handling in different stores",
-  "body": "Keep in mind that not all stores handle VAT the same way. Apple applies VAT to the post-commission revenue from a transaction, while Google applies VAT to the full amount, yielding different tax percentages (e.g. different values for the `tax_percentage` field)."
-}
-[/block]
 ## How to report revenue after commissions and/or taxes in RevenueCat
 
 ### Revenue chart
 
 Our Revenue chart offers the following measures to understand your net revenue:
+
 - **Store commission / fee**: The store commission or payment processor fees that are deducted from your gross revenue.
 - **Estimated taxes**: Estimated taxes deducted from gross revenue.
 - **Proceeds**: Net revenue after commission, fees, and taxes have been deducted.
@@ -85,31 +82,21 @@ Our Revenue chart offers the following measures to understand your net revenue:
 ### Integrations
 
 For integrations which report revenue you’ll see the option to select a **Sales reporting** mode for the integration. Selecting either “Revenue after store commission” or “Revenue after store commission and taxes” will apply the respective calculations to your data so that your sales are reported in a format that is most appropriate for your use case.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f2cba58-Screen_Shot_2022-07-28_at_11.00.05_AM.png",
-        "Screen Shot 2022-07-28 at 11.00.05 AM.png",
-        676,
-        298,
-        "#efefef"
-      ]
-    }
-  ]
-}
-[/block]
-To learn more about using integrations through RevenueCat, [click here](https://docs.revenuecat.com/docs/integrations).
 
+![](https://files.readme.io/f2cba58-Screen_Shot_2022-07-28_at_11.00.05_AM.png "Screen Shot 2022-07-28 at 11.00.05 AM.png")
+
+
+
+To learn more about using integrations through RevenueCat, [click here](https://docs.revenuecat.com/docs/integrations).
 
 ### Webhooks
 
-In our webhooks you will find a <code>tax_percentage<strong> </strong></code>and <code>commission_percentage</code> field, which specify what percentage of your gross revenue (<code>price</code> and <code>price_in_purchased_currency</code> fields) we estimate to be deducted from your proceeds as taxes and commission. For example, you could calculate your proceeds in USD from the webhook payload as <code>price * (1 - tax_percentage - commission_percentage)</code>.
+In our webhooks you will find a <code>tax_percentage<strong> </strong></code>and <code>commission_percentage</code> field, which specify what percentage of your gross revenue (<code>price</code> and <code>price_in_purchased_currency</code> fields) we estimate to be deducted from your proceeds as taxes and commission. For example, you could calculate your proceeds in USD from the webhook payload as <code>price \* (1 - tax_percentage - commission_percentage)</code>.
 
 To learn more about using our webhooks, [click here](https://docs.revenuecat.com/docs/webhooks).
 
+### Scheduled Data Exports
 
-### ETL exports
+Our Scheduled Data Exports offer the same two fields, <code>tax_percentage<strong> </strong></code>and <code>commission_percentage</code>, which can be use for estimating proceeds in the same manner through these exports.
 
-We currently do not support estimating taxes through ETL exports, but we expect to offer this support later this year.
+To learn more about using our Scheduled Data Exports, [click here](https://www.revenuecat.com/docs/scheduled-data-exports).

@@ -15,239 +15,286 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-03-02T07:47:34.104Z'
-updatedAt: '2023-01-04T16:52:53.914Z'
-category: 640a7bf0629e7e007422fdec
+updatedAt: '2023-04-04T20:53:11.320Z'
+category: 64515c3aa06fe500680740da
 ---
 Subscriber attributes are useful for storing additional, structured information on a user. For example, you could store your user's email address and additional system identifiers directly in RevenueCat. Attributes will not be seen by your users unless you choose to explicitly show them yourself.
-[block:callout]
-{
-  "type": "info",
-  "body": "Subscriber attributes are only synced with RevenueCat servers on app launch, app backgrounded, and when purchases are made or restored."
-}
-[/block]
+
+> 📘 
+> 
+> Subscriber attributes are only synced with RevenueCat servers when Purchases.configure() is called, app backgrounded, and when purchases are made or restored.
+
 # Setting Attributes
 
 Subscriber attributes can be set through the SDK by passing a dictionary of strings to the `setAttributes()` method on the shared Purchases instance. 
-[block:file]
-swift->code_blocks/👥 Customers/subscriber-attributes_1.swift
-objectivec->code_blocks/👥 Customers/subscriber-attributes_1.m
-kotlin->code_blocks/👥 Customers/subscriber-attributes_1.kt
-java->code_blocks/👥 Customers/subscriber-attributes_1.java
-javascript->code_blocks/👥 Customers/subscriber-attributes_1.js
-csharp->code_blocks/👥 Customers/subscriber-attributes_1.cs
-[/block]
 
-[block:callout]
+```swift Swift
+Purchases.shared.setAttributes(["age" : "24", 
+                             "custom_group_id" : "abc123"])
+```
+```objectivec Objective-C
+[[RCPurchases sharedPurchases] setAttributes:@{
+    @"age": @"24",
+    @"custom_group_id": @"abc123"
+}];
+```
+```kotlin Kotlin
+Purchases.sharedInstance.setAttributes(mapOf("age" to "24", "custom_group_id" to "abc123"))
+```
+```java Java
+Map<String, String> attributes = new HashMap<String, String>();
+attributes.put("age", "24");
+attributes.put("custom_group_id", "abc123");
+
+Purchases.getSharedInstance().setAttributes(attributes);
+```
+```javascript Flutter
+Purchases.setAttributes({ "age" : "24", "custom_group_id" : "abc123" });
+```
+```javascript React Native
+Purchases.setAttributes({ "age" : "24", "custom_group_id" : "abc123" });
+```
+```csharp Unity
+var purchases = GetComponent<Purchases>();
+var attributes = new Dictionary<string, string>
 {
-  "type": "warning",
-  "body": "Since subscriber attributes are writable using a [public key](doc:authentication) they should not be used for managing secure or sensitive information such as subscription status, coins, etc.",
-  "title": ""
-}
-[/block]
+    { "age", "24" }, 
+    { "custom_group_id", "abc123" }
+};
+purchases.SetAttributes(attributes);
+```
+
+
+
+> 🚧 
+> 
+> Since subscriber attributes are writable using a [public key](doc:authentication) they should not be used for managing secure or sensitive information such as subscription status, coins, etc.
+
 ## Restrictions
+
 You can specify up to 50 attributes, with key names up to 40 characters long and values up to 500 characters long. Keys cannot start with `$` unless it's for one of the reserved attributes below.
 
-**Attribute key checklist:**
-✅ Key does not contain whitespace
-✅ Key must start with a letter for non-reserved attributes or "$" for reserved attributes
-✅ Key does not include any non-alphanumeric characters except `-` and `_`
-✅ Key is not more than 40 characters
-✅ Value is not more than 500 characters
+**Attribute key checklist:**  
+✅ Key does not contain whitespace  
+✅ Key must start with a letter for non-reserved attributes or "$" for reserved attributes  
+✅ Key does not include any non-alphanumeric characters except `-` and `_`  
+✅ Key is not more than 40 characters  
+✅ Value is not more than 500 characters  
 ✅ No more than 50 custom attributes
 
-
 ## Reserved attributes
+
 Attribute keys beginning with `$` are reserved for RevenueCat. The current list of reserved keys are below:
 
 ### General
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Description",
-    "0-0": "`$email`",
-    "0-1": "Email address for the user",
-    "1-0": "`$displayName`",
-    "1-1": "Name that should be used to reference the user",
-    "2-0": "`$phoneNumber`",
-    "2-1": "Phone number for the user",
-    "3-0": "`$apnsTokens`",
-    "3-1": "Apple push notification tokens for the user",
-    "4-0": "`$fcmTokens`",
-    "4-1": "Google push notification tokens for the user",
-    "5-0": "`$attConsentStatus`",
-    "5-1": "Apple App Tracking Transparency consent status for the user"
-  },
-  "cols": 2,
-  "rows": 6
-}
-[/block]
+
+| Key                      | Description                                                  |
+| :----------------------- | :----------------------------------------------------------- |
+| `$displayName`           | Name that should be used to reference the user               |
+| `$apnsTokens`            | Apple push notification tokens for the user.                 |
+| `$fcmTokens`             | Google push notification tokens for the user.                |
+| `$attConsentStatus`      | Apple App Tracking Transparency consent status for the user. |
+| `$ipAddress`             | Ip Address for the user.                                     |
+| `$clevertapId `          | Clever Tap ID for the user.                                  |
+| `$idfa`                  | iOS advertising identifier UUID.                             |
+| `$idfv`                  | iOS vender identifier UUID.                                  |
+| `$gpsAdId`               | The advertising ID that is provided by Google Play services. |
+| `$androidId`             | Android device identifier.                                   |
+| `$amazonAdId`            | Amazon Advertising ID.                                       |
+| `$adjustId`              | The unique Adjust identifier for the user.                   |
+| `$amplitudeDeviceId`     | The Amplitude Device ID.                                     |
+| `$amplitudeUserId`       | The Amplitude User ID.                                       |
+| `$appsflyerId`           | Appsflyer Id. The unique Appsflyer identifier for the user.  |
+| `$brazeAliasName`        | The Braze 'alias_name' in User Alias Object.                 |
+| `$brazeAliasLabel`       | The Braze 'alias_label' in User Alias Object.                |
+| `$clevertapId`           | The CleverTap ID for the user.                               |
+| `$fbAnonId`              | The Facebook Anonymous ID for the user.                      |
+| `$attConsentStatus`      | Apple App Tracking Transparency consent status for the user. |
+| `$mparticleId`           | The unique mParticle user identifier (mpid).                 |
+| `$onesignalId`           | The OneSignal Player Id for the user.                        |
+| `$airshipChannelId`      | The Airship channel ID for the user.                         |
+| `$iterableUserId`        | The Iterable ID for the user.                                |
+| `$iterableCampaignId`    | The Iterable campaign ID.                                    |
+| `$iterableTemplateId`    | The Iterable template ID.                                    |
+| `$firebaseAppInstanceId` | The Firebase instance identifier.                            |
+| `$mixpanelDistinctId`    | The Mixpanel user identifier.                                |
+| `$ip`                    | The IP address of the device.                                |
+| `$email`                 | Email address for the user.                                  |
+| `$phoneNumber`           | Phone number for the user.                                   |
+
+> 🚧 attConsentStatus is populated regardless of requesting any permission
+> 
+> The RevenueCat SDK sends the current ATT status for the `$attConsentStatus` subscriber attribute regardless of if you are or aren't requesting any ATT permission. So just as a heads-up, you can expect to see this attribute filled.
+> 
+> Note: The RevenueCat SDK reads the current App Tracking Transparency Consent Status for the user, but will not modify it or request for further permission.
+> 
+> You may see the following as a response from this attribute: 
+> 
+> - `restricted` - Can be returned if the user is using a mobile device management profile that disallows some aspects of tracking regardless of consent. This might be returned even if you never ask for permissions.
+> - `denied` - Can be returned if the user’s phone has set “Ask Apps Not To Track” in OS Settings or denied access for the specific app.
+> - `accepted` - Returned if you ask for permission and the permission gets accepted by the user. 
+> - `unknown` - The user hasn’t set “Ask Apps Not to Track” in OS Settings, and you have never asked the user for consent to track activity.
+
 ### Device Identifiers
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Description",
-    "0-0": "`$idfa`",
-    "1-0": "`$idfv`",
-    "2-0": "`$gpsAdId`",
-    "3-0": "`$androidId`",
-    "0-1": "Apple advertising identifier",
-    "1-1": "Apple vendor identifier",
-    "2-1": "Google advertising identifier",
-    "3-1": "Android device identifier",
-    "4-0": "`$ip`",
-    "4-1": "IP"
-  },
-  "cols": 2,
-  "rows": 5
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "Once a device identifier is set for a subscriber, it can't be changed in order to keep these identifiers associated with the original installation. This allows RevenueCat to send events generated by a particular device to downstream integrations with a consistent identifier unaffected by uninstalls and reinstalls.",
-  "title": "Device identifiers can't be changed once set"
-}
-[/block]
+| Key          | Description                   |
+| :----------- | :---------------------------- |
+| `$idfa`      | Apple advertising identifier  |
+| `$idfv`      | Apple vendor identifier       |
+| `$gpsAdId`   | Google advertising identifier |
+| `$androidId` | Android device identifier     |
+| `$ip`        | IP Address                    |
+
+> 📘 Device identifiers can't be changed once set
+> 
+> Once a device identifier is set for a subscriber, it can't be changed in order to keep these identifiers associated with the original installation. This allows RevenueCat to send events generated by a particular device to downstream integrations with a consistent identifier unaffected by uninstalls and reinstalls.
+
 ### Third-party Identifiers
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Description",
-    "0-0": "`$adjustId`",
-    "0-1": "[Adjust](https://www.adjust.com/) user identifier",
-    "3-0": "`$appsflyerId`",
-    "3-1": "[Appsflyer](https://www.appsflyer.com/) user identifier",
-    "4-0": "`$fbAnonId`",
-    "4-1": "[Facebook SDK](https://developers.facebook.com/docs/apis-and-sdks/) anonymous user identifier",
-    "8-0": "`$mparticleId`",
-    "8-1": "[mParticle](https://www.mparticle.com/) user identifier",
-    "9-0": "`$onesignalId`",
-    "9-1": "[OneSignal](https://onesignal.com/) player identifier",
-    "6-0": "`$iterableUserId`",
-    "6-1": "[Iterable](https://iterable.com/) user identifier",
-    "7-0": "`$mixpanelDistinctId`",
-    "7-1": "[Mixpanel](https://mixpanel.com) user identifier",
-    "1-0": "`$amplitudeDeviceId`",
-    "1-1": "[Amplitude](https://amplitude.com/) device identifier",
-    "2-0": "`$amplitudeUserId`",
-    "2-1": "[Amplitude](https://amplitude.com/) user identifier",
-    "5-0": "`$firebaseAppInstanceId`",
-    "5-1": "[Firebase](doc:firebase-integration) instance identifier",
-    "10-0": "`$clevertapId`",
-    "10-1": "[CleverTap](https://clevertap.com/) user identifier",
-    "11-0": "`$airshipChannelId`",
-    "11-1": "[Airship](https://www.airship.com/) channel identifier"
-  },
-  "cols": 2,
-  "rows": 12
-}
-[/block]
-### Braze User Alias Object
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Description",
-    "0-0": "`$brazeAliasName`",
-    "0-1": "Braze 'alias_name' in [User Alias Object](https://www.braze.com/docs/api/objects_filters/user_alias_object/)",
-    "1-0": "`$brazeAliasLabel`",
-    "1-1": "Braze 'alias_label' in [User Alias Object](https://www.braze.com/docs/api/objects_filters/user_alias_object/)"
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
-### Iterable Data
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "0-0": "`$iterableCampaignId`",
-    "1-0": "`$iterableTemplateId`"
-  },
-  "cols": 1,
-  "rows": 2
-}
-[/block]
-### Attribution Data
-[block:parameters]
-{
-  "data": {
-    "h-0": "Key",
-    "h-1": "Description",
-    "0-0": "`$mediaSource`",
-    "1-0": "`$campaign`",
-    "2-0": "`$adGroup`",
-    "3-0": "`$ad`",
-    "4-0": "`$keyword`",
-    "5-0": "`$creative`"
-  },
-  "cols": 1,
-  "rows": 6
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "title": "",
-  "body": "If you have access to install attribution data, you can set it using the reserved keys above. RevenueCat itself is not an attribution network and can not automatically populate this information.\n\nOnce attribution data is set for a subscriber, it can't be changed. This way attribution data can be associated with the original installation without getting overwritten."
-}
-[/block]
+| Key                      | Description                                                                                   |
+| :----------------------- | :-------------------------------------------------------------------------------------------- |
+| `$adjustId`              | [Adjust](https://www.adjust.com/) user identifier                                             |
+| `$amplitudeDeviceId`     | [Amplitude](https://amplitude.com/) device identifier                                         |
+| `$amplitudeUserId`       | [Amplitude](https://amplitude.com/) user identifier                                           |
+| `$appsflyerId`           | [Appsflyer](https://www.appsflyer.com/) user identifier                                       |
+| `$fbAnonId`              | [Facebook SDK](https://developers.facebook.com/docs/apis-and-sdks/) anonymous user identifier |
+| `$firebaseAppInstanceId` | [Firebase](doc:firebase-integration) instance identifier                                      |
+| `$iterableUserId`        | [Iterable](https://iterable.com/) user identifier                                             |
+| `$mixpanelDistinctId`    | [Mixpanel](https://mixpanel.com) user identifier                                              |
+| `$mparticleId`           | [mParticle](https://www.mparticle.com/) user identifier                                       |
+| `$onesignalId`           | [OneSignal](https://onesignal.com/) player identifier                                         |
+| `$clevertapId`           | [CleverTap](https://clevertap.com/) user identifier                                           |
+| `$airshipChannelId`      | [Airship](https://www.airship.com/) channel identifier                                        |
+
+### Braze User Alias Object
+
+| Key                | Description                                                                                                   |
+| :----------------- | :------------------------------------------------------------------------------------------------------------ |
+| `$brazeAliasName`  | Braze 'alias_name' in [User Alias Object](https://www.braze.com/docs/api/objects_filters/user_alias_object/)  |
+| `$brazeAliasLabel` | Braze 'alias_label' in [User Alias Object](https://www.braze.com/docs/api/objects_filters/user_alias_object/) |
+
+### Iterable Data
+
+| Key                   |
+| :-------------------- |
+| `$iterableCampaignId` |
+| `$iterableTemplateId` |
+
+### Attribution Data
+
+| Key            |
+| :------------- |
+| `$mediaSource` |
+| `$campaign`    |
+| `$adGroup`     |
+| `$ad`          |
+| `$keyword`     |
+| `$creative`    |
+
+> 📘 
+> 
+> If you have access to install attribution data, you can set it using the reserved keys above. RevenueCat itself is not an attribution network and can not automatically populate this information.
+> 
+> Once attribution data is set for a subscriber, it can't be changed. This way attribution data can be associated with the original installation without getting overwritten.
+
 Reserved attributes can be written directly by setting the key (don't forget the `$` prefix) or with special helper methods:
-[block:file]
-swift->code_blocks/👥 Customers/subscriber-attributes_2.swift
-kotlin->code_blocks/👥 Customers/subscriber-attributes_2.kt
-javascript->code_blocks/👥 Customers/subscriber-attributes_2.js
-csharp->code_blocks/👥 Customers/subscriber-attributes_2.cs
-[/block]
+
+```swift Swift
+Purchases.shared.setEmail("test@example.com")
+Purchases.shared.setPhoneNumber("+16505551234")
+Purchases.shared.setDisplayName("John Appleseed")
+```
+```kotlin Kotlin
+Purchases.sharedInstance.setEmail("test@example.com")
+Purchases.sharedInstance.setPhoneNumber("+16505551234")
+Purchases.sharedInstance.setDisplayName("John Appleseed")
+```
+```javascript Flutter
+Purchases.setEmail("test@example.com")
+Purchases.setPhoneNumber("+16505551234")
+Purchases.setDisplayName("John Appleseed")
+```
+```javascript React Native
+Purchases.setEmail("test@example.com")
+Purchases.setPhoneNumber("+16505551234")
+Purchases.setDisplayName("John Appleseed")
+```
+```csharp Unity
+var purchases = GetComponent<Purchases>();
+purchases.SetEmail("asdf@asdfa.com");
+purchases.SetPhoneNumber("asdga");
+purchases.SetDisplayName("asdgas");
+```
+
+
+
 ## Setting push tokens
+
 Push tokens can be used to engage with your users through Apple apns or Google cloud messaging. These can be saved in RevenueCat through system callbacks after the user accepts the push notification permissions in your app.
-[block:file]
-swift->code_blocks/👥 Customers/subscriber-attributes_3.swift
-kotlin->code_blocks/👥 Customers/subscriber-attributes_3.kt
-javascript->code_blocks/👥 Customers/subscriber-attributes_3.js
-csharp->code_blocks/👥 Customers/subscriber-attributes_3.cs
-[/block]
+
+```swift Swift
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    Purchases.shared.setPushToken(deviceToken)
+}
+```
+```kotlin Kotlin
+Purchases.sharedInstance.setPushToken(deviceToken)
+```
+```javascript Flutter
+Purchases.setPushToken(deviceToken);
+```
+```javascript React Native
+Purchases.setPushToken(deviceToken)
+```
+```csharp Unity
+var purchases = GetComponent<Purchases>();
+purchases.SetPushToken(deviceToken);
+```
+
+
+
 # Deleting Attributes
 
 Any attribute can be cleared by passing `null` or an empty string as the key value. Individual attributes can also be cleared for a specific user in their [customer view](doc:customers).
-[block:file]
-swift->code_blocks/👥 Customers/subscriber-attributes_4.swift
-kotlin->code_blocks/👥 Customers/subscriber-attributes_4.kt
-javascript->code_blocks/👥 Customers/subscriber-attributes_4.js
-csharp->code_blocks/👥 Customers/subscriber-attributes_4.cs
-[/block]
+
+```swift Swift
+Purchases.shared.setAttributes(["age" : ""])
+```
+```kotlin Kotlin
+Purchases.sharedInstance.setAttributes(mapOf("age" to ""))
+```
+```javascript Flutter
+Purchases.setAttributes({"age" : ""});
+```
+```javascript React Native
+Purchases.setAttributes({"age" : ""})
+```
+```csharp Unity
+var purchases = GetComponent<Purchases>();
+var attributes = new Dictionary<string, string>
+{
+    { "age", "" }, 
+    { "custom_group_id", "" }
+};
+purchases.SetAttributes(attributes);
+```
+
+
+
 # Reading Attributes
 
 You can access subscriber attributes through the [REST API](https://docs.revenuecat.com/reference) using a secret key, in [webhooks](doc:webhooks), and through analytics integrations ([Amplitude](doc:amplitude), [Mixpanel](doc:mixpanel), [Segment](doc:segment)). The [customer view dashboard](doc:customers) will also show a list of attributes for the individual user that you can edit.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b4de652-Screen_Shot_2022-01-04_at_7.51.08_AM.png",
-        "Screen Shot 2022-01-04 at 7.51.08 AM.png",
-        718,
-        922,
-        "#fafafa"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "Subscriber attributes are write-only from the SDK. Reading attributes should only be done server-side through the webhooks or REST API.\n\nSubscriber attributes are also included with transaction data for [ETL exports](https://docs.revenuecat.com/docs/etl-exports)."
-}
-[/block]
+![](https://files.readme.io/2413523-app.revenuecat.com_customers_aec1bada_15343510_3.png)
+
+
+
+> 📘 
+> 
+> Subscriber attributes are write-only from the SDK. Reading attributes should only be done server-side through the webhooks or REST API.
+> 
+> Subscriber attributes are also included with transaction data for [Scheduled Data Exports](https://docs.revenuecat.com/docs/scheduled-data-exports).
+
 # Next Steps
 
-* Enrich your app by [reacting to the user's current subscription status :fa-arrow-right:](doc:purchaserinfo)
+- Enrich your app by [reacting to the user's current subscription status ](doc:purchaserinfo)

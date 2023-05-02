@@ -3,46 +3,104 @@ title: Trial Conversion Chart
 slug: trial-conversion-chart
 hidden: false
 createdAt: '2022-10-19T15:36:28.718Z'
-updatedAt: '2022-11-04T15:04:40.875Z'
-category: 640a7bf126512c00308b2f8d
+updatedAt: '2023-02-24T20:56:06.894Z'
+category: 64515c3ca06fe500680740de
 ---
-## Trial Conversion
-**Segments:** No
-**Filters:** Yes
-The Trial Conversion chart gives you a picture of how customers start free trials and convert into paying subscriptions. This chart is plotted on a "cohort" basis, meaning the time periods represent the date a customer was first seen, i.e. the date they first opened your app.
+## Definition
+The Trial Conversion chart gives you insight into the conversion of customers starting free trials, through their conversion into paying subscriptions.
 
-When a customer first launches your app, they are added to the "New Customers" number for a cohort. If they start a free trial, they contribute to the Trials column. Immediately after a trial is started, it is considered Pending as it has yet to convert, but is set to convert. Once the customer disables auto-renew, the trial is no longer Pending and is now considered Abandoned. If a user re-enables auto-renew, they will return to the Pending column. Once a trial has expired, it will be permanently counted in the Converted or Abandoned column depending on whether it converted to paid subscription or not.
+### Available settings
 
-Trials Conversion funnels are extremely important for understanding how well your app is monetizing. Two rates are important: the rate at which users start a trial, aka the Start Rate, and the rate that those trials convert to trials, i.e. the Conversion Rate. The Start Rate is a good way of measuring how well users are finding your trial, but Conversion Rate is the real measure of how valuable and convincing the offering is. The product of these two numbers, (Start Rate) x (Conversion Rate) is your Overall Conversion Rate which is also indicative of the overall fit of your product and pricing. 
+* Filters: Yes
+* Segments: No
+* Conversion Timeframe: No (coming soon)
+* Absolute/Relative Selector: Yes
+
+### Customer cohorts
+This chart is cohorted by the earliest date that a customer:
+
+1. Was "first seen" (first opened your app), or
+2. Made their first purchase (for purchases made outside of your app, like promoted purchases in the App Store)
+
+**Example**: If a customer first opened your app on April 15th, 2022, but didn't make a purchase until May 21st, 2022, they would be included in the April 15th cohort.
+[block:callout]
+{
+  "type": "info",
+  "body": "Measuring conversion rates through a cohort of customers *from* a given period, as opposed to a count of events *within* a given period, is critical for accurate performance comparison."
+}
+[/block]
+## How to use Trial Conversion in your business
+Trials Conversion funnels are extremely important for understanding how well your app is monetizing. 
+
+The Start Rate is a valuable way of measuring how easily users are finding your trial, and how compelling its value proposition is; but Conversion Rate is the real measure of how effectively that value proposition has been delivered through your product during the trial period. 
+
+The product of these two rates [(Start Rate) x (Conversion Rate)] is your Overall Conversion Rate which is also indicative of the overall fit of your product and pricing.
+
+## Calculation
+For each period, we measure:
+
+**Absolute**
+1. New Customers: The count of new customers first seen by RevenueCat within the period.
+2. Trials: The count of those customers that started a free trial.
+3. Converted: The count of those trial starts that converted to paid.
+4. Pending: The count of those trial starts that have not yet converted to paid, have auto-renew enabled, and have not yet expired.
+5. Abandoned: The count of those trial starts that have auto-renew disabled or have expired.
+
+**Relative**
+1. New Customers: The count of new customers first seen by RevenueCat within the period.
+2. Start Rate: The portion of those customers that started a free trial.
+3. Conversion Rate: The portion of those trial starts that converted to paid.
+4. Pending Rate: The portion of those trial starts that have not yet converted to paid, have auto-renew enabled, and have not yet expired.
+5. Abandoned Rate: The portion of those trial starts that have auto-renew disabled or have expired.
+
+### Formulas
+
+1. [Trials] / [New Customers] = Start Rate
+2. [Converted] / [Trials] = Conversion Rate
+3. [Pending] / [Trials] = Pending Rate
+4. [Abandoned] / [Trials] = Abandoned Rate
+[block:callout]
+{
+  "type": "info",
+  "body": "The sum of Converted, Pending, and Abandoned will always equal the count of Trials for a given period."
+}
+[/block]
+## FAQs
+[block:parameters]
+{
+  "data": {
+    "h-0": "Question",
+    "h-1": "Answer",
+    "0-0": "What is the relationship between Trial Conversion and other conversion charts?",
+    "0-1": "Learn more about the relationship between conversion charts [here](https://www.revenuecat.com/docs/charts#understanding-conversion-rates).",
+    "1-0": "If a payment is later refunded, will that cause the number of Converted trials or Conversion Rate to decrease?",
+    "1-1": "Yes, a refunded paid transaction would be excluded from this chart. \n\nTherefore, the corresponding customer cohort would have fewer converted trials and a lower Conversion Rate after that refund occurred. [Learn more here](doc:refund-rate-chart).",
+    "2-0": "Does this chart count how many of each conversion type occurred in a given period?",
+    "2-1": "No, the Trial Conversion chart is measuring what portion of a cohort of customers from a given period converted – it does not measure when those conversions happened, or what other conversion to trial or paid might have happened in a given period.\n\nTo measure new conversions that occurred within a given period, explore our [Active Subscriptions Movement](doc:active-subscriptions-movement-chart) chart and [Active Trials Movement](doc:active-trials-chart) chart.",
+    "3-0": "Why does the count of New Customers not change when filtering by Product, Product Duration, Store, or Offering?",
+    "3-1": "These filters are only applicable to subscribers because a customer does not have a designated “product” unless they make a purchase.\n\nBecause of this, when using filters that only apply to subscribers, only the conversion measure will be filtered.",
+    "4-0": "Why does the count of Trials or Conversions in this chart differ from other sources outside of RevenueCat?",
+    "4-1": "Though there are many reasons why different data sources may have different definitions, the most common difference between our conversion charts and other sources is our cohorting definition.\n\nBecause this chart is cohorted by a customer’s first seen date, the count of Trials or Conversions in each period is likely to differ from other sources that either cohort based on event date, or have a different definition of a comparable customer cohort.",
+    "5-0": "Does the Trial Conversion chart support Conversion Timeframe selection?",
+    "5-1": "Not at this time, though support for Conversion Timeframe selection in this chart will come in the future."
+  },
+  "cols": 2,
+  "rows": 6
+}
+[/block]
+
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/a80b12c-df9e284-Screen_Shot_2021-09-10_at_12.46.03_PM.png",
-        "df9e284-Screen_Shot_2021-09-10_at_12.46.03_PM.png",
-        1269,
-        790,
+        "https://files.readme.io/bdf3068-TrialConversion.png",
+        "TrialConversion.png",
+        1374,
+        946,
         "#000000"
       ]
     }
   ]
 }
 [/block]
-## Cohorting
-
-This chart is cohorted by the earliest date that a customer:
-
-1. Was "first seen", or first opened your app
-2. Made their first purchase (for purchases made _outside_ of your app, like promoted purchases in the App Store)
-3. Downloaded the app from the App Store (iOS)
-
-### Example
-
-If a customer first opened your app on April 15th, 2022, but didn't make a purchase until May 21st, 2022, they would be included in the **April 15th** cohort.
-
-## Considerations
-
-### ❓ Why doesn't the number of trial conversions match what other data sources display for the number of conversions in a time period?
-
-Ensure you're checking against the user's cohort date, rather than the purchase event date, as described above.

@@ -13,36 +13,40 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2022-05-18T15:51:57.411Z'
-updatedAt: '2022-05-18T15:51:57.411Z'
-category: 640a7bf3494876005757685e
+createdAt: '2023-04-13T01:37:10.974Z'
+updatedAt: '2023-04-13T01:37:10.974Z'
+category: 64515c3e4658730013edcee5
 ---
 The App-Specific Shared Secret allows RevenueCat to connect with Apple on your behalf. 
 
 # Setup
+
 ## 1. Generating an App-Specific Shared Secret
 
 1. Log in to [App Store Connect](https://appstoreconnect.apple.com/)
 2. Navigate to "My Apps" and select your app
-3. Select "Subscriptions" under the "Features" section from the left side menu
+3. Select "App Information" under the "General" section from the left side menu
 4. Select "Manage" under the App-Specific Share Secret section from the right side
+
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/9c50aa1-Screen_Shot_2022-05-18_at_11.22.11_AM.png",
-        "Screen Shot 2022-05-18 at 11.22.11 AM.png",
-        1900,
-        506,
-        "#f6f6f6"
+        "https://files.readme.io/7284d68-Screen_Shot_2023-01-23_at_10.26.01_AM.png",
+        "Screen Shot 2023-01-23 at 10.26.01 AM.png",
+        2684
       ],
+      "align": "center",
       "sizing": "80",
       "border": true
     }
   ]
 }
 [/block]
+
+
+
 5. Generate and copy your shared secret
 
 [block:image]
@@ -52,31 +56,34 @@ The App-Specific Shared Secret allows RevenueCat to connect with Apple on your b
       "image": [
         "https://files.readme.io/9288694-Screen_Shot_2022-05-18_at_11.22.48_AM.png",
         "Screen Shot 2022-05-18 at 11.22.48 AM.png",
-        1394,
-        702,
-        "#f5f6f7"
+        1394
       ],
-      "border": true,
-      "sizing": "80"
+      "align": "center",
+      "sizing": "80",
+      "border": true
     }
   ]
 }
 [/block]
+
+
+
 ## 2. Enter the Shared Secret in RevenueCat
 
-In your app settings for your IOS app in RevenueCat enter the key in the App Store configuration section:
+Enter the secret in your iOS app settings in the RevenueCat dashboard:
+
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/ca8d187-Screen_Shot_2022-05-18_at_11.25.37_AM.png",
-        "Screen Shot 2022-05-18 at 11.25.37 AM.png",
-        2496,
-        878,
-        "#949494"
+        "https://files.readme.io/9b939ab-app.revenuecat.com_projects_85ff18c7_apps_app71b4cc0fea_3.png",
+        null,
+        ""
       ],
-      "sizing": "80"
+      "align": "center",
+      "sizing": "40% ",
+      "border": true
     }
   ]
 }

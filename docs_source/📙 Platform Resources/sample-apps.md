@@ -2,7 +2,7 @@
 title: Sample Apps
 slug: sample-apps
 excerpt: Example usage of RevenueCat's SDK
-hidden: true
+hidden: false
 metadata:
   title: Sample Apps – RevenueCat
   description: Example usage of the Purchases SDK. Learn more about how to set up
@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-10-18T14:05:26.509Z'
 updatedAt: '2022-10-18T14:05:26.509Z'
-category: 640a7bf336aa500154bfceee
+category: 64515c3ecacdcd0050abf7a5
 ---
 Sample apps are currently included in each SDK repository and demonstrate how to integrate the SDK in your own apps.
 

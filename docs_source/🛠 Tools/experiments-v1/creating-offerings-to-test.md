@@ -3,8 +3,8 @@ title: Creating Offerings to Test
 slug: creating-offerings-to-test
 hidden: false
 createdAt: '2022-12-08T05:04:57.377Z'
-updatedAt: '2022-12-08T05:14:03.108Z'
-category: 640a7bf230a8d70049145f84
+updatedAt: '2023-03-02T20:03:43.373Z'
+category: 64515c3d1a6415003c998b82
 ---
 In this guide we'll cover how to craft your test hypothesis, and how to set up a new Offering in RevenueCat to test your hypothesis.
 
@@ -45,12 +45,12 @@ In-app purchases on the Play Store, on the other hand, do not go through a revie
   "body": "Be sure to test any new Products in your app before setting them live through an experiment to make sure the functionality works, and allows you to accurately test your hypothesis.\n\nFor example, if you're offering a free trial for the first time, ensure your paywall clearly demonstrates that."
 }
 [/block]
-**Use distinct Subscription Groups on the App Store for each RevenueCat Offering** 
-A RevenueCat Offering is the full collection of products that you intend to serve a given customer, and a Subscription Group on the App Store should be used the same way. 
+**Use distinct Subscription Groups on the App Store for each RevenueCat Offering when testing new prices** 
+A RevenueCat Offering is the full collection of products that you intend to serve a given customer, and a Subscription Group on the App Store should frequently be used the same way. 
 
 By creating a new Subscription Group for each new RevenueCat Offering, you ensure that:
 - A given customer will only ever be offered products from a single Subscription Group, and therefore will not accidentally create multiple subscriptions if the app prompts them to subscribe at different times.
-- A given customer will only ever be offered the option to upgrade/downgrade/crossgrade to other products in that same Subscription Group through their subscription settings on iOS, rather than seeing the set of products that was offered to other customers through an experiment, and may have different prices associated with them.
+- A given customer will only ever be offered the option to upgrade/downgrade/crossgrade to other products in that same Subscription Group through their subscription settings on iOS, rather than seeing the set of products that was offered to other customers through an experiment, and may have different prices associated with them. 
 
 **App Product Pages list up to 10 sold products in the In-App Purchases section**
 Unfortunately, there's no good way to avoid this: the App Store will automatically show up to 10 sold products for each app in the In-App Purchases section of the app's Product Page on the App Store, which means customers may see different price points available than what they are offered in the app.

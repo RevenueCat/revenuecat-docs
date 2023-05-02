@@ -12,8 +12,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-01-18T18:46:58.144Z'
-updatedAt: '2022-12-15T01:20:14.652Z'
-category: 640a7bf126512c00308b2f8d
+updatedAt: '2023-03-27T20:32:09.418Z'
+category: 64515c3ca06fe500680740de
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.
 
@@ -31,11 +31,11 @@ Lists are a segment of your customers inside RevenueCat, this can include both p
   "images": [
     {
       "image": [
-        "https://files.readme.io/0a60dde-lists.png",
-        "lists.png",
-        2100,
-        1410,
-        "#f8f9f9"
+        "https://files.readme.io/b7ceead-app.revenuecat.com_projects_85ff18c7_api-keys_8.png",
+        "app.revenuecat.com_projects_85ff18c7_api-keys (8).png",
+        1332,
+        1083,
+        "#000000"
       ]
     }
   ]
@@ -51,7 +51,7 @@ Lists are a segment of your customers inside RevenueCat, this can include both p
 [/block]
 # Find an Individual Customer
 
-You can look up an individual customer by an exact match of their App User ID, Transaction ID, Email Attribute, or Order ID (iOS only). To find a customer via Order ID, you can follow our guide on setting up [In-App Purchase Keys](https://docs.revenuecat.com/docs/in-app-purchase-key-configuration) to unlock this feature. The transaction must show as completed in the [Apple Purchase History](https://support.apple.com/en-gb/HT204088) to be considered a valid Order ID. 
+You can look up an individual customer by an exact match of their App User ID, Transaction ID, Email Attribute, or Order ID (iOS only). To find a customer via Order ID, you can follow our guide on setting up [In-App Purchase Keys](https://docs.revenuecat.com/docs/in-app-purchase-key-configuration) to unlock this feature. The transaction must show as completed in the [Apple Purchase History](https://support.apple.com/en-gb/HT204088) to be considered a valid Order ID. Note that Transaction ID refers to the identifier in Google Play console and order emails of GPA.1234.1223–, and for Stripe si_abcefg, whereas Order ID refers to the identifier from Apple's order emails.
 
 Looking up customers in RevenueCat is real-time, as soon as a customer exists in RevenueCat they will be searchable here.
 [block:image]
@@ -59,11 +59,11 @@ Looking up customers in RevenueCat is real-time, as soon as a customer exists in
   "images": [
     {
       "image": [
-        "https://files.readme.io/a243acd-Screenshot_at_Feb_01_11-31-53.png",
-        "Screenshot at Feb 01 11-31-53.png",
-        306,
-        156,
-        "#f9f9f9"
+        "https://files.readme.io/b9c0217-app.revenuecat.com_projects_85ff18c7_api-keys_9.png",
+        "app.revenuecat.com_projects_85ff18c7_api-keys (9).png",
+        320,
+        160,
+        "#000000"
       ]
     }
   ]
@@ -78,11 +78,11 @@ Customer lists are created on a per-project basis, you must select a project bef
   "images": [
     {
       "image": [
-        "https://files.readme.io/b1d3570-sidebar_widget_2_copy.png",
-        "sidebar_widget_2 copy.png",
-        361,
-        324,
-        "#fcfcfc"
+        "https://files.readme.io/d0db86e-Screenshot_2023-03-27_at_1.00.35_PM.png",
+        "Screenshot 2023-03-27 at 1.00.35 PM.png",
+        289,
+        335,
+        "#000000"
       ],
       "sizing": "original"
     }
@@ -95,11 +95,11 @@ Customer lists are created on a per-project basis, you must select a project bef
   "images": [
     {
       "image": [
-        "https://files.readme.io/fab5cfb-sidebar_widget_1.png",
-        "sidebar_widget_1.png",
-        358,
-        264,
-        "#f8f9f9"
+        "https://files.readme.io/81b30f7-app.revenuecat.com_overview.png",
+        "app.revenuecat.com_overview.png",
+        294,
+        283,
+        "#000000"
       ],
       "sizing": "original"
     }
@@ -141,11 +141,11 @@ In addition to Default Lists, you can create new Custom Lists with any combinati
   "images": [
     {
       "image": [
-        "https://files.readme.io/d09f4be-widget_add.png",
-        "widget_add.png",
-        322,
-        317,
-        "#f8f5f5"
+        "https://files.readme.io/94bb634-app.revenuecat.com_lists_list0332b22d97_1.png",
+        "app.revenuecat.com_lists_list0332b22d97 (1).png",
+        292,
+        370,
+        "#000000"
       ],
       "sizing": "original"
     }
@@ -168,11 +168,11 @@ For each list, RevenueCat computes overview metrics for the cohort of customers.
   "images": [
     {
       "image": [
-        "https://files.readme.io/0bcb4bf-overview.png",
-        "overview.png",
-        1690,
-        314,
-        "#fafafa"
+        "https://files.readme.io/8070e60-app.revenuecat.com_lists_list0332b22d97_2.png",
+        "app.revenuecat.com_lists_list0332b22d97 (2).png",
+        936,
+        179,
+        "#000000"
       ]
     }
   ]
@@ -214,11 +214,11 @@ For each list, RevenueCat displays the 100 most recently seen customers in the d
   "images": [
     {
       "image": [
-        "https://files.readme.io/5421c40-rows.png",
-        "rows.png",
-        1586,
-        664,
-        "#f7f8f8"
+        "https://files.readme.io/f030395-app.revenuecat.com_projects_85ff18c7_api-keys_8_copy.png",
+        "app.revenuecat.com_projects_85ff18c7_api-keys (8) copy.png",
+        928,
+        754,
+        "#000000"
       ]
     }
   ]
@@ -240,11 +240,11 @@ Filters allow you to choose which customers appear in your list. You can create 
   "images": [
     {
       "image": [
-        "https://files.readme.io/c77835d-Screenshot_2022-04-01_at_10.58.18.png",
-        "Screenshot 2022-04-01 at 10.58.18.png",
-        1198,
-        814,
-        "#fafbfb"
+        "https://files.readme.io/20c0838-Screenshot_2023-03-27_at_1.20.54_PM.png",
+        "Screenshot 2023-03-27 at 1.20.54 PM.png",
+        601,
+        356,
+        "#000000"
       ]
     }
   ]

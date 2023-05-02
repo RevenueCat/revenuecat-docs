@@ -1,7 +1,7 @@
 ---
 title: Android Native - 4.x to 5.x Migration
 slug: android-native-4x-to-5x-migration
-hidden: false
+hidden: true
 metadata:
   title: Android Native - 4.x to 5.x Migration – RevenueCat
   image:
@@ -11,8 +11,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-03-23T14:39:58.758Z'
-updatedAt: '2022-03-23T15:05:01.351Z'
-category: 640a7bf45d4321003d59224e
+updatedAt: '2023-02-21T22:10:56.824Z'
+category: 64515c3f0b149d004ca541f9
 ---
 [block:callout]
 {

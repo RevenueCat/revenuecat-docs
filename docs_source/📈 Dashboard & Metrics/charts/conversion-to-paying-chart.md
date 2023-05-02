@@ -3,47 +3,94 @@ title: Conversion to Paying Chart
 slug: conversion-to-paying-chart
 hidden: false
 createdAt: '2022-10-19T15:35:15.210Z'
-updatedAt: '2022-11-04T14:32:32.852Z'
-category: 640a7bf126512c00308b2f8d
+updatedAt: '2023-02-24T20:55:41.180Z'
+category: 64515c3ca06fe500680740de
 ---
-## Conversion to Paying
-**Segments:** Yes
-**Filters:** Yes
-The Conversion to Paying chart shows what proportion of new customers end up paying.
+## Definition
+The Conversion to Paying chart shows what proportion of new customers become paying customers. For many subscription app businesses, this represents a successful completion of the acquisition funnel, and marks the transition of this customer from a subscriber to acquire to a subscriber to retain.
 
-The conversion rate to paying is a good indicator of how effective your app is at acquiring the right kind of customers and demonstrating the value of your premium products. This chart is plotted on a "cohort" basis, meaning the time periods represent the date a customer was first seen, i.e. the date they first opened your app (see below).
+### Available settings
 
-For apps that offer no products with trials, the conversion rate to paying is equal to the initial conversion rate (because there are no subscribers that don't pay). For trial products, conversion to paying is equal to the product of trial start rate and trial conversion rate, in other words, the conversion rate from the start to the end of the trial funnel. It is therefore a measure of both the effectiveness of converting users to a trial and convincing trialists of the value of the subscription and converting them to paying subscribers. 
+* Filters: Yes
+* Segments: Yes
+* Conversion Timeframe: Yes 
+
+### Customer cohorts
+This chart is cohorted by the earliest date that a customer:
+
+* Was "first seen" (first opened your app), or
+* Made their first purchase (for purchases made outside of your app, like promoted purchases in the App Store)
+
+**Example**: If a customer first opened your app on April 15th, 2022, but didn't make a purchase until May 21st, 2022, they would be included in the April 15th cohort.
+[block:callout]
+{
+  "type": "info",
+  "body": "Measuring conversion rates through a cohort of customers *from* a given period, as opposed to a count of events *within* a given period, is critical for accurate performance comparison."
+}
+[/block]
+### Conversion Timeframe
+The Conversion Timeframe selector limits the amount of time each cohort (period) has to convert within to enable accurate period-over-period comparisons. For example, at a Conversion Timeframe of 7 days:
+
+* A cohort that is 14 days old would only include conversions that occurred within the first 7 complete days, but none that occurred after
+* A cohort that is 10 days old would include all conversions that occurred within the first 7 complete days, but none that occurred after, allowing for accurate comparison with the older cohort even though that cohort has had more opportunities to convert -- that additional time is excluded from this view.
+* While a cohort that is 5 days old would include all conversions that occurred thus far, since all have occurred within the first 7 complete days, and it would additionally be marked as incomplete, since that cohort still has remaining time before it reaches full maturity.
+
+[block:callout]
+{
+  "type": "info",
+  "body": "Select the \"Unbounded\" conversion timeframe to see all conversions for a given cohort, regardless of when they occurred."
+}
+[/block]
+## How to use Conversion to Paying in your business
+The conversion rate to paying is a good indicator of how effective your app is at acquiring customers who are most likely to pay for your product and demonstrating the value of your premium products.
+
+Since it may capture multiple steps of your acquisition funnel (e.g. the conversion to trial start, and then to paid from trial), try segmenting by key subscriber demographics and exploring other conversion charts to analyze your trends more deeply.
+
+## Calculation
+For each period, we measure:
+
+1. New Customers: The count of new customers first seen by RevenueCat within the period
+2. Paying Customers: The count of those customers that made any payment (such as subscriptions not in their trial period, or non-renewing IAPs) within the specified Conversion Timeframe
+
+### Formula
+[Paying Customers] / [New Customers] = Conversion to Paying
+
+## FAQs
+[block:parameters]
+{
+  "data": {
+    "h-0": "Question",
+    "h-1": "Answer",
+    "0-0": "What types of payments get counted as a conversion to paying?",
+    "0-1": "If a customer purchases any product, or starts any paid subscription, they are counted as a paid conversion. This includes subscription starts with introductory offers; as well as one-time transactions such as non-consumables, consumables, and non-renewing subscriptions.",
+    "1-0": "If a payment is later refunded, will that cause Conversion to Paying to decrease?",
+    "1-1": "Yes, a refunded paid transaction would be excluded from this chart. \n\nTherefore, the corresponding customer cohort would have lower Conversion to Paying after that refund occurred. [Learn more here](doc:refund-rate-chart).",
+    "2-0": "What is the relationship between Conversion to Paying and other conversion charts?",
+    "2-1": "Learn more about the relationship between conversion charts [here](https://www.revenuecat.com/docs/charts#understanding-conversion-rates).",
+    "3-0": "Does this chart count how many conversions to paying occurred in a given period?",
+    "3-1": "No, the Conversion to Paying chart is measuring what portion of a cohort of customers from a given period convert to paying – it does not measure when those conversions happened, or what other conversion to paying might have happened in a given period.\n\nTo measure new conversions to paying within a given period, explore our [Active Subscriptions Movement](doc:active-subscriptions-movement-chart) chart.",
+    "4-0": "Why does the count of New Customers not change when filtering by Product, Product Duration, Store, or Offering?",
+    "4-1": "These filters are only applicable to subscribers because a customer does not have a designated “product” unless they make a purchase.\n\nBecause of this, when using filters that only apply to subscribers, only the conversion measure will be filtered.",
+    "5-0": "Why does the count of Paying Customers in this chart differ from other sources outside of RevenueCat?",
+    "5-1": "Though there are many reasons why different data sources may have different definitions, the most common difference between our conversion charts and other sources is our cohorting definition.\n\nBecause this chart is cohorted by a customer’s first seen date, the count of Paying Customers in each period is likely to differ from other sources that either cohort based on event date, or have a different definition of a comparable customer cohort."
+  },
+  "cols": 2,
+  "rows": 6
+}
+[/block]
 
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/72af941-0773322-Screen_Shot_2021-11-01_at_10.13.10_AM.png",
-        "0773322-Screen_Shot_2021-11-01_at_10.13.10_AM.png",
-        1398,
-        834,
+        "https://files.readme.io/452d65c-ConversionToPaying.png",
+        "ConversionToPaying.png",
+        1367,
+        923,
         "#000000"
       ]
     }
   ]
 }
 [/block]
-## Cohorting
-
-This chart is cohorted by the earliest date that a customer:
-
-1. Was "first seen", or first opened your app
-2. Made their first purchase (for purchases made _outside_ of your app, like promoted purchases in the App Store)
-3. Downloaded the app from the App Store (iOS)
-
-### Example
-
-If a customer first opened your app on April 15th, 2022, but didn't make a purchase until May 21st, 2022, they would be included in the **April 15th** cohort.
-
-## Considerations
-
-### ❓ Why doesn't the value of Paying Customers match what other data sources display for the number of paid customers in a time period?
-
-Ensure you're checking against the user's cohort date, rather than the purchase event date, as described above.

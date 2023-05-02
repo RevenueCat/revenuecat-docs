@@ -27,7 +27,7 @@ Purchases.shared.purchase(package: package) { (transaction, info, error, cancell
         default:
             break
         }
-    } else if info?.entitlements.all["pro"]?.isActive == true {
+    } else if info?.entitlements.all[<pro>]?.isActive == true {
         print("Unlocked Pro Cats 🎉")
     }
 

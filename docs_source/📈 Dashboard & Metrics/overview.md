@@ -14,16 +14,14 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-02T23:21:02.437Z'
-updatedAt: '2022-10-04T13:00:20.108Z'
-category: 640a7bf126512c00308b2f8d
+updatedAt: '2023-02-02T14:19:36.090Z'
+category: 64515c3ca06fe500680740de
 ---
 The RevenueCat Overview is your in-app purchase hub of key metrics on the health of your business. 
-[block:api-header]
-{
-  "title": "Metrics"
-}
-[/block]
 
+# Metrics
+
+## Active Trials
 [block:image]
 {
   "images": [
@@ -40,6 +38,8 @@ The RevenueCat Overview is your in-app purchase hub of key metrics on the health
 }
 [/block]
 The 'Active Trials' card displays the number of active free trials that are currently tracked in RevenueCat. This includes trials which may be cancelled, or within a grace period, until they either convert to paid or expire.
+
+## Active Subscriptions
 [block:image]
 {
   "images": [
@@ -56,6 +56,8 @@ The 'Active Trials' card displays the number of active free trials that are curr
 }
 [/block]
 The 'Active Subscriptions' card displays the number of active paid subscriptions that are currently tracked in RevenueCat. This includes active paid subscriptions which may be cancelled, or within a grace period, until they expire.
+
+## MRR
 [block:image]
 {
   "images": [
@@ -71,7 +73,9 @@ The 'Active Subscriptions' card displays the number of active paid subscriptions
   ]
 }
 [/block]
-The 'MRR' card displays the current monthly recurring revenue tracked in RevenueCat. You can read more about how MRR is calculated in our [charts guide here](doc:charts#section-monthly-recurring-revenue).
+The 'MRR' card displays the current monthly recurring revenue tracked in RevenueCat. You can read more about how MRR is calculated in our [charts guide here](doc:monthly-recurring-revenue-mrr-chart).
+
+## Revenue
 [block:image]
 {
   "images": [
@@ -88,6 +92,8 @@ The 'MRR' card displays the current monthly recurring revenue tracked in Revenue
 }
 [/block]
 The 'Revenue' card displays the gross revenue tracked in RevenueCat within the last 28 days. This is before any store fees, taxes, etc.
+
+## New Customers
 [block:image]
 {
   "images": [
@@ -110,7 +116,7 @@ The 'New Customers' card displays the number of App User IDs created in the past
   "body": "You should expect the New Customer count in RevenueCat to be different than the download numbers provided by the respective store. However, if things seem drastically off, make sure you're [identifying users](doc:user-ids) correctly in RevenueCat."
 }
 [/block]
-
+## Active Users
 [block:image]
 {
   "images": [
@@ -133,13 +139,7 @@ The 'Active Users' card displays the number of App User IDs that have communicat
   "body": "For performance reasons, currently you can expect this number to be updated as quickly as once per hour"
 }
 [/block]
-
-[block:api-header]
-{
-  "title": "Interacting with cards"
-}
-[/block]
-
+# Interacting with cards
 [block:image]
 {
   "images": [
@@ -160,11 +160,9 @@ You can hover over the icon in the bottom right corner of the card to see how re
 Click on the "Explore" icon in the top right corner of the card to see the corresponding chart to better understand your performance.
 
 You can also click on "Filter" just above your Overview cards to filter your metrics by Project.
-[block:api-header]
-{
-  "title": "Sandbox Data"
-}
-[/block]
+
+# Sandbox Data
+
 The sandbox data toggle will change the Overview metrics to report from sandbox purchases or production purchases. There's no concept of a sandbox or production *user* in RevenueCat, since the same App User Id can have both production and sandbox receipts. Because of this, **the 'View sandbox data' toggle will not affect 'Installs' or 'Active User' cards**. 
 [block:image]
 {
@@ -181,22 +179,14 @@ The sandbox data toggle will change the Overview metrics to report from sandbox 
   ]
 }
 [/block]
+# Recent Transactions
 
-[block:api-header]
-{
-  "title": "Recent Transactions"
-}
-[/block]
 Below the metrics cards is a table of the most recent transactions shown in real-time. Transactions include trial starts, trial conversions, purchases, and renewals. The details of this table are covered in our guide on the [Activity Table](doc:activity).
-[block:api-header]
-{
-  "title": "Dates and times representation"
-}
-[/block]
+
+# Dates and times representation
+
 All dates and times in the dashboard are represented in UTC, unless explicitly specified.
-[block:api-header]
-{
-  "title": "Next Steps"
-}
-[/block]
+
+# Next Steps
+
 * Dig into the details of your subscriber base by [looking at the charts :fa-arrow-right:](doc:charts)

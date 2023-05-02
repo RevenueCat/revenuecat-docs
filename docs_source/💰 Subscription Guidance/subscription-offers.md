@@ -15,65 +15,119 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-21T21:53:53.114Z'
-updatedAt: '2022-10-19T02:37:50.583Z'
-category: 640a7bf19a17e2000b581d4c
+updatedAt: '2023-04-11T17:11:38.228Z'
+category: 64515c3b6f91d900446f01f3
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.
 
 # Introductory Offers & Free Trials
 
-When an eligible user attempts to purchase a product that has an introductory offer (e.g. a free trial) the offer will be applied automatically.
+## Apple and Amazon
+
+On Apple App Store and Amazon Appstore, when an eligible user attempts to purchase a product that has an introductory offer (e.g. a free trial) the offer will be applied automatically.
 
 If the introductory offer isn't applied to the purchase in the system payment sheet, double check that:
+
 - The purchasing user is eligible, e.g. the underlying store account hasn't already purchased that product
 - You've waited up to 24 hours for product propagation after adding the offer
-- The free trial offer is marked as Backwards Compatible in Google Play Console *(Google Play only)*
-[block:callout]
-{
-  "type": "info",
-  "body": "The underlying stores apply introductory offers to purchases automatically and isn't something that RevenueCat's Purchases SDK controls.",
-  "title": "Introductory Offers applied automatically"
-}
-[/block]
-## Checking Eligibility
 
-The Purchases SDK allows for easy checking of eligibility for introductory offers, so that you as the developer can display the proper subscription terms to your customers.
+> 📘 Introductory Offers applied automatically
+> 
+> Apple App Store and Amazon Appstore apply introductory offers to purchases automatically; this is outside of the control of RevenueCat's Purchases SDK.
+
+For iOS, new subscribers are always eligible. Lapsed subscribers who renew are eligible if they haven't previously used an introductory offer for the given product or any product within the same subscription group. Existing subscribers are not eligible for an introductory offer for any product within the same subscription group. For example, customers are not eligible if they are upgrading, downgrading, or crossgrading their subscription from another product, regardless of whether they consumed an introductory offer in the past.
+
+### Checking Eligibility
+
+The Purchases SDK allows for easy checking of eligibility for introductory offers on iOS, so that you as the developer can display the proper subscription terms to your customers.
 
 RevenueCat uses a best-effort approach to checking eligibility based on previous purchases by the customer. The native store payment sheet will ultimately display the correct eligibility before the customer subscribes.
-[block:file]
-swift->code_blocks/💰 Subscription Guidance/subscription-offers_1.swift
-[/block]
 
-[block:callout]
-{
-  "type": "warning",
-  "title": "Google Play not supported",
-  "body": "Checking introductory eligibility is not supported for Google Play at this time. Hybrid SDKs that use the `checkTrialOrIntroductoryEligibility` method will not return a valid eligibility on Android."
+```swift
+Purchases.shared.getOfferings { offerings, error in
+  if let product = offerings?.current?.availablePackages.first?.storeProduct {
+    Purchases.shared.checkTrialOrIntroDiscountEligibility(product: product) { eligibility in
+      if eligibility == .eligible {
+        // show trial/introductory terms
+      } else {
+        // user is not eligible, show non-trial/introductory terms
+      }
+    }
+  }
 }
-[/block]
+```
+
+
+
+> 🚧 Only supported on iOS
+> 
+> Checking introductory eligibility is only supported on iOS. Using the `checkTrialOrIntroductoryEligibility` method on our cross-platform SDKs (for example, React Native or Flutter) will not return a valid eligibility on Android.
+
+## Google Play
+
+Google Play allows setting up multiple offers per base plan and allows differentiating between Google Play determined eligibility and developer determined eligibility. Our SDKs provide several ways to select which offer to apply. 
+
+### Automatic application of trials and introductory offers
+
+If you pass a `StoreProduct` or `Package` to `PurchaseParams.Builder`, the RevenueCat SDK automatically applies an available free trial or introductory offer. This resembles the automatic application of free trials and introductory periods on Apple App Store and Amazon App Store and on Google Play before the [May 2022 subscription changes](https://developer.android.com/google/play/billing/compatibility). 
+
+The logic to determine the offer that applies to the purchase is based on the following logic:
+
+- Find the longest free trial the customer is eligible for
+- If there is no free trial, find the cheapest introductory period the customer is eligible for
+- If there is none, fall back to the base plan
+- If you have an offer on one of your products that you never want to automatically be selected by this logic (for example, because it is a discount only used for a specific customer group), you can add the tag `rc-ignore-offer` to that offer.
+
+> 🚧 Developer determined offers are considered for automatic offer application
+> 
+> If you rely on the RevenueCat SDK to automatically apply trials and introductory offers, be aware that offers with eligibility criteria of "developer determined" set up in Google Play Console will be considered when deciding which offer to apply. This means that you may inadvertently apply developer determined offers when using the automatic application. To prevent this, either refrain from using developer determined and "new customer acquisition" offers on the same base plan, apply the tag `rc-ignore-offer` to developer determined offers, or use the manual offer selection as described below.
+
+### More control over offer selection
+
+If you want to have greater control over which offer gets applied to purchases, you can pass a `SubscriptionOption` to `PurchaseParams.Builder` instead. Each subscription `StoreProduct` has a property `subscriptionOptions` which is a list of eligible options for subscribing to the product, including purchasing the base plan directly or purchasing an offer. The `subscriptionOptions` contain only offers that the current customer is eligible for. For example, if the customer previously had a free trial of this product which is configured as "new customer acquisition" on Google Play Console, the free trial will no longer be contained in the `subscriptionOptions`.
+
+The `subscriptionOptions` property also has a number of convenience properties that allow finding the right offer to apply for your customer. The `defaultOption` property finds the offer with the longest free trial period or the cheapest introductory offer. In addition, the following properties are available:
+
+```kotlin
+val basePlan = storeProduct.subscriptionOptions?.basePlan
+val freeTrialOffer = storeProduct.subscriptionOptions?.freeTrial
+val introductoryOffer = storeProduct.subscriptionOptions?.introOffer
+val offerForLapsedCustomers = storeProduct.subscriptionOptions?.withTag("lapsed-customers").first()
+
+// For example, to purchase the offer for lapsed customers directly, you would then use the following code
+Purchases.sharedInstance.purchaseWith(
+  PurchaseParams.Builder(requireActivity(), offerForLapsedCustomers).build(), 
+  onError = { error, userCancelled ->
+    ...
+  },
+  onSuccess = { storeTransaction, customerInfo ->
+    ...
+  }
+)
+```
+
+
+
 # Setting up Subscription Offers
+
 ## Apple App Store
 
 Apple supports several types of subscription offers which we detail in our [Apple Subscription Offers](doc:ios-subscription-offers) guide.
 
-## Google Play
-[block:callout]
-{
-  "type": "info",
-  "body": "As of May 2022, Google Play supports multiple offers for subscription products. This is not yet supported by RevenueCat.\n\nRead more in our [community](https://community.revenuecat.com/tips-discussion-56/google-i-o-22-announcements-rc-product-priorities-1620)."
-}
-[/block]
-Google allows developers to set up Promo Codes to offer to customers. 
+> 🚧 Accurate revenue tracking not supported for offer codes
+> 
+> Due to limitations of available information on App Store Offer Codes, accurate revenue tracking is not yet supported in the RevenueCat dashboard. All initial purchases made with Offer Codes are assumed to be $0 transactions. Revenue from subsequent renewal transactions will be tracked normally.
 
-Read more in our guide on [Google Play Promo Codes](doc:android-promo-codes).
+## Google Play
+
+Google has several types of subscription offers, as well as Promo Codes to offer to customers.
+
+Read more in our guide on [Google Play Offers](doc:google-play-offers).
 
 ## Amazon Appstore
 
 Amazon Appstore does not support subscription offers other than free trials.
 
-# Considerations
+## Stripe
 
-## Offer Codes and Promo Codes
-Due to limitations of available information for redeemable codes, accurate revenue tracking is not yet supported in the RevenueCat dashboard. 
-
-All initial purchases made with codes are assumed to be $0 transactions. Revenue from subsequent renewal transactions will be tracked normally.
+Free trials can be added to subscriptions through Stripe's dashboard and API. See our [Stripe Free Trials](doc:stripe-free-trials) guide for instructions.

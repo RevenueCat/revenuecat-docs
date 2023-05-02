@@ -5,7 +5,7 @@ excerpt: In-app purchase dashboard
 hidden: true
 createdAt: '2022-03-29T18:31:13.011Z'
 updatedAt: '2022-03-29T19:37:56.970Z'
-category: 640a7bf126512c00308b2f8d
+category: 64515c3ca06fe500680740de
 ---
 The RevenueCat Overview is your in-app purchase hub for quick metrics on the health of your business. 
 
