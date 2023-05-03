@@ -22,6 +22,8 @@ CATEGORIES_FILE = "docs_source/categories.json"
 CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
 CATEGORIES_MAP_FILE = "docs_source/categories_map.json"
 VERSION_FILE = "docs_source/.version"
+SOURCE_FOLDER = "docs_source"
+RENDER_FOLDER = "rendered_docs"
 
 update_fastlane
 
@@ -57,16 +59,22 @@ lane :ios_tests do
 end
 
 lane :copy_docs_source_to_render_folder do
-    source_folder = "docs_source"
-    render_folder = "rendered_docs"
     Dir.chdir(root_dir) do
-        FileUtils.copy_entry source_folder, render_folder
+        FileUtils.rm_rf RENDER_FOLDER
+        FileUtils.copy_entry SOURCE_FOLDER, RENDER_FOLDER
     end
 end
 
 lane :sync_files_to_readme do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
+    current_version = get_current_version
+
+    copy_docs_source_to_render_folder
+    embed_code_blocks(folder: RENDER_FOLDER)
     Dir.chdir("../") do
-        sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
+        sh "rdme docs rendered_docs --version\=#{current_version} --key\=#{options[:readme_api_key]}"
     end
 end
 
@@ -264,16 +272,28 @@ lane :sync_order_with_test_project do |options|
     categories_prod = get_json_from_file(CATEGORIES_FILE)
     categories_prod.each do |category|
         category_id_test = get_json_from_file(CATEGORIES_MAP_FILE)[category['id']]
+        UI.message("Updating order for category #{category_id_test}")
         category_test = get_json_from_file(CATEGORIES_TEST_FILE).find { |category|
             category['id'] == category_id_test
         }
 
-        docs_for_category = get_docs_for_category(category['slug'], readme_api_key)
-        docs_for_category_test = get_docs_for_category(category_test['slug'], readme_api_key_test)
+        prod_cat_slug = category['slug']
+        UI.message("⬇️ Getting docs for category #{prod_cat_slug}")
+        docs_for_category = get_docs_for_category(prod_cat_slug, readme_api_key)
+        test_cat_slug = category_test['slug']
+        UI.message("⬇️ Getting docs for test category #{test_cat_slug}")
+        docs_for_category_test = get_docs_for_category(test_cat_slug, readme_api_key_test)
 
         docs_for_category.each do |doc_prod|
             doc_prod_title = doc_prod['title']
+            UI.message("Updating doc order for #{doc_prod_title}")
             doc_test = docs_for_category_test.find { |doc_test| doc_test['title'] == doc_prod_title }
+            if doc_test == nil
+                UI.error("Doc #{doc_prod_title} not found in test project. Skipping... It could be an API reference doc.")
+                UI.error("Production docs for category #{docs_for_category}")
+                UI.error("Test docs for category #{docs_for_category_test}")
+                next
+            end
             doc_order = doc_prod['order']
             doc_children = doc_prod['children']
 
@@ -540,6 +560,11 @@ def update_categories_file(categories_file, readme_api_key)
     request["x-readme-version"] = get_current_version
 
     response = https.request(request)
+
+    if response.code != '200'
+        UI.user_error!("Error retrieving categories from ReadMe.\nResponse code: #{response.code} \nResponse body: #{response.body}")
+    end
+
     json_data = JSON.parse(response.read_body).sort_by { |category| category['order'] }
     Dir.chdir(root_dir) do
         File.open(categories_file, 'w+') do |file|
