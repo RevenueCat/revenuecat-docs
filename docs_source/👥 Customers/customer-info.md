@@ -13,9 +13,9 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2022-10-06T21:25:23.022Z'
-updatedAt: '2022-10-06T21:25:23.022Z'
-category: 640a7bf0629e7e007422fdec
+createdAt: '2023-03-27T15:10:02.093Z'
+updatedAt: '2023-03-27T15:10:02.093Z'
+category: 64515c3aa06fe500680740da
 ---
 RevenueCat makes it easy to determine subscription status and more with the *Purchases SDK* and [REST API](https://docs.revenuecat.com/reference). 
 [block:image]
@@ -107,7 +107,7 @@ The `EntitlementInfo` object gives you access to all of the information about th
     "3-0": "Will Renew",
     "3-1": "Whether or not the entitlement is set to renew at the end of the current period. \n\nNote there may be a multiple hour delay between the value of this property and the actual state in the App Store / Play Store.",
     "4-0": "Period Type",
-    "4-1": "The period type this entitlement is in, can be one of:\n- Trial: In a free trial period\n- Intro: In an introductory price period\n- Normal: In the default period",
+    "4-1": "The period type this entitlement is in, can be one of:\n- Trial: In a free trial period\n- Promotional: In a promotional period\n- Intro: In an introductory price period\n- Normal: In the default period",
     "5-0": "Latest Purchase Date",
     "5-1": "The latest purchase or renewal date for this entitlement.",
     "6-0": "Original Purchase Date",

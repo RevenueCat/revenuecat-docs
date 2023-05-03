@@ -1,8 +1,8 @@
-let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: "your-shared-secret")
+let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: <your-shared-secret>)
 SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
     switch result {
     case .success(let receipt):
-        let productId = "my_product_identifier"
+        let productId = <my_product_identifier>
         // Verify the purchase of Consumable or NonConsumable
         let purchaseResult = SwiftyStoreKit.verifyPurchase(
             productId: productId,

@@ -14,7 +14,7 @@ func purchases(_ purchases: Purchases, shouldPurchasePromoProduct product: SKPro
     // ...or call it right away to proceed with the purchase
     defermentBlock { (transaction, customerInfo, error, cancelled) in
                     
-          if customerInfo?.entitlements.all["pro"]?.isActive == true {
+          if customerInfo?.entitlements.all[<pro>]?.isActive == true {
             // Unlock that great "pro" content
           }
     }

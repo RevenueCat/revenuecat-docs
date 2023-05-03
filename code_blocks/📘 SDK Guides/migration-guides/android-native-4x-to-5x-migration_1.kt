@@ -1,1 +1,1 @@
-Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
+Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())

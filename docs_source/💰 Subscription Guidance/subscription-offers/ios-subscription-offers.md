@@ -14,9 +14,9 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2022-09-15T19:11:45.457Z'
-updatedAt: '2022-09-15T19:11:45.457Z'
-category: 640a7bf19a17e2000b581d4c
+createdAt: '2023-03-22T15:16:54.349Z'
+updatedAt: '2023-03-22T15:16:54.349Z'
+category: 64515c3b6f91d900446f01f3
 ---
 [block:callout]
 {
@@ -52,9 +52,14 @@ Subscription Offers are supported in the *Purchases SDK*, but require some addit
     "3-0": "⚠️ **Not recommended**\n[In-App Purchase Promo Codes](https://help.apple.com/app-store-connect/#/dev50869de4a)",
     "3-1": "New and Existing Users",
     "3-2": "Not Required",
-    "3-3": "Treated as a regular purchase, revenue will not be accurate in [Charts](doc:charts) and [Integrations](doc:webhooks) due to Apple/StoreKit limitations. Codes don't auto-renew, aren't compatible with `presentCodeRedemptionSheet`, restricted to non-commercial use, and restricted to [1,000 codes every 6 months](https://help.apple.com/app-store-connect/#/dev50869de4a)."
+    "3-3": "Treated as a regular purchase, revenue will not be accurate in [Charts](doc:charts) and [Integrations](doc:webhooks) due to Apple/StoreKit limitations. Codes don't auto-renew, aren't compatible with `presentCodeRedemptionSheet`, restricted to non-commercial use, and restricted to [1,000 codes every 6 months](https://help.apple.com/app-store-connect/#/dev50869de4a).",
+    "h-4": "Auto-Renewal",
+    "0-4": "✅",
+    "1-4": "✅",
+    "2-4": "✅",
+    "3-4": "❌"
   },
-  "cols": 4,
+  "cols": 5,
   "rows": 4
 }
 [/block]
@@ -204,6 +209,8 @@ You can link to the App Store with a prefilled code for redemption with the foll
 ```https://apps.apple.com/redeem?ctx=offercodes&id={apple_app_id}&code={code}```
 
 You can find your Apple App ID in your app settings in App Store Connect (General -> App Information).
+
+When users click your link within your app to redeem the offer code, it will take them outside of the app to complete the purchase. It is important to call [syncPurchases](https://www.revenuecat.com/docs/restoring-purchases#syncpurchases) when the user returns back to your app to retrieve their purchase. This may be done by recording when the user leaves the app due to the link, and calling `syncPurchases` when the user returns to the app. If not, the user may need to [trigger a restore](https://www.revenuecat.com/docs/restoring-purchases) within your app when they come back.
 
 ## Considerations
 

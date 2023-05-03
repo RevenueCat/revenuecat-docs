@@ -1,1 +1,1 @@
-Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
+Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).build())
