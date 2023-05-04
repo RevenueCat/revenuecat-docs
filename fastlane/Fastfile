@@ -96,16 +96,13 @@ lane :extract_code_blocks do |options|
 
             FileUtils.mkdir_p(output_dir)
 
-            file_contents.scan(/\[block:code\].*?\[\/block\]/m).each_with_index.map do |block, index|
-                UI.message("🔨 Processing code block #{index} in #{file_name}...")
+            file_contents = convert_old_style_code_blocks(file_contents)
 
+            file_contents.scan(/```\w+[\s\S]+?```/).each_with_index.map do |block, index|
                 filename_without_ext = File.basename(file_name, ".md")
-                converted_block = extract_block_to_file(output_dir, filename_without_ext, block, index)
-                language_to_extracted_file_map = converted_block.map do |lang, file_path|
-                    "#{lang}->#{file_path}"
-                end.join("\n")
+                code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
 
-                file_contents.gsub!("#{block}", "[block:file]\n#{language_to_extracted_file_map}\n[/block]")
+                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information}\n[/block]")
             end
 
             File.write(file_name, file_contents)
@@ -393,25 +390,34 @@ end
 # code block
 # @return [Hash] a hash of language to file paths for the extracted code blocks
 def extract_block_to_file(output_dir, file_name_no_ext, code_block, index)
-    block = extract_code_block(code_block)
+    code_information = extract_markdown_code_block_information(code_block)
 
-    json = block[block.index("{")..block.rindex("}")]
-    data = JSON.parse(json)
-    codes = data["codes"]
+    language = code_information["language"]
+    code = code_information["code"].strip
+    extension = determine_extension(language)
+    new_file = "#{output_dir}/#{file_name_no_ext}_#{index + 1}.#{extension}"
+    File.write(new_file, code)
+    UI.message("⚙️  Creating #{new_file}...")
 
-    result = {}
+    {
+        "language" => language,
+        "name" => code_information["name"],
+        "file" => new_file,
+    }
+end
 
-    codes.each do |code|
-        language = code["language"]
-        code = code["code"].strip
-        extension = determine_extension(language)
-        new_file = "#{output_dir}/#{file_name_no_ext}_#{index + 1}.#{extension}"
-        File.write(new_file, code)
-        UI.message("⚙️  Creating #{new_file}...")
-        result[language] = new_file
-    end
+def extract_markdown_code_block_information(code_block)
+    regex = /```(\w+)\s*(.*?)\n([\s\S]*?)```/m
+    matches = code_block.match(regex)
+    language = matches[1]
+    name = matches[2]
+    code = matches[3]
 
-    result
+    {
+        "language" => language,
+        "name" => name,
+        "code" => code,
+    }
 end
 
 def extract_code_block(code_block)
@@ -623,4 +629,27 @@ end
 
 def root_dir
     File.dirname(Dir.pwd)
+end
+
+def convert_old_style_code_blocks(input)
+    block_code_regex = /\[block:code\]\s*(\{[\s\S]*?\})\s*\[\/block\]/
+
+    input.gsub(block_code_regex) do |code_block_tag|
+        block = extract_code_block(code_block_tag)
+        json = block[block.index("{")..block.rindex("}")]
+        data = JSON.parse(json)
+        codes = data["codes"]
+        new_style_code_blocks = ""
+
+        UI.message("🔨 Will process #{codes.count} code blocks within the [block:code] tag...")
+        codes.each do |code_item|
+            language = code_item["language"].strip
+            code = code_item["code"].strip
+            name = code_item["name"].strip
+            UI.message("🔨 Processing code block #{name}...")
+            new_style_code_blocks = new_style_code_blocks + "```#{language} #{name}\n#{code}\n```\n"
+        end
+
+        new_style_code_blocks
+    end
 end
