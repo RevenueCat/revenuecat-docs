@@ -635,6 +635,33 @@ def root_dir
     File.dirname(Dir.pwd)
 end
 
+# Searches for is [block:code][/block] and replaces it with the Readme flavored markdown style code blocks.
+# For example:
+
+# [block:code]
+# {
+#  "codes": [
+#  {
+#    "code": "This is a code block",
+#    "language": "text",
+#    "name": "Code block"
+#  },
+#  {
+#    "code": "This is another code block",
+#    "language": "text",
+#    "name": "Another code block"
+#  }]
+# }
+# [/block]
+#
+# becomes
+#
+# ```text Code block
+# This is a code block
+# ```
+# ```text Another code block
+# This is another code block
+# ```
 def convert_old_style_code_blocks(input)
     block_code_regex = /\[block:code\]\s*(\{[\s\S]*?\})\s*\[\/block\]/
 
