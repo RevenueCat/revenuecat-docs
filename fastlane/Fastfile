@@ -102,7 +102,7 @@ lane :extract_code_blocks do |options|
                 filename_without_ext = File.basename(file_name, ".md")
                 code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
 
-                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information}\n[/block]")
+                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
             end
 
             File.write(file_name, file_contents)
@@ -338,22 +338,26 @@ end
 # }
 # [/block]
 #
-# @param code_block [String] the input string containing the code block. This is the entire string that contains the
+# @param file_block [String] the input string containing the code block. This is the entire string that contains the
 # file block including the [block:file] and [/block] tags
 # @return [String] a string containing the code blocks from all the files within the file block
-def embed_code_from_files(code_block)
-    block = extract_code_block(code_block)
-
+def embed_code_from_files(file_block)
+    block = extract_code_block(file_block)
     new_content = []
 
     block.each_line do |line|
         next if line.start_with?("[")
         file_tag_content = line.strip
-        file_type, file_path = file_tag_content.split('->')
+        json = JSON.parse(file_tag_content)
+        UI.message("Extracted json: #{block}")
+
+        language = json['language']
+        file_path = json['file']
+        name = json['name']
         next unless File.exist?(file_path)
 
         file_content = File.read(file_path)
-        new_content.push "```#{file_type}\n#{file_content}\n```"
+        new_content.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
     new_content.join("\n").strip
