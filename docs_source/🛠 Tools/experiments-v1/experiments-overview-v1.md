@@ -4,7 +4,7 @@ slug: experiments-overview-v1
 hidden: false
 createdAt: '2022-10-13T18:43:40.091Z'
 updatedAt: '2023-03-01T21:04:14.252Z'
-category: 64515c3d1a6415003c998b82
+category: 64651519009718000a1d7879
 ---
 Experiments allow you to answer questions about your users' behaviors and app's business by A/B testing two offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
 

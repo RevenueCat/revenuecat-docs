@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
 createdAt: '2022-12-15T02:43:30.576Z'
 updatedAt: '2023-03-09T03:39:52.586Z'
-category: 64515c3c134c6b000bb9f128
+category: 646515188418f71e950548f0
 ---
 [block:callout]
 {
@@ -140,6 +140,24 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample Queries
 
 The following sample queries are in Postgresql.
-[block:file]
-pgsql->code_blocks/🔌 Integrations & Events/etl-exports-deprecated_1.pgsql
+[block:code]
+{
+  "codes": [
+    {
+      "code": "-- Active Trials as of your [targeted_date]\nSELECT\n  COUNT(*)\nFROM\n  [your_table_name]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'true'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox <> 'true'\n\n-- The RevenueCat Active Trials chart excludes\n-- promotional transactions and transactions resulting from family sharing\n-- since they do not reflect auto-renewing future payments.",
+      "language": "pgsql",
+      "name": "Active Trials"
+    },
+    {
+      "code": "-- Active Subscriptions as of your [targeted_date]\nSELECT\n  COUNT(*)\nFROM\n  [your_table_name]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'false'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox <> 'true'\n\n-- The RevenueCat Active Subscriptions chart excludes trials,\n-- promotional transactions, and transactions resulting from family sharing\n-- since they do not reflect auto-renewing future payments.",
+      "language": "pgsql",
+      "name": "Active Subscriptions"
+    },
+    {
+      "code": "-- Revenue generated on [targeted_date]\nSELECT\n  SUM(price_in_usd) as revenue\nFROM\n  [your_table_name]\nWHERE date(start_time) = [targeted_date]\n  AND is_trial_period = 'false'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox <> 'true'\n\n-- Transactions which are refunded can be identified through the refunded_at field.\n-- Once refunded, price_in_usd will be set to $0, so revenue will always be net of refunds.",
+      "language": "pgsql",
+      "name": "Revenue"
+    }
+  ]
+}
 [/block]

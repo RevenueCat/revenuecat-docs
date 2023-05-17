@@ -5,7 +5,7 @@ excerpt: How to set up hosted paywalls in RevenueCat
 hidden: true
 createdAt: '2022-01-12T15:25:45.137Z'
 updatedAt: '2022-06-08T15:04:54.986Z'
-category: 64515c3d1a6415003c998b82
+category: 64651519009718000a1d7879
 ---
 RevenueCat Checkout enables developers to set up hosted paywalls in RevenueCat to provide customers with an easy-to-use alternative to in-app purchases. RevenueCat Checkout uses Stripe under-the-hood, so your existing Stripe connection and products are already compatible with RevenueCat Checkout hosted paywalls.
 
@@ -169,12 +169,26 @@ Since the SDK caches CustomerInfo for up to five minutes between refreshes, you'
 RevenueCat Checkout supports a customizable link that is displayed in your paywall after a purchase occurs. You'll need to manually configure your app to support a custom URL scheme or Universal Link that can handle this link when it is clicked on the device.
 
 Once a user has been redirected back to your app after clicking the link in the paywall, you should immediately invalidate the CustomerInfo cache:
-[block:file]
-swift->code_blocks/🛠 Tools/revenuecat-checkout_1.swift
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.shared.invalidateCustomerInfoCache()",
+      "language": "swift"
+    }
+  ]
+}
 [/block]
 After the cache has been invalidated, you can fetch CustomerInfo again to retrieve the latest information about the customer and their purchases and unlock the features they are entitled to.
-[block:file]
-swift->code_blocks/🛠 Tools/revenuecat-checkout_2.swift
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.shared.getCustomerInfo { info, error in \n\t// customerInfo contains the latest purchases                                  \n}",
+      "language": "swift"
+    }
+  ]
+}
 [/block]
 # 5. Managing RevenueCat Checkout Purchases
 

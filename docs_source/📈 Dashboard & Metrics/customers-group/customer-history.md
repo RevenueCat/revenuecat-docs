@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:07.215Z'
 updatedAt: '2023-04-11T17:04:55.228Z'
-category: 64515c3ca06fe500680740de
+category: 64651518bd7ecf19272c3b8c
 ---
 The 'Customer History' card shows a timeline of transactions and activity for the selected customer. These can be useful for debugging and triaging support issues by understanding when critical events happened for the customer.
 

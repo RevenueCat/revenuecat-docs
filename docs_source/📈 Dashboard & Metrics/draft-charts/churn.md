@@ -4,7 +4,7 @@ slug: churn
 hidden: true
 createdAt: '2022-06-28T21:07:31.798Z'
 updatedAt: '2022-06-28T21:07:31.798Z'
-category: 64515c3ca06fe500680740de
+category: 64651518bd7ecf19272c3b8c
 ---
 ## Churn
 **Segments**: Yes

@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-20T17:31:45.016Z'
 updatedAt: '2023-03-20T17:31:45.016Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 # What is RevenueCat?
 
@@ -41,16 +41,39 @@ The Purchases iOS SDK is also compatible with macOS, and can be installed either
 ## Install via CocoaPods
 
 To always use the latest release, add the following to your Podfile:
-[block:file]
-ruby->code_blocks/🚀 Getting Started/installation/macos_1.ruby
+[block:code]
+{
+  "codes": [
+    {
+      "code": "pod 'RevenueCat'",
+      "language": "ruby",
+      "name": "Podfile"
+    }
+  ]
+}
 [/block]
 Alternatively, pin to a specific minor version (e.g. 3.10):
-[block:file]
-ruby->code_blocks/🚀 Getting Started/installation/macos_2.ruby
+[block:code]
+{
+  "codes": [
+    {
+      "code": "pod 'RevenueCat', '~> 4.15'",
+      "language": "ruby"
+    }
+  ]
+}
 [/block]
 And then run:
-[block:file]
-ruby->code_blocks/🚀 Getting Started/installation/macos_3.ruby
+[block:code]
+{
+  "codes": [
+    {
+      "code": "pod install",
+      "language": "ruby",
+      "name": "Terminal"
+    }
+  ]
+}
 [/block]
 This will add `RevenueCat.framework` to your workspace.
 
@@ -61,9 +84,19 @@ You can use Swift Package Manager to add Purchases to your Xcode project. Select
 # Import Purchases
 
 You should now be able to `import RevenueCat`.
-[block:file]
-swift->code_blocks/🚀 Getting Started/installation/macos_4.swift
-objectivec->code_blocks/🚀 Getting Started/installation/macos_4.m
+[block:code]
+{
+  "codes": [
+    {
+      "code": "import RevenueCat",
+      "language": "swift"
+    },
+    {
+      "code": "#import \"RCPurchases.h\"",
+      "language": "objectivec"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

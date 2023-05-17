@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-12-11T16:33:54.497Z'
 updatedAt: '2023-04-04T20:51:10.874Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 6465151a9d12de0fd4b5e835
 ---
 Apple recently announced the new App Store Small Business Program, aiming to reduce Apple's commission of App Store sales for small businesses from 30% to 15%.
 

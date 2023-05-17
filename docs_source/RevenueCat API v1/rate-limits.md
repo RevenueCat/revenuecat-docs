@@ -4,7 +4,7 @@ slug: rate-limits
 hidden: true
 createdAt: '2021-11-18T20:51:32.232Z'
 updatedAt: '2021-11-18T20:56:08.395Z'
-category: 64515c377df88700248e78b1
+category: 6465151157107b1944dd50e2
 ---
 # Outline
 

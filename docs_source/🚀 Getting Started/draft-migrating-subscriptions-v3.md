@@ -5,7 +5,7 @@ excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2021-12-29T03:23:56.845Z'
 updatedAt: '2021-12-29T07:05:43.408Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. You can use the Purchases SDK to replace all of your in-app-purchase code, or you can just use it along side your current stack to track in-app-purchases and benefit from our charting, webhooks, and other integrations.
 
@@ -73,8 +73,16 @@ A client side migration is recommended even if you implement other migration str
 The way to do this is: if your existing subscription code knows you have a subscription, but RevenueCat does not, then programmatically sync purchases. 
 
 See the following pseudo-code for an example.
-[block:file]
-javascript->code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_1.js
+[block:code]
+{
+  "codes": [
+    {
+      "code": "const isSubscribedInOldSystem = oldTracking.isSubscribed()\nconst isSubscribedInRevenueCat = !purchaserInfo.entitlements.active.isEmpty\n\n// If the old system says we have a subscription, but RevenueCat does not\nif (isSubscribedInOldSystem && !isSubscribedInRevenueCat) \n{\n  // Tell Purchases to syncPurchases. \n  // This will sync the user's receipt with RevenueCat.\n  Purchases.shared.syncPurchases { (purchaserInfo, error) in }\n}",
+      "language": "javascript",
+      "name": "Client side migration example"
+    }
+  ]
+}
 [/block]
 When a subscriber launches with the first version containing *Purchases*, it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
@@ -106,8 +114,16 @@ If you have the correct data saved already for your users, you can import them t
 More info in the [API Reference here](https://docs.revenuecat.com/reference#receipts).
 
 Here's a pseudo-code sample to illustrate how this process would look like as a one-time migration job to import receipts into RevenueCat:
-[block:file]
-javascript->code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_2.js
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// Get all user IDs and receipts from your database.\nconst records = ...\n\nfor (let record of records) {\n  \n  // Pull the app user ID, receipt, product ID, and price info from the database record.\n  // This is going to vary depending on your database schema.\n  const app_user_id = record.user_id;\n  const receipt = record.receipt;\n  const product_id = record.product_id;\n  const price = record.price;\n  const currency = record.currency.\n\n  // Build the request headers with your public SDK key.\n\tvar myHeaders = new Headers();\n\tmyHeaders.append(\"Content-Type\", \"application/json\");\n\tmyHeaders.append(\"Authorization\", \"Bearer PUBLIC_SDK_KEY\");\n\n  // Build the request body with the app user ID, receipt, and required info.\n\tconst raw = JSON.stringify({\n\t  product_id: product_id,\n\t  price: price,\n\t  currency: currency,\n\t  is_restore: 'false',\n\t  app_user_id: app_user_id,\n\t  fetch_token: receipt\n\t});\n\n\tconst requestOptions = {\n\t  method: 'POST',\n\t  headers: myHeaders,\n\t  body: raw,\n\t  redirect: 'follow'\n\t};\n\n  // Send the receipt to RevenueCat.\n\tfetch(\"https://api.revenuecat.com/v1/receipts\", requestOptions)\n\t  .then(response => response.text())\n\t  .then(result => console.log(result))\n\t  .catch(error => console.log('error', error));\n  \n  // Sleep for one second to remain under the rate limit.\n  sleep(1);\n}",
+      "language": "javascript",
+      "name": "Migration script"
+    }
+  ]
+}
 [/block]
 ## Bulk imports
 

@@ -5,7 +5,7 @@ excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
 createdAt: '2022-05-31T23:05:56.746Z'
 updatedAt: '2022-05-31T23:05:56.746Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 6465151a9d12de0fd4b5e835
 ---
 Observer Mode enables you to do a partial implementation of RevenueCat's SDK, giving you access to the advanced charting, webhooks, and attribution that RevenueCat provides—without affecting your existing purchase code. This is useful if you already have a functioning subscription system to manage your purchases and have infrastructure or code policy restrictions that prevent you from fully integrating third-party software.
 
@@ -31,13 +31,41 @@ No special requirements
 }
 [/block]
 # 1. Configure the SDK
-[block:file]
-swift->code_blocks/📙 Platform Resources/legacy-observer-mode_1.swift
-objectivec->code_blocks/📙 Platform Resources/legacy-observer-mode_1.m
-kotlin->code_blocks/📙 Platform Resources/legacy-observer-mode_1.kt
-java->code_blocks/📙 Platform Resources/legacy-observer-mode_1.java
-javascript->code_blocks/📙 Platform Resources/legacy-observer-mode_1.js
-text->code_blocks/📙 Platform Resources/legacy-observer-mode_1.txt
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.configure(\n            withAPIKey: \"my_api_key\",\n            appUserID: \"my_app_user_id\",\n            observerMode: true)",
+      "language": "swift",
+      "name": "Swift"
+    },
+    {
+      "code": "[RCPurchases \n\tconfigureWithAPIKey:@\"my_api_key\" \n\tappUserID:@\"my_app_user_id\"\n\tobserverMode: YES];",
+      "language": "objectivec",
+      "name": "Objective-C"
+    },
+    {
+      "code": "Purchases.configure(this, \"my_api_key\", \"my_app_user_id\", true)",
+      "language": "kotlin",
+      "name": "Kotlin"
+    },
+    {
+      "code": "Purchases.configure(this, \"my_api_key\", \"my_app_user_id\", true);\n",
+      "language": "java",
+      "name": "Java"
+    },
+    {
+      "code": "await Purchases.setup(\"my_api_key\", observerMode: true);",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "See \"Enable Observer Mode in Unity configuration\" below",
+      "language": "text",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 
 [block:callout]
@@ -74,10 +102,24 @@ text->code_blocks/📙 Platform Resources/legacy-observer-mode_1.txt
 # 2. Sync purchases with RevenueCat (Android only)
 
 On Android (or cross-platform SDKs), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. 
-[block:file]
-kotlin->code_blocks/📙 Platform Resources/legacy-observer-mode_2.kt
-java->code_blocks/📙 Platform Resources/legacy-observer-mode_2.java
-javascript->code_blocks/📙 Platform Resources/legacy-observer-mode_2.js
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.sharedInstance.syncPurchases()\n  ",
+      "language": "kotlin"
+    },
+    {
+      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.getSharedInstance().syncPurchases();\n",
+      "language": "java"
+    },
+    {
+      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.syncPurchases();",
+      "language": "javascript",
+      "name": "React Native"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

@@ -4,7 +4,7 @@ slug: active-subscriptions
 hidden: true
 createdAt: '2022-06-28T20:13:26.756Z'
 updatedAt: '2022-06-28T20:15:39.648Z'
-category: 64515c3ca06fe500680740de
+category: 64651518bd7ecf19272c3b8c
 ---
 **Segments:** Yes
 **Filters:** Yes

@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-04-22T00:21:12.343Z'
 updatedAt: '2022-10-05T14:01:20.981Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 6465151a9d12de0fd4b5e835
 ---
 For newer Mac apps, in-app purchases can be shared across Mac and iOS apps. This is called [Universal Purchases](https://developer.apple.com/support/universal-purchase/). 
 [block:callout]
@@ -90,8 +90,15 @@ If you are going to add an iOS app, enter the iOS/universal Mac app's bundle ID 
 # 3. Update your universal app code
 
 This step is only required if you have both a legacy Mac app and an iOS/universal Mac app. In the **universal Mac app**, add this line of code right before `Purchases.configure`:
-[block:file]
-swift->code_blocks/📙 Platform Resources/apple-platform-resources/legacy-mac-apps_1.swift
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.setForceUniversalAppStore(true)\nPurchases.configure()\n// ...",
+      "language": "swift"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

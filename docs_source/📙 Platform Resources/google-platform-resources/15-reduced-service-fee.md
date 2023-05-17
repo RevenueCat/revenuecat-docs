@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-10-05T15:55:44.276Z'
 updatedAt: '2023-04-10T19:57:49.484Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 6465151a9d12de0fd4b5e835
 ---
 Google allows developers that earn less than $1,000,000 USB per year to enroll in a reduced service fee tier. The service fee is 15%, instead of the usual 30%. RevenueCat automatically assumes developers are enrolled in the reduced service fee tier.
 

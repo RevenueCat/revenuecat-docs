@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-27T15:10:02.093Z'
 updatedAt: '2023-03-27T15:10:02.093Z'
-category: 64515c3aa06fe500680740da
+category: 6465151401aeeb01ef245ace
 ---
 RevenueCat makes it easy to determine subscription status and more with the *Purchases SDK* and [REST API](https://docs.revenuecat.com/reference). 
 [block:image]
@@ -41,13 +41,47 @@ RevenueCat makes it easy to determine subscription status and more with the *Pur
 }
 [/block]
 The <<glossary:CustomerInfo>> object contains all of the purchase and subscription data available about the user. This object is updated whenever a purchase or restore occurs and periodically throughout the lifecycle of your app. The latest information can always be retrieved by calling `getCustomerInfo()`:
-[block:file]
-swift->code_blocks/👥 Customers/customer-info_1.swift
-objectivec->code_blocks/👥 Customers/customer-info_1.m
-kotlin->code_blocks/👥 Customers/customer-info_1.kt
-java->code_blocks/👥 Customers/customer-info_1.java
-javascript->code_blocks/👥 Customers/customer-info_1.js
-csharp->code_blocks/👥 Customers/customer-info_1.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    // access latest customerInfo\n}",
+      "language": "swift"
+    },
+    {
+      "code": "[[RCPurchases sharedPurchases] customerInfoWithCompletion:^(RCCustomerInfo * customerInfo, NSError * error) {\n     // access latest customerInfo\n}];",
+      "language": "objectivec"
+    },
+    {
+      "code": "Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->\n  // access latest customerInfo\n}",
+      "language": "kotlin"
+    },
+    {
+      "code": "Purchases.getSharedInstance().getCustomerInfo(new ReceiveCustomerInfoCallback() {\n  @Override\n  public void onReceived(@NonNull CustomerInfo customerInfo) {\n    // access latest customerInfo\n  }\n  \n  @Override\n  public void onError(@NonNull PurchasesError error) {\n\n  }\n});",
+      "language": "java"
+    },
+    {
+      "code": "try {\n  CustomerInfo customerInfo = await Purchases.getCustomerInfo();\n  // access latest customerInfo\n} on PlatformException catch (e) {\n  // Error fetching customer info\n}",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "try {\n  const customerInfo = await Purchases.getCustomerInfo();\n  // access latest customerInfo\n} catch (e) {\n // Error fetching customer info\n}",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "Purchases.getCustomerInfo(\n  customerInfo => {\n     // access latest customerInfo\n  },\n  error => {\n    // Error fetching customer info\n  }\n);",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "var purchases = GetComponent<Purchases>();\npurchases.GetCustomerInfo((customerInfo, error) =>\n{\n  // access latest customerInfo\n});",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 It's safe to call `getCustomerInfo()` frequently throughout your app. Since the SDK updates and caches the latest <<glossary:CustomerInfo>> when the app becomes active, the completion block won't need to make a network request in most cases. 
 [block:callout]
@@ -138,22 +172,90 @@ The `EntitlementInfo` object gives you access to all of the information about th
 The subscription status for a user can easily be determined with the `CustomerInfo` and `EntitlementInfo` objects.
 
 For most apps that only have one entitlement, the `isActive` status can be quickly checked for your entitlement ID. 
-[block:file]
-swift->code_blocks/👥 Customers/customer-info_2.swift
-objectivec->code_blocks/👥 Customers/customer-info_2.m
-kotlin->code_blocks/👥 Customers/customer-info_2.kt
-java->code_blocks/👥 Customers/customer-info_2.java
-javascript->code_blocks/👥 Customers/customer-info_2.js
-csharp->code_blocks/👥 Customers/customer-info_2.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "if customerInfo.entitlements[<your_entitlement_id>]?.isActive == true {\n  // user has access to \"your_entitlement_id\"                \n}",
+      "language": "swift"
+    },
+    {
+      "code": "if (customerInfo.entitlements[@<your_entitlement_id>].isActive) {\n  // user has access to \"your_entitlement_id\"\n}",
+      "language": "objectivec"
+    },
+    {
+      "code": "if (customerInfo.entitlements[<your_entitlement_id>]?.isActive == true) {\n\t// user has access to \"your_entitlement_id\"                \n}",
+      "language": "kotlin"
+    },
+    {
+      "code": "if (customerInfo.getEntitlements().get(<your_entitlement_id>).isActive()) {\n\t// user has access to \"your_entitlement_id\"\n}",
+      "language": "java"
+    },
+    {
+      "code": "if (customerInfo.entitlements.all[<my_entitlement_identifier>].isActive) {\n  // Grant user \"pro\" access\n}",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== \"undefined\") {\n  // Grant user \"pro\" access\n}",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== \"undefined\") {\n  // Grant user \"pro\" access\n}",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "if (customerInfo.Entitlements.Active.ContainsKey(<my_entitlement_identifier>)) {\n  // Unlock that great \"pro\" content\n}",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 If your app has multiple entitlements and you need to check if a user is subscribed to at least one you can also check for the entitlement Id in the `active` dictionary of `EntitlementInfo` objects.
-[block:file]
-swift->code_blocks/👥 Customers/customer-info_3.swift
-objectivec->code_blocks/👥 Customers/customer-info_3.m
-kotlin->code_blocks/👥 Customers/customer-info_3.kt
-java->code_blocks/👥 Customers/customer-info_3.java
-javascript->code_blocks/👥 Customers/customer-info_3.js
-csharp->code_blocks/👥 Customers/customer-info_3.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "if !customerInfo.entitlements.active.isEmpty {\n    //user has access to some entitlement\n}",
+      "language": "swift"
+    },
+    {
+      "code": "if ([customerInfo.entitlements.active count] > 0) {\n    //user has access to some entitlement\n}",
+      "language": "objectivec"
+    },
+    {
+      "code": "if (customerInfo.entitlements.active.isNotEmpty()) {\n  //user has access to some entitlement\n}",
+      "language": "kotlin"
+    },
+    {
+      "code": "if (!customerInfo.getEntitlements().getActive().isEmpty()) {\n\t//user has access to some entitlement\n}",
+      "language": "java"
+    },
+    {
+      "code": "if (customerInfo.entitlements.active.isNotEmpty) {\n  //user has access to some entitlement\n}",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "if (Object.entries(customerInfo.entitlements.active).length) {\n  //user has access to some entitlement\n}",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "if (Object.entries(customerInfo.entitlements.active).length) {\n  //user has access to some entitlement\n}",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "if (customerInfo.Entitlements.Active.Count != 0) {\n    //user has access to some entitlement\n}",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 It's important to note that <<glossary:CustomerInfo>> will be empty if no purchases have been made and no transactions have been synced. This means that entitlements may not exist in CustomerInfo even if they have been set up in the RevenueCat dashboard.
 [block:api-header]
@@ -166,13 +268,47 @@ Since *Purchases* SDK works seamlessly on any platform, a user's <<glossary:Cust
 CustomerInfo updates are not pushed to your app from the RevenueCat backend, updates can only happen from an outbound network request to RevenueCat.
 
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to customer information the next time your app is launched. Or throughout your app as you request new `CustomerInfo` objects.
-[block:file]
-swift->code_blocks/👥 Customers/customer-info_4.swift
-objectivec->code_blocks/👥 Customers/customer-info_4.m
-kotlin->code_blocks/👥 Customers/customer-info_4.kt
-java->code_blocks/👥 Customers/customer-info_4.java
-javascript->code_blocks/👥 Customers/customer-info_4.js
-csharp->code_blocks/👥 Customers/customer-info_4.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// Additional configure setup\nfunc application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {\n  \n    Purchases.logLevel = .debug\n    Purchases.configure(withAPIKey: <public_sdk_key>)\n    Purchases.shared.delegate = self // make sure to set this after calling configure\n}\n\nextension AppDelegate: PurchasesDelegate {\n    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: Purchases.CustomerInfo) {\n        // handle any changes to customerInfo\n    }\n}",
+      "language": "swift"
+    },
+    {
+      "code": "- (void)purchases:(nonnull RCPurchases *)purchases receivedUpdatedCustomerInfo:(nonnull RCCustomerInfo *)customerInfo {\n    // handle any changes to customerInfo\n}",
+      "language": "objectivec"
+    },
+    {
+      "code": "class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {\n  override fun onReceived(customerInfo: CustomerInfo) {\n    // handle any changes to customerInfo\n  }\n  \n  override fun onCreate(savedInstanceState: Bundle?) {\n    super.onCreate(savedInstanceState)\n    Purchases.sharedInstance.updatedCustomerInfoListener = this\n  }   \n}\n\n",
+      "language": "kotlin"
+    },
+    {
+      "code": "public class UpsellActivity extends AppCompatActivity implements UpdatedCustomerInfoListener {\n  @Override public void onReceived(CustomerInfo customerInfo) {\n    // handle any changes to customerInfo\n  } \n  \n  @Override public void onCreate(Bundle savedInstanceState) {\n    super.onCreate(savedInstanceState);\n\t\tPurchases.getSharedInstance().setUpdatedCustomerInfoListener(this);\n  }   \n}",
+      "language": "java"
+    },
+    {
+      "code": "Purchases.addCustomerInfoUpdateListener((info) {\n\t// handle any changes to customerInfo\n});",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "Purchases.addCustomerInfoUpdateListener((info) => {\n\t// handle any changes to customerInfo\n});",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "window.addEventListener(\"onCustomerInfoUpdated\", (info) => {\n\t// handle any changes to customerInfo\n});",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "public class PurchasesListener : Purchases.UpdatedCustomerInfoListener\n{\n    public override void CustomerInfoReceived(Purchases.CustomerInfo customerInfo)\n    {\n        // handle any changes to CustomerInfo\n    }\n}",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 
 [block:api-header]
@@ -181,8 +317,15 @@ csharp->code_blocks/👥 Customers/customer-info_4.cs
 }
 [/block]
 If you also have a web app, or need to get a user's subscription status from outside of the *Purchases SDK*, you should use the REST API. You can read the full API reference [here](https://docs.revenuecat.com/reference).
-[block:file]
-curl->code_blocks/👥 Customers/customer-info_5.curl
+[block:code]
+{
+  "codes": [
+    {
+      "code": "curl --request GET \\\n  --url https://api.revenuecat.com/v1/subscribers/app_user_id \\\n  --header 'Content-Type: application/json' \\\n  --header 'Authorization: Bearer PUBLIC_API_KEY'",
+      "language": "curl"
+    }
+  ]
+}
 [/block]
 
 [block:api-header]

@@ -4,7 +4,7 @@ slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
 updatedAt: '2023-04-11T22:27:04.677Z'
-category: 64515c3b7df88700248e78b3
+category: 6465151799bbc20028ce105c
 ---
 ## `authentication_error`
 

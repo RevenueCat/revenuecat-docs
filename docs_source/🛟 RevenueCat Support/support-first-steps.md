@@ -5,7 +5,7 @@ excerpt: We can help, but we need your help first.
 hidden: false
 createdAt: '2022-10-13T20:24:32.602Z'
 updatedAt: '2023-04-13T13:28:28.872Z'
-category: 64515c3f5c8d140049356bcb
+category: 6465151a27532017b37235f8
 ---
 Our documentation (you're already here!) answers a lot of questions about Charts, the dashboard, Customer Lists, and SDK setup. Try looking through here first, as well as our community where other developers may have already asked your question.
 

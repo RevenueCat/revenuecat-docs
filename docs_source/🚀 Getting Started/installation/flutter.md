@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-20T17:32:16.412Z'
 updatedAt: '2023-03-20T17:32:16.412Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 # What is RevenueCat?
 
@@ -29,8 +29,16 @@ Minimum target: iOS 11.0+
 # Installation
 
 To use this plugin, add `purchases_flutter` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/)  (and run an implicit dart pub get):
-[block:file]
-yaml->code_blocks/🚀 Getting Started/installation/flutter_1.yaml
+[block:code]
+{
+  "codes": [
+    {
+      "code": "dependencies:\n  purchases_flutter: ^4.0.0",
+      "language": "yaml",
+      "name": "pubspec.yaml"
+    }
+  ]
+}
 [/block]
 Alternatively run this command:
 
@@ -55,8 +63,16 @@ RevenueCat requires Swift >= 5.0 to work. If the `Podfile` in your project's `io
 # Import Purchases
 
 You should now be able to import `purchases_flutter`.
-[block:file]
-kotlin->code_blocks/🚀 Getting Started/installation/flutter_2.kt
+[block:code]
+{
+  "codes": [
+    {
+      "code": "import 'package:purchases_flutter/purchases_flutter.dart';",
+      "language": "kotlin",
+      "name": "Import Purchases"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

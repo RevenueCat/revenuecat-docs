@@ -16,16 +16,50 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T08:06:18.490Z'
 updatedAt: '2023-03-28T08:06:18.490Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
-[block:file]
-swift->code_blocks/🚀 Getting Started/making-purchases_1.swift
-objectivec->code_blocks/🚀 Getting Started/making-purchases_1.m
-kotlin->code_blocks/🚀 Getting Started/making-purchases_1.kt
-java->code_blocks/🚀 Getting Started/making-purchases_1.java
-javascript->code_blocks/🚀 Getting Started/making-purchases_1.js
-csharp->code_blocks/🚀 Getting Started/making-purchases_1.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in\n  if customerInfo.entitlements[\"your_entitlement_id\"]?.isActive == true {\n    // Unlock that great \"pro\" content              \n  }\n}\n",
+      "language": "swift"
+    },
+    {
+      "code": "[[RCPurchases sharedPurchases] purchasePackage:package withCompletion:^(RCStoreTransaction *transaction, RCCustomerInfo *customerInfo, NSError *error, BOOL cancelled) {\n  if (customerInfo.entitlements[@\"your_entitlement_id\"].isActive) {\n    // Unlock that great \"pro\" content\n  }\n}];\n",
+      "language": "objectivec"
+    },
+    {
+      "code": "Purchases.sharedInstance.purchaseWith(\n  PurchaseParams.Builder(this, aPackage).build(),\n  onError = { error, userCancelled -> /* No purchase */ },\n  onSuccess = { product, customerInfo ->\n    if (customerInfo.entitlements[\"my_entitlement_identifier\"]?.isActive == true) {\n      // Unlock that great \"pro\" content\n    }\n  }\n)",
+      "language": "kotlin"
+    },
+    {
+      "code": "Purchases.getSharedInstance().purchase(\n\tnew PurchaseParams.Builder(this, aPackage).build(), \n\tnew PurchaseCallback() {\n    @Override\n    public void onCompleted(@NonNull StoreTransaction storeTransaction, @NonNull CustomerInfo customerInfo) {\n\t\t\tif (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {\n\t\t\t\t// Unlock that great \"pro\" content\n\t\t\t}\n\t\t}\n\n\t\t@Override\n\t\tpublic void onError(@NonNull PurchasesError purchasesError, boolean b) {\n\t\t\t// No purchase\n\t\t}\n\t}\n);",
+      "language": "java"
+    },
+    {
+      "code": "try {\n  PurchaserInfo purchaserInfo = await Purchases.purchasePackage(package);\n  if (purchaserInfo.entitlements.all[\"my_entitlement_identifier\"].isActive) {\n    // Unlock that great \"pro\" content\n  }\n} on PlatformException catch (e) {\n  var errorCode = PurchasesErrorHelper.getErrorCode(e);\n  if (errorCode != PurchasesErrorCode.purchaseCancelledError) {\n    showError(e);  \t          \n  }\n}",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "// Using Offerings/Packages\ntry {\n  const {customerInfo, productIdentifier} = await Purchases.purchasePackage(package);\n  if (typeof customerInfo.entitlements.active.my_entitlement_identifier !== \"undefined\") {\n    // Unlock that great \"pro\" content\n  }\n} catch (e) {\n  if (!e.userCancelled) {\n  \tshowError(e);\n  }\n}\n\n// -----\n// If you are NOT using Offerings/Packages:\nawait Purchases.purchaseProduct(\"product_id\");\n\n// Or, optionally provide the product type as the third parameter. Defaults to PURCHASE_TYPE.SUBS\n// The `null` second parameter is the `upgradeInfo` object discussed here: https://www.revenuecat.com/docs/managing-subscriptions#google-play\nawait Purchases.purchaseProduct(\"product_id\", null, Purchases.PURCHASE_TYPE.INAPP);",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "Purchases.purchasePackage(package, ({ productIdentifier, customerInfo }) => {\n    if (typeof customerInfo.entitlements.active.my_entitlement_identifier !== \"undefined\") {\n      // Unlock that great \"pro\" content\n    }\n  },\n  ({error, userCancelled}) => {\n    // Error making purchase\n  }\n);\n\n// Note: if you are using purchaseProduct to purchase Android In-app products, an optional third parameter needs to be provided when calling purchaseProduct. You can use the package system to avoid this.\n\nPurchases.purchaseProduct(\"product_id\", ({ productIdentifier, customerInfo }) => {\n}, ({error, userCancelled}) => {\n    // Error making purchase\n}, null, Purchases.PURCHASE_TYPE.INAPP);",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "Purchases purchases = GetComponent<Purchases>();\npurchases.PurchasePackage(package, (productIdentifier, customerInfo, userCancelled, error) =>\n{\n  if (customerInfo.Entitlements.Active.ContainsKey(\"my_entitlement_identifier\")) {\n    // Unlock that great \"pro\" content\n  }\n});",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 The `purchase(package:)` completion block will contain an updated [CustomerInfo](doc:purchaserinfo) object if successful, along with some details about the transaction.
 

@@ -5,7 +5,7 @@ excerpt: Migrating to Offerings from a legacy setup
 hidden: true
 createdAt: '2019-09-21T00:32:27.183Z'
 updatedAt: '2019-12-16T17:07:12.258Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 [block:embed]
 {
@@ -28,8 +28,15 @@ There are a few major improvements over the legacy system.
 
 ## 1. No hardcoded strings
 With new Offerings, you can now fully reference products without any hard coded strings. This will make your paywall code more robust and allow maximum configurability from the backend.
-[block:file]
-swift->code_blocks/🚀 Getting Started/offerings-migration_1.swift
+[block:code]
+{
+  "codes": [
+    {
+      "code": "func fetchOffering() {\n    Purchases.shared.offerings { (offerings, error) in\n        \n        guard let offering = offerings?.current else {\n            print(\"No current offering configured\")\n            return\n        }\n        \n        for package in offering.availablePackages {\n            print(\"Product: \\(package.product.localizedDescription)\")\n            print(\"Type: \\(package.packageType)\")\n            print(\"Price: \\(package.localizedPriceString)\")\n        }\n    }\n}",
+      "language": "swift"
+    }
+  ]
+}
 [/block]
 The above code sample fetches the offerings from the server, unpacks the current Offering, and prints out the available packages. There's no need to hardcode any strings, making remote configuration a breeze.
 

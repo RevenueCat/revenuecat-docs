@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-01-15T19:53:13.255Z'
 updatedAt: '2023-03-28T10:03:45.658Z'
-category: 64515c3b6f91d900446f01f3
+category: 64651516f8ed950061b5610e
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
 
@@ -53,9 +53,21 @@ You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscripti
 ## Google Play
 
 In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Setting the proration mode optional but will default to `IMMEDIATE_WITH_TIME_PRORATION`.
-[block:file]
-text->code_blocks/💰 Subscription Guidance/managing-subscriptions_1.txt
-java->code_blocks/💰 Subscription Guidance/managing-subscriptions_1.java
+[block:code]
+{
+  "codes": [
+    {
+      "code": "",
+      "language": "text",
+      "name": "Kotlin"
+    },
+    {
+      "code": "Purchases.getSharedInstance().purchase(\n\tnew PurchaseParams.Builder(activity, pkg)\n\t\t.oldProductId(\"old_product_id\")\n\t\t.googleProrationMode(GoogleProrationMode.IMMEDIATE_WITHOUT_PRORATION)\n\t\t.build(),\n\tnew PurchaseCallback() {\n\t\t@Override\n\t\tpublic void onCompleted(@NonNull StoreTransaction storeTransaction, @NonNull CustomerInfo customerInfo) {\n\t\t\tif (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {\n\t\t\t\t// Unlock that great \"pro\" content\n\t\t\t}\n\t\t}\n\n\t\t@Override\n\t\tpublic void onError(@NonNull PurchasesError purchasesError, boolean b) {\n\t\t\t// No purchase\n\t\t}\n\t}\n);",
+      "language": "java",
+      "name": "Java"
+    }
+  ]
+}
 [/block]
 
 [block:callout]
@@ -133,9 +145,19 @@ Google requires developers to allow customers to cancel a subscription within ap
 }
 [/block]
 
-[block:file]
-swift->code_blocks/💰 Subscription Guidance/managing-subscriptions_2.swift
-kotlin->code_blocks/💰 Subscription Guidance/managing-subscriptions_2.kt
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    let managementURL = customerInfo.managementURL\n    // display the managementURL in your app\n}",
+      "language": "swift"
+    },
+    {
+      "code": "Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->\n    val managementURL = customerInfo.managementURL\n    // display the managementURL in your app\n}",
+      "language": "kotlin"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

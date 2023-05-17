@@ -5,7 +5,7 @@ excerpt: Collect and view Apple Search Ads attribution in RevenueCat using AdSer
 hidden: false
 createdAt: '2022-05-23T14:12:29.055Z'
 updatedAt: '2023-03-30T21:00:01.908Z'
-category: 64515c3c134c6b000bb9f128
+category: 646515188418f71e950548f0
 ---
 > 👍 
 > 

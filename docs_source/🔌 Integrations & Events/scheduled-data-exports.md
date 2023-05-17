@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data (formerly ETL Exp
 hidden: false
 createdAt: '2023-03-14T15:53:17.647Z'
 updatedAt: '2023-03-20T16:19:22.595Z'
-category: 64515c3c134c6b000bb9f128
+category: 646515188418f71e950548f0
 ---
 [block:callout]
 {
@@ -140,12 +140,53 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample queries for RevenueCat measures
 
 You can use the following sample queries (written in Postgresql) as starting points for reproducing common RevenueCat measures.
-[block:file]
-pgsql->code_blocks/🔌 Integrations & Events/scheduled-data-exports_1.pgsql
+[block:code]
+{
+  "codes": [
+    {
+      "code": "-- Active Trials as of your [targeted_date]\n\nSELECT\n  COUNT(*)\nFROM\n  [revenuecat_data_table]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'true'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox != 'true'\n\n-- The RevenueCat Active Trials chart excludes\n-- promotional transactions and transactions resulting from family sharing\n-- since they do not reflect auto-renewing future payments.",
+      "language": "pgsql",
+      "name": "Active Trials"
+    },
+    {
+      "code": "-- Active Subscriptions as of your [targeted_date]\n\nSELECT\n  COUNT(*)\nFROM\n  [revenuecat_data_table]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'false'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox != 'true'\n\n-- The RevenueCat Active Subscriptions chart excludes trials,\n-- promotional transactions, and transactions resulting from family sharing\n-- since they do not reflect auto-renewing future payments.",
+      "language": "pgsql",
+      "name": "Active Subscriptions"
+    },
+    {
+      "code": "-- Revenue generated on [targeted_date]\n\nSELECT\n  SUM(price_in_usd) as revenue\nFROM\n  [revenuecat_data_table]\nWHERE date(start_time) = [targeted_date]\n  AND is_trial_period = 'false'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox != 'true'\n\n-- Transactions which are refunded can be identified through the refunded_at field.\n-- Once refunded, price_in_usd will be set to $0, so revenue will always be net of refunds.",
+      "language": "pgsql",
+      "name": "Revenue"
+    }
+  ]
+}
 [/block]
 # Sample queries for customized measures
 
 Scheduled Data Exports are a powerful way to add your own customizations on top of the core measures provided by RevenueCat. Check out the following sample queries (written in Postgresql) for some ideas.
-[block:file]
-pgsql->code_blocks/🔌 Integrations & Events/scheduled-data-exports_2.pgsql
+[block:code]
+{
+  "codes": [
+    {
+      "code": "-- How many Active Subscriptions do I have with a given custom attribute value?\n  \nSELECT\n  you.custom_attribute_key, COUNT(*)\nFROM\n  [revenuecat_data_table] rc\n  \nLEFT JOIN [your_data_table] you \n    ON you.rc_original_app_user_id = rc.rc_original_app_user_id\n  \nWHERE date(rc.effective_end_time) > [targeted_date]\n  AND date(rc.start_time) <= [targeted_date]\n  AND rc.is_trial_period = 'false'\n  AND (rc.effective_end_time IS NULL OR DATE_DIFF('s', rc.start_time, rc.effective_end_time)::float > 0)\n  AND rc.ownership_type != 'FAMILY_SHARED'\n  AND rc.store != 'promotional'\n  AND rc.is_sandbox <> 'true'\n  GROUP BY you.custom_attribute_key",
+      "language": "pgsql",
+      "name": "Active Subs by Custom Attribute"
+    },
+    {
+      "code": "-- What is my weekly revenue, where Monday is set as the start day of the week?\n\nSELECT\n  date_trunc('week', start_time) as week,\n  SUM(price_in_usd) as revenue\nFROM\n  [revenuecat_data_table]\nWHERE date(start_time) BETWEEN [targeted_period_start_date] AND [targeted_period_end_date]\n  AND is_trial_period = 'false'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox != 'true'\n  GROUP BY week",
+      "language": "pgsql",
+      "name": "Weekly Revenue (starting Monday)"
+    },
+    {
+      "code": "-- What is my Realized LTV of each monthly subscription cohort, segmented by whether they were offered a trial?\n  \nWITH \n(SELECT\n  MIN(start_time) as subscription_start_time,\n  original_store_transaction_id,\n  MAX(is_trial_period) as had_a_trial,\n  SUM(price_in_usd) as realized_ltv\nFROM\n  [revenuecat_data_table]\nWHERE date(start_time) > [targeted_period_start_date]\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox != 'true'\n  GROUP BY original_store_transaction_id) as subscriptions\n  \nSELECT\n  to_char(first_start_time, 'YYYY-MM') as subscription_start_month,\n  had_a_trial,\n  COUNT() as subscriptions,\n  SUM(realized_ltv) as realized_ltv,\n  SUM(realized_ltv) / COUNT() as realized_ltv_per_subscription\nFROM\n  subscriptions",
+      "language": "pgsql",
+      "name": "Realized LTV Segments"
+    },
+    {
+      "code": "-- What portion of my Active Trials are in a grace period?\n  \nSELECT\n  CASE\n    WHEN grace_period_end_time IS NOT NULL THEN 'in_grace_period'\n    ELSE 'in_trial_period'\n    end_as period_type,\n  COUNT(*) as active_trials\nFROM\n  [revenuecat_data_table]\nWHERE date(effective_end_time) > [targeted_date]\n  AND date(start_time) <= [targeted_date]\n  AND is_trial_period = 'true'\n  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)\n  AND ownership_type != 'FAMILY_SHARED'\n  AND store != 'promotional'\n  AND is_sandbox != 'true'\n  GROUP BY period_type",
+      "language": "pgsql",
+      "name": "Active Trials by Grace Period Status"
+    }
+  ]
+}
 [/block]

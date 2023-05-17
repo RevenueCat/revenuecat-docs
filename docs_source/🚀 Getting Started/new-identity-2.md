@@ -4,7 +4,7 @@ slug: new-identity-2
 hidden: true
 createdAt: '2019-09-27T23:32:42.637Z'
 updatedAt: '2023-01-10T19:03:18.795Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 RevenueCat provides a source of truth for a subscriber's status across different platforms. To do this, each subscriber has an App User ID that uniquely identifies them within your application. 
 
@@ -17,13 +17,47 @@ The *Purchases SDK* allows you to specify your own user identifiers or use anony
 }
 [/block]
 If you don't provide an App User ID when instantiating the Purchases SDK, RevenueCat will create a new random App User ID for you and cache it on the device. In the event that the user deletes and reinstalls the app, a new random App User ID will be generated.
-[block:file]
-swift->code_blocks/🚀 Getting Started/new-identity-2_1.swift
-objectivec->code_blocks/🚀 Getting Started/new-identity-2_1.m
-kotlin->code_blocks/🚀 Getting Started/new-identity-2_1.kt
-java->code_blocks/🚀 Getting Started/new-identity-2_1.java
-javascript->code_blocks/🚀 Getting Started/new-identity-2_1.js
-csharp->code_blocks/🚀 Getting Started/new-identity-2_1.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.configure(withAPIKey: \"my_api_key\")",
+      "language": "swift"
+    },
+    {
+      "code": "[RCPurchases configureWithAPIKey:@\"my_api_key\"];",
+      "language": "objectivec"
+    },
+    {
+      "code": "Purchases.configure(this, \"my_api_key\")",
+      "language": "kotlin"
+    },
+    {
+      "code": "Purchases.configure(this, \"my_api_key\");",
+      "language": "java"
+    },
+    {
+      "code": "await Purchases.setup(\"public_sdk_key\");",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "Purchases.setup(\"public_sdk_key\");",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "Purchases.setup(\"public_sdk_key\");",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "See Unity installation instructions https://docs.revenuecat.com/docs/unity",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 
 [block:callout]
@@ -46,23 +80,91 @@ Using an externally managed App User ID also provides a mechanism by which to re
 
 ## Set App User ID on configuration
 If you have your own App User IDs, you can pass those on instantiation to *Purchases*.
-[block:file]
-swift->code_blocks/🚀 Getting Started/new-identity-2_2.swift
-objectivec->code_blocks/🚀 Getting Started/new-identity-2_2.m
-kotlin->code_blocks/🚀 Getting Started/new-identity-2_2.kt
-java->code_blocks/🚀 Getting Started/new-identity-2_2.java
-javascript->code_blocks/🚀 Getting Started/new-identity-2_2.js
-csharp->code_blocks/🚀 Getting Started/new-identity-2_2.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "Purchases.configure(withAPIKey: \"my_api_key\", appUserID: \"my_app_user_id\")",
+      "language": "swift"
+    },
+    {
+      "code": "[RCPurchases configureWithAPIKey:@\"my_api_key\" appUserID:@\"my_app_user_id\"];",
+      "language": "objectivec"
+    },
+    {
+      "code": "Purchases.configure(this, \"my_api_key\", \"my_app_user_id\")",
+      "language": "kotlin"
+    },
+    {
+      "code": "Purchases.configure(this, \"my_api_key\", \"my_app_user_id\");",
+      "language": "java"
+    },
+    {
+      "code": "await Purchases.setup(\"public_sdk_key\", appUserId: \"my_app_user_id\");",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "Purchases.setup(\"public_sdk_key\", \"my_app_user_id\");",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "Purchases.setup(\"public_sdk_key\", \"my_app_user_id\");",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "See Unity installation instructions https://docs.revenuecat.com/docs/unity",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 ## Set App User ID after configuration
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.identify()`. The most common cases are users creating accounts or logging in. 
-[block:file]
-swift->code_blocks/🚀 Getting Started/new-identity-2_3.swift
-objectivec->code_blocks/🚀 Getting Started/new-identity-2_3.m
-kotlin->code_blocks/🚀 Getting Started/new-identity-2_3.kt
-java->code_blocks/🚀 Getting Started/new-identity-2_3.java
-javascript->code_blocks/🚀 Getting Started/new-identity-2_3.js
-csharp->code_blocks/🚀 Getting Started/new-identity-2_3.cs
+[block:code]
+{
+  "codes": [
+    {
+      "code": "// Configure Purchases on app launch\nPurchases.configure(withAPIKey: \"my_api_key\")\n\n//...\n\n// Later log in provided user Id\nPurchases.shared.identify(\"my_app_user_id\") { (purchaserInfo, error) in\n    // purchaserInfo updated for my_app_user_id\n}",
+      "language": "swift"
+    },
+    {
+      "code": "// Configure Purchases on app launch\n[RCPurchases configureWithAPIKey:@\"my_api_key\"];\n\n//...\n\n// Later log in provided user Id\n[[RCPurchases sharedPurchases] identify:@\"my_app_user_id\" completionBlock:^(RCPurchaserInfo *purchaserInfo, NSError *error) {\n    // purchaserInfo updated for my_app_user_id\n}];",
+      "language": "objectivec"
+    },
+    {
+      "code": "// Configure Purchases on app launch\nPurchases.configure(this, \"my_api_key\")\n\n//...\n\n// Later log in provided user Id\nPurchases.sharedInstance.identifyWith(\"my_app_user_id\", ::showError) { purchaserInfo ->\n  // purchaserInfo updated for my_app_user_id\n}",
+      "language": "kotlin"
+    },
+    {
+      "code": "// Configure Purchases on app launch\nPurchases.configure(this, \"my_api_key\");\n\n//...\n\n// Later log in provided user Id\nPurchases.sharedInstance.identifyWith(\"my_app_user_id\", ::showError) { purchaserInfo ->\n  // purchaserInfo updated for my_app_user_id\n}\nPurchases.getSharedInstance().identify(\"my_app_user_id\", new ReceivePurchaserInfoListener() {\n\t@Override\n\tpublic void onReceived(@android.support.annotation.Nullable PurchaserInfo purchaserInfo, @android.support.annotation.Nullable PurchasesError error) {\n\t\t// purchaserInfo updated for my_app_user_id\n\t}\n});",
+      "language": "java"
+    },
+    {
+      "code": "// Configure Purchases on app launch\nawait Purchases.setup(\"public_sdk_key\");\n\n//...\n\n// Later log in provided user Id\nPurchaserInfo purchaserInfo = await Purchases.identify(\"my_app_user_id\");",
+      "language": "javascript",
+      "name": "Flutter"
+    },
+    {
+      "code": "// Configure Purchases on app launch\nPurchases.setup(\"public_sdk_key\");\n\n//...\n\n// Later log in provided user Id\nconst purchaserInfo = await Purchases.identify(\"my_app_user_id\");\n// purchaserInfo updated for my_app_user_id",
+      "language": "javascript",
+      "name": "React Native"
+    },
+    {
+      "code": "// Configure Purchases on app launch\nPurchases.setup(\"public_sdk_key\");\n\n//...\n\n// Later log in provided user Id\n\nPurchases.identify(\n  \"my_app_user_id\", \n  info => {\n    // purchaserInfo updated for my_app_user_id\n  },\n  error => {\n  }\n);",
+      "language": "javascript",
+      "name": "Cordova"
+    },
+    {
+      "code": "purchases.Identify(\"my_app_user_id\", (purchaserInfo, error) => {\n  // purchaserInfo updated for my_app_user_id\n});",
+      "language": "csharp",
+      "name": "Unity"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

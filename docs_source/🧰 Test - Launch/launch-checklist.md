@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-01-11T10:40:23.101Z'
 updatedAt: '2023-01-11T10:40:23.101Z'
-category: 64515c3aa16590000a27cd9d
+category: 6465151557107b1944dd50e6
 ---
 This document contains a checklist of things to consider before launching subscriptions in your app to production.
 [block:api-header]

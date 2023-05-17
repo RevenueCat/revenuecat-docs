@@ -16,7 +16,7 @@ metadata:
     4: "#fbabaf"
 createdAt: '2020-10-07T00:35:55.719Z'
 updatedAt: '2020-10-07T00:35:55.719Z'
-category: 64515c3c134c6b000bb9f128
+category: 646515188418f71e950548f0
 ---
 [block:callout]
 {
@@ -150,8 +150,26 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 }
 [/block]
 
-[block:file]
-sql->code_blocks/🔌 Integrations & Events/amazon-s3_1.sql
+[block:code]
+{
+  "codes": [
+    {
+      "code": "-- Active trials\nselect count(1)\nfrom transactions\nwhere end_time > now()\nand is_trial_period = true\nand is_sandbox = false\nand refunded_at IS NULL;",
+      "language": "sql",
+      "name": "Active Trials"
+    },
+    {
+      "code": "-- Active subscriptions\nselect count(1)\nfrom transactions\nwhere end_time > now()\nand is_trial_period = false\nand is_sandbox = false\nand refunded_at IS NULL;\n\n-- The RevenueCat charts exclude promotional transactions.\n-- you can include the following filter to exclude promotional\n-- transactions from your queries as well\nproduct_identifier NOT ILIKE 'rc_promo%'\n\n\n",
+      "language": "sql",
+      "name": "Active Subscriptions"
+    },
+    {
+      "code": "-- Revenue past 28-days (USD)\nselect \nsum(price)\nfrom transactions\nwhere start_time > (CURRENT_DATE - INTERVAL '28 days')\nand is_sandbox = false;",
+      "language": "sql",
+      "name": "Revenue"
+    }
+  ]
+}
 [/block]
 
 [block:api-header]
@@ -182,8 +200,16 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 }
 [/block]
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
-[block:file]
-json->code_blocks/🔌 Integrations & Events/amazon-s3_2.json
+[block:code]
+{
+  "codes": [
+    {
+      "code": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"ListObjectsInBucket\",\n            \"Effect\": \"Allow\",\n            \"Action\": [\n                \"s3:ListBucket\"\n            ],\n            \"Resource\": [\n                \"arn:aws:s3:::revenuecat-deliveries\"\n            ]\n        },\n        {\n            \"Sid\": \"AllObjectActions\",\n            \"Effect\": \"Allow\",\n            \"Action\": \"s3:*Object\",\n            \"Resource\": [\n                \"arn:aws:s3:::revenuecat-deliveries/*\"\n            ]\n        }\n    ]\n}",
+      "language": "json",
+      "name": "Access Policy"
+    }
+  ]
+}
 [/block]
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]

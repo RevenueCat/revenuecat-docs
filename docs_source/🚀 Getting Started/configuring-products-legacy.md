@@ -5,7 +5,7 @@ excerpt: Use Entitlements and Offerings to organize and display products
 hidden: true
 createdAt: '2020-07-02T01:54:48.923Z'
 updatedAt: '2020-07-02T01:54:48.923Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 [block:callout]
 {

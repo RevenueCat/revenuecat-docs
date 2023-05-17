@@ -5,7 +5,7 @@ excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
 updatedAt: '2023-03-30T18:29:03.017Z'
-category: 64515c3f0b149d004ca541f9
+category: 6465151b72bb71000aa4e9aa
 ---
 ## Google Product setup
 

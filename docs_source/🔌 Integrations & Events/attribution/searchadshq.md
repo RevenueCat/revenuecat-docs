@@ -16,7 +16,7 @@ metadata:
     4: "#e9acb0"
 createdAt: '2020-07-30T17:43:45.879Z'
 updatedAt: '2021-12-03T04:07:47.324Z'
-category: 64515c3c134c6b000bb9f128
+category: 646515188418f71e950548f0
 ---
 With our SearchAdsHQ integration you can:
 * Accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate.
@@ -28,8 +28,15 @@ With our SearchAdsHQ integration you can:
 The SearchAdsHQ integration requires that Apple Search Ads attribution data is sent from the device to RevenueCat. 
 
 The simplest way to collect this information is by setting the `automaticAppleSearchAdsAttributionCollection` property to `true` **before** configuring the *Purchases SDK*.
-[block:file]
-swift->code_blocks/🔌 Integrations & Events/attribution/searchadshq_1.swift
+[block:code]
+{
+  "codes": [
+    {
+      "code": "import iAd\n// ...\nPurchases.automaticAppleSearchAdsAttributionCollection = true\nPurchases.configure(withAPIKey: \"public_sdk_key\")",
+      "language": "swift"
+    }
+  ]
+}
 [/block]
 Our guide on [Apple Search Ads attribution](doc:apple-search-ads) outlines this step in more detail.
 
@@ -49,8 +56,16 @@ The integration also accepts some optional device-specific data below:
 }
 [/block]
 This data should be sent to RevenueCat through reserved [Subscriber Attributes](doc:subscriber-attributes) keys. 
-[block:file]
-swift->code_blocks/🔌 Integrations & Events/attribution/searchadshq_2.swift
+[block:code]
+{
+  "codes": [
+    {
+      "code": "import AdSupport\nimport iAd\n// ...\nPurchases.automaticAppleSearchAdsAttributionCollection = true\nPurchases.configure(withAPIKey: \"public_sdk_key\")\n// ...\nPurchases.shared.setAttributes([\n    \"$idfa\" : ASIdentifierManager.shared().advertisingIdentifier.uuidString\n])",
+      "language": "swift",
+      "name": "Swift"
+    }
+  ]
+}
 [/block]
 
 [block:callout]

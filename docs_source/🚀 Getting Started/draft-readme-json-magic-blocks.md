@@ -4,7 +4,7 @@ slug: draft-readme-json-magic-blocks
 hidden: true
 createdAt: '2023-03-03T21:31:29.059Z'
 updatedAt: '2023-03-03T21:31:29.059Z'
-category: 64515c38a0f5ef001898dfd8
+category: 6465151171aace1d6f6388e2
 ---
 Plain text
 [block:api-header]
@@ -13,9 +13,19 @@ Plain text
 }
 [/block]
 
-[block:file]
-c->code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_1.c
-javascript->code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_1.js
+[block:code]
+{
+  "codes": [
+    {
+      "code": "/* C code */",
+      "language": "c"
+    },
+    {
+      "code": "// Javascript code",
+      "language": "javascript"
+    }
+  ]
+}
 [/block]
 
 [block:callout]
