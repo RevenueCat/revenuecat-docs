@@ -43,19 +43,9 @@ The Purchases SDK allows for easy checking of eligibility for introductory offer
 
 RevenueCat uses a best-effort approach to checking eligibility based on previous purchases by the customer. The native store payment sheet will ultimately display the correct eligibility before the customer subscribes.
 
-```swift
-Purchases.shared.getOfferings { offerings, error in
-  if let product = offerings?.current?.availablePackages.first?.storeProduct {
-    Purchases.shared.checkTrialOrIntroDiscountEligibility(product: product) { eligibility in
-      if eligibility == .eligible {
-        // show trial/introductory terms
-      } else {
-        // user is not eligible, show non-trial/introductory terms
-      }
-    }
-  }
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/subscription-offers_1.swift"}
+[/block]
 
 
 
@@ -88,23 +78,9 @@ If you want to have greater control over which offer gets applied to purchases, 
 
 The `subscriptionOptions` property also has a number of convenience properties that allow finding the right offer to apply for your customer. The `defaultOption` property finds the offer with the longest free trial period or the cheapest introductory offer. In addition, the following properties are available:
 
-```kotlin
-val basePlan = storeProduct.subscriptionOptions?.basePlan
-val freeTrialOffer = storeProduct.subscriptionOptions?.freeTrial
-val introductoryOffer = storeProduct.subscriptionOptions?.introOffer
-val offerForLapsedCustomers = storeProduct.subscriptionOptions?.withTag("lapsed-customers").first()
-
-// For example, to purchase the offer for lapsed customers directly, you would then use the following code
-Purchases.sharedInstance.purchaseWith(
-  PurchaseParams.Builder(requireActivity(), offerForLapsedCustomers).build(), 
-  onError = { error, userCancelled ->
-    ...
-  },
-  onSuccess = { storeTransaction, customerInfo ->
-    ...
-  }
-)
-```
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/💰 Subscription Guidance/subscription-offers_2.kt"}
+[/block]
 
 
 

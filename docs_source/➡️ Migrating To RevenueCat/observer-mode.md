@@ -105,109 +105,24 @@ No special requirements
 
 ## 1. Configure the SDK
 
-```swift Swift
-Purchases.logLevel = .debug
-Purchases.configure(
-  with: Configuration.Builder(withAPIKey: Constants.apiKey)
-    .with(appUserID: <app_user_id>)
-    .with(observerMode: true)
-    .build()
-)
-```
-```objectivec Objective-C
-RCPurchases.logLevel = RCLogLevelDebug;
-RCConfigurationBuilder *configuration = [RCConfiguration builderWithAPIKey:@<public_sdk_key>];
-configuration = [configuration withObserverMode:YES];
-configuration = [configuration withAppUserID:@<app_user_id>];
-[RCPurchases configureWithConfiguration:[configuration build]];
-```
-```kotlin Kotlin
-// If you're targeting only Google Play Store
-class MainApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.logLevel = LogLevel.DEBUG
-        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())
-    }
-}
-
-// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use
-// In your build.gradle:
-flavorDimensions "store"
-productFlavors {
-    amazon {
-        buildConfigField "String", "STORE", "\"amazon\""
-    }
-
-    google {
-        buildConfigField "String", "STORE", "\"google\""
-    }       
-}
-
-///...
-
-class MainApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.logLevel = LogLevel.DEBUG
-          
-        if (BuildConfig.STORE.equals("amazon")) {
-            Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).observerMode(true).build())
-        } else if (BuildConfig.STORE.equals("google")) {
-            Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())
-        }
-    }
-}
-```
-```java Java
-// If you're targeting only Google Play Store
-public class MainApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Purchases.setLogLevel(LogLevel.DEBUG);
-        Purchases.configure(new PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build());
-    }
-}
-
-// If you're building for the Amazon Appstore, 
-// click the Kotlin tab to see how to set up flavors in your build.gradle:
-///...
-
-public class MainApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Purchases.setLogLevel(LogLevel.DEBUG);
-      
-        PurchasesConfiguration.Builder builder = null;
-      
-        if (BuildConfig.STORE.equals("amazon")) {
-            builder = new AmazonConfiguration.Builder(this, <public_amazon_sdk_key>);
-        } else if (BuildConfig.STORE.equals("google")) {
-            builder = new PurchasesConfiguration.Builder(this, <public_google_sdk_key>);
-        }
-      
-        Purchases.configure(builder.observerMode(true).build());
-    }
-}
-```
-```javascript Flutter
-await Purchases.setup(<my_api_key>, observerMode: true);
-```
-```csharp Unity
-// Observer mode can be configured through the Unity Editor. 
-// If you'd like to do it programmatically instead, 
-// make sure to check "Use runtime setup" in the Unity Editor, and then:
-
-Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(<api_key>);
-Purchases.PurchasesConfiguration purchasesConfiguration =
-    builder.SetUserDefaultsSuiteName("user_default")
-    .SetObserverMode(true)
-    .SetAppUserId(appUserId)
-    .Build();
-purchases.Configure(purchasesConfiguration);
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"Kotlin","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_6.cs"}
+[/block]
 
 
 
@@ -237,27 +152,18 @@ purchases.Configure(purchasesConfiguration);
 
 On Android with Google Play (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 
-```kotlin
-// Called any time a purchase or restore 
-// is successful in your existing code
-Purchases.sharedInstance.syncPurchases()
-```
-```java
-// Called any time a purchase or restore 
-// is successful in your existing code
-Purchases.getSharedInstance().syncPurchases();
-```
-```javascript React Native
-// Called any time a purchase or restore 
-// is successful in your existing code
-Purchases.syncPurchases();
-```
-```csharp Unity
-// Called any time a purchase or restore 
-// is successful in your existing code
-var purchases = GetComponent<Purchases>();
-purchases.SyncPurchases();
-```
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_9.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_10.cs"}
+[/block]
 
 
 
@@ -265,54 +171,12 @@ purchases.SyncPurchases();
 
 On Android with Amazon Store (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncObserverModeAmazonPurchase` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 
-```csharp Unity
-public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
-{
-   m_StoreController = controller;
-   storeExtensionProvider = extensions;
-   var purchases = GetComponent<Purchases>();
-   purchases.SetDebugLogsEnabled(true);
-   foreach (Product product in controller.products.all)
-   {
-       if (product.hasReceipt) {
-           var amazonExtensions = storeExtensionProvider.GetExtension<IAmazonExtensions>();
-           var userId = amazonExtensions.amazonUserId;
-           purchases.SyncObserverModeAmazonPurchase( 
-               product.definition.id,
-               product.transactionID,
-               userId,
-               product.metadata.isoCurrencyCode,
-               Decimal.ToDouble(product.metadata.localizedPrice)
-           );
-       }
-   }
-}
-
-public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)
-{
-   var purchases = GetComponent<Purchases>();
-   
-   var amazonExtensions = storeExtensionProvider.GetExtension<IAmazonExtensions>();
-   var userId = amazonExtensions.amazonUserId;
-   purchases.SyncObserverModeAmazonPurchase(
-       e.purchasedProduct.definition.id,
-       e.purchasedProduct.transactionID,
-       userId,
-       e.purchasedProduct.metadata.isoCurrencyCode,
-       Decimal.ToDouble(e.purchasedProduct.metadata.localizedPrice)
-   );
-   return PurchaseProcessingResult.Complete;
-}
-```
-```kotlin
-Purchases.sharedInstance.syncObserverModeAmazonPurchase(
-  receipt.termSku,
-  receipt.receiptId,
-  userData.userId,
-  isoCurrencyCode,
-  storeProduct.price
-)
-```
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_11.cs"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_12.kt"}
+[/block]
 
 
 

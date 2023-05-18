@@ -171,218 +171,27 @@ Once your account is connected, you can configure the event names that we'll sen
 
 Below are sample JSONs that are delivered to Intercom for each event.
 
-```json Initial Purchase
-{
-  "product_identifier": "one_week_premium",
-  "app_id": "app1234567890",
-  "user_payload": {
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "custom_attributes": {
-      "latest_store": "PLAY_STORE",
-      "latest_entitlement": "pro",
-      "expires_at": 1663252169
-    }
-  },
-  "event_payload": {
-    "event_name": "rc_initial_purchase_event",
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "created_at": 1662992969,
-    "metadata": {
-      "product_identifier": "one_week_premium",
-      "entitlement": "pro",
-      "store": "PLAY_STORE",
-      "expires_at": 1663252169
-    }
-  }
-}
-```
-```json Trial Started
-{
-  "app_id": "app1234567890",
-  "event_payload": {
-    "created_at": 1662992969,
-    "event_name": "rc_trial_started_event",
-    "metadata": {
-      "app_id": "app1234567890",
-      "entitlement": "premium",
-      "environment": "production",
-      "expires_at": 1663252169,
-      "product_identifier": "one_week_premium",
-      "store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  },
-  "product_identifier": "one_week_premium",
-  "user_payload": {
-    "custom_attributes": {
-      "expires_at": 1663252169,
-      "latest_entitlement": "premium",
-      "latest_store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  }
-}
-```
-```json Trial Converted
-{
-  "app_id": "app1234567890",
-  "event_payload": {
-    "created_at": 1663021598,
-    "event_name": "rc_trial_converted_event",
-    "metadata": {
-      "app_id": "app1234567890",
-      "entitlement": "premium",
-      "environment": "production",
-      "expires_at": 1663626398,
-      "product_identifier": "one_week_premium",
-      "store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  },
-  "product_identifier": "one_week_premium",
-  "user_payload": {
-    "custom_attributes": {
-      "expires_at": 1663626398,
-      "latest_entitlement": "premium",
-      "latest_store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  }
-}
-```
-```json Trial Cancelled
-{
-  "app_id": "app1234567890",
-  "event_payload": {
-    "created_at": 1662993211,
-    "event_name": "rc_trial_cancelled_event",
-    "metadata": {
-      "app_id": "app1234567890",
-      "cancellation_reason": "UNSUBSCRIBE",
-      "entitlement": "premium",
-      "environment": "production",
-      "expires_at": 1663252169,
-      "product_identifier": "premium_sub",
-      "store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  },
-  "product_identifier": "premium_sub",
-  "user_payload": {
-    "custom_attributes": {
-      "expires_at": 1663252169,
-      "latest_entitlement": "premium",
-      "latest_store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  }
-}
-```
-```json Renewal
-{
-  "app_id": "app1234567890",
-  "event_payload": {
-    "created_at": 1663021649,
-    "event_name": "rc_renewal_event",
-    "metadata": {
-      "app_id": "app1234567890",
-      "entitlement": "premium",
-      "environment": "production",
-      "expires_at": 1663626449,
-      "product_identifier": "one_week_premium",
-      "store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  },
-  "product_identifier": "one_week_premium",
-  "user_payload": {
-    "custom_attributes": {
-      "expires_at": 1663626449,
-      "latest_entitlement": "premium",
-      "latest_store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  }
-}
-```
-```json Cancellation
-{
-  "app_id": "app1234567890",
-  "event_payload": {
-    "created_at": 1662993557,
-    "event_name": "rc_cancellation_event",
-    "metadata": {
-      "app_id": "app1234567890",
-      "cancellation_reason": "UNSUBSCRIBE",
-      "entitlement": "premium",
-      "environment": "production",
-      "expires_at": 1663529651,
-      "product_identifier": "one_week_premium",
-      "store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  },
-  "product_identifier": "one_week_premium",
-  "user_payload": {
-    "custom_attributes": {
-      "expires_at": 1663529651,
-      "latest_entitlement": "premium",
-      "latest_store": "APP_STORE"
-    },
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-  }
-}
-```
-```json Non Subscription Purchase
-{
-  "product_identifier": "100_tokens",
-  "app_id": "app1234567890",
-  "user_payload": {
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "custom_attributes": {
-      "latest_store": "PLAY_STORE",
-      "latest_entitlement": null,
-      "expires_at": null
-    }
-  },
-  "event_payload": {
-    "event_name": "rc_non_subscription_purchase_event",
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "created_at": 1607569472,
-    "metadata": {
-      "product_identifier": "100_tokens",
-      "entitlement": null,
-      "store": "PLAY_STORE",
-      "expires_at": null,
-      "environment": "production"
-    }
-  }
-}
-```
-```json Expiration
-{
-  "product_identifier": "one_month_pro",
-  "app_id": "app1234567890",
-  "user_payload": {
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "custom_attributes": {
-      "latest_store": "APP_STORE",
-      "latest_entitlement": "pro",
-      "expires_at": 1652444925
-    }
-  },
-  "event_payload": {
-    "event_name": "rc_expiration_event",
-    "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "created_at": 1652444925,
-    "metadata": {
-      "product_identifier": "one_month_pro",
-      "entitlement": "pro",
-      "store": "APP_STORE",
-      "expires_at": 1652444925,
-      "environment": "production",
-      "expiration_reason": "UNSUBSCRIBE"
-    }
-  }
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_1.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_2.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_3.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_8.json"}
+[/block]

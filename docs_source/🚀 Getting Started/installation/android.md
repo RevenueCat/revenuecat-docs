@@ -29,9 +29,9 @@ Purchases for Android (Google Play and Amazon Appstore) is available on Maven an
 
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
 
-```groovy build.gradle
-implementation 'com.revenuecat.purchases:purchases:6.0.0'
-```
+[block:file]
+{"language":"groovy","name":"build.gradle","file":"code_blocks/🚀 Getting Started/installation/android_1.groovy"}
+[/block]
 
 
 
@@ -39,15 +39,9 @@ implementation 'com.revenuecat.purchases:purchases:6.0.0'
 
 You should now be able to import `Purchases`.
 
-```java
-import com.revenuecat.purchases.CustomerInfo;
-import com.revenuecat.purchases.Entitlement;
-import com.revenuecat.purchases.Offering;
-import com.revenuecat.purchases.Purchases;
-import com.revenuecat.purchases.models.Period;
-import com.revenuecat.purchases.models.Price;
-import com.revenuecat.purchases.models.StoreProduct;
-```
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/installation/android_2.java"}
+[/block]
 
 
 
@@ -61,10 +55,9 @@ We are adding Proguard rules to the library so you don't need to do anything. If
 
 Add a new dependency to the build.gradle apart from the regular `purchases` dependency. These new dependencies have the classes needed to use Amazon IAP:
 
-```groovy build.gradle
-implementation 'com.revenuecat.purchases:purchases:6.0.0'
-implementation 'com.revenuecat.purchases:purchases-store-amazon:6.0.0'
-```
+[block:file]
+{"language":"groovy","name":"build.gradle","file":"code_blocks/🚀 Getting Started/installation/android_3.groovy"}
+[/block]
 
 
 

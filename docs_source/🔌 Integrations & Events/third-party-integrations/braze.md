@@ -166,44 +166,15 @@ If you're using the Braze SDK, you can set the User Id to match the RevenueCat A
 
 Configure the Braze SDK with the same App User Id as RevenueCat or use the `.changeUser()` method on the Braze SDK.
 
-```swift
-// Configure Purchases SDK
-Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-
-// Change user in Braze SDK
-Appboy.sharedInstance()?.changeUser("my_app_user_id")
-
-// Optional User Alias Object attributes
-Purchases.shared.attribution.setAttributes(["$brazeAliasName" : "name", 
-                             "$brazeAliasLabel" : "label"])
-```
-```objectivec
-// Configure Purchases SDK
-[RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
-
-// Change user in Braze SDK
-[[Appboy sharedInstance] changeUser:@"my_app_user_id"];
-
-// Optional User Alias Object attributes
-[[RCPurchases sharedPurchases] setAttributes:@{
-    @"$brazeAliasName": @"name",
-    @"$brazeAliasLabel": @"label"
-}];
-```
-```java
-// Configure Purchases SDK
-Purchases.configure(this, "public_sdk_key", "my_app_user_id");
-
-// Change user in Braze SDK
-Braze.getInstance(context).changeUser(my_app_user_id);
-
-// Optional User Alias Object attributes
-Map<String, String> attributes = new HashMap<String, String>();
-attributes.put("$brazeAliasName", "name");
-attributes.put("$brazeAliasLabel", "label");
-
-Purchases.getSharedInstance().setAttributes(attributes);
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_2.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_3.java"}
+[/block]
 
 
 
@@ -257,180 +228,36 @@ After you've set up the _Purchases SDK_ and Braze SDK to have the same user iden
 
 Below are sample JSONs that are delivered to Braze for most events.
 
-```json Initial Purchase
-{
-    "events": [
-        {
-            "name": "rc_initial_purchase_event",
-            "time": "2022-09-04T18: 06: 21.000000",
-            "properties": {
-                "product_id": "monthly.sub.1",
-                "store": "APP_STORE",
-                "revenue": 7.99,
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Trial Started
-{
-    "events": [
-        {
-            "name": "rc_trial_started_event",
-            "time": "2022-09-13T16: 16: 19.000000",
-            "properties": {
-                "product_id": "weekly.sub",
-                "store": "APP_STORE",
-                "revenue": 0,
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Trial Converted
-{
-    "events": [
-        {
-            "name": "rc_trial_converted_event",
-            "time": "2022-09-13T16: 16: 39.000000",
-            "properties": {
-                "product_id": "weekly.sub",
-                "store": "APP_STORE",
-                "revenue": 2.99,
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Trial Cancelled
-{
-    "events": [
-        {
-            "name": "rc_trial_cancelled_event",
-            "time": "2022-09-13T16: 15: 48.000000",
-            "properties": {
-                "product_id": "monthly.sub.1",
-                "store": "APP_STORE",
-                "revenue": 0,
-                "cancel_reason": "UNSUBSCRIBE",
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Renewal
-{
-    "events": [
-        {
-            "name": "rc_renewal_event",
-            "time": "2022-09-14T00: 16: 36.000000",
-            "properties": {
-                "product_id": "monthly.sub.1",
-                "store": "APP_STORE",
-                "revenue": 6.99,
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_8.json"}
+[/block]
 
 
 
-```json Cancellation
-{
-    "events": [
-        {
-            "name": "rc_cancellation_event",
-            "time": "2022-09-13T16: 15: 19.000000",
-            "properties": {
-                "product_id": "yearly.sub",
-                "store": "APP_STORE",
-                "revenue": 0,
-                "cancel_reason": "UNSUBSCRIBE",
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Non Subscription Purchase
-{
-    "events": [
-        {
-            "name": "rc_non_subscription_purchase_event",
-            "time": "2019-01-21T16: 55: 44.000000",
-            "properties": {
-                "product_id": "tokens.pack.100",
-                "store": "APP_STORE",
-                "revenue": 4.99,
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Expiration
-{
-    "events": [
-        {
-            "name": "rc_expiration_event",
-            "time": "2022-09-13T15: 45: 50.000000",
-            "properties": {
-                "product_id": "monthly.sub.1",
-                "store": "APP_STORE",
-                "revenue": 0,
-                "expiration_reason": "UNSUBSCRIBE",
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Billing Issues
-{
-    "events": [
-        {
-            "name": "rc_billing_issue_event",
-            "time": "2022-09-13T16: 18: 06.000000",
-            "properties": {
-                "product_id": "yearly,sub",
-                "store": "PLAY_STORE",
-                "revenue": 0,
-                "grace_period_expiration_at": "2022-09-27T15: 57: 26.000000",
-                "app_id": "1234567890"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
-```json Product Change
-{
-    "events": [
-        {
-            "name": "rc_product_change_event",
-            "time": "2022-06-09T02: 30: 35.000000",
-            "properties": {
-                "product_id": "monthly.sub.1",
-                "store": "APP_STORE",
-                "revenue": 0.0,
-                "new_product_id": "yearly.sub"
-            },
-            "external_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    ]
-}
-```
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_9.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_10.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_11.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_12.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/braze_13.json"}
+[/block]

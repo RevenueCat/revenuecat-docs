@@ -138,13 +138,6 @@ As soon as your server successfully receives a notification, send the payload to
 The payload should be passed along **as-is** in the data value of your request. Any manipulation you want to do with the data should happen after forwarding to RevenueCat.
 
 Here's a basic example of these steps using Node, Express, and Axios:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "app.post('/subscription-update', (req, res) => {\n  // - Let Apple know we received the notification\n  res.status(200).json();\n\n  // - Forward the request body as-is to RevenueCat\n  axios.post(process.env.REVENUECAT_URL, req.body)\n  .then(response => {\n    // - Successfully forwarded to RevenueCat\n    console.log(\"Successfully forwarded to RevenueCat\", response);\n  })\n  .catch(error => {\n    // - Consider a retry to RevenueCat if there's a network error or status code is 5xx\n    // - This is optional as RevenueCat should recheck the receipt within a few hours\n    console.error(\"Failed to send notification to RevenueCat\", error);\n  });\n\n  // - Anything else you want to do with the request can go here\n});",
-      "language": "javascript"
-    }
-  ]
-}
+[block:file]
+{"language":"javascript","name":"","file":"code_blocks/📙 Platform Resources/server-notifications/apple-server-notifications_1.js"}
 [/block]

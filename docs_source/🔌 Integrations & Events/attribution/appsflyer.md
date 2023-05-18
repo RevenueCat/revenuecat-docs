@@ -43,29 +43,12 @@ The Appsflyer integration requires some device-specific data. RevenueCat will on
 
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods to `collectDeviceIdentifiers()` and `setAppsflyerId()`. 
 
-```swift Swift
-import AdSupport
-// ...
-Purchases.configure(withAPIKey: "public_sdk_key")
-// ...
-
-// Automatically collect the $idfa, $idfv, and $ip values
-Purchases.shared.attribution.collectDeviceIdentifiers() 
-
-// Set the Appsflyer Id
-Purchases.shared.attribution.setAppsflyerID(AppsFlyerLib.shared().getAppsFlyerUID())
-```
-```kotlin
-//..
-Purchases.configure(this, "public_sdk_key")
-//..
-  
-// Automatically collect the $gpsAdId, $androidId, and $ip values
-Purchases.sharedInstance.collectDeviceIdentifiers()
-  
-// Set the Appsflyer Id
-Purchases.sharedInstance.setAppsflyerID(AppsFlyerLib.getInstance().getAppsFlyerUID(this));
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/appsflyer_1.swift"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/appsflyer_2.kt"}
+[/block]
 
 
 

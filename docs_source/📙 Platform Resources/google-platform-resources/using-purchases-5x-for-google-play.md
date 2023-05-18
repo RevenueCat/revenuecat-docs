@@ -60,9 +60,9 @@ Additionally, products in Google Play should be marked as Backwards Compatible.
 
 Purchases for Android can be installed by adding the following to your `build.gradle`:
 
-```Text build.gradle
-implementation 'com.revenuecat.purchases:purchases:5.8.2'
-```
+[block:file]
+{"language":"Text","name":"build.gradle","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_1.Text"}
+[/block]
 
 
 
@@ -72,13 +72,9 @@ Purchases for Android v5.x supports BillingClient 4.0.
 
 With version 5.x installed, you can import `Purchases`:
 
-```Text Java
-import com.android.billingclient.api.SkuDetails;
-import com.revenuecat.purchases.Entitlement;
-import com.revenuecat.purchases.Offering;
-import com.revenuecat.purchases.PurchaserInfo;
-import com.revenuecat.purchases.Purchases;
-```
+[block:file]
+{"language":"Text","name":"Java","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_2.Text"}
+[/block]
 
 
 
@@ -90,15 +86,9 @@ You should add `-keep class com.revenuecat.purchases.** { *; }` to you Proguard 
 
 After importing `Purchases`, you can initialize the SDK with your API key:
 
-```Text Kotlin
-class MainApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.debugLogsEnabled = true
-        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_api_key>).build())
-    }
-}
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_3.Text"}
+[/block]
 
 
 
@@ -108,15 +98,9 @@ class MainApplication: Application() {
 
 **Only** backwards compatible purchases, as mentioned above, can be fetched using Purchases for Android 5.x. Calling the `getOfferings` method will fetch your product configuration from RevenueCat:
 
-```Text Kotlin
-Purchases.sharedInstance.getOfferingsWith({ error ->
-  // An error occurred
-}) { offerings ->
-  offerings.current?.availablePackages?.takeUnless { it.isNullOrEmpty() }?.let {
-    // Display packages for sale
-  }
-}
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_4.Text"}
+[/block]
 
 
 
@@ -134,27 +118,17 @@ Packages can be access in a few different ways:
 - via the duration convenience property on an Offering
 - via the package identifier directly
 
-```Text Kotlin
-offerings["experiment_group"]?.availablePackages
-// --
-offerings["experiment_group"]?.monthly
-// --
-offerings["experiment_group"]?.getPackage(identifier: "<package_id>")
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_5.Text"}
+[/block]
 
 
 
 Each package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the storeProduct property:
 
-```Text Kotlin
-Purchases.sharedInstance.getOfferingsWith({ error ->
-  // An error occurred
-}) { offerings ->
-  val product = offerings.current?.monthly?.product?.also {
-    // Get the price and introductory period from the SkuDetails
-  }
-}
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_6.Text"}
+[/block]
 
 
 
@@ -162,17 +136,9 @@ Purchases.sharedInstance.getOfferingsWith({ error ->
 
 The SDK has a simple method, purchase(package:), that takes a package from the fetched Offering and purchases the underlying product with Google:
 
-```Text Kotlin
-Purchases.sharedInstance.purchasePackageWith(
-  this,
-  aPackage,
-  onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
-    if (customerInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
-    // Unlock that great "pro" content
-  }
-})
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_7.Text"}
+[/block]
 
 
 
@@ -196,9 +162,9 @@ Observer Mode is optional, and enables you to capture new or migrate your existi
 
 When configuring the SDK, pass the `observerMode` property as part of the configuration builder:
 
-```Text Kotlin
-        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_8.Text"}
+[/block]
 
 
 
@@ -206,8 +172,6 @@ When configuring the SDK, pass the `observerMode` property as part of the config
 
 On Android with Google Play (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the syncPurchases method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded.**
 
-```Text Kotlin
-// Called any time a purchase or restore 
-// is successful in your existing code
-Purchases.sharedInstance.syncPurchases()
-```
+[block:file]
+{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_9.Text"}
+[/block]

@@ -301,25 +301,13 @@ These types replace native StoreKit types in all public API methods that used th
 ## Error handling
 
 Prior to the Swift migration, `Purchases` exposed errors as `NSError`'s, so one could detect errors like this:
-```swift
-if error.domain == Purchases.ErrorDomain {
-	switch Purchases.ErrorCode(_nsError: error).code {
-		case .purchaseInvalidError: break
-		default: break
-	}
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/ios-native-3x-to-4x-migration_1.swift"}
+[/block]
 Starting from Version 4, this becomes much simpler:
-```swift
-if let error = error as? RevenueCat.ErrorCode {
-	switch error {
-		case .purchaseInvalidError: break
-		default: break
-	}
-} else {
-	// Error is a different type
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/ios-native-3x-to-4x-migration_2.swift"}
+[/block]
 
 # New APIs
 

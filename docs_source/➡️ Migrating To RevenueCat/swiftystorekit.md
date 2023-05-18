@@ -30,30 +30,16 @@ If you're app is already live with SwiftyStoreKit, be sure to read the last sect
 Apple recommends registering an `SKPaymentTransactionObserver` as soon as the app launches. RevenueCat automatically does this when you configure an instance of *Purchases*.
 
 **SwiftyStoreKit:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n    SwiftyStoreKit.completeTransactions(atomically: true) { purchases in\n\t    for purchase in purchases {\n\t        switch purchase.transaction.transactionState {\n\t        case .purchased, .restored:\n\t            if purchase.needsFinishTransaction {\n\t                // Deliver content from server, then:\n\t                SwiftyStoreKit.finishTransaction(purchase.transaction)\n\t            }\n\t            // Unlock content\n\t        case .failed, .purchasing, .deferred:\n\t            break // do nothing\n\t        }\n\t    }\n\t}\n    return true\n}",
-      "language": "swift",
-      "name": "AppDelegate.swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"AppDelegate.swift","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_1.swift"}
 [/block]
 
+
 **RevenueCat:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n    Purchases.debugLogsEnabled = true\n    Purchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)\n    \n    return true\n}",
-      "language": "swift",
-      "name": "AppDelegate.swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"AppDelegate.swift","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_2.swift"}
 [/block]
+
 **Migration Steps:**
 Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with the *Purchases SDK* `configure()` method.
 
@@ -63,27 +49,15 @@ Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with t
 ##Retrieve products info
 
 **SwiftyStoreKit:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "SwiftyStoreKit.retrieveProductsInfo([<com.RevenueCat.Purchase1>]) { result in\n    if let product = result.retrievedProducts.first {\n        let priceString = product.localizedPrice!\n        print(\"Product: \\(product.localizedDescription), price: \\(priceString)\")\n    }\n    else if let invalidProductId = result.invalidProductIDs.first {\n        print(\"Invalid product identifier: \\(invalidProductId)\")\n    }\n    else {\n        print(\"Error: \\(result.error)\")\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_3.swift"}
 [/block]
+
 **RevenueCat:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getOfferings { (offerings, error) in\n    if let e = error {\n        print(e.localizedDescription)\n    }\n    \n    guard let offering = offerings?.current else {\n        print(\"No current offering configured\")\n        return\n    }\n    \n    for package in offering.availablePackages {\n        print(\"Product: \\(package.product.localizedDescription), price: \\(package.localizedPriceString())\")\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_4.swift"}
 [/block]
+
 **Migration Steps:**
 In RevenueCat, Offerings are [configured in the dashboard](doc:entitlements), and mapped to `SKProduct`s. Once you setup your products in RevenueCat, replace `retrieveProductsInfo()` in SwiftyStoreKit with `offerings()` in *Purchases SDK*.
 
@@ -93,27 +67,15 @@ Products are automatically fetched and cached when the *Purchases SDK* is config
 ##Purchase a product
 
 **SwiftyStoreKit:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in\n    switch result {\n    case .success(let purchase):\n        print(\"Purchase Success: \\(purchase.productId)\")\n    case .error(let error):\n        switch error.code {\n        case .unknown: print(\"Unknown error. Please contact support\")\n        case .clientInvalid: print(\"Not allowed to make the payment\")\n        case .paymentCancelled: break\n        case .paymentInvalid: print(\"The purchase identifier was invalid\")\n        case .paymentNotAllowed: print(\"The device is not allowed to make the payment\")\n        case .storeProductNotAvailable: print(\"The product is not available in the current storefront\")\n        case .cloudServicePermissionDenied: print(\"Access to cloud service information is not allowed\")\n        case .cloudServiceNetworkConnectionFailed: print(\"Could not connect to the network\")\n        case .cloudServiceRevoked: print(\"User has revoked permission to use this cloud service\")\n        default: print((error as NSError).localizedDescription)\n        }\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_5.swift"}
 [/block]
+
 **RevenueCat:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.purchase(package: package) { (transaction, info, error, cancelled) in\n    if cancelled {\n        print(\"User cancelled purchase\")\n        return\n    }\n\n    // Optionally handle specific purchase errors\n    if let err = error as NSError? {\n\n        // log error details\n        print(\"RCError: \\(err.userInfo[ReadableErrorCodeKey])\")\n        print(\"Message: \\(err.localizedDescription)\")\n        print(\"Underlying Error: \\(err.userInfo[NSUnderlyingErrorKey])\")\n\n        // handle specific errors from: https://docs.revenuecat.com/docs/errors\n        switch PurchasesErrorCode(_nsError: err).code {\n\n        case .purchaseNotAllowedError:\n            print(\"Purchases not allowed on this device.\")\n\n        case .purchaseInvalidError:\n            print(\"Purchase invalid, check payment source.\")\n\n        case .networkError:\n            print(\"Network error, check your connection and try again.\")\n\n        default:\n            break\n        }\n    } else if info?.entitlements.all[<pro>]?.isActive == true {\n        print(\"Unlocked Pro Cats 🎉\")\n    }\n\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_6.swift"}
 [/block]
+
 **Migration Steps:**
 In SwiftyStoreKit, purchases can be initiated from a product Id or an `SKProduct`. In *Purchases SDK* the preferred method is to provide a package to purchase. Replace the `purchaseProduct()` method in SwiftyStoreKit with `purchase(package:)`, and pass the package that was included with the RevenueCat Offering.
 
@@ -124,27 +86,15 @@ To check if the subscription has been successfully activated, check if the `cust
 ##Handle purchases started on the App Store
 
 **SwiftyStoreKit:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n  //...\n  \n  SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in\n    // return true if the content can be delivered by your app\n    // return false otherwise\n   }\n\n  //...\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_7.swift"}
 [/block]
+
 **RevenueCat:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\n  //...\n  Purchases.shared.delegate = self\n  //...\n\n}\n\nfunc purchases(_ purchases: Purchases, shouldPurchasePromoProduct product: SKProduct, defermentBlock makeDeferredPurchase: @escaping RCDeferredPromotionalPurchaseBlock) {\n\n    // Save the deferment block and call it later...\n    let defermentBlock = makeDeferredPurchase\n\n    // ...or call it right away to proceed with the purchase\n    defermentBlock { (transaction, customerInfo, error, cancelled) in\n                    \n          if customerInfo?.entitlements.all[<pro>]?.isActive == true {\n            // Unlock that great \"pro\" content\n          }\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_8.swift"}
 [/block]
+
 **Migration Steps:**
 RevenueCat handles purchases initiated through the App Store with an optional delegate method. Replace the `shouldAddStorePaymentHandler` in SwiftyStoreKit with the `shouldPurchasePromoProduct` in *Purchases SDK*.
 
@@ -153,27 +103,15 @@ With *Purchases SDK* you have the option of deferring the purchase until a later
 ##Restore previous purchases
 
 **SwiftyStoreKit:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "SwiftyStoreKit.restorePurchases(atomically: true) { results in\n    if results.restoreFailedPurchases.count > 0 {\n        print(\"Restore Failed: \\(results.restoreFailedPurchases)\")\n    }\n    else if results.restoredPurchases.count > 0 {\n        print(\"Restore Success: \\(results.restoredPurchases)\")\n    }\n    else {\n        print(\"Nothing to Restore\")\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_9.swift"}
 [/block]
+
 **RevenueCat:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.restorePurchases { (customerInfo, error) in\n    if let e = error {\n        print(\"Restore Failed: \\(e.localizedDescription)\")\n    } else {\n        print(\"Restore Success: \\(customerInfo?.activeEntitlements)\")\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_10.swift"}
 [/block]
+
 **Migration Steps:**
 The *Purchases SDK* has a similar method to SwiftyStoreKit to restore transactions - replace `restorePurchases()` in SwiftyStoreKit with `restoreTransactions()`. To check if the subscription has been restored, check if the `customerInfo` object contains an active entitlement for the "pro" content you configured in the RevenueCat dashboard.
 
@@ -185,27 +123,15 @@ Receipts are automatically verified by RevenueCat. You don't need any local or s
 # Verifying subscriptions
 
 **SwiftyStoreKit:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: <your-shared-secret>)\nSwiftyStoreKit.verifyReceipt(using: appleValidator) { result in\n    switch result {\n    case .success(let receipt):\n        let productId = <my_product_identifier>\n        // Verify the purchase of Consumable or NonConsumable\n        let purchaseResult = SwiftyStoreKit.verifyPurchase(\n            productId: productId,\n            inReceipt: receipt)\n            \n        switch purchaseResult {\n        case .purchased(let receiptItem):\n            print(\"\\(productId) is purchased: \\(receiptItem)\")\n        case .notPurchased:\n            print(\"The user has never purchased \\(productId)\")\n        }\n    case .error(let error):\n        print(\"Receipt verification failed: \\(error)\")\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_11.swift"}
 [/block]
+
 **RevenueCat:**
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    if customerInfo?.entitlements.all[<pro>]?.isActive == true {\n        // Grant user \"pro\" access\n    }\n}",
-      "language": "swift"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_12.swift"}
 [/block]
+
 **Migration Steps:**
 RevenueCat keeps a subscribers status up-to-date on the server and shares this information with the *Purchases SDK* to determine what subscriptions are active for the current user. 
 

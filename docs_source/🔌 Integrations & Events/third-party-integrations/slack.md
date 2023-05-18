@@ -174,278 +174,33 @@ Once you've set up a webhook in your Slack workspace. Enter the details into the
 
 Below are sample JSONs that are delivered to Slack for each event type.
 
-```json Initial Purchase
-{
-    "product_identifier": "monthly_1",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just started a subscription of monthly_1",
-                "color": "#30B296",
-                "fields": [
-                    {
-                        "value": ":smiley_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just started a subscription."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "monthly_1",
-                        "short": false
-                    },
-                    {
-                        "title": "Revenue",
-                        "value": "$5.99",
-                        "short": false
-                    }
-                ],
-                "ts": 1588335655
-            }
-        ]
-    }
-}
-```
-```json Trial Started
-{
-    "product_identifier": "monthly_3d_trial",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just started a free trial of monthly_3d_trial",
-                "color": "#30B296",
-                "fields": [
-                    {
-                        "value": ":smiley_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just started a free trial."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "monthly_3d_trial",
-                        "short": false
-                    }
-                ],
-                "ts": 1553805130
-            }
-        ]
-    }
-}
-```
-```json Trial Converted
-{
-    "product_identifier": "monthly_1",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just converted from a free trial of monthly_1",
-                "color": "#30B296",
-                "fields": [
-                    {
-                        "value": ":smiley_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just converted from a free trial."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "monthly_1",
-                        "short": false
-                    },
-                    {
-                        "title": "Revenue",
-                        "value": "$5.99",
-                        "short": false
-                    }
-                ],
-                "ts": 1554466423
-            }
-        ]
-    }
-}
-```
-```json Trial Cancelled
-{
-    "product_identifier": "monthly_3d_trial",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just cancelled their free trial of monthly_3d_trial",
-                "color": "#F2545B",
-                "fields": [
-                    {
-                        "value": ":pouting_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just cancelled their free trial."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "monthly_3d_trial",
-                        "short": false
-                    }
-                ],
-                "ts": 1554502133
-            }
-        ]
-    }
-}
-```
-```json Renewal
-{
-    "product_identifier": "monthly_1",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just renewed their subscription of monthly_1",
-                "color": "#30B296",
-                "fields": [
-                    {
-                        "value": ":smiley_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just renewed their subscription."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "monthly_1",
-                        "short": false
-                    },
-                    {
-                        "title": "Revenue",
-                        "value": "$5.99",
-                        "short": false
-                    }
-                ],
-                "ts": 1554091875
-            }
-        ]
-    }
-}
-```
-```json Cancellation
-{
-    "product_identifier": "annual",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just cancelled their subscription of annual",
-                "color": "#F2545B",
-                "fields": [
-                    {
-                        "value": ":crying_cat_face: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just cancelled their subscription."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "annual",
-                        "short": false
-                    }
-                ],
-                "ts": 1553810169
-            }
-        ]
-    }
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_1.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_2.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_3.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_6.json"}
+[/block]
 
 
 
-```json Non Subscription Purchase
-{
-    "product_identifier": "500_coins",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 just purchased 500_coins",
-                "color": "#30B296",
-                "fields": [
-                    {
-                        "value": ":smiley_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just made a purchase."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "500_coins",
-                        "short": false
-                    },
-                    {
-                        "title": "Revenue",
-                        "value": "$4.99",
-                        "short": false
-                    }
-                ],
-                "ts": 1590390293
-            }
-        ]
-    }
-}
-```
-```json Billing Issue
-{
-    "product_identifier": "annual_trial",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 got a billing issue on annual_trial",
-                "color": "#F2545B",
-                "fields": [
-                    {
-                        "value": ":scream_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> got a billing issue."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "annual_trial",
-                        "short": false
-                    }
-                ],
-                "ts": 1663976618
-            }
-        ]
-    }
-}
-```
-```json Product Change
-{
-    "product_identifier": "annual",
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "payload": {
-        "channel": "purchases",
-        "username": "RevenueCat",
-        "icon_url": "https://app.revenuecat.com/favicon-96x96.png",
-        "attachments": [
-            {
-                "fallback": "Customer 12345 got a product change from annual to monthly",
-                "color": "#30B296",
-                "fields": [
-                    {
-                        "value": ":smiley_cat: Customer <https://app.revenuecat.com/activity/123abcd45/12345|12345> just changed the product of their subscription."
-                    },
-                    {
-                        "title": "Product",
-                        "value": "monthly",
-                        "short": false
-                    }
-                ],
-                "ts": 1663976617
-            }
-        ]
-    }
-}
-```
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_9.json"}
+[/block]

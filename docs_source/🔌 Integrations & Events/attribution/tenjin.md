@@ -38,19 +38,12 @@ The Tenjin integration requires some device-specific data. RevenueCat will only 
 
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `collectDeviceIdentifiers()`. 
 
-```swift Swift
-import AdSupport
-// ...
-Purchases.configure(withAPIKey: "public_sdk_key")
-// ...
-Purchases.shared.attribution.collectDeviceIdentifiers()
-```
-```kotlin
-//..
-Purchases.configure(this, "public_sdk_key")
-//..
-Purchases.sharedInstance.collectDeviceIdentifiers()
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/tenjin_1.swift"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/tenjin_2.kt"}
+[/block]
 
 
 

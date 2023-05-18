@@ -149,9 +149,9 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 
 1. Update RevenueCat to version `6.0.1`. You can do this in your app’s module build.gradle.
 
-```kotlin
-implementation "com.revenuecat.purchases:purchases:6.0.1"
-```
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_1.kt"}
+[/block]
 
 
 
@@ -162,52 +162,15 @@ implementation "com.revenuecat.purchases:purchases:6.0.1"
 
 Follow the migration reference doc to migrate all the changes. These are some examples of code changes you might have to do:
 
-```kotlin
-// To get the price for your product after all offers
-
-// Old:
-Purchases.sharedInstance.getOfferingsWith(
-     onError = { /* ... */ }, 
-     onSuccess = { offerings ->  
-         val price = offerings.current?.annual?.product?.price
-         /* Do something with price */
-     }
-)
-
-// New:
-Purchases.sharedInstance.getOfferingsWith(
-     onError = { /* ... */ },
-     onSuccess = { offerings ->
-         val price = offerings.current?.annual?.product?.price?.formatted
-         /* Do something with price */
-     }
-)
-```
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_2.kt"}
+[/block]
 
 
 
-```kotlin
-// To purchase a subscription with a free trial
-
-// Old:
-Purchases.sharedInstance.purchasePackageWith(
-    activity, 
-    packageToPurchase = myPackage, 
-    onError = { _, _ -> /* handle error */ }, 
-    onSuccess = { _, _ -> /* handle success */ }
-)
-
-// New:
-val purchaseParams = PurchaseParams.Builder(
-    freeTrialSubscriptionOption, // You need to obtain this with storeProduct.subscriptionOptions?.freeTrial
-    activity
-).build()
-Purchases.sharedInstance.purchaseWith(
-    purchaseParams,
-    onError = { _, _ -> /* handle error */ },
-    onSuccess = { _, _ -> /* handle success */ }
-)
-```
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_3.kt"}
+[/block]
 
 
 

@@ -22,16 +22,10 @@ category: 646582bc33592e0017008a31
 RevenueCat provides a backend and a wrapper around StoreKit and Google Play Billing to make implementing in-app purchases and subscriptions easy. With our SDK, you can build and manage your app business on any platform without having to maintain IAP infrastructure. You can read more about [how RevenueCat fits into your app](https://www.revenuecat.com/blog/growth/where-does-revenuecat-fit-in-your-app/) or you can [sign up free](https://app.revenuecat.com/signup) to start building.
 
 # Installation
-[block:code]
-{
-  "codes": [
-    {
-      "code": "cordova plugin add cordova-plugin-purchases --save",
-      "language": "shell"
-    }
-  ]
-}
+[block:file]
+{"language":"shell","name":"","file":"code_blocks/🚀 Getting Started/installation/cordova_1.shell"}
 [/block]
+
 # Additional iOS Setup
 
 ## Add In-app Purchase Capability to Project

@@ -53,22 +53,13 @@ You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscripti
 ## Google Play
 
 In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Setting the proration mode optional but will default to `IMMEDIATE_WITH_TIME_PRORATION`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "",
-      "language": "text",
-      "name": "Kotlin"
-    },
-    {
-      "code": "Purchases.getSharedInstance().purchase(\n\tnew PurchaseParams.Builder(activity, pkg)\n\t\t.oldProductId(\"old_product_id\")\n\t\t.googleProrationMode(GoogleProrationMode.IMMEDIATE_WITHOUT_PRORATION)\n\t\t.build(),\n\tnew PurchaseCallback() {\n\t\t@Override\n\t\tpublic void onCompleted(@NonNull StoreTransaction storeTransaction, @NonNull CustomerInfo customerInfo) {\n\t\t\tif (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {\n\t\t\t\t// Unlock that great \"pro\" content\n\t\t\t}\n\t\t}\n\n\t\t@Override\n\t\tpublic void onError(@NonNull PurchasesError purchasesError, boolean b) {\n\t\t\t// No purchase\n\t\t}\n\t}\n);",
-      "language": "java",
-      "name": "Java"
-    }
-  ]
-}
+[block:file]
+{"language":"text","name":"Kotlin","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_1.txt"}
 [/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_2.java"}
+[/block]
+
 
 [block:callout]
 {
@@ -145,20 +136,13 @@ Google requires developers to allow customers to cancel a subscription within ap
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.shared.getCustomerInfo { (customerInfo, error) in\n    let managementURL = customerInfo.managementURL\n    // display the managementURL in your app\n}",
-      "language": "swift"
-    },
-    {
-      "code": "Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->\n    val managementURL = customerInfo.managementURL\n    // display the managementURL in your app\n}",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_3.swift"}
 [/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_4.kt"}
+[/block]
+
 
 [block:callout]
 {

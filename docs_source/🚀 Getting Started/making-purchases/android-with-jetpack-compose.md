@@ -10,24 +10,11 @@ category: 646582bc33592e0017008a31
 Jetpack Compose is a new modern toolkit for building native UI for Android. One major difference in Jetpack Compose is the absence of `Activity`.  The `purchasePackage()` and `purchasePackageWith()` functions accept an `Activity` as the first parameter but an `Activity` is not easily accessible in a `@Composable` function.
 
 To get around this, you can create an extension function to recursively find the nearest `Activity` from your Jetpack Compose context.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "fun Context.findActivity(): Activity? = when (this) {\n    is Activity -> this\n    is ContextWrapper -> baseContext.findActivity()\n    else -> null\n}",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/making-purchases/android-with-jetpack-compose_1.kt"}
 [/block]
+
 So example below shows how to check the nullable `Activity?` returned by `LocalContext.current.findActivity()` and pass it into `purchase(package:)`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "LocalContext.current.findActivity()?.let { activity ->\n\tPurchases.sharedInstance.purchaseWith(\n\t\tPurchaseParams.Builder(this, aPackage).build(),\n    onError = { error, userCancelled -> /* No purchase */ },\n    onSuccess = { product, customerInfo ->\n\t\t\tif (customerInfo.entitlements[\"my_entitlement_identifier\"]?.isActive == true) {\n\t\t\t\t// Unlock that great \"pro\" content\n\t\t\t}\n    }\n\t)\n}",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/making-purchases/android-with-jetpack-compose_2.kt"}
 [/block]

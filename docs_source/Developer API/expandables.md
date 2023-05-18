@@ -12,48 +12,17 @@ For example, a `product` object will have an associated `app_id` field. This `ap
 
 ### Without `expand` query param
 
-```json GET /products/prod1a2b3c4d5
-{  
-  "object": "product",  
-  "id": "prod1a2b3c4d5e",  
-  "store_identifier": "rc_1w_199",  
-  "type": "subscription",  
-  "subscription": {  
-    "duration": "P1M",  
-    "grace_period_duration": "P3D",  
-    "trial_duration": "P1W"  
-  },  
-  "created_at": 1658399423658,  
-  "app_id": "app1a2b3c4"  
-}
-```
+[block:file]
+{"language":"json","name":"GET /products/prod1a2b3c4d5","file":"code_blocks/Developer API/expandables_1.json"}
+[/block]
 
 
 
 ### With `expand` query param:
 
-```json GET /products/prod1a2b3c4d5?expand=app
-{  
-  "object": "product",  
-  "id": "prod1a2b3c4d5e",  
-  "store_identifier": "rc_1w_199",  
-  "type": "subscription",  
-  "subscription": {  
-    "duration": "P1M",  
-    "grace_period_duration": "P3D",  
-    "trial_duration": "P1W"  
-  },  
-  "created_at": 1658399423658,  
-  "app_id": "app1a2b3c4",  
-  "app": {  
-    "id": "app1a2b3c4",  
-    "name": "string",  
-    "created_at": 1658399423658,  
-    "type": "amazon",  
-    "project_id": "proj1a2b3c4"  
-  }  
-}
-```
+[block:file]
+{"language":"json","name":"GET /products/prod1a2b3c4d5?expand=app","file":"code_blocks/Developer API/expandables_2.json"}
+[/block]
 
 
 

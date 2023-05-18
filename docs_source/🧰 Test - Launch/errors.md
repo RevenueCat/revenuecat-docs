@@ -39,20 +39,13 @@ When investigating or logging errors, review the `errorUserInfo` dictionary, pay
 - `NSDebugDescriptionErrorKey` contains a description of the error. This description is meant for the developer.
 
 ### Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "if let error = error as? RevenueCat.ErrorCode {\n  print(error.errorCode)\n  print(error.errorUserInfo)\n\n  switch error {\n    case .purchaseNotAllowedError:\n    \tshowAlert(\"Purchases not allowed on this device.\")\n    case .purchaseInvalidError:\n    \tshowAlert(\"Purchase invalid, check payment source.\")\n    default: break\n  }\n} else {\n  // Error is a different type\n}",
-      "language": "swift"
-    },
-    {
-      "code": "if (error) {\n\n    // log error details\n    NSLog(@\"RCError: %@\", [error.userInfo objectForKey:RCReadableErrorCodeKey]);\n    NSLog(@\"Message: %@\", error.localizedDescription);\n    NSLog(@\"Underlying Error: %@\", [error.userInfo objectForKey:NSUnderlyingErrorKey]);\n\n    switch ([error code]) {\n        case RCNetworkError:\n            showError(@\"Network error, check your connection and try again.\");\n        case RCPurchaseNotAllowedError:\n            showError(@\"Purchases not allowed on this device.\");\n        case RCPurchaseInvalidError:\n            showError(@\"Purchase invalid, check payment source.\");\n        default:\n            break;\n    }\n\n}",
-      "language": "objectivec"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🧰 Test - Launch/errors_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🧰 Test - Launch/errors_2.m"}
+[/block]
+
 ## Android Errors
 On Android, when an error has occurred, the `onError` listener will receive a `PurchasesError` object.
 
@@ -62,16 +55,10 @@ When investigating or logging errors, review the properties of `PurchasesError`:
 - `underlyingErrorMessage ` contains a description of the underlying error that caused the error in question, if an underlying error is present.
 
 ### Examples
-[block:code]
-{
-  "codes": [
-    {
-      "code": "with(error) {\n    // log error details\n    print(\"Error: $code\")\n    print(\"Message: $message\")\n    print(\"Underlying Error: $underlyingErrorMessage\")\n    when (code) {\n        PurchasesErrorCode.PurchaseNotAllowedError -> {\n            showAlert(\"Purchases not allowed on this device.\")\n        }\n        PurchasesErrorCode.PurchaseInvalidError -> {\n            showAlert(\"Purchase invalid, check payment source.\")\n        }\n        else -> {}\n    }\n}",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🧰 Test - Launch/errors_3.kt"}
 [/block]
+
 # Legend
 When debugging errors, it's important to consider whether the error was thrown by RevenueCat, Apple, or Google. This can help you pinpoint where to look for a resolution. 
 [block:parameters]

@@ -17,12 +17,6 @@ If you reach the rate limit, as indicated by a `429` [error code](https://www.re
 
 Below is an example of the response body that will be sent when the rate limit is reached:
 
-```json Sample error response
-{
-  "type": "rate_limit_error",
-  "message": "Rate limit exceeded",
-  "retryable": true,
-  "doc_url": "https://revenuecat.com/docs/errors/rate_limit_error",
-  "backoff_ms": 1000
-}
-```
+[block:file]
+{"language":"json","name":"Sample error response","file":"code_blocks/Developer API/rate-limit_1.json"}
+[/block]

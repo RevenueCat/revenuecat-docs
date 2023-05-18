@@ -189,39 +189,9 @@ This property can be set manually, like any other [Subscriber Attributes](doc:su
 
 You can listen for changes to the OneSignal Id through their SDK, and send the value to RevenueCat. If you already have OneSignal set up, you should make sure that you're also sending the OneSignal Id for users that are updating to the latest version of your app.
 
-```swift
-class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            
-        Purchases.configure(withAPIKey: "<revenuecat_api_key>", appUserID: nil)
-        
-        OneSignal.initWithLaunchOptions(launchOptions, appId: "<onesignal_app_id>")
-        OneSignal.add(self as OSSubscriptionObserver)
-        
-        // If you've already set up OneSignal, then users should already have
-        // a OneSignal Id. We can check if it's available and send it to RevenueCat
-        if let onesignalId = OneSignal.getUserDevice()?.getUserId() {
-            Purchases.shared.attribution.setOnesignalID(onesignalId)
-        }
-        
-        return true
-    }
-
-    // Add this method to update the $onesignalId in RevenueCat whenever it changes
-    // This code should be sufficient to capture all new users if you're setting
-    // up OneSignal for the first time.
-    func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
-        if !stateChanges.from.subscribed && stateChanges.to.subscribed {
-            // The user is subscribed
-            // Either the user subscribed for the first time
-            Purchases.shared.attribution.setOnesignalID(stateChanges.to.userId)
-        }
-    }
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_1.swift"}
+[/block]
 
 
 
@@ -275,154 +245,33 @@ While still on the Customer View, click into the test purchase event in the [Cus
 
 Below are sample JSONs that are delivered to OneSignal for events.
 
-```json Initial Purchase
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "NORMAL",
-        "purchased_at": 1600016247,
-        "expiration_at": 1602608247,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "initial_purchase",
-        "last_event_at": 1600016250,
-        "product_id": "monthly_sub",
-        "entitlement_ids": "Pro"
-    }
-}
-```
-```json Trial Started
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "TRIAL",
-        "purchased_at": 1600031584,
-        "expiration_at": 1600290784,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "trial_started",
-        "last_event_at": 1600031586,
-        "product_id": "three_month_sub_trial",
-        "entitlement_ids": "Pro"
-    }
-}
-```
-```json Trial Converted
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "NORMAL",
-        "purchased_at": 1602136340,
-        "expiration_at": 1602741140,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "trial_converted",
-        "last_event_at": 1602114850,
-        "product_id": "weekly_sub_trial",
-        "entitlement_ids": null
-    }
-}
-```
-```json Trial Cancelled
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "TRIAL",
-        "purchased_at": 1602051920,
-        "expiration_at": 1602311120,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "trial_cancelled",
-        "last_event_at": 1602129368,
-        "product_id": "weekly_sub_trial",
-        "entitlement_ids": null
-    }
-}
-```
-```json Renewal
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "NORMAL",
-        "purchased_at": 1602125078,
-        "expiration_at": 1604807078,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "renewal",
-        "last_event_at": 1602122793,
-        "product_id": "monthly_sub",
-        "entitlement_ids": "Pro"
-    }
-}
-```
-```json Cancellation
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "NORMAL",
-        "purchased_at": 1602086660,
-        "expiration_at": 1602691460,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "cancellation",
-        "last_event_at": 1602118600,
-        "product_id": "weekly_sub",
-        "entitlement_ids": null
-    }
-}
-```
-```json Uncancellation
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "TRIAL",
-        "purchased_at": 1663445025,
-        "expiration_at": 1664049825,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "uncancellation",
-        "last_event_at": 1663969096,
-        "product_id": "annual_sub",
-        "entitlement_ids": "Premium"
-    }
-}
-```
-```json Expiration
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "period_type": "NORMAL",
-        "purchased_at": 1652374230,
-        "expiration_at": 1652979030,
-        "last_event_type": "expiration",
-        "last_event_at": 1652988735
-    }
-}
-```
-```json Billing Issue
-{
-    "app_id": "12345678-1234-1234-1234-123456789012",
-    "tags": {
-        "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "period_type": "TRIAL",
-        "purchased_at": 1652383957,
-        "expiration_at": 1654371157,
-        "store": "APP_STORE",
-        "environment": "PRODUCTION",
-        "last_event_type": "billing_issue",
-        "last_event_at": 1652988776,
-        "product_id": "annual_sub",
-        "entitlement_ids": "Premium"
-    }
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_2.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_3.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_9.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_10.json"}
+[/block]
 
 
 

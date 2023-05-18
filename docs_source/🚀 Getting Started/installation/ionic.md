@@ -18,22 +18,13 @@ updatedAt: '2023-02-02T14:19:47.927Z'
 category: 646582bc33592e0017008a31
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Install Cordova plugin\nionic cordova plugin add cordova-plugin-purchases\n\n// Install TypeScript wrapper\nnpm install @awesome-cordova-plugins/purchases\n\n// Install Ionic Native core library (once per project)\nnpm install @awesome-cordova-plugins/core",
-      "language": "text",
-      "name": "Cordova"
-    },
-    {
-      "code": "// Install Cordova plugin\nnpm install cordova-plugin-purchases\n\n// Install Ionic Native core library (once per project)\nnpm install @awesome-cordova-plugins/core --save\n\n// Install TypeScript wrapper\nnpm install @awesome-cordova-plugins/purchases\n\n// Update native platform project(s) to include newly added plugin\nionic cap sync",
-      "language": "text",
-      "name": "Capacitor"
-    }
-  ]
-}
+[block:file]
+{"language":"text","name":"Cordova","file":"code_blocks/🚀 Getting Started/installation/ionic_1.txt"}
 [/block]
+[block:file]
+{"language":"text","name":"Capacitor","file":"code_blocks/🚀 Getting Started/installation/ionic_2.txt"}
+[/block]
+
 
 [block:callout]
 {
@@ -49,16 +40,10 @@ Please refer to our [documentation](https://ionicframework.com/docs/native/purch
 }
 [/block]
 Angular apps can use either Cordova or Capacitor to build native mobile apps. For Angular, the import path should end with `/ngx`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { Platform } from \"@ionic/angular\";\nimport { Purchases } from \"@awesome-cordova-plugins/purchases/ngx\";\n\nconstructor(public platform: Platform, private purchases: Purchases) {\n    platform.ready().then(() => {\n        this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs\n        this.purchases.configureWith({\n            apiKey: \"my_api_key\",\n            appUserID: \"my_app_user_id\"\n        });\n    }\n}",
-      "language": "typescript"
-    }
-  ]
-}
+[block:file]
+{"language":"typescript","name":"","file":"code_blocks/🚀 Getting Started/installation/ionic_3.ts"}
 [/block]
+
 
 [block:api-header]
 {
@@ -66,13 +51,6 @@ Angular apps can use either Cordova or Capacitor to build native mobile apps. Fo
 }
 [/block]
 Import the plugin object then use its static methods:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import { Purchases } from '@awesome-cordova-plugins/purchases';\n\nconst Tab1: React.FC = () => {\n  Purchases.setDebugLogsEnabled(true);\n  Purchases.purchases.configureWith({\n    apiKey: \"my_api_key\",\n    appUserID: \"my_app_user_id\"\n  });\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>Tab 1</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonButton onClick={openScanner}>Scan barcode</IonButton>\n      </IonContent>\n    </IonPage>\n  );\n};",
-      "language": "typescript"
-    }
-  ]
-}
+[block:file]
+{"language":"typescript","name":"","file":"code_blocks/🚀 Getting Started/installation/ionic_4.ts"}
 [/block]

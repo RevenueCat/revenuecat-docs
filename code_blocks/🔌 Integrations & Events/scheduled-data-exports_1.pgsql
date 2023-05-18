@@ -1,15 +1,17 @@
--- Revenue generated on [targeted_date]
+-- Active Trials as of your [targeted_date]
 
 SELECT
-  SUM(price_in_usd) as revenue
+  COUNT(*)
 FROM
   [revenuecat_data_table]
-WHERE date(start_time) = [targeted_date]
-  AND is_trial_period = 'false'
+WHERE date(effective_end_time) > [targeted_date]
+  AND date(start_time) <= [targeted_date]
+  AND is_trial_period = 'true'
   AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
   AND ownership_type != 'FAMILY_SHARED'
   AND store != 'promotional'
   AND is_sandbox != 'true'
 
--- Transactions which are refunded can be identified through the refunded_at field.
--- Once refunded, price_in_usd will be set to $0, so revenue will always be net of refunds.
+-- The RevenueCat Active Trials chart excludes
+-- promotional transactions and transactions resulting from family sharing
+-- since they do not reflect auto-renewing future payments.

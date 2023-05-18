@@ -28,48 +28,31 @@ category: 646582bf8197f50019e3c59c
 # Debugging
 
 RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.logLevel = .debug\nPurchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)",
-      "language": "swift"
-    },
-    {
-      "code": "RCPurchases.logLevel = RCLogLevelDebug;\n[RCPurchases configureWithAPIKey:@<public_sdk_key> appUserID:@<my_app_user_id>];",
-      "language": "objectivec"
-    },
-    {
-      "code": "Purchases.debugLogsEnabled = true\nPurchases.configure(PurchasesConfiguration.Builder(context, apiKey = \"\")\n            .appUserID(<my_app_user_id>)\n            .build()",
-      "language": "kotlin"
-    },
-    {
-      "code": "Purchases.setDebugLogsEnabled(true);\nPurchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());",
-      "language": "java"
-    },
-    {
-      "code": "Purchases.setDebugLogsEnabled(true);\nPurchases.setup(<public_sdk_key>, <my_app_user_id>);",
-      "language": "javascript",
-      "name": "React Native"
-    },
-    {
-      "code": "await Purchases.setDebugLogsEnabled(true);\nPurchasesConfiguration pc = PurchasesConfiguration(<public_sdk_key>);\nawait Purchases.configure(pc);",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "Purchases.SetDebugLogsEnabled(true);",
-      "language": "javascript",
-      "name": "Unity"
-    },
-    {
-      "code": "Purchases.setLogLevel(LOG_LEVEL.DEBUG);",
-      "language": "javascript",
-      "name": "Cordova"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🧰 Test - Launch/debugging_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🧰 Test - Launch/debugging_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🧰 Test - Launch/debugging_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🧰 Test - Launch/debugging_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🧰 Test - Launch/debugging_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🧰 Test - Launch/debugging_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Unity","file":"code_blocks/🧰 Test - Launch/debugging_7.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🧰 Test - Launch/debugging_8.js"}
+[/block]
+
 
 [block:callout]
 {
@@ -143,21 +126,13 @@ Messages that have the double red exclamation marks prefix (‼️) attached pro
 # Sample Output
 
 Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an eye out for any `ERROR` level logs, status codes other than `200`, or any `Invalid Product Identifiers`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "[Purchases] - DEBUG: Debug logging enabled.\n[Purchases] - DEBUG: SDK Version - 2.0.0\n[Purchases] - DEBUG: Initial App User ID - <APP_USER_ID>\n[Purchases] - DEBUG: Changing App User ID: (null) -> <APP_USER_ID>\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products\n[Purchases] - DEBUG: Delegate set\n[Purchases] - DEBUG: Sending latest purchaser info to delegate\n[Purchases] - DEBUG: Vending purchaserInfo from cache\n[Purchases] - DEBUG: Vending purchaserInfo from cache\n[Purchases] - DEBUG: applicationDidBecomeActive\n[Purchases] - DEBUG: No cached entitlements, fetching\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID> 200\n[Purchases] - DEBUG: Purchaser info updated, sending to delegate\n[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products 200\n[Purchases] - DEBUG: Requesting products with identifiers: {(\n    onetime,\n    annual,\n    onemonth\n)}\n[Purchases] - DEBUG: Products request finished\n[Purchases] - DEBUG: Valid Products:\n[Purchases] - DEBUG: annual - <SKProduct: 0x600000308980>\n[Purchases] - DEBUG: onemonth - <SKProduct: 0x6000003131b0>\n[Purchases] - DEBUG: onetime - <SKProduct: 0x600000313180>\n[Purchases] - DEBUG: Invalid Product Identifiers - (\n)\n[Purchases] - DEBUG: 2 completion handlers waiting on products\n[Purchases] - DEBUG: makePurchase - onemonth\n[Purchases] - DEBUG: PaymentQueue updatedTransaction: onemonth (null) ((null)) - 0\n[Purchases] - DEBUG: PaymentQueue updatedTransaction: onemonth <TRANSACTION_ID> ((null)) - 2\n[Purchases] - DEBUG: Finishing onemonth <TRANSACTION_ID> ((null))\n[Purchases] - DEBUG: PaymentQueue removedTransaction: onemonth <TRANSACTION_ID> ((null)) - 2",
-      "language": "text"
-    },
-    {
-      "code": "[Purchases] - DEBUG: ℹ️ Debug logging enabled\n[Purchases] - DEBUG: ℹ️ SDK Version - 3.10.1\n[Purchases] - DEBUG: 👤 Initial App User ID - <APP_USER_ID>\n[Purchases] - DEBUG: ℹ️ PurchaserInfo cache is stale, updating caches\n[Purchases] - DEBUG: ℹ️ Offerings cache is stale, updating caches\n[Purchases] - DEBUG: ℹ️ Vending PurchaserInfo from cache.\n[Purchases] - DEBUG: ℹ️ There are no requests currently running, starting request GET /subscribers/<APP_UESR_ID>\n[Purchases] - DEBUG: ℹ️ API request started: GET /v1/subscribers/<APP_UESR_ID>\n[Purchases] - DEBUG: ℹ️ API request started: GET /v1/subscribers/<APP_UESR_ID>/offerings\n[Purchases] - DEBUG: ℹ️ No cached Offerings, fetching from network\n[Purchases] - DEBUG: ℹ️ API request completed with status: GET /v1/subscribers/<APP_UESR_ID>/offerings 200\n[Purchases] - DEBUG: ℹ️ Requesting products from the store with identifiers: {(\n    onetime,\n    annual,\n    onemonth\n)}\n[Purchases] - DEBUG: ℹ️ Products request finished.\n[Purchases] - DEBUG: 💰 Retrieved SKProducts: \n[Purchases] - DEBUG: 💰 onetime - <SKProduct: 0x600000308980>\n[Purchases] - DEBUG: 💰 annual - <SKProduct: 0x600000308980>\n[Purchases] - DEBUG: 💰 onemonth - <SKProduct: 0x600000308980>\n[Purchases] - WARN: 🍎‼️ Invalid Product Identifiers - (\n)\n[Purchases] - DEBUG: ℹ️ 3 completion handlers waiting on products\n[Purchases] - DEBUG: ℹ️ makePurchase\n[Purchases] - DEBUG: 💰 Purchasing product from package  - annual in Offering main\n[Purchases] - DEBUG: ℹ️ PaymentQueue updatedTransaction: annual <TRANSACTION_ID> ((null)) (null) - 0\n\n[Purchases] - DEBUG: 💰 Finishing transaction annual <TRANSACTION_ID> ((null))\n[Purchases] - DEBUG: ℹ️ PaymentQueue removedTransaction: annual <TRANSACTION_ID> (null (null)) (null) - 1",
-      "language": "text",
-      "name": "With emojis"
-    }
-  ]
-}
+[block:file]
+{"language":"text","name":"","file":"code_blocks/🧰 Test - Launch/debugging_9.txt"}
 [/block]
+[block:file]
+{"language":"text","name":"With emojis","file":"code_blocks/🧰 Test - Launch/debugging_10.txt"}
+[/block]
+
 # Next Steps
 
 * If you spotted any errors while debugging, make sure you're [handling errors correctly :fa-arrow-right:](doc:errors)

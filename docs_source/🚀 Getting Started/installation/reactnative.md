@@ -31,50 +31,26 @@ We recommend using the latest version of React Native, or making sure that the v
 ### Option 1.1: Using auto-linking
 
 Recent versions of React Native will automatically link the SDK, so all that's needed is to install the library.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "npm install --save react-native-purchases",
-      "language": "shell",
-      "name": "npm"
-    },
-    {
-      "code": "yarn add react-native-purchases",
-      "language": "shell",
-      "name": "yarn"
-    }
-  ]
-}
+[block:file]
+{"language":"shell","name":"npm","file":"code_blocks/🚀 Getting Started/installation/reactnative_1.shell"}
 [/block]
+[block:file]
+{"language":"shell","name":"yarn","file":"code_blocks/🚀 Getting Started/installation/reactnative_2.shell"}
+[/block]
+
 ### Option 1.2: Manual linking
-[block:code]
-{
-  "codes": [
-    {
-      "code": "npm install --save react-native-purchases",
-      "language": "shell",
-      "name": "npm"
-    },
-    {
-      "code": "yarn add react-native-purchases",
-      "language": "shell",
-      "name": "yarn"
-    }
-  ]
-}
+[block:file]
+{"language":"shell","name":"npm","file":"code_blocks/🚀 Getting Started/installation/reactnative_1.shell"}
 [/block]
+[block:file]
+{"language":"shell","name":"yarn","file":"code_blocks/🚀 Getting Started/installation/reactnative_2.shell"}
+[/block]
+
 After that, you should link the library to the native projects by doing:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "react-native link react-native-purchases\n",
-      "language": "shell"
-    }
-  ]
-}
+[block:file]
+{"language":"shell","name":"","file":"code_blocks/🚀 Getting Started/installation/reactnative_5.shell"}
 [/block]
+
 ## Option 2: Using Expo
 
 RevenueCat with Expo, you will have to create Development Builds, which can be done either by using EAS, or by making builds that are compatible with Xcode and Android Studio. 
@@ -105,17 +81,10 @@ That's it! [You can skip ahead to importing the framework](https://docs.revenuec
 ## Option 2. Installing with Cocoapods / ExpoKit (Manual linking only)
 
 If your project already uses Cocoapods to install iOS dependencies, common in ExpoKit projects, linking the library should have added it to the podfile. If it hasn't, add the following to your project's podfile to reference the library from your node_modules folder:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "pod 'RNPurchases', :path => '../node_modules/react-native-purchases', :inhibit_warnings => true, :modular_headers => false",
-      "language": "yaml",
-      "name": "Podfile"
-    }
-  ]
-}
+[block:file]
+{"language":"yaml","name":"Podfile","file":"code_blocks/🚀 Getting Started/installation/reactnative_6.yaml"}
 [/block]
+
 
 In your iOS folder, run `pod install`. If you've just upgraded ExpoKit, you might need to upgrade cocoapods to the newest version: `sudo gem install cocoapods`.
 
@@ -166,16 +135,10 @@ The `react-native link` command should have added the `libRNPurchases.a` library
 # Import Purchases
 
 You should now be able to import `Purchases`.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "import Purchases from 'react-native-purchases';",
-      "language": "javascript"
-    }
-  ]
-}
+[block:file]
+{"language":"javascript","name":"","file":"code_blocks/🚀 Getting Started/installation/reactnative_7.js"}
 [/block]
+
 
 [block:callout]
 {
@@ -185,17 +148,10 @@ You should now be able to import `Purchases`.
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
-      "language": "xml",
-      "name": "AndroidManifest.xml"
-    }
-  ]
-}
+[block:file]
+{"language":"xml","name":"AndroidManifest.xml","file":"code_blocks/🚀 Getting Started/installation/reactnative_8.xml"}
 [/block]
+
 
 [block:callout]
 {

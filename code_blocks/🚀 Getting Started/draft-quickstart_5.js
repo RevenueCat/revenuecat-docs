@@ -1,8 +1,10 @@
-Purchases.restoreTransactions(
-  info => {
-    //... check purchaserInfo to see if entitlement is now active
-  },
-  error => {
-    // Error restoring purchases
-  }
-);
+@override
+void initState() {
+  super.initState();
+  initPlatformState();
+}
+
+Future<void> initPlatformState() async {
+  await Purchases.setDebugLogsEnabled(true);
+  await Purchases.setup("public_sdk_key");
+}

@@ -54,31 +54,9 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
 
-```json Access Policy
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "ListObjectsInBucket",
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::revenuecat-deliveries"
-            ]
-        },
-        {
-            "Sid": "AllObjectActions",
-            "Effect": "Allow",
-            "Action": "s3:*Object",
-            "Resource": [
-                "arn:aws:s3:::revenuecat-deliveries/*"
-            ]
-        }
-    ]
-}
-```
+[block:file]
+{"language":"json","name":"Access Policy","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports/scheduled-data-exports-s3_1.json"}
+[/block]
 
 
 

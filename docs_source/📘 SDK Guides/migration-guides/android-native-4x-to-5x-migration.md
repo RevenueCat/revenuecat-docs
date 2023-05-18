@@ -52,27 +52,15 @@ There were various updates to our API in this release, in order to best support 
 ## Configuring the SDK
 
 The `configure` function has been changed to accept a `PurchasesConfiguration.Builder`. The previous function is deprecated. The new function can be used like this:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-4x-to-5x-migration_1.kt"}
 [/block]
+
 or for Amazon:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).build())",
-      "language": "kotlin"
-    }
-  ]
-}
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-4x-to-5x-migration_2.kt"}
 [/block]
+
 ## Making purchases
 `purchasePackage` and `purchaseProduct` callbacks have been changed to return a `StoreTransaction` instead of a `Purchase` in the `onCompleted`.  
 

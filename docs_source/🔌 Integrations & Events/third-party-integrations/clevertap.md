@@ -164,59 +164,18 @@ The CleverTap integration can send the CleverTap ID to CleverTap as the user ide
 
 This property can be set manually, like any other [Subscriber Attribute](doc:subscriber-attributes). If you do not set this property, the [App User ID](doc:user-ids) will be sent as the user identity to CleverTap.
 
-```swift
-// Configure Purchases SDK
-Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-
-// Configure CleverTap SDK
-CleverTap.autoIntegrate()
-
-// ...
-
-if let cleverTapId = CleverTap.sharedInstance()?.profileGetCleverTapID() {
-  Purchases.shared.attribution.setCleverTapID(cleverTapId)
-}
-```
-```objectivec Objective-C
-// Configure Purchases SDK
-[RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
-
-// Configure CleverTap SDK
-[CleverTap autoIntegrate];
-
-//...
-
-NSString *cleverTapId = [[CleverTap sharedInstance] profileGetCleverTapID];
-if (cleverTapId != nil) {
-  [[RCPurchases sharedPurchases] setCleverTapID: cleverTapId];
-}
-```
-```kotlin
-// Configure Purchases SDK
-Purchases.configure(this, "public_sdk_key", "my_app_user_id")
-
-// Configure CleverTap SDK
-cleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(this)
-
-val cleverTapId = cleverTapDefaultInstance?.cleverTapID?.also {
-   Purchases.sharedInstance.setAttributes(mapOf("$cleverTapId" to it))
-}
-```
-```java Java
-// Configure Purchases SDK
-Purchases.configure(this, "public_sdk_key", "my_app_user_id");
-
-// Configure CleverTap SDK
-CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
-
-String cleverTapId = cleverTapDefaultInstance.getCleverTapId();
-if (cleverTapId != null) {
-  Map<String, String> attributes = new HashMap<String, String>();
-	attributes.put("$cleverTapId", cleverTapId);
-
-	Purchases.getSharedInstance().setAttributes(attributes);
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_4.java"}
+[/block]
 
 
 
@@ -258,258 +217,39 @@ After you've set up the _Purchases SDK_ and CleverTap SDK to have the same user 
 
 Below are sample JSONs that are delivered to CleverTap for most event types.
 
-```json Initial Purchase
-{
-  "d": [
-    {
-      "evtData": {
-        "amount": 4.99,
-        "app_id": "1234567890",
-        "currency": "USD"
-      },
-      "evtName": "rc_initial_purchase_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1662539769,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Trial Started
-{
-  "d": [
-    {
-      "evtData": {
-        "$adjustId": "12abc345d67e890fgh12j3lm456n7890",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "amount": 0,
-        "app_id": "1234567890",
-        "currency": "EUR"
-      },
-      "evtName": "rc_trial_started_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1663045139,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Trial Converted
-{
-  "d": [
-    {
-      "evtData": {
-        "$adjustId": "12abc345d67e890fgh12j3lm456n7890",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "amount": 14.99,
-        "app_id": "1234567890",
-        "currency": "EUR"
-      },
-      "evtName": "rc_trial_converted_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1663062898,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Trial Cancelled
-{
-  "d": [
-    {
-      "evtData": {
-        "$adjustId": "12abc345d67e890fgh12j3lm456n7890",
-         "$ip": "123.45.67.89",
-        "amount": 0,
-        "app_id": "1234567890",
-        "cancel_reason": "BILLING_ERROR",
-        "currency": "EUR"
-      },
-      "evtName": "rc_trial_cancelled_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1663060098,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Renewal
-{
-  "d": [
-    {
-      "evtData": {
-        "$appsflyerId": "1234567890123-1234567890123456789",
-        "$clevertapId": "12345678-1234-1234-1234-123456789012",
-        "$email": "firstLast@gmail.com",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "amount": 139.99,
-        "app_id": "1234567890",
-        "currency": "INR"
-      },
-      "evtName": "rc_renewal_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1659935913,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Cancellation
-{
-  "d": [
-    {
-      "evtData": {
-        "$appsflyerId": "1234567890123-1234567890123456789",
-        "$clevertapId": "12345678-1234-1234-1234-123456789012",
-        "$email": "firstLast@gmail.com",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "amount": 0,
-        "app_id": "1234567890",
-        "cancel_reason": "UNSUBSCRIBE",
-        "currency": "INR"
-      },
-      "evtName": "rc_cancellation_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1659936775,
-      "type": "event"
-    }
-  ]
-}{
-  "d": [
-    {
-      "evtData": {
-        "$appsflyerId": "1234567890123-1234567890123456789",
-        "$clevertapId": "12345678-1234-1234-1234-123456789012",
-        "$email": "firstLast@gmail.com",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "amount": 0,
-        "app_id": "1234567890",
-        "cancel_reason": "UNSUBSCRIBE",
-        "currency": "INR"
-      },
-      "evtName": "cancellation",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1659936775,
-      "type": "event"
-    }
-  ]
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_9.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_10.json"}
+[/block]
 
 
 
-```json Uncancellation
-{
-  "d": [
-    {
-      "type": "event",
-      "evtName": "rc_uncancellation_event",
-      "evtData": {
-         "$ip": "123.45.67.89",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-        "$email": "firstLast@gmail.com",
-        "$adjustId": "12abc345d67e890fgh12j3lm456n7890",
-        "$displayName": "first last",
-        "$mediaSource": "Organic",
-        "amount": 0.0,
-        "currency": "USD"
-      },
-      "ts": 1632188342,
-      "objectId": "abCdEFg01HiJklMN2OpQ3RStu4v5"
-    }
-  ]
-}
-```
-```json Non Subscription Purchase
-{
-  "d": [
-    {
-      "evtData": {
-        "$appsflyerId": "1234567890123-1234567890123456789",
-        "$clevertapId": "12345678-1234-1234-1234-123456789012",
-        "$email": "firstLast@gmail.com",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "age": "24",
-        "amount": 0,
-        "currency": "USD"
-      },
-      "evtName": "rc_non_subscription_purchase_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1660903862,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Expiration
-{
-  "d": [
-    {
-      "evtData": {
-        "$appsflyerId": "1234567890123-1234567890123456789",
-        "$clevertapId": "12345678-1234-1234-1234-123456789012",
-        "$email": "firstLast@gmail.com",
-        "$idfa": "00000000-0000-0000-0000-000000000000",
-        "$idfv": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-         "$ip": "123.45.67.89",
-        "amount": 0,
-        "app_id": "1234567890",
-        "currency": "INR",
-        "expiration_reason": "UNSUBSCRIBE"
-      },
-      "evtName": "rc_expiration_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1659936813,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Billing Issue
-{
-  "d": [
-    {
-      "evtData": {
-        "$adjustId": "12abc345d67e890fgh12j3lm456n7890",
-         "$ip": "123.45.67.89",
-        "amount": 0,
-        "app_id": "1234567890",
-        "currency": "EUR",
-        "grace_period_expiration_at": 1663146497433
-      },
-      "evtName": "rc_billing_issue_event",
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-      "ts": 1663060098,
-      "type": "event"
-    }
-  ]
-}
-```
-```json Product Change
-{
-  "d": [
-    {
-      "type": "event",
-      "evtName": "rc_product_change_event",
-      "evtData": {
-        "amount": 0.0,
-        "currency": "USD"
-      },
-      "ts": 1626283709,
-      "identity": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    }
-  ]
-}
-```
+[block:file]
+{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_11.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_12.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_13.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_14.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/clevertap_15.json"}
+[/block]

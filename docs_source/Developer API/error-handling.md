@@ -10,15 +10,9 @@ RevenueCat uses [standard HTTP status codes](https://rcv2.readme.io/reference/er
 
 Successful modifications should return the modified entity.
 
-```json Sample error response
-{
-  "type": "parameter_error",
-  "param": "customer_id",
-  "message": "id is too long",
-  "retryable": false,
-  "doc_url": "https://revenuecat.com/docs/errors/parameter_error"
-}
-```
+[block:file]
+{"language":"json","name":"Sample error response","file":"code_blocks/Developer API/error-handling_1.json"}
+[/block]
 
 
 

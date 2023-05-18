@@ -1,21 +1,12 @@
-import { Purchases } from '@awesome-cordova-plugins/purchases';
+import { Platform } from "@ionic/angular";
+import { Purchases } from "@awesome-cordova-plugins/purchases/ngx";
 
-const Tab1: React.FC = () => {
-  Purchases.setDebugLogsEnabled(true);
-  Purchases.purchases.configureWith({
-    apiKey: "my_api_key",
-    appUserID: "my_app_user_id"
-  });
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonButton onClick={openScanner}>Scan barcode</IonButton>
-      </IonContent>
-    </IonPage>
-  );
-};
+constructor(public platform: Platform, private purchases: Purchases) {
+    platform.ready().then(() => {
+        this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs
+        this.purchases.configureWith({
+            apiKey: "my_api_key",
+            appUserID: "my_app_user_id"
+        });
+    }
+}

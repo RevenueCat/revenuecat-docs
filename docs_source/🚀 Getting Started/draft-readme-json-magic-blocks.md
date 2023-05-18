@@ -13,20 +13,13 @@ Plain text
 }
 [/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "/* C code */",
-      "language": "c"
-    },
-    {
-      "code": "// Javascript code",
-      "language": "javascript"
-    }
-  ]
-}
+[block:file]
+{"language":"c","name":"","file":"code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_1.c"}
 [/block]
+[block:file]
+{"language":"javascript","name":"","file":"code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_2.js"}
+[/block]
+
 
 [block:callout]
 {

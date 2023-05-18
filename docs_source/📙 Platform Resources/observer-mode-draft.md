@@ -133,42 +133,25 @@ No special requirements
 ❌ Not supported with client-side Observer Mode
 
 ## 1. Configure the SDK
-[block:code]
-{
-  "codes": [
-    {
-      "code": "Purchases.configure(\n            withAPIKey: \"my_api_key\",\n            appUserID: \"my_app_user_id\",\n            observerMode: true)",
-      "language": "swift",
-      "name": "Swift"
-    },
-    {
-      "code": "[RCPurchases \n\tconfigureWithAPIKey:@\"my_api_key\" \n\tappUserID:@\"my_app_user_id\"\n\tobserverMode: YES];",
-      "language": "objectivec",
-      "name": "Objective-C"
-    },
-    {
-      "code": "Purchases.configure(this, \"my_api_key\", \"my_app_user_id\", true)",
-      "language": "kotlin",
-      "name": "Kotlin"
-    },
-    {
-      "code": "Purchases.configure(this, \"my_api_key\", \"my_app_user_id\", true);\n",
-      "language": "java",
-      "name": "Java"
-    },
-    {
-      "code": "await Purchases.setup(\"my_api_key\", observerMode: true);",
-      "language": "javascript",
-      "name": "Flutter"
-    },
-    {
-      "code": "See \"Enable Observer Mode in Unity configuration\" below",
-      "language": "text",
-      "name": "Unity"
-    }
-  ]
-}
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/📙 Platform Resources/observer-mode-draft_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/📙 Platform Resources/observer-mode-draft_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"Kotlin","file":"code_blocks/📙 Platform Resources/observer-mode-draft_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/📙 Platform Resources/observer-mode-draft_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/📙 Platform Resources/observer-mode-draft_5.js"}
+[/block]
+[block:file]
+{"language":"text","name":"Unity","file":"code_blocks/📙 Platform Resources/observer-mode-draft_6.txt"}
+[/block]
+
 ### Enable Observer Mode in Unity configuration (Unity Only)
 [block:image]
 {
@@ -197,25 +180,16 @@ No special requirements
 ##2. Sync purchases with RevenueCat (Android only)
 
 On Android (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.sharedInstance.syncPurchases()\n  ",
-      "language": "kotlin"
-    },
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.getSharedInstance().syncPurchases();\n",
-      "language": "java"
-    },
-    {
-      "code": "// Called any time a purchase or restore \n// is successful in your existing code\nPurchases.syncPurchases();",
-      "language": "javascript",
-      "name": "React Native"
-    }
-  ]
-}
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📙 Platform Resources/observer-mode-draft_7.kt"}
 [/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/📙 Platform Resources/observer-mode-draft_8.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/📙 Platform Resources/observer-mode-draft_9.js"}
+[/block]
+
 
 [block:callout]
 {
