@@ -4,7 +4,7 @@ slug: new-identity-2
 hidden: true
 createdAt: '2019-09-27T23:32:42.637Z'
 updatedAt: '2023-01-10T19:03:18.795Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 RevenueCat provides a source of truth for a subscriber's status across different platforms. To do this, each subscriber has an App User ID that uniquely identifies them within your application. 
 
@@ -17,24 +17,31 @@ The *Purchases SDK* allows you to specify your own user identifiers or use anony
 }
 [/block]
 If you don't provide an App User ID when instantiating the Purchases SDK, RevenueCat will create a new random App User ID for you and cache it on the device. In the event that the user deletes and reinstalls the app, a new random App User ID will be generated.
-```swift
+```swift 
 Purchases.configure(withAPIKey: "my_api_key")
 ```
-```objectivec
+```objectivec 
 [RCPurchases configureWithAPIKey:@"my_api_key"];
 ```
-```kotlin
+```kotlin 
 Purchases.configure(this, "my_api_key")
 ```
-```java
+```java 
 Purchases.configure(this, "my_api_key");
 ```
-```javascript
+```javascript Flutter
+await Purchases.setup("public_sdk_key");
+```
+```javascript React Native
 Purchases.setup("public_sdk_key");
 ```
-```csharp
+```javascript Cordova
+Purchases.setup("public_sdk_key");
+```
+```csharp Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
+
 
 [block:callout]
 {
@@ -56,27 +63,34 @@ Using an externally managed App User ID also provides a mechanism by which to re
 
 ## Set App User ID on configuration
 If you have your own App User IDs, you can pass those on instantiation to *Purchases*.
-```swift
+```swift 
 Purchases.configure(withAPIKey: "my_api_key", appUserID: "my_app_user_id")
 ```
-```objectivec
+```objectivec 
 [RCPurchases configureWithAPIKey:@"my_api_key" appUserID:@"my_app_user_id"];
 ```
-```kotlin
+```kotlin 
 Purchases.configure(this, "my_api_key", "my_app_user_id")
 ```
-```java
+```java 
 Purchases.configure(this, "my_api_key", "my_app_user_id");
 ```
-```javascript
+```javascript Flutter
+await Purchases.setup("public_sdk_key", appUserId: "my_app_user_id");
+```
+```javascript React Native
 Purchases.setup("public_sdk_key", "my_app_user_id");
 ```
-```csharp
+```javascript Cordova
+Purchases.setup("public_sdk_key", "my_app_user_id");
+```
+```csharp Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
+
 ## Set App User ID after configuration
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.identify()`. The most common cases are users creating accounts or logging in. 
-```swift
+```swift 
 // Configure Purchases on app launch
 Purchases.configure(withAPIKey: "my_api_key")
 
@@ -87,7 +101,7 @@ Purchases.shared.identify("my_app_user_id") { (purchaserInfo, error) in
     // purchaserInfo updated for my_app_user_id
 }
 ```
-```objectivec
+```objectivec 
 // Configure Purchases on app launch
 [RCPurchases configureWithAPIKey:@"my_api_key"];
 
@@ -98,7 +112,7 @@ Purchases.shared.identify("my_app_user_id") { (purchaserInfo, error) in
     // purchaserInfo updated for my_app_user_id
 }];
 ```
-```kotlin
+```kotlin 
 // Configure Purchases on app launch
 Purchases.configure(this, "my_api_key")
 
@@ -109,7 +123,7 @@ Purchases.sharedInstance.identifyWith("my_app_user_id", ::showError) { purchaser
   // purchaserInfo updated for my_app_user_id
 }
 ```
-```java
+```java 
 // Configure Purchases on app launch
 Purchases.configure(this, "my_api_key");
 
@@ -126,7 +140,26 @@ Purchases.getSharedInstance().identify("my_app_user_id", new ReceivePurchaserInf
 	}
 });
 ```
-```javascript
+```javascript Flutter
+// Configure Purchases on app launch
+await Purchases.setup("public_sdk_key");
+
+//...
+
+// Later log in provided user Id
+PurchaserInfo purchaserInfo = await Purchases.identify("my_app_user_id");
+```
+```javascript React Native
+// Configure Purchases on app launch
+Purchases.setup("public_sdk_key");
+
+//...
+
+// Later log in provided user Id
+const purchaserInfo = await Purchases.identify("my_app_user_id");
+// purchaserInfo updated for my_app_user_id
+```
+```javascript Cordova
 // Configure Purchases on app launch
 Purchases.setup("public_sdk_key");
 
@@ -143,11 +176,12 @@ Purchases.identify(
   }
 );
 ```
-```csharp
+```csharp Unity
 purchases.Identify("my_app_user_id", (purchaserInfo, error) => {
   // purchaserInfo updated for my_app_user_id
 });
 ```
+
 
 [block:callout]
 {

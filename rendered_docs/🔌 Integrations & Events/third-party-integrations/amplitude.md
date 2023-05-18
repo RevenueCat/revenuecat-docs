@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:08.891Z'
 updatedAt: '2023-04-27T20:07:08.891Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -169,7 +169,7 @@ If you're using the Amplitude SDK, you can set the User Id to match the RevenueC
 
 Configure the Amplitude SDK with the same App User Id as RevenueCat or use the `.setUserId()` method on the Amplitude SDK.
 
-```swift
+```swift 
 // Configure Purchases SDK
 Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
 
@@ -179,14 +179,14 @@ Amplitude.instance()?.initializeApiKey("amplitude_api_key", userId: "my_app_user
 // Optional User Alias Object attributes
 Purchases.shared.attribution.setAttributes(["$amplitudeDeviceId" : <AMPLITUDE_DEVICE_ID>])
 ```
-```objectivec
+```objectivec 
 // Configure Purchases SDK
 [RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
 
 // Configure Amplitude SDK
 [[Amplitude] instance] initializeApiKey:@"amplitude_api_key" userId:@"my_app_user_id"];
 ```
-```java
+```java 
 // Configure Purchases SDK
 Purchases.configure(this, "public_sdk_key", "my_app_user_id");
 

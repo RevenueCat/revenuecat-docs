@@ -6,7 +6,7 @@ hidden: false
 metadata:
 createdAt: '2023-04-14T03:01:04.122Z'
 updatedAt: '2023-04-14T03:02:24.640Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 Events notify you in near real-time to any changes that occur to a customer's subscription and can automatically be sent into a variety of [third-party tools](doc:/third-party-integrations) and [attribution networks](doc:attribution) to get clean, consistent, and trustworthy data in all of your systems.
 

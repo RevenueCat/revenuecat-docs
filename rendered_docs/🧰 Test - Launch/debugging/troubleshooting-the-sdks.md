@@ -12,7 +12,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-05-03T18:59:17.242Z'
 updatedAt: '2023-02-17T19:36:02.332Z'
-category: 64515c3aa16590000a27cd9d
+category: 646582bf8197f50019e3c59c
 ---
 Having trouble with our SDKs? This guide covers common issues and solutions. Go through each topic and see if it matches your issue. If you went through this guide and you're still having problems, reach out to us in any of the following channels:
 
@@ -98,7 +98,7 @@ You can find the latest version of our SDKs here:
 ** 1. ** Upgrade to the latest version of [react-native-purchases](https://github.com/revenuecat/react-native-purchases/releases/latest)
 ** 2. ** Upgrade to the [latest version of React-Native](https://reactnative.dev/docs/upgrading).
 ** 3. ** If you're setting `BUILD_LIBRARY_FOR_DISTRIBUTION` in your Podfile, ensure RevenueCat's targets are excluded.
-```ruby
+```ruby 
 post_install do |installer|
     react_native_post_install(installer)
 
@@ -112,6 +112,7 @@ post_install do |installer|
     end
   end
 ```
+
 ** 4. ** Follow the [troubleshooting steps for iOS](doc:troubleshooting-the-sdks#ios).
 
 # Common Issues

@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-02-21T22:07:41.716Z'
 updatedAt: '2023-02-21T22:07:41.716Z'
-category: 64515c39b05512007222ab6a
+category: 646582bdd4a12f005f28be1e
 ---
 If you use SwiftyStoreKit in your iOS app and are looking for an alternative that includes receipt validation, server-side status tracking, cross-platform support and more - RevenueCat is the ideal choice for your app!
 
@@ -30,7 +30,7 @@ If you're app is already live with SwiftyStoreKit, be sure to read the last sect
 Apple recommends registering an `SKPaymentTransactionObserver` as soon as the app launches. RevenueCat automatically does this when you configure an instance of *Purchases*.
 
 **SwiftyStoreKit:**
-```swift
+```swift AppDelegate.swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
     SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
@@ -51,8 +51,9 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 }
 ```
 
+
 **RevenueCat:**
-```swift
+```swift AppDelegate.swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
     Purchases.debugLogsEnabled = true
@@ -61,6 +62,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     return true
 }
 ```
+
 **Migration Steps:**
 Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with the *Purchases SDK* `configure()` method.
 
@@ -70,7 +72,7 @@ Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with t
 ##Retrieve products info
 
 **SwiftyStoreKit:**
-```swift
+```swift 
 SwiftyStoreKit.retrieveProductsInfo([<com.RevenueCat.Purchase1>]) { result in
     if let product = result.retrievedProducts.first {
         let priceString = product.localizedPrice!
@@ -84,8 +86,9 @@ SwiftyStoreKit.retrieveProductsInfo([<com.RevenueCat.Purchase1>]) { result in
     }
 }
 ```
+
 **RevenueCat:**
-```swift
+```swift 
 Purchases.shared.getOfferings { (offerings, error) in
     if let e = error {
         print(e.localizedDescription)
@@ -101,6 +104,7 @@ Purchases.shared.getOfferings { (offerings, error) in
     }
 }
 ```
+
 **Migration Steps:**
 In RevenueCat, Offerings are [configured in the dashboard](doc:entitlements), and mapped to `SKProduct`s. Once you setup your products in RevenueCat, replace `retrieveProductsInfo()` in SwiftyStoreKit with `offerings()` in *Purchases SDK*.
 
@@ -110,7 +114,7 @@ Products are automatically fetched and cached when the *Purchases SDK* is config
 ##Purchase a product
 
 **SwiftyStoreKit:**
-```swift
+```swift 
 SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
     switch result {
     case .success(let purchase):
@@ -131,8 +135,9 @@ SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result 
     }
 }
 ```
+
 **RevenueCat:**
-```swift
+```swift 
 Purchases.shared.purchase(package: package) { (transaction, info, error, cancelled) in
     if cancelled {
         print("User cancelled purchase")
@@ -168,6 +173,7 @@ Purchases.shared.purchase(package: package) { (transaction, info, error, cancell
 
 }
 ```
+
 **Migration Steps:**
 In SwiftyStoreKit, purchases can be initiated from a product Id or an `SKProduct`. In *Purchases SDK* the preferred method is to provide a package to purchase. Replace the `purchaseProduct()` method in SwiftyStoreKit with `purchase(package:)`, and pass the package that was included with the RevenueCat Offering.
 
@@ -178,7 +184,7 @@ To check if the subscription has been successfully activated, check if the `cust
 ##Handle purchases started on the App Store
 
 **SwiftyStoreKit:**
-```swift
+```swift 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
   //...
@@ -191,8 +197,9 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
   //...
 }
 ```
+
 **RevenueCat:**
-```swift
+```swift 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
   //...
@@ -215,6 +222,7 @@ func purchases(_ purchases: Purchases, shouldPurchasePromoProduct product: SKPro
     }
 }
 ```
+
 **Migration Steps:**
 RevenueCat handles purchases initiated through the App Store with an optional delegate method. Replace the `shouldAddStorePaymentHandler` in SwiftyStoreKit with the `shouldPurchasePromoProduct` in *Purchases SDK*.
 
@@ -223,7 +231,7 @@ With *Purchases SDK* you have the option of deferring the purchase until a later
 ##Restore previous purchases
 
 **SwiftyStoreKit:**
-```swift
+```swift 
 SwiftyStoreKit.restorePurchases(atomically: true) { results in
     if results.restoreFailedPurchases.count > 0 {
         print("Restore Failed: \(results.restoreFailedPurchases)")
@@ -236,8 +244,9 @@ SwiftyStoreKit.restorePurchases(atomically: true) { results in
     }
 }
 ```
+
 **RevenueCat:**
-```swift
+```swift 
 Purchases.shared.restorePurchases { (customerInfo, error) in
     if let e = error {
         print("Restore Failed: \(e.localizedDescription)")
@@ -246,6 +255,7 @@ Purchases.shared.restorePurchases { (customerInfo, error) in
     }
 }
 ```
+
 **Migration Steps:**
 The *Purchases SDK* has a similar method to SwiftyStoreKit to restore transactions - replace `restorePurchases()` in SwiftyStoreKit with `restoreTransactions()`. To check if the subscription has been restored, check if the `customerInfo` object contains an active entitlement for the "pro" content you configured in the RevenueCat dashboard.
 
@@ -257,7 +267,7 @@ Receipts are automatically verified by RevenueCat. You don't need any local or s
 # Verifying subscriptions
 
 **SwiftyStoreKit:**
-```swift
+```swift 
 let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: <your-shared-secret>)
 SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
     switch result {
@@ -279,14 +289,16 @@ SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
     }
 }
 ```
+
 **RevenueCat:**
-```swift
+```swift 
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
     if customerInfo?.entitlements.all[<pro>]?.isActive == true {
         // Grant user "pro" access
     }
 }
 ```
+
 **Migration Steps:**
 RevenueCat keeps a subscribers status up-to-date on the server and shares this information with the *Purchases SDK* to determine what subscriptions are active for the current user. 
 

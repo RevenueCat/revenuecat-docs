@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-31T22:56:54.298Z'
 updatedAt: '2023-03-31T22:56:54.298Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If you've [configured Offerings](doc:entitlements) in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates.
 
@@ -35,7 +35,7 @@ Offerings are fetched through the SDK based on their [configuration](doc:entitle
 
 The `getOfferings` method will fetch the Offerings from RevenueCat. These are pre-fetched in most cases on app launch, so the completion block to get offerings won't need to make a network request in most cases. 
 
-```swift
+```swift 
 Purchases.shared.getOfferings { (offerings, error) in
     if let packages = offerings?.current?.availablePackages {
         // Display packages for sale
@@ -51,7 +51,7 @@ Purchases.shared.getOfferings { (offerings, error) in
   }
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getOfferingsWith({ error ->
   // An error occurred
 }) { offerings ->
@@ -60,7 +60,7 @@ Purchases.sharedInstance.getOfferingsWith({ error ->
   }
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
   @Override
   public void onReceived(@NonNull Offerings offerings) {
@@ -144,7 +144,7 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
 
-```swift
+```swift 
 Purchases.shared.getOfferings { (offerings, error) in
     if let packages = offerings?.offering(identifier: "experiment_group").availablePackages {
         // Display packages for sale
@@ -159,7 +159,7 @@ Purchases.shared.getOfferings { (offerings, error) in
   }
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getOfferingsWith({ error ->
   // An error occurred
 }) { offerings ->
@@ -168,7 +168,7 @@ Purchases.sharedInstance.getOfferingsWith({ error ->
   }
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
   @Override
   public void onReceived(@NonNull Offerings offerings) {
@@ -259,21 +259,21 @@ Packages can be access in a few different ways:
 2. via the duration convenience property on an Offering
 3. via the package identifier directly
 
-```swift
+```swift 
 offerings.offering(identifier: "experiment_group").availablePackages
 // --
 offerings.offering(identifier: "experiment_group").monthly
 // --
 offerings.offering(identifier: "experiment_group").package(identifier: "<package_id>")
 ```
-```objectivec
+```objectivec 
 [offerings offeringWithIdentifier:"experiment_group"].availablePackages
 // --
 [offerings offeringWithIdentifier:"experiment_group"].monthly
 // --
 [[offerings offeringWithIdentifier:"experiment_group"] packageWithIdentifier:@"<package_id>"]
 ```
-```kotlin
+```kotlin 
 offerings["experiment_group"]?.availablePackages
 // --
 offerings["experiment_group"]?.monthly
@@ -461,7 +461,7 @@ Purchases.shared.getOfferings { (offerings, error) in
   [self presentPaywallWithPackages:packages];
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getOfferingsWith({ error ->
   // An error occurred
 }) { offerings ->
@@ -474,7 +474,7 @@ Purchases.sharedInstance.getOfferingsWith({ error ->
 	presentPaywall(packages)
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
   @Override
   public void onReceived(@NonNull Offerings offerings) {

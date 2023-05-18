@@ -15,10 +15,20 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-07T20:32:01.037Z'
 updatedAt: '2023-02-02T14:19:47.927Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
-```text
+```text Cordova
+// Install Cordova plugin
+ionic cordova plugin add cordova-plugin-purchases
+
+// Install TypeScript wrapper
+npm install @awesome-cordova-plugins/purchases
+
+// Install Ionic Native core library (once per project)
+npm install @awesome-cordova-plugins/core
+```
+```text Capacitor
 // Install Cordova plugin
 npm install cordova-plugin-purchases
 
@@ -31,6 +41,7 @@ npm install @awesome-cordova-plugins/purchases
 // Update native platform project(s) to include newly added plugin
 ionic cap sync
 ```
+
 
 [block:callout]
 {
@@ -46,7 +57,7 @@ ionic cap sync
 }
 [/block]
 Angular apps can use either Cordova or Capacitor to build native mobile apps. For Angular, the import path should end with `/ngx`.
-```typescript
+```typescript 
 import { Platform } from "@ionic/angular";
 import { Purchases } from "@awesome-cordova-plugins/purchases/ngx";
 
@@ -61,13 +72,14 @@ constructor(public platform: Platform, private purchases: Purchases) {
 }
 ```
 
+
 [block:api-header]
 {
   "title": "React"
 }
 [/block]
 Import the plugin object then use its static methods:
-```typescript
+```typescript 
 import { Purchases } from '@awesome-cordova-plugins/purchases';
 
 const Tab1: React.FC = () => {

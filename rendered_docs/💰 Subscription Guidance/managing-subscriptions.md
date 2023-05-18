@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-01-15T19:53:13.255Z'
 updatedAt: '2023-03-28T10:03:45.658Z'
-category: 64515c3b6f91d900446f01f3
+category: 646582c0a0e52000586ab9e0
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
 
@@ -53,10 +53,10 @@ You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscripti
 ## Google Play
 
 In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Setting the proration mode optional but will default to `IMMEDIATE_WITH_TIME_PRORATION`.
-```text
+```text Kotlin
 
 ```
-```java
+```java Java
 Purchases.getSharedInstance().purchase(
 	new PurchaseParams.Builder(activity, pkg)
 		.oldProductId("old_product_id")
@@ -77,6 +77,7 @@ Purchases.getSharedInstance().purchase(
 	}
 );
 ```
+
 
 [block:callout]
 {
@@ -153,18 +154,19 @@ Google requires developers to allow customers to cancel a subscription within ap
 }
 [/block]
 
-```swift
+```swift 
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
     let managementURL = customerInfo.managementURL
     // display the managementURL in your app
 }
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->
     val managementURL = customerInfo.managementURL
     // display the managementURL in your app
 }
 ```
+
 
 [block:callout]
 {

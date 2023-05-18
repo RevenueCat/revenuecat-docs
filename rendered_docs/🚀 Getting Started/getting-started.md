@@ -5,7 +5,7 @@ excerpt: Get up and running with mobile subscriptions
 hidden: false
 createdAt: '2022-11-16T20:18:33.888Z'
 updatedAt: '2023-04-21T20:24:53.183Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 
@@ -176,7 +176,7 @@ See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-
 
 Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
-```swift
+```swift 
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
 
@@ -187,7 +187,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   
 }
 ```
-```objectivec
+```objectivec 
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
 
@@ -200,7 +200,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return YES;
 }
 ```
-```kotlin
+```kotlin 
 // If you're targeting only Google Play Store
 class MainApplication: Application() {
     override fun onCreate() {
@@ -238,7 +238,7 @@ class MainApplication: Application() {
     }
 }
 ```
-```java
+```java 
 // If you're targeting only Google Play Store
 public class MainApplication extends Application {
     @Override
@@ -349,14 +349,14 @@ The SDK will automatically fetch the [configured Offerings](doc:entitlements#off
 
 Below is an example of fetching Offerings. You can utilize Offerings to organize your paywall screen. See our guide on [Displaying Products](doc:displaying-products) for more information and best practices.
 
-```swift
+```swift 
 Purchases.shared.getOfferings { (offerings, error) in
 	if let offerings = offerings {
 	  // Display current offering with offerings.current
   }
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] getOfferingsWithCompletion:^(RCOfferings *offerings, NSError *error) {
   if (offerings) {
 		// Display current offering with offerings.current
@@ -365,7 +365,7 @@ Purchases.shared.getOfferings { (offerings, error) in
   }
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getOfferingsWith(
 	onError = { error ->
     /* Optional error handling */ 
@@ -375,7 +375,7 @@ Purchases.sharedInstance.getOfferingsWith(
 	}
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
 
      @Override
@@ -466,21 +466,21 @@ The SDK includes a simple method for facilitating purchases. The `purchase:packa
 
 The code sample below shows the process of purchasing a package and confirming it unlocks the "your_entitlement_id" content. More detail about the `purchase:package` method can be found in our guide on [Making Purchases](doc:making-purchases).
 
-```swift
+```swift 
 Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
     if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
         // Unlock that great "pro" content
     }
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] purchasePackage:package withCompletion:^(RCStoreTransaction *transaction, RCCustomerInfo *customerInfo, NSError *error, BOOL cancelled) {
     if (customerInfo.entitlements.all[@<your_entitlement_id>].isActive) {
     // User is "premium"
 	}
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.purchaseWith(
   PurchaseParams.Builder(this, package).build(),
   onError = { error, userCancelled -> /* No purchase */ },
@@ -490,7 +490,7 @@ Purchases.sharedInstance.purchaseWith(
   }
 )
 ```
-```java
+```java 
 Purchases.getSharedInstance().purchase(
 	new PurchaseParams.Builder(this, aPackage).build(), 
 	new PurchaseCallback() {
@@ -598,28 +598,28 @@ The SDK makes it easy to check what active subscriptions the current customer ha
 
 If you're not using Entitlements (you probably should be!) you can check the array of active subscriptions to see what product IDs from the respective store it contains.
 
-```swift
+```swift 
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
     if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
         // User is "premium"
     }
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] getCustomerInfoWithCompletion:^(RCPurchaserInfo * customerInfo, NSError * error) {
     if (customerInfo.entitlements.all[@<your_entitlement_id>].isActive) {
     // User is "premium"
 	}
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->
   if (customerInfo.entitlements[<my_entitlement_identifier>]?.isActive == true) {
     // Grant user "pro" access
   }
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getCustomerInfo(new ReceiveCustomerInfoCallback() {
     @Override
     public void onReceived(@NonNull CustomerInfo customerInfo) {
@@ -704,22 +704,22 @@ It's typical to call this method when deciding which UI to show the user and whe
 
 RevenueCat enables your users to restore their in-app purchases, reactivating any content that they previously purchased from the **same store account** (Apple, Google, or Amazon account). We recommend that all apps have some way for users to trigger the restore method. Note that Apple does require a restore mechanism in the event a user loses access to their purchases (e.g: uninstalling/reinstalling the app, losing their account information, etc).
 
-```swift
+```swift 
 Purchases.shared.restorePurchases { (customerInfo, error) in
     //... check customerInfo to see if entitlement is now active
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] restorePurchasesWithCompletion:^(RCCustomerInfo *customerInfo, NSError *error) {
     //... check customerInfo to see if entitlement is now active
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.restorePurchasesWith(::showError) { customerInfo ->
     //... check customerInfo to see if entitlement is now active
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().restorePurchases(new ReceiveCustomerInfoCallback() {
     @Override
     public void onReceived(@NonNull CustomerInfo customerInfo) {
@@ -790,7 +790,7 @@ This method will fire whenever the SDK receives an updated CustomerInfo object f
 
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to customer information the next time your app is launched or in the completion blocks of the SDK methods.
 
-```swift
+```swift 
 // Additional configure setup
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
@@ -810,7 +810,7 @@ extension AppDelegate: PurchasesDelegate {
     }
 }
 ```
-```objectivec
+```objectivec 
 // Additional configure setup
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:`
@@ -828,14 +828,14 @@ extension AppDelegate: PurchasesDelegate {
     // handle any changes to purchaserInfo
 }
 ```
-```kotlin
+```kotlin 
 class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {
 		override fun onReceived(customerInfo: CustomerInfo) {
         // handle any changes to purchaserInfo
     }
 }
 ```
-```java
+```java 
 public class UpsellActivity extends AppCompatActivity implements UpdatedCustomerInfoListener {
 		@Override
     public void onReceived(CustomerInfo customerInfo) {

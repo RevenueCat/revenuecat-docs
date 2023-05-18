@@ -5,7 +5,7 @@ excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2022-05-31T22:03:36.901Z'
 updatedAt: '2022-05-31T23:10:04.723Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. 
 Whether you're looking to replace all of your in-app-purchase code, or use RevenueCat along side your current setup in [Observer Mode](doc:observer-mode), this guide will help you get started.
@@ -43,7 +43,7 @@ The RevenueCat SDK will automatically detect new transactions and sends them to 
 The way to do this is: if your existing subscription code knows you have a subscription, but RevenueCat does not, then programmatically sync purchases. 
 
 See the following pseudo example.
-```javascript
+```javascript Example
 const isSubscribedInOldSystem = oldTracking.isSubscribed()
 const isSubscribedInRevenueCat = !customerInfo.entitlements.active.isEmpty
 
@@ -55,6 +55,7 @@ if (isSubscribedInOldSystem && !isSubscribedInRevenueCat)
   Purchases.shared.syncPurchases { (customerInfo, error) in }
 }
 ```
+
 When a subscriber launches with the first version containing RevenueCat it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {

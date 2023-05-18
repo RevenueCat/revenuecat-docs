@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:07:09.611Z'
 updatedAt: '2023-03-28T21:07:09.611Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Adjust integration you can:
 
@@ -76,7 +76,7 @@ extension AppDelegate: AdjustDelegate {
     }
 }
 ```
-```java
+```java 
 Purchases.configure(this, "my_api_key");
 
 
@@ -227,7 +227,7 @@ Adjust [does not accept events with revenue less than 0.001](https://help.adjust
 
 Below is a sample event sent to Adjust. The type of the event (e.g. initial purchase) is defined by the `event_token`. Note that product identifiers, subscriber attributes, app user IDs, etc. don't get sent to Adjust.
 
-```json
+```json 
 {
   "app_token": "abcdefg",
   "event_token": "abcdefg",

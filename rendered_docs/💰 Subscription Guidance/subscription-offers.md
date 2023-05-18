@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-06-21T21:53:53.114Z'
 updatedAt: '2023-04-11T17:11:38.228Z'
-category: 64515c3b6f91d900446f01f3
+category: 646582c0a0e52000586ab9e0
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.
 
@@ -43,7 +43,7 @@ The Purchases SDK allows for easy checking of eligibility for introductory offer
 
 RevenueCat uses a best-effort approach to checking eligibility based on previous purchases by the customer. The native store payment sheet will ultimately display the correct eligibility before the customer subscribes.
 
-```swift
+```swift 
 Purchases.shared.getOfferings { offerings, error in
   if let product = offerings?.current?.availablePackages.first?.storeProduct {
     Purchases.shared.checkTrialOrIntroDiscountEligibility(product: product) { eligibility in
@@ -88,7 +88,7 @@ If you want to have greater control over which offer gets applied to purchases, 
 
 The `subscriptionOptions` property also has a number of convenience properties that allow finding the right offer to apply for your customer. The `defaultOption` property finds the offer with the longest free trial period or the cheapest introductory offer. In addition, the following properties are available:
 
-```kotlin
+```kotlin 
 val basePlan = storeProduct.subscriptionOptions?.basePlan
 val freeTrialOffer = storeProduct.subscriptionOptions?.freeTrial
 val introductoryOffer = storeProduct.subscriptionOptions?.introOffer

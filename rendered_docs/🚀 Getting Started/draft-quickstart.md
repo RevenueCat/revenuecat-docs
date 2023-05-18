@@ -5,7 +5,7 @@ excerpt: Get up and running with mobile subscriptions
 hidden: true
 createdAt: '2021-05-26T18:44:55.163Z'
 updatedAt: '2021-06-10T22:32:15.033Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 This guide will walk you through how to get up and running with subscriptions and the Purchases SDK with only a few lines of code.
 
@@ -94,7 +94,7 @@ See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-
 
 Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
-```swift
+```swift 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   
     Purchases.debugLogsEnabled = true
@@ -102,7 +102,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   
 }
 ```
-```objectivec
+```objectivec 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   	// Override point for customization after application launch.
     
@@ -112,7 +112,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   	return YES;
 }
 ```
-```kotlin
+```kotlin 
 class MainApplication: Application() {
 
     override fun onCreate() {
@@ -123,7 +123,7 @@ class MainApplication: Application() {
 
 }
 ```
-```java
+```java 
 public class MainApplication extends Application {
 
     @Override
@@ -135,7 +135,29 @@ public class MainApplication extends Application {
 
 }
 ```
-```javascript
+```javascript Flutter
+@override
+void initState() {
+  super.initState();
+  initPlatformState();
+}
+
+Future<void> initPlatformState() async {
+  await Purchases.setDebugLogsEnabled(true);
+  await Purchases.setup("public_sdk_key");
+}
+```
+```javascript React Native
+export default class App extends React.Component {
+  
+  componentDidMount() {
+    Purchases.setDebugLogsEnabled(true);
+    Purchases.setup("public_sdk_key");
+  }
+  
+}
+```
+```javascript Cordova
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -143,9 +165,10 @@ function onDeviceReady() {
     Purchases.setup("public_sdk_key");
 }
 ```
-```text
+```text Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
+
 When in development, we recommend enabling more verbose debug logs. For more information about these logs, see our [Debugging](doc:debugging) guide.  
 
 If you're planning to use RevenueCat alongside your existing purchase code, check out our guide on [Observer Mode](doc:observer-mode).
@@ -162,14 +185,14 @@ If you're planning to use RevenueCat alongside your existing purchase code, chec
 
 Below is an example of fetching Offerings. You can utilize Offerings to organize your paywall screen. See our guide on [Displaying Products](doc:displaying-products) for more information and best practices.
 
-```swift
+```swift 
 Purchases.shared.offerings { (offerings, error) in
 	if let offerings = offerings {
 	  // Display current offering with offerings.current
   }
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {
   if (offerings) {
 		// Display current offering with offerings.current
@@ -178,7 +201,7 @@ Purchases.shared.offerings { (offerings, error) in
   }
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getOfferingsWith(
 	onError = { error ->
     /* Optional error handling */ 
@@ -188,7 +211,7 @@ Purchases.sharedInstance.getOfferingsWith(
 	}
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsListener() {
     @Override
     public void onReceived(@Nullable Map<String, Entitlement> offerings) {
@@ -201,7 +224,27 @@ Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsListener() {
     }
 });
 ```
-```javascript
+```javascript Flutter
+try {
+  Offerings offerings = await Purchases.getOfferings();
+  if (offerings.current != null) {
+    // Display current offering with offerings.current
+  }
+} on PlatformException catch (e) {
+	// optional error handling
+}
+```
+```javascript React Native
+try {
+  const offerings = await Purchases.getOfferings();
+  if (offerings.current !== null) {  
+	  // Display current offering with offerings.current
+  }
+} catch (e) {
+
+}
+```
+```javascript Cordova
 func displayUpsellScreen() {
   Purchases.getOfferings(
       offerings => {
@@ -215,7 +258,7 @@ func displayUpsellScreen() {
   );
 }
 ```
-```csharp
+```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetOfferings((offerings, error) =>
 {
@@ -226,7 +269,7 @@ purchases.GetOfferings((offerings, error) =>
   }
 });
 ```
-```curl
+```curl Web
 curl --request GET \
   --url https://api.revenuecat.com/v1/subscribers/<app_user_id>/offerings \
   --header 'Accept: application/json' \
@@ -234,6 +277,7 @@ curl --request GET \
   --header 'Content-Type: application/json' \
   --header 'X-Platform: stripe'
 ```
+
 
 [block:html]
 {
@@ -253,21 +297,21 @@ You can find more info about trouble shooting this issue in our [Help Center](ht
 
 The code sample below shows the process of purchasing a package and confirming it unlocks the "your_entitlement_id" content. More detail about the `purchasePackage` method can be found in our guide on [Making Purchases](doc:making-purchases).
 
-```swift
+```swift 
 Purchases.shared.purchasePackage(package) { (transaction, purchaserInfo, error, userCancelled) in
     if purchaserInfo?.entitlements.all["your_entitlement_id"]?.isActive == true {
         // Unlock that great "pro" content
     }
 })
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] purchasePackage:package withCompletionBlock:^(SKPaymentTransaction *transaction, RCPurchaserInfo *purchaserInfo, NSError *error, BOOL cancelled) {
     if (purchaserInfo.entitlements.all[@"your_entitlement_id"].isActive) {
     // User is "premium"
 	}
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.purchasePackageWith(
   this,
   package,
@@ -278,7 +322,7 @@ Purchases.sharedInstance.purchasePackageWith(
   }
 })
 ```
-```java
+```java 
 Purchases.getSharedInstance().purchasePackage(
     this,
     package,
@@ -297,7 +341,37 @@ Purchases.getSharedInstance().purchasePackage(
     }
 );
 ```
-```javascript
+```javascript Flutter
+try {
+  PurchaserInfo purchaserInfo = await Purchases.purchasePackage(package);
+  var isPro = purchaserInfo.entitlements.all["my_entitlement_identifier"].isActive;
+  if (isPro) {
+    // Unlock that great "pro" content
+  }
+} on PlatformException catch (e) {
+  var errorCode = PurchasesErrorHelper.getErrorCode(e);
+  if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
+    showError(e);  	          
+  }
+}
+```
+```javascript React Native
+// Using packages
+try {
+  const purchaseMade = await Purchases.purchasePackage(package);
+  if (typeof purchaseMade.purchaserInfo.entitlements.active.my_entitlement_identifier !== "undefined") {
+    // Unlock that great "pro" content
+  }
+} catch (e) {
+  if (!e.userCancelled) {
+  	showError(e);
+  }
+}
+
+// Note: if you are using purchaseProduct to purchase Android In-app products, an optional third parameter needs to be provided when calling purchaseProduct. You can use the package system to avoid this
+await Purchases.purchaseProduct("product_id", null, Purchases.PURCHASE_TYPE.INAPP);
+```
+```javascript Cordova
 Purchases.purchasePackage(package, ({ productIdentifier, purchaserInfo }) => {
     if (typeof purchaserInfo.entitlements.active.my_entitlement_identifier !== "undefined") {
       // Unlock that great "pro" content
@@ -315,7 +389,7 @@ Purchases.purchaseProduct("product_id", ({ productIdentifier, purchaserInfo }) =
     // Error making purchase
 }, null, Purchases.PURCHASE_TYPE.INAPP);
 ```
-```csharp
+```csharp Unity
 Purchases purchases = GetComponent<Purchases>();
 purchases.PurchasePackage(package, (productIdentifier, purchaserInfo, userCancelled, error) =>
 {
@@ -324,7 +398,7 @@ purchases.PurchasePackage(package, (productIdentifier, purchaserInfo, userCancel
   }
 });
 ```
-```curl
+```curl Web
 curl -X POST \
   https://api.revenuecat.com/v1/receipts \
   -H 'Content-Type: application/json' \
@@ -334,6 +408,7 @@ curl -X POST \
   "fetch_token": "sub_xxxxxxxxxx"
   }'
 ```
+
 
 [block:html]
 {
@@ -352,14 +427,14 @@ curl -X POST \
 *Purchases* makes it easy to check what active subscriptions the current customer has. This can be done by checking if a specific Entitlement is active, or by checking if the active Entitlements array contains a specific Entitlement ID.
 If you're not using Entitlements (you probably should be!) you can check the array of active subscriptions to see what product IDs from App Store Connect or Google Play Store it contains.
 
-```swift
+```swift 
 Purchases.shared.purchaserInfo { (purchaserInfo, error) in
     if purchaserInfo?.entitlements.all["your_entitlement_id"]?.isActive == true {
         // User is "premium"
     }
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] purchaserInfoWithCompletionBlock:^(RCPurchaserInfo * purchaserInfo, NSError * error) {
         
     if (purchaserInfo.entitlements.all[@"your_entitlement_id"].isActive) {
@@ -367,14 +442,14 @@ Purchases.shared.purchaserInfo { (purchaserInfo, error) in
 	}
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getPurchaserInfoWith({ error -> /* Optional error handling */ }) { purchaserInfo ->
   if (purchaserInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
     // Grant user "pro" access
   }
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getPurchaserInfo(new ReceivePurchaserInfoListener() {
   @Override
   public void onReceived(@NonNull PurchaserInfo purchaserInfo) {
@@ -389,7 +464,27 @@ Purchases.getSharedInstance().getPurchaserInfo(new ReceivePurchaserInfoListener(
   }
 });
 ```
-```javascript
+```javascript Flutter
+try {
+  PurchaserInfo purchaserInfo = await Purchases.getPurchaserInfo();
+  if (purchaserInfo.entitlements.all["my_entitlement_identifier"].isActive) {
+    // Grant user "pro" access
+  }
+} on PlatformException catch (e) {
+  // Error fetching purchaser info
+}
+```
+```javascript React Native
+try {
+  const purchaserInfo = await Purchases.getPurchaserInfo();
+  if(typeof purchaserInfo.entitlements.active.my_entitlement_identifier !== "undefined") {
+    // Grant user "pro" access
+  }
+} catch (e) {
+ // Error fetching purchaser info
+}
+```
+```javascript Cordova
 Purchases.getPurchaserInfo(
   info => {
     const isPro = typeof purchaserInfo.entitlements.active.my_entitlement_identifier !== "undefined";
@@ -399,7 +494,7 @@ Purchases.getPurchaserInfo(
   }
 );
 ```
-```csharp
+```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetPurchaserInfo((info, error) =>
 {
@@ -408,13 +503,14 @@ purchases.GetPurchaserInfo((info, error) =>
   }
 });
 ```
-```curl
+```curl Web
 curl --request GET \
   --url https://api.revenuecat.com/v1/subscribers/<app_user_id> \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer REVENUECAT_API_KEY' \
   --header 'Content-Type: application/json'
 ```
+
 
 [block:html]
 {
@@ -434,22 +530,22 @@ It's typical to call this method when deciding which UI to show the user and whe
 # 10. Restoring Purchases
 
 RevenueCat enables your users to restore their in-app purchases, reactivating any content that they previously purchased from the **same store account** (Apple or Google). We recommend that all apps have some way for users to trigger the restore method. Note that Apple does require a restore mechanism in the event a user loses access to their purchases (e.g: uninstalling/reinstalling the app, losing their account information, etc).
-```swift
+```swift 
 Purchases.shared.restoreTransactions { (purchaserInfo, error) in
     //... check purchaserInfo to see if entitlement is now active
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] restoreTransactionsWithCompletionBlock:^(RCPurchaserInfo *purchaserInfo, NSError *error) {
     //... check purchaserInfo to see if entitlement is now active
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.restorePurchasesWith(::showError) { purchaserInfo ->
     //... check purchaserInfo to see if entitlement is now active
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().restorePurchases(new ReceivePurchaserInfoListener() {
 	@Override
 	public void onReceived(@android.support.annotation.Nullable PurchaserInfo purchaserInfo, @android.support.annotation.Nullable PurchasesError error) {
@@ -457,7 +553,23 @@ Purchases.getSharedInstance().restorePurchases(new ReceivePurchaserInfoListener(
   }
 });
 ```
-```javascript
+```javascript Flutter
+try {
+  PurchaserInfo restoredInfo = await Purchases.restoreTransactions();
+  // ... check restored purchaserInfo to see if entitlement is now active
+} on PlatformException catch (e) {
+  // Error restoring purchases
+}
+```
+```javascript React Native
+try {
+  const restore = await Purchases.restoreTransactions();
+  // ... check restored purchaserInfo to see if entitlement is now active
+} catch (e) {
+
+}
+```
+```javascript Cordova
 Purchases.restoreTransactions(
   info => {
     //... check purchaserInfo to see if entitlement is now active
@@ -467,13 +579,14 @@ Purchases.restoreTransactions(
   }
 );
 ```
-```csharp
+```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.RestoreTransactions((info, error) =>
 {
     //... check purchaserInfo to see if entitlement is now active
 });
 ```
+
 
 [block:html]
 {
@@ -491,26 +604,26 @@ PurchaserInfo updates are *not* pushed to your app from the RevenueCat backend, 
 
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to purchaser information the next time your app is launched or in the completion blocks of the *Purchases SDK* methods.
 
-```swift
+```swift 
 extension AppDelegate: PurchasesDelegate {
   func purchases(_ purchases: Purchases, didReceiveUpdated purchaserInfo: Purchases.PurchaserInfo) {
       // handle any changes to purchaserInfo
   }
 }
 ```
-```objectivec
+```objectivec 
 - (void)purchases:(nonnull RCPurchases *)purchases didReceiveUpdatedPurchaserInfo:(nonnull RCPurchaserInfo *)purchaserInfo {
     // handle any changes to purchaserInfo
 }
 ```
-```kotlin
+```kotlin 
 class UpsellActivity : AppCompatActivity(), UpdatedPurchaserInfoListener {
 		override fun onReceived(purchaserInfo: PurchaserInfo) {
         // handle any changes to purchaserInfo
     }
 }
 ```
-```java
+```java 
 public class UpsellActivity extends AppCompatActivity implements UpdatedPurchaserInfoListener {
 		@Override
     public void onReceived(PurchaserInfo purchaserInfo) {
@@ -518,7 +631,17 @@ public class UpsellActivity extends AppCompatActivity implements UpdatedPurchase
     }
 }
 ```
-```javascript
+```javascript Flutter
+Purchases.addPurchaserInfoUpdateListener((purchaserInfo) => {
+  // handle any changes to purchaserInfo
+});
+```
+```javascript React Native
+Purchases.addPurchaserInfoUpdateListener(info => {
+	// handle any changes to purchaserInfo
+});
+```
+```javascript Cordova
 // subscribe to the window event onPurchaserInfoUpdated to get any changes that happen in the purchaserInfo
 window.addEventListener("onPurchaserInfoUpdated", onPurchaserInfoUpdated, false);
 
@@ -528,12 +651,13 @@ onPurchaserInfoUpdated: function(info) {
     // handle any changes to purchaserInfo
 }
 ```
-```csharp
+```csharp Unity
 public override void PurchaserInfoReceived(Purchases.PurchaserInfo purchaserInfo)
 {
     // handle any changes to purchaserInfo
 }
 ```
+
 
 [block:html]
 {

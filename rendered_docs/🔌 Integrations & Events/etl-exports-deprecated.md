@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
 createdAt: '2022-12-15T02:43:30.576Z'
 updatedAt: '2023-03-09T03:39:52.586Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -140,7 +140,43 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample Queries
 
 The following sample queries are in Postgresql.
-```pgsql
+```pgsql Active Trials
+-- Active Trials as of your [targeted_date]
+SELECT
+  COUNT(*)
+FROM
+  [your_table_name]
+WHERE date(effective_end_time) > [targeted_date]
+  AND date(start_time) <= [targeted_date]
+  AND is_trial_period = 'true'
+  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox <> 'true'
+
+-- The RevenueCat Active Trials chart excludes
+-- promotional transactions and transactions resulting from family sharing
+-- since they do not reflect auto-renewing future payments.
+```
+```pgsql Active Subscriptions
+-- Active Subscriptions as of your [targeted_date]
+SELECT
+  COUNT(*)
+FROM
+  [your_table_name]
+WHERE date(effective_end_time) > [targeted_date]
+  AND date(start_time) <= [targeted_date]
+  AND is_trial_period = 'false'
+  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox <> 'true'
+
+-- The RevenueCat Active Subscriptions chart excludes trials,
+-- promotional transactions, and transactions resulting from family sharing
+-- since they do not reflect auto-renewing future payments.
+```
+```pgsql Revenue
 -- Revenue generated on [targeted_date]
 SELECT
   SUM(price_in_usd) as revenue

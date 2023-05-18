@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-22T15:16:54.349Z'
 updatedAt: '2023-03-22T15:16:54.349Z'
-category: 64515c3b6f91d900446f01f3
+category: 646582c0a0e52000586ab9e0
 ---
 [block:callout]
 {
@@ -146,7 +146,7 @@ It's up to you to decide which users you want to present a Promotional Offer to.
 ### Fetch the PromoOffer
 
 Before you can present a Promotional Offer to a user, you first need to fetch the `PromoOffer`. This is done by passing the `StoreProduct` and a `StoreProductDiscount` to the `.getPromotionalOffer` method, which uses the Subscription Key from above to validate the discount and to provide a valid `PromoOffer`:
-```swift
+```swift 
 if let discount = package.storeProduct.discounts.first {
 	Purchases.shared.getPromotionalOffer(forProductDiscount: discount, product: package.storeProduct) { (promoOffer, error) in
 		if let promoOffer = promoOffer {
@@ -160,7 +160,7 @@ if let discount = package.storeProduct.discounts.first {
 // OR: if using async/await
 let promoOffers = await package.storeProduct.getEligiblePromotionalOffers()
 ```
-```objectivec
+```objectivec Objective-C
 [RCPurchases.sharedPurchases getPromotionalOfferForProductDiscount:product.discounts[0]
                                                        withProduct:product
                                                     withCompletion:^(RCPromotionalOffer * _Nullable discount, NSError * _Nullable error) {
@@ -169,23 +169,24 @@ let promoOffers = await package.storeProduct.getEligiblePromotionalOffers()
   }
 }];
 ```
-```javascript
+```javascript React Native
 const paymentDiscount = await Purchases.getPromotionalOffer(product, product.discounts[0]);
 if (paymentDiscount) {
   	// Payment discount fetched
 }
 ```
+
 ### Purchase the Product with the Promotional Offer
 
 After successfully fetching the `PromoOffer`, you can now display the Promotional Offer to the user however you'd like. If the user chooses to purchase, pass a `Package` and `PromoOffer` to the `.purchase(package:promotionalOffer:)` method.
-```swift
+```swift 
 Purchases.shared.purchase(package: package, promotionalOffer: promoOffer) { transaction, customerInfo, error, userCancelled in
 	if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
 		// Unlock that entitlemenets content
 	}
 }
 ```
-```objectivec
+```objectivec Objective-C
 [RCPurchases.sharedPurchases purchasePackage:package withDiscount:discount
                              completionBlock:^(RCStoreTransacction * _Nullable transaction, RCCustomerInfo * _Nullable purchaserInfo, NSError * _Nullable error, BOOL userCancelled) {
   if (purchaserInfo.entitlements[<your_entitlement_id>].isActive) {
@@ -193,9 +194,10 @@ Purchases.shared.purchase(package: package, promotionalOffer: promoOffer) { tran
   }
 }];
 ```
-```javascript
+```javascript React Native
 const purchaseMade = await Purchases.purchaseDiscountedPackage(package, paymentDiscount);
 ```
+
 # Offer Codes
 
 With iOS 14, Apple announced a new feature for subscription developers called “Offer Codes.” Offer Codes allow developers to offer custom pricing and trials, in the form of a redeemable code, to their customers.
@@ -230,9 +232,10 @@ Offer Codes are configured similarly to Subscription Offers in App Store Connect
 }
 [/block]
 To allow your users to redeem Offer Codes, you'll need to present the Offer Code redemption sheet. In *Purchases SDK* 3.8.0, you can call the `presentCodeRedemptionSheet` method.
-```swift
+```swift Swift
 Purchases.shared.presentCodeRedemptionSheet()
 ```
+
 Apple does not provide a callback to determine if the code redemption was successful. Since the Purchases SDK will automatically pick up on new transactions that enter the underlying transaction queue, you should implement the `receivedUpdated` [delegate or listener](doc:configuring-sdk) to respond to changes in `CustomerInfo`. Once we sync the Offer Code transaction, we'll automatically refresh CustomerInfo.
 [block:callout]
 {

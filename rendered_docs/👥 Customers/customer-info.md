@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-27T15:10:02.093Z'
 updatedAt: '2023-03-27T15:10:02.093Z'
-category: 64515c3aa06fe500680740da
+category: 646582be23b3a10039383ef4
 ---
 RevenueCat makes it easy to determine subscription status and more with the *Purchases SDK* and [REST API](https://docs.revenuecat.com/reference). 
 [block:image]
@@ -41,22 +41,22 @@ RevenueCat makes it easy to determine subscription status and more with the *Pur
 }
 [/block]
 The <<glossary:CustomerInfo>> object contains all of the purchase and subscription data available about the user. This object is updated whenever a purchase or restore occurs and periodically throughout the lifecycle of your app. The latest information can always be retrieved by calling `getCustomerInfo()`:
-```swift
+```swift 
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
     // access latest customerInfo
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] customerInfoWithCompletion:^(RCCustomerInfo * customerInfo, NSError * error) {
      // access latest customerInfo
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->
   // access latest customerInfo
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().getCustomerInfo(new ReceiveCustomerInfoCallback() {
   @Override
   public void onReceived(@NonNull CustomerInfo customerInfo) {
@@ -69,7 +69,23 @@ Purchases.getSharedInstance().getCustomerInfo(new ReceiveCustomerInfoCallback() 
   }
 });
 ```
-```javascript
+```javascript Flutter
+try {
+  CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+  // access latest customerInfo
+} on PlatformException catch (e) {
+  // Error fetching customer info
+}
+```
+```javascript React Native
+try {
+  const customerInfo = await Purchases.getCustomerInfo();
+  // access latest customerInfo
+} catch (e) {
+ // Error fetching customer info
+}
+```
+```javascript Cordova
 Purchases.getCustomerInfo(
   customerInfo => {
      // access latest customerInfo
@@ -79,13 +95,14 @@ Purchases.getCustomerInfo(
   }
 );
 ```
-```csharp
+```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetCustomerInfo((customerInfo, error) =>
 {
   // access latest customerInfo
 });
 ```
+
 It's safe to call `getCustomerInfo()` frequently throughout your app. Since the SDK updates and caches the latest <<glossary:CustomerInfo>> when the app becomes active, the completion block won't need to make a network request in most cases. 
 [block:callout]
 {
@@ -175,67 +192,89 @@ The `EntitlementInfo` object gives you access to all of the information about th
 The subscription status for a user can easily be determined with the `CustomerInfo` and `EntitlementInfo` objects.
 
 For most apps that only have one entitlement, the `isActive` status can be quickly checked for your entitlement ID. 
-```swift
+```swift 
 if customerInfo.entitlements[<your_entitlement_id>]?.isActive == true {
   // user has access to "your_entitlement_id"                
 }
 ```
-```objectivec
+```objectivec 
 if (customerInfo.entitlements[@<your_entitlement_id>].isActive) {
   // user has access to "your_entitlement_id"
 }
 ```
-```kotlin
+```kotlin 
 if (customerInfo.entitlements[<your_entitlement_id>]?.isActive == true) {
 	// user has access to "your_entitlement_id"                
 }
 ```
-```java
+```java 
 if (customerInfo.getEntitlements().get(<your_entitlement_id>).isActive()) {
 	// user has access to "your_entitlement_id"
 }
 ```
-```javascript
+```javascript Flutter
+if (customerInfo.entitlements.all[<my_entitlement_identifier>].isActive) {
+  // Grant user "pro" access
+}
+```
+```javascript React Native
 if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
   // Grant user "pro" access
 }
 ```
-```csharp
+```javascript Cordova
+if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
+  // Grant user "pro" access
+}
+```
+```csharp Unity
 if (customerInfo.Entitlements.Active.ContainsKey(<my_entitlement_identifier>)) {
   // Unlock that great "pro" content
 }
 ```
+
 If your app has multiple entitlements and you need to check if a user is subscribed to at least one you can also check for the entitlement Id in the `active` dictionary of `EntitlementInfo` objects.
-```swift
+```swift 
 if !customerInfo.entitlements.active.isEmpty {
     //user has access to some entitlement
 }
 ```
-```objectivec
+```objectivec 
 if ([customerInfo.entitlements.active count] > 0) {
     //user has access to some entitlement
 }
 ```
-```kotlin
+```kotlin 
 if (customerInfo.entitlements.active.isNotEmpty()) {
   //user has access to some entitlement
 }
 ```
-```java
+```java 
 if (!customerInfo.getEntitlements().getActive().isEmpty()) {
 	//user has access to some entitlement
 }
 ```
-```javascript
+```javascript Flutter
+if (customerInfo.entitlements.active.isNotEmpty) {
+  //user has access to some entitlement
+}
+```
+```javascript React Native
 if (Object.entries(customerInfo.entitlements.active).length) {
   //user has access to some entitlement
 }
 ```
-```csharp
+```javascript Cordova
+if (Object.entries(customerInfo.entitlements.active).length) {
+  //user has access to some entitlement
+}
+```
+```csharp Unity
 if (customerInfo.Entitlements.Active.Count != 0) {
     //user has access to some entitlement
 }
 ```
+
 It's important to note that <<glossary:CustomerInfo>> will be empty if no purchases have been made and no transactions have been synced. This means that entitlements may not exist in CustomerInfo even if they have been set up in the RevenueCat dashboard.
 [block:api-header]
 {
@@ -247,7 +286,7 @@ Since *Purchases* SDK works seamlessly on any platform, a user's <<glossary:Cust
 CustomerInfo updates are not pushed to your app from the RevenueCat backend, updates can only happen from an outbound network request to RevenueCat.
 
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to customer information the next time your app is launched. Or throughout your app as you request new `CustomerInfo` objects.
-```swift
+```swift 
 // Additional configure setup
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   
@@ -262,12 +301,12 @@ extension AppDelegate: PurchasesDelegate {
     }
 }
 ```
-```objectivec
+```objectivec 
 - (void)purchases:(nonnull RCPurchases *)purchases receivedUpdatedCustomerInfo:(nonnull RCCustomerInfo *)customerInfo {
     // handle any changes to customerInfo
 }
 ```
-```kotlin
+```kotlin 
 class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {
   override fun onReceived(customerInfo: CustomerInfo) {
     // handle any changes to customerInfo
@@ -279,7 +318,7 @@ class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {
   }   
 }
 ```
-```java
+```java 
 public class UpsellActivity extends AppCompatActivity implements UpdatedCustomerInfoListener {
   @Override public void onReceived(CustomerInfo customerInfo) {
     // handle any changes to customerInfo
@@ -291,12 +330,22 @@ public class UpsellActivity extends AppCompatActivity implements UpdatedCustomer
   }   
 }
 ```
-```javascript
+```javascript Flutter
+Purchases.addCustomerInfoUpdateListener((info) {
+	// handle any changes to customerInfo
+});
+```
+```javascript React Native
+Purchases.addCustomerInfoUpdateListener((info) => {
+	// handle any changes to customerInfo
+});
+```
+```javascript Cordova
 window.addEventListener("onCustomerInfoUpdated", (info) => {
 	// handle any changes to customerInfo
 });
 ```
-```csharp
+```csharp Unity
 public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
 {
     public override void CustomerInfoReceived(Purchases.CustomerInfo customerInfo)
@@ -306,18 +355,20 @@ public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
 }
 ```
 
+
 [block:api-header]
 {
   "title": "Web Apps"
 }
 [/block]
 If you also have a web app, or need to get a user's subscription status from outside of the *Purchases SDK*, you should use the REST API. You can read the full API reference [here](https://docs.revenuecat.com/reference).
-```curl
+```curl 
 curl --request GET \
   --url https://api.revenuecat.com/v1/subscribers/app_user_id \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer PUBLIC_API_KEY'
 ```
+
 
 [block:api-header]
 {

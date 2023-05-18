@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-04-06T23:08:59.811Z'
 updatedAt: '2023-04-27T20:07:37.344Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -67,7 +67,7 @@ Before installing this extension, set up the following Firebase services in your
 
 You should make sure to use the Firebase UID as the RevenueCat app user ID when setting the Firebase user identity in RevenueCat. This step is optional, but highly recommended as a best practice for the Google Analytics portion of this integration. The Firebase Extension portion **requires** this step to be completed.
 
-```swift
+```swift 
 import FirebaseAuth
 import RevenueCat
 
@@ -107,7 +107,7 @@ In order to send subscriber lifecycle events to Google Analytics, you must set t
 
 Please ensure you're getting the app instance ID from the [Firebase Analytics](https://firebase.google.com/docs/analytics/get-started) package.
 
-```swift
+```swift 
 import FirebaseAuth
 import RevenueCat
 
@@ -378,7 +378,7 @@ You will be charged a small amount (typically around $0.01/month) for the Fireba
 
 Set your security rules so that only authenticated users can access customer information, and that each user can only access their own information. 
 
-```text
+```text 
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -974,7 +974,7 @@ Below are sample JSONs that are delivered to Firestore Database for each event t
 
 To check access to entitlements, you can either [use the RevenueCat SDK](https://docs.revenuecat.com/docs/getting-started#10-get-subscription-status) or use Firebase Authentication custom claims. For example, to check whether the current user has access to an entitlement called `premium`, you could use the following Firebase code:
 
-```javascript
+```javascript 
 getAuth().currentUser.getIdTokenResult()
   .then((idTokenResult) => {
      // Confirm the user has a premium entitlement.
@@ -997,7 +997,7 @@ getAuth().currentUser.getIdTokenResult()
 
 To list a user's active subscriptions, you could use the following Firebase code:
 
-```javascript
+```javascript 
 getDoc(doc(db, "${param:REVENUECAT_CUSTOMERS_COLLECTION}", getAuth().currentUser.uid))
   .then((snapshot) => {
     if (snapshot.exists()) {

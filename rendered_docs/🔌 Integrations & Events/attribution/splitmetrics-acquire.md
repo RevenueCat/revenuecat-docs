@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-05-27T16:53:09.333Z'
 updatedAt: '2023-03-28T21:45:34.687Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our SplitMetrics Acquire | Formerly SearchAdsHQ integration you can:
 
@@ -27,7 +27,7 @@ The SplitMetrics Acquire integration requires that Apple Search Ads attribution 
 
 The simplest way to collect this information is by setting the `automaticAppleSearchAdsAttributionCollection` property to `true` **before** configuring the _Purchases SDK_.
 
-```swift
+```swift 
 import iAd
 // ...
 Purchases.automaticAppleSearchAdsAttributionCollection = true
