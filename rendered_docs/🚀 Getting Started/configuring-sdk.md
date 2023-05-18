@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-06-29T17:25:26.484Z'
 updatedAt: '2023-02-28T21:11:07.211Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 [block:callout]
@@ -33,7 +33,7 @@ Once you've [installed](https://docs.revenuecat.com/docs/installation) the SDK f
 You should only configure *Purchases* once, usually early in your application lifecycle. After configuration, the same instance is shared throughout your app by accessing the `.shared` instance in the SDK.
 
 Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
-```swift
+```swift 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   
     Purchases.logLevel = .debug
@@ -41,7 +41,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   
 }
 ```
-```objectivec
+```objectivec 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   	// Override point for customization after application launch.
     
@@ -51,7 +51,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   	return YES;
 }
 ```
-```kotlin
+```kotlin 
 // If you're targeting only Google Play Store
 class MainApplication: Application() {
     override fun onCreate() {
@@ -89,7 +89,7 @@ class MainApplication: Application() {
     }
 }
 ```
-```java
+```java 
 // If you're targeting only Google Play Store
 public class MainApplication extends Application {
     @Override
@@ -122,7 +122,51 @@ public class MainApplication extends Application {
     }
 }
 ```
-```javascript
+```javascript Flutter
+import 'dart:io' show Platform;
+
+//...
+
+Future<void> initPlatformState() async {
+  await Purchases.setDebugLogsEnabled(true);
+  
+  PurchasesConfiguration configuration;
+  if (Platform.isAndroid) {
+    configuration = PurchasesConfiguration(<public_google_api_key>);
+    if (buildingForAmazon) { 
+      // use your preferred way to determine if this build is for Amazon store
+      // checkout our MagicWeather sample for a suggestion
+      configuration = AmazonConfiguration(<public_amazon_api_key>);
+    }
+  } else if (Platform.isIOS) {
+    configuration = PurchasesConfiguration(<public_apple_api_key>);
+  }
+  await Purchases.configure(configuration);
+}
+```
+```javascript React Native
+import { Platform } from 'react-native';
+
+//...
+
+export default class App extends React.Component {
+ 
+  componentDidMount() {
+    Purchases.setDebugLogsEnabled(true);
+    
+    if (Platform.OS === 'ios') {
+    	await Purchases.configure({ apiKey: <public_apple_api_key> });
+    } else if (Platform.OS === 'android') {
+    	await Purchases.configure({ apiKey: <public_google_api_key> });
+      
+      // OR: if building for Amazon, be sure to follow the installation instructions then:
+    	await Purchases.configure({ apiKey: <public_amazon_api_key>, useAmazon: true });
+    }
+    
+  }
+}
+```
+```javascript Cordova
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -136,7 +180,7 @@ function onDeviceReady() {
     Purchases.configureWith({ apiKey: <public_amazon_api_key>, useAmazon: true });
 }
 ```
-```csharp
+```csharp Unity
 // The SDK can be configured through the Unity Editor.
 // See Unity installation instructions https://docs.revenuecat.com/docs/unity
 
@@ -149,6 +193,7 @@ Purchases.PurchasesConfiguration purchasesConfiguration =
     .Build();
 purchases.Configure(purchasesConfiguration);
 ```
+
 
 [block:callout]
 {

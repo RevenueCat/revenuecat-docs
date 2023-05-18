@@ -5,7 +5,7 @@ excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T19:27:15.768Z'
 updatedAt: '2023-04-27T20:06:43.542Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
 
@@ -124,7 +124,7 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
 
 Webhook events are serialized in JSON. The body of a `POST` request to your server will contain the serialized event, as well as the API version. 
 
-```json
+```json 
 {
   "api_version": "1.0",
   "event": {

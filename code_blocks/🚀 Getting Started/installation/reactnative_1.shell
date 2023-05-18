@@ -1,1 +1,1 @@
-yarn add react-native-purchases
+npm install --save react-native-purchases

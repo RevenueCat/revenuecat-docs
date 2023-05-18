@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-06-17T19:13:08.598Z'
 updatedAt: '2023-04-27T20:08:09.759Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -181,195 +181,41 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 
 Create an `identityRequest` and add it to the `MParticleOptions` that you pass to the `start()` method on the mParticle SDK to set the same App User Id that is set in RevenueCat.
 
-```swift
-// Configure Purchases SDK
-Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-
-
-// Set App User Id in mParticle
-let options = MParticleOptions(key: "mParticle_app_key",
-                               secret: "mParticle_app_secret")
-let identityRequest = MPIdentityApiRequest.withEmptyUser()
-identityRequest.email = "user@example.com"
-identityRequest.customerId = "123456"
-options.identifyRequest = identityRequest
-options.onIdentifyComplete =  { (result: MPIdentityApiResult?, error: Error?) in
-    guard error == nil else {
-        // handle error
-        return
-    }
-    guard let result = result else {
-        // handle empty result
-        return
-    }
-    
-    // IMPORTANT: user identified successfully, get the mPID and send to RevenueCat
-    let mPid = result.user.userId
-    Purchases.shared.attribution.collectDeviceIdentifiers()
-    Purchases.shared.attribution.setMparticleID(mPid.stringValue)
-}
-
-// Start mParticle
-MParticle.sharedInstance().start(with: options)
-```
-```objectivec
-// Configure Purchases SDK
-[RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
-
-
-// Set App User Id in mParticle
-MParticleOptions *options = [MParticleOptions optionsWithKey:@"mParticle_app_key"
-                             secret:@"mParticle_app_secret"];
-MPIdentityApiRequest *identityRequest = [MPIdentityApiRequest requestWithEmptyUser];
-identityRequest.email = @"user@example.com";
-identityRequest.customerId = @"123456";
-options.identifyRequest = identityRequest;
-options.onIdentifyComplete = ^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {
-    if (error) {
-        // handle error
-        return;
-    }
-    if (apiResult == nil) {
-        // handle empty result
-        return;
-    }
-    // user identified successfully, get the mPID and send to RevenueCat
-    NSNumber *mPid = [apiResult.user userId];
-    [[RCPurchases sharedPurchases] collectDeviceIdentifiers];
-    [[RCPurchases sharedPurchases] setMparticleID:mPid.stringValue];
-};
-
-
-// Start mParticle
-[[MParticle sharedInstance] startWithOptions:options];
-```
-```java
-// Configure Purchases SDK
-Purchases.configure(this, "my_api_key", "my_app_user_id");
-
-
-// Set App User Id in mParticle
-IdentityApiRequest identityRequest = IdentityApiRequest.withEmptyUser()
-    .email("user@example.com")
-    .customerId("123456")
-    .build();
-
-BaseIdentityTask identifyTask = new BaseIdentityTask()
-    .addFailureListener(new TaskFailureListener() {
-      @Override
-      public void onFailure(IdentityHttpResponse identityHttpResponse) {
-        // handle failure
-      }
-    }).addSuccessListener(new TaskSuccessListener() {
-      @Override
-      public void onSuccess(IdentityApiResult identityApiResult) {
-        // user identified successfully, get the mPID and send to RevenueCat
-        long mPid = identityApiResult.getUser().getId();
-        Purchases.getSharedInstance().collectDeviceIdentifiers();
-        Purchases.getSharedInstance().setMparticleID(String.valueOf(mPid));
-      }
-    });
-
-MParticleOptions options = MParticleOptions.builder(this)
-    .credentials("mParticle_app_key", "mParticle_app_secret")
-    .identify(identityRequest)
-    .identifyTask(identifyTask)
-    .build();
-
-
-// Start mParticle
-MParticle.start(options);
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_2.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_3.java"}
+[/block]
 
 
 
 mParticle also allows you to log a user in after starting the SDK and log a user out; you should handle both of these cases:
 
-```swift
-// handle logging out
-MParticle.sharedInstance().identity.logout(completion: { (result: MPIdentityAPIResult?, error: Error?) in
-    Purchases.shared().reset()
-})
-```
-```objectivec
-// handle logging out
-[[[MParticle sharedInstance] identity] logoutWithCompletion:^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {
-    [[RCPurchases sharedPurchases] reset];
-}];
-```
-```java
-// handle logging out
-MParticle.getInstance().Identity().logout(identityRequest)
-    .addFailureListener(new TaskFailureListener() {
-        @Override
-        public void onFailure(IdentityHttpResponse identityHttpResponse) {
-            // handle error
-        }
-    })
-    .addSuccessListener(new TaskSuccessListener() {
-        @Override
-        public void onSuccess(IdentityApiResult identityApiResult) {
-          Purchases.getSharedInstance().reset();
-        }
-    });
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_4.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_5.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_6.java"}
+[/block]
 
 
 
-```swift
-// handle logging in
-MParticle.sharedInstance().identity.login(identityRequest, completion: { (result: MPIdentityAPIResult?, error: Error?) in 
-    guard error == nil else {
-        // handle error
-        return
-    }
-    guard let result = result else {
-        // handle empty result
-        return
-    }
-    // user identified successfully, get the mPID and send to RevenueCat
-    let mPid = result.user.userId
-    Purchases.shared.attribution.collectDeviceIdentifiers()
-    Purchases.shared.attribution.setMparticleID(mPid.stringValue)
-})
-```
-```objectivec
-// handle logging in
-[[[MParticle sharedInstance] identity] login:identityRequest
-                                  completion:^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {
-    if (error) {
-        // handle error
-        return;
-    }
-    if (apiResult == nil) {
-        // handle empty result
-        return;
-    }
-    // user identified successfully, get the mPID and send to RevenueCat
-    NSNumber *mPid = [apiResult.user userId];
-    [RCPurchases shared] collectDeviceIdentifiers];
-    [RCPurchases shared] setMparticleID: [mPid stringValue]];
-}];
-```
-```java
-// handle logging in
-MParticle.getInstance().Identity().login(identityRequest)
-    .addFailureListener(new TaskFailureListener() {
-        @Override
-        public void onFailure(IdentityHttpResponse identityHttpResponse) {
-            // handle error
-        }
-    })
-    .addSuccessListener(new TaskSuccessListener() {
-        @Override
-        public void onSuccess(IdentityApiResult identityApiResult) {
-          // user identified successfully, get the mPID and send to RevenueCat
-        	long mPid = identityApiResult.getUser().getId();
-        	Purchases.getSharedInstance().collectDeviceIdentifiers();
-          Purchases.getSharedInstance().setMparticleID(String.valueOf(mPid));
-        }
-    });
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_7.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_8.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_9.java"}
+[/block]
 
 
 
@@ -426,467 +272,36 @@ While still on the Customer View, click into the test purchase event in the [Cus
 
 Below are sample JSONs that are delivered to mParticle for the different event types.
 
-```json Initial Purchase
-{
-    "events": [
-        {
-            "data": {
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1640653937777,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "initial_purchase"
-                },
-                "product_action": {
-                    "action": "purchase",
-                    "transaction_id": "GPA.1234-5678-9012-34567",
-                    "total_amount": 5.99,
-                    "products": [
-                        {
-                            "id": "weekly_sub",
-                            "price": 5.99,
-                            "quantity": 1,
-                            "total_product_amount": 5.99
-                        }
-                    ]
-                },
-                "currency_code": "USD",
-                "is_non_interactive": false
-            },
-            "event_type": "commerce_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "GB",
-        "revenuecat_$ip": "123.45.67.89",
-        "revenuecat_$appsflyerId": "1234567890123-1234567890123456789",   
-        "revenuecat_$onesignalId": "1234567890123-1234567890123456789",   
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "Android",
-        "android_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-        "os": "Android"
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Trial Started
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "trial_started",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1593506190000,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "trial_started"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "MD",
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012",
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Trial Converted
-{
-    "events": [
-        {
-            "data": {
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1593505191000,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "trial_converted"
-                },
-                "product_action": {
-                    "action": "purchase",
-                    "transaction_id": "123456789012345",
-                    "total_amount": 5.99,
-                    "products": [
-                        {
-                            "id": "weekly_sub",
-                            "price": 5.99,
-                            "quantity": 1,
-                            "total_product_amount": 5.99
-                        }
-                    ]
-                },
-                "currency_code": "USD",
-                "is_non_interactive": true
-            },
-            "event_type": "commerce_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "DE",
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Trial Cancelled
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "trial_cancelled",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1593505162390,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "trial_cancelled"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "GB",
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Renewal
-{
-    "events": [
-        {
-            "data": {
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1593514136000,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "renewal"
-                },
-                "product_action": {
-                    "action": "purchase",
-                    "transaction_id": "123456789012345",
-                    "total_amount": 5.99,
-                    "products": [
-                        {
-                            "id": "weekly_sub",
-                            "price": 5.99,
-                            "quantity": 1,
-                            "total_product_amount": 5.99
-                        }
-                    ]
-                },
-                "currency_code": "USD",
-                "is_non_interactive": true
-            },
-            "event_type": "commerce_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "FR",
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Cancellation
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "cancellation",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1593507675551,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "cancellation"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "RU",
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Uncancellation
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "uncancellation",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1657090180007,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "uncancellation"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "US",
-        "revenuecat_$ip": "123.45.67.89",
-        "revenuecat_$appsflyerId": "1234567890123-1234567890123456789",   
-        "revenuecat_$onesignalId": "1234567890123-1234567890123456789",   
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-        "os": "IOS"
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_10.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_11.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_12.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_13.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_14.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_15.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_16.json"}
+[/block]
 
 
 
-```json Expiration
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "expiration",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1643111704000,
-                "custom_attributes": {
-                    "revenuecat_expiration_reason": "UNSUBSCRIBE",
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "expiration"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "AU",
-        "revenuecat_$ip": "123.45.67.89",
-        "revenuecat_$appsflyerId": "1234567890123-1234567890123456789",   
-        "revenuecat_$onesignalId": "1234567890123-1234567890123456789",   
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-        "os": "iOS"
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Billing Issue
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "billing_issue",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1643386961344,
-                "custom_attributes": {
-                    "revenuecat_product_id": "weekly_sub",
-                    "revenuecat_event": "billing_issue"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "US",
-        "revenuecat_$ip": "123.45.67.89",
-        "revenuecat_$appsflyerId": "1234567890123-1234567890123456789",   
-        "revenuecat_$onesignalId": "1234567890123-1234567890123456789",   
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-        "os": "iOS"
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
-```json Product Change
-{
-    "events": [
-        {
-            "data": {
-                "event_name": "product_change",
-                "custom_event_type": "transaction",
-                "source_message_id": "12345678-1234-1234-1234-123456789012",
-                "timestamp_unixtime_ms": 1642376571000,
-                "custom_attributes": {
-                    "revenuecat_new_product_id": "weekly_sub",
-                    "revenuecat_product_id": "monthly_sub",
-                    "revenuecat_event": "product_change"
-                }
-            },
-            "event_type": "custom_event"
-        }
-    ],
-    "source_request_id": "12345678-1234-1234-1234-123456789012",
-    "user_attributes": {
-        "$country": "US",
-        "revenuecat_$ip": "123.45.67.89",
-        "revenuecat_$appsflyerId": "1234567890123-1234567890123456789",   
-        "revenuecat_$onesignalId": "1234567890123-1234567890123456789",   
-        "revenuecat_aliases": [
-            "12abc345d67e890fgh12j3lm456n7890"
-        ],
-        "revenuecat_app_user_id": "123456789",
-        "revenuecat_original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-    },
-    "device_info": {
-        "platform": "iOS",
-        "ios_advertising_id": "12345678-1234-1234-1234-123456789012"
-    },
-    "application_info": {
-        "application_name": "App_Name",
-        "package": "co.appname",
-        "os": "iOS"
-    },
-    "user_identities": {},
-    "schema_version": 2,
-    "environment": "production",
-    "mpid": "12345678"
-}
-```
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_17.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_18.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_19.json"}
+[/block]

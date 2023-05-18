@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-09-29T15:21:09.333Z'
 updatedAt: '2023-02-23T22:05:19.393Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 RevenueCat does not require server notifications from the App Store, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 
@@ -138,7 +138,7 @@ As soon as your server successfully receives a notification, send the payload to
 The payload should be passed along **as-is** in the data value of your request. Any manipulation you want to do with the data should happen after forwarding to RevenueCat.
 
 Here's a basic example of these steps using Node, Express, and Axios:
-```javascript
+```javascript 
 app.post('/subscription-update', (req, res) => {
   // - Let Apple know we received the notification
   res.status(200).json();

@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:08:30.175Z'
 updatedAt: '2023-04-27T20:08:30.175Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -169,21 +169,21 @@ If you're using the Segment SDK, you can set the User ID to match the RevenueCat
 
 Use the `.identify()` method on the Segment SDK to set the same App User Id that is set in RevenueCat.
 
-```swift
+```swift 
 // Configure Purchases SDK
 Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
 
 // Set App User Id in Segment
 SEGAnalytics.sharedAnalytics().identify("my_app_user_id")
 ```
-```objectivec
+```objectivec 
 // Configure Purchases SDK
 [RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
 
 // Set App User Id in Segment
 [[SEGAnalytics sharedAnalytics] identify:@"my_app_user_id"];
 ```
-```java
+```java 
 // Configure Purchases SDK
 Purchases.configure(this, "public_sdk_key", "my_app_user_id");
 
@@ -404,7 +404,6 @@ Below are sample JSONs that are delivered to Segment for each event type.
         "timestamp": 1567673337
     }
 }
-
 ```
 ```json Renewal
 {

@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-05-01T23:06:34.463Z'
 updatedAt: '2023-05-01T23:06:34.463Z'
-category: 64515c3aa16590000a27cd9d
+category: 646582bf8197f50019e3c59c
 ---
 [block:callout]
 {
@@ -29,12 +29,30 @@ category: 64515c3aa16590000a27cd9d
 
 RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
 [block:file]
-swift->code_blocks/🧰 Test - Launch/debugging_1.swift
-objectivec->code_blocks/🧰 Test - Launch/debugging_1.m
-kotlin->code_blocks/🧰 Test - Launch/debugging_1.kt
-java->code_blocks/🧰 Test - Launch/debugging_1.java
-javascript->code_blocks/🧰 Test - Launch/debugging_1.js
+{"language":"swift","name":"","file":"code_blocks/🧰 Test - Launch/debugging_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🧰 Test - Launch/debugging_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🧰 Test - Launch/debugging_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🧰 Test - Launch/debugging_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🧰 Test - Launch/debugging_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🧰 Test - Launch/debugging_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Unity","file":"code_blocks/🧰 Test - Launch/debugging_7.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🧰 Test - Launch/debugging_8.js"}
+[/block]
+
 
 [block:callout]
 {
@@ -109,8 +127,12 @@ Messages that have the double red exclamation marks prefix (‼️) attached pro
 
 Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an eye out for any `ERROR` level logs, status codes other than `200`, or any `Invalid Product Identifiers`.
 [block:file]
-text->code_blocks/🧰 Test - Launch/debugging_2.txt
+{"language":"text","name":"","file":"code_blocks/🧰 Test - Launch/debugging_9.txt"}
 [/block]
+[block:file]
+{"language":"text","name":"With emojis","file":"code_blocks/🧰 Test - Launch/debugging_10.txt"}
+[/block]
+
 # Next Steps
 
 * If you spotted any errors while debugging, make sure you're [handling errors correctly :fa-arrow-right:](doc:errors)

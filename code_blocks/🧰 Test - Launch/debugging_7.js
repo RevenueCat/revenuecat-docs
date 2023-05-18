@@ -1,0 +1,1 @@
+Purchases.SetDebugLogsEnabled(true);

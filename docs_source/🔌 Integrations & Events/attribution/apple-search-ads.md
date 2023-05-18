@@ -5,7 +5,7 @@ excerpt: Collect and view Apple Search Ads attribution in RevenueCat using AdSer
 hidden: false
 createdAt: '2022-05-23T14:12:29.055Z'
 updatedAt: '2023-03-30T21:00:01.908Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -101,73 +101,21 @@ Apple Search Ads provides two different types of attribution data, one a Standar
 
 The standard attribution data collection does not require user consent and can be enabled by calling `Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()` after calling `configure`:
 
-```swift Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
-    Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-    Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()
-    
-    return true
-}
-```
-```objectivec Objective-C
-- (BOOL)application:(UIApplication *)application 
-  didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
-  RCPurchases *purchases = [RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
-  [purchases.attribution enableAdServicesAttributionTokenCollection];
-
-}
-```
-```javascript Flutter
-Future<void> initPlatformState() async {
-  await Purchases.setDebugLogsEnabled(true);
-  
-  if (Platform.isAndroid) {
-    await Purchases.setup("public_google_sdk_key");
-  } else if (Platform.isIOS) {
-    await Purchases.setup("public_ios_sdk_key");
-    
-    // OR: if building for Amazon, be sure to follow the installation instructions then:
-    await Purchases.setup("public_amazon_sdk_key", useAmazon: true);
-  }
-
-  await Purchases.enableAdServicesAttributionTokenCollection();
-  
-}
-```
-```javascript React Native
-export default class App extends React.Component {
- 
-  componentDidMount() {
-    Purchases.setDebugLogsEnabled(true);
-    
-    if (Platform.OS === 'ios') {
-    	await Purchases.setup("public_ios_sdk_key");
-    } else if (Platform.OS === 'android') {
-    	await Purchases.setup("public_google_sdk_key");
-      
-      // OR: if building for Amazon, be sure to follow the installation instructions then:
-    	await Purchases.setup({ apiKey: "public_amazon_sdk_key", useAmazon: true });
-    }
-    
-    await Purchases.enableAdServicesAttributionTokenCollection();
-    
-  }
-}
-```
-```javascript Cordova
-function onDeviceReady() {
-    Purchases.setDebugLogsEnabled(true);
-    if (window.cordova.platformId === 'ios') {
-        Purchases.setup("public_ios_sdk_key");
-    } else if (window.cordova.platformId === 'android') {
-        Purchases.setup("public_google_sdk_key");
-    }
-  
-    Purchases.enableAdServicesAttributionTokenCollection();
-}
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_2.m"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_3.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_4.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_5.js"}
+[/block]
 
 
 
@@ -181,29 +129,9 @@ If the user rejects tracking, the Standard attribution data can still be collect
 
 To request consent from a user, implement the `requestTrackingAuthorization` method before enabling automatic collection:
 
-```swift Swift
-import AdServices
-...
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-     Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-  
-     if ATTrackingManager.trackingAuthorizationStatus != .notDetermined {
-     // The user has previously seen a tracking request, so enable automatic collection
-     // before configuring in order to to collect whichever token is available 
-     Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()
-    }
-    
-    return true
-}
-
-// Later in your app's lifecycle, ask consent for tracking
-if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
-    ATTrackingManager.requestTrackingAuthorization { _ in
-        Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()
-    }
-}
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_6.swift"}
+[/block]
 
 
 

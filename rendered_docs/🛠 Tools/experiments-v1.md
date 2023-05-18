@@ -5,7 +5,7 @@ excerpt: A/B testing two offerings in your app
 hidden: false
 createdAt: '2022-10-13T18:43:05.969Z'
 updatedAt: '2022-12-09T15:59:16.361Z'
-category: 64515c3d1a6415003c998b82
+category: 646582c4ae6e4802c90e5a42
 ---
 Have you ever wondered how a lower-priced product will perform against a higher-priced one? Or how about whether a one-week free trial converts better than a three-day free trial? Experiments allow you to answer questions like these by A/B testing two offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
 [block:callout]

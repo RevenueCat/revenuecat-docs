@@ -5,7 +5,7 @@ excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
 createdAt: '2022-05-31T23:05:56.746Z'
 updatedAt: '2022-05-31T23:05:56.746Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 Observer Mode enables you to do a partial implementation of RevenueCat's SDK, giving you access to the advanced charting, webhooks, and attribution that RevenueCat provides—without affecting your existing purchase code. This is useful if you already have a functioning subscription system to manage your purchases and have infrastructure or code policy restrictions that prevent you from fully integrating third-party software.
 
@@ -32,13 +32,24 @@ No special requirements
 [/block]
 # 1. Configure the SDK
 [block:file]
-swift->code_blocks/📙 Platform Resources/legacy-observer-mode_1.swift
-objectivec->code_blocks/📙 Platform Resources/legacy-observer-mode_1.m
-kotlin->code_blocks/📙 Platform Resources/legacy-observer-mode_1.kt
-java->code_blocks/📙 Platform Resources/legacy-observer-mode_1.java
-javascript->code_blocks/📙 Platform Resources/legacy-observer-mode_1.js
-text->code_blocks/📙 Platform Resources/legacy-observer-mode_1.txt
+{"language":"swift","name":"Swift","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"Kotlin","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_5.js"}
+[/block]
+[block:file]
+{"language":"text","name":"Unity","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_6.txt"}
+[/block]
+
 
 [block:callout]
 {
@@ -75,10 +86,15 @@ text->code_blocks/📙 Platform Resources/legacy-observer-mode_1.txt
 
 On Android (or cross-platform SDKs), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. 
 [block:file]
-kotlin->code_blocks/📙 Platform Resources/legacy-observer-mode_2.kt
-java->code_blocks/📙 Platform Resources/legacy-observer-mode_2.java
-javascript->code_blocks/📙 Platform Resources/legacy-observer-mode_2.js
+{"language":"kotlin","name":"","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_7.kt"}
 [/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_8.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/📙 Platform Resources/legacy-observer-mode_9.js"}
+[/block]
+
 
 [block:callout]
 {

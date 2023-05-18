@@ -4,7 +4,7 @@ slug: amazon-store-beta
 hidden: true
 createdAt: '2021-01-28T23:11:17.232Z'
 updatedAt: '2021-11-16T15:48:23.637Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 [block:api-header]
 {

@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:08.891Z'
 updatedAt: '2023-04-27T20:07:08.891Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -169,30 +169,15 @@ If you're using the Amplitude SDK, you can set the User Id to match the RevenueC
 
 Configure the Amplitude SDK with the same App User Id as RevenueCat or use the `.setUserId()` method on the Amplitude SDK.
 
-```swift
-// Configure Purchases SDK
-Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-
-// Configure Amplitude SDK
-Amplitude.instance()?.initializeApiKey("amplitude_api_key", userId: "my_app_user_id")
-
-// Optional User Alias Object attributes
-Purchases.shared.attribution.setAttributes(["$amplitudeDeviceId" : <AMPLITUDE_DEVICE_ID>])
-```
-```objectivec
-// Configure Purchases SDK
-[RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
-
-// Configure Amplitude SDK
-[[Amplitude] instance] initializeApiKey:@"amplitude_api_key" userId:@"my_app_user_id"];
-```
-```java
-// Configure Purchases SDK
-Purchases.configure(this, "public_sdk_key", "my_app_user_id");
-
-// Configure Amplitude SDK
-Amplitude.getInstance().initialize(this, "amplitude_api_key", "my_app_user_id");
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_2.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_3.java"}
+[/block]
 
 
 
@@ -244,503 +229,42 @@ After you've set up the _Purchases SDK_ and Amplitude SDK to have the same user 
 
 Below are sample JSONs that are delivered to Amplitude for each event type.
 
-```json Initial Purchase
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_initial_purchase_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662493499000,
-        "platform": "iOS",
-        "revenue": 7.61,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2022-09-06T19: 44: 59Z",
-            "expiration_at": "2022-10-06T19: 44: 59Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": "pro",
-            "entitlement_ids": [
-                "pro"
-            ],
-            "presented_offering_id": null,
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "EUR",
-            "revenue": 7.61,
-            "app_id": "app1234567890"
-        },
-    "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Trial Started
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type ": "rc_trial_started_event ",
-        "partner_id ": "revenuecat ",
-        "insert_id ": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time ": 1662492770000,
-        "platform ": "iOS ",
-        "revenue ": 0,
-        "productId ": "rc_subscription_monthly",
-        "event_properties ": {
-            "subscriber_attributes ": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type ": "TRIAL ",
-            "purchased_at ": "2022-09-06T19: 32: 50Z ",
-            "expiration_at ": "2022-09-09T19: 32: 50Z ",
-            "environment ": "PRODUCTION ",
-            "entitlement_id": "pro",
-            "entitlement_ids": [
-                "pro"
-            ],
-            "presented_offering_id ": null,
-            "transaction_id ": "123456789012345 ",
-            "original_transaction_id ": "011223344556677 ",
-            "aliases ": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230 "
-            ],
-            "original_app_user_id ": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3 ",
-            "store ": "APP_STORE ",
-            "app_user_id ": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3 ",
-            "product_id ": "rc_subscription_monthly",
-            "currency ": "USD",
-            "revenue ": 0,
-            "app_id ": "app1234567890"
-        },
-    "user_id ": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Trial Conversion
-{
-  "api_key": "yourAmplitudeAPIKey",
-  "event": {
-    "event_type": "rc_trial_converted_event",
-    "partner_id": "revenuecat", 
-    "insert_id": "d61ed8b3-d4ed-436e-80b6-a69dabe44855", 
-    "time": 1655322275000, 
-    "platform": "iOS", 
-    "revenue": 139.993, 
-    "productId": "rc_3999_1y_1w0", 
-    "event_properties": {
-      "subscriber_attributes": {
-        "$attConsentStatus": "denied", 
-        "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-       }, 
-       "period_type": "NORMAL", 
-       "purchased_at": "2022-06-15T19:44:35Z", 
-       "expiration_at": "2022-06-22T19:44:35Z", 
-       "environment": "SANDBOX", 
-       "entitlement_id": null, 
-       "entitlement_ids": ["premium"], 
-       "presented_offering_id": null, 
-       "transaction_id": "2000000080909203", 
-       "original_transaction_id": "2000000080909203", 
-       "aliases": ["$RCAnonymousID:e35dd5b6732f4e1aad8c398d635e83e0"], 
-       "original_app_user_id": "$RCAnonymousID:e35dd5b6732f4e1aad8c398d635e83e0", 
-       "store": "APP_STORE", 
-       "app_user_id": "$RCAnonymousID:e35dd5b6732f4e1aad8c398d635e83e0", 
-       "product_id": "rc_3999_1y_1w0", 
-       "currency": "USD", 
-       "revenue": 139.993
-      }, 
-    "user_id": "$RCAnonymousID:e35dd5b6732f4e1aad8c398d635e83e0""
-  }
-}
-```
-```json Trial Cancelled
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type ": "rc_trial_cancelled_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662493279414,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "TRIAL",
-            "purchased_at": "2022-09-03T19:41:12Z",
-            "expiration_at": "2022-09-06T19:41:12Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": null,
-            "entitlement_ids": null,
-            "presented_offering_id": null,
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "USD",
-            "revenue": 0.0,
-            "cancel_reason": "BILLING_ERROR",
-            "app_id": "app1234567890"
-        },
-        "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Renewal
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_renewal_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662524551000,
-        "platform": "iOS",
-        "revenue": 6.99,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2022-09-07T04:22:31Z",
-            "expiration_at": "2022-10-07T04:22:31Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": "pro",
-            "entitlement_ids": [
-                "pro"
-            ],
-            "presented_offering_id": "standard",
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "EUR",
-            "revenue": 6.99,
-            "app_id": "app1234567890"
-        },
-        "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Cancellation
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_cancellation_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662493540346,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2021-09-06T19:44:47Z",
-            "expiration_at": "2022-09-06T19:44:47Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": null,
-            "entitlement_ids": null,
-            "presented_offering_id": null,
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "KZT",
-            "revenue": 0.0,
-            "cancel_reason": "BILLING_ERROR",
-            "app_id": "app1234567890"
-        },
-        "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Uncancellation
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_uncancellation_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1663779027932,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2022-08-24T23:10:10Z",
-            "expiration_at": "2023-08-24T23:10:10Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": "pro",
-            "entitlement_ids": [
-                "pro"
-            ],
-            "presented_offering_id": "Subscription",
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "EUR",
-            "revenue": 0.0,
-            "app_id": "app1234567890"
-        },
-    "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Conversion","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_9.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_10.json"}
+[/block]
 
 
 
-```json Non Subscription Purchase
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_non_subscription_purchase_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662421921000,
-        "platform": "iOS",
-        "revenue": 9.99,
-        "productId": "rc_coins",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2022-09-05T23:52:01Z",
-            "expiration_at": null,
-            "environment": "PRODUCTION",
-            "entitlement_id": null,
-            "entitlement_ids": null,
-            "presented_offering_id": null,
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "USD",
-            "revenue": 9.99,
-            "app_id": "app1234567890"
-        },
-    "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Subscription Paused
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_subscription_paused_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1663786195063,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "INTRO",
-            "purchased_at": "2022-09-19T09:07:33Z",
-            "expiration_at": "2022-09-26T13:07:20Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": "pro",
-            "entitlement_ids": [
-                "pro"
-            ],
-            "presented_offering_id": "bold_pricing_modal",
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "USD",
-            "revenue": 0.0,
-            "auto_resume_at": "2022-10-03T11:07:20Z",
-            "app_id": "app1234567890"
-        },
-    "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Expiration
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_expiration_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662414172000,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2021-09-05T21:42:52Z",
-            "expiration_at": "2022-09-05T21:42:52Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": null,
-            "entitlement_ids": null,
-            "presented_offering_id": null,
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "USD",
-            "revenue": 0.0,
-            "expiration_reason": "UNSUBSCRIBE",
-            "app_id": "app1234567890"
-        },
-        "user_id": "$RCAnonymousID:1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Billing Issues
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_billing_issue_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1662665865167,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2022-08-08T19:11:04Z",
-            "expiration_at": "2022-09-24T19:11:04Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": "pro",
-            "entitlement_ids": [
-                "pro"
-            ],
-            "presented_offering_id": null,
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "EUR",
-            "revenue": 0.0,
-            "grace_period_expiration_at": "2022-09-24T19:11:04Z",
-            "app_id": "app1234567890"
-        },
-        "user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
-```json Product Change
-{
-    "api_key": "yourAmplitudeAPIKey",
-    "event": {
-        "event_type": "rc_product_change_event",
-        "partner_id": "revenuecat",
-        "insert_id": "a12bc3d4-e5fg-678h-91i0-j23klmn45678",
-        "time": 1663786694542,
-        "platform": "iOS",
-        "revenue": 0.0,
-        "productId": "rc_subscription_monthly",
-        "event_properties": {
-            "subscriber_attributes": {
-                "$attConsentStatus": "denied", 
-                "$amplitudeDeviceId": "123a4b56-7890-12cd-345e-67f90gh1ij1k"
-            },
-            "period_type": "NORMAL",
-            "purchased_at": "2020-09-03T15:44:46Z",
-            "expiration_at": "2021-09-03T15:44:46Z",
-            "environment": "PRODUCTION",
-            "entitlement_id": "all-access",
-            "entitlement_ids": [
-                "all-access"
-            ],
-            "presented_offering_id": "Subscription",
-            "transaction_id": "123456789012345",
-            "original_transaction_id": "011223344556677",
-            "aliases": [
-                "$RCAnonymousID: 121abc123a4abc123123abc123abc1230"
-            ],
-            "original_app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "store": "APP_STORE",
-            "app_user_id": "$RCAnonymousID: 1234567890ab1cd1234a55b6c78910a3",
-            "product_id": "rc_subscription_monthly",
-            "currency": "USD",
-            "revenue": 0.0,
-            "new_product_id": "rc_subscription_yearly",
-            "app_id": "app1234567890"
-        },
-    "user_id": "$RCAnonymousID:1234567890ab1cd1234a55b6c78910a3"
-    }
-}
-```
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_11.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Subscription Paused","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_12.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_13.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_14.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_15.json"}
+[/block]

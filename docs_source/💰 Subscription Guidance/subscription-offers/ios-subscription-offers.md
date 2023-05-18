@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-22T15:16:54.349Z'
 updatedAt: '2023-03-22T15:16:54.349Z'
-category: 64515c3b6f91d900446f01f3
+category: 646582c0a0e52000586ab9e0
 ---
 [block:callout]
 {
@@ -147,18 +147,28 @@ It's up to you to decide which users you want to present a Promotional Offer to.
 
 Before you can present a Promotional Offer to a user, you first need to fetch the `PromoOffer`. This is done by passing the `StoreProduct` and a `StoreProductDiscount` to the `.getPromotionalOffer` method, which uses the Subscription Key from above to validate the discount and to provide a valid `PromoOffer`:
 [block:file]
-swift->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_1.swift
-objectivec->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_1.m
-javascript->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_1.js
+{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_2.m"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_3.js"}
+[/block]
+
 ### Purchase the Product with the Promotional Offer
 
 After successfully fetching the `PromoOffer`, you can now display the Promotional Offer to the user however you'd like. If the user chooses to purchase, pass a `Package` and `PromoOffer` to the `.purchase(package:promotionalOffer:)` method.
 [block:file]
-swift->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_2.swift
-objectivec->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_2.m
-javascript->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_2.js
+{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_4.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_5.m"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_6.js"}
+[/block]
+
 # Offer Codes
 
 With iOS 14, Apple announced a new feature for subscription developers called “Offer Codes.” Offer Codes allow developers to offer custom pricing and trials, in the form of a redeemable code, to their customers.
@@ -194,8 +204,9 @@ Offer Codes are configured similarly to Subscription Offers in App Store Connect
 [/block]
 To allow your users to redeem Offer Codes, you'll need to present the Offer Code redemption sheet. In *Purchases SDK* 3.8.0, you can call the `presentCodeRedemptionSheet` method.
 [block:file]
-swift->code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_3.swift
+{"language":"swift","name":"Swift","file":"code_blocks/💰 Subscription Guidance/subscription-offers/ios-subscription-offers_7.swift"}
 [/block]
+
 Apple does not provide a callback to determine if the code redemption was successful. Since the Purchases SDK will automatically pick up on new transactions that enter the underlying transaction queue, you should implement the `receivedUpdated` [delegate or listener](doc:configuring-sdk) to respond to changes in `CustomerInfo`. Once we sync the Offer Code transaction, we'll automatically refresh CustomerInfo.
 [block:callout]
 {
@@ -206,7 +217,9 @@ Apple does not provide a callback to determine if the code redemption was succes
 ### Option 2: Redirect to App Store app
 
 You can link to the App Store with a prefilled code for redemption with the following URL format:
-```https://apps.apple.com/redeem?ctx=offercodes&id={apple_app_id}&code={code}```
+```
+https://apps.apple.com/redeem?ctx=offercodes&id={apple_app_id}&code={code}
+```
 
 You can find your Apple App ID in your app settings in App Store Connect (General -> App Information).
 

@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-07T05:51:02.908Z'
 updatedAt: '2023-04-07T05:51:02.908Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our AppsFlyer integration you can:
 
@@ -43,29 +43,12 @@ The Appsflyer integration requires some device-specific data. RevenueCat will on
 
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods to `collectDeviceIdentifiers()` and `setAppsflyerId()`. 
 
-```swift Swift
-import AdSupport
-// ...
-Purchases.configure(withAPIKey: "public_sdk_key")
-// ...
-
-// Automatically collect the $idfa, $idfv, and $ip values
-Purchases.shared.attribution.collectDeviceIdentifiers() 
-
-// Set the Appsflyer Id
-Purchases.shared.attribution.setAppsflyerID(AppsFlyerLib.shared().getAppsFlyerUID())
-```
-```kotlin
-//..
-Purchases.configure(this, "public_sdk_key")
-//..
-  
-// Automatically collect the $gpsAdId, $androidId, and $ip values
-Purchases.sharedInstance.collectDeviceIdentifiers()
-  
-// Set the Appsflyer Id
-Purchases.sharedInstance.setAppsflyerID(AppsFlyerLib.getInstance().getAppsFlyerUID(this));
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/appsflyer_1.swift"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/appsflyer_2.kt"}
+[/block]
 
 
 

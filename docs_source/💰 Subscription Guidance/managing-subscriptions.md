@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-01-15T19:53:13.255Z'
 updatedAt: '2023-03-28T10:03:45.658Z'
-category: 64515c3b6f91d900446f01f3
+category: 646582c0a0e52000586ab9e0
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
 
@@ -54,9 +54,12 @@ You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscripti
 
 In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Setting the proration mode optional but will default to `IMMEDIATE_WITH_TIME_PRORATION`.
 [block:file]
-text->code_blocks/💰 Subscription Guidance/managing-subscriptions_1.txt
-java->code_blocks/💰 Subscription Guidance/managing-subscriptions_1.java
+{"language":"text","name":"Kotlin","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_1.txt"}
 [/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_2.java"}
+[/block]
+
 
 [block:callout]
 {
@@ -134,9 +137,12 @@ Google requires developers to allow customers to cancel a subscription within ap
 [/block]
 
 [block:file]
-swift->code_blocks/💰 Subscription Guidance/managing-subscriptions_2.swift
-kotlin->code_blocks/💰 Subscription Guidance/managing-subscriptions_2.kt
+{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_3.swift"}
 [/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_4.kt"}
+[/block]
+
 
 [block:callout]
 {

@@ -18,7 +18,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-02T20:33:26.499Z'
 updatedAt: '2023-03-02T20:33:26.499Z'
-category: 64515c39b05512007222ab6a
+category: 646582bdd4a12f005f28be1e
 ---
 [block:parameters]
 {
@@ -67,8 +67,9 @@ The way to do this is: if your existing subscription code knows you have a subsc
 
 See the following pseudo example.
 [block:file]
-javascript->code_blocks/➡️ Migrating To RevenueCat/migrating-existing-subscriptions_1.js
+{"language":"javascript","name":"Example","file":"code_blocks/➡️ Migrating To RevenueCat/migrating-existing-subscriptions_1.js"}
 [/block]
+
 When a subscriber launches with the first version containing RevenueCat it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {

@@ -5,7 +5,7 @@ excerpt: Migrating to Offerings from a legacy setup
 hidden: true
 createdAt: '2019-09-21T00:32:27.183Z'
 updatedAt: '2019-12-16T17:07:12.258Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 [block:embed]
 {
@@ -28,7 +28,7 @@ There are a few major improvements over the legacy system.
 
 ## 1. No hardcoded strings
 With new Offerings, you can now fully reference products without any hard coded strings. This will make your paywall code more robust and allow maximum configurability from the backend.
-```swift
+```swift 
 func fetchOffering() {
     Purchases.shared.offerings { (offerings, error) in
         
@@ -45,6 +45,7 @@ func fetchOffering() {
     }
 }
 ```
+
 The above code sample fetches the offerings from the server, unpacks the current Offering, and prints out the available packages. There's no need to hardcode any strings, making remote configuration a breeze.
 
 ##2. More configuration options

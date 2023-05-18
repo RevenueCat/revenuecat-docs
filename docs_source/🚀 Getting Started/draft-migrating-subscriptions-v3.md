@@ -5,7 +5,7 @@ excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2021-12-29T03:23:56.845Z'
 updatedAt: '2021-12-29T07:05:43.408Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. You can use the Purchases SDK to replace all of your in-app-purchase code, or you can just use it along side your current stack to track in-app-purchases and benefit from our charting, webhooks, and other integrations.
 
@@ -74,8 +74,9 @@ The way to do this is: if your existing subscription code knows you have a subsc
 
 See the following pseudo-code for an example.
 [block:file]
-javascript->code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_1.js
+{"language":"javascript","name":"Client side migration example","file":"code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_1.js"}
 [/block]
+
 When a subscriber launches with the first version containing *Purchases*, it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {
@@ -107,8 +108,9 @@ More info in the [API Reference here](https://docs.revenuecat.com/reference#rece
 
 Here's a pseudo-code sample to illustrate how this process would look like as a one-time migration job to import receipts into RevenueCat:
 [block:file]
-javascript->code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_2.js
+{"language":"javascript","name":"Migration script","file":"code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_2.js"}
 [/block]
+
 ## Bulk imports
 
 For large datasets that aren't practical to import through the REST API, you can send us a .csv file to import manually. [Email us](mailto:support@revenuecat.com) with the below information and we'll be in touch. Please note that depending on the size, bulk imports can take time to complete, sometimes up to several days or weeks for the largest data sets. Please keep this in consideration as you are planning your launch.

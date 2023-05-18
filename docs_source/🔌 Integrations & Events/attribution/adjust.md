@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:07:09.611Z'
 updatedAt: '2023-03-28T21:07:09.611Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Adjust integration you can:
 
@@ -43,64 +43,12 @@ The Adjust integration requires some device-specific data. RevenueCat will only 
 
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods to `collectDeviceIdentifiers()` and `setAdjustId()`. 
 
-```swift Swift
-import AdSupport
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  
-  	Purchases.configure(withAPIKey: "public_sdk_key")
-  
-  	// ... Configure Adjust SDK and set delegate
-
-
-	// Automatically collect the $idfa, $idfv, and $ip values
-	Purchases.shared.attribution.collectDeviceIdentifiers() 
-
-	// Set the Adjust Id on app launch if it exists
-  	if let adjustId = Adjust.adid() {
-    	Purchases.shared.attribution.setAdjustID(adjustId)
-	}
-  
-  // ..
-}
-
-
-// IMPORTANT: - Set the Adjust Id when it becomes available, if it
-// didn't exist on app launch
-extension AppDelegate: AdjustDelegate {
-    func adjustAttributionChanged(_ attribution: ADJAttribution?) {
-        if let adjustId = attribution?.adid {
-            Purchases.shared.attribution.collectDeviceIdentifiers()
-          	Purchases.shared.attribution.setAdjustID(adjustId)
-        }
-    }
-}
-```
-```java
-Purchases.configure(this, "my_api_key");
-
-
-// Automatically collect the $gpsAdId, $androidId, and $ip values
-Purchases.getSharedInstance().collectDeviceIdentifiers();
-
-// Set the Adjust Id on app launch if it exists
-if (Adjust.getAdid() != Null) {
-	Purchases.getSharedInstance().setAdjustID(Adjust.getAdid());
-}
-
-
-// IMPORTANT: - Set the Adjust Id when it becomes available, if it
-// didn't exist on app launch
-config.setOnAttributionChangedListener(new OnAttributionChangedListener() {
-    @Override
-    public void onAttributionChanged(AdjustAttribution attribution) {
-        Map<String, String> data = new HashMap<String, String>();
-      
-      	Purchases.getSharedInstance().collectDeviceIdentifiers();
-      	Purchases.getSharedInstance().setAdjustID(attribution.adid);
-    }
-});
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/adjust_1.swift"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/adjust_2.java"}
+[/block]
 
 
 
@@ -227,18 +175,6 @@ Adjust [does not accept events with revenue less than 0.001](https://help.adjust
 
 Below is a sample event sent to Adjust. The type of the event (e.g. initial purchase) is defined by the `event_token`. Note that product identifiers, subscriber attributes, app user IDs, etc. don't get sent to Adjust.
 
-```json
-{
-  "app_token": "abcdefg",
-  "event_token": "abcdefg",
-  "s2s": 1,
-  "created_at_unix": 1640995185,
-  "adid": "00000000000000000000000000000000",
-  "environment": "production",
-  "currency": "USD",
-  "revenue": 34.511,
-  "idfa": "00000000-0000-0000-0000-000000000000",
-  "idfv": "00000000-0000-0000-0000-000000000000",
-  "ip_address": "00.0.000.000"
-}
-```
+[block:file]
+{"language":"json","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/adjust_3.json"}
+[/block]

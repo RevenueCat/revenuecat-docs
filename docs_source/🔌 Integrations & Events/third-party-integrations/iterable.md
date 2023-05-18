@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-01-31T17:07:33.480Z'
 updatedAt: '2023-04-27T20:07:55.923Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -185,109 +185,21 @@ In order to associate RevenueCat data with the Iterable User Profile, either the
 
 To attribute an event to an Iterable Campaign ID and/or Template ID, set the `$iterableCampaignId` and/or `$iterableTemplateId` subscriber attributes through the RevenueCat SDK or [REST API](https://docs.revenuecat.com/reference/update-subscriber-attributes).
 
-```swift
-// Configure Purchases
-Purchases.configure(this, "public_sdk_key", "my_app_user_id");
-
-// Initialize Iterable
-IterableAPI.initialize(apiKey: "<YOUR_API_KEY>", launchOptions: launchOptions, config: config)
-
-// Setting Iterable email or userId
-IterableAPI.email = "user@example.com"
-IterableAPI.userId = "user123"
-
-
-// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId
-Purchases.shared.attribution.setAttributes(["$email" : IterableAPI.email],
-                               ["$iterableUserId" : IterableAPI.userId,
-                               ["$iterableCampaignId" : "123"],
-                               ["$iterableTemplateId" : "123"])
-```
-```objectivec
-// Configure Purchases
-[RCPurchases configureWithAPIKey:@"public_sdk_key"];
-
-// Initialize Iterable
-[IterableAPI initializeWithApiKey:@"<YOUR_API_KEY>" launchOptions:launchOptions config:config]
-
-// Setting Iterable email or userId
-IterableAPI.email = @"user@example.com";
-IterableAPI.userId = @"user123";
-
-// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId
-[[RCPurchases sharedPurchases] setAttributes:@{
-  @"$email": IterableAPI.email,
-  @"iterableUserId": IterableAPI.userId ,
-  @"$iterableCampaignId": @"123",
-  @"$iterableTemplateId": @"123"
-}];
-```
-```java
-// Configure Purchases
-Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
-
-// Initialize Iterable
-IterableApi.initialize(context, "<YOUR_API_KEY>", config);
-
-// Setting Iterable email or userId
-IterableApi.getInstance().setEmail("user@example.com");
-IterableApi.getInstance().setUserId("user123");
-
-// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId
-Map<String, String> attributes = new HashMap<String, String>();
-attributes.put("$email", IterableApi.getInstance().getEmail());
-attributes.put("$iterableUserId", IterableApi.getInstance().getUserId());
-attributes.put("$iterableCampaignId", "123");
-attributes.put("$iterableTemplateId", "123");
-Purchases.getSharedInstance().setAttributes(attributes);
-```
-```javascript React Native
-// Configure Purchases
-if (Platform.OS === 'ios') {
-	await Purchases.setup("public_ios_sdk_key");
-} else if (Platform.OS === 'android') {
-	await Purchases.setup("public_google_sdk_key");
-	// OR: if building for Amazon, be sure to follow the installation instructions then:
-	await Purchases.setup({ apiKey: "public_amazon_sdk_key", useAmazon: true });
-}
-
-// Initialize Iterable
-Iterable.initialize('<YOUR_API_KEY>', config);
-
-// Setting Iterable email or userId
-Iterable.setEmail("user@example.com");
-Iterable.setUserId("user123");
-
-// Set $email or $iterableUserId, (optional) $iterableCampaignId, $iterableTemplateId
-Iterable.getEmail().then(email => {
-	console.log("Current email: " + email);
-  	Purchases.setAttributes({ "$email" : email });
-});
-
-Iterable.getUserId().then(userId => {
-	console.log("Current userId: " + userId);
-  	Purchases.setAttributes({ "$iterableUserId" : userId });
-});
-
-Purchases.setAttributes({ "$iterableCampaignId" : "123", "$iterableTemplateId" : "123" });
-```
-```curl
-curl --request POST \
-  --url https://api.revenuecat.com/v1/subscribers/app_user_id/attributes \
-  --header 'Authorization: Bearer ' \
-  --header 'Content-Type: application/json' \
-  --data \ 
-  '{ 
-	"attributes" :  {
-		"$iterableCampaignId": {
-			"value": "123"
-		},
-		"$iterableTemplateId": {
-			"value": "123"
-		}
-	}
-}'
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_2.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_3.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_4.js"}
+[/block]
+[block:file]
+{"language":"curl","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_5.curl"}
+[/block]
 
 
 
@@ -348,381 +260,45 @@ Navigate to your Iterable dashboard > Insights > Logs. To find Purchase events n
 
 Below are sample JSONs that are delivered to Iterable for events.
 
-```json Initial Purchase
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "total": 29.99,
-    "user": {
-        "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "preferUserId": true,
-        "dataFields": {
-            "subscriber_attributes": {},
-            "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-            "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    },
-    "items": [
-        {
-            "id": "premium_freetrial",
-            "name": "rc_initial_purchase_event",
-            "price": 29.99,
-            "quantity": 1,
-            "dataFields": {
-                "country_code": "US",
-                "currency": "USD",
-                "entitlement_ids": [
-                    "premium"
-                ],
-                "expiration_at_ms": 1683233732021,
-                "environment": "PRODUCTION",
-                "is_family_share": false,
-                "offer_code": null,
-                "period_type": "NORMAL",
-                "presented_offering_id": null,
-                "store": "PLAY_STORE",
-                "takehome_percentage": 0.85,
-                "original_transaction_id": "GPA.1234-5678-9012-34567"
-            }
-        }
-    ],
-    "createdAt": 1651691577776
-}
-```
-```json Trial Started
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "total": 0,
-    "user": {
-        "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "preferUserId": true,
-        "dataFields": {
-            "subscriber_attributes": {},
-            "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-            "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    },
-    "items": [
-        {
-            "id": "annual_sub_1week_trial",
-            "name": "rc_trial_started_event",
-            "price": 0,
-            "quantity": 1,
-            "dataFields": {
-                "country_code": "US",
-                "currency": "USD",
-                "entitlement_ids": null,
-                "expiration_at_ms": 1644623383000,
-                "environment": "SANDBOX",
-                "is_family_share": false,
-                "offer_code": null,
-                "period_type": "TRIAL",
-                "presented_offering_id": "default",
-                "store": "APP_STORE",
-                "takehome_percentage": 0.7,
-                "original_transaction_id": "123456789012345"
-            }
-        }
-    ],
-    "createdAt": 1644623203000
-}
-```
-```json Trial Converted
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "total": 29.99,
-    "user": {
-        "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "preferUserId": true,
-        "dataFields": {
-            "subscriber_attributes": {},
-            "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-            "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        }
-    },
-    "items": [
-        {
-            "id": "annual_sub",
-            "name": "rc_trial_converted_event",
-            "price": 29.99,
-            "quantity": 1,
-            "dataFields": {
-                "country_code": "US",
-                "currency": "USD",
-                "entitlement_ids": null,
-                "expiration_at_ms": 1644626983000,
-                "environment": "SANDBOX",
-                "is_family_share": false,
-                "offer_code": null,
-                "period_type": "NORMAL",
-                "presented_offering_id": "default",
-                "store": "APP_STORE",
-                "takehome_percentage": 0.7,
-                "original_transaction_id": "123456789012345"
-            }
-        }
-    ],
-    "createdAt": 1644623383000
-}
-```
-```json Trial Cancelled
-{
-    "createdAt": 1663964010781,
-    "dataFields": {
-        "app_id": "app1234567890",
-        "event_properties": {
-            "cancel_reason": "BILLING_ERROR",
-            "environment": "PRODUCTION",
-            "expiration_at_ms": 1664050410466,
-            "original_transaction_id": "GPA.1234-5678-9012-34567",
-            "period_type": "TRIAL",
-            "product_id": "annual_sub_1week_trial",
-            "store": "PLAY_STORE",
-            "transaction_id": "GPA.1234-5678-9012-34567",
-        }
-    },
-    "email": null,
-    "eventName": "rc_trial_cancelled_event",
-    "id": "12345678-1234-1234-1234-123456789012",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-}
-```
-```json Renewal
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "total": 29.99,
-    "user": {
-        "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "preferUserId": true,
-        "dataFields": {
-            "subscriber_attributes": {
-                "$email": {
-                    "value": "first_last@gmail.com",
-                    "updated_at_ms": 1644624942354
-                },
-                "$iterableCampaignId": {
-                    "value": "01234",
-                    "updated_at_ms": 1644634297590
-                },
-                "$iterableTemplateId": {
-                    "value": "5678",
-                    "updated_at_ms": 1644634301306
-                }
-            },
-            "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-            "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        },
-        "email": "first_last@gmail.com"
-    },
-    "items": [
-        {
-            "id": "annual_sub",
-            "name": "rc_renewal_event",
-            "price": 29.99,
-            "quantity": 1,
-            "dataFields": {
-                "country_code": "US",
-                "currency": "USD",
-                "entitlement_ids": null,
-                "expiration_at_ms": 1644648719000,
-                "environment": "SANDBOX",
-                "is_family_share": false,
-                "offer_code": null,
-                "period_type": "NORMAL",
-                "presented_offering_id": "default",
-                "store": "APP_STORE",
-                "takehome_percentage": 0.7,
-                "original_transaction_id": "123456789012345"
-            }
-        }
-    ],
-    "createdAt": 1644645119000,
-    "campaignId": "01234",
-    "templateId": "5678"
-}
-```
-```json Cancellation
-{
-    "createdAt": 1663963037855,
-    "dataFields": {
-        "app_id": "app1234567890",
-        "event_properties": {
-            "cancel_reason": "UNSUBSCRIBE",
-            "environment": "PRODUCTION",
-            "expiration_at_ms": 1666381224082,
-            "original_transaction_id": "GPA.1234-5678-9012-34567",
-            "period_type": "NORMAL",
-            "product_id": "annual_sub",
-            "store": "PLAY_STORE",
-            "transaction_id": "GPA.1234-5678-9012-34567",
-        }
-    },
-    "email": null,
-    "eventName": "rc_cancellation_event",
-    "id": "12345678-1234-1234-1234-123456789012",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-}
-```
-```json Uncancellation
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "eventName": "rc_uncancellation_event",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "dataFields": {
-        "event_properties": {
-            "environment": "SANDBOX",
-            "expiration_at_ms": 1646073127000,
-            "original_transaction_id": "123456789012345",
-            "period_type": "NORMAL",
-            "product_id": "annual_sub",
-            "store": "APP_STORE",
-            "transaction_id": "123456789012345",
-            "email": "first_last@gmail.com"
-        }
-    },
-    "createdAt": 1646069715718,
-    "campaignId": "0123",
-    "templateId": "4564"
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_9.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_10.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_11.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_12.json"}
+[/block]
 
 
 
-```json Non Subscription Purchase
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "total": 4.99,
-    "user": {
-        "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-        "preferUserId": true,
-        "dataFields": {
-            "subscriber_attributes": {
-                "$email": {
-                    "value": "first_last@gmail.com",
-                    "updated_at_ms": 1659292070233
-                },
-                "$iterableUserId": {
-                    "value": "12345A6B-C789-0D1E-FG23-456H6I7J890K",
-                    "updated_at_ms": 1659292070233
-                },
-            },
-            "app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-            "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c"
-        },
-        "email": "first_last@gmail.com"
-    },
-    "items": [
-        {
-            "id": "100_tokens",
-            "name": "rc_non_subscription_purchase_event",
-            "price": 4.99,
-            "quantity": 1,
-            "dataFields": {
-                "country_code": null,
-                "currency": "USD",
-                "entitlement_ids": [
-                    "pro"
-                ],
-                "expiration_at_ms": 1659897848466,
-                "environment": "PRODUCTION",
-                "is_family_share": null,
-                "offer_code": null,
-                "period_type": "NORMAL",
-                "presented_offering_id": null,
-                "store": "APP_STORE",
-                "takehome_percentage": 1.0,
-                "original_transaction_id": "123456789012345"
-            }
-        }
-    ],
-    "createdAt": 1659293048466
-}
-```
-```json Subscription Paused
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "email": null,
-    "eventName": "rc_subscription_paused_event",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "dataFields": {
-        "event_properties": {
-            "environment": "PRODUCTION",
-            "expiration_at_ms": 1654366688509,
-            "original_transaction_id": "GPA.1234-5678-9012-34567",
-            "period_type": "NORMAL",
-            "product_id": "monthly_sub_trial",
-            "store": "PLAY_STORE",
-            "transaction_id": "GPA.1234-5678-9012-34567",
-            "auto_resumes_at": 1656951488509
-        }
-    },
-    "createdAt": 1651679019206
-}
-```
-```json Expiration
-{
-    "createdAt": 1663963579936,
-    "dataFields": {
-        "app_id": "app1234567890",
-        "event_properties": {
-            "environment": "PRODUCTION",
-            "expiration_at_ms": 1663963579936,
-            "expiration_reason": "UNSUBSCRIBE",
-            "original_transaction_id": "GPA.1234-5678-9012-34567",
-            "period_type": "NORMAL",
-            "product_id": "weekly_sub",
-            "store": "PLAY_STORE",
-            "transaction_id": "GPA.1234-5678-9012-34567",
-        }
-    },
-    "email": null,
-    "eventName": "rc_expiration_event",
-    "id": "12345678-1234-1234-1234-123456789012",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-}
-```
-```json Billing Issues
-{
-    "createdAt": 1663964010781,
-    "dataFields": {
-        "app_id": "app1234567890",
-        "event_properties": {
-            "environment": "PRODUCTION",
-            "expiration_at_ms": 1664050410466,
-            "grace_period_expires_at": 1664580986800,
-            "original_transaction_id": "GPA.1234-5678-9012-34567",
-            "period_type": "TRIAL",
-            "product_id": "annual_sub_one_week_trial",
-            "store": "PLAY_STORE",
-            "transaction_id": "GPA.1234-5678-9012-34567",
-        }
-    },
-    "email": null,
-    "eventName": "rc_billing_issue_event",
-    "id": "12345678-1234-1234-1234-123456789012",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-}
-```
-```json Product Change
-{
-    "id": "12345678-1234-1234-1234-123456789012",
-    "email": null,
-    "eventName": "rc_product_change_event",
-    "userId": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-    "dataFields": {
-        "event_properties": {
-            "environment": "PRODUCTION",
-            "expiration_at_ms": 1652327468000,
-            "original_transaction_id": "123456789012345",
-            "period_type": "TRIAL",
-            "product_id": "annual_sub_trial",
-            "store": "APP_STORE",
-            "transaction_id": "123456789012345",
-            "new_product_id": "annual_sub_trial"
-        }
-    },
-    "createdAt": 1651722668000
-}
-```
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_13.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Subscription Paused","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_14.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_15.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_16.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_17.json"}
+[/block]
 
 
 

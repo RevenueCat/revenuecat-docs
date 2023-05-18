@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-31T22:56:54.298Z'
 updatedAt: '2023-03-31T22:56:54.298Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If you've [configured Offerings](doc:entitlements) in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates.
 
@@ -35,90 +35,30 @@ Offerings are fetched through the SDK based on their [configuration](doc:entitle
 
 The `getOfferings` method will fetch the Offerings from RevenueCat. These are pre-fetched in most cases on app launch, so the completion block to get offerings won't need to make a network request in most cases. 
 
-```swift
-Purchases.shared.getOfferings { (offerings, error) in
-    if let packages = offerings?.current?.availablePackages {
-        // Display packages for sale
-    }
-}
-```
-```objectivec Objective-C
-[[RCPurchases sharedPurchases] getOfferingsWithCompletion:^(RCOfferings *offerings, NSError *error) {
-  if (offerings.current && offerings.current.availablePackages.count != 0) {
-    // Display packages for sale
-  } else if (error) {
-    // optional error handling
-  }
-}];
-```
-```kotlin
-Purchases.sharedInstance.getOfferingsWith({ error ->
-  // An error occurred
-}) { offerings ->
-  offerings.current?.availablePackages?.takeUnless { it.isNullOrEmpty() }?.let {
-    // Display packages for sale
-  }
-}
-```
-```java
-Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
-  @Override
-  public void onReceived(@NonNull Offerings offerings) {
-    if (offerings.getCurrent() != null) {
-      List<Package> availablePackages = offerings.getCurrent().getAvailablePackages();
-      // Display packages for sale
-    }
-  }
-  
-  @Override
-  public void onError(@NonNull PurchasesError error) {
-    // An error occurred
-  }
-});
-```
-```javascript Flutter
-try {
-  Offerings offerings = await Purchases.getOfferings();
-  if (offerings.current != null && offerings.current.availablePackages.isNotEmpty) {
-    // Display packages for sale
-  }
-} on PlatformException catch (e) {
-	// optional error handling
-}
-```
-```javascript React Native
-try {
-  const offerings = await Purchases.getOfferings();
-  if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {
-    // Display packages for sale
-  }
-} catch (e) {
- 
-}
-```
-```javascript Cordova
-func displayUpsellScreen() {
-  Purchases.getOfferings(
-      offerings => {
-        if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {  
-			    // Display packages for sale
-        }
-      },
-      error => {
-
-      }
-  );
-}
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.GetOfferings((offerings, error) =>
-{
-  if (offerings.Current != null && offerings.Current.AvailablePackages.Count != 0){
-    // Display packages for sale
-  }
-});
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_7.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_8.cs"}
+[/block]
 
 
 
@@ -144,87 +84,30 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
 
-```swift
-Purchases.shared.getOfferings { (offerings, error) in
-    if let packages = offerings?.offering(identifier: "experiment_group").availablePackages {
-        // Display packages for sale
-    }
-}
-```
-```objectivec Objective-C
-[[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {
-	NSArray<RCPackage *> *availablePackages = [offerings offeringWithIdentifier:"experiment_group"].availablePackages;
-  if (availablePackages) {
-    // Display packages for sale
-  }
-}];
-```
-```kotlin
-Purchases.sharedInstance.getOfferingsWith({ error ->
-  // An error occurred
-}) { offerings ->
-  offerings["experiment_group"]?.availablePackages?.takeUnless { it.isNullOrEmpty() }?.let {
-    // Display packages for sale
-  }
-}
-```
-```java
-Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
-  @Override
-  public void onReceived(@NonNull Offerings offerings) {
-    if (offerings.get("experiment_group") != null) {
-      List<Package> availablePackages = offerings.get("experiment_group").getAvailablePackages();
-      // Display packages for sale
-    }
-  }
-  
-  @Override
-  public void onError(@NonNull PurchasesError error) {
-    // An error occurred
-  }
-});
-```
-```javascript Flutter
-try {
-  Offerings offerings = await Purchases.getOfferings();
-  if (offerings.getOffering("experiment_group").availablePackages.isNotEmpty) {
-    // Display packages for sale
-  }
-} on PlatformException catch (e) {
-	// optional error handling
-}
-```
-```javascript React Native
-try {
-  const offerings = await Purchases.getOfferings();
-  if (offerings.all["experiment_group"].availablePackages.length !== 0) {
-    // Display packages for sale
-  }
-} catch (e) {
- 
-}
-```
-```javascript Cordova
-Purchases.getOfferings(
-      offerings => {
-        if (offerings.all["experiment_group"].availablePackages.length !== 0) {
-			    // Display packages for sale
-        }
-      },
-      error => {
-
-      }
-  );
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.GetOfferings((offerings, error) =>
-{
-  if (offerings.All.ContainsKey("experiment_group") && offerings.All["experiment_group"].AvailablePackages.Count != 0) {
-  	// Display packages for sale
-  }
-});
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_9.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_10.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_11.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_12.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_13.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_14.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_15.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_16.cs"}
+[/block]
 
 
 
@@ -259,55 +142,27 @@ Packages can be access in a few different ways:
 2. via the duration convenience property on an Offering
 3. via the package identifier directly
 
-```swift
-offerings.offering(identifier: "experiment_group").availablePackages
-// --
-offerings.offering(identifier: "experiment_group").monthly
-// --
-offerings.offering(identifier: "experiment_group").package(identifier: "<package_id>")
-```
-```objectivec
-[offerings offeringWithIdentifier:"experiment_group"].availablePackages
-// --
-[offerings offeringWithIdentifier:"experiment_group"].monthly
-// --
-[[offerings offeringWithIdentifier:"experiment_group"] packageWithIdentifier:@"<package_id>"]
-```
-```kotlin
-offerings["experiment_group"]?.availablePackages
-// --
-offerings["experiment_group"]?.monthly
-// --
-offerings["experiment_group"]?.getPackage("<package_id>")
-```
-```javascript Flutter
-offerings.getOffering("experiment_group").availablePackages
-// --
-offerings.getOffering("experiment_group").monthly
-// --
-offerings.getOffering("experiment_group").getPackage("<package_id>")
-```
-```javascript React Native
-offerings.all["experiment_group"].availablePackages
-// --
-offerings.all["experiment_group"].monthly
-// --
-offerings.all["experiment_group"].availablePackages.find(package => package === "<package_id>")
-```
-```javascript Cordova
-offerings.all["experiment_group"].availablePackages
-// --
-offerings.all("experiment_group").monthly
-// --
-offerings.all("experiment_group").package("<package_id>")
-```
-```csharp Unity
-offerings.All["experiment_group"].AvailablePackages
-// --
-offerings.All["experiment_group"].Monthly
-// --
-// Manually filter AvailablePackages by the custom package identifier
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_17.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_18.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_19.kt"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_20.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_21.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_22.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_23.cs"}
+[/block]
 
 
 
@@ -315,111 +170,30 @@ offerings.All["experiment_group"].Monthly
 
 Each Package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the `storeProduct` property:
 
-```swift Swift
-// Accessing the monthly product
-
-Purchases.shared.getOfferings { (offerings, error) in
-    if let package = offerings?.current?.monthly?.storeProduct {
-        // Get the price and introductory period from the StoreProduct
-    }
-}
-```
-```objectivec Objective-C
-// Accessing the monthly product
-
-[[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {
-  if (offerings.current && offerings.current.monthly) {
-    SKProduct *product = offerings.current.monthly.storeProduct;
-    // Get the price and introductory period from the StoreProduct
-  } else if (error) {
-    // optional error handling
-  }
-}];
-```
-```kotlin Kotlin
-// Accessing the monthly product
-
-Purchases.sharedInstance.getOfferingsWith({ error ->
-  // An error occurred
-}) { offerings ->
-  val product = offerings.current?.monthly?.product?.also {
-    // Get the price and introductory period from the SkuDetails
-  }
-}
-```
-```java Java
-// Accessing the monthly product
-
-Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
-  @Override
-  public void onReceived(@NonNull Offerings offerings) {
-    if (offerings.getCurrent() != null && offerings.getCurrent().getMonthly() != null) {
-      StoreProduct product = offerings.getCurrent().getMonthly().getProduct();
-      // Get the price and introductory period from the StoreProduct
-    }
-  }
-  
-  @Override
-  public void onError(@NonNull PurchasesError error) {
-    // An error occurred
-  }
-});
-```
-```javascript Flutter
-// Accessing the monthly product// Displaying the monthly product
-
-try {
-  Offerings offerings = await Purchases.getOfferings();
-  if (offerings.current != null && offerings.current.monthly != null) {
-    Product product = offerings.current.monthly.product;
-    // Get the price and introductory period from the Product
-  }
-} on PlatformException catch (e) {
-	// optional error handling
-}
-```
-```javascript React Native
-// Accessing the monthly product// Displaying the monthly product
-
-try {
-  const offerings = await Purchases.getOfferings();
-  if (offerings.current && offerings.current.monthly) {
-    const product = offerings.current.monthly;
-    // Get the price and introductory period from the PurchasesProduct
-  }
-} catch (e) {
- 
-}
-```
-```javascript Cordova
-// Accessing the monthly product
-
-func displayUpsellScreen() {
-  Purchases.getOfferings(
-      offerings => {
-        if (offerings.current && offerings.current.monthly) {  
-          const product = offerings.current.monthly;
-			    // Get the price and introductory period from the PurchasesProduct
-        }
-      },
-      error => {
-
-      }
-  );
-}
-```
-```csharp Unity
-// Accessing the monthly product
-
-var purchases = GetComponent<Purchases>();
-purchases.GetOfferings((offerings, error) =>
-{
-  if (offerings.Current != null && offerings.Current.Monthly != null){
-    var product = offerings.Current.Monthly.Product;
-    // Get the price and introductory period from the Product
-  }
-});
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🚀 Getting Started/displaying-products_24.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_25.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"Kotlin","file":"code_blocks/🚀 Getting Started/displaying-products_26.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"Java","file":"code_blocks/🚀 Getting Started/displaying-products_27.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_28.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_29.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_30.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_31.cs"}
+[/block]
 
 
 
@@ -431,137 +205,30 @@ For example, displaying a higher priced Offering to users that came from [paid a
 
 This can be accomplished with custom Offering identifiers for each of these "cohorts".
 
-```swift Swift
-Purchases.shared.getOfferings { (offerings, error) in
-    var packages : [Package]?
-    
-    if user.isPaidDownload {
-        packages = offerings?.offering(identifier: "paid_download_offer")?.availablePackages
-    } else if user.signedUpOver30DaysAgo {
-        packages = offerings?.offering(identifier: "long_term_offer")?.availablePackages
-    } else if user.recentlyChurned {
-        packages = offerings?.offering(identifier: "ios_subscription_offer")?.availablePackages
-    }
-    
-    // Present your paywall
-}
-```
-```objectivec Objective-C
-[[RCPurchases sharedPurchases] offeringsWithCompletionBlock:^(RCOfferings *offerings, NSError *error) {
-  NSArray<RCPackage *> *packages;
-  
-  if (user.isPaidDownload) {
-    packages = [offerings offeringWithIdentifier:"paid_download_offer"].availablePackages;
-  } else if (user.signedUpOver30DaysAgo) {
-    packages = [offerings offeringWithIdentifier:"long_term_offer"].availablePackages;
-  } else if (user.recentlyChurned) {
-    packages = [offerings offeringWithIdentifier:"ios_subscription_offer"].availablePackages;
-  }
-  
-  [self presentPaywallWithPackages:packages];
-}];
-```
-```kotlin
-Purchases.sharedInstance.getOfferingsWith({ error ->
-  // An error occurred
-}) { offerings ->
-  val packages: Package? = when {
-    user.isPaidDownload -> offerings["paid_download_offer"]?.availablePackages
-    user.signedUpOver30DaysAgo -> offerings["long_term_offer"]?.availablePackages
-    user.recentlyChurned -> offerings["ios_subscription_offer"].availablePackages
-    else -> null
-  }
-	presentPaywall(packages)
-}
-```
-```java
-Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
-  @Override
-  public void onReceived(@NonNull Offerings offerings) {
-    List<Package> packages = null;
-    if (user.isPaidDownload) {
-      if (offerings.get("paid_download_offer") != null) {
-        packages = offerings.get("paid_download_offer").getAvailablePackages();
-      }
-    } else if (user.signedUpOver30DaysAgo) {
-      if (offerings.get("long_term_offer") != null) {
-        packages = offerings.get("long_term_offer").getAvailablePackages();
-      }
-    }
-    presentPaywall(packages);
-  }
-  
-  @Override
-  public void onError(@NonNull PurchasesError error) {
-    // An error occurred
-  }
-});
-```
-```javascript Flutter
-try {
-  Offerings offerings = await Purchases.getOfferings();
-  var packages;
-  if (user.isPaidDownload) {
-    packages = offerings?.getOffering("paid_download_offer")?.availablePackages;
-  } else if (user.signedUpOver30DaysAgo) {
-    packages = offerings?.getOffering("long_term_offer")?.availablePackages;
-  } else if (user.recentlyChurned) {
-    packages = offerings?.getOffering("ios_subscription_offer")?.availablePackages;
-  }
-  presentPaywall(packages);
-} on PlatformException catch (e) {
-	// optional error handling
-}
-```
-```javascript React Native
-try {
-  const offerings = await Purchases.getOfferings();
-  let packages;
-  if (user.isPaidDownload) {
-    packages = offerings.all["paid_download_offer"].availablePackages;
-  } else if (user.signedUpOver30DaysAgo) {
-    packages = offerings.all["long_term_offer"].availablePackages;
-  } else if (user.recentlyChurned) {
-    packages = offerings.all["ios_subscription_offer"].availablePackages;
-  }
-  presentPaywall(packages);
-} catch (e) {
- 
-}
-```
-```javascript Cordova
-Purchases.getOfferings(
-      offerings => {
-        let packages;
-        if (user.isPaidDownload) {
-          packages = offerings.all["paid_download_offer"].availablePackages;
-        } else if (user.signedUpOver30DaysAgo) {
-          packages = offerings.all["long_term_offer"].availablePackages;
-        } else if (user.recentlyChurned) {
-          packages = offerings.all["ios_subscription_offer"].availablePackages;
-        }
-        presentPaywall(packages);
-      },
-      error => {
-
-      }
-  );
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.GetOfferings((offerings, error) =>
-{
-  List<Purchases.Package> packages;
-  if (user.isPaidDownload) {
-    packages = offerings.All["paid_download_offer"].AvailablePackages;
-  } else if (user.signedUpOver30DaysAgo) {
-    packages = offerings.All["long_term_offer"].AvailablePackages;
-  } else if (user.recentlyChurned) {
-    packages = offerings.All["ios_subscription_offer"].AvailablePackages;
-  }
-  presentPaywall(packages);
-});
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🚀 Getting Started/displaying-products_32.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_33.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_34.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_35.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_36.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_37.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_38.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_39.cs"}
+[/block]
 
 
 

@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-06-04T17:15:44.078Z'
 updatedAt: '2023-04-28T15:13:18.507Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 Although RevenueCat is primarily used to handle subscription purchases, our SDK will track all purchases, including consumable and non-consumable in-app purchases (**IAPs**). This makes it easy to track your app's total revenue with RevenueCat's powerful reporting features.
 
@@ -77,14 +77,9 @@ Each package should contain a different quantity of coins. For our example, let'
 
 Attach your products to each package, and you're ready to use to Purchases SDK to display your offering. On iOS, you could fetch the offering like this:
 
-```swift
-Purchases.shared.getOfferings { (offerings, error) in
-	if let coinOffering = offerings?["coins"] {
-		let packages = coinOffering.availablePackages
-		// `packages` should contain each coin package with an identifier like 'coins-100'
-	}
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/non-subscriptions_1.swift"}
+[/block]
 
 
 
@@ -92,13 +87,9 @@ For more information displaying products, check out the [Displaying Products](do
 
 When you're ready to purchase one of the coin packages, pass the package object to the Purchases SDK, like the following:
 
-```swift
-Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled)
-	if let customerInfo = customerInfo, error == nil {
-		// validate the purchase with your server, and display content
-	}
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/non-subscriptions_2.swift"}
+[/block]
 
 
 

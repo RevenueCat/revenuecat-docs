@@ -5,7 +5,7 @@ excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
 createdAt: '2022-05-18T16:50:15.163Z'
 updatedAt: '2022-05-31T21:57:04.294Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
 
@@ -133,30 +133,31 @@ No special requirements
 ❌ Not supported with client-side Observer Mode
 
 ## 1. Configure the SDK
-```swift
+```swift Swift
 Purchases.configure(
             withAPIKey: "my_api_key",
             appUserID: "my_app_user_id",
             observerMode: true)
 ```
-```objectivec
+```objectivec Objective-C
 [RCPurchases 
 	configureWithAPIKey:@"my_api_key" 
 	appUserID:@"my_app_user_id"
 	observerMode: YES];
 ```
-```kotlin
+```kotlin Kotlin
 Purchases.configure(this, "my_api_key", "my_app_user_id", true)
 ```
-```java
+```java Java
 Purchases.configure(this, "my_api_key", "my_app_user_id", true);
 ```
-```javascript
+```javascript Flutter
 await Purchases.setup("my_api_key", observerMode: true);
 ```
-```text
+```text Unity
 See "Enable Observer Mode in Unity configuration" below
 ```
+
 ### Enable Observer Mode in Unity configuration (Unity Only)
 [block:image]
 {
@@ -185,21 +186,22 @@ See "Enable Observer Mode in Unity configuration" below
 ##2. Sync purchases with RevenueCat (Android only)
 
 On Android (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
-```kotlin
+```kotlin 
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.sharedInstance.syncPurchases()
 ```
-```java
+```java 
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.getSharedInstance().syncPurchases();
 ```
-```javascript
+```javascript React Native
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.syncPurchases();
 ```
+
 
 [block:callout]
 {

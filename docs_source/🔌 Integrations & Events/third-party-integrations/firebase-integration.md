@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-04-06T23:08:59.811Z'
 updatedAt: '2023-04-27T20:07:37.344Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -67,35 +67,9 @@ Before installing this extension, set up the following Firebase services in your
 
 You should make sure to use the Firebase UID as the RevenueCat app user ID when setting the Firebase user identity in RevenueCat. This step is optional, but highly recommended as a best practice for the Google Analytics portion of this integration. The Firebase Extension portion **requires** this step to be completed.
 
-```swift
-import FirebaseAuth
-import RevenueCat
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
-    // Configure Purchases before Firebase
-    Purchases.configure(withAPIKey: "public_sdk_key")
-    Purchases.shared.delegate = self
-    
-    // Add state change listener for Firebase Authentication
-    Auth.auth().addStateDidChangeListener { (auth, user) in
-    
-            
-        if let uid = user?.uid {
-            
-            // identify Purchases SDK with new Firebase user
-            Purchases.shared.logIn(uid, { (info, created, error) in
-                if let e = error {
-                    print("Sign in error: \(e.localizedDescription)")
-                } else {
-                    print("User \(uid) signed in")
-                }
-            })
-        }
-    }
-    return true
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_1.swift"}
+[/block]
 
 
 
@@ -107,29 +81,9 @@ In order to send subscriber lifecycle events to Google Analytics, you must set t
 
 Please ensure you're getting the app instance ID from the [Firebase Analytics](https://firebase.google.com/docs/analytics/get-started) package.
 
-```swift
-import FirebaseAuth
-import RevenueCat
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
-    // Configure Purchases before Firebase
-    Purchases.configure(withAPIKey: "public_sdk_key")
-    Purchases.shared.delegate = self
-
-    // Set the reserved $firebaseAppInstanceId subscriber attribute from Firebase Analytics
-    let instanceID = Analytics.appInstanceID();
-    if let unwrapped = instanceID {
-      print("Instance ID -> " + unwrapped);
-     	print("Setting Attributes");
-      Purchases.shared.attribution.setFirebaseAppInstanceID(unwrapped)
-     } else {
-     	print("Instance ID -> NOT FOUND!");
-     }
-    
-    return true
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_2.swift"}
+[/block]
 
 
 
@@ -378,20 +332,9 @@ You will be charged a small amount (typically around $0.01/month) for the Fireba
 
 Set your security rules so that only authenticated users can access customer information, and that each user can only access their own information. 
 
-```text
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /${param:REVENUECAT_CUSTOMERS_COLLECTION}/{uid} {
-      allow read: if request.auth.uid == uid;
-    }
-
-    match /${param:REVENUECAT_EVENTS_COLLECTION}/{id} {
-      allow read: if request.auth.uid == resource.app_user_id
-    }
-  }
-}
-```
+[block:file]
+{"language":"text","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_3.txt"}
+[/block]
 
 
 
@@ -597,374 +540,48 @@ Navigate to your Firebase dashboard > Firestore Database to find events sent for
 
 Below are sample JSONs that are delivered to Firestore Database for each event type. 
 
-```json Initial Purchase
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "purchase",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.tokens.1000",
-                "period_type": "NORMAL",
-                "purchased_at": 1658338961415000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "",
-                "transaction_id": "GPA.1234-5678-9012-34567",
-                "affiliation": "PLAY_STORE",
-                "original_transaction_id": "GPA.1234-5678-9012-34567",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "currency": "USD",
-                "value": 1.99,
-                "coupon": "",
-                "is_trial_conversion": false,
-                "is_renewal": false,
-                "items": [
-                    {
-                        "item_id": "com.tokens.1000",
-                        "affiliation": "PLAY_STORE"
-                    }
-                ]
-            }
-        }
-    ]
-}
-```
-```json Trial Started
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_trial_start",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.subscription.weekly.2",
-                "period_type": "TRIAL",
-                "purchased_at": 1660393525000000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "",
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1660652725000000,
-                "app_id": "app1234567890"
-            }
-        }
-    ]
-}
-```
-```json Trial Cancelled
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_cancellation",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.subscription.monthly1",
-                "period_type": "TRIAL",
-                "purchased_at": 1660161398000000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "default",
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1662839798000000,
-                "cancel_reason": "UNSUBSCRIBE",
-                "app_id": "app1234567890"
-            }
-        }
-    ]
-}
-```
-```json Trial Converted
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "purchase",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.subscription.1year",
-                "period_type": "NORMAL",
-                "purchased_at": 1660422876000000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "instantOffer",
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1691958876000000,
-                "app_id": "app1234567890",
-                "currency": "USD",
-                "value": 59.99,
-                "coupon": "",
-                "is_trial_conversion": true,
-                "is_renewal": false,
-                "items": [
-                    {
-                        "item_id": "com.subscription.1year",
-                        "affiliation": "APP_STORE"
-                    }
-                ]
-            }
-        }
-    ]
-}
-```
-```json Renewal
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "purchase",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "monthly_sub_pro",
-                "period_type": "NORMAL",
-                "purchased_at": 1647907092000000,
-                "expiration_at": 1647907392000000,
-                "environment": "SANDBOX",
-                "presented_offering_id": null,
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "currency": "USD",
-                "value": 4.99,
-                "coupon": null,
-                "is_trial_conversion": false,
-                "is_renewal": true,
-                "items": [
-                    {
-                        "item_id": "monthly_sub_pro",
-                        "affiliation": "APP_STORE"
-                    }
-                ]
-            }
-        }
-    ]
-}
-```
-```json Cancellation
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_cancellation",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "monthly_sub_pro",
-                "period_type": "NORMAL",
-                "purchased_at": 1647908709000000,
-                "expiration_at": 1647909009000000,
-                "environment": "SANDBOX",
-                "presented_offering_id": null,
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "cancel_reason": "UNSUBSCRIBE"
-            }
-        }
-    ]
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_9.json"}
+[/block]
 
 
 
-```json Uncancellation
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_uncancellation",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "yearly_sub",
-                "period_type": "TRIAL",
-                "purchased_at": 1653559391000000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": null,
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1653818591000000
-            }
-        }
-    ]
-}
-```
-```json Non Subscription Purchase
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "purchase",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.tokens.1000",
-                "period_type": "NORMAL",
-                "purchased_at": 1658338961415000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "",
-                "transaction_id": "GPA.1234-5678-9012-34567",
-                "affiliation": "PLAY_STORE",
-                "original_transaction_id": "GPA.1234-5678-9012-34567",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "currency": "USD",
-                "value": 1.99,
-                "coupon": "",
-                "is_trial_conversion": false,
-                "is_renewal": false,
-                "items": [
-                    {
-                        "item_id": "com.tokens.1000",
-                        "affiliation": "PLAY_STORE"
-                    }
-                ]
-            }
-        }
-    ]
-}
-```
-```json Subscription Paused
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_subscription_paused",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "sub_month_2",
-                "period_type": "NORMAL",
-                "purchased_at": 1652038237835000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "2",
-                "transaction_id": "GPA.1234-5678-9012-34567",
-                "affiliation": "PLAY_STORE",
-                "original_transaction_id": "GPA.1234-5678-9012-34567",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1654723837835000,
-                "auto_resumes_at": 1662665437835000
-            }
-        }
-    ]
-}
-```
-```json Expiration
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_expiration",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "monthly_pro",
-                "period_type": "NORMAL",
-                "purchased_at": 1647908709000000,
-                "expiration_at": 1647909009000000,
-                "environment": "SANDBOX",
-                "presented_offering_id": null,
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_reason": "UNSUBSCRIBE"
-            }
-        }
-    ]
-}
-```
-```json Billing Issues
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_billing_issue",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.subscription_weekly_trial",
-                "period_type": "NORMAL",
-                "purchased_at": 1657734228000000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "",
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1658857428000000,
-                "grace_period_expires_at": 1658857428000000
-            }
-        }
-    ]
-}
-```
-```json Product Change
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_product_change",
-           "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "annual_sub",
-                "period_type": "NORMAL",
-                "purchased_at": 1652866828000000,
-                "environment": "SANDBOX",
-                "presented_offering_id": null,
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1652868988000000
-            }
-        }
-    ]
-}
-```
-```json,json Transfer
-{
-    "app_instance_id": "1234567ab8901cd234e56f789gh0i123",
-    "user_id": "1234567890",
-    "events": [
-        {
-            "name": "rc_transfer",
-            "params": {
-                "event_id": "12345678-1234-56a7-b8c9-012defg3h4i5",
-                "product_id": "com.subscription.weekly.2",
-                "period_type": "NORMAL",
-                "purchased_at": 1660393525000000,
-                "environment": "PRODUCTION",
-                "presented_offering_id": "",
-                "transaction_id": "123456789012345",
-                "affiliation": "APP_STORE",
-                "original_transaction_id": "123456789012345",
-                "original_app_user_id": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-                "expiration_at": 1660652725000000,
-                "app_id": "app1234567890"
-                "transferred_from": "$RCAnonymousID:12345678912345678912345678912345",
-                "transferred_to": "$RCAnonymousID:87c6049c58069238dce29853916d624c",
-            }
-        }
-    ]
-}
-```
+[block:file]
+{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_10.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_11.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Subscription Paused","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_12.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_13.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_14.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_15.json"}
+[/block]
+[block:file]
+{"language":"json,json","name":"Transfer","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_16.json,json"}
+[/block]
 
 
 
@@ -974,22 +591,9 @@ Below are sample JSONs that are delivered to Firestore Database for each event t
 
 To check access to entitlements, you can either [use the RevenueCat SDK](https://docs.revenuecat.com/docs/getting-started#10-get-subscription-status) or use Firebase Authentication custom claims. For example, to check whether the current user has access to an entitlement called `premium`, you could use the following Firebase code:
 
-```javascript
-getAuth().currentUser.getIdTokenResult()
-  .then((idTokenResult) => {
-     // Confirm the user has a premium entitlement.
-     if (!!idTokenResult.claims.activeEntitlements.includes("premium")) {
-       // Show premium UI.
-       showPremiumUI();
-     } else {
-       // Show regular user UI.
-       showFreeUI();
-     }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-```
+[block:file]
+{"language":"javascript","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_17.js"}
+[/block]
 
 
 
@@ -997,16 +601,9 @@ getAuth().currentUser.getIdTokenResult()
 
 To list a user's active subscriptions, you could use the following Firebase code:
 
-```javascript
-getDoc(doc(db, "${param:REVENUECAT_CUSTOMERS_COLLECTION}", getAuth().currentUser.uid))
-  .then((snapshot) => {
-    if (snapshot.exists()) {
-      snapshot.subscriptions
-        .filter(subscription => new Date(subscription.expires_date) >= new Date())
-        .forEach(subscription => console.log(JSON.stringify(subscription)));
-    }
-  });
-```
+[block:file]
+{"language":"javascript","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_18.js"}
+[/block]
 
 
 

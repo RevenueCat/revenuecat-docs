@@ -16,7 +16,7 @@ metadata:
     4: "#e9acb0"
 createdAt: '2020-07-30T17:43:45.879Z'
 updatedAt: '2021-12-03T04:07:47.324Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our SearchAdsHQ integration you can:
 * Accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate.
@@ -29,8 +29,9 @@ The SearchAdsHQ integration requires that Apple Search Ads attribution data is s
 
 The simplest way to collect this information is by setting the `automaticAppleSearchAdsAttributionCollection` property to `true` **before** configuring the *Purchases SDK*.
 [block:file]
-swift->code_blocks/🔌 Integrations & Events/attribution/searchadshq_1.swift
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/searchadshq_1.swift"}
 [/block]
+
 Our guide on [Apple Search Ads attribution](doc:apple-search-ads) outlines this step in more detail.
 
 The integration also accepts some optional device-specific data below:
@@ -50,8 +51,9 @@ The integration also accepts some optional device-specific data below:
 [/block]
 This data should be sent to RevenueCat through reserved [Subscriber Attributes](doc:subscriber-attributes) keys. 
 [block:file]
-swift->code_blocks/🔌 Integrations & Events/attribution/searchadshq_2.swift
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/searchadshq_2.swift"}
 [/block]
+
 
 [block:callout]
 {

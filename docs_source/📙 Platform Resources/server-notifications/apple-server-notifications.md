@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-09-29T15:21:09.333Z'
 updatedAt: '2023-02-23T22:05:19.393Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 RevenueCat does not require server notifications from the App Store, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 
@@ -139,5 +139,5 @@ The payload should be passed along **as-is** in the data value of your request. 
 
 Here's a basic example of these steps using Node, Express, and Axios:
 [block:file]
-javascript->code_blocks/📙 Platform Resources/server-notifications/apple-server-notifications_1.js
+{"language":"javascript","name":"","file":"code_blocks/📙 Platform Resources/server-notifications/apple-server-notifications_1.js"}
 [/block]

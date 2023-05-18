@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-28T00:12:22.055Z'
 updatedAt: '2023-04-28T00:12:22.055Z'
-category: 64515c39b05512007222ab6a
+category: 646582bdd4a12f005f28be1e
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
 
@@ -237,12 +237,12 @@ purchases.Configure(purchasesConfiguration);
 
 On Android with Google Play (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 
-```kotlin
+```kotlin 
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.sharedInstance.syncPurchases()
 ```
-```java
+```java 
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.getSharedInstance().syncPurchases();
@@ -304,7 +304,7 @@ public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)
    return PurchaseProcessingResult.Complete;
 }
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.syncObserverModeAmazonPurchase(
   receipt.termSku,
   receipt.receiptId,

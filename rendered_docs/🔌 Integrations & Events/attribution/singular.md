@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-07-29T17:30:24.269Z'
 updatedAt: '2023-03-28T21:51:12.011Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Singular integration you can:
 
@@ -44,7 +44,7 @@ Purchases.configure(withAPIKey: "public_sdk_key")
 // ...
 Purchases.shared.attribution.collectDeviceIdentifiers()
 ```
-```kotlin
+```kotlin 
 //..
 Purchases.configure(this, "public_sdk_key")
 //..

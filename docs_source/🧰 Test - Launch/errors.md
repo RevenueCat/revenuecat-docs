@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-27T15:08:14.630Z'
 updatedAt: '2023-03-27T15:08:14.630Z'
-category: 64515c3aa16590000a27cd9d
+category: 646582bf8197f50019e3c59c
 ---
 [block:callout]
 {
@@ -40,9 +40,12 @@ When investigating or logging errors, review the `errorUserInfo` dictionary, pay
 
 ### Examples
 [block:file]
-swift->code_blocks/🧰 Test - Launch/errors_1.swift
-objectivec->code_blocks/🧰 Test - Launch/errors_1.m
+{"language":"swift","name":"","file":"code_blocks/🧰 Test - Launch/errors_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🧰 Test - Launch/errors_2.m"}
+[/block]
+
 ## Android Errors
 On Android, when an error has occurred, the `onError` listener will receive a `PurchasesError` object.
 
@@ -53,8 +56,9 @@ When investigating or logging errors, review the properties of `PurchasesError`:
 
 ### Examples
 [block:file]
-kotlin->code_blocks/🧰 Test - Launch/errors_2.kt
+{"language":"kotlin","name":"","file":"code_blocks/🧰 Test - Launch/errors_3.kt"}
 [/block]
+
 # Legend
 When debugging errors, it's important to consider whether the error was thrown by RevenueCat, Apple, or Google. This can help you pinpoint where to look for a resolution. 
 [block:parameters]

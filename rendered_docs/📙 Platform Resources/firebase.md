@@ -16,7 +16,7 @@ metadata:
     4: "#e9acb0"
 createdAt: '2022-05-11T20:25:11.081Z'
 updatedAt: '2022-05-11T20:25:11.081Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 # What is RevenueCat?
 
@@ -39,7 +39,7 @@ It's simple to keep your user IDs from Firebase in sync with the RevenueCat back
 Below are practical examples of setting this up in your application:
 
 ## iOS
-```swift
+```swift 
 import Firebase
 import RevenueCat
 
@@ -85,8 +85,9 @@ func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInf
     NotificationCenter.default.post(name: Notification.Name(rawValue: "com.RevenueCat.customerInfoUpdatedNotification"), object: nil)
 }
 ```
+
 ## Android
-```kotlin
+```kotlin 
 class MainApplication: Application() {
 
     private lateinit var auth: FirebaseAuth
@@ -139,6 +140,7 @@ class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {
 }
 ```
 
+
 [block:callout]
 {
   "type": "info",
@@ -170,7 +172,7 @@ The URL of the `incomingWebhook` function should be pasted into the RevenueCat d
 }
 [/block]
 ## Function Code
-```javascript
+```javascript index.js
 const functions = require('firebase-functions');
 const {PubSub} = require('@google-cloud/pubsub');
 
@@ -311,6 +313,7 @@ exports.handleSubscriberAlias = functions.pubsub.topic('rc-subscriber-alias').on
   return null;
 });
 ```
+
 
 [block:callout]
 {

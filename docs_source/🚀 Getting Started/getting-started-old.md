@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-12-09T20:31:16.384Z'
 updatedAt: '2022-12-09T20:31:16.384Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 
@@ -144,14 +144,30 @@ See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-
 Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
 [block:file]
-swift->code_blocks/🚀 Getting Started/getting-started-old_1.swift
-objectivec->code_blocks/🚀 Getting Started/getting-started-old_1.m
-kotlin->code_blocks/🚀 Getting Started/getting-started-old_1.kt
-java->code_blocks/🚀 Getting Started/getting-started-old_1.java
-javascript->code_blocks/🚀 Getting Started/getting-started-old_1.js
-typescript->code_blocks/🚀 Getting Started/getting-started-old_1.ts
-text->code_blocks/🚀 Getting Started/getting-started-old_1.txt
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started-old_5.js"}
+[/block]
+[block:file]
+{"language":"typescript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started-old_6.ts"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started-old_7.js"}
+[/block]
+[block:file]
+{"language":"text","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started-old_8.txt"}
+[/block]
+
 When in development, we recommend enabling more verbose debug logs. For more information about these logs, see our [Debugging](doc:debugging) guide.  
 
 If you're planning to use RevenueCat alongside your existing purchase code, check out our guide on [Observer Mode](doc:observer-mode).
@@ -168,14 +184,33 @@ The SDK will automatically fetch the [configured Offerings](doc:entitlements#off
 
 Below is an example of fetching Offerings. You can utilize Offerings to organize your paywall screen. See our guide on [Displaying Products](doc:displaying-products) for more information and best practices.
 [block:file]
-swift->code_blocks/🚀 Getting Started/getting-started-old_2.swift
-objectivec->code_blocks/🚀 Getting Started/getting-started-old_2.m
-kotlin->code_blocks/🚀 Getting Started/getting-started-old_2.kt
-java->code_blocks/🚀 Getting Started/getting-started-old_2.java
-javascript->code_blocks/🚀 Getting Started/getting-started-old_2.js
-csharp->code_blocks/🚀 Getting Started/getting-started-old_2.cs
-curl->code_blocks/🚀 Getting Started/getting-started-old_2.curl
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_9.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_10.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_11.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_12.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started-old_13.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started-old_14.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started-old_15.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started-old_16.cs"}
+[/block]
+[block:file]
+{"language":"curl","name":"Web","file":"code_blocks/🚀 Getting Started/getting-started-old_17.curl"}
+[/block]
+
 
 [block:html]
 {
@@ -196,14 +231,33 @@ The SDK includes a simple method for facilitating purchases. The `purchase:packa
 The code sample below shows the process of purchasing a package and confirming it unlocks the "your_entitlement_id" content. More detail about the `purchase:package` method can be found in our guide on [Making Purchases](doc:making-purchases).
 
 [block:file]
-swift->code_blocks/🚀 Getting Started/getting-started-old_3.swift
-objectivec->code_blocks/🚀 Getting Started/getting-started-old_3.m
-kotlin->code_blocks/🚀 Getting Started/getting-started-old_3.kt
-java->code_blocks/🚀 Getting Started/getting-started-old_3.java
-javascript->code_blocks/🚀 Getting Started/getting-started-old_3.js
-csharp->code_blocks/🚀 Getting Started/getting-started-old_3.cs
-curl->code_blocks/🚀 Getting Started/getting-started-old_3.curl
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_18.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_19.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_20.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_21.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started-old_22.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started-old_23.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started-old_24.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started-old_25.cs"}
+[/block]
+[block:file]
+{"language":"curl","name":"Web","file":"code_blocks/🚀 Getting Started/getting-started-old_26.curl"}
+[/block]
+
 
 [block:html]
 {
@@ -223,14 +277,33 @@ The SDK makes it easy to check what active subscriptions the current customer ha
 
 If you're not using Entitlements (you probably should be!) you can check the array of active subscriptions to see what product IDs from the respective store it contains.
 [block:file]
-swift->code_blocks/🚀 Getting Started/getting-started-old_4.swift
-objectivec->code_blocks/🚀 Getting Started/getting-started-old_4.m
-kotlin->code_blocks/🚀 Getting Started/getting-started-old_4.kt
-java->code_blocks/🚀 Getting Started/getting-started-old_4.java
-javascript->code_blocks/🚀 Getting Started/getting-started-old_4.js
-csharp->code_blocks/🚀 Getting Started/getting-started-old_4.cs
-curl->code_blocks/🚀 Getting Started/getting-started-old_4.curl
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_27.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_28.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_29.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_30.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started-old_31.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started-old_32.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started-old_33.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started-old_34.cs"}
+[/block]
+[block:file]
+{"language":"curl","name":"Web","file":"code_blocks/🚀 Getting Started/getting-started-old_35.curl"}
+[/block]
+
 
 [block:html]
 {
@@ -251,13 +324,30 @@ It's typical to call this method when deciding which UI to show the user and whe
 
 RevenueCat enables your users to restore their in-app purchases, reactivating any content that they previously purchased from the **same store account** (Apple, Google, or Amazon account). We recommend that all apps have some way for users to trigger the restore method. Note that Apple does require a restore mechanism in the event a user loses access to their purchases (e.g: uninstalling/reinstalling the app, losing their account information, etc).
 [block:file]
-swift->code_blocks/🚀 Getting Started/getting-started-old_5.swift
-objectivec->code_blocks/🚀 Getting Started/getting-started-old_5.m
-kotlin->code_blocks/🚀 Getting Started/getting-started-old_5.kt
-java->code_blocks/🚀 Getting Started/getting-started-old_5.java
-javascript->code_blocks/🚀 Getting Started/getting-started-old_5.js
-csharp->code_blocks/🚀 Getting Started/getting-started-old_5.cs
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_36.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_37.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_38.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_39.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started-old_40.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started-old_41.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started-old_42.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started-old_43.cs"}
+[/block]
+
 
 [block:html]
 {
@@ -275,13 +365,30 @@ Since the SDK works seamlessly on any platform, changes to a user's purchase inf
 
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to customer information the next time your app is launched or in the completion blocks of the SDK methods.
 [block:file]
-swift->code_blocks/🚀 Getting Started/getting-started-old_6.swift
-objectivec->code_blocks/🚀 Getting Started/getting-started-old_6.m
-kotlin->code_blocks/🚀 Getting Started/getting-started-old_6.kt
-java->code_blocks/🚀 Getting Started/getting-started-old_6.java
-javascript->code_blocks/🚀 Getting Started/getting-started-old_6.js
-csharp->code_blocks/🚀 Getting Started/getting-started-old_6.cs
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_44.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_45.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_46.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started-old_47.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started-old_48.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started-old_49.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started-old_50.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started-old_51.cs"}
+[/block]
+
 
 [block:html]
 {

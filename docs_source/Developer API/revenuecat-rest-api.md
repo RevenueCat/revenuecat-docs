@@ -4,7 +4,7 @@ slug: revenuecat-rest-api
 hidden: false
 createdAt: '2023-04-11T22:34:48.009Z'
 updatedAt: '2023-04-28T00:36:19.795Z'
-category: 64515c3b7df88700248e78b3
+category: 646582c09e898903756111e2
 ---
 > 📘 New to RevenueCat?
 > 
@@ -34,9 +34,9 @@ Authentication for the RevenueCat REST API is achieved by setting the `Authoriza
 
 Certain endpoints require secret keys, which should be kept out of any publicly accessible areas such as GitHub, client-side code, and so forth. See our [Authentication guide](doc:authentication) for more information.
 
-```text Authorization Header
-Authorization: Bearer YOUR_REVENUECAT_API_KEY
-```
+[block:file]
+{"language":"text","name":"Authorization Header","file":"code_blocks/Developer API/revenuecat-rest-api_1.txt"}
+[/block]
 
 
 
@@ -58,18 +58,15 @@ Each endpoint in this documentation will contain a description informing you whi
 
 The body of the `POST` requests should be encoded in JSON and have the 'Content-Type' header set to 'application/json'.
 
-```text Content-Type Header
-Content-Type: application/json
-```
+[block:file]
+{"language":"text","name":"Content-Type Header","file":"code_blocks/Developer API/revenuecat-rest-api_2.txt"}
+[/block]
 
 
 
-```json sample body
-{
-  "app_user_id": "user-1456",
-  "fetch_token": "MQABC...EFH1234="
-}
-```
+[block:file]
+{"language":"json","name":"sample body","file":"code_blocks/Developer API/revenuecat-rest-api_3.json"}
+[/block]
 
 
 

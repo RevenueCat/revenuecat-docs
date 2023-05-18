@@ -1,0 +1,11 @@
+// Install Cordova plugin
+npm install cordova-plugin-purchases
+
+// Install Ionic Native core library (once per project)
+npm install @awesome-cordova-plugins/core --save
+
+// Install TypeScript wrapper
+npm install @awesome-cordova-plugins/purchases
+
+// Update native platform project(s) to include newly added plugin
+ionic cap sync

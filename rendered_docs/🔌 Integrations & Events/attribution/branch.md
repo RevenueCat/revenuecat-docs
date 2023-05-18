@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:34:30.366Z'
 updatedAt: '2023-03-28T21:34:30.366Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Branch integration you can:
 
@@ -40,7 +40,7 @@ If you prefer to keep a separate user identity between Branch and RevenueCat, se
 > 
 > You will need to add the Branch SDK to your app before you can connect it with RevenueCat
 
-```swift
+```swift 
 // login
 Branch.getInstance().setIdentity("my_app_user_id")
 
@@ -50,14 +50,14 @@ Purchases.shared.attribution.setAttributes(["$branchId" : "<custom_branch_user_i
 // logout
 Branch.getInstance().logout()
 ```
-```objectivec
+```objectivec 
 // login
 [[Branch getInstance] setIdentity:@"my_app_user_id"];
 
 // logout
 [[Branch getInstance] logout];
 ```
-```java
+```java 
 // login
 Branch.getInstance().setIdentity("my_app_user_id");
 
@@ -101,7 +101,7 @@ Purchases.shared.attribution.collectDeviceIdentifiers()
 // ...
 [[RCPurchases sharedPurchases] collectDeviceIdentifiers];
 ```
-```kotlin
+```kotlin 
 //..
 Purchases.configure(this, "public_sdk_key")
 //..

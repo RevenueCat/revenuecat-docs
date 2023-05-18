@@ -12,7 +12,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-03-23T14:39:58.758Z'
 updatedAt: '2023-02-21T22:10:56.824Z'
-category: 64515c3f0b149d004ca541f9
+category: 646582c5895ade0068c36ca5
 ---
 [block:callout]
 {
@@ -53,12 +53,14 @@ There were various updates to our API in this release, in order to best support 
 
 The `configure` function has been changed to accept a `PurchasesConfiguration.Builder`. The previous function is deprecated. The new function can be used like this:
 [block:file]
-kotlin->code_blocks/📘 SDK Guides/migration-guides/android-native-4x-to-5x-migration_1.kt
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-4x-to-5x-migration_1.kt"}
 [/block]
+
 or for Amazon:
 [block:file]
-kotlin->code_blocks/📘 SDK Guides/migration-guides/android-native-4x-to-5x-migration_2.kt
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-4x-to-5x-migration_2.kt"}
 [/block]
+
 ## Making purchases
 `purchasePackage` and `purchaseProduct` callbacks have been changed to return a `StoreTransaction` instead of a `Purchase` in the `onCompleted`.  
 

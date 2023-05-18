@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-05-01T23:06:34.463Z'
 updatedAt: '2023-05-01T23:06:34.463Z'
-category: 64515c3aa16590000a27cd9d
+category: 646582bf8197f50019e3c59c
 ---
 [block:callout]
 {
@@ -28,27 +28,40 @@ category: 64515c3aa16590000a27cd9d
 # Debugging
 
 RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
-```swift
+```swift 
 Purchases.logLevel = .debug
 Purchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)
 ```
-```objectivec
+```objectivec 
 RCPurchases.logLevel = RCLogLevelDebug;
 [RCPurchases configureWithAPIKey:@<public_sdk_key> appUserID:@<my_app_user_id>];
 ```
-```kotlin
+```kotlin 
 Purchases.debugLogsEnabled = true
 Purchases.configure(PurchasesConfiguration.Builder(context, apiKey = "")
             .appUserID(<my_app_user_id>)
             .build()
 ```
-```java
+```java 
 Purchases.setDebugLogsEnabled(true);
 Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());
 ```
-```javascript
+```javascript React Native
+Purchases.setDebugLogsEnabled(true);
+Purchases.setup(<public_sdk_key>, <my_app_user_id>);
+```
+```javascript Flutter
+await Purchases.setDebugLogsEnabled(true);
+PurchasesConfiguration pc = PurchasesConfiguration(<public_sdk_key>);
+await Purchases.configure(pc);
+```
+```javascript Unity
+Purchases.SetDebugLogsEnabled(true);
+```
+```javascript Cordova
 Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 ```
+
 
 [block:callout]
 {
@@ -122,7 +135,42 @@ Messages that have the double red exclamation marks prefix (‼️) attached pro
 # Sample Output
 
 Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an eye out for any `ERROR` level logs, status codes other than `200`, or any `Invalid Product Identifiers`.
-```text
+```text 
+[Purchases] - DEBUG: Debug logging enabled.
+[Purchases] - DEBUG: SDK Version - 2.0.0
+[Purchases] - DEBUG: Initial App User ID - <APP_USER_ID>
+[Purchases] - DEBUG: Changing App User ID: (null) -> <APP_USER_ID>
+[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>
+[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products
+[Purchases] - DEBUG: Delegate set
+[Purchases] - DEBUG: Sending latest purchaser info to delegate
+[Purchases] - DEBUG: Vending purchaserInfo from cache
+[Purchases] - DEBUG: Vending purchaserInfo from cache
+[Purchases] - DEBUG: applicationDidBecomeActive
+[Purchases] - DEBUG: No cached entitlements, fetching
+[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID> 200
+[Purchases] - DEBUG: Purchaser info updated, sending to delegate
+[Purchases] - DEBUG: GET /v1/subscribers/<APP_USER_ID>/products 200
+[Purchases] - DEBUG: Requesting products with identifiers: {(
+    onetime,
+    annual,
+    onemonth
+)}
+[Purchases] - DEBUG: Products request finished
+[Purchases] - DEBUG: Valid Products:
+[Purchases] - DEBUG: annual - <SKProduct: 0x600000308980>
+[Purchases] - DEBUG: onemonth - <SKProduct: 0x6000003131b0>
+[Purchases] - DEBUG: onetime - <SKProduct: 0x600000313180>
+[Purchases] - DEBUG: Invalid Product Identifiers - (
+)
+[Purchases] - DEBUG: 2 completion handlers waiting on products
+[Purchases] - DEBUG: makePurchase - onemonth
+[Purchases] - DEBUG: PaymentQueue updatedTransaction: onemonth (null) ((null)) - 0
+[Purchases] - DEBUG: PaymentQueue updatedTransaction: onemonth <TRANSACTION_ID> ((null)) - 2
+[Purchases] - DEBUG: Finishing onemonth <TRANSACTION_ID> ((null))
+[Purchases] - DEBUG: PaymentQueue removedTransaction: onemonth <TRANSACTION_ID> ((null)) - 2
+```
+```text With emojis
 [Purchases] - DEBUG: ℹ️ Debug logging enabled
 [Purchases] - DEBUG: ℹ️ SDK Version - 3.10.1
 [Purchases] - DEBUG: 👤 Initial App User ID - <APP_USER_ID>
@@ -154,6 +202,7 @@ Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an 
 [Purchases] - DEBUG: 💰 Finishing transaction annual <TRANSACTION_ID> ((null))
 [Purchases] - DEBUG: ℹ️ PaymentQueue removedTransaction: annual <TRANSACTION_ID> (null (null)) (null) - 1
 ```
+
 # Next Steps
 
 * If you spotted any errors while debugging, make sure you're [handling errors correctly :fa-arrow-right:](doc:errors)

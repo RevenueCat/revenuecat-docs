@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-10-02T02:49:29.429Z'
 updatedAt: '2021-12-01T20:32:59.037Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 To start receiving these deliveries, you'll need the following details:
 1. Access key ID
@@ -74,7 +74,7 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 }
 [/block]
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
-```json
+```json Access Policy
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -99,6 +99,7 @@ In the policy editor, switch to the JSON view and paste in the following code. B
     ]
 }
 ```
+
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]
 {
