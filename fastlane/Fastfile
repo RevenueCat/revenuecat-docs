@@ -418,10 +418,10 @@ end
 def extract_markdown_code_block_information(code_block)
     lines = code_block.split("\n")
     if lines.length > 1 # code blocks in callouts are one liners. Don't process them
-        header = lines[0].sub("```", "").split(" ") # Split the second line into parts
+        header = lines[0].sub("```", "").split(" ")
         language = header[0]
-        name = header.length > 1 ? header[1..-1].join(" ") : "" # If there are more parts, the rest is the name
-        code = lines[1..-2].join("\n") # The code is between the second and second to last line
+        name = header.length > 1 ? header[1..-1].join(" ") : "" # Name is everything after the language and it's optional
+        code = lines[1..-2].join("\n") # Code is everything between the first and last line
         {
             "language" => language,
             "name" => name,
