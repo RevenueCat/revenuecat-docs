@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-09-30T14:30:12.220Z'
 updatedAt: '2022-03-29T02:44:33.517Z'
-category: 6465151b72bb71000aa4e9aa
+category: 646582c5895ade0068c36ca5
 ---
 As RevenueCat's SDK evolves over time and continues to simplify purchasing logic across platforms, implementation changes can be required when upgrading from one major version to another. We've tried to simplify these migrations and make the process as easy as possible.
 

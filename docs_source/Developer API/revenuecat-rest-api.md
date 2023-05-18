@@ -4,7 +4,7 @@ slug: revenuecat-rest-api
 hidden: false
 createdAt: '2023-04-11T22:34:48.009Z'
 updatedAt: '2023-04-28T00:36:19.795Z'
-category: 6465151799bbc20028ce105c
+category: 646582c09e898903756111e2
 ---
 > 📘 New to RevenueCat?
 > 

@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-07-01T20:11:18.247Z'
 updatedAt: '2022-11-16T21:29:11.159Z'
-category: 6465151171aace1d6f6388e2
+category: 646582bc33592e0017008a31
 ---
 To set up products for Stripe, start by logging into the Stripe Dashboard. This guide assumes basic knowledge of Stripe and the Stripe Dashboard. For more information, visit Stripe's [documentation and guides for the Dashboard](https://stripe.com/docs/dashboard).
 

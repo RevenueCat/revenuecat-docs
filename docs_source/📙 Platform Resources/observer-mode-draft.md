@@ -5,7 +5,7 @@ excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
 createdAt: '2022-05-18T16:50:15.163Z'
 updatedAt: '2022-05-31T21:57:04.294Z'
-category: 6465151a9d12de0fd4b5e835
+category: 646582c48cebdb000ba32f10
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
 

@@ -4,7 +4,7 @@ slug: google-subscriptions-and-backwards-compatibility
 hidden: false
 createdAt: '2023-01-26T09:43:22.898Z'
 updatedAt: '2023-04-10T13:18:32.057Z'
-category: 6465151171aace1d6f6388e2
+category: 646582bc33592e0017008a31
 ---
 # RevenueCat compatibility with Google May 2022 Subscription Changes
 

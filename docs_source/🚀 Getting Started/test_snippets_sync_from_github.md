@@ -6,7 +6,7 @@ excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and G
 hidden: true
 createdAt: '2022-12-01T15:38:57.843Z'
 updatedAt: '2023-02-06T19:37:56.393Z'
-category: 6465151171aace1d6f6388e2
+category: 646582bc33592e0017008a31
 ---
 ###  Test Snippets synced from local code
 

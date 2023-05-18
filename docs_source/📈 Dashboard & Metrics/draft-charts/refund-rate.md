@@ -4,7 +4,7 @@ slug: refund-rate
 hidden: true
 createdAt: '2022-06-28T21:08:07.413Z'
 updatedAt: '2022-06-28T21:08:07.413Z'
-category: 64651518bd7ecf19272c3b8c
+category: 646582c1f2440605b02c28bf
 ---
 ## Refund Rate
 **Segments:** Yes

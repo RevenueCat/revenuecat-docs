@@ -4,7 +4,7 @@ slug: using-purchases-5x-for-google-play
 hidden: true
 createdAt: '2023-03-28T16:21:16.254Z'
 updatedAt: '2023-03-28T16:55:13.172Z'
-category: 6465151a9d12de0fd4b5e835
+category: 646582c48cebdb000ba32f10
 ---
 > 🚧 Legacy documentation
 > 

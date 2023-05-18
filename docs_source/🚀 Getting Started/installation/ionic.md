@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-07T20:32:01.037Z'
 updatedAt: '2023-02-02T14:19:47.927Z'
-category: 6465151171aace1d6f6388e2
+category: 646582bc33592e0017008a31
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 [block:code]

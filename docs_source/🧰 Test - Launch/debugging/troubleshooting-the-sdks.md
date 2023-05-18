@@ -12,7 +12,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-05-03T18:59:17.242Z'
 updatedAt: '2023-02-17T19:36:02.332Z'
-category: 6465151557107b1944dd50e6
+category: 646582bf8197f50019e3c59c
 ---
 Having trouble with our SDKs? This guide covers common issues and solutions. Go through each topic and see if it matches your issue. If you went through this guide and you're still having problems, reach out to us in any of the following channels:
 

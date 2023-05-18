@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-30T19:33:09.403Z'
 updatedAt: '2023-03-30T19:33:09.403Z'
-category: 646515188418f71e950548f0
+category: 646582c240e8b0000a4f35e6
 ---
 With our Facebook Ads integration you can:
 

@@ -14,7 +14,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:10.813Z'
 updatedAt: '2023-03-27T21:57:10.122Z'
-category: 64651518bd7ecf19272c3b8c
+category: 646582c1f2440605b02c28bf
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

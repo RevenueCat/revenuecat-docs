@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-10-18T14:05:26.509Z'
 updatedAt: '2022-10-18T14:05:26.509Z'
-category: 6465151a9d12de0fd4b5e835
+category: 646582c48cebdb000ba32f10
 ---
 Sample apps are currently included in each SDK repository and demonstrate how to integrate the SDK in your own apps.
 

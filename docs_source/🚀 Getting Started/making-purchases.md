@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T08:06:18.490Z'
 updatedAt: '2023-03-28T08:06:18.490Z'
-category: 6465151171aace1d6f6388e2
+category: 646582bc33592e0017008a31
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:code]

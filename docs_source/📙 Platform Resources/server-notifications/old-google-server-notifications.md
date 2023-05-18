@@ -5,7 +5,7 @@ excerpt: Sending Google Play server notifications to RevenueCat
 hidden: true
 createdAt: '2020-09-29T15:21:39.999Z'
 updatedAt: '2023-03-30T20:00:49.548Z'
-category: 6465151a9d12de0fd4b5e835
+category: 646582c48cebdb000ba32f10
 ---
 RevenueCat does not require server notifications from Google Play, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 
