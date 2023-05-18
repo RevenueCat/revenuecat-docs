@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-13T01:11:32.241Z'
 updatedAt: '2023-04-13T01:11:32.241Z'
-category: 64515c3aa06fe500680740da
+category: 646582be23b3a10039383ef4
 ---
 RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.
 
@@ -32,38 +32,30 @@ Overall, the concept of a customer in RevenueCat is central to the platform's ab
 
 If you don't provide an App User ID when instantiating the Purchases SDK, RevenueCat will generate a new random App User ID for you and cache it on the device. In the event that the user deletes and reinstalls the app, a new random App User ID will be generated.
 
-```swift
-Purchases.configure(withAPIKey: <my_api_key>)
-```
-```objectivec
-[RCPurchases configureWithAPIKey:@<my_api_key>];
-```
-```kotlin
-Purchases.configure(PurchasesConfiguration.Builder(this, <api_key>).build())
-```
-```java
-Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).build());
-```
-```javascript Flutter
-await Purchases.configure(PurchasesConfiguration(<public_sdk_key>));
-```
-```javascript React Native
-Purchases.configure({apiKey: <public_sdk_key>});
-```
-```javascript Cordova
-Purchases.setup(<public_sdk_key>);
-```
-```csharp Unity
-// The SDK can be configured through the Unity Editor. 
-// See Unity installation instructions https://docs.revenuecat.com/docs/unity
-
-// If you'd like to do it programmatically instead, 
-// make sure to check "Use runtime setup" in the Editor and then: 
-
-Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init("api_key");
-Purchases.PurchasesConfiguration purchasesConfiguration = builder.Build();
-purchases.Configure(purchasesConfiguration);
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/👥 Customers/user-ids_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/👥 Customers/user-ids_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/👥 Customers/user-ids_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/👥 Customers/user-ids_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/user-ids_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/user-ids_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/👥 Customers/user-ids_7.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_8.cs"}
+[/block]
 
 
 
@@ -94,47 +86,30 @@ Using an externally managed App User ID also provides a mechanism by which to re
 
 If you have your own App User IDs at app launch, you can pass those on instantiation to _Purchases_.
 
-```swift
-Purchases.configure(withAPIKey: <my_api_key>, appUserID: <my_app_user_id>)
-```
-```objectivec
-[RCPurchases configureWithAPIKey:@<my_api_key> appUserID:@<my_app_user_id>];
-```
-```kotlin
-Purchases.configure(PurchasesConfiguration.Builder(this, <api_key>).appUserID(<my_app_user_id>).build())
-```
-```java
-Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());
-```
-```javascript Flutter
-await Purchases.configure(
-    PurchasesConfiguration(<public_sdk_key>)
-      ..appUserID = <my_app_user_id>
-);
-```
-```javascript React Native
-Purchases.configure({apiKey: <public_sdk_key>, appUserID: <my_app_user_id>});
-```
-```javascript Cordova
-Purchases.setup(<public_sdk_key>, <my_app_user_id>);
-```
-```csharp Unity
-// The appUserID can be set through the Unity Editor. 
-// See Unity installation instructions https://docs.revenuecat.com/docs/unity
-
-// If you'd like to do it programmatically instead, 
-// make sure to check "Use runtime setup" in the Editor and then: 
-
-Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init("api_key");
-Purchases.PurchasesConfiguration purchasesConfiguration =
-    builder.SetUserDefaultsSuiteName("user_default")
-    .SetDangerousSettings(new Purchases.DangerousSettings(false))
-    .SetObserverMode(true)
-    .SetUseAmazon(false)
-    .SetAppUserId(appUserId)
-    .Build();
-purchases.Configure(purchasesConfiguration);
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/👥 Customers/user-ids_9.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/👥 Customers/user-ids_10.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/👥 Customers/user-ids_11.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/👥 Customers/user-ids_12.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/user-ids_13.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/user-ids_14.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/👥 Customers/user-ids_15.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_16.cs"}
+[/block]
 
 
 
@@ -144,112 +119,30 @@ Often times, you may not have your own App User IDs until later in the applicati
 
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.logIn()`. If the logged in identity does not already exist in RevenueCat, it will be created automatically. 
 
-```swift
-// Configure Purchases on app launch
-Purchases.configure(withAPIKey: <my_api_key>)
-
-//...
-
-// Later log in provided user Id
-Purchases.shared.logIn(<my_app_user_id>) { (customerInfo, created, error) in
-    // customerInfo updated for my_app_user_id
-}
-```
-```objectivec
-// Configure Purchases on app launch
-[RCPurchases configureWithAPIKey:@<my_api_key>];
-
-//...
-
-// Later log in provided user Id
-[[RCPurchases sharedPurchases] logIn:@<my_app_user_id> completion:^(RCCustomerInfo *customerInfo, BOOL created, NSError *error) {
-    // customerInfo updated for my_app_user_id
-}];
-```
-```kotlin
-// Configure Purchases on app launch
-Purchases.configure(PurchasesConfiguration.Builder(this, <api_key>).build())
-  
-//...
-
-// Later log in provided user Id
-Purchases.sharedInstance.loginWith(<my_app_user_id>, ::showError) { customerInfo, created ->
-  // customerInfo updated for my_app_user_id
-}
-```
-```java
-// Configure Purchases on app launch
-Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).build());
-
-//...
-
-// Later log in provided user Id
-Purchases.getSharedInstance().logIn(<my_app_user_id>, new LogInCallback() {
-	@Override
-	public void onReceived(@NotNull CustomerInfo customerInfo, boolean created) {
-		// customerInfo updated for my_app_user_id
-	}
-  
-  @Override
-  public void onError(@NotNull PurchasesError error) {
-
-  }
-});
-```
-```javascript Flutter
-// Configure Purchases on app launch
-await Purchases.configure(PurchasesConfiguration(<public_sdk_key>));
-
-//...
-
-// Later log in provided user Id
-LogInResult result = await Purchases.logIn(<my_app_user_id>);
-```
-```javascript React Native
-// Configure Purchases on app launch
-Purchases.configure({apiKey: <public_sdk_key>});
-
-//...
-
-// Later log in provided user Id
-const { customerInfo, created } = await Purchases.logIn(<my_app_user_id>);
-// customerInfo updated for my_app_user_id
-```
-```javascript Cordova
-// Configure Purchases on app launch
-Purchases.setup(<public_sdk_key>);
-
-//...
-
-// Later log in provided user Id
-
-Purchases.logIn(
-  <my_app_user_id>, 
-  ({ customerInfo, created }) => {
-    // customerInfo updated for my_app_user_id
-  },
-  error => {
-  }
-);
-```
-```csharp Unity
-// configure the SDK either through the Editor or through 
-// programmatic setup (see section above), then:
-
-
-var purchases = GetComponent<Purchases>();
-purchases.LogIn(<myAppUserUD>, (customerInfo, created, error) =>
-{
-    if (error != null)
-    {
-        // show error
-    }
-    else
-    {
-        // show customerInfo
-    }
-});
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/👥 Customers/user-ids_17.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/👥 Customers/user-ids_18.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/👥 Customers/user-ids_19.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/👥 Customers/user-ids_20.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/user-ids_21.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/user-ids_22.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/👥 Customers/user-ids_23.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_24.cs"}
+[/block]
 
 
 

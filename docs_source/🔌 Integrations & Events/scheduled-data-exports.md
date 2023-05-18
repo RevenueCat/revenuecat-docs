@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data (formerly ETL Exp
 hidden: false
 createdAt: '2023-03-14T15:53:17.647Z'
 updatedAt: '2023-03-20T16:19:22.595Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -141,11 +141,27 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 
 You can use the following sample queries (written in Postgresql) as starting points for reproducing common RevenueCat measures.
 [block:file]
-pgsql->code_blocks/🔌 Integrations & Events/scheduled-data-exports_1.pgsql
+{"language":"pgsql","name":"Active Trials","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_1.pgsql"}
 [/block]
+[block:file]
+{"language":"pgsql","name":"Active Subscriptions","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_2.pgsql"}
+[/block]
+[block:file]
+{"language":"pgsql","name":"Revenue","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_3.pgsql"}
+[/block]
+
 # Sample queries for customized measures
 
 Scheduled Data Exports are a powerful way to add your own customizations on top of the core measures provided by RevenueCat. Check out the following sample queries (written in Postgresql) for some ideas.
 [block:file]
-pgsql->code_blocks/🔌 Integrations & Events/scheduled-data-exports_2.pgsql
+{"language":"pgsql","name":"Active Subs by Custom Attribute","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_4.pgsql"}
+[/block]
+[block:file]
+{"language":"pgsql","name":"Weekly Revenue (starting Monday)","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_5.pgsql"}
+[/block]
+[block:file]
+{"language":"pgsql","name":"Realized LTV Segments","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_6.pgsql"}
+[/block]
+[block:file]
+{"language":"pgsql","name":"Active Trials by Grace Period Status","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports_7.pgsql"}
 [/block]

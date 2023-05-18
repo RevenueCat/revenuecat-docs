@@ -13,73 +13,36 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-04-28T16:33:56.375Z'
 updatedAt: '2023-04-25T09:28:53.306Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).
 
 It is recommended that all apps have some way for users to trigger the `restorePurchases` method, even if you require all customers to create accounts. 
 
-```swift
-Purchases.shared.restorePurchases { customerInfo, error in
-    //... check customerInfo to see if entitlement is now active
-}
-```
-```objectivec
-[[RCPurchases sharedPurchases] restorePurchasesWithCompletion:^(RCCustomerInfo *customerInfo, NSError *error) {
-    //... check customerInfo to see if entitlement is now active
-}];
-```
-```kotlin
-Purchases.sharedInstance.restorePurchasesWith() { customerInfo ->
-	//... check customerInfo to see if entitlement is now active
-}
-```
-```java
-Purchases.getSharedInstance().restorePurchases(new ReceiveCustomerInfoCallback() {
-	@Override
-	public void onError(@NonNull PurchasesError error) {
-    
-  }
-
-	@Override
-	public void onReceived(@NonNull CustomerInfo customerInfo) {
-    
-  }
-});
-```
-```javascript Flutter
-try {
-  CustomerInfo customerInfo = await Purchases.restorePurchases();
-  // ... check restored purchaserInfo to see if entitlement is now active
-} on PlatformException catch (e) {
-  // Error restoring purchases
-}
-```
-```javascript React Native
-try {
-  const restore = await Purchases.restorePurchases();
-  // ... check restored purchaserInfo to see if entitlement is now active
-} catch (e) {
-
-}
-```
-```javascript Cordova
-Purchases.restoreTransactions(
-  info => {
-    //... check customerInfo to see if entitlement is now active
-  },
-  error => {
-    // Error restoring purchases
-  }
-);
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.RestorePurchases((info, error) =>
-{
-    //... check purchaserInfo to see if entitlement is now active
-});
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/restoring-purchases_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/restoring-purchases_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/restoring-purchases_7.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/restoring-purchases_8.cs"}
+[/block]
 
 
 

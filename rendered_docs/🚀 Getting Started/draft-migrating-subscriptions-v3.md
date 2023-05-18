@@ -5,7 +5,7 @@ excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2021-12-29T03:23:56.845Z'
 updatedAt: '2021-12-29T07:05:43.408Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. You can use the Purchases SDK to replace all of your in-app-purchase code, or you can just use it along side your current stack to track in-app-purchases and benefit from our charting, webhooks, and other integrations.
 
@@ -73,7 +73,7 @@ A client side migration is recommended even if you implement other migration str
 The way to do this is: if your existing subscription code knows you have a subscription, but RevenueCat does not, then programmatically sync purchases. 
 
 See the following pseudo-code for an example.
-```javascript
+```javascript Client side migration example
 const isSubscribedInOldSystem = oldTracking.isSubscribed()
 const isSubscribedInRevenueCat = !purchaserInfo.entitlements.active.isEmpty
 
@@ -85,6 +85,7 @@ if (isSubscribedInOldSystem && !isSubscribedInRevenueCat)
   Purchases.shared.syncPurchases { (purchaserInfo, error) in }
 }
 ```
+
 When a subscriber launches with the first version containing *Purchases*, it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {
@@ -115,7 +116,7 @@ If you have the correct data saved already for your users, you can import them t
 More info in the [API Reference here](https://docs.revenuecat.com/reference#receipts).
 
 Here's a pseudo-code sample to illustrate how this process would look like as a one-time migration job to import receipts into RevenueCat:
-```javascript
+```javascript Migration script
 // Get all user IDs and receipts from your database.
 const records = ...
 
@@ -161,6 +162,7 @@ for (let record of records) {
   sleep(1);
 }
 ```
+
 ## Bulk imports
 
 For large datasets that aren't practical to import through the REST API, you can send us a .csv file to import manually. [Email us](mailto:support@revenuecat.com) with the below information and we'll be in touch. Please note that depending on the size, bulk imports can take time to complete, sometimes up to several days or weeks for the largest data sets. Please keep this in consideration as you are planning your launch.

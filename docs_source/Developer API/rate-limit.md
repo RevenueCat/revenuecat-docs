@@ -4,7 +4,7 @@ slug: rate-limit
 hidden: false
 createdAt: '2023-04-11T22:43:01.120Z'
 updatedAt: '2023-04-11T22:53:20.468Z'
-category: 64515c3b7df88700248e78b3
+category: 646582c09e898903756111e2
 ---
 We will return the following headers on all successful requests:
 
@@ -17,12 +17,6 @@ If you reach the rate limit, as indicated by a `429` [error code](https://www.re
 
 Below is an example of the response body that will be sent when the rate limit is reached:
 
-```json Sample error response
-{
-  "type": "rate_limit_error",
-  "message": "Rate limit exceeded",
-  "retryable": true,
-  "doc_url": "https://revenuecat.com/docs/errors/rate_limit_error",
-  "backoff_ms": 1000
-}
-```
+[block:file]
+{"language":"json","name":"Sample error response","file":"code_blocks/Developer API/rate-limit_1.json"}
+[/block]

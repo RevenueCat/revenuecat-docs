@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-08-26T17:22:44.480Z'
 updatedAt: '2023-04-27T20:08:21.766Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -189,7 +189,7 @@ This property can be set manually, like any other [Subscriber Attributes](doc:su
 
 You can listen for changes to the OneSignal Id through their SDK, and send the value to RevenueCat. If you already have OneSignal set up, you should make sure that you're also sending the OneSignal Id for users that are updating to the latest version of your app.
 
-```swift
+```swift 
 class AppDelegate: UIResponder, UIApplicationDelegate, OSSubscriptionObserver {
 
     var window: UIWindow?

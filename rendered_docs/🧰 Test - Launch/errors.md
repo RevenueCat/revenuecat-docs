@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-27T15:08:14.630Z'
 updatedAt: '2023-03-27T15:08:14.630Z'
-category: 64515c3aa16590000a27cd9d
+category: 646582bf8197f50019e3c59c
 ---
 [block:callout]
 {
@@ -39,7 +39,7 @@ When investigating or logging errors, review the `errorUserInfo` dictionary, pay
 - `NSDebugDescriptionErrorKey` contains a description of the error. This description is meant for the developer.
 
 ### Examples
-```swift
+```swift 
 if let error = error as? RevenueCat.ErrorCode {
   print(error.errorCode)
   print(error.errorUserInfo)
@@ -55,7 +55,7 @@ if let error = error as? RevenueCat.ErrorCode {
   // Error is a different type
 }
 ```
-```objectivec
+```objectivec 
 if (error) {
 
     // log error details
@@ -76,6 +76,7 @@ if (error) {
 
 }
 ```
+
 ## Android Errors
 On Android, when an error has occurred, the `onError` listener will receive a `PurchasesError` object.
 
@@ -85,7 +86,7 @@ When investigating or logging errors, review the properties of `PurchasesError`:
 - `underlyingErrorMessage ` contains a description of the underlying error that caused the error in question, if an underlying error is present.
 
 ### Examples
-```kotlin
+```kotlin 
 with(error) {
     // log error details
     print("Error: $code")
@@ -102,6 +103,7 @@ with(error) {
     }
 }
 ```
+
 # Legend
 When debugging errors, it's important to consider whether the error was thrown by RevenueCat, Apple, or Google. This can help you pinpoint where to look for a resolution. 
 [block:parameters]

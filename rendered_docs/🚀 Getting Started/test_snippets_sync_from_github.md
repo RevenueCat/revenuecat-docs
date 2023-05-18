@@ -6,7 +6,7 @@ excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and G
 hidden: true
 createdAt: '2022-12-01T15:38:57.843Z'
 updatedAt: '2023-02-06T19:37:56.393Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 ###  Test Snippets synced from local code
 
@@ -14,7 +14,7 @@ This was synced from GitHub actions when merging to main
 
 Here is the code to configure the SDK:
 
-```swift
+```swift 
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   
@@ -26,9 +26,8 @@ func application(_ application: UIApplication,
     )
     return true
 }
-
 ```
-```kotlin
+```kotlin 
 class MainApplicationOnlyPlayStore: Application() {
     override fun onCreate() {
         super.onCreate()
@@ -40,7 +39,7 @@ class MainApplicationOnlyPlayStore: Application() {
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
-```kotlin
+```kotlin 
 flavorDimensions "store"
 productFlavors {
     amazon {
@@ -52,8 +51,8 @@ productFlavors {
     }
 }
 ```
-```kotlin
-    override fun onCreate() {
+```kotlin 
+override fun onCreate() {
         super.onCreate()
         Purchases.debugLogsEnabled = true
 
@@ -64,7 +63,6 @@ productFlavors {
         }
     }
 }
-
 ```
 
 

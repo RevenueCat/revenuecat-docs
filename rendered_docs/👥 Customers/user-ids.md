@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-13T01:11:32.241Z'
 updatedAt: '2023-04-13T01:11:32.241Z'
-category: 64515c3aa06fe500680740da
+category: 646582be23b3a10039383ef4
 ---
 RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.
 
@@ -32,16 +32,16 @@ Overall, the concept of a customer in RevenueCat is central to the platform's ab
 
 If you don't provide an App User ID when instantiating the Purchases SDK, RevenueCat will generate a new random App User ID for you and cache it on the device. In the event that the user deletes and reinstalls the app, a new random App User ID will be generated.
 
-```swift
+```swift 
 Purchases.configure(withAPIKey: <my_api_key>)
 ```
-```objectivec
+```objectivec 
 [RCPurchases configureWithAPIKey:@<my_api_key>];
 ```
-```kotlin
+```kotlin 
 Purchases.configure(PurchasesConfiguration.Builder(this, <api_key>).build())
 ```
-```java
+```java 
 Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).build());
 ```
 ```javascript Flutter
@@ -94,16 +94,16 @@ Using an externally managed App User ID also provides a mechanism by which to re
 
 If you have your own App User IDs at app launch, you can pass those on instantiation to _Purchases_.
 
-```swift
+```swift 
 Purchases.configure(withAPIKey: <my_api_key>, appUserID: <my_app_user_id>)
 ```
-```objectivec
+```objectivec 
 [RCPurchases configureWithAPIKey:@<my_api_key> appUserID:@<my_app_user_id>];
 ```
-```kotlin
+```kotlin 
 Purchases.configure(PurchasesConfiguration.Builder(this, <api_key>).appUserID(<my_app_user_id>).build())
 ```
-```java
+```java 
 Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());
 ```
 ```javascript Flutter
@@ -144,7 +144,7 @@ Often times, you may not have your own App User IDs until later in the applicati
 
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.logIn()`. If the logged in identity does not already exist in RevenueCat, it will be created automatically. 
 
-```swift
+```swift 
 // Configure Purchases on app launch
 Purchases.configure(withAPIKey: <my_api_key>)
 
@@ -155,7 +155,7 @@ Purchases.shared.logIn(<my_app_user_id>) { (customerInfo, created, error) in
     // customerInfo updated for my_app_user_id
 }
 ```
-```objectivec
+```objectivec 
 // Configure Purchases on app launch
 [RCPurchases configureWithAPIKey:@<my_api_key>];
 
@@ -166,7 +166,7 @@ Purchases.shared.logIn(<my_app_user_id>) { (customerInfo, created, error) in
     // customerInfo updated for my_app_user_id
 }];
 ```
-```kotlin
+```kotlin 
 // Configure Purchases on app launch
 Purchases.configure(PurchasesConfiguration.Builder(this, <api_key>).build())
   
@@ -177,7 +177,7 @@ Purchases.sharedInstance.loginWith(<my_app_user_id>, ::showError) { customerInfo
   // customerInfo updated for my_app_user_id
 }
 ```
-```java
+```java 
 // Configure Purchases on app launch
 Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).build());
 

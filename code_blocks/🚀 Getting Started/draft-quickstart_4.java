@@ -1,13 +1,10 @@
-Purchases.getSharedInstance().getPurchaserInfo(new ReceivePurchaserInfoListener() {
-  @Override
-  public void onReceived(@NonNull PurchaserInfo purchaserInfo) {
-    if (purchaserInfo.getEntitlements().get("my_entitlement_identifier").isActive()) {
-      // Grant user "pro" access
-    }
-  }
-  
-  @Override
-  public void onError(@NonNull PurchasesError error) {
+public class MainApplication extends Application {
 
-  }
-});
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Purchases.debugLogsEnabled = true;
+       Purchases.configure(this, "public_sdk_key");
+    }
+
+}

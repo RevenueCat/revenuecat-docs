@@ -5,7 +5,7 @@ excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T19:27:15.768Z'
 updatedAt: '2023-04-27T20:06:43.542Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
 
@@ -124,51 +124,9 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
 
 Webhook events are serialized in JSON. The body of a `POST` request to your server will contain the serialized event, as well as the API version. 
 
-```json
-{
-  "api_version": "1.0",
-  "event": {
-    "aliases": [
-      "yourCustomerAliasedID",
-      "yourCustomerAliasedID"
-    ],
-    "app_id": "yourAppID",
-    "app_user_id": "yourCustomerAppUserID",
-    "commission_percentage": 0.3,
-    "country_code": "US",
-    "currency": "USD",
-    "entitlement_id": "pro_cat",
-    "entitlement_ids": [
-      "pro_cat"
-    ],
-    "environment": "PRODUCTION",
-    "event_timestamp_ms": 1591121855319,
-    "expiration_at_ms": 1591726653000,
-    "id": "UniqueIdentifierOfEvent",
-    "is_family_share": false,
-    "offer_code": "free_month",
-    "original_app_user_id": "OriginalAppUserID",
-    "original_transaction_id": "1530648507000",
-    "period_type": "NORMAL",
-    "presented_offering_id": "OfferingID",
-    "price": 2.49,
-    "price_in_purchased_currency": 2.49,
-    "product_id": "onemonth_no_trial",
-    "purchased_at_ms": 1591121853000,
-    "store": "APP_STORE",
-    "subscriber_attributes": {
-      "$Favorite Cat": {
-        "updated_at_ms": 1581121853000,
-        "value": "Garfield"
-      }
-    },
-    "takehome_percentage": 0.7,
-    "tax_percentage": 0.3,
-    "transaction_id": "170000869511114",
-    "type": "INITIAL_PURCHASE"
-  }
-}
-```
+[block:file]
+{"language":"json","name":"","file":"code_blocks/🔌 Integrations & Events/webhooks/event-types-and-fields_1.json"}
+[/block]
 
 
 

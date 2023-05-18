@@ -18,7 +18,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-02T20:33:26.499Z'
 updatedAt: '2023-03-02T20:33:26.499Z'
-category: 64515c39b05512007222ab6a
+category: 646582bdd4a12f005f28be1e
 ---
 [block:parameters]
 {
@@ -66,7 +66,7 @@ The RevenueCat SDK will automatically detect new transactions and sends them to 
 The way to do this is: if your existing subscription code knows you have a subscription, but RevenueCat does not, then programmatically sync purchases. 
 
 See the following pseudo example.
-```javascript
+```javascript Example
 const isSubscribedInOldSystem = oldTracking.isSubscribed()
 const isSubscribedInRevenueCat = !customerInfo.entitlements.active.isEmpty
 
@@ -78,6 +78,7 @@ if (isSubscribedInOldSystem && !isSubscribedInRevenueCat)
   Purchases.shared.syncPurchases { (customerInfo, error) in }
 }
 ```
+
 When a subscriber launches with the first version containing RevenueCat it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {

@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-30T19:33:09.403Z'
 updatedAt: '2023-03-30T19:33:09.403Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Facebook Ads integration you can:
 
@@ -49,71 +49,18 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 > 
 > If you are requesting the App Tracking permission through ATT to access the IDFA, you can call `.collectDeviceIdentifiers()` _again_ if the customer accepts the permission to update the `$idfa` attribute in RevenueCat.
 
-```swift Swift
-import AdSupport
-
-// ...
-Purchases.configure(withAPIKey: "public_sdk_key")
-// ...
-
-// Automatically collect the $idfa, $idfv, and $ip values
-Purchases.shared.attribution.collectDeviceIdentifiers() 
-
-// REQUIRED: Set the Facebook anonymous Id
-Purchases.shared.attribution.setFBAnonymousID(FBSDKCoreKit.AppEvents.anonymousID)
-
-// Optionally set additional user data
-Purchases.shared.attribution.setEmail("test@example.com")
-Purchases.shared.attribution.setPhoneNumber("+16505551234")
-```
-```javascript Flutter
-// NOTE: There is no official Facebook Ads plugin for Flutter. 
-
-// NOTE: You can find a community-supported alternative for the SDK here: https://github.com/oddbit/flutter_facebook_app_events
-
-// Automatically collect the device and advertising identifiers
-Purchases.collectDeviceIdentifiers() 
-
-// Set the Facebook anonymous Id
-Purchases.setFBAnonymousID()
-```
-```kotlin
-//..
-Purchases.configure(this, "public_sdk_key")
-//..
-  
-// Automatically collect the $gpsAdId, $androidId, and $ip values
-Purchases.sharedInstance.collectDeviceIdentifiers()
-
-// Optionally set additional user data
-Purchases.sharedInstance.setEmail("test@example.com")
-Purchases.sharedInstance.setPhoneNumber("+16505551234")
-```
-```javascript React Native
-// NOTE: Facebook has officially ended support for their React Native SDK. You can read more about this here: https://developers.facebook.com/blog/post/2021/01/19/introducing-facebook-platform-sdk-version-9/
-
-// NOTE: You can find a community-supported alternative for the SDK here: https://github.com/facebookarchive/react-native-fbsdk
-
-// The following docs are left in place for reference
-
-import FBSDK from "react-native-fbsdk"
-
-//...
-Purchases.setDebugLogsEnabled(true);
-Purchases.setup("public_sdk_key");
-//...
-
-// Automatically collect the $idfa, $idfv, and $ip values
-Purchases.collectDeviceIdentifiers();
-
-// REQUIRED: Set the Facebook anonymous Id
-const anonymousId = await FBSDK.AppEventsLogger.getAnonymousID();
-Purchases.setFBAnonymousID(anonymousId);
-
-// Optionally set additional user data
-Purchases.setEmail("test@example.com");
-Purchases.setPhoneNumber("+16505551234");
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_1.swift"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_2.js"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_3.kt"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_4.js"}
+[/block]
 
 
 
@@ -137,13 +84,9 @@ You should make sure to set attributes after the _Purchases SDK_ is configured, 
 
 As noted above, you'll need to disable all client side tracking of revenue to prevent double counting of revenue in Facebook Ads Manager. To continue tracking install and usage events, you'll need to call Facebook's 'activate app' event after configuration:
 
-```swift
-// disable automatic tracking
-FBSDKCoreKit.Settings.isAutoLogAppEventsEnabled = false
-
-// optional: call activateApp
-FBSDKCoreKit.AppEvents.activateApp()
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_5.swift"}
+[/block]
 
 
 

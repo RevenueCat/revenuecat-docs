@@ -16,11 +16,11 @@ metadata:
     4: "#e9acb0"
 createdAt: '2020-06-30T18:43:10.805Z'
 updatedAt: '2022-01-28T19:49:27.529Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 With the next iteration of SwiftUI announced at WWDC 2020, entire apps can be created with just a simple struct conforming to the new `App` protocol, like so:
 
-```swift
+```swift 
 @main
 struct SampleApp: App {    
     var body: some Scene {
@@ -37,7 +37,7 @@ Without traditional application delegate methods commonly used to initialize the
 
 For basic initialization without delegate methods, you can implement the App `init` method:
 
-```swift
+```swift 
 import Purchases
 
 @main
@@ -62,7 +62,7 @@ Another method of initialization is to use the new `@UIApplicationDelegateAdapto
 
 Begin by creating a delegate class and initializing the *Purchases* SDK like the following:
 
-```swift
+```swift 
 import Purchases
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 As previously mentioned, the new `@UIApplicationDelegateAdaptor` property attaches the delegate to the new SwiftUI App struct. Add the property wrapper like the following:
 
-```swift
+```swift 
 @main
 struct SampleApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate

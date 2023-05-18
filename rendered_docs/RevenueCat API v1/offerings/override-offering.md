@@ -5,7 +5,7 @@ excerpt: Overrides the current Offering for a specific user
 hidden: false
 createdAt: '2023-04-12T01:31:25.956Z'
 updatedAt: '2023-04-12T01:51:45.837Z'
-category: 64515c377df88700248e78b1
+category: 646582bba927b2002033d843
 ---
 > 🚧 Secret API Key Required
 > 

@@ -1,8 +1,11 @@
--- Revenue past 28 days (USD)
+-- Active trials
 SELECT
-  SUM(price_in_usd)
+  COUNT(*)
 FROM
   transactions
 WHERE
-  start_time > (CURRENT_DATE - INTERVAL '28 days')
-  AND is_sandbox = false;
+  end_time > NOW()
+  AND is_trial_period = TRUE
+  AND renewal_number = 1
+  AND is_sandbox = FALSE
+  AND refunded_at IS NULL;

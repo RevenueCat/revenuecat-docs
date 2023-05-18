@@ -5,7 +5,7 @@ excerpt: Setting up S3 access keys for data transfer
 hidden: false
 createdAt: '2023-03-14T15:53:51.105Z'
 updatedAt: '2023-03-28T22:52:25.738Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 To start receiving these deliveries, you'll need the following details:
 
@@ -54,31 +54,9 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
 
-```json Access Policy
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "ListObjectsInBucket",
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::revenuecat-deliveries"
-            ]
-        },
-        {
-            "Sid": "AllObjectActions",
-            "Effect": "Allow",
-            "Action": "s3:*Object",
-            "Resource": [
-                "arn:aws:s3:::revenuecat-deliveries/*"
-            ]
-        }
-    ]
-}
-```
+[block:file]
+{"language":"json","name":"Access Policy","file":"code_blocks/🔌 Integrations & Events/scheduled-data-exports/scheduled-data-exports-s3_1.json"}
+[/block]
 
 
 

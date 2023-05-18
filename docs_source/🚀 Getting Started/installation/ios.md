@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-27T15:06:13.281Z'
 updatedAt: '2023-03-27T15:06:13.281Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 # What is RevenueCat?
 
@@ -70,16 +70,19 @@ The library should have been added to the Swift Package Dependencies section and
 
 To always use the latest release, add the following to your Podfile:
 [block:file]
-ruby->code_blocks/🚀 Getting Started/installation/ios_1.ruby
+{"language":"ruby","name":"Podfile","file":"code_blocks/🚀 Getting Started/installation/ios_1.ruby"}
 [/block]
+
 Alternatively, pin to a specific minor version:
 [block:file]
-ruby->code_blocks/🚀 Getting Started/installation/ios_2.ruby
+{"language":"ruby","name":"","file":"code_blocks/🚀 Getting Started/installation/ios_2.ruby"}
 [/block]
+
 And then run:
 [block:file]
-ruby->code_blocks/🚀 Getting Started/installation/ios_3.ruby
+{"language":"ruby","name":"Terminal","file":"code_blocks/🚀 Getting Started/installation/ios_3.ruby"}
 [/block]
+
 This will add `RevenueCat.framework` to your workspace.
 
 
@@ -87,19 +90,22 @@ This will add `RevenueCat.framework` to your workspace.
 
 To always use the latest release, add the following to your Cartfile:
 [block:file]
-text->code_blocks/🚀 Getting Started/installation/ios_4.txt
+{"language":"text","name":"Cartfile","file":"code_blocks/🚀 Getting Started/installation/ios_4.txt"}
 [/block]
+
 Alternatively, pin to a specific minor version:
 [block:file]
-text->code_blocks/🚀 Getting Started/installation/ios_5.txt
+{"language":"text","name":"","file":"code_blocks/🚀 Getting Started/installation/ios_5.txt"}
 [/block]
+
 ### Carthage with XCFrameworks
 
 If you're using Carthage version >= 0.37, you can use RevenueCat as an XCFramework instead of a Universal Framework. This makes setup easier, since you don't have to set up build phases at all. 
 To use XCFrameworks with Carthage, you need to pass in `--use-xcframeworks`.
 [block:file]
-shell->code_blocks/🚀 Getting Started/installation/ios_6.shell
+{"language":"shell","name":"Terminal","file":"code_blocks/🚀 Getting Started/installation/ios_6.shell"}
 [/block]
+
 More information on using XCFrameworks with Carthage is available at https://github.com/carthage/Carthage/#building-platform-independent-xcframeworks-xcode-12-and-above
 [block:callout]
 {
@@ -111,8 +117,9 @@ More information on using XCFrameworks with Carthage is available at https://git
 
 Run:
 [block:file]
-text->code_blocks/🚀 Getting Started/installation/ios_7.txt
+{"language":"text","name":"","file":"code_blocks/🚀 Getting Started/installation/ios_7.txt"}
 [/block]
+
 # Import the SDK
 [block:callout]
 {
@@ -123,9 +130,12 @@ text->code_blocks/🚀 Getting Started/installation/ios_7.txt
 [/block]
 You should now be able to `import RevenueCat`.
 [block:file]
-swift->code_blocks/🚀 Getting Started/installation/ios_8.swift
-objectivec->code_blocks/🚀 Getting Started/installation/ios_8.m
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/installation/ios_8.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/installation/ios_9.m"}
+[/block]
+
 
 [block:callout]
 {

@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
 createdAt: '2022-12-15T02:43:30.576Z'
 updatedAt: '2023-03-09T03:39:52.586Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -141,5 +141,11 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 
 The following sample queries are in Postgresql.
 [block:file]
-pgsql->code_blocks/🔌 Integrations & Events/etl-exports-deprecated_1.pgsql
+{"language":"pgsql","name":"Active Trials","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated_1.pgsql"}
+[/block]
+[block:file]
+{"language":"pgsql","name":"Active Subscriptions","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated_2.pgsql"}
+[/block]
+[block:file]
+{"language":"pgsql","name":"Revenue","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated_3.pgsql"}
 [/block]

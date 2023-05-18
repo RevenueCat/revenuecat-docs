@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-10-23T02:20:59.696Z'
 updatedAt: '2023-04-27T20:07:25.750Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -164,7 +164,7 @@ The CleverTap integration can send the CleverTap ID to CleverTap as the user ide
 
 This property can be set manually, like any other [Subscriber Attribute](doc:subscriber-attributes). If you do not set this property, the [App User ID](doc:user-ids) will be sent as the user identity to CleverTap.
 
-```swift
+```swift 
 // Configure Purchases SDK
 Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
 
@@ -191,7 +191,7 @@ if (cleverTapId != nil) {
   [[RCPurchases sharedPurchases] setCleverTapID: cleverTapId];
 }
 ```
-```kotlin
+```kotlin 
 // Configure Purchases SDK
 Purchases.configure(this, "public_sdk_key", "my_app_user_id")
 

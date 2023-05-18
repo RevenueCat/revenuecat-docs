@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:34:30.366Z'
 updatedAt: '2023-03-28T21:34:30.366Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Branch integration you can:
 
@@ -40,37 +40,18 @@ If you prefer to keep a separate user identity between Branch and RevenueCat, se
 > 
 > You will need to add the Branch SDK to your app before you can connect it with RevenueCat
 
-```swift
-// login
-Branch.getInstance().setIdentity("my_app_user_id")
-
-// Optional: Use a different App User ID between Branch and RevenueCat
-Purchases.shared.attribution.setAttributes(["$branchId" : "<custom_branch_user_id"])
-
-// logout
-Branch.getInstance().logout()
-```
-```objectivec
-// login
-[[Branch getInstance] setIdentity:@"my_app_user_id"];
-
-// logout
-[[Branch getInstance] logout];
-```
-```java
-// login
-Branch.getInstance().setIdentity("my_app_user_id");
-
-// logout
-Branch.getInstance().logout();
-```
-```javascript React Native
-// login
-branch.setIdentity("my_app_user_id")
-
-// logout
-branch.logout()
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_2.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_3.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/attribution/branch_4.js"}
+[/block]
 
 
 
@@ -88,25 +69,15 @@ The Branch integration accepts some device-specific data that can be sent to Rev
 
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `collectDeviceIdentifiers()`. 
 
-```swift Swift
-import AdSupport
-// ...
-Purchases.configure(withAPIKey: "public_sdk_key")
-// ...
-Purchases.shared.attribution.collectDeviceIdentifiers()
-```
-```objectivec Objective C
-// ...
-[RCPurchases configureWithAPIKey:@"public_sdk_key"];
-// ...
-[[RCPurchases sharedPurchases] collectDeviceIdentifiers];
-```
-```kotlin
-//..
-Purchases.configure(this, "public_sdk_key")
-//..
-Purchases.sharedInstance.collectDeviceIdentifiers()
-```
+[block:file]
+{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/branch_5.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"Objective C","file":"code_blocks/🔌 Integrations & Events/attribution/branch_6.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_7.kt"}
+[/block]
 
 
 

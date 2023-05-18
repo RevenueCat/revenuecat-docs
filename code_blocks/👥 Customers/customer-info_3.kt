@@ -1,3 +1,3 @@
-if (customerInfo.entitlements.active.isNotEmpty()) {
-  //user has access to some entitlement
+Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->
+  // access latest customerInfo
 }

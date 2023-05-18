@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:08:03.274Z'
 updatedAt: '2023-04-27T20:08:03.274Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -174,7 +174,7 @@ We recommend keeping the Mixpanel SDK identifier the same as RevenueCat's App Us
 
 If a user has that subscriber attribute set it will be used instead of the RevenueCat App User ID in the Mixpanel events.
 
-```swift
+```swift 
 Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
 
 // Option 1: Match Mixpanel's SDK identity to RevenueCat's App User ID
@@ -183,14 +183,14 @@ Mixpanel.mainInstance().identify(distinctId: "my_app_user_id")
 // Option 2: Set different Mixpanel identifier in RevenueCat
 Purchases.shared.attribution.setMixpanelDistinctID(Mixpanel.mainInstance().distinctId)
 ```
-```objectivec
+```objectivec 
 // Configure Purchases SDK
 [RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
 
 // Set App User Id in Mixpanel
 [[Mixpanel sharedInstance] identify:@"my_app_user_id"];
 ```
-```java
+```java 
 // Configure Purchases SDK
 Purchases.configure(this, "public_sdk_key", "my_app_user_id");
 

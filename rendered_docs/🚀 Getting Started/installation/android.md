@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-17T16:07:45.008Z'
 updatedAt: '2023-04-17T16:07:45.008Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 # What is RevenueCat?
 
@@ -39,7 +39,7 @@ implementation 'com.revenuecat.purchases:purchases:6.0.0'
 
 You should now be able to import `Purchases`.
 
-```java
+```java 
 import com.revenuecat.purchases.CustomerInfo;
 import com.revenuecat.purchases.Entitlement;
 import com.revenuecat.purchases.Offering;
