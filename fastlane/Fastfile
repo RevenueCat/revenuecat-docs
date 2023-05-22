@@ -98,14 +98,18 @@ lane :extract_code_blocks do |options|
 
             file_contents = convert_old_style_code_blocks(file_contents)
 
-            file_contents.scan(/```\w+[\s\S]+?```/).each_with_index.map do |block, index|
+            code_blocks = file_contents.scan(/```\w+[\s\S]+?```/)
+            total_blocks = code_blocks.length
+
+            code_blocks.each_with_index.map do |block, index|
                 filename_without_ext = File.basename(file_name, ".md")
-                UI.message("🔨 Processing code block with index #{index} in #{file_name}...")
+                UI.message("🔨 Processing code block #{index+1}/#{total_blocks} in #{file_name}...")
                 code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
                 if code_block_information.length > 0
                     file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
                 end
             end
+
 
             File.write(file_name, file_contents)
         end
@@ -680,7 +684,7 @@ def convert_old_style_code_blocks(input)
         codes = data["codes"]
         new_style_code_blocks = ""
 
-        UI.message("🔨 Migrating [block:code] block tag to backticks...")
+        UI.message("🔨 Will migrate #{codes.count} code blocks within a [block:code] tag to backticks...")
 
         codes.each do |code_item|
             new_style_code_blocks += process_code_block(code_item)
@@ -693,7 +697,7 @@ end
 def process_code_block(code_item)
     code = code_item["code"].strip
     language = code_item["language"].strip
-    name = code_item["name"] ? code_item["name"].strip : nil
+    name = code_item.key?("name") ? code_item["name"].strip : nil
 
     if name
         new_style_code_block = "```#{language} #{name}\n#{code}\n```\n"
