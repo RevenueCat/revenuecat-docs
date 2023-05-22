@@ -98,12 +98,18 @@ lane :extract_code_blocks do |options|
 
             file_contents = convert_old_style_code_blocks(file_contents)
 
-            file_contents.scan(/```\w+[\s\S]+?```/).each_with_index.map do |block, index|
-                filename_without_ext = File.basename(file_name, ".md")
-                code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
+            code_blocks = file_contents.scan(/```\w+[\s\S]+?```/)
+            total_blocks = code_blocks.length
 
-                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
+            code_blocks.each_with_index.map do |block, index|
+                filename_without_ext = File.basename(file_name, ".md")
+                UI.message("🔨 Processing code block #{index+1}/#{total_blocks} in #{file_name}...")
+                code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
+                if code_block_information.length > 0
+                    file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
+                end
             end
+
 
             File.write(file_name, file_contents)
         end
@@ -395,33 +401,39 @@ end
 # @return [Hash] a hash of language to file paths for the extracted code blocks
 def extract_block_to_file(output_dir, file_name_no_ext, code_block, index)
     code_information = extract_markdown_code_block_information(code_block)
+    if code_information
+        language = code_information["language"]
+        code = code_information["code"].strip
+        extension = determine_extension(language)
+        new_file = "#{output_dir}/#{file_name_no_ext}_#{index + 1}.#{extension}"
+        File.write(new_file, code)
+        UI.message("⚙️  Creating #{new_file}...")
 
-    language = code_information["language"]
-    code = code_information["code"].strip
-    extension = determine_extension(language)
-    new_file = "#{output_dir}/#{file_name_no_ext}_#{index + 1}.#{extension}"
-    File.write(new_file, code)
-    UI.message("⚙️  Creating #{new_file}...")
-
-    {
-        "language" => language,
-        "name" => code_information["name"],
-        "file" => new_file,
-    }
+        {
+            "language" => language,
+            "name" => code_information["name"],
+            "file" => new_file,
+        }
+    else
+        { }
+    end
 end
 
 def extract_markdown_code_block_information(code_block)
-    regex = /```(\w+)\s*(.*?)\n([\s\S]*?)```/m
-    matches = code_block.match(regex)
-    language = matches[1]
-    name = matches[2]
-    code = matches[3]
-
-    {
-        "language" => language,
-        "name" => name,
-        "code" => code,
-    }
+    lines = code_block.split("\n")
+    if lines.length > 1 # code blocks in callouts are one liners. Don't process them
+        header = lines[0].sub("```", "").split(" ")
+        language = header[0]
+        name = header.length > 1 ? header[1..-1].join(" ") : "" # Name is everything after the language and it's optional
+        code = lines[1..-2].join("\n") # Code is everything between the first and last line
+        {
+            "language" => language,
+            "name" => name,
+            "code" => code,
+        }
+    else
+        nil
+    end
 end
 
 def extract_code_block(code_block)
@@ -672,15 +684,26 @@ def convert_old_style_code_blocks(input)
         codes = data["codes"]
         new_style_code_blocks = ""
 
-        UI.message("🔨 Will process #{codes.count} code blocks within the [block:code] tag...")
+        UI.message("🔨 Will migrate #{codes.count} code blocks within a [block:code] tag to backticks...")
+
         codes.each do |code_item|
-            language = code_item["language"].strip
-            code = code_item["code"].strip
-            name = code_item["name"].strip
-            UI.message("🔨 Processing code block #{name}...")
-            new_style_code_blocks = new_style_code_blocks + "```#{language} #{name}\n#{code}\n```\n"
+            new_style_code_blocks += process_code_block(code_item)
         end
 
         new_style_code_blocks
     end
+end
+
+def process_code_block(code_item)
+    code = code_item["code"].strip
+    language = code_item["language"].strip
+    name = code_item.key?("name") ? code_item["name"].strip : nil
+
+    if name
+        new_style_code_block = "```#{language} #{name}\n#{code}\n```\n"
+    else
+        new_style_code_block = "```#{language}\n#{code}\n```\n"
+    end
+
+    new_style_code_block
 end
