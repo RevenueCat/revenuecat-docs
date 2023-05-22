@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-10-02T02:46:37.589Z'
 updatedAt: '2022-12-09T17:43:09.037Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -138,7 +138,39 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample Queries
 
 The following sample queries are in Postgresql.
-```sql
+```sql Active Trials
+-- Active trials
+SELECT
+  COUNT(*)
+FROM
+  transactions
+WHERE
+  end_time > NOW()
+  AND is_trial_period = TRUE
+  AND renewal_number = 1
+  AND is_sandbox = FALSE
+  AND refunded_at IS NULL;
+```
+```sql Active Subscriptions
+-- Active subscriptions
+SELECT
+  COUNT(*)
+FROM
+  transactions
+WHERE
+  end_time > NOW()
+  AND is_trial_period = FALSE
+  AND is_in_intro_offer_period = FALSE
+  AND is_sandbox = FALSE
+  AND refunded_at IS NULL
+  AND price != 0;
+
+-- The RevenueCat charts exclude promotional transactions.
+-- you can include the following filter to exclude promotional
+-- transactions from your queries as well
+product_identifier NOT ILIKE 'rc_promo%'
+```
+```sql Revenue
 -- Revenue past 28 days (USD)
 SELECT
   SUM(price_in_usd)

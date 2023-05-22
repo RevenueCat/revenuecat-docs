@@ -1,6 +1,7 @@
-[RCPurchases.sharedPurchases purchasePackage:package withDiscount:discount
-                             completionBlock:^(RCStoreTransacction * _Nullable transaction, RCCustomerInfo * _Nullable purchaserInfo, NSError * _Nullable error, BOOL userCancelled) {
-  if (purchaserInfo.entitlements[<your_entitlement_id>].isActive) {
-    // Unlock that great "pro" content    
+[RCPurchases.sharedPurchases getPromotionalOfferForProductDiscount:product.discounts[0]
+                                                       withProduct:product
+                                                    withCompletion:^(RCPromotionalOffer * _Nullable discount, NSError * _Nullable error) {
+	if (discount) {
+  	// Payment discount fetched
   }
 }];

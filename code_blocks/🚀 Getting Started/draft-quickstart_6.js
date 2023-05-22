@@ -1,8 +1,8 @@
-// subscribe to the window event onPurchaserInfoUpdated to get any changes that happen in the purchaserInfo
-window.addEventListener("onPurchaserInfoUpdated", onPurchaserInfoUpdated, false);
-
-//...
-
-onPurchaserInfoUpdated: function(info) {
-    // handle any changes to purchaserInfo
+export default class App extends React.Component {
+  
+  componentDidMount() {
+    Purchases.setDebugLogsEnabled(true);
+    Purchases.setup("public_sdk_key");
+  }
+  
 }

@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-27T15:06:13.281Z'
 updatedAt: '2023-03-27T15:06:13.281Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 # What is RevenueCat?
 
@@ -69,37 +69,43 @@ The library should have been added to the Swift Package Dependencies section and
 ## Install via CocoaPods
 
 To always use the latest release, add the following to your Podfile:
-```ruby
+```ruby Podfile
 pod 'RevenueCat'
 ```
+
 Alternatively, pin to a specific minor version:
-```ruby
+```ruby 
 pod 'RevenueCat', '~> 4.15'
 ```
+
 And then run:
-```ruby
+```ruby Terminal
 pod install
 ```
+
 This will add `RevenueCat.framework` to your workspace.
 
 
 ## Install via Carthage
 
 To always use the latest release, add the following to your Cartfile:
-```text
+```text Cartfile
 github "revenuecat/purchases-ios"
 ```
+
 Alternatively, pin to a specific minor version:
-```text
+```text 
 github "revenuecat/purchases-ios" ~> 4.15.0
 ```
+
 ### Carthage with XCFrameworks
 
 If you're using Carthage version >= 0.37, you can use RevenueCat as an XCFramework instead of a Universal Framework. This makes setup easier, since you don't have to set up build phases at all. 
 To use XCFrameworks with Carthage, you need to pass in `--use-xcframeworks`.
-```shell
+```shell Terminal
 carthage update --use-xcframeworks
 ```
+
 More information on using XCFrameworks with Carthage is available at https://github.com/carthage/Carthage/#building-platform-independent-xcframeworks-xcode-12-and-above
 [block:callout]
 {
@@ -110,9 +116,10 @@ More information on using XCFrameworks with Carthage is available at https://git
 ### Carthage with regular frameworks
 
 Run:
-```text
+```text 
 carthage update
 ```
+
 # Import the SDK
 [block:callout]
 {
@@ -122,16 +129,17 @@ carthage update
 }
 [/block]
 You should now be able to `import RevenueCat`.
-```swift
+```swift 
 import RevenueCat
 ```
-```objectivec
+```objectivec 
 @import RevenueCat;
 
 // or
 
 #import "Purchases.h"
 ```
+
 
 [block:callout]
 {

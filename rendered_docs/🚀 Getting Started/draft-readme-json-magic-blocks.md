@@ -4,7 +4,7 @@ slug: draft-readme-json-magic-blocks
 hidden: true
 createdAt: '2023-03-03T21:31:29.059Z'
 updatedAt: '2023-03-03T21:31:29.059Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 Plain text
 [block:api-header]
@@ -13,12 +13,13 @@ Plain text
 }
 [/block]
 
-```c
+```c 
 /* C code */
 ```
-```javascript
+```javascript 
 // Javascript code
 ```
+
 
 [block:callout]
 {

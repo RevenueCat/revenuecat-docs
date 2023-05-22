@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data (formerly ETL Exp
 hidden: false
 createdAt: '2023-03-14T15:53:17.647Z'
 updatedAt: '2023-03-20T16:19:22.595Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -140,7 +140,45 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 # Sample queries for RevenueCat measures
 
 You can use the following sample queries (written in Postgresql) as starting points for reproducing common RevenueCat measures.
-```pgsql
+```pgsql Active Trials
+-- Active Trials as of your [targeted_date]
+
+SELECT
+  COUNT(*)
+FROM
+  [revenuecat_data_table]
+WHERE date(effective_end_time) > [targeted_date]
+  AND date(start_time) <= [targeted_date]
+  AND is_trial_period = 'true'
+  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox != 'true'
+
+-- The RevenueCat Active Trials chart excludes
+-- promotional transactions and transactions resulting from family sharing
+-- since they do not reflect auto-renewing future payments.
+```
+```pgsql Active Subscriptions
+-- Active Subscriptions as of your [targeted_date]
+
+SELECT
+  COUNT(*)
+FROM
+  [revenuecat_data_table]
+WHERE date(effective_end_time) > [targeted_date]
+  AND date(start_time) <= [targeted_date]
+  AND is_trial_period = 'false'
+  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox != 'true'
+
+-- The RevenueCat Active Subscriptions chart excludes trials,
+-- promotional transactions, and transactions resulting from family sharing
+-- since they do not reflect auto-renewing future payments.
+```
+```pgsql Revenue
 -- Revenue generated on [targeted_date]
 
 SELECT
@@ -157,10 +195,73 @@ WHERE date(start_time) = [targeted_date]
 -- Transactions which are refunded can be identified through the refunded_at field.
 -- Once refunded, price_in_usd will be set to $0, so revenue will always be net of refunds.
 ```
+
 # Sample queries for customized measures
 
 Scheduled Data Exports are a powerful way to add your own customizations on top of the core measures provided by RevenueCat. Check out the following sample queries (written in Postgresql) for some ideas.
-```pgsql
+```pgsql Active Subs by Custom Attribute
+-- How many Active Subscriptions do I have with a given custom attribute value?
+  
+SELECT
+  you.custom_attribute_key, COUNT(*)
+FROM
+  [revenuecat_data_table] rc
+  
+LEFT JOIN [your_data_table] you 
+    ON you.rc_original_app_user_id = rc.rc_original_app_user_id
+  
+WHERE date(rc.effective_end_time) > [targeted_date]
+  AND date(rc.start_time) <= [targeted_date]
+  AND rc.is_trial_period = 'false'
+  AND (rc.effective_end_time IS NULL OR DATE_DIFF('s', rc.start_time, rc.effective_end_time)::float > 0)
+  AND rc.ownership_type != 'FAMILY_SHARED'
+  AND rc.store != 'promotional'
+  AND rc.is_sandbox <> 'true'
+  GROUP BY you.custom_attribute_key
+```
+```pgsql Weekly Revenue (starting Monday)
+-- What is my weekly revenue, where Monday is set as the start day of the week?
+
+SELECT
+  date_trunc('week', start_time) as week,
+  SUM(price_in_usd) as revenue
+FROM
+  [revenuecat_data_table]
+WHERE date(start_time) BETWEEN [targeted_period_start_date] AND [targeted_period_end_date]
+  AND is_trial_period = 'false'
+  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox != 'true'
+  GROUP BY week
+```
+```pgsql Realized LTV Segments
+-- What is my Realized LTV of each monthly subscription cohort, segmented by whether they were offered a trial?
+  
+WITH 
+(SELECT
+  MIN(start_time) as subscription_start_time,
+  original_store_transaction_id,
+  MAX(is_trial_period) as had_a_trial,
+  SUM(price_in_usd) as realized_ltv
+FROM
+  [revenuecat_data_table]
+WHERE date(start_time) > [targeted_period_start_date]
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox != 'true'
+  GROUP BY original_store_transaction_id) as subscriptions
+  
+SELECT
+  to_char(first_start_time, 'YYYY-MM') as subscription_start_month,
+  had_a_trial,
+  COUNT() as subscriptions,
+  SUM(realized_ltv) as realized_ltv,
+  SUM(realized_ltv) / COUNT() as realized_ltv_per_subscription
+FROM
+  subscriptions
+```
+```pgsql Active Trials by Grace Period Status
 -- What portion of my Active Trials are in a grace period?
   
 SELECT

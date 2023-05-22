@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:08:03.274Z'
 updatedAt: '2023-04-27T20:08:03.274Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -174,32 +174,15 @@ We recommend keeping the Mixpanel SDK identifier the same as RevenueCat's App Us
 
 If a user has that subscriber attribute set it will be used instead of the RevenueCat App User ID in the Mixpanel events.
 
-```swift
-Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-
-// Option 1: Match Mixpanel's SDK identity to RevenueCat's App User ID
-Mixpanel.mainInstance().identify(distinctId: "my_app_user_id")
-
-// Option 2: Set different Mixpanel identifier in RevenueCat
-Purchases.shared.attribution.setMixpanelDistinctID(Mixpanel.mainInstance().distinctId)
-```
-```objectivec
-// Configure Purchases SDK
-[RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
-
-// Set App User Id in Mixpanel
-[[Mixpanel sharedInstance] identify:@"my_app_user_id"];
-```
-```java
-// Configure Purchases SDK
-Purchases.configure(this, "public_sdk_key", "my_app_user_id");
-
-// Set App User Id in Mixpanel
-MixpanelAPI mixpanel =
-    MixpanelAPI.getInstance(context, MIXPANEL_TOKEN);
-
-mixpanel.identify("my_app_user_id");
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_2.m"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_3.java"}
+[/block]
 
 
 
@@ -236,193 +219,24 @@ After you've set up the _Purchases SDK_ and Mixpanel SDK, you can "turn on" the 
 
 Below are sample JSONs that are delivered to Mixpanel for events.
 
-```json Initial Purchase
-{
-    "track_event": {
-        "event": "rc_initial_purchase_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1541012230,
-            "revenue": 4.99,
-            "product_id": "monthly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": 1541012230,
-                "$amount": 4.99,
-                "product_id": "monthly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
-```json Trial Started
-{
-    "track_event": {
-        "event": "rc_trial_started_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1541011312,
-            "revenue": 0.0,
-            "product_id": "monthly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": 1541011312,
-                "$amount": 0.0,
-                "product_id": "monthly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
-```json Trial Converted
-{
-    "track_event": {
-        "event": "rc_trial_converted_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1541033435,
-            "revenue": 44.99,
-            "product_id": "yearly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": 1541033435,
-                "$amount": 44.99,
-                "product_id": "yearly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
-```json Trial Cancelled
-{
-    "track_event": {
-        "event": "rc_trial_cancelled_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1541014060,
-            "revenue": 0.0,
-            "product_id": "yearly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": 1541014060,
-                "$amount": 0.0,
-                "product_id": "yearly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
-```json Renewal
-{
-    "track_event": {
-        "event": "rc_renewal_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1541026947,
-            "revenue": 4.99,
-            "product_id": "monthly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": 1541026947,
-                "$amount": 4.99,
-                "product_id": "monthly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
-```json Cancellation
-{
-    "track_event": {
-        "event": "rc_cancellation_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1552135741,
-            "revenue": 0.0,
-            "product_id": "monthly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": "2022-12-09T12:49:01",
-                "$amount": 0.0,
-                "product_id": "monthly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
-```json Non Subscription Purchase
-{
-    "track_event": {
-        "event": "rc_non_subscription_purchase_event",
-        "properties": {
-            "distinct_id": "12345678-1234-1234-1234-123456789012",
-            "token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-            "time": 1559530911,
-            "$insert_id": "12345678",
-            "revenue": 4.99,
-            "product_id": "monthly_sub",
-            "store": "APP_STORE"
-        }
-    },
-    "engage_event": {
-        "$append": {
-            "$transactions": {
-                "$time": "2022-12-03T03:01:51",
-                "$amount": 4.99,
-                "product_id": "monthly_sub",
-                "store": "APP_STORE"
-            }
-        },
-        "$token": "abCdEFg01HiJklMN2OpQ3RStu4v5",
-        "$distinct_id": "12345678-1234-1234-1234-123456789012"
-    }
-}
-```
+[block:file]
+{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_4.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_5.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_6.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_7.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_8.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_9.json"}
+[/block]
+[block:file]
+{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_10.json"}
+[/block]

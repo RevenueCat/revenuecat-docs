@@ -13,28 +13,28 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-04-28T16:33:56.375Z'
 updatedAt: '2023-04-25T09:28:53.306Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).
 
 It is recommended that all apps have some way for users to trigger the `restorePurchases` method, even if you require all customers to create accounts. 
 
-```swift
+```swift 
 Purchases.shared.restorePurchases { customerInfo, error in
     //... check customerInfo to see if entitlement is now active
 }
 ```
-```objectivec
+```objectivec 
 [[RCPurchases sharedPurchases] restorePurchasesWithCompletion:^(RCCustomerInfo *customerInfo, NSError *error) {
     //... check customerInfo to see if entitlement is now active
 }];
 ```
-```kotlin
+```kotlin 
 Purchases.sharedInstance.restorePurchasesWith() { customerInfo ->
 	//... check customerInfo to see if entitlement is now active
 }
 ```
-```java
+```java 
 Purchases.getSharedInstance().restorePurchases(new ReceiveCustomerInfoCallback() {
 	@Override
 	public void onError(@NonNull PurchasesError error) {

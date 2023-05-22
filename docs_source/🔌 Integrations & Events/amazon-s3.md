@@ -16,7 +16,7 @@ metadata:
     4: "#fbabaf"
 createdAt: '2020-10-07T00:35:55.719Z'
 updatedAt: '2020-10-07T00:35:55.719Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -151,8 +151,15 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 [/block]
 
 [block:file]
-sql->code_blocks/🔌 Integrations & Events/amazon-s3_1.sql
+{"language":"sql","name":"Active Trials","file":"code_blocks/🔌 Integrations & Events/amazon-s3_1.sql"}
 [/block]
+[block:file]
+{"language":"sql","name":"Active Subscriptions","file":"code_blocks/🔌 Integrations & Events/amazon-s3_2.sql"}
+[/block]
+[block:file]
+{"language":"sql","name":"Revenue","file":"code_blocks/🔌 Integrations & Events/amazon-s3_3.sql"}
+[/block]
+
 
 [block:api-header]
 {
@@ -183,8 +190,9 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 [/block]
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
 [block:file]
-json->code_blocks/🔌 Integrations & Events/amazon-s3_2.json
+{"language":"json","name":"Access Policy","file":"code_blocks/🔌 Integrations & Events/amazon-s3_4.json"}
 [/block]
+
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]
 {

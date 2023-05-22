@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-20T17:32:08.635Z'
 updatedAt: '2023-03-20T17:32:08.635Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 # What is RevenueCat?
 
@@ -23,8 +23,9 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 # Installation
 [block:file]
-shell->code_blocks/🚀 Getting Started/installation/cordova_1.shell
+{"language":"shell","name":"","file":"code_blocks/🚀 Getting Started/installation/cordova_1.shell"}
 [/block]
+
 # Additional iOS Setup
 
 ## Add In-app Purchase Capability to Project

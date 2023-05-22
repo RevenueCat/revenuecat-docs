@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:47.176Z'
 updatedAt: '2023-04-27T20:07:47.176Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 

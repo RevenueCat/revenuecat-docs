@@ -4,7 +4,7 @@ slug: monthly-recurring-revenue-mrr-chart
 hidden: false
 createdAt: '2022-10-19T15:33:28.776Z'
 updatedAt: '2023-04-21T15:41:25.398Z'
-category: 64515c3ca06fe500680740de
+category: 646582c1f2440605b02c28bf
 ---
 ## Definition
 

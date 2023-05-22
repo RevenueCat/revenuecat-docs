@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-06-29T17:25:26.484Z'
 updatedAt: '2023-02-28T21:11:07.211Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 [block:callout]
@@ -34,13 +34,30 @@ You should only configure *Purchases* once, usually early in your application li
 
 Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 [block:file]
-swift->code_blocks/🚀 Getting Started/configuring-sdk_1.swift
-objectivec->code_blocks/🚀 Getting Started/configuring-sdk_1.m
-kotlin->code_blocks/🚀 Getting Started/configuring-sdk_1.kt
-java->code_blocks/🚀 Getting Started/configuring-sdk_1.java
-javascript->code_blocks/🚀 Getting Started/configuring-sdk_1.js
-csharp->code_blocks/🚀 Getting Started/configuring-sdk_1.cs
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/configuring-sdk_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/configuring-sdk_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/configuring-sdk_7.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/configuring-sdk_8.cs"}
+[/block]
+
 
 [block:callout]
 {

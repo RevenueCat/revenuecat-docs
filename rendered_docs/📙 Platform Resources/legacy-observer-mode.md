@@ -5,7 +5,7 @@ excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
 createdAt: '2022-05-31T23:05:56.746Z'
 updatedAt: '2022-05-31T23:05:56.746Z'
-category: 64515c3ecacdcd0050abf7a5
+category: 646582c48cebdb000ba32f10
 ---
 Observer Mode enables you to do a partial implementation of RevenueCat's SDK, giving you access to the advanced charting, webhooks, and attribution that RevenueCat provides—without affecting your existing purchase code. This is useful if you already have a functioning subscription system to manage your purchases and have infrastructure or code policy restrictions that prevent you from fully integrating third-party software.
 
@@ -31,30 +31,31 @@ No special requirements
 }
 [/block]
 # 1. Configure the SDK
-```swift
+```swift Swift
 Purchases.configure(
             withAPIKey: "my_api_key",
             appUserID: "my_app_user_id",
             observerMode: true)
 ```
-```objectivec
+```objectivec Objective-C
 [RCPurchases 
 	configureWithAPIKey:@"my_api_key" 
 	appUserID:@"my_app_user_id"
 	observerMode: YES];
 ```
-```kotlin
+```kotlin Kotlin
 Purchases.configure(this, "my_api_key", "my_app_user_id", true)
 ```
-```java
+```java Java
 Purchases.configure(this, "my_api_key", "my_app_user_id", true);
 ```
-```javascript
+```javascript Flutter
 await Purchases.setup("my_api_key", observerMode: true);
 ```
-```text
+```text Unity
 See "Enable Observer Mode in Unity configuration" below
 ```
+
 
 [block:callout]
 {
@@ -90,21 +91,22 @@ See "Enable Observer Mode in Unity configuration" below
 # 2. Sync purchases with RevenueCat (Android only)
 
 On Android (or cross-platform SDKs), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. 
-```kotlin
+```kotlin 
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.sharedInstance.syncPurchases()
 ```
-```java
+```java 
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.getSharedInstance().syncPurchases();
 ```
-```javascript
+```javascript React Native
 // Called any time a purchase or restore 
 // is successful in your existing code
 Purchases.syncPurchases();
 ```
+
 
 [block:callout]
 {

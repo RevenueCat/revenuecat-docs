@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:18.024Z'
 updatedAt: '2023-04-27T20:07:18.024Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -166,7 +166,7 @@ If you're using the Braze SDK, you can set the User Id to match the RevenueCat A
 
 Configure the Braze SDK with the same App User Id as RevenueCat or use the `.changeUser()` method on the Braze SDK.
 
-```swift
+```swift 
 // Configure Purchases SDK
 Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
 
@@ -177,7 +177,7 @@ Appboy.sharedInstance()?.changeUser("my_app_user_id")
 Purchases.shared.attribution.setAttributes(["$brazeAliasName" : "name", 
                              "$brazeAliasLabel" : "label"])
 ```
-```objectivec
+```objectivec 
 // Configure Purchases SDK
 [RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
 
@@ -190,7 +190,7 @@ Purchases.shared.attribution.setAttributes(["$brazeAliasName" : "name",
     @"$brazeAliasLabel": @"label"
 }];
 ```
-```java
+```java 
 // Configure Purchases SDK
 Purchases.configure(this, "public_sdk_key", "my_app_user_id");
 

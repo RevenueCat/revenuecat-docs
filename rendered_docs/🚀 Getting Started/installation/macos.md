@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-20T17:31:45.016Z'
 updatedAt: '2023-03-20T17:31:45.016Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 # What is RevenueCat?
 
@@ -41,17 +41,20 @@ The Purchases iOS SDK is also compatible with macOS, and can be installed either
 ## Install via CocoaPods
 
 To always use the latest release, add the following to your Podfile:
-```ruby
+```ruby Podfile
 pod 'RevenueCat'
 ```
+
 Alternatively, pin to a specific minor version (e.g. 3.10):
-```ruby
+```ruby 
 pod 'RevenueCat', '~> 4.15'
 ```
+
 And then run:
-```ruby
+```ruby Terminal
 pod install
 ```
+
 This will add `RevenueCat.framework` to your workspace.
 
 ## Install via Swift Package Manager
@@ -61,12 +64,13 @@ You can use Swift Package Manager to add Purchases to your Xcode project. Select
 # Import Purchases
 
 You should now be able to `import RevenueCat`.
-```swift
+```swift 
 import RevenueCat
 ```
-```objectivec
+```objectivec 
 #import "RCPurchases.h"
 ```
+
 
 [block:callout]
 {

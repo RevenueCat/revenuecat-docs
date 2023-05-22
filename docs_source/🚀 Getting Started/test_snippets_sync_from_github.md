@@ -6,7 +6,7 @@ excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and G
 hidden: true
 createdAt: '2022-12-01T15:38:57.843Z'
 updatedAt: '2023-02-06T19:37:56.393Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 ###  Test Snippets synced from local code
 
@@ -14,58 +14,21 @@ This was synced from GitHub actions when merging to main
 
 Here is the code to configure the SDK:
 
-```swift
-func application(_ application: UIApplication,
-                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  
-    Purchases.logLevel = .debug
-    Purchases.configure(
-    with: Configuration.Builder(withAPIKey: Constants.apiKey)
-              .with(appUserID: "<app_user_id>")
-              .build()
-    )
-    return true
-}
-
-```
-```kotlin
-class MainApplicationOnlyPlayStore: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.debugLogsEnabled = true
-        Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
-    }
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_1.swift"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_2.kt"}
+[/block]
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
-```kotlin
-flavorDimensions "store"
-productFlavors {
-    amazon {
-        buildConfigField "String", "STORE", "\"amazon\""
-    }
-
-    google {
-        buildConfigField "String", "STORE", "\"google\""
-    }
-}
-```
-```kotlin
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.debugLogsEnabled = true
-
-        if (BuildConfig.STORE == "amazon") {
-            Purchases.configure(AmazonConfiguration.Builder(this, "public_amazon_sdk_key").build())
-        } else if (BuildConfig.STORE == "google") {
-            Purchases.configure(PurchasesConfiguration.Builder(this, "public_google_sdk_key").build())
-        }
-    }
-}
-
-```
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_3.kt"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_4.kt"}
+[/block]
 
 
 Test image (relative path):

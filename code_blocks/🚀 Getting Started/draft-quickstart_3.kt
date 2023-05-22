@@ -1,9 +1,9 @@
-Purchases.sharedInstance.purchasePackageWith(
-  this,
-  package,
-  onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, purchaserInfo ->
-    if (purchaserInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
-    // Unlock that great "pro" content
-  }
-})
+class MainApplication: Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        Purchases.debugLogsEnabled = true
+        Purchases.configure(this, "public_sdk_key")
+    }
+
+}

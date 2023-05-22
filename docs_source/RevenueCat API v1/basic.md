@@ -4,7 +4,7 @@ slug: basic
 hidden: false
 createdAt: '2018-10-01T11:03:55.483Z'
 updatedAt: '2023-04-12T02:00:14.160Z'
-category: 64515c377df88700248e78b1
+category: 646582bba927b2002033d843
 ---
 [block:callout]
 {
@@ -31,18 +31,21 @@ Authentication for the RevenueCat REST API is achieved by setting the `Authoriza
 
 Certain endpoints require secret keys, which should be kept out of any publicly accessible areas such as GitHub, client-side code, and so forth. See our [Authentication guide](doc:authentication) for more information.
 [block:file]
-text->code_blocks/RevenueCat API v1/basic_1.txt
+{"language":"text","name":"Authorization Header","file":"code_blocks/RevenueCat API v1/basic_1.txt"}
 [/block]
+
 ## Request Payload
 
 The body of the `POST` requests should be encoded in JSON and have the 'Content-Type' header set to 'application/json'.
 [block:file]
-text->code_blocks/RevenueCat API v1/basic_2.txt
+{"language":"text","name":"Content-Type Header","file":"code_blocks/RevenueCat API v1/basic_2.txt"}
 [/block]
 
+
 [block:file]
-json->code_blocks/RevenueCat API v1/basic_3.json
+{"language":"json","name":"sample body","file":"code_blocks/RevenueCat API v1/basic_3.json"}
 [/block]
+
 
 [block:api-header]
 {

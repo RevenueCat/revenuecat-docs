@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-09-30T01:49:47.596Z'
 updatedAt: '2023-04-27T20:07:00.636Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -172,7 +172,7 @@ If you're using the Airship SDK, you can either send the channel ID to RevenueCa
 
 Setting the Airship channel ID in RevenueCat is the preferred way for identifying users in Airship. Call `setAirshipChannelID` on the Purchases SDK to have RevenueCat use the channel ID to send events to Airship.
 
-```swift
+```swift 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
   // Configure Purchases
@@ -190,7 +190,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
   return true
 }
 ```
-```objectivec
+```objectivec 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
   // Configure Purchases
@@ -208,7 +208,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
   return YES;
 }
 ```
-```kotlin
+```kotlin 
 override fun onCreate(savedInstanceState: Bundle?) {
 
   super.onCreate(savedInstanceState)
@@ -226,7 +226,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   // ...
 }
 ```
-```java
+```java 
 @Override
 public void onCreate(Bundle savedInstanceState) {
   
@@ -252,7 +252,7 @@ public void onCreate(Bundle savedInstanceState) {
 
 **Setting the Airship channel ID in RevenueCat is preferred over using Named Users, even if you have a user authentication system.** However, if you're already using Named Users in your Airship integration, you have the option to set the Named User in the Airship SDK as the same app user ID as RevenueCat. Ensure [Named Users is enabled in your Airship dashboard](https://docs.airship.com/guides/messaging/user-guide/project/enable-features/#named-users).
 
-```swift
+```swift 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
   // Configure Purchases
@@ -269,7 +269,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
   return true
 }
 ```
-```objectivec
+```objectivec 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
   // Configure Purchases
@@ -286,7 +286,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
   return YES;
 }
 ```
-```kotlin
+```kotlin 
 override fun onCreate(savedInstanceState: Bundle?) {
 
   super.onCreate(savedInstanceState)
@@ -303,7 +303,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   // ...
 }
 ```
-```java
+```java 
 @Override
 public void onCreate(Bundle savedInstanceState) {
   

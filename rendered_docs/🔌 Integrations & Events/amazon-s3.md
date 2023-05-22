@@ -16,7 +16,7 @@ metadata:
     4: "#fbabaf"
 createdAt: '2020-10-07T00:35:55.719Z'
 updatedAt: '2020-10-07T00:35:55.719Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -150,7 +150,30 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 }
 [/block]
 
-```sql
+```sql Active Trials
+-- Active trials
+select count(1)
+from transactions
+where end_time > now()
+and is_trial_period = true
+and is_sandbox = false
+and refunded_at IS NULL;
+```
+```sql Active Subscriptions
+-- Active subscriptions
+select count(1)
+from transactions
+where end_time > now()
+and is_trial_period = false
+and is_sandbox = false
+and refunded_at IS NULL;
+
+-- The RevenueCat charts exclude promotional transactions.
+-- you can include the following filter to exclude promotional
+-- transactions from your queries as well
+product_identifier NOT ILIKE 'rc_promo%'
+```
+```sql Revenue
 -- Revenue past 28-days (USD)
 select 
 sum(price)
@@ -158,6 +181,7 @@ from transactions
 where start_time > (CURRENT_DATE - INTERVAL '28 days')
 and is_sandbox = false;
 ```
+
 
 [block:api-header]
 {
@@ -187,7 +211,7 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 }
 [/block]
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
-```json
+```json Access Policy
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -212,6 +236,7 @@ In the policy editor, switch to the JSON view and paste in the following code. B
     ]
 }
 ```
+
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]
 {

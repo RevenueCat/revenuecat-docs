@@ -5,7 +5,7 @@ excerpt: Migrating workflows from Original Charts to the New Charts beta
 hidden: true
 createdAt: '2021-06-10T16:41:59.584Z'
 updatedAt: '2021-11-02T15:58:52.846Z'
-category: 64515c3ca06fe500680740de
+category: 646582c1f2440605b02c28bf
 ---
 # Known Issues
 

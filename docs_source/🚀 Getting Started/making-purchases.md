@@ -16,17 +16,34 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-28T08:06:18.490Z'
 updatedAt: '2023-03-28T08:06:18.490Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:file]
-swift->code_blocks/🚀 Getting Started/making-purchases_1.swift
-objectivec->code_blocks/🚀 Getting Started/making-purchases_1.m
-kotlin->code_blocks/🚀 Getting Started/making-purchases_1.kt
-java->code_blocks/🚀 Getting Started/making-purchases_1.java
-javascript->code_blocks/🚀 Getting Started/making-purchases_1.js
-csharp->code_blocks/🚀 Getting Started/making-purchases_1.cs
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_1.swift"}
 [/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/making-purchases_5.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/making-purchases_6.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/making-purchases_7.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/making-purchases_8.cs"}
+[/block]
+
 The `purchase(package:)` completion block will contain an updated [CustomerInfo](doc:purchaserinfo) object if successful, along with some details about the transaction.
 
 If the `error `object is present, then the purchase failed. See our guide on [Error Handling](doc:errors) for the specific error types.

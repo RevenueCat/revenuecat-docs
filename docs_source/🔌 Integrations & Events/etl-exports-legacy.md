@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-10-02T02:46:37.589Z'
 updatedAt: '2022-12-09T17:43:09.037Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 [block:callout]
 {
@@ -139,5 +139,11 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 
 The following sample queries are in Postgresql.
 [block:file]
-sql->code_blocks/🔌 Integrations & Events/etl-exports-legacy_1.sql
+{"language":"sql","name":"Active Trials","file":"code_blocks/🔌 Integrations & Events/etl-exports-legacy_1.sql"}
+[/block]
+[block:file]
+{"language":"sql","name":"Active Subscriptions","file":"code_blocks/🔌 Integrations & Events/etl-exports-legacy_2.sql"}
+[/block]
+[block:file]
+{"language":"sql","name":"Revenue","file":"code_blocks/🔌 Integrations & Events/etl-exports-legacy_3.sql"}
 [/block]

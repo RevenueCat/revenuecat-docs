@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-06-17T19:13:08.598Z'
 updatedAt: '2023-04-27T20:08:09.759Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -181,7 +181,7 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 
 Create an `identityRequest` and add it to the `MParticleOptions` that you pass to the `start()` method on the mParticle SDK to set the same App User Id that is set in RevenueCat.
 
-```swift
+```swift 
 // Configure Purchases SDK
 Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
 
@@ -212,7 +212,7 @@ options.onIdentifyComplete =  { (result: MPIdentityApiResult?, error: Error?) in
 // Start mParticle
 MParticle.sharedInstance().start(with: options)
 ```
-```objectivec
+```objectivec 
 // Configure Purchases SDK
 [RCPurchases configureWithAPIKey:@"public_sdk_key" appUserID:@"my_app_user_id"];
 
@@ -243,7 +243,7 @@ options.onIdentifyComplete = ^(MPIdentityApiResult *_Nullable apiResult, NSError
 // Start mParticle
 [[MParticle sharedInstance] startWithOptions:options];
 ```
-```java
+```java 
 // Configure Purchases SDK
 Purchases.configure(this, "my_api_key", "my_app_user_id");
 
@@ -285,19 +285,19 @@ MParticle.start(options);
 
 mParticle also allows you to log a user in after starting the SDK and log a user out; you should handle both of these cases:
 
-```swift
+```swift 
 // handle logging out
 MParticle.sharedInstance().identity.logout(completion: { (result: MPIdentityAPIResult?, error: Error?) in
     Purchases.shared().reset()
 })
 ```
-```objectivec
+```objectivec 
 // handle logging out
 [[[MParticle sharedInstance] identity] logoutWithCompletion:^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {
     [[RCPurchases sharedPurchases] reset];
 }];
 ```
-```java
+```java 
 // handle logging out
 MParticle.getInstance().Identity().logout(identityRequest)
     .addFailureListener(new TaskFailureListener() {
@@ -316,7 +316,7 @@ MParticle.getInstance().Identity().logout(identityRequest)
 
 
 
-```swift
+```swift 
 // handle logging in
 MParticle.sharedInstance().identity.login(identityRequest, completion: { (result: MPIdentityAPIResult?, error: Error?) in 
     guard error == nil else {
@@ -333,7 +333,7 @@ MParticle.sharedInstance().identity.login(identityRequest, completion: { (result
     Purchases.shared.attribution.setMparticleID(mPid.stringValue)
 })
 ```
-```objectivec
+```objectivec 
 // handle logging in
 [[[MParticle sharedInstance] identity] login:identityRequest
                                   completion:^(MPIdentityApiResult *_Nullable apiResult, NSError *_Nullable error) {
@@ -351,7 +351,7 @@ MParticle.sharedInstance().identity.login(identityRequest, completion: { (result
     [RCPurchases shared] setMparticleID: [mPid stringValue]];
 }];
 ```
-```java
+```java 
 // handle logging in
 MParticle.getInstance().Identity().login(identityRequest)
     .addFailureListener(new TaskFailureListener() {

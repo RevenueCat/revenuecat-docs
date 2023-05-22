@@ -5,7 +5,7 @@ excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
 updatedAt: '2023-03-30T18:29:03.017Z'
-category: 64515c3f0b149d004ca541f9
+category: 646582c5895ade0068c36ca5
 ---
 ## Google Product setup
 
@@ -149,7 +149,7 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 
 1. Update RevenueCat to version `6.0.1`. You can do this in your app’s module build.gradle.
 
-```kotlin
+```kotlin 
 implementation "com.revenuecat.purchases:purchases:6.0.1"
 ```
 
@@ -162,7 +162,7 @@ implementation "com.revenuecat.purchases:purchases:6.0.1"
 
 Follow the migration reference doc to migrate all the changes. These are some examples of code changes you might have to do:
 
-```kotlin
+```kotlin 
 // To get the price for your product after all offers
 
 // Old:
@@ -186,7 +186,7 @@ Purchases.sharedInstance.getOfferingsWith(
 
 
 
-```kotlin
+```kotlin 
 // To purchase a subscription with a free trial
 
 // Old:

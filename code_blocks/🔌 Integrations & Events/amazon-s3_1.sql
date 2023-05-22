@@ -1,6 +1,7 @@
--- Revenue past 28-days (USD)
-select 
-sum(price)
+-- Active trials
+select count(1)
 from transactions
-where start_time > (CURRENT_DATE - INTERVAL '28 days')
-and is_sandbox = false;
+where end_time > now()
+and is_trial_period = true
+and is_sandbox = false
+and refunded_at IS NULL;

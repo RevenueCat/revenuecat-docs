@@ -16,7 +16,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2023-03-30T19:33:09.403Z'
 updatedAt: '2023-03-30T19:33:09.403Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 With our Facebook Ads integration you can:
 
@@ -77,7 +77,7 @@ Purchases.collectDeviceIdentifiers()
 // Set the Facebook anonymous Id
 Purchases.setFBAnonymousID()
 ```
-```kotlin
+```kotlin 
 //..
 Purchases.configure(this, "public_sdk_key")
 //..
@@ -137,7 +137,7 @@ You should make sure to set attributes after the _Purchases SDK_ is configured, 
 
 As noted above, you'll need to disable all client side tracking of revenue to prevent double counting of revenue in Facebook Ads Manager. To continue tracking install and usage events, you'll need to call Facebook's 'activate app' event after configuration:
 
-```swift
+```swift 
 // disable automatic tracking
 FBSDKCoreKit.Settings.isAutoLogAppEventsEnabled = false
 

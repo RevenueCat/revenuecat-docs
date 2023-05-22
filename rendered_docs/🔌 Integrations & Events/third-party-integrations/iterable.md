@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-01-31T17:07:33.480Z'
 updatedAt: '2023-04-27T20:07:55.923Z'
-category: 64515c3c134c6b000bb9f128
+category: 646582c240e8b0000a4f35e6
 ---
 > 👍 
 > 
@@ -185,7 +185,7 @@ In order to associate RevenueCat data with the Iterable User Profile, either the
 
 To attribute an event to an Iterable Campaign ID and/or Template ID, set the `$iterableCampaignId` and/or `$iterableTemplateId` subscriber attributes through the RevenueCat SDK or [REST API](https://docs.revenuecat.com/reference/update-subscriber-attributes).
 
-```swift
+```swift 
 // Configure Purchases
 Purchases.configure(this, "public_sdk_key", "my_app_user_id");
 
@@ -203,7 +203,7 @@ Purchases.shared.attribution.setAttributes(["$email" : IterableAPI.email],
                                ["$iterableCampaignId" : "123"],
                                ["$iterableTemplateId" : "123"])
 ```
-```objectivec
+```objectivec 
 // Configure Purchases
 [RCPurchases configureWithAPIKey:@"public_sdk_key"];
 
@@ -222,7 +222,7 @@ IterableAPI.userId = @"user123";
   @"$iterableTemplateId": @"123"
 }];
 ```
-```java
+```java 
 // Configure Purchases
 Purchases.configure(new PurchasesConfiguration.Builder(this, "public_google_sdk_key").build());
 
@@ -271,7 +271,7 @@ Iterable.getUserId().then(userId => {
 
 Purchases.setAttributes({ "$iterableCampaignId" : "123", "$iterableTemplateId" : "123" });
 ```
-```curl
+```curl 
 curl --request POST \
   --url https://api.revenuecat.com/v1/subscribers/app_user_id/attributes \
   --header 'Authorization: Bearer ' \

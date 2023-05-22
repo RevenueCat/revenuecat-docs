@@ -5,7 +5,7 @@ excerpt: Get up and running with mobile subscriptions
 hidden: false
 createdAt: '2022-11-16T20:18:33.888Z'
 updatedAt: '2023-04-21T20:24:53.183Z'
-category: 64515c38a0f5ef001898dfd8
+category: 646582bc33592e0017008a31
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 
@@ -176,162 +176,30 @@ See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-
 
 Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
-```swift
-// on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
-// on macOS and watchOS use `applicationDidFinishLaunching:` 
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
-    Purchases.logLevel = .debug
-    Purchases.configure(withAPIKey: <revenuecat_api_key>, appUserID: <app_user_id>)
-  
-}
-```
-```objectivec
-// on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
-// on macOS and watchOS use `applicationDidFinishLaunching:` 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    RCPurchases.logLevel = RCLogLevelDebug;
-    [RCPurchases configureWithAPIKey:@<revenuecat_api_key> appUserID:<app_user_id>];
-    
-    return YES;
-}
-```
-```kotlin
-// If you're targeting only Google Play Store
-class MainApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.logLevel = LogLevel.DEBUG
-        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())
-    }
-}
-
-// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use
-// In your build.gradle:
-flavorDimensions "store"
-productFlavors {
-    amazon {
-        buildConfigField "String", "STORE", "\"amazon\""
-    }
-
-    google {
-        buildConfigField "String", "STORE", "\"google\""
-    }       
-}
-
-///...
-
-class MainApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.logLevel = LogLevel.DEBUG
-          
-        if (BuildConfig.STORE.equals("amazon")) {
-            Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).build())
-        } else if (BuildConfig.STORE.equals("google")) {
-            Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())
-        }
-    }
-}
-```
-```java
-// If you're targeting only Google Play Store
-public class MainApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Purchases.setLogLevel(LogLevel.DEBUG);
-        Purchases.configure(new PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build());
-    }
-}
-
-// If you're building for the Amazon Appstore, 
-// click the Kotlin tab to see how to set up flavors in your build.gradle:
-///...
-
-public class MainApplication extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Purchases.setLogLevel(LogLevel.DEBUG);
-      
-        PurchasesConfiguration.Builder builder = null;
-      
-        if (BuildConfig.STORE.equals("amazon")) {
-            builder = new AmazonConfiguration.Builder(this, <public_amazon_sdk_key>);
-        } else if (BuildConfig.STORE.equals("google")) {
-            builder = new PurchasesConfiguration.Builder(this, <public_google_sdk_key>);
-        }
-      
-        Purchases.configure(builder.build());
-    }
-}
-```
-```javascript Flutter
-import 'dart:io' show Platform;
-
-//...
-
-Future<void> initPlatformState() async {
-  await Purchases.setDebugLogsEnabled(true);
-  
-  PurchasesConfiguration configuration;
-  if (Platform.isAndroid) {
-    configuration = PurchasesConfiguration(<public_google_sdk_key>);
-    if (buildingForAmazon) { 
-      // use your preferred way to determine if this build is for Amazon store
-      // checkout our MagicWeather sample for a suggestion
-      configuration = AmazonConfiguration(<public_amazon_sdk_key>);
-    }
-  } else if (Platform.isIOS) {
-    configuration = PurchasesConfiguration(<public_ios_sdk_key>);
-  }
-  await Purchases.configure(configuration);
-}
-```
-```typescript React Native
-import { Platform } from 'react-native';
-
-//...
-
-export default class App extends React.Component {
- 
-  componentDidMount() {
-    Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
-    
-    if (Platform.OS === 'ios') {
-       Purchases.configure({apiKey: <public_ios_sdk_key>});
-    } else if (Platform.OS === 'android') {
-       Purchases.configure({apiKey: <public_google_sdk_key>});
-      
-      // OR: if building for Amazon, be sure to follow the installation instructions then:
-       Purchases.configure({ apiKey: <public_amazon_sdk_key>, useAmazon: true });
-    }
-    
-  }
-}
-```
-```javascript Cordova
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-    Purchases.setLogLevel(LOG_LEVEL.DEBUG);
-    if (window.cordova.platformId === 'ios') {
-        Purchases.configure(<public_ios_sdk_key>);
-    } else if (window.cordova.platformId === 'android') {
-        Purchases.configure(<public_google_sdk_key>);
-    }
-    // OR: if building for Amazon, be sure to follow the installation instructions then:
-    await Purchases.configure({ apiKey: <public_amazon_sdk_key>, useAmazon: true });
-}
-```
-```text Unity
-See Unity installation instructions https://docs.revenuecat.com/docs/unity
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started_1.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started_2.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started_3.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started_4.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started_5.js"}
+[/block]
+[block:file]
+{"language":"typescript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started_6.ts"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started_7.js"}
+[/block]
+[block:file]
+{"language":"text","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started_8.txt"}
+[/block]
 
 The `app_user_id` field in `.configure` is how RevenueCat identifies users of your app. You can provide a custom value here or omit it for us to generate an anonymous id. For more information, see our [Identifying Users](https://www.revenuecat.com/docs/user-ids) guide.
 
@@ -349,98 +217,33 @@ The SDK will automatically fetch the [configured Offerings](doc:entitlements#off
 
 Below is an example of fetching Offerings. You can utilize Offerings to organize your paywall screen. See our guide on [Displaying Products](doc:displaying-products) for more information and best practices.
 
-```swift
-Purchases.shared.getOfferings { (offerings, error) in
-	if let offerings = offerings {
-	  // Display current offering with offerings.current
-  }
-}
-```
-```objectivec
-[[RCPurchases sharedPurchases] getOfferingsWithCompletion:^(RCOfferings *offerings, NSError *error) {
-  if (offerings) {
-		// Display current offering with offerings.current
-  } else if (error) {
-    // optional error handling
-  }
-}];
-```
-```kotlin
-Purchases.sharedInstance.getOfferingsWith(
-	onError = { error ->
-    /* Optional error handling */ 
-  },
-  onSuccess = { offerings ->  
-  	// Display current offering with offerings.current
-	}
-}
-```
-```java
-Purchases.getSharedInstance().getOfferings(new ReceiveOfferingsCallback() {
-
-     @Override
-     public void onReceived(@NonNull Offerings offerings) {
-     }
-
-     @Override
-     public void onError(@NonNull PurchasesError error) {
-        /* Optional error handling */
-     }
-});
-```
-```javascript Flutter
-try {
-  Offerings offerings = await Purchases.getOfferings();
-  if (offerings.current != null) {
-    // Display current offering with offerings.current
-  }
-} on PlatformException catch (e) {
-	// optional error handling
-}
-```
-```javascript React Native
-try {
-  const offerings = await Purchases.getOfferings();
-  if (offerings.current !== null) {  
-	  // Display current offering with offerings.current
-  }
-} catch (e) {
-
-}
-```
-```javascript Cordova
-func displayUpsellScreen() {
-  Purchases.getOfferings(
-      offerings => {
-        if (offerings.current !== null) {  
-          // Display current offering with offerings.current
-        }
-      },
-      error => {
-
-      }
-  );
-}
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.GetOfferings((offerings, error) =>
-{
-  if (error != null) {
-    LogError(error);
-  } else if (offerings.Current != null {
-    // Display current offering with offerings.current
-  }
-});
-```
-```curl Web
-curl --request GET \
-  --url https://api.revenuecat.com/v1/subscribers/<app_user_id>/offerings \
-  --header 'Accept: application/json' \
-  --header 'Authorization: Bearer REVENUECAT_API_KEY' \
-  --header 'Content-Type: application/json' \
-  --header 'X-Platform: stripe'
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started_9.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started_10.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started_11.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started_12.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started_13.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started_14.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started_15.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started_16.cs"}
+[/block]
+[block:file]
+{"language":"curl","name":"Web","file":"code_blocks/🚀 Getting Started/getting-started_17.curl"}
+[/block]
 
 
 
@@ -466,115 +269,33 @@ The SDK includes a simple method for facilitating purchases. The `purchase:packa
 
 The code sample below shows the process of purchasing a package and confirming it unlocks the "your_entitlement_id" content. More detail about the `purchase:package` method can be found in our guide on [Making Purchases](doc:making-purchases).
 
-```swift
-Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
-    if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
-        // Unlock that great "pro" content
-    }
-}
-```
-```objectivec
-[[RCPurchases sharedPurchases] purchasePackage:package withCompletion:^(RCStoreTransaction *transaction, RCCustomerInfo *customerInfo, NSError *error, BOOL cancelled) {
-    if (customerInfo.entitlements.all[@<your_entitlement_id>].isActive) {
-    // User is "premium"
-	}
-}];
-```
-```kotlin
-Purchases.sharedInstance.purchaseWith(
-  PurchaseParams.Builder(this, package).build(),
-  onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
-    if (customerInfo.entitlements[<my_entitlement_identifier>]?.isActive == true) {
-    // Unlock that great "pro" content
-  }
-)
-```
-```java
-Purchases.getSharedInstance().purchase(
-	new PurchaseParams.Builder(this, aPackage).build(), 
-	new PurchaseCallback() {
-    @Override
-    public void onCompleted(@NonNull StoreTransaction storeTransaction, @NonNull CustomerInfo customerInfo) {
-			if (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {
-				// Unlock that great "pro" content
-			}
-		}
-
-		@Override
-		public void onError(@NonNull PurchasesError purchasesError, boolean b) {
-			// No purchase
-		}
-	}
-);
-```
-```javascript Flutter
-try {
-  CustomerInfo customerInfo = await Purchases.purchasePackage(package);
-  var isPro = customerInfo.entitlements.all[<my_entitlement_identifier>].isActive;
-  if (isPro) {
-    // Unlock that great "pro" content
-  }
-} on PlatformException catch (e) {
-  var errorCode = PurchasesErrorHelper.getErrorCode(e);
-  if (errorCode != PurchasesErrorCode.purchaseCancelledError) {
-    showError(e);  	          
-  }
-}
-```
-```javascript React Native
-// Using packages
-try {
-  const purchaseMade = await Purchases.purchasePackage(package);
-  if (typeof purchaseMade.customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
-    // Unlock that great "pro" content
-  }
-} catch (e) {
-  if (!e.userCancelled) {
-  	showError(e);
-  }
-}
-
-// Note: if you are using purchaseProduct to purchase Android In-app products, an optional third parameter needs to be provided when calling purchaseProduct. You can use the package system to avoid this
-await Purchases.purchaseProduct(<product_id>, null, Purchases.PURCHASE_TYPE.INAPP);
-```
-```javascript Cordova
-Purchases.purchasePackage(package, ({ productIdentifier, customerInfo }) => {
-    if (typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
-      // Unlock that great "pro" content
-    }
-  },
-  ({error, userCancelled}) => {
-    // Error making purchase
-  }
-);
-
-// Note: if you are using purchaseProduct to purchase Android In-app products, an optional third parameter needs to be provided when calling purchaseProduct. You can use the package system to avoid this.
-
-Purchases.purchaseProduct(<product_id>, ({ productIdentifier, customerInfo }) => {
-}, ({error, userCancelled}) => {
-    // Error making purchase
-}, null, Purchases.PURCHASE_TYPE.INAPP);
-```
-```csharp Unity
-Purchases purchases = GetComponent<Purchases>();
-purchases.PurchasePackage(package, (productIdentifier, purchaserInfo, userCancelled, error) =>
-{
-  if (purchaserInfo.Entitlements.Active.ContainsKey(<my_entitlement_identifier>)) {
-    // Unlock that great "pro" content
-  }
-});
-```
-```curl Web
-curl -X POST \
-  https://api.revenuecat.com/v1/receipts \
-  -H 'Content-Type: application/json' \
-  -H 'X-Platform: stripe' \
-  -H 'Authorization: Bearer YOUR_REVENUECAT_API_KEY' \
-  -d '{ "app_user_id": "my_app_user_id",
-  "fetch_token": "sub_xxxxxxxxxx"
-  }'
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started_18.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started_19.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started_20.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started_21.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started_22.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started_23.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started_24.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started_25.cs"}
+[/block]
+[block:file]
+{"language":"curl","name":"Web","file":"code_blocks/🚀 Getting Started/getting-started_26.curl"}
+[/block]
 
 
 
@@ -598,87 +319,33 @@ The SDK makes it easy to check what active subscriptions the current customer ha
 
 If you're not using Entitlements (you probably should be!) you can check the array of active subscriptions to see what product IDs from the respective store it contains.
 
-```swift
-Purchases.shared.getCustomerInfo { (customerInfo, error) in
-    if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
-        // User is "premium"
-    }
-}
-```
-```objectivec
-[[RCPurchases sharedPurchases] getCustomerInfoWithCompletion:^(RCPurchaserInfo * customerInfo, NSError * error) {
-    if (customerInfo.entitlements.all[@<your_entitlement_id>].isActive) {
-    // User is "premium"
-	}
-}];
-```
-```kotlin
-Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->
-  if (customerInfo.entitlements[<my_entitlement_identifier>]?.isActive == true) {
-    // Grant user "pro" access
-  }
-}
-```
-```java
-Purchases.getSharedInstance().getCustomerInfo(new ReceiveCustomerInfoCallback() {
-    @Override
-    public void onReceived(@NonNull CustomerInfo customerInfo) {
-        if (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {
-            // Grant user "pro" access
-        }
-    }
-
-    @Override
-    public void onError(@NonNull PurchasesError purchasesError) {
-    }
-});
-```
-```javascript Flutter
-try {
-  CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-  if (customerInfo.entitlements.all[<my_entitlement_identifier>].isActive) {
-    // Grant user "pro" access
-  }
-} on PlatformException catch (e) {
-  // Error fetching purchaser info
-}
-```
-```javascript React Native
-try {
-  const customerInfo = await Purchases.getCustomerInfo();
-  if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
-    // Grant user "pro" access
-  }
-} catch (e) {
- // Error fetching purchaser info
-}
-```
-```javascript Cordova
-Purchases.getCustomerInfo(
-  info => {
-    const isPro = typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined";
-  },
-  error => {
-    // Error fetching customer info
-  }
-);
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.GetPurchaserInfo((info, error) =>
-{
-   if (purchaserInfo.Entitlements.Active.ContainsKey(<my_entitlement_identifier>)) {
-    // Unlock that great "pro" content
-  }
-});
-```
-```curl Web
-curl --request GET \
-  --url https://api.revenuecat.com/v1/subscribers/<app_user_id> \
-  --header 'Accept: application/json' \
-  --header 'Authorization: Bearer REVENUECAT_API_KEY' \
-  --header 'Content-Type: application/json'
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started_27.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started_28.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started_29.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started_30.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started_31.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started_32.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started_33.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started_34.cs"}
+[/block]
+[block:file]
+{"language":"curl","name":"Web","file":"code_blocks/🚀 Getting Started/getting-started_35.curl"}
+[/block]
 
 
 
@@ -704,67 +371,30 @@ It's typical to call this method when deciding which UI to show the user and whe
 
 RevenueCat enables your users to restore their in-app purchases, reactivating any content that they previously purchased from the **same store account** (Apple, Google, or Amazon account). We recommend that all apps have some way for users to trigger the restore method. Note that Apple does require a restore mechanism in the event a user loses access to their purchases (e.g: uninstalling/reinstalling the app, losing their account information, etc).
 
-```swift
-Purchases.shared.restorePurchases { (customerInfo, error) in
-    //... check customerInfo to see if entitlement is now active
-}
-```
-```objectivec
-[[RCPurchases sharedPurchases] restorePurchasesWithCompletion:^(RCCustomerInfo *customerInfo, NSError *error) {
-    //... check customerInfo to see if entitlement is now active
-}];
-```
-```kotlin
-Purchases.sharedInstance.restorePurchasesWith(::showError) { customerInfo ->
-    //... check customerInfo to see if entitlement is now active
-}
-```
-```java
-Purchases.getSharedInstance().restorePurchases(new ReceiveCustomerInfoCallback() {
-    @Override
-    public void onReceived(@NonNull CustomerInfo customerInfo) {
-        //... check purchaserInfo to see if entitlement is now active 	
-    }
-
-    @Override
-    public void onError(@NonNull PurchasesError purchasesError) {
-
-    }
-});
-```
-```javascript Flutter
-try {
-  CustomerInfo restoredInfo = await Purchases.restoreTransactions();
-  // ... check restored customerInfo to see if entitlement is now active
-} on PlatformException catch (e) {
-  // Error restoring purchases
-}
-```
-```javascript React Native
-try {
-  const restore = await Purchases.restorePurchases();
-  // ... check restored customerInfo to see if entitlement is now active
-} catch (e) {
-
-}
-```
-```javascript Cordova
-Purchases.restoreTransactions(
-  info => {
-    //... check customerInfo to see if entitlement is now active
-  },
-  error => {
-    // Error restoring purchases
-  }
-);
-```
-```csharp Unity
-var purchases = GetComponent<Purchases>();
-purchases.RestoreTransactions((info, error) =>
-{
-    //... check purchaserInfo to see if entitlement is now active
-});
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started_36.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started_37.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started_38.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started_39.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started_40.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started_41.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started_42.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started_43.cs"}
+[/block]
 
 
 
@@ -790,85 +420,30 @@ This method will fire whenever the SDK receives an updated CustomerInfo object f
 
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to customer information the next time your app is launched or in the completion blocks of the SDK methods.
 
-```swift
-// Additional configure setup
-// on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
-// on macOS and watchOS use `applicationDidFinishLaunching:` 
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
-    Purchases.logLevel = .debug
-    Purchases.configure(withAPIKey: <revenuecat_api_key>)
-    Purchases.shared.delegate = self // make sure to set this after calling configure
-    
-    return true
-}
-
-extension AppDelegate: PurchasesDelegate {
-    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
-        /// - handle any changes to the user's CustomerInfo
-    }
-}
-```
-```objectivec
-// Additional configure setup
-// on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
-// on macOS and watchOS use `applicationDidFinishLaunching:`
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    RCPurchases.logLevel = RCLogLevelDebug;
-    [RCPurchases configureWithAPIKey:@<revenuecat_api_key>];
-    RCPurchases.sharedPurchases.delegate = self;
-
-    return YES;
-}
-
-- (void)purchases:(nonnull RCPurchases *)purchases receivedUpdatedCustomerInfo:(nonnull RCCustomerInfo *)customerInfo {
-    // handle any changes to purchaserInfo
-}
-```
-```kotlin
-class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {
-		override fun onReceived(customerInfo: CustomerInfo) {
-        // handle any changes to purchaserInfo
-    }
-}
-```
-```java
-public class UpsellActivity extends AppCompatActivity implements UpdatedCustomerInfoListener {
-		@Override
-    public void onReceived(CustomerInfo customerInfo) {
-        // handle any changes to customerInfo
-    }
-}
-```
-```javascript Flutter
-Purchases.addPurchaserInfoUpdateListener((purchaserInfo) => {
-  // handle any changes to purchaserInfo
-});
-```
-```javascript React Native
-Purchases.addCustomerInfoUpdateListener(info => {
-	// handle any changes to purchaserInfo
-});
-```
-```javascript Cordova
-// subscribe to the window event onCustomerInfoUpdated to get any changes that happen in the customerInfo
-window.addEventListener("onCustomerInfoUpdated", onCustomerInfoUpdated, false);
-
-//...
-
-onCustomerInfoUpdated: function(info) {
-    // handle any changes to customerInfo
-}
-```
-```csharp Unity
-public override void PurchaserInfoReceived(Purchases.PurchaserInfo purchaserInfo)
-{
-    // handle any changes to purchaserInfo
-}
-```
+[block:file]
+{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/getting-started_44.swift"}
+[/block]
+[block:file]
+{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/getting-started_45.m"}
+[/block]
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/getting-started_46.kt"}
+[/block]
+[block:file]
+{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/getting-started_47.java"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/getting-started_48.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/getting-started_49.js"}
+[/block]
+[block:file]
+{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/getting-started_50.js"}
+[/block]
+[block:file]
+{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/getting-started_51.cs"}
+[/block]
 
 
 
