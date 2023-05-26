@@ -24,6 +24,7 @@ CATEGORIES_MAP_FILE = "docs_source/categories_map.json"
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
 RENDER_FOLDER = "rendered_docs"
+REPO_NAME = "revenuecat-docs"
 
 update_fastlane
 
@@ -32,24 +33,6 @@ default_platform(:ios)
 desc "Install dependencies"
 lane :bootstrap do
     sh "npm", "install", "-g", "rdme"
-end
-
-desc "Description of what the lane does"
-lane :render_docs do |options|
-    readme_api_key = options[:readme_api_key]
-    UI.user_error!("Missing README API key") unless readme_api_key
-
-    copy_docs_source_to_render_folder
-    files_to_render.each do |file|
-        render_markdown_file(file)
-    end
-    sync_files_to_readme readme_api_key: readme_api_key
-end
-
-def files_to_render
-    Dir.chdir(root_dir) do
-        Dir.glob("docs_source/*.md")
-    end
 end
 
 lane :ios_tests do
@@ -66,16 +49,11 @@ lane :copy_docs_source_to_render_folder do
 end
 
 lane :sync_files_to_readme do |options|
-    readme_api_key = options[:readme_api_key]
-    UI.user_error!("Missing README API key") unless readme_api_key
-
-    current_version = get_current_version
-
-    copy_docs_source_to_render_folder
-    embed_code_blocks(folder: RENDER_FOLDER)
-    Dir.chdir("../") do
-        sh "rdme docs rendered_docs --version\=#{current_version} --key\=#{options[:readme_api_key]}"
-    end
+    # Commented out for now until we are ready to sync with the project
+    # Dir.chdir("../") do
+    #     sh "rdme docs rendered_docs --version\=4.0 --key\=#{options[:readme_api_key]}"
+    # end
+    UI.message("🔨 Syncing files to Readme...")
 end
 
 desc <<-DESC
@@ -83,49 +61,75 @@ Extracts code blocks from within the [block:code] and [/block] tags and saves ea
 folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
 DESC
 lane :extract_code_blocks do |options|
-    folder_to_process = options[:folder]
-    UI.user_error!("Missing folder option") unless folder_to_process
+    markdown_source_files.each do |file_name|
+        UI.message("🔨 Processing #{file_name}...")
+        current_folder = File.dirname(file_name)
+        UI.message("🔨 Current folder #{current_folder}...")
+        folder_inside_docs_source = current_folder.sub(/^#{SOURCE_FOLDER}\//, "")
+        UI.message("🔨 folder_inside_docs_source #{folder_inside_docs_source}...")
+        output_dir = "code_blocks/#{folder_inside_docs_source}"
+        UI.message("🔨 output_dir #{output_dir}...")
 
-    Dir.chdir(root_dir) do
-        Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
-            current_folder = File.dirname(file_name)
-            folder_inside_docs_source = current_folder.sub(/^docs_source\//, "")
-            output_dir = "code_blocks/#{folder_inside_docs_source}"
+        file_contents = get_file_contents(file_name)
 
-            file_contents = File.read(file_name)
+        FileUtils.mkdir_p(output_dir)
 
-            FileUtils.mkdir_p(output_dir)
+        file_contents = convert_old_style_code_blocks(file_contents)
 
-            file_contents = convert_old_style_code_blocks(file_contents)
+        code_blocks = file_contents.scan(/```\w+[\s\S]+?```/)
+        total_blocks = code_blocks.length
 
-            code_blocks = file_contents.scan(/```\w+[\s\S]+?```/)
-            total_blocks = code_blocks.length
-
-            code_blocks.each_with_index.map do |block, index|
-                filename_without_ext = File.basename(file_name, ".md")
-                UI.message("🔨 Processing code block #{index+1}/#{total_blocks} in #{file_name}...")
-                code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
-                if code_block_information.length > 0
-                    file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
-                end
+        code_blocks.each_with_index.map do |block, index|
+            filename_without_ext = File.basename(file_name, ".md")
+            UI.message("🔨 Processing code block #{index+1}/#{total_blocks} in #{file_name}...")
+            code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
+            if code_block_information.length > 0
+                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
             end
-
-
-            File.write(file_name, file_contents)
         end
+
+        write_file_contents(file_name, file_contents)
     end
 end
 
-
 desc <<-DESC
-Embeds code blocks from all files within the [block:file] and [/block] tags
-folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
 DESC
+lane :open_syncing_pr do |options|
+    github_pr_token = options[:github_pr_token]
+
+    latest_commit_sha = get_latest_commit_sha
+
+    current_version = get_current_version
+
+    new_branch_name = "sync/#{current_version}"
+
+    validate_local_config_status_for_bump(new_branch_name, github_pr_token)
+
+    create_new_branch_and_checkout(new_branch_name)
+    embed_code_blocks
+
+    pr_title = "Syncing #{latest_commit_sha} with #{current_version}"
+    body = <<~EOS
+  ⚠️⚠️⚠️ MERGING THIS PR WILL SYNC THE REPOSITORY WITH README ⚠️⚠️⚠️
+  Syncing docs to release #{current_version} of the docs. This PR was automatically generated by the RevenueCat bot.
+    EOS
+
+
+    if git_repo_dirty?
+        commit_changes_and_push_current_branch("Rendered docs for commit #{latest_commit_sha}")
+        create_pr_to_main(pr_title, body, REPO_NAME, new_branch_name, github_pr_token, [])
+    else
+        UI.message("Repository is clean. Nothing to commit.")
+    end
+end
+
+desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
 lane :embed_code_blocks do |options|
-    folder_to_process = options[:folder]
+    copy_docs_source_to_render_folder
 
     Dir.chdir(root_dir) do
-        Dir.glob("#{folder_to_process}/**/*.md") do |file_name|
+        Dir.glob("#{RENDER_FOLDER}/**/*.md").each do |file_name|
             file_contents = File.read(file_name)
 
             file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
@@ -228,16 +232,9 @@ lane :update_docs_categories do |options|
 
     categories = get_json_from_file(CATEGORIES_TEST_FILE)
 
-    folder_path = 'docs_source'
-
-    markdown_files = []
-    Dir.chdir(root_dir) do
-        markdown_files = Dir.glob("#{folder_path}/**/*.md")
-    end
-
-    markdown_files.each do |file|
+    markdown_source_files.each do |file|
         next if file == '.' || file == '..'
-        file_without_folder_path = file.gsub("#{folder_path}/", "")
+        file_without_folder_path = file.gsub("#{DOCS_SOURCE}/", "")
         category_name = file_without_folder_path.split("/")[0]
         UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
         category = categories.find { |category|
@@ -706,4 +703,88 @@ def process_code_block(code_item)
     end
 
     new_style_code_block
+end
+
+def markdown_source_files
+    Dir.chdir(root_dir) do
+        Dir.glob("#{SOURCE_FOLDER}/**/*.md")
+    end
+end
+
+def git_repo_dirty?
+    status = sh("git status --porcelain")
+    !status.empty?
+end
+
+# Replace with fastlane plugin's
+def validate_local_config_status_for_bump(new_branch, github_pr_token)
+    # Ensure GitHub API token is set
+    if github_pr_token.nil? || github_pr_token.empty?
+        UI.error("A github_pr_token parameter or an environment variable GITHUB_PULL_REQUEST_API_TOKEN is required to create a pull request")
+        UI.error("Please make a fastlane/.env file from the fastlane/.env.SAMPLE template")
+        UI.user_error!("Could not find value for GITHUB_PULL_REQUEST_API_TOKEN")
+    end
+    ensure_new_branch_local_remote(new_branch)
+    ensure_git_status_clean
+end
+
+# Replace with fastlane plugin's
+def self.ensure_new_branch_local_remote(new_branch)
+    local_branches = sh('git', 'branch', '--list', new_branch)
+    unless local_branches.empty?
+        UI.error("Branch '#{new_branch}' already exists in local repository.")
+        UI.user_error!("Please make sure it doesn't have any unsaved changes and delete it to continue.")
+    end
+
+    remote_branches = sh('git', 'ls-remote', '--heads', 'origin', new_branch)
+    if !remote_branches.nil? && remote_branches.include?(new_branch)
+        UI.error("Branch '#{new_branch}' already exists in remote repository.")
+        UI.user_error!("Please make sure it doesn't have any unsaved changes and delete it to continue.")
+    end
+end
+
+def get_latest_commit_sha
+    sh("git rev-parse --short HEAD").strip
+end
+
+# Replace with fastlane plugin's
+def create_new_branch_and_checkout(branch_name)
+    sh("git checkout -b '#{branch_name}'")
+end
+
+# Replace with fastlane plugin's
+def commit_changes_and_push_current_branch(commit_message)
+    commit_current_changes(commit_message)
+    Actions::PushToGitRemoteAction.run(remote: 'origin')
+end
+
+def commit_current_changes(commit_message)
+    sh("git commit -am '#{commit_message}'")
+end
+
+def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labels = [])
+    Actions::CreatePullRequestAction.run(
+        api_token: github_pr_token,
+        title: title,
+        base: 'main',
+        body: body,
+        repo: "RevenueCat/#{repo_name}",
+        head: head_branch,
+        api_url: 'https://api.github.com',
+        labels: labels,
+        # TODO: Add team reviewers
+        team_reviewers: ['']
+    )
+end
+
+def get_file_contents(file)
+    Dir.chdir(root_dir) do
+        File.read(file)
+    end
+end
+
+def write_file_contents(file, file_contents)
+    Dir.chdir(root_dir) do
+        File.write(file, file_contents)
+    end
 end

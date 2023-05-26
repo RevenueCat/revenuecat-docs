@@ -1,0 +1,27 @@
+name: Sync to Readme
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'sync/')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Install gem dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: bundle install
+      - run: bundle exec fastlane bootstrap
+      - run: bundle exec fastlane sync_files_to_readme
+

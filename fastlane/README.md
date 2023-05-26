@@ -21,14 +21,6 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Install dependencies
 
-### render_docs
-
-```sh
-[bundle exec] fastlane render_docs
-```
-
-Description of what the lane does
-
 ### ios_tests
 
 ```sh
@@ -63,6 +55,15 @@ Extracts code blocks from within the [block:code] and [/block] tags and saves ea
 folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
 
 
+### open_syncing_pr
+
+```sh
+[bundle exec] fastlane open_syncing_pr
+```
+
+Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
+
+
 ### embed_code_blocks
 
 ```sh
@@ -70,8 +71,6 @@ folder, STRING Folder to recurse through and extract code blocks from all markdo
 ```
 
 Embeds code blocks from all files within the [block:file] and [/block] tags
-folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
-
 
 ### update_categories_file
 
