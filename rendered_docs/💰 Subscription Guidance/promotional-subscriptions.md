@@ -6,5 +6,5 @@ createdAt: '2022-08-16T13:57:03.093Z'
 updatedAt: '2022-08-16T13:57:03.093Z'
 type: link
 link_url: https://www.revenuecat.com/docs/promotionals
-category: 646582c0a0e52000586ab9e0
+category: 6478b860c1b42a1325cf5835
 ---

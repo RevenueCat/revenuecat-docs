@@ -13,7 +13,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-04-22T00:21:12.343Z'
 updatedAt: '2022-10-05T14:01:20.981Z'
-category: 646582c48cebdb000ba32f10
+category: 6478b8643a66a114558bdd69
 ---
 For newer Mac apps, in-app purchases can be shared across Mac and iOS apps. This is called [Universal Purchases](https://developer.apple.com/support/universal-purchase/). 
 [block:callout]

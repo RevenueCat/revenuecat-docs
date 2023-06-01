@@ -17,7 +17,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-10-31T14:08:19.865Z'
 updatedAt: '2022-10-31T14:08:19.865Z'
-category: 646582bf8197f50019e3c59c
+category: 6478b85f43de890059745172
 ---
 You don't need to make real purchases in order to test your subscriptions. You can make sure your subscriptions have been implemented correctly by using the sandbox environments. These environments will generally behave as the real stores, without incurring any costs.
 

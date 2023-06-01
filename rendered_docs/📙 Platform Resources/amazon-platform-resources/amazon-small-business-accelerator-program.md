@@ -4,7 +4,7 @@ slug: amazon-small-business-accelerator-program
 hidden: false
 createdAt: '2022-08-12T14:05:45.511Z'
 updatedAt: '2022-08-12T14:19:31.371Z'
-category: 646582c48cebdb000ba32f10
+category: 6478b8643a66a114558bdd69
 ---
 Amazon supports a [Small Business Accelerator Program](https://developer.amazon.com/apps-and-games/blogs/2021/06/small-business-accelerator-program) that reduces fees from app sales from 30% to 20%.
 
