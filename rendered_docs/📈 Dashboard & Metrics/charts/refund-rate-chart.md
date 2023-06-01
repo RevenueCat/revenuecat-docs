@@ -4,7 +4,7 @@ slug: refund-rate-chart
 hidden: false
 createdAt: '2022-10-19T15:31:06.563Z'
 updatedAt: '2023-02-24T21:01:40.417Z'
-category: 646582c1f2440605b02c28bf
+category: 6478b861991df212c2b92e19
 ---
 ## Definition
 The Refund Rate chart shows the number of paid transactions (such as new paid subscriptions, renewals, and one-time purchases) in each time period and what proportion of these transactions were refunded. 

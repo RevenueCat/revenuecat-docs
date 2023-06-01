@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-10-02T02:49:29.429Z'
 updatedAt: '2021-12-01T20:32:59.037Z'
-category: 646582c240e8b0000a4f35e6
+category: 6478b86233165e07ab13013b
 ---
 To start receiving these deliveries, you'll need the following details:
 1. Access key ID

@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:06.712Z'
 updatedAt: '2023-03-28T23:02:09.331Z'
-category: 646582c1f2440605b02c28bf
+category: 6478b861991df212c2b92e19
 ---
 The 'Entitlements' card gives you a quick glance at the current entitlement status for a user. You can see which product(s) or [Entitlement(s)](doc:entitlements) have been purchased, and when they'll renew or cancel.  
 

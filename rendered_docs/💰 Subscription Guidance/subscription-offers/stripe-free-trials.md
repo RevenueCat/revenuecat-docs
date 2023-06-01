@@ -5,7 +5,7 @@ excerpt: Setting up free trials in Stripe or Stripe Checkout
 hidden: false
 createdAt: '2023-03-06T19:17:24.354Z'
 updatedAt: '2023-03-07T15:43:47.009Z'
-category: 646582c0a0e52000586ab9e0
+category: 6478b860c1b42a1325cf5835
 ---
 [block:api-header]
 {

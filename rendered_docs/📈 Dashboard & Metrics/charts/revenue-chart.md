@@ -4,7 +4,7 @@ slug: revenue-chart
 hidden: false
 createdAt: '2022-10-19T15:34:40.122Z'
 updatedAt: '2023-03-27T15:05:32.798Z'
-category: 646582c1f2440605b02c28bf
+category: 6478b861991df212c2b92e19
 ---
 ## Definition
 
