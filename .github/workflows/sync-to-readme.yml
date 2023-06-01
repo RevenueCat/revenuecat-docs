@@ -23,5 +23,5 @@ jobs:
           bundler-cache: true
       - run: bundle install
       - run: bundle exec fastlane bootstrap
-      - run: bundle exec fastlane sync_files_to_readme
+      - run: bundle exec fastlane sync_files_to_readme readme_api_key:${{ secrets.README_API_KEY }}
 
