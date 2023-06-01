@@ -234,7 +234,7 @@ lane :update_docs_categories do |options|
 
     markdown_source_files.each do |file|
         next if file == '.' || file == '..'
-        file_without_folder_path = file.gsub("#{DOCS_SOURCE}/", "")
+        file_without_folder_path = file.gsub("#{SOURCE_FOLDER}/", "")
         category_name = file_without_folder_path.split("/")[0]
         UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
         category = categories.find { |category|
