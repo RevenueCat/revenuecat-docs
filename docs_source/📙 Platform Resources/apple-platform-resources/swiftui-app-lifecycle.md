@@ -16,7 +16,7 @@ metadata:
     4: "#e9acb0"
 createdAt: '2020-06-30T18:43:10.805Z'
 updatedAt: '2022-01-28T19:49:27.529Z'
-category: 646582c48cebdb000ba32f10
+category: 6478b8643a66a114558bdd69
 ---
 With the next iteration of SwiftUI announced at WWDC 2020, entire apps can be created with just a simple struct conforming to the new `App` protocol, like so:
 

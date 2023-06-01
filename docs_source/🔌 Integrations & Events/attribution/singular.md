@@ -15,7 +15,7 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-07-29T17:30:24.269Z'
 updatedAt: '2023-03-28T21:51:12.011Z'
-category: 646582c240e8b0000a4f35e6
+category: 6478b86233165e07ab13013b
 ---
 With our Singular integration you can:
 

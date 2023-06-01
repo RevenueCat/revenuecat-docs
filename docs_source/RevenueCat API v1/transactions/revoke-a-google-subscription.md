@@ -7,7 +7,7 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
 hidden: false
 createdAt: '2023-04-12T01:31:25.954Z'
 updatedAt: '2023-04-12T01:58:25.944Z'
-category: 646582bba927b2002033d843
+category: 6478b85ba1ff55154dd9bbe5
 ---
 > 🚧 Secret API Key Required
 > 
