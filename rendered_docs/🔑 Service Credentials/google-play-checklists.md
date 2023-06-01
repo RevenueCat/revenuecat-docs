@@ -8,7 +8,7 @@ metadata:
   description: Check your configuration set up step by step.
 createdAt: '2023-04-25T20:10:32.492Z'
 updatedAt: '2023-04-27T21:21:48.877Z'
-category: 646582c4b1179e002d252906
+category: 6478b86562610511b1c9b5b0
 ---
 The processes for setting up Google Play service credentials and real-time developer notifications to communicate with RevenueCat on your behalf can be complex, and span across multiple consoles and dashboards. Use this handy checklist to go through and make sure you hit each step in your configuration.
 

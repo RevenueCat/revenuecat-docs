@@ -5,7 +5,7 @@ excerpt: What to do when you hit the Google Play Developer API limit
 hidden: false
 createdAt: '2023-04-11T15:04:43.569Z'
 updatedAt: '2023-04-11T15:28:07.054Z'
-category: 646582c48cebdb000ba32f10
+category: 6478b8643a66a114558bdd69
 ---
 Google Play developers may receive an email from RevenueCat indicating that their Google Play Developer API Quota has been or is at risk of being exceeded, and that you need to request a quota increase from Google.
 
