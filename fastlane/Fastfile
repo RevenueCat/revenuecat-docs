@@ -50,7 +50,7 @@ end
 
 lane :sync_files_to_readme do |options|
     current_version = get_current_version
-    Dir.chdir("../") do
+    Dir.chdir(root_dir) do
         sh "rdme docs rendered_docs --version\=#{current_version} --key\=#{options[:readme_api_key]}"
     end
     UI.message("🔨 Syncing files to Readme...")
