@@ -72,6 +72,16 @@ Embeds code blocks from all files and opens a pull request preparing the docs fo
 
 Embeds code blocks from all files within the [block:file] and [/block] tags
 
+### update_docs_structure
+
+```sh
+[bundle exec] fastlane update_docs_structure
+```
+
+Embeds code blocks from all files within the [block:file] and [/block] tags
+folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+
+
 ### update_categories_file
 
 ```sh

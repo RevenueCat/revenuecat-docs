@@ -108,6 +108,7 @@ lane :open_syncing_pr do |options|
 
     create_new_branch_and_checkout(new_branch_name)
     embed_code_blocks
+    update_docs_structure
 
     pr_title = "Syncing #{latest_commit_sha} with #{current_version}"
     body = <<~EOS
@@ -140,6 +141,39 @@ lane :embed_code_blocks do |options|
 
             File.write(file_name, file_contents)
         end
+    end
+end
+
+desc <<-DESC
+Embeds code blocks from all files within the [block:file] and [/block] tags
+folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+DESC
+lane :update_docs_structure do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
+    folder_path = RENDER_FOLDER
+
+    markdown_files = []
+    Dir.chdir(root_dir) do
+        markdown_files = Dir.glob("#{folder_path}/**/*.md")
+    end
+
+    markdown_files.each do |file|
+        next if file == '.' || file == '..'
+        file_without_folder_path = file.gsub("#{folder_path}/", "")
+        UI.message("Updating #{file_without_folder_path}")
+
+        yaml_data = get_doc_information_from_header(file)
+        slug = yaml_data["slug"]
+        doc_information_from_server = get_doc_information(slug, readme_api_key)
+
+        UI.message("Doc information retrieved from server")
+        doc_order  = doc_information_from_server["order"]
+        doc_parent_doc  = doc_information_from_server["parentDoc"]
+        doc_category = doc_information_from_server["category"]
+
+        update_doc_information(file, doc_category, doc_order, doc_parent_doc)
     end
 end
 
@@ -252,7 +286,7 @@ lane :update_docs_categories do |options|
             category_for_doc = categories_map_from_file[category_for_doc_prod]
         end
 
-        update_category(file, category_for_doc)
+        update_category_cleanup_dates(file, category_for_doc)
     end
 end
 
@@ -518,7 +552,7 @@ end
 #
 # @param [String] filename Name of the file to update
 # @param [String] category_id ID of the category to update the document with
-def update_category(filename, category_id)
+def update_category_cleanup_dates(filename, category_id)
     Dir.chdir(root_dir) do
         file = File.read(filename)
         yaml_header, content = file.split('---', 3)[1..-1]
@@ -534,6 +568,58 @@ def update_category(filename, category_id)
         end
 
         File.write(filename, "#{yaml_data.to_yaml}---#{content}")
+    end
+end
+
+# Updates the category, order and parent for a given document.
+# It will also update the updatedAt field if needed.
+#
+# @param [String] filename Name of the file to update
+# @param [String] category_id ID of the category to update the document with
+# @param [String] order Order of the doc in the category
+# @param [String] parent_doc_id Parent ID of the doc
+def update_doc_information(filename, category_id, order, parent_doc_id)
+    Dir.chdir(root_dir) do
+        file = File.read(filename)
+        yaml_header, content = file.split('---', 3)[1..-1]
+        yaml_data = YAML.load(yaml_header)
+        updated = false
+
+        original_category = yaml_data['category']
+        if original_category != category_id
+            UI.message("Updating category of #{filename} from #{original_category} to #{category_id}")
+            yaml_data['category'] = category_id
+            updated = true
+        end
+
+        original_order = yaml_data['order']
+        if original_order != order
+            UI.message("Updating order of #{filename} from #{original_order} to #{order}")
+            yaml_data['order'] = order
+            updated = true
+        end
+
+        original_parent = yaml_data['parentDoc']
+        if parent_doc_id && original_parent != parent_doc_id
+            UI.message("Updating parent of #{filename} from #{original_parent} to #{parent_doc_id}")
+            yaml_data['parentDoc'] = parent_doc_id
+            updated = true
+        end
+
+        if updated
+            current_date = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%S.%LZ')
+            yaml_data['updatedAt'] = current_date
+        end
+
+        File.write(filename, "#{yaml_data.to_yaml}---#{content}")
+    end
+end
+
+def get_doc_information_from_header(filename)
+    Dir.chdir(root_dir) do
+        file = File.read(filename)
+        yaml_header, _ = file.split('---', 3)[1..-1]
+        YAML.load(yaml_header)
     end
 end
 
@@ -602,6 +688,17 @@ end
 #
 # @return [String] ID of the category the document belongs to.
 def get_category_id_for_doc(slug, readme_api_key)
+    doc_information = get_doc_information(slug, readme_api_key)
+    doc_information["category"]
+end
+
+# Retrieve the doc information for a given document slug from the ReadMe API.
+#
+# @param [String] slug The slug of the document to retrieve the category ID for.
+# @param [String] readme_api_key API key for the ReadMe account that has access to the document.
+#
+# @return [Hash] Ruby data structure with the doc's information.
+def get_doc_information(slug, readme_api_key)
     url = URI("https://dash.readme.com/api/v1/docs/#{slug}")
 
     https = Net::HTTP.new(url.host, url.port)
@@ -613,8 +710,7 @@ def get_category_id_for_doc(slug, readme_api_key)
     request["x-readme-version"] = get_current_version
 
     response = https.request(request)
-    json_parse = JSON.parse(response.read_body)
-    json_parse["category"]
+    JSON.parse(response.read_body)
 end
 
 # Create a new category in the ReadMe API.
