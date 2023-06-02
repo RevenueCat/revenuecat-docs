@@ -3,10 +3,11 @@ title: Get Offerings
 slug: get-offerings-old
 excerpt: Gets the offerings for your app.
 hidden: true
-metadata:
+metadata: 
 createdAt: '2020-12-30T01:38:59.895Z'
-updatedAt: '2021-12-07T15:11:57.491Z'
+updatedAt: '2023-06-02T23:23:01.738Z'
 category: 6478b85d5c234820edf84b50
+order: 0
 ---
 [block:callout]
 {

@@ -3,8 +3,10 @@ title: Active Subscriptions Movement Chart
 slug: active-subscriptions-movement-chart
 hidden: false
 createdAt: '2022-10-19T15:29:56.036Z'
-updatedAt: '2023-02-24T20:48:04.755Z'
+updatedAt: '2023-06-02T23:23:05.788Z'
 category: 6478b861991df212c2b92e19
+order: 2
+parentDoc: 647919ee3e25fd005b521f0f
 ---
 ## Definition
 The Active Subscriptions Movement chart measures the change in unique paid subscriptions over a period. Active Subscriptions Movement can be thought of as a breakdown of what caused the change in the [Active Subscriptions](doc:active-subscriptions-chart) count between two periods.

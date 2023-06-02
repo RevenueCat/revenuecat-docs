@@ -15,8 +15,9 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-12-09T20:31:16.384Z'
-updatedAt: '2022-12-09T20:31:16.384Z'
+updatedAt: '2023-06-02T23:23:23.273Z'
 category: 6478b85cd5a60c15a01cee47
+order: 0
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 

@@ -6,8 +6,9 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
   a Google purchase](ref:refund-a-google-subscription).
 hidden: false
 createdAt: '2023-04-12T01:31:25.954Z'
-updatedAt: '2023-04-12T01:58:25.944Z'
+updatedAt: '2023-06-02T23:23:03.630Z'
 category: 6478b85ba1ff55154dd9bbe5
+order: 999
 ---
 > 🚧 Secret API Key Required
 > 

@@ -4,8 +4,9 @@ slug: existing-apps
 excerpt: Supercharging your existing app business with RevenueCat
 hidden: false
 createdAt: '2023-04-14T03:07:40.629Z'
-updatedAt: '2023-04-14T03:08:12.341Z'
+updatedAt: '2023-06-02T23:23:21.149Z'
 category: 6478b85ad159da16da1ace76
+order: 2
 ---
 RevenueCat enables existing subscription businesses to offload and replace their entire subscription infrastructure, or use any number of RevenueCat features alongside their existing code. RevenueCat provides a powerful backend for validating purchases from the app stores and maintains a rich purchase history and subscriptions state for the customer. Use that power to increase engineering productivity and unlock new growth opportunities.
 

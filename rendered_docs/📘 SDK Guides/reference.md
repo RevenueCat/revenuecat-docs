@@ -3,8 +3,9 @@ title: SDK Reference
 slug: reference
 hidden: true
 createdAt: '2022-12-07T22:23:50.354Z'
-updatedAt: '2022-12-29T20:45:10.937Z'
+updatedAt: '2023-06-02T23:23:14.418Z'
 category: 6478b866bd163c1503cb8bbf
+order: 1
 ---
 The API reference documentation provides detailed information for each of the classes and methods in the RevenueCat SDK. Choose your platform from the list below.
 

@@ -3,8 +3,10 @@ title: Error Types
 slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
-updatedAt: '2023-05-23T11:21:43.127Z'
+updatedAt: '2023-06-02T23:22:59.254Z'
 category: 6478b860a6b223151cd4a791
+order: 1
+parentDoc: 647912c1417b48005863f00b
 ---
 ## `authentication_error`
 

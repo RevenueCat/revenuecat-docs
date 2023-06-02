@@ -4,8 +4,10 @@ slug: new-charts-transition
 excerpt: Migrating workflows from Original Charts to the New Charts beta
 hidden: true
 createdAt: '2021-06-10T16:41:59.584Z'
-updatedAt: '2021-11-02T15:58:52.846Z'
+updatedAt: '2023-06-02T23:23:06.555Z'
 category: 6478b861991df212c2b92e19
+order: 0
+parentDoc: 647919ee3e25fd005b521f0f
 ---
 # Known Issues
 

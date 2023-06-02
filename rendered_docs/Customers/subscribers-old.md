@@ -3,10 +3,11 @@ title: Get or Create Subscriber
 slug: subscribers-old
 excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: true
-metadata:
+metadata: 
 createdAt: '2018-05-08T17:13:32.048Z'
-updatedAt: '2023-03-14T20:31:12.840Z'
+updatedAt: '2023-06-02T23:22:57.543Z'
 category: 6478b85c3a66a114558bdd61
+order: 0
 ---
 [block:callout]
 {

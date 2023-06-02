@@ -3,8 +3,9 @@ title: Expandables
 slug: expandables
 hidden: false
 createdAt: '2023-04-11T22:25:56.858Z'
-updatedAt: '2023-04-11T22:25:56.858Z'
+updatedAt: '2023-06-02T23:22:59.433Z'
 category: 6478b860a6b223151cd4a791
+order: 2
 ---
 Expandables allow you to retrieve related data along with the request without making additional requests. Fields in the REST API will allow you to request additional information as an expanded response by using the `expand` query parameter. 
 

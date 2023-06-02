@@ -4,10 +4,11 @@ slug: grant-a-promotional-entitlement-old
 excerpt: Grants a user a promotional entitlement. Does not override or defer a store
   transaction, applied simultaneously.
 hidden: true
-metadata:
+metadata: 
 createdAt: '2019-08-09T05:30:42.631Z'
-updatedAt: '2022-07-21T14:54:10.803Z'
+updatedAt: '2023-06-02T23:23:01.919Z'
 category: 6478b85f7a822216db047503
+order: 0
 ---
 [block:callout]
 {

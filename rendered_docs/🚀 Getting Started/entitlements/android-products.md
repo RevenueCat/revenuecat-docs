@@ -15,8 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-06-26T22:04:24.057Z'
-updatedAt: '2023-03-28T08:02:33.463Z'
+updatedAt: '2023-06-02T23:23:22.889Z'
 category: 6478b85cd5a60c15a01cee47
+order: 1
+parentDoc: 647919ef27e658004bd292cf
 ---
 To set up products for Android devices, start by logging into Google Play Console. Google Play Console is Google's central hub for managing app releases, testing, in-app purchases, and more. 
 

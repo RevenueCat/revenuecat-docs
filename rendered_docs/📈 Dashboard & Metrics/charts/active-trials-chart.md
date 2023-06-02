@@ -3,8 +3,10 @@ title: Active Trials Chart
 slug: active-trials-chart
 hidden: false
 createdAt: '2022-10-19T15:37:33.630Z'
-updatedAt: '2023-02-24T21:00:27.747Z'
+updatedAt: '2023-06-02T23:23:05.860Z'
 category: 6478b861991df212c2b92e19
+order: 15
+parentDoc: 647919ee3e25fd005b521f0f
 ---
 ## Definition
 The Active Trials chart measures the number of unexpired free trials at the end of a given period. Similar to [Active Subscriptions](doc:active-subscriptions-chart), a trial is considered active until it expires, regardless of its auto-renew status.

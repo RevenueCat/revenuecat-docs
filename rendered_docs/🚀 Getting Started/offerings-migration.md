@@ -4,8 +4,9 @@ slug: offerings-migration
 excerpt: Migrating to Offerings from a legacy setup
 hidden: true
 createdAt: '2019-09-21T00:32:27.183Z'
-updatedAt: '2019-12-16T17:07:12.258Z'
+updatedAt: '2023-06-02T23:23:24.726Z'
 category: 6478b85cd5a60c15a01cee47
+order: 13
 ---
 [block:embed]
 {

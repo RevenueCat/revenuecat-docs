@@ -3,8 +3,10 @@ title: Subscription Retention Chart
 slug: subscription-retention-chart
 hidden: false
 createdAt: '2022-10-19T15:37:02.622Z'
-updatedAt: '2023-05-22T23:23:31.350Z'
+updatedAt: '2023-06-02T23:23:06.905Z'
 category: 6478b861991df212c2b92e19
+order: 14
+parentDoc: 647919ee3e25fd005b521f0f
 ---
 ## Definition
 

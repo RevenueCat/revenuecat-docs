@@ -5,8 +5,9 @@ excerpt: Records a purchase for a user from iOS, Android, or Stripe and will cre
   a user if they don't already exist.
 hidden: false
 createdAt: '2023-04-12T01:31:25.951Z'
-updatedAt: '2023-04-12T01:54:51.793Z'
+updatedAt: '2023-06-02T23:23:03.485Z'
 category: 6478b85ba1ff55154dd9bbe5
+order: 999
 ---
 # Parameter Reference
 

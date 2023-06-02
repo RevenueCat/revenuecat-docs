@@ -12,8 +12,9 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-02-02T00:31:49.564Z'
-updatedAt: '2023-04-04T20:52:44.896Z'
+updatedAt: '2023-06-02T23:23:20.734Z'
 category: 6478b86562610511b1c9b5b0
+order: 3
 ---
 For RevenueCat to securely authenticate and validate a [Subscription Offer](https://docs.revenuecat.com/docs/ios-subscription-offers) request with Apple, you'll need to upload an in-app purchase key. In order to enable [customer lookup](https://docs.revenuecat.com/docs/customer-lists#find-an-individual-customer) via Order ID for iOS apps, you'll also need to provide an Issuer ID.
 

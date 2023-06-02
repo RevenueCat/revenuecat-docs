@@ -3,10 +3,11 @@ title: Override a Customer's Current Offering
 slug: override-offering-old
 excerpt: Overrides the current Offering for a specific user
 hidden: true
-metadata:
+metadata: 
 createdAt: '2020-09-30T21:21:26.551Z'
-updatedAt: '2022-07-21T15:05:16.980Z'
+updatedAt: '2023-06-02T23:23:01.829Z'
 category: 6478b85d5c234820edf84b50
+order: 1
 ---
 [block:callout]
 {

@@ -4,6 +4,8 @@ slug: update-offering
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:offerings:read_write`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.245Z'
-updatedAt: '2023-05-31T08:47:58.884Z'
+updatedAt: '2023-06-02T23:22:59.842Z'
 category: 6478b860a6b223151cd4a791
+order: 1
+parentDoc: 647912c205f064071ff8ce51
 ---

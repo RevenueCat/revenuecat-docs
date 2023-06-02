@@ -15,8 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-09-29T15:21:09.333Z'
-updatedAt: '2023-02-23T22:05:19.393Z'
+updatedAt: '2023-06-02T23:23:16.259Z'
 category: 6478b8643a66a114558bdd69
+order: 0
+parentDoc: 647919ef96d64f0051ca6485
 ---
 RevenueCat does not require server notifications from the App Store, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 

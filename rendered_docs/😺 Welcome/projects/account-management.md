@@ -12,8 +12,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-21T17:37:20.347Z'
-updatedAt: '2023-05-02T14:57:52.279Z'
+updatedAt: '2023-06-02T23:23:21.337Z'
 category: 6478b85ad159da16da1ace76
+order: 2
+parentDoc: 647919effb0ccb004204abf2
 ---
 # Account Security & 2FA
 

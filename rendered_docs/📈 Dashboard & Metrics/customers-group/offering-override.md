@@ -14,8 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-07-30T17:03:23.384Z'
-updatedAt: '2023-03-27T23:09:19.467Z'
+updatedAt: '2023-06-02T23:23:07.837Z'
 category: 6478b861991df212c2b92e19
+order: 3
+parentDoc: 647919ee7544ba000b17ea62
 ---
 You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the **Current Offering** card. This can be useful for:
 

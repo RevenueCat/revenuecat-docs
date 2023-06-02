@@ -14,8 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-05-31T22:11:14.243Z'
-updatedAt: '2022-12-09T17:40:50.803Z'
+updatedAt: '2023-06-02T23:23:04.151Z'
 category: 6478b85da1ff55154dd9bbe9
+order: 0
+parentDoc: 647919ef84bcff000ad85f55
 ---
 If you already have existing purchases or subscriptions and have been saving the complete raw receipt files or tokens, you can import those purchases into RevenueCat. If you don't have the proper data saved on your server, see the client-side migration section of the [Migrating Subscriptions](doc:migrating-existing-subscriptions) doc.
 

@@ -3,10 +3,11 @@ title: Update Subscriber Attributes
 slug: update-subscriber-attributes-old
 excerpt: Updates subscriber attributes for a user.
 hidden: true
-metadata:
+metadata: 
 createdAt: '2020-03-10T01:14:10.675Z'
-updatedAt: '2020-12-04T01:39:50.154Z'
+updatedAt: '2023-06-02T23:22:57.766Z'
 category: 6478b85c3a66a114558bdd61
+order: 1
 ---
 [block:api-header]
 {

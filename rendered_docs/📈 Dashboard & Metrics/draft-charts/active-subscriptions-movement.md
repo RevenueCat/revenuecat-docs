@@ -3,8 +3,10 @@ title: Active Subscriptions Movement
 slug: active-subscriptions-movement
 hidden: true
 createdAt: '2022-06-28T20:15:28.170Z'
-updatedAt: '2022-06-28T20:15:28.170Z'
+updatedAt: '2023-06-02T23:23:08.071Z'
 category: 6478b861991df212c2b92e19
+order: 1
+parentDoc: 647919eec7caba001d66e88b
 ---
 ## Active Subscriptions Movement
 **Segments:** No

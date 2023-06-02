@@ -14,8 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-07T20:32:01.037Z'
-updatedAt: '2023-02-02T14:19:47.927Z'
+updatedAt: '2023-06-02T23:23:23.827Z'
 category: 6478b85cd5a60c15a01cee47
+order: 5
+parentDoc: 647919effb0ccb004204abf5
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 ```text Cordova
