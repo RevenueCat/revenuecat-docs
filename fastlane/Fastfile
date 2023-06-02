@@ -61,7 +61,7 @@ Extracts code blocks from within the [block:code] and [/block] tags and saves ea
 folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
 DESC
 lane :extract_code_blocks do |options|
-    markdown_source_files.each do |file_name|
+    markdown_files.each do |file_name|
         UI.message("🔨 Processing #{file_name}...")
         current_folder = File.dirname(file_name)
         UI.message("🔨 Current folder #{current_folder}...")
@@ -154,12 +154,7 @@ lane :update_docs_structure do |options|
 
     folder_path = RENDER_FOLDER
 
-    markdown_files = []
-    Dir.chdir(root_dir) do
-        markdown_files = Dir.glob("#{folder_path}/**/*.md")
-    end
-
-    markdown_files.each do |file|
+    markdown_files(folder_path).each do |file|
         next if file == '.' || file == '..'
         file_without_folder_path = file.gsub("#{folder_path}/", "")
         UI.message("Updating #{file_without_folder_path}")
@@ -266,7 +261,7 @@ lane :update_docs_categories do |options|
 
     categories = get_json_from_file(CATEGORIES_TEST_FILE)
 
-    markdown_source_files.each do |file|
+    markdown_files.each do |file|
         next if file == '.' || file == '..'
         file_without_folder_path = file.gsub("#{SOURCE_FOLDER}/", "")
         category_name = file_without_folder_path.split("/")[0]
@@ -803,9 +798,9 @@ def process_code_block(code_item)
     new_style_code_block
 end
 
-def markdown_source_files
+def markdown_files(folder = SOURCE_FOLDER)
     Dir.chdir(root_dir) do
-        Dir.glob("#{SOURCE_FOLDER}/**/*.md")
+        Dir.glob("#{folder}/**/*.md")
     end
 end
 
