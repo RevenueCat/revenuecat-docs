@@ -4,7 +4,7 @@ slug: event-types-and-fields
 excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T19:27:15.768Z'
-updatedAt: '2023-04-27T20:06:43.542Z'
+updatedAt: '2023-05-15T06:49:26.237Z'
 category: 6478b86233165e07ab13013b
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 

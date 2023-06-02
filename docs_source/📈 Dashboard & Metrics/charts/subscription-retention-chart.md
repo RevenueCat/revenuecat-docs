@@ -3,25 +3,28 @@ title: Subscription Retention Chart
 slug: subscription-retention-chart
 hidden: false
 createdAt: '2022-10-19T15:37:02.622Z'
-updatedAt: '2023-02-24T20:56:20.111Z'
+updatedAt: '2023-05-22T23:23:31.350Z'
 category: 6478b861991df212c2b92e19
 ---
 ## Definition
+
 Subscription Retention shows you how paying subscriptions renew and retain over time by cohorts, which are segmented by subscription start date by default, but can be segmented by other fields like Country or Product as well.
 
 ### Available settings
 
-* Filters: Yes
-* Segments: Yes
-* Absolute/Relative Selector: Yes
-* Retention Period Selector: Yes
+- Filters: Yes
+- Segments: Yes
+- Absolute/Relative Selector: Yes
+- Retention Period Selector: Yes
 
 ### Segmentation & cohorting
+
 When segmenting by subscription start date, cohorts are segmented by the start of a paid subscription. Subsequent periods along the horizontal table indicate how many subscriptions continued renewing through those periods. 
 
 When segmenting by other dimensions, such as Country or Store, cohorts are segmented by the values within that dimension (e.g. App Store or Play Store for the Store segment), and include all paid subscriptions started within the specified date range. Subsequent periods along the horizontal table indicate the portion of subscriptions that successfully renewed out of all those that had the opportunity to renew in a given period.
 
 ## How to use Subscription Retention in your business
+
 Measuring Subscription Retention is crucial for understanding:
 
 1. How your product is delivering value over time
@@ -31,35 +34,38 @@ Measuring Subscription Retention is crucial for understanding:
 By studying this data, you may learn which customer segments are worth focusing your product and marketing efforts on more fully, or where you have the opportunity to improve your pricing to increase retention over time.
 
 ## Calculation
+
 For each period, we measure:
 
 **Subscriptions: The count of new paid subscriptions started within that period.**
-* This differs from other charts that are cohorted by a customer’s first seen date.
+
+- This differs from other charts that are cohorted by a customer’s first seen date. This chart is cohorted by first purchase date.
 
 **Retention through each available period**
-* Retention: The number of subscriptions in the cohort who made an additional payment in a given period that have had the opportunity to do so.
-* Available period: Use the date range selector to determine the range of subscribers to include in the chart. For each cohort included in that date range, all available retention periods will be provided. 
-[block:callout]
-{
-  "type": "info",
-  "body": "When segmenting by subscription start date, each subscriber in that cohort will have had an equal opportunity to renew within a given period, but when segmenting by other dimensions, each subscriber may have different subscription start dates, and therefore different renewal opportunities.\n\nAs a result, the retention rate within each period cannot be directly compared to the total size of the cohort, because we will only measure the retention rate of the portion of that cohort that had the opportunity to renew in that period (e.g. for Month 3 retention, we will only include subscribers whose subscription start date is at least 3 months ago).",
-  "title": "Segmenting by other dimensions"
-}
-[/block]
+
+- Retention: The number of subscriptions in the cohort who made an additional payment in a given period that have had the opportunity to do so.
+- Available period: Use the date range selector to determine the range of subscribers to include in the chart. For each cohort included in that date range, all available retention periods will be provided. 
+
+> 📘 Segmenting by other dimensions
+> 
+> When segmenting by subscription start date, each subscriber in that cohort will have had an equal opportunity to renew within a given period, but when segmenting by other dimensions, each subscriber may have different subscription start dates, and therefore different renewal opportunities.
+> 
+> As a result, the retention rate within each period cannot be directly compared to the total size of the cohort, because we will only measure the retention rate of the portion of that cohort that had the opportunity to renew in that period (e.g. for Month 3 retention, we will only include subscribers whose subscription start date is at least 3 months ago).
+
 ### Formula
 
-**When segmenting by Subscription Start Date**
+**When segmenting by Subscription Start Date**  
 [Retained Subscriptions at x period] / [Subscriptions] = Retention
 
-**When segmenting by other dimensions**
+**When segmenting by other dimensions**  
 [Retained Subscriptions at x period] / [Subscriptions that have had the opportunity to renew] = Retention
-[block:callout]
-{
-  "type": "info",
-  "body": "Retention is always calculated relative to the size of the initial cohort that has had the opportunity to renew. Retention is _not_ calculated relative to the prior period."
-}
-[/block]
+
+> 📘 
+> 
+> Retention is always calculated relative to the size of the initial cohort that has had the opportunity to renew. Retention is _not_ calculated relative to the prior period.
+
 ## FAQs
+
 [block:parameters]
 {
   "data": {
@@ -68,29 +74,19 @@ For each period, we measure:
     "0-0": "How are refunds handled in Subscription Retention?",
     "0-1": "Refunded subscriptions are treated like subscriptions that churned during the period that the refund occurred in.",
     "1-0": "How are product changes handled in Subscription Retention?",
-    "1-1": "This chart measures retention on a per-product basis.\n\nIf a subscriber changes products, they would be counted as “churned” on the old product and start a new “retention journey” on the new one. Their new cohort would be based on the date the transaction for the new product was completed.",
+    "1-1": "This chart measures retention on a per-product basis.  \n  \nIf a subscriber changes products, they would be counted as “churned” on the old product and start a new “retention journey” on the new one. Their new cohort would be based on the date the transaction for the new product was completed.",
     "2-0": "Can I measure Subscription Retention across all product durations?",
-    "2-1": "Subscription Retention is filtered by product duration based on the selected Retention Period, and does not support measuring retention across all product durations today.\n\nThis is to ensure that the selected Retention Period (e.g. Yearly) maps to the available retention points in a subscriber’s lifecylce.\n\nFor example, a monthly subscriber who retained for only 10 months would not be counted as a retained subscriber at 1 year, but has a vastly superior retention rate (and therefore lifetime value) when compared to the subscriber who retained for 2 months, and only the Monthly Retention Period would show that contrast.\n\nWe’ll continue improving this chart to allow for more flexible retention measurements in the future.",
+    "2-1": "Subscription Retention is filtered by product duration based on the selected Retention Period, and does not support measuring retention across all product durations today.  \n  \nThis is to ensure that the selected Retention Period (e.g. Yearly) maps to the available retention points in a subscriber’s lifecylce.  \n  \nFor example, a monthly subscriber who retained for only 10 months would not be counted as a retained subscriber at 1 year, but has a vastly superior retention rate (and therefore lifetime value) when compared to the subscriber who retained for 2 months, and only the Monthly Retention Period would show that contrast.  \n  \nWe’ll continue improving this chart to allow for more flexible retention measurements in the future.",
     "3-0": "How are incomplete periods displayed in Subscription Retention?",
-    "3-1": "The final, incomplete period of a given cohort is indicated with a hashed background.\n\nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions."
+    "3-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions."
   },
   "cols": 2,
-  "rows": 4
-}
-[/block]
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/88a06a8-SubscriptionRetention.png",
-        "SubscriptionRetention.png",
-        1377,
-        965,
-        "#000000"
-      ]
-    }
+  "rows": 4,
+  "align": [
+    "left",
+    "left"
   ]
 }
 [/block]
+
+![](https://files.readme.io/88a06a8-SubscriptionRetention.png "SubscriptionRetention.png")

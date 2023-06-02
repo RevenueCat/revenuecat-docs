@@ -3,5 +3,5 @@
   "param": "customer_id",
   "message": "id is too long",
   "retryable": false,
-  "doc_url": "https://revenuecat.com/docs/errors/parameter_error"
+  "doc_url": "https://errors.rev.cat/parameter-error"
 }

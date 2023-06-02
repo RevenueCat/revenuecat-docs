@@ -14,8 +14,8 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2023-04-13T01:11:32.241Z'
-updatedAt: '2023-04-13T01:11:32.241Z'
+createdAt: '2023-05-09T18:27:09.193Z'
+updatedAt: '2023-05-09T18:27:09.193Z'
 category: 6478b85e64b1ea21ad3e70fe
 ---
 RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.
@@ -56,8 +56,6 @@ If you don't provide an App User ID when instantiating the Purchases SDK, Revenu
 [block:file]
 {"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_8.cs"}
 [/block]
-
-
 
 > 📘 
 > 
@@ -111,8 +109,6 @@ If you have your own App User IDs at app launch, you can pass those on instantia
 {"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_16.cs"}
 [/block]
 
-
-
 Often times, you may not have your own App User IDs until later in the application lifecycle. In these cases, you can pass the App User ID  later through the `.logIn()` method.
 
 ## Provide App User ID after configuration
@@ -143,8 +139,6 @@ If your app doesn't receive its own App User ID until later in its lifecycle, yo
 [block:file]
 {"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_24.cs"}
 [/block]
-
-
 
 #### `logIn()` method alias behavior
 
@@ -229,7 +223,7 @@ After the user is logged in with a known App User ID, they may want to logout or
 {
   "data": {
     "h-0": "🚨 Don't use blocked App User IDs",
-    "0-0": "Certain App User IDs are blocked in RevenueCat. This is by design to help developers that may be unintentionally passing non-unique strings as user identifiers. The current block-list is:  \n`'no_user'`, `'null'`, `'none'`, `'nil'`, `'(null)'`, `'\\x00'`(`NULL` character), `''`(empty string), `'unidentified'`, `'undefined'`, `'unknown'`, `'anonymous'`, `'guest'`, and any App User IDs containing the character `/`."
+    "0-0": "Certain App User IDs are blocked in RevenueCat. This is by design to help developers that may be unintentionally passing non-unique strings as user identifiers. The current block-list is:  \n`'no_user'`, `'null'`, `'none'`, `'nil'`, `'(null)'`, `'NaN`, `'\\x00'`(`NULL` character), `''`(empty string), `'unidentified'`, `'undefined'`, `'unknown'`, `'anonymous'`, `'guest'`, `'-1'`, `'0'`, `'[]'`, `'{}'`, `'[object Object]'` and any App User IDs containing the character `/`."
   },
   "cols": 1,
   "rows": 1,

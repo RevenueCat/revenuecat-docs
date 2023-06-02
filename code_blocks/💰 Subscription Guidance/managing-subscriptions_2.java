@@ -6,7 +6,7 @@ Purchases.getSharedInstance().purchase(
 	new PurchaseCallback() {
 		@Override
 		public void onCompleted(@NonNull StoreTransaction storeTransaction, @NonNull CustomerInfo customerInfo) {
-			if (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {
+			if (customerInfo.getEntitlements().get("my_entitlement_identifier").isActive()) {
 				// Unlock that great "pro" content
 			}
 		}
