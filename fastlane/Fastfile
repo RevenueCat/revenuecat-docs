@@ -66,13 +66,13 @@ lane :extract_code_blocks do |options|
         current_folder = File.dirname(file_name)
         UI.message("🔨 Current folder #{current_folder}...")
         folder_inside_docs_source = current_folder.sub(/^#{SOURCE_FOLDER}\//, "")
-        UI.message("🔨 folder_inside_docs_source #{folder_inside_docs_source}...")
         output_dir = "code_blocks/#{folder_inside_docs_source}"
-        UI.message("🔨 output_dir #{output_dir}...")
 
         file_contents = get_file_contents(file_name)
 
-        FileUtils.mkdir_p(output_dir)
+        Dir.chdir(root_dir) do
+            FileUtils.mkdir_p(output_dir)
+        end
 
         file_contents = convert_old_style_code_blocks(file_contents)
 
@@ -403,7 +403,9 @@ def extract_block_to_file(output_dir, file_name_no_ext, code_block, index)
         code = code_information["code"].strip
         extension = determine_extension(language)
         new_file = "#{output_dir}/#{file_name_no_ext}_#{index + 1}.#{extension}"
-        File.write(new_file, code)
+        Dir.chdir(root_dir) do
+            File.write(new_file, code)
+        end
         UI.message("⚙️  Creating #{new_file}...")
 
         {
@@ -455,7 +457,7 @@ LANGUAGE_EXTENSIONS = {
 # @param lang [String] the language
 # @return [String] the file extension
 def determine_extension(lang)
-    LANGUAGE_EXTENSIONS[lang] || lang
+    LANGUAGE_EXTENSIONS[lang.downcase] || lang
 end
 
 ##

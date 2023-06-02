@@ -14,8 +14,8 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2023-04-17T22:17:39.018Z'
-updatedAt: '2023-04-17T22:17:39.018Z'
+createdAt: '2023-05-30T14:34:37.349Z'
+updatedAt: '2023-05-30T14:34:37.349Z'
 category: 6478b85f43de890059745172
 ---
 > 👍 
@@ -62,8 +62,6 @@ To test purchases in different regions, you should set your sandbox user's **App
   ]
 }
 [/block]
-
-
 
 # Testing on Device
 
@@ -237,7 +235,7 @@ Because of the accelerated expiration and renewal rates, sometimes not all renew
 
 # Deleting Test Users
 
-When testing, it may be helpful to delete a customer and all their receipts from RevenueCat to simulate a new installation. You can delete a specific user from the customer dashboard in RevenueCat. See our [docs on deleting users](doc:customers#section-delete-users) for more information.
+When testing, it may be helpful to delete a customer and all their receipts from RevenueCat to simulate a new installation. You can delete a specific user from the customer dashboard in RevenueCat. See our [docs on deleting users](https://www.revenuecat.com/docs/manage-users) for more information.
 
 > ❗️ Maximum number of App Store subscription receipts
 > 

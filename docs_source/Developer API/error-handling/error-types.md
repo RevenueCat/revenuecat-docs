@@ -3,7 +3,7 @@ title: Error Types
 slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
-updatedAt: '2023-04-11T22:27:04.677Z'
+updatedAt: '2023-05-23T11:21:43.127Z'
 category: 6478b860a6b223151cd4a791
 ---
 ## `authentication_error`
@@ -31,7 +31,7 @@ The parameter provided is invalid. Please refer to the `message` field for more 
 
 ## `rate_limit_error`
 
-The request has hit the rate limiting domain for this endpoint. Refer to the `backoff_ms` field to determine when to try again.
+The request has hit the [rate limit](ref:rate-limit) for this endpoint. Refer to the `backoff_ms` field to determine how many milliseconds to wait before making another request to the same endpoint.
 
 ## `resource_missing`
 

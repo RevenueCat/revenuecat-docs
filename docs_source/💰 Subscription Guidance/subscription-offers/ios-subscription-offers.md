@@ -217,9 +217,7 @@ Apple does not provide a callback to determine if the code redemption was succes
 ### Option 2: Redirect to App Store app
 
 You can link to the App Store with a prefilled code for redemption with the following URL format:
-```
-https://apps.apple.com/redeem?ctx=offercodes&id={apple_app_id}&code={code}
-```
+```https://apps.apple.com/redeem?ctx=offercodes&id={apple_app_id}&code={code}```
 
 You can find your Apple App ID in your app settings in App Store Connect (General -> App Information).
 

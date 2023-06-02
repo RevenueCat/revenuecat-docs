@@ -4,7 +4,7 @@ slug: support-first-steps
 excerpt: We can help, but we need your help first.
 hidden: false
 createdAt: '2022-10-13T20:24:32.602Z'
-updatedAt: '2023-04-13T13:28:28.872Z'
+updatedAt: '2023-05-17T19:27:15.454Z'
 category: 6478b865844f5f11abe0d72f
 ---
 Our documentation (you're already here!) answers a lot of questions about Charts, the dashboard, Customer Lists, and SDK setup. Try looking through here first, as well as our community where other developers may have already asked your question.
@@ -14,8 +14,6 @@ Our documentation (you're already here!) answers a lot of questions about Charts
   "html": "<a href=\"https://community.revenuecat.com\" class=\"support-button\" target=\"_blank\">🌎 Search the Community</a>\n<a href=\"https://status.revenuecat.com\" class=\"support-button\" target=\"_blank\">⚠️ View Status Page</a>"
 }
 [/block]
-
-
 
 # Contacting Support
 
@@ -33,13 +31,11 @@ Finally, be sure to check the [status page](https://status.revenuecat.com) befor
 }
 [/block]
 
-
-
 # Common Questions and Answers
 
 ## ➡️ Products or Offerings can't be fetched, or Offerings are empty
 
-If you can't fetch products, or your offerings are empty, this is nearly always a configuration issue. We have a guide detailing next steps [in our community here](https://community.revenuecat.com/sdks-51/why-are-offerings-or-products-empty-124).
+If you can't fetch products, or your offerings are empty, this is nearly always a configuration issue. We have a guide detailing next steps [in our community here](https://community.revenuecat.com/sdks-51/why-are-offerings-or-products-empty-124). For Google Play Store issues, please refer to our [Google Play Checklists](doc:google-play-checklists).
 
 Here's how it works under the hood:
 

@@ -4,7 +4,7 @@ slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
-updatedAt: '2023-03-30T18:29:03.017Z'
+updatedAt: '2023-05-16T16:33:38.101Z'
 category: 6478b866bd163c1503cb8bbf
 ---
 ## Google Product setup
@@ -152,6 +152,12 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 [block:file]
 {"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_1.kt"}
 [/block]
+[block:file]
+{"language":"Text","name":"React Native","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_2.txt"}
+[/block]
+[block:file]
+{"language":"Text","name":"Flutter","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_3.txt"}
+[/block]
 
 
 
@@ -163,13 +169,13 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 Follow the migration reference doc to migrate all the changes. These are some examples of code changes you might have to do:
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_2.kt"}
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_4.kt"}
 [/block]
 
 
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_3.kt"}
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_5.kt"}
 [/block]
 
 

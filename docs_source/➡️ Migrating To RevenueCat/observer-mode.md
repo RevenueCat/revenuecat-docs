@@ -15,8 +15,8 @@ metadata:
     2: 1200
     3: 627
     4: "#f7f5f5"
-createdAt: '2023-04-28T00:12:22.055Z'
-updatedAt: '2023-04-28T00:12:22.055Z'
+createdAt: '2023-05-30T15:16:00.743Z'
+updatedAt: '2023-05-30T15:16:00.743Z'
 category: 6478b85da1ff55154dd9bbe9
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
@@ -56,8 +56,6 @@ With this option, you should already have a process in place for validating rece
 Don't worry about validating the receipt before forwarding to RevenueCat - we always validate receipts with the stores before saving them.
 
 ![](https://files.readme.io/0925a4c-Receipt_Forwarding_Service.png "Receipt Forwarding Service.png")
-
-
 
 ## Requirements
 
@@ -124,21 +122,15 @@ No special requirements
 {"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_6.cs"}
 [/block]
 
-
-
 ### Enable Observer Mode in Unity Editor (Unity Only)
 
 #### For Google Play (can also be done programmatically, see Configuration section)
 
 ![](https://files.readme.io/9fa8a00-Screen_Shot_2022-08-03_at_3.52.12_PM.png "Screen Shot 2022-08-03 at 3.52.12 PM.png")
 
-
-
 #### For Amazon Store (can also be done programmatically, see Configuration section)
 
 ![](https://files.readme.io/3e32059-Screen_Shot_2022-08-03_at_3.51.12_PM.png "Screen Shot 2022-08-03 at 3.51.12 PM.png")
-
-
 
 > 🚧 Important note regarding InAppBillingService (Android Unity only)
 > 
@@ -148,37 +140,16 @@ No special requirements
 > 
 > On Android, RevenueCat **will not** consume or acknowledge any purchase in Observer Mode so be sure your app is handling that. **Failure to do so will result in your purchases being refunded after 3 days.**
 
-## 2.1 Sync purchases with RevenueCat (Google Play only)
-
-On Android with Google Play (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
-
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_9.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_10.cs"}
-[/block]
-
-
-
-## 2.2 Sync purchases with RevenueCat (Amazon Store only)
+## 2. Sync purchases with RevenueCat (Amazon Store only)
 
 On Android with Amazon Store (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncObserverModeAmazonPurchase` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 
 [block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_11.cs"}
+{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.cs"}
 [/block]
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_12.kt"}
+{"language":"kotlin","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.kt"}
 [/block]
-
-
 
 # Configuring Integrations
 

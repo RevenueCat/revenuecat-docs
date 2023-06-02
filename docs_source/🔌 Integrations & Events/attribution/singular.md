@@ -14,7 +14,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-07-29T17:30:24.269Z'
-updatedAt: '2023-03-28T21:51:12.011Z'
+updatedAt: '2023-05-24T18:37:16.300Z'
 category: 6478b86233165e07ab13013b
 ---
 With our Singular integration you can:
@@ -44,9 +44,11 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 {"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/singular_2.kt"}
 [/block]
 
-
-
 You should make sure to call `collectDeviceIdentifiers()` after the _Purchases SDK_ is configured, and before the first purchase occurs. It's safe to call this multiple times, as only the new/updated values will be sent to RevenueCat.
+
+> 📘 Modifying SKAdNetwork conversion values is not currently supported
+> 
+> Since we deliver server-to-server events via API, as opposed to on the SDK where SKAN can be interacted with, this integration does not allow you to modify SKAN conversion values directly from received RevenueCat events.
 
 > ❗️ Device identifiers with iOS App Tracking Transparency (iOS 14.5+)
 > 
@@ -57,8 +59,6 @@ You should make sure to call `collectDeviceIdentifiers()` after the _Purchases S
 > The AdSupport framework is required to access the IDFA parameter on iOS. Don't forget to import this into your project.
 
 ![](https://files.readme.io/caf9cda-Screen_Shot_2020-09-14_at_7.09.36_PM.png "Screen Shot 2020-09-14 at 7.09.36 PM.png")
-
-
 
 > ❗️ Remove any client-side purchase tracking
 > 
@@ -82,11 +82,13 @@ The below reserved key names can be used to optionally attach campaign data to a
 
 After you've set up the _Purchases SDK_ to send device data to RevenueCat, you can "turn on" the integration and configure the event names from the RevenueCat dashboard.
 
+> 🚧 Enable Reject IAP without Receipt on Singular
+> 
+> RevenueCat's events do not include receipts from the stores, since we validate purchases before triggering events. Therefore, do NOT enable the 'Reject IAP without Receipt' setting in Singular's Apps page so these events are accepted in Singular after having been validated by RevenueCat.
+
 1. Navigate to your project in the RevenueCat dashboard and find the _Integrations_ card in the left menu. Select **+ New** 
 
 ![](https://files.readme.io/0087649-app.revenuecat.com_projects_85ff18c7_collaborators_1.png)
-
-
 
 2. Choose **Singular** from the Integrations menu.
 3. Add your Singular API key, and an optional sandbox API key. The sandbox API key will be used for any sandbox purchases so you don't have to send them to your production Singular instance.
@@ -100,8 +102,9 @@ After you've set up the _Purchases SDK_ to send device data to RevenueCat, you c
       "image": [
         "https://files.readme.io/42f9f89-app.revenuecat.com_projects_85ff18c7_integrations_branch_4.png",
         null,
-        null
+        "Singular configuration screen"
       ],
+      "align": "center",
       "caption": "Singular configuration screen"
     }
   ]
@@ -124,17 +127,17 @@ Simulate a new user installing your app, and go through your app flow to complet
 
 Navigate the the [Customer View](doc:customers) for the test user that just made a purchase. Make sure that all of the required data from step 1 above is listed as attributes for the user.
 
+> 🚧 Check the Singular Export logs tool for Revenue
+> 
+> While we are still sending the Revenue metric for these events, you should not expect to see the event appearing as Revenue in Singular's SDK console. You can verify that the event is processed as a revenue event in the Export logs tool via Singular.
+
 ![](https://files.readme.io/28f4a01-app.revenuecat.com_activity_777004e5_event_1b2e7407-a1bc-416a-84cf-b65688412bbe_2.png)
-
-
 
 ## Check that the Singular event delivered successfully
 
 While still on the Customer View, click into the test purchase event in the [Customer History](doc:customer-history) and make sure that the Singular integration event exists and was delivered successfully. 
 
 ![](https://files.readme.io/2dba434-app.revenuecat.com_activity_40779aaf_event_92499ad6-350b-455a-a2ec-4c28c4ca0b28_3.png)
-
-
 
 > 👍 You've done it!
 > 
