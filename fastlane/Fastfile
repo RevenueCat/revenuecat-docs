@@ -857,6 +857,7 @@ def commit_changes_and_push_current_branch(commit_message)
 end
 
 def commit_current_changes(commit_message)
+    sh('git add -A')
     sh("git commit -am '#{commit_message}'")
 end
 
