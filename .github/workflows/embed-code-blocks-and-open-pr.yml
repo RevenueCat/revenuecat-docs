@@ -3,7 +3,7 @@ name: Render Markdown 📝
 on:
   push:
     branches:
-      - main
+      - test
 
 jobs:
   embed_code:
