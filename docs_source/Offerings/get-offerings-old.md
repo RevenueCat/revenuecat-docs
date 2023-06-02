@@ -6,7 +6,6 @@ hidden: true
 metadata:
 createdAt: '2020-12-30T01:38:59.895Z'
 updatedAt: '2021-12-07T15:11:57.491Z'
-category: 6478b85d5c234820edf84b50
 ---
 [block:callout]
 {

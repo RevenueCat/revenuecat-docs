@@ -16,7 +16,6 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2022-09-15T19:16:00.342Z'
 updatedAt: '2022-09-15T19:16:00.342Z'
-category: 6478b8643a66a114558bdd69
 ---
 Platform Server Notifications are notifications sent from **supported stores _to_ RevenueCat**, and are configured in the dashboards of each store. These notifications are intended to inform RevenueCat of updates to purchases, so we can ensure we send events in a timely manner.
 

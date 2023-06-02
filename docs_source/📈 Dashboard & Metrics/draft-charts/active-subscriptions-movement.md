@@ -4,7 +4,6 @@ slug: active-subscriptions-movement
 hidden: true
 createdAt: '2022-06-28T20:15:28.170Z'
 updatedAt: '2022-06-28T20:15:28.170Z'
-category: 6478b861991df212c2b92e19
 ---
 ## Active Subscriptions Movement
 **Segments:** No

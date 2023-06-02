@@ -6,7 +6,6 @@ excerpt: Records a purchase for a user from iOS, Android, or Stripe and will cre
 hidden: false
 createdAt: '2023-04-12T01:31:25.951Z'
 updatedAt: '2023-04-12T01:54:51.793Z'
-category: 6478b85ba1ff55154dd9bbe5
 ---
 # Parameter Reference
 

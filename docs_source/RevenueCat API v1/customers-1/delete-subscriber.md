@@ -6,7 +6,6 @@ hidden: false
 metadata:
 createdAt: '2023-04-12T01:31:25.951Z'
 updatedAt: '2023-04-12T01:45:58.438Z'
-category: 6478b85ba1ff55154dd9bbe5
 ---
 > 🚧 Secret API Key Required
 > 

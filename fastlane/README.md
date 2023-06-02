@@ -82,6 +82,15 @@ Updates rendered docs folder to the current category, order and parent informati
 readme_api_key, STRING Readme API key for the project
 
 
+### remove_categories_from_docs_source
+
+```sh
+[bundle exec] fastlane remove_categories_from_docs_source
+```
+
+Removes all categories from docs_source
+
+
 ### update_categories_file
 
 ```sh

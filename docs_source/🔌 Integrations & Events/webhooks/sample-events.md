@@ -5,7 +5,6 @@ excerpt: Example webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T16:36:52.205Z'
 updatedAt: '2023-04-27T16:40:54.393Z'
-category: 6478b86233165e07ab13013b
 ---
 These are some representative samples of webhooks you might receive from RevenueCat. Keep in mind that webhooks can include additional fields to what's shown here.
 

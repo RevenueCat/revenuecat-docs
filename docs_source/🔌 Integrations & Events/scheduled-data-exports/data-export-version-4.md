@@ -5,7 +5,6 @@ hidden: true
 metadata:
 createdAt: '2023-05-19T16:00:00.905Z'
 updatedAt: '2023-06-01T14:26:12.864Z'
-category: 6478b86233165e07ab13013b
 ---
 > 👍 
 > 

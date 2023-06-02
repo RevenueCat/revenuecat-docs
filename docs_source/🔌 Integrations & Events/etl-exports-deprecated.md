@@ -5,7 +5,6 @@ excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
 createdAt: '2022-12-15T02:43:30.576Z'
 updatedAt: '2023-03-09T03:39:52.586Z'
-category: 6478b86233165e07ab13013b
 ---
 [block:callout]
 {
