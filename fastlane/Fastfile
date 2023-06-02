@@ -455,7 +455,7 @@ LANGUAGE_EXTENSIONS = {
 # @param lang [String] the language
 # @return [String] the file extension
 def determine_extension(lang)
-    LANGUAGE_EXTENSIONS[lang] || lang
+    LANGUAGE_EXTENSIONS[lang.downcase] || lang
 end
 
 ##
