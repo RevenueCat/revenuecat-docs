@@ -3,7 +3,7 @@ title: Overview (v2)
 slug: revenuecat-rest-api
 hidden: false
 createdAt: '2023-04-11T22:34:48.009Z'
-updatedAt: '2023-04-28T00:36:19.795Z'
+updatedAt: '2023-05-22T08:22:08.121Z'
 category: 6478b860a6b223151cd4a791
 ---
 > 📘 New to RevenueCat?
@@ -38,9 +38,13 @@ Certain endpoints require secret keys, which should be kept out of any publicly 
 Authorization: Bearer YOUR_REVENUECAT_API_KEY
 ```
 
+> 🚧 Authorization type `Bearer` required in header
+> 
+> The RevenueCat REST API v2 requires stating the authorization type `Bearer` in the `Authorization` header before the API key in accordance with [RFC 7235](https://datatracker.ietf.org/doc/html/rfc7235). This is different to the v1 API which allowed passing just the API key as the `Authorization` header.
 
-
-In order to utilize the RevenueCat API v2, please create new v2 secret keys and define your permissions.
+> 🚧 API v1 keys will not work with REST API v2
+> 
+> In order to utilize the RevenueCat API v2, please create new v2 secret keys and define your permissions.
 
 ## API v2 Permissions
 
@@ -62,16 +66,12 @@ The body of the `POST` requests should be encoded in JSON and have the 'Content-
 Content-Type: application/json
 ```
 
-
-
 ```json sample body
 {
   "app_user_id": "user-1456",
   "fetch_token": "MQABC...EFH1234="
 }
 ```
-
-
 
 ## Params
 

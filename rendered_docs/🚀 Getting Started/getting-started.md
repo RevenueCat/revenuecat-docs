@@ -4,7 +4,7 @@ slug: getting-started
 excerpt: Get up and running with mobile subscriptions
 hidden: false
 createdAt: '2022-11-16T20:18:33.888Z'
-updatedAt: '2023-04-21T20:24:53.183Z'
+updatedAt: '2023-05-16T19:48:01.229Z'
 category: 6478b85cd5a60c15a01cee47
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
@@ -67,7 +67,13 @@ From **Project Settings > Apps** in the left menu of the project dashboard, sele
 }
 [/block]
 
-The field **App name** is required to add your app to RevenueCat. The rest of the configuration fields can be added later. To make test and production purchases, the Bundle ID (iOS) / Package Name (Android) as well as the Shared Secret (iOS) / Service Credentials (Android) must be configured.
+The field **App name** is required to add your app to RevenueCat. To make test and production purchases, the **Bundle ID** (iOS) / **Package Name** (Android) as well as the **Shared Secret** (iOS) / **Service Credentials** (Android) **must be configured**.
+
+> 📘 
+> 
+> If you try making purchases without a bundle ID and valid credentials, the SDK will fail with a '[receipt is not valid](https://www.revenuecat.com/docs/errors#---invalid_receipt)' error as RevenueCat will be unable to validate the transaction with the store.
+
+The rest of the configuration fields can be added later. 
 
 [block:image]
 {
@@ -142,8 +148,6 @@ See [Configuring Products](doc:entitlements) to set up your products and then or
   ]
 }
 [/block]
-
-
 
 # 4. Using RevenueCat's Purchases SDK
 
@@ -442,8 +446,6 @@ curl --request GET \
   --header 'X-Platform: stripe'
 ```
 
-
-
 ### See it in action
 
 [block:html]
@@ -451,8 +453,6 @@ curl --request GET \
   "html": "<body>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift#L24-L35\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/paywall/PaywallFragment.kt#L48-L53\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/weather.dart#L41-L79\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/screens/PaywallScreen/index.js#L24-L33\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>"
 }
 [/block]
-
-
 
 If fetching your [Offerings](doc:entitlements#offerings), [products](doc:entitlements#products), or available [packages](doc:entitlements#adding-packages) are empty, it's due to some configuration issue in the respective store. 
 
@@ -576,8 +576,6 @@ curl -X POST \
   }'
 ```
 
-
-
 ### See it in action
 
 [block:html]
@@ -585,8 +583,6 @@ curl -X POST \
   "html": "<body>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift#L78-L95\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/paywall/PaywallFragment.kt#L55-L66\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/paywall.dart#L53-L61\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/components/PackageItem/index.js#L15-L31\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
 }
 [/block]
-
-
 
 > 📘 💡 Here's a tip!
 > 
@@ -680,8 +676,6 @@ curl --request GET \
   --header 'Content-Type: application/json'
 ```
 
-
-
 ### See it in action
 
 [block:html]
@@ -689,8 +683,6 @@ curl --request GET \
   "html": "<body>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/UserViewController.swift#L37-L45\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/weather/WeatherFragment.kt#L69-L84\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/weather.dart#L31-L39\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/screens/WeatherScreen/index.js#L29-L46\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
 }
 [/block]
-
-
 
 You can use this method whenever you need to get the latest status, and it's safe to call this repeatedly throughout the lifecycle of your app. _Purchases_ automatically caches the latest <<glossary:CustomerInfo>> whenever it updates — so in most cases, this method pulls from the cache and runs very fast.
 
@@ -766,8 +758,6 @@ purchases.RestoreTransactions((info, error) =>
 });
 ```
 
-
-
 ### See it in action
 
 [block:html]
@@ -775,8 +765,6 @@ purchases.RestoreTransactions((info, error) =>
   "html": "<body>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/UserViewController.swift#L107-L123\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/user/UserFragment.kt#L78-L85\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/user.dart#L29-L55\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/components/RestorePurchasesButton/index.js#L11-L18\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
 }
 [/block]
-
-
 
 If two different [App User IDs](doc:user-ids) restore transactions from the same underlying store account (Apple, Google, or Amazon account) RevenueCat may attempt to create an alias between the two App User IDs and count them as the same user going forward. See our guide on [Restoring Purchases](doc:restoring-purchases) for more information on the different configurable restore behaviors.
 
@@ -870,8 +858,6 @@ public override void PurchaserInfoReceived(Purchases.PurchaserInfo purchaserInfo
 }
 ```
 
-
-
 ### See it in action
 
 [block:html]
@@ -879,8 +865,6 @@ public override void PurchaserInfoReceived(Purchases.PurchaserInfo purchaserInfo
   "html": "<body>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Lifecycle/AppDelegate.swift#L49-L59\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/MainApplication.kt#L26-L51\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/home.dart#L40-L50\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/screens/UserScreen/index.js#L35-L41\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
 }
 [/block]
-
-
 
 > 👍 You did it!
 > 

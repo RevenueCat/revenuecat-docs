@@ -4,7 +4,7 @@ slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
-updatedAt: '2023-03-30T18:29:03.017Z'
+updatedAt: '2023-05-16T16:33:38.101Z'
 category: 6478b866bd163c1503cb8bbf
 ---
 ## Google Product setup
@@ -151,6 +151,12 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 
 ```kotlin 
 implementation "com.revenuecat.purchases:purchases:6.0.1"
+```
+```Text React Native
+npm install --save react-native-purchases@next
+```
+```Text Flutter
+flutter pub add purchases_flutter:5.0.0-beta.2
 ```
 
 

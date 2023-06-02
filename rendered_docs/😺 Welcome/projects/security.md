@@ -15,7 +15,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2019-12-20T21:05:57.489Z'
-updatedAt: '2023-04-14T03:15:39.014Z'
+updatedAt: '2023-05-16T17:18:43.752Z'
 category: 6478b85ad159da16da1ace76
 ---
 It's a dangerous world out there! But you can make things much safer by enabling two-factor authentication in your RevenueCat account settings.
@@ -38,7 +38,7 @@ You'll be prompted to re-enter your password. Once re-authenticated, you'll be p
 
 Enter the two-factor code from the authenticator app then click **Enable**.
 
-![](https://files.readme.io/2d04a42-app.revenuecat.com_overview_1.png)
+![](https://files.readme.io/0d2579e-small-2d04a42-app.revenuecat.com_overview_1.png)
 
 ## 4. Save recovery codes
 

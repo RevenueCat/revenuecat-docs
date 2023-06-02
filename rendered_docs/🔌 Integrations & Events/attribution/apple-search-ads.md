@@ -4,7 +4,7 @@ slug: apple-search-ads
 excerpt: Collect and view Apple Search Ads attribution in RevenueCat using AdServices
 hidden: false
 createdAt: '2022-05-23T14:12:29.055Z'
-updatedAt: '2023-03-30T21:00:01.908Z'
+updatedAt: '2023-05-23T16:01:58.683Z'
 category: 6478b86233165e07ab13013b
 ---
 > 👍 
@@ -66,7 +66,9 @@ Once attribution data is collected from Apple, it will be available via Charts a
 }
 [/block]
 
-
+> 👍 
+> 
+> If you're having trouble finding the screen where you can add upload your public key to Client Credentials, ensure that you're logged in as the client Apple ID, and not your primary Apple ID. 
 
 - Then, copy the provided `clientId`, `teamId` and `keyId` from the Search Ads page to your RevenueCat Dashboard.
 - Click the 'Save' button in the top right corner.
@@ -169,8 +171,6 @@ function onDeviceReady() {
 }
 ```
 
-
-
 That's it! The Purchases SDK will collect the attribution token and send it to RevenueCat in the background.
 
 ## Detailed
@@ -204,8 +204,6 @@ if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
     }
 }
 ```
-
-
 
 After automatic collection is enabled, Purchases will sync the attribution token with the RevenueCat backend. Please note that if you enable automatic collection _before_ requesting authorization, the attribution token will only be valid for Standard and not Detailed attribution data.
 
