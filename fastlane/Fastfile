@@ -32,7 +32,7 @@ default_platform(:ios)
 
 desc "Install dependencies"
 lane :bootstrap do
-    sh "npm", "install", "-g", "rdme"
+    sh "npm", "install", "-g", "rdme@8.6.4-next.2"
 end
 
 lane :ios_tests do
