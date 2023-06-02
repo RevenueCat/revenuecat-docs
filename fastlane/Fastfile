@@ -108,7 +108,7 @@ lane :open_syncing_pr do |options|
 
     create_new_branch_and_checkout(new_branch_name)
     embed_code_blocks
-    update_docs_structure
+    update_docs_structure(options)
 
     pr_title = "Syncing #{latest_commit_sha} with #{current_version}"
     body = <<~EOS
