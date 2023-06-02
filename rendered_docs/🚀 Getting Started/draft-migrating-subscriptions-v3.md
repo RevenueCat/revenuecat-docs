@@ -75,14 +75,14 @@ The way to do this is: if your existing subscription code knows you have a subsc
 See the following pseudo-code for an example.
 ```javascript Client side migration example
 const isSubscribedInOldSystem = oldTracking.isSubscribed()
-const isSubscribedInRevenueCat = !customerInfo.entitlements.active.isEmpty
+const isSubscribedInRevenueCat = !purchaserInfo.entitlements.active.isEmpty
 
 // If the old system says we have a subscription, but RevenueCat does not
 if (isSubscribedInOldSystem && !isSubscribedInRevenueCat) 
 {
   // Tell Purchases to syncPurchases. 
   // This will sync the user's receipt with RevenueCat.
-  Purchases.shared.syncPurchases { (customerInfo, error) in }
+  Purchases.shared.syncPurchases { (purchaserInfo, error) in }
 }
 ```
 

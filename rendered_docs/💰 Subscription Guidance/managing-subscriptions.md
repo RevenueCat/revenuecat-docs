@@ -15,7 +15,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-01-15T19:53:13.255Z'
-updatedAt: '2023-03-28T10:03:45.658Z'
+updatedAt: '2023-05-26T21:46:07.271Z'
 category: 6478b860c1b42a1325cf5835
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
@@ -23,13 +23,11 @@ Some parts of a customer's subscription can be managed directly through RevenueC
 For information about Stripe, you can read more about working with web payments [here](doc:stripe#working-with-web-payments).
 
 # Upgrade or Downgrade a Subscription
-[block:callout]
-{
-  "type": "info",
-  "title": "Developers cannot change a customer's subscription directly",
-  "body": "The app stores do not allow developers (you) to upgrade or downgrade a subscription on behalf of a customer. Only a customer can change their subscription."
-}
-[/block]
+
+> 📘 Developers cannot change a customer's subscription directly
+> 
+> The app stores do not allow developers (you) to upgrade or downgrade a subscription on behalf of a customer. Only a customer can change their subscription.
+
 ## App Store
 
 There are no code changes required to support upgrades, downgrades, and crossgrades for iOS subscriptions in your app. A customer can choose to upgrade, downgrade, or crossgrade between subscriptions as often as they like. 
@@ -43,16 +41,15 @@ According to [Apple](https://developer.apple.com/app-store/subscriptions#ranking
 > **Crossgrade**. A user switches to a new subscription of the equivalent level. If the subscriptions are the same duration, the new subscription begins immediately. If the durations are different, the new subscription goes into effect at the next renewal date.
 
 You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscription-groups-explained) for more information on how to set up subscription groups in App Store Connect.
-[block:callout]
-{
-  "type": "info",
-  "title": "Upgrades during introductory periods",
-  "body": "When a customer upgrades products during an introductory period (including a free trial), Apple does not cancel the introductory offer but instead keeps the introductory offer active in addition to the upgraded product. So in these cases you can expect two products in the same Subscription Group to be active simultaneously."
-}
-[/block]
+
+> 📘 Upgrades during introductory periods
+> 
+> When a customer upgrades products during an introductory period (including a free trial), Apple does not cancel the introductory offer but instead keeps the introductory offer active in addition to the upgraded product. So in these cases you can expect two products in the same Subscription Group to be active simultaneously.
+
 ## Google Play
 
 In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Setting the proration mode optional but will default to `IMMEDIATE_WITH_TIME_PRORATION`.
+
 ```text Kotlin
 
 ```
@@ -65,7 +62,7 @@ Purchases.getSharedInstance().purchase(
 	new PurchaseCallback() {
 		@Override
 		public void onCompleted(@NonNull StoreTransaction storeTransaction, @NonNull CustomerInfo customerInfo) {
-			if (customerInfo.getEntitlements().get(<my_entitlement_identifier>).isActive()) {
+			if (customerInfo.getEntitlements().get("my_entitlement_identifier").isActive()) {
 				// Unlock that great "pro" content
 			}
 		}
@@ -78,14 +75,10 @@ Purchases.getSharedInstance().purchase(
 );
 ```
 
+> 📘 Supported proration modes
+> 
+> RevenueCat currently only supports the proration modes `IMMEDIATE_WITH_TIME_PRORATION` and `IMMEDIATE_WITHOUT_PRORATION`. Using alternate proration modes will work accurately for the customer subscription, but the pricing will not be correctly reflected in RevenueCat
 
-[block:callout]
-{
-  "type": "info",
-  "title": "Supported proration modes",
-  "body": "RevenueCat currently only supports the proration modes `IMMEDIATE_WITH_TIME_PRORATION` and `IMMEDIATE_WITHOUT_PRORATION`. Using alternate proration modes will work accurately for the customer subscription, but the pricing will not be correctly reflected in RevenueCat."
-}
-[/block]
 ## Amazon Appstore
 
 Amazon does not support changing products. Customers will need to cancel their existing subscription and re-subscribe to a different product.
@@ -139,20 +132,14 @@ Cancelling (or unsubscribing) from subscriptions is handled differently on each 
 ## Using the `managementURL` to Help Customers Cancel a Subscription
 
 Google requires developers to allow customers to cancel a subscription within apps. You can do this by displaying a link in your app that takes the user directly to Google Play's subscription management screen where they can immediately cancel their subscription. RevenueCat helps you do this by providing a `managementURL` property on the CustomerInfo object in the SDK and in our [REST API](https://docs.revenuecat.com/reference/subscribers#the-subscriber-object).
-[block:callout]
-{
-  "type": "info",
-  "title": "Include the `managementURL` on iOS",
-  "body": "The `managementURL` is a great way to allow customers to check the status of and manage their subscriptions on both iOS and Android. RevenueCat will automatically provide your app with the correct `managementURL` based on the platform of the customer's device and original store they purchased their"
-}
-[/block]
 
-[block:callout]
-{
-  "type": "danger",
-  "body": "`managementURL` is not supported on Amazon."
-}
-[/block]
+> 📘 Include the `managementURL` on iOS
+> 
+> The `managementURL` is a great way to allow customers to check the status of and manage their subscriptions on both iOS and Android. RevenueCat will automatically provide your app with the correct `managementURL` based on the platform of the customer's device and original store they purchased their
+
+> ❗️ 
+> 
+> `managementURL` is not supported on Amazon.
 
 ```swift 
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
@@ -167,11 +154,6 @@ Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling *
 }
 ```
 
-
-[block:callout]
-{
-  "type": "warning",
-  "title": "Deleting a User",
-  "body": "Deleting a user from RevenueCat **WILL NOT** cancel their subscription. The user can still trigger the [Restore Purchases](doc:making-purchases#restoring-purchases) method to re-sync their transactions with RevenueCat servers."
-}
-[/block]
+> 🚧 Deleting a User
+> 
+> Deleting a user from RevenueCat **WILL NOT** cancel their subscription. The user can still trigger the [Restore Purchases](doc:making-purchases#restoring-purchases) method to re-sync their transactions with RevenueCat servers.
