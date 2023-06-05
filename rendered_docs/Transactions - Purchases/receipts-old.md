@@ -4,10 +4,9 @@ slug: receipts-old
 excerpt: Records a purchase for a user from iOS, Android, or Stripe and will create
   a user if they don't already exist.
 hidden: true
-metadata:
+metadata: 
 createdAt: '2018-05-08T17:27:35.964Z'
 updatedAt: '2023-03-20T16:14:22.119Z'
-category: 6478b85e2169fb1556283358
 ---
 # Parameter Reference
 This is a complete reference of every parameter you can pass to this endpoint.

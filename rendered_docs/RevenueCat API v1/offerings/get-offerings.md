@@ -5,7 +5,6 @@ excerpt: Gets the offerings for your app.
 hidden: false
 createdAt: '2023-04-12T01:31:25.958Z'
 updatedAt: '2023-04-12T01:50:58.042Z'
-category: 6478b85ba1ff55154dd9bbe5
 ---
 > 📘 X-Platform is required
 > 

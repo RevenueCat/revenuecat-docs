@@ -6,5 +6,4 @@ createdAt: '2022-06-24T13:13:14.597Z'
 updatedAt: '2022-06-24T13:13:14.597Z'
 type: link
 link_url: https://www.revenuecat.com/docs/customer-lists
-category: 6478b85e64b1ea21ad3e70fe
 ---

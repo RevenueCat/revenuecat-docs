@@ -5,7 +5,6 @@ excerpt: Data deliveries of all of your apps' transaction data (formerly ETL Exp
 hidden: false
 createdAt: '2023-03-14T15:53:17.647Z'
 updatedAt: '2023-05-19T16:14:18.252Z'
-category: 6478b86233165e07ab13013b
 ---
 > 👍 
 > 

@@ -15,7 +15,6 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-02T23:21:02.437Z'
 updatedAt: '2023-02-02T14:19:36.090Z'
-category: 6478b861991df212c2b92e19
 ---
 The RevenueCat Overview is your in-app purchase hub of key metrics on the health of your business. 
 

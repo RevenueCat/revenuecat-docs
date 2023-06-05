@@ -5,10 +5,9 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
   the last purchase. If you want to refund a one-time Google purchase, see [refund
   a Google purchase](ref:refund-a-google-subscription).
 hidden: true
-metadata:
+metadata: 
 createdAt: '2020-03-04T21:44:22.200Z'
 updatedAt: '2023-04-12T01:56:16.820Z'
-category: 6478b85e2169fb1556283358
 ---
 > 🚧 Secret API Key Required
 > 
