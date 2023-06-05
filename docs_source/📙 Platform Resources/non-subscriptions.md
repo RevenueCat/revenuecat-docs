@@ -17,7 +17,6 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-06-04T17:15:44.078Z'
 updatedAt: '2023-04-28T15:13:18.507Z'
-category: 6478b8643a66a114558bdd69
 ---
 Although RevenueCat is primarily used to handle subscription purchases, our SDK will track all purchases, including consumable and non-consumable in-app purchases (**IAPs**). This makes it easy to track your app's total revenue with RevenueCat's powerful reporting features.
 

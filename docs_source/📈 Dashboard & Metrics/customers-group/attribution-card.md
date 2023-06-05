@@ -15,7 +15,6 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.734Z'
 updatedAt: '2023-04-04T20:53:23.472Z'
-category: 6478b861991df212c2b92e19
 ---
 If you're sending attribution information to RevenueCat through the Purchases SDK, we will display the latest information from the network in the **Attribution** card for the customer. 
 

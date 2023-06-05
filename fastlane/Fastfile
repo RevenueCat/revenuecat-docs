@@ -169,6 +169,29 @@ lane :update_docs_structure do |options|
     end
 end
 
+desc <<-DESC
+Removes all categories from docs_source
+DESC
+lane :remove_categories_from_docs_source do |options|
+    folder_path = SOURCE_FOLDER
+
+    markdown_source_files.each do |filename|
+        next if filename == '.' || filename == '..'
+        file_without_folder_path = filename.gsub("#{folder_path}/", "")
+        UI.message("Updating #{file_without_folder_path}")
+
+        Dir.chdir(root_dir) do
+            file = File.read(filename)
+            yaml_header, content = file.split('---', 3)[1..-1]
+            yaml_data = YAML.load(yaml_header)
+
+            yaml_data.delete('category')
+
+            File.write(filename, "#{yaml_data.to_yaml}---#{content}")
+        end
+    end
+end
+
 # This is destructive and will delete all categories in the project
 # So in order to prevent misusage, it is commented out for now, just in case we need to clear the test
 # project. Will be removed when we are sure we don't need it anymore (when we switch to production)

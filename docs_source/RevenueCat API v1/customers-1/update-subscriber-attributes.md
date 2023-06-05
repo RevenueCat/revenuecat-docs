@@ -6,7 +6,6 @@ hidden: false
 metadata:
 createdAt: '2023-04-12T01:31:25.955Z'
 updatedAt: '2023-04-12T01:48:11.883Z'
-category: 6478b85ba1ff55154dd9bbe5
 ---
 ## Response
 

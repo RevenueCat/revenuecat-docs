@@ -5,7 +5,6 @@ excerpt: Setting up S3 access keys for data transfer
 hidden: false
 createdAt: '2023-03-14T15:53:51.105Z'
 updatedAt: '2023-03-28T22:52:25.738Z'
-category: 6478b86233165e07ab13013b
 ---
 To start receiving these deliveries, you'll need the following details:
 

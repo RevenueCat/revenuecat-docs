@@ -5,7 +5,6 @@ excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: false
 createdAt: '2023-04-12T01:31:25.949Z'
 updatedAt: '2023-04-12T01:43:30.693Z'
-category: 6478b85ba1ff55154dd9bbe5
 ---
 > 📘 Get OR create a subscriber
 > 

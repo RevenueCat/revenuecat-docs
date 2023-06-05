@@ -13,7 +13,6 @@ metadata:
     4: "#f7f5f5"
 createdAt: '2021-10-05T15:55:44.276Z'
 updatedAt: '2023-05-25T22:23:11.441Z'
-category: 6478b8643a66a114558bdd69
 ---
 Google allows developers that earn less than $1,000,000 USD per year to enroll in a reduced service fee tier. The service fee is 15%, instead of the usual 30%. RevenueCat automatically assumes developers are enrolled in the reduced service fee tier.
 
