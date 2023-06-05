@@ -144,8 +144,8 @@ lane :embed_code_blocks do |options|
 end
 
 desc <<-DESC
-Embeds code blocks from all files within the [block:file] and [/block] tags
-folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+Updates rendered docs folder to the current category, order and parent information from Readme
+readme_api_key, STRING Readme API key for the project
 DESC
 lane :update_docs_structure do |options|
     readme_api_key = options[:readme_api_key]
