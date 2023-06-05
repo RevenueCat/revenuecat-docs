@@ -154,8 +154,7 @@ lane :update_docs_structure do |options|
     folder_path = RENDER_FOLDER
 
     markdown_files(folder_path).each do |file|
-        file_without_folder_path = file.gsub("#{folder_path}/", "")
-        UI.message("Updating #{file_without_folder_path}")
+        UI.message("Updating #{file}")
 
         yaml_data = get_doc_information_from_header(file)
         slug = yaml_data["slug"]

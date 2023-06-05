@@ -78,8 +78,8 @@ Embeds code blocks from all files within the [block:file] and [/block] tags
 [bundle exec] fastlane update_docs_structure
 ```
 
-Embeds code blocks from all files within the [block:file] and [/block] tags
-folder, STRING Folder to recurse through and embed code blocks from. Path is relative to the root of the project.
+Updates rendered docs folder to the current category, order and parent information from Readme
+readme_api_key, STRING Readme API key for the project
 
 
 ### update_categories_file
