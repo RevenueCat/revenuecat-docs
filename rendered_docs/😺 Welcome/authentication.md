@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-04-14T03:13:35.791Z'
-updatedAt: '2023-04-14T03:13:35.791Z'
-category: 6478b85ad159da16da1ace76
+updatedAt: '2023-06-05T21:39:11.304Z'
+category: 
 ---
 RevenueCat authenticates requests from the [REST API](https://docs.revenuecat.com/reference) and the RevenueCat SDK using your app's API keys. All requests must include a valid API key. There are also two types of API keys: public and secret.
 

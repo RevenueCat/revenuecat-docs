@@ -12,8 +12,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-01-06T20:42:37.662Z'
-updatedAt: '2023-04-14T03:12:36.294Z'
-category: 6478b85ad159da16da1ace76
+updatedAt: '2023-06-05T21:39:12.271Z'
+category: 
 ---
 # Register for a free account
 

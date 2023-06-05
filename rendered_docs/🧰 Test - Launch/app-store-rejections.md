@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-06-10T15:10:23.774Z'
-updatedAt: '2022-07-11T14:45:58.663Z'
-category: 6478b85f43de890059745172
+updatedAt: '2023-06-05T21:39:20.727Z'
+category: 
 ---
 [block:callout]
 {

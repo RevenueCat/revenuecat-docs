@@ -3,8 +3,8 @@ title: Rate Limit
 slug: rate-limit
 hidden: false
 createdAt: '2023-04-11T22:43:01.120Z'
-updatedAt: '2023-05-23T11:28:33.413Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-05T21:38:38.499Z'
+category: 
 ---
 We will return the following headers on all successful requests:
 

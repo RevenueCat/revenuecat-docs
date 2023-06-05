@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-09-29T15:21:50.023Z'
-updatedAt: '2023-04-24T16:59:56.932Z'
-category: 6478b8643a66a114558bdd69
+updatedAt: '2023-06-05T21:39:02.999Z'
+category: 
 ---
 RevenueCat does not require server notifications from Stripe, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 

@@ -13,8 +13,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-12-03T14:37:38.429Z'
-updatedAt: '2022-11-16T21:28:52.860Z'
-category: 6478b85cd5a60c15a01cee47
+updatedAt: '2023-06-05T21:39:14.893Z'
+category: 
 ---
 To set up products for the Amazon Appstore, start by logging into your [Amazon developer account](https://developer.amazon.com/apps-and-games).
 

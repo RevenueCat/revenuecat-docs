@@ -4,8 +4,8 @@ slug: get-offerings
 excerpt: Gets the offerings for your app.
 hidden: false
 createdAt: '2023-04-12T01:31:25.958Z'
-updatedAt: '2023-04-12T01:50:58.042Z'
-category: 6478b85ba1ff55154dd9bbe5
+updatedAt: '2023-06-05T21:38:43.532Z'
+category: 
 ---
 > 📘 X-Platform is required
 > 

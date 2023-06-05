@@ -3,8 +3,8 @@ title: "[DRAFT] Identity 2"
 slug: new-identity-2
 hidden: true
 createdAt: '2019-09-27T23:32:42.637Z'
-updatedAt: '2023-01-10T19:03:18.795Z'
-category: 6478b85cd5a60c15a01cee47
+updatedAt: '2023-06-05T21:39:18.092Z'
+category: 
 ---
 RevenueCat provides a source of truth for a subscriber's status across different platforms. To do this, each subscriber has an App User ID that uniquely identifies them within your application. 
 

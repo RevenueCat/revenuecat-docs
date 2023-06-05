@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-02-21T22:07:41.716Z'
-updatedAt: '2023-02-21T22:07:41.716Z'
-category: 6478b85da1ff55154dd9bbe9
+updatedAt: '2023-06-05T21:38:47.794Z'
+category: 
 ---
 If you use SwiftyStoreKit in your iOS app and are looking for an alternative that includes receipt validation, server-side status tracking, cross-platform support and more - RevenueCat is the ideal choice for your app!
 

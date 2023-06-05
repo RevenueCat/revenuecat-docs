@@ -3,8 +3,8 @@ title: Error Handling
 slug: error-handling
 hidden: false
 createdAt: '2023-04-11T22:26:23.246Z'
-updatedAt: '2023-05-23T11:35:00.600Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-05T21:38:30.255Z'
+category: 
 ---
 RevenueCat uses [standard HTTP status codes](https://rcv2.readme.io/reference/error-codes) to indicate the success or failure of an API request. Codes in the `2XX` range indicate the request was successful. `4XX` codes indicate an error caused by the client. `5XX` codes indicate an error in RevenueCat servers.
 

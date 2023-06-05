@@ -4,8 +4,8 @@ slug: app-builders
 excerpt: No and Low Code Development Tools, RevenueCat, and You
 hidden: false
 createdAt: '2023-01-31T15:58:56.111Z'
-updatedAt: '2023-03-20T14:49:00.085Z'
-category: 6478b85cd5a60c15a01cee47
+updatedAt: '2023-06-05T21:39:16.248Z'
+category: 
 ---
 The increase of no and low code app building solutions is on an upward trend. It's an exciting upgrade in technological accessibility and a promising look into possibility, and one that we look forward to being able to support in the future. 
 

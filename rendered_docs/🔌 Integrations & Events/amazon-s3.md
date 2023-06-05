@@ -15,8 +15,8 @@ metadata:
     3: 630
     4: "#fbabaf"
 createdAt: '2020-10-07T00:35:55.719Z'
-updatedAt: '2020-10-07T00:35:55.719Z'
-category: 6478b86233165e07ab13013b
+updatedAt: '2023-06-05T21:39:03.629Z'
+category: 
 ---
 [block:callout]
 {

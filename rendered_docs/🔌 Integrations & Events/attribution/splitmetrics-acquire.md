@@ -12,8 +12,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-05-27T16:53:09.333Z'
-updatedAt: '2023-03-28T21:45:34.687Z'
-category: 6478b86233165e07ab13013b
+updatedAt: '2023-06-05T21:39:05.170Z'
+category: 
 ---
 With our SplitMetrics Acquire | Formerly SearchAdsHQ integration you can:
 

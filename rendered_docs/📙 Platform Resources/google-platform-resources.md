@@ -11,8 +11,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-12-21T20:03:37.821Z'
-updatedAt: '2021-12-01T17:55:02.173Z'
-category: 6478b8643a66a114558bdd69
+updatedAt: '2023-06-05T21:39:01.665Z'
+category: 
 ---
 RevenueCat provides SDK's and integrations for <<glossary:Google Platforms>> to make in-app purchase and subscription development simple. Use these resources to take full advantage of all RevenueCat has to offer for Google Platforms.
 

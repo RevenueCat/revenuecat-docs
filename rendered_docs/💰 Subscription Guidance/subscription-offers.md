@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-21T21:53:53.114Z'
-updatedAt: '2023-04-11T17:11:38.228Z'
-category: 6478b860c1b42a1325cf5835
+updatedAt: '2023-06-05T21:38:50.036Z'
+category: 
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.
 
