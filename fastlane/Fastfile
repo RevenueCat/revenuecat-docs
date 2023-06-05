@@ -559,7 +559,7 @@ end
 
 def get_current_version
     Dir.chdir(root_dir) do
-        File.read(VERSION_FILE)
+        File.read(VERSION_FILE).strip
     end
 end
 
