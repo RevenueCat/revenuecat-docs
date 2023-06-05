@@ -72,6 +72,16 @@ Embeds code blocks from all files and opens a pull request preparing the docs fo
 
 Embeds code blocks from all files within the [block:file] and [/block] tags
 
+### update_docs_structure
+
+```sh
+[bundle exec] fastlane update_docs_structure
+```
+
+Updates rendered docs folder to the current category, order and parent information from Readme
+readme_api_key, STRING Readme API key for the project
+
+
 ### update_categories_file
 
 ```sh
