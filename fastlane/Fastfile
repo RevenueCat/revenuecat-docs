@@ -17,6 +17,7 @@ require 'uri'
 require 'net/http'
 require 'pathname'
 require 'yaml'
+import 'versions.rb'
 
 CATEGORIES_FILE = "docs_source/categories.json"
 CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
@@ -96,6 +97,9 @@ desc <<-DESC
 Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
 DESC
 lane :open_syncing_pr do |options|
+    readme_api_key = options[:readme_api_key]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
     github_pr_token = options[:github_pr_token]
 
     latest_commit_sha = get_latest_commit_sha
@@ -105,6 +109,8 @@ lane :open_syncing_pr do |options|
     new_branch_name = "sync/#{current_version}"
 
     validate_local_config_status_for_bump(new_branch_name, github_pr_token)
+
+    create_version_if_needed(current_version, readme_api_key)
 
     create_new_branch_and_checkout(new_branch_name)
     embed_code_blocks
