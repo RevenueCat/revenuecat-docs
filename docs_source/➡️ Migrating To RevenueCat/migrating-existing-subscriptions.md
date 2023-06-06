@@ -53,6 +53,8 @@ After these two steps, if any of your customers open the version of the app cont
 
 **Check out our guide on [Importing Receipts](doc:receipt-imports) for more details on server-side migrations.**
 
+# Test header
+
 # Client Side Migration
 
 A client side migration is a technique to sync existing purchases with RevenueCat when the app is first launched.
