@@ -35,7 +35,7 @@ end
 
 # Retrieve the information for a given version from the ReadMe API.
 #
-# @param [String] version The version of the docs to retrieve information for.
+# @param [String] version The version of the docs to create.
 # @param [String] readme_api_key API key for the ReadMe account that has access to the document.
 #
 # @return [Hash] Ruby data structure with the version's information.
