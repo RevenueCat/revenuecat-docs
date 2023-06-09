@@ -17,7 +17,8 @@ require 'uri'
 require 'net/http'
 require 'pathname'
 require 'yaml'
-import 'versions.rb'
+import 'readme_api/api.rb'
+import 'readme_api/versions.rb'
 
 CATEGORIES_FILE = "docs_source/categories.json"
 CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
