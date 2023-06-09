@@ -15,8 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-10-02T02:50:53.583Z'
-updatedAt: '2021-12-01T20:34:36.985Z'
-category: 6478b86233165e07ab13013b
+updatedAt: '2023-06-09T17:19:39.501Z'
+category: 6483560b2e0a290051a971e2
+order: 1
+parentDoc: 6483560b2e0a290051a972ba
 ---
 RevenueCat can automatically send data deliveries of all of your apps' transaction data to a Google Cloud Storage bucket. These are in the form of .csv files delivered daily.
 

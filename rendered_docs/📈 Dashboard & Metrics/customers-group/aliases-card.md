@@ -14,8 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:10.612Z'
-updatedAt: '2023-04-11T16:31:44.114Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:19:34.231Z'
+category: 6483560b2e0a290051a971e1
+order: 7
+parentDoc: 6483560b2e0a290051a97257
 ---
 The App User IDs will hold both the Original App User ID and the list of Aliases a particular customer has.
 

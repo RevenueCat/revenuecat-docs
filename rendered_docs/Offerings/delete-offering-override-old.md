@@ -4,10 +4,11 @@ slug: delete-offering-override-old
 excerpt: Reset the offering overrides back to the current offering for a specific
   user
 hidden: true
-metadata:
+metadata: 
 createdAt: '2020-09-30T21:24:12.413Z'
-updatedAt: '2022-07-21T15:05:10.410Z'
-category: 6478b85d5c234820edf84b50
+updatedAt: '2023-06-09T17:19:27.725Z'
+category: 6483560b2e0a290051a971d9
+order: 2
 ---
 [block:callout]
 {

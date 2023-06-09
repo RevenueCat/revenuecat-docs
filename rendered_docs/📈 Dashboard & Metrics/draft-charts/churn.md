@@ -3,8 +3,10 @@ title: Churn
 slug: churn
 hidden: true
 createdAt: '2022-06-28T21:07:31.798Z'
-updatedAt: '2022-06-28T21:07:31.798Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:19:35.137Z'
+category: 6483560b2e0a290051a971e1
+order: 2
+parentDoc: 6483560b2e0a290051a9726c
 ---
 ## Churn
 **Segments**: Yes

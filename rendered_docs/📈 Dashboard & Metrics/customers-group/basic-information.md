@@ -13,8 +13,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:10.813Z'
-updatedAt: '2023-03-27T21:57:10.122Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:19:34.457Z'
+category: 6483560b2e0a290051a971e1
+order: 0
+parentDoc: 6483560b2e0a290051a97257
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

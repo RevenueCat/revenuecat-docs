@@ -2,8 +2,9 @@
 title: Customers
 slug: customers-group
 hidden: false
-metadata:
+metadata: 
 createdAt: '2023-04-12T02:07:13.250Z'
-updatedAt: '2023-04-12T02:07:13.250Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:19:34.886Z'
+category: 6483560b2e0a290051a971e1
+order: 3
 ---
