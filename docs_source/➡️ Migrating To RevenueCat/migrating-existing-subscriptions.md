@@ -45,6 +45,8 @@ Alternatively, if you're looking to access to charting, webhooks, and integratio
 
 # Server Side Migration
 
+some change
+
 A server side migration involves sending all of the Apple receipts and/or purchase tokens to RevenueCat via the `POST /receipts` endpoint. From there, RevenueCat will validate the receipt and keep the subscription up-to-date. 
 
 Before you begin migrating historical receipts, **we recommend first setting up a server-side [Observer Mode](doc:observer-mode) implementation**. This ensures that new purchases happening during and after the import are still captured in RevenueCat.
