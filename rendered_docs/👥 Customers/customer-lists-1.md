@@ -3,8 +3,9 @@ title: Customer Lists
 slug: customer-lists-1
 hidden: false
 createdAt: '2022-06-24T13:13:14.597Z'
-updatedAt: '2022-06-24T13:13:14.597Z'
+updatedAt: '2023-06-09T17:29:28.928Z'
 type: link
 link_url: https://www.revenuecat.com/docs/customer-lists
-category: 6478b85e64b1ea21ad3e70fe
+category: 6483560b2e0a290051a971dc
+order: 3
 ---

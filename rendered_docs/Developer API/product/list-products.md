@@ -4,6 +4,8 @@ slug: list-products
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:products:read`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.237Z'
-updatedAt: '2023-05-31T08:47:58.772Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-09T17:29:22.549Z'
+category: 6483560b2e0a290051a971df
+order: 2
+parentDoc: 6483560b2e0a290051a97220
 ---

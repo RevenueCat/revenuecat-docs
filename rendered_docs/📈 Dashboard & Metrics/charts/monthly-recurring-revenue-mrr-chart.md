@@ -3,8 +3,10 @@ title: Monthly Recurring Revenue (MRR) Chart
 slug: monthly-recurring-revenue-mrr-chart
 hidden: false
 createdAt: '2022-10-19T15:33:28.776Z'
-updatedAt: '2023-04-21T15:41:25.398Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:29:32.454Z'
+category: 6483560b2e0a290051a971e1
+order: 8
+parentDoc: 6483560b2e0a290051a97247
 ---
 ## Definition
 

@@ -4,6 +4,8 @@ slug: attach-products-to-entitlement
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:entitlements:read_write`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.243Z'
-updatedAt: '2023-05-31T08:47:58.853Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-09T17:29:16.490Z'
+category: 6483560b2e0a290051a971df
+order: 6
+parentDoc: 6483560b2e0a290051a971fc
 ---

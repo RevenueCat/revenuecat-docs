@@ -4,8 +4,9 @@ slug: building-new
 excerpt: Adding purchases and subscriptions to an app for the first time
 hidden: false
 createdAt: '2023-04-14T03:06:34.045Z'
-updatedAt: '2023-04-14T03:07:24.827Z'
-category: 6478b85ad159da16da1ace76
+updatedAt: '2023-06-09T17:29:49.570Z'
+category: 6483560b2e0a290051a971d5
+order: 1
 ---
 RevenueCat provides a powerful (and open source) SDK that acts as a wrapper around Apple, Google, and Amazon's native APIs so you can set up subscriptions in hours, not months. Server-side receipt validation comes standard and subscriptions are automatically synced server-side so you can check the realtime subscription status of any or all of your subscribers at any time.
 

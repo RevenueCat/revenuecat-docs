@@ -3,8 +3,10 @@ title: Annual Recurring Revenue (ARR) Chart
 slug: annual-recurring-revenue-arr-chart
 hidden: false
 createdAt: '2022-10-19T15:31:46.168Z'
-updatedAt: '2023-02-24T20:50:51.064Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:29:31.507Z'
+category: 6483560b2e0a290051a971e1
+order: 5
+parentDoc: 6483560b2e0a290051a97247
 ---
 ## Definition
 The Annual Recurring Revenue (ARR) chart is an annualized estimation of your recurring revenue. To compute it, we simply multiply MRR by 12. Learn more about how MRR is measured [here](doc:monthly-recurring-revenue-mrr-chart).

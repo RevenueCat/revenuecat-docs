@@ -12,8 +12,9 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-12-14T16:52:52.451Z'
-updatedAt: '2021-06-10T23:59:59.984Z'
-category: 6478b8643a66a114558bdd69
+updatedAt: '2023-06-09T17:29:38.442Z'
+category: 6483560b2e0a290051a971e6
+order: 2
 ---
 RevenueCat provides SDK's and integrations for <<glossary:Apple Platforms>> to make in-app purchase and subscription development simple. Use these resources to take full advantage of all RevenueCat has to offer for Apple Platforms.
 

@@ -4,8 +4,9 @@ slug: support-first-steps
 excerpt: We can help, but we need your help first.
 hidden: false
 createdAt: '2022-10-13T20:24:32.602Z'
-updatedAt: '2023-05-17T19:27:15.454Z'
-category: 6478b865844f5f11abe0d72f
+updatedAt: '2023-06-09T17:29:58.454Z'
+category: 6483560b2e0a290051a971e8
+order: 0
 ---
 Our documentation (you're already here!) answers a lot of questions about Charts, the dashboard, Customer Lists, and SDK setup. Try looking through here first, as well as our community where other developers may have already asked your question.
 

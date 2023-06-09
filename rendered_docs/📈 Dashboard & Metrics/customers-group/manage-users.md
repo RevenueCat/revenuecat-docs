@@ -14,8 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.709Z'
-updatedAt: '2023-04-13T14:25:52.133Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:29:34.782Z'
+category: 6483560b2e0a290051a971e1
+order: 8
+parentDoc: 6483560b2e0a290051a97257
 ---
 You can delete a user under the 'Manage' card at the bottom of the page. Deleting a user will also remove all their purchase history for sandbox and production data which could change how charts and reports appear. Deleting users should only be used to remove accounts you may have set up for testing or if the user requests their data to be deleted.
 

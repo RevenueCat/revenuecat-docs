@@ -3,8 +3,9 @@ title: Rate Limits
 slug: rate-limits
 hidden: true
 createdAt: '2021-11-18T20:51:32.232Z'
-updatedAt: '2021-11-18T20:56:08.395Z'
-category: 6478b85ba1ff55154dd9bbe5
+updatedAt: '2023-06-09T17:29:26.623Z'
+category: 6483560b2e0a290051a971d6
+order: 0
 ---
 # Outline
 

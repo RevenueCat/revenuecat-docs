@@ -15,8 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-04-14T03:14:43.593Z'
-updatedAt: '2023-04-14T03:14:43.593Z'
-category: 6478b85ad159da16da1ace76
+updatedAt: '2023-06-09T17:29:50.156Z'
+category: 6483560b2e0a290051a971d5
+order: 0
+parentDoc: 6483560b2e0a290051a972ff
 ---
 Collaborators allow other people to access your RevenueCat Project without having to share any login credentials. You can limit the access of specific collaborators to "Admin", "Read Only", or "Customer Support".
 

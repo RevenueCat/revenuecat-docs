@@ -12,8 +12,9 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-04-13T22:30:41.204Z'
-updatedAt: '2023-04-14T03:00:35.393Z'
-category: 6478b86233165e07ab13013b
+updatedAt: '2023-06-09T17:29:45.067Z'
+category: 6483560b2e0a290051a971e2
+order: 8
 ---
 The RevenueCat App in Stripe's App Marketplace combines Stripe’s customer and billing data with enriched data from RevenueCat’s native cross-platform SDKs and subscription backend. Rather than context switching between RevenueCat’s customer details and Stripe’s customer profile in multiple windows, the RevenueCat App combines RevenueCat data into a single page view within Stripe. 
 

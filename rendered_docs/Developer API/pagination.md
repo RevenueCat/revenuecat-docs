@@ -3,8 +3,9 @@ title: Pagination
 slug: pagination
 hidden: false
 createdAt: '2023-04-11T22:25:34.753Z'
-updatedAt: '2023-04-11T22:25:34.753Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-09T17:29:22.017Z'
+category: 6483560b2e0a290051a971df
+order: 1
 ---
 Top-level API resources have support for bulk fetches via "list" API methods. For instance, you can list products, list entitlements, and list offerings. These list API methods share a common structure, taking at least these two parameters: `limit` and `starting_after`.
 
