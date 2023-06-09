@@ -281,31 +281,18 @@ lane :update_docs_categories do |options|
     readme_api_key = options[:readme_api_key]
     UI.user_error!("Missing README API key") unless readme_api_key
 
-    force_update_categories = options[:force_update_categories]
-    if force_update_categories
-        update_categories_file(CATEGORIES_FILE, readme_api_key)
-    end
+    readme_api_key_test = options[:readme_api_key_test]
+    UI.user_error!("Missing README API key for test project") unless readme_api_key_test
 
-    categories = get_json_from_file(CATEGORIES_TEST_FILE)
+    update_categories_file(CATEGORIES_FILE, readme_api_key)
+    update_categories_file(CATEGORIES_TEST_FILE, readme_api_key_test)
 
     markdown_files.each do |file|
-        file_without_folder_path = file.gsub("#{SOURCE_FOLDER}/", "")
-        category_name = file_without_folder_path.split("/")[0]
-        UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")
-        category = categories.find { |category|
-            category['title'] == category_name
-        }
-        if category != nil
-            p "Category #{category_name} found for file #{file}"
-            category_for_doc = category['id']
-        else
-            p "Category #{category_name} not found for file #{file}"
-            slug = File.basename(file, ".md")
-            category_for_doc_prod = get_category_id_for_doc(slug, readme_api_key)
-            p "Category retrieved from server: #{category_for_doc_prod}"
-            categories_map_from_file = get_json_from_file(CATEGORIES_MAP_FILE)
-            category_for_doc = categories_map_from_file[category_for_doc_prod]
-        end
+        slug = File.basename(file, ".md")
+        category_for_doc_prod = get_category_id_for_doc(slug, readme_api_key)
+        UI.message("Category for #{slug} retrieved from server: #{category_for_doc_prod}")
+        categories_map_from_file = get_json_from_file(CATEGORIES_MAP_FILE)
+        category_for_doc = categories_map_from_file[category_for_doc_prod]
 
         update_category_cleanup_dates(file, category_for_doc)
     end
