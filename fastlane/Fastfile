@@ -885,7 +885,8 @@ def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labe
         head: head_branch,
         api_url: 'https://api.github.com',
         labels: labels,
-        team_reviewers: ['support']
+        team_reviewers: ['vegaro']
+        # team_reviewers: ['support'] TODO: Disabled until we are ready to use it
     )
 end
 
