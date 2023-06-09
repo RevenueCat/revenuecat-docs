@@ -4,8 +4,10 @@ slug: scheduled-data-exports-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: false
 createdAt: '2023-03-14T15:53:51.105Z'
-updatedAt: '2023-03-28T22:52:25.738Z'
-category: 6478b86233165e07ab13013b
+updatedAt: '2023-06-09T17:19:40.304Z'
+category: 6483560b2e0a290051a971e2
+order: 0
+parentDoc: 6483560b2e0a290051a972d7
 ---
 To start receiving these deliveries, you'll need the following details:
 

@@ -4,6 +4,8 @@ slug: list-apps
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:apps:read`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.235Z'
-updatedAt: '2023-05-31T08:47:58.726Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-09T17:19:24.282Z'
+category: 6483560b2e0a290051a971df
+order: 0
+parentDoc: 6483560b2e0a290051a97204
 ---

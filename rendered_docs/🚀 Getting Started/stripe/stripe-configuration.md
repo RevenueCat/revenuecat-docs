@@ -4,8 +4,10 @@ slug: stripe-configuration
 excerpt: Setting up your Stripe account in RevenueCat
 hidden: true
 createdAt: '2022-01-12T15:45:27.622Z'
-updatedAt: '2022-06-06T15:06:29.415Z'
-category: 6478b85cd5a60c15a01cee47
+updatedAt: '2023-06-09T17:19:46.927Z'
+category: 6483560b2e0a290051a971d8
+order: 0
+parentDoc: 6483560b2e0a290051a972a1
 ---
 In order to use [RevenueCat Checkout](doc:revenuecat-checkout) or manually send Stripe purchases to RevenueCat from your own paywall, you'll need to connect your Stripe account to RevenueCat, create products, and attach those products to your offerings and entitlements.
 

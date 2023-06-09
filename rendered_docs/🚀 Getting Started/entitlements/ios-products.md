@@ -15,8 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-06-26T22:03:53.379Z'
-updatedAt: '2023-03-24T22:48:35.619Z'
-category: 6478b85cd5a60c15a01cee47
+updatedAt: '2023-06-09T17:19:44.901Z'
+category: 6483560b2e0a290051a971d8
+order: 0
+parentDoc: 6483560b2e0a290051a97290
 ---
 To set up products for iOS, iPadOS, macOS, tvOS, and watchOS, start by logging into [App Store Connect](https://appstoreconnect.apple.com). App Store Connect is Apple's central hub for managing app releases, TestFlight, in-app purchases, and more. **This guide assumes basic knowledge of App Store Connect, as well as having an app set up and ready for adding in-app purchases.** For more information, visit Apple's [documentation and guides for App Store Connect](https://developer.apple.com/support/app-store-connect/).
 [block:callout]

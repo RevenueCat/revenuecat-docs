@@ -3,6 +3,7 @@ title: Offering
 slug: offering
 hidden: false
 createdAt: '2023-04-12T15:55:04.024Z'
-updatedAt: '2023-05-31T08:47:58.676Z'
-category: 6478b860a6b223151cd4a791
+updatedAt: '2023-06-09T17:19:26.105Z'
+category: 6483560b2e0a290051a971df
+order: 9
 ---

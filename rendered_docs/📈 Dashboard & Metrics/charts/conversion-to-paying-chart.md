@@ -3,8 +3,10 @@ title: Conversion to Paying Chart
 slug: conversion-to-paying-chart
 hidden: false
 createdAt: '2022-10-19T15:35:15.210Z'
-updatedAt: '2023-02-24T20:55:41.180Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:19:33.082Z'
+category: 6483560b2e0a290051a971e1
+order: 11
+parentDoc: 6483560b2e0a290051a97247
 ---
 ## Definition
 The Conversion to Paying chart shows what proportion of new customers become paying customers. For many subscription app businesses, this represents a successful completion of the acquisition funnel, and marks the transition of this customer from a subscriber to acquire to a subscriber to retain.

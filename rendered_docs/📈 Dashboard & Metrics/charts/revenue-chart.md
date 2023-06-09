@@ -3,8 +3,10 @@ title: Revenue Chart
 slug: revenue-chart
 hidden: false
 createdAt: '2022-10-19T15:34:40.122Z'
-updatedAt: '2023-03-27T15:05:32.798Z'
-category: 6478b861991df212c2b92e19
+updatedAt: '2023-06-09T17:19:33.712Z'
+category: 6483560b2e0a290051a971e1
+order: 10
+parentDoc: 6483560b2e0a290051a97247
 ---
 ## Definition
 

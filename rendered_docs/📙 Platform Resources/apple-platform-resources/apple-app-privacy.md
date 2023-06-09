@@ -16,8 +16,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-11-10T18:05:47.960Z'
-updatedAt: '2020-12-11T16:34:47.391Z'
-category: 6478b8643a66a114558bdd69
+updatedAt: '2023-06-09T17:19:36.374Z'
+category: 6483560b2e0a290051a971e6
+order: 0
+parentDoc: 6483560b2e0a290051a97255
 ---
 Starting December 8, 2020, Apple requires a privacy disclosure for all new apps and app updates. As RevenueCat is a third-party to your app, you’ll need to ensure you are properly disclosing to your users the ways you are using RevenueCat in regards to their data.
 

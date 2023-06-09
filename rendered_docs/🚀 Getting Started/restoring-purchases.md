@@ -12,8 +12,9 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-04-28T16:33:56.375Z'
-updatedAt: '2023-04-25T09:28:53.306Z'
-category: 6478b85cd5a60c15a01cee47
+updatedAt: '2023-06-09T17:19:46.787Z'
+category: 6483560b2e0a290051a971d8
+order: 9
 ---
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).
 
