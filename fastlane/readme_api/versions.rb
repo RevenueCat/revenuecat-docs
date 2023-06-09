@@ -18,17 +18,8 @@ end
 #
 # @return [Hash] Ruby data structure with the version's information.
 def get_version_information(version, readme_api_key)
-    url = URI("https://dash.readme.com/api/v1/version/#{version}")
+    response = readme_api_request(ReadmeApiUrls.version(version), Net::HTTP::Get, readme_api_key)
 
-    https = Net::HTTP.new(url.host, url.port)
-    https.use_ssl = true
-
-    request = Net::HTTP::Get.new(url)
-    request.basic_auth(readme_api_key, '')
-
-    request["accept"] = 'application/json'
-
-    response = https.request(request)
     if response.code == '200'
         JSON.parse(response.read_body)
     elsif response.code == '404'
@@ -48,24 +39,16 @@ end
 def create_version(version, readme_api_key)
     most_recent_version = get_most_recent_version(readme_api_key)
     UI.message("Creating version #{version} from #{most_recent_version}")
-    url = URI("https://dash.readme.com/api/v1/version")
 
-    https = Net::HTTP.new(url.host, url.port)
-    https.use_ssl = true
-
-    request = Net::HTTP::Post.new(url)
-    request.basic_auth(readme_api_key, '')
-
-    request["accept"] = 'application/json'
-    request["content-type"] = 'application/json'
-
-    request.body = {
+    request_body = {
         version: version,
         from: most_recent_version,
         is_hidden: true
-    }.to_json
+    }
 
-    response = https.request(request)
+    version_url = ReadmeApiUrls.version
+    response = readme_api_request(version_url, Net::HTTP::Post, readme_api_key, request_body)
+
     if response.code == '200'
         parsed_body = JSON.parse(response.read_body)
         UI.message("Version #{parsed_body['version']} created")
@@ -80,17 +63,8 @@ end
 #
 # @return [Hash] Ruby data structure with the version's information.
 def get_most_recent_version(readme_api_key)
-    url = URI("https://dash.readme.com/api/v1/version")
+    response = readme_api_request(ReadmeApiUrls.version, Net::HTTP::Get, readme_api_key)
 
-    https = Net::HTTP.new(url.host, url.port)
-    https.use_ssl = true
-
-    request = Net::HTTP::Get.new(url)
-    request.basic_auth(readme_api_key, '')
-
-    request["accept"] = 'application/json'
-
-    response = https.request(request)
     if response.code != '200'
         UI.user_error!("Error retrieving most recent version from ReadMe.\nResponse code: #{response.code}\nResponse body: #{response.read_body}")
     else
