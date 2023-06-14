@@ -4,7 +4,7 @@ slug: scheduled-data-exports-gcp
 excerpt: Setting up Google Cloud Storage access keys for data transfer
 hidden: false
 createdAt: '2023-03-14T15:54:31.467Z'
-updatedAt: '2023-06-09T17:19:40.212Z'
+updatedAt: '2023-06-14T14:26:39.152Z'
 category: 6483560b2e0a290051a971e2
 order: 1
 parentDoc: 6483560b2e0a290051a972d7

@@ -3,7 +3,7 @@ title: Configuring Experiments
 slug: configuring-experiments-v1
 hidden: false
 createdAt: '2022-10-13T18:44:36.495Z'
-updatedAt: '2023-06-09T17:19:47.555Z'
+updatedAt: '2023-06-14T14:26:46.477Z'
 category: 6483560b2e0a290051a971e4
 order: 2
 parentDoc: 6483560b2e0a290051a97242

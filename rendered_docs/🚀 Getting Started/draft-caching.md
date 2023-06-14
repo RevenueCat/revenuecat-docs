@@ -4,7 +4,7 @@ slug: draft-caching
 excerpt: Working with the cache
 hidden: true
 createdAt: '2020-04-14T01:50:29.653Z'
-updatedAt: '2023-06-09T17:19:44.213Z'
+updatedAt: '2023-06-14T14:26:43.272Z'
 category: 6483560b2e0a290051a971d8
 order: 15
 ---

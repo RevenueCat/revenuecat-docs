@@ -3,7 +3,7 @@ title: Churn Chart
 slug: churn-chart
 hidden: false
 createdAt: '2022-10-19T15:30:31.866Z'
-updatedAt: '2023-06-09T17:19:32.990Z'
+updatedAt: '2023-06-14T14:26:32.258Z'
 category: 6483560b2e0a290051a971e1
 order: 3
 parentDoc: 6483560b2e0a290051a97247

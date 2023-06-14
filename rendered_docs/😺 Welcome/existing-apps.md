@@ -4,7 +4,7 @@ slug: existing-apps
 excerpt: Supercharging your existing app business with RevenueCat
 hidden: false
 createdAt: '2023-04-14T03:07:40.629Z'
-updatedAt: '2023-06-09T17:19:42.953Z'
+updatedAt: '2023-06-14T14:26:42.002Z'
 category: 6483560b2e0a290051a971d5
 order: 2
 ---

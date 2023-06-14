@@ -6,7 +6,7 @@ excerpt: Revokes all promotional entitlements for a given entitlement identifier
 hidden: false
 metadata: 
 createdAt: '2023-04-12T01:31:25.953Z'
-updatedAt: '2023-06-09T17:19:29.076Z'
+updatedAt: '2023-06-14T14:26:28.781Z'
 category: 6483560b2e0a290051a971d6
 order: 999
 ---

@@ -5,7 +5,7 @@ excerpt: Learn about events and integrations from RevenueCat
 hidden: false
 metadata: 
 createdAt: '2023-04-14T03:01:04.122Z'
-updatedAt: '2023-06-09T17:19:39.903Z'
+updatedAt: '2023-06-14T14:26:38.856Z'
 category: 6483560b2e0a290051a971e2
 order: 0
 ---

@@ -6,7 +6,7 @@ excerpt: RevenueCat can automatically send subscription events to the integratio
 hidden: false
 metadata: 
 createdAt: '2022-06-02T15:51:10.109Z'
-updatedAt: '2023-06-09T17:19:41.821Z'
+updatedAt: '2023-06-14T14:26:40.860Z'
 category: 6483560b2e0a290051a971e2
 order: 2
 ---

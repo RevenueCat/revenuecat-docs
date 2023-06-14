@@ -4,7 +4,7 @@ slug: event-flows
 excerpt: How webhooks are sent from RevenueCat
 hidden: false
 createdAt: '2022-07-29T14:20:20.439Z'
-updatedAt: '2023-06-09T17:19:41.946Z'
+updatedAt: '2023-06-14T14:26:40.976Z'
 category: 6483560b2e0a290051a971e2
 order: 1
 parentDoc: 6483560b2e0a290051a972ad

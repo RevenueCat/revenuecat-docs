@@ -4,7 +4,7 @@ slug: etl-exports-deprecated
 excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
 createdAt: '2022-12-15T02:43:30.576Z'
-updatedAt: '2023-06-09T17:19:39.681Z'
+updatedAt: '2023-06-14T14:26:38.707Z'
 category: 6483560b2e0a290051a971e2
 order: 9
 ---

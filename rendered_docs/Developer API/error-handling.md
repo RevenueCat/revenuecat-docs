@@ -3,7 +3,7 @@ title: Error Handling
 slug: error-handling
 hidden: false
 createdAt: '2023-04-11T22:26:23.246Z'
-updatedAt: '2023-06-09T17:19:25.541Z'
+updatedAt: '2023-06-14T14:26:25.047Z'
 category: 6483560b2e0a290051a971df
 order: 3
 ---

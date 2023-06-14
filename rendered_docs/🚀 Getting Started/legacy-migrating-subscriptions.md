@@ -4,7 +4,7 @@ slug: legacy-migrating-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2022-05-31T23:05:24.398Z'
-updatedAt: '2023-06-09T17:19:46.273Z'
+updatedAt: '2023-06-14T14:26:45.323Z'
 category: 6483560b2e0a290051a971d8
 order: 22
 ---

@@ -4,7 +4,7 @@ slug: google-server-notifications
 excerpt: Sending Google Play server notifications to RevenueCat
 hidden: false
 createdAt: '2023-03-30T19:55:28.052Z'
-updatedAt: '2023-06-09T17:19:37.890Z'
+updatedAt: '2023-06-14T14:26:36.972Z'
 category: 6483560b2e0a290051a971e6
 order: 1
 parentDoc: 6483560b2e0a290051a972d2

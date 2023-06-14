@@ -7,7 +7,7 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
 hidden: true
 metadata: 
 createdAt: '2020-03-04T21:44:22.200Z'
-updatedAt: '2023-06-09T17:19:30.469Z'
+updatedAt: '2023-06-14T14:26:30.132Z'
 category: 6483560b2e0a290051a971db
 order: 2
 ---

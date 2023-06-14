@@ -3,7 +3,7 @@ title: Legacy Entitlements
 slug: legacy-entitlements
 hidden: true
 createdAt: '2019-08-29T20:15:45.785Z'
-updatedAt: '2023-06-09T17:19:46.168Z'
+updatedAt: '2023-06-14T14:26:45.244Z'
 category: 6483560b2e0a290051a971d8
 order: 12
 ---

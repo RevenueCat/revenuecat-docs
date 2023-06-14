@@ -5,7 +5,7 @@ excerpt: Permanently deletes a subscriber.
 hidden: true
 metadata: 
 createdAt: '2019-08-09T05:20:54.035Z'
-updatedAt: '2023-06-09T17:19:23.785Z'
+updatedAt: '2023-06-14T14:26:23.435Z'
 category: 6483560b2e0a290051a971d7
 order: 2
 ---

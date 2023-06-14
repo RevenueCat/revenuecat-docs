@@ -4,7 +4,7 @@ slug: support-first-steps
 excerpt: We can help, but we need your help first.
 hidden: false
 createdAt: '2022-10-13T20:24:32.602Z'
-updatedAt: '2023-06-09T17:19:47.154Z'
+updatedAt: '2023-06-14T14:26:46.104Z'
 category: 6483560b2e0a290051a971e8
 order: 0
 ---

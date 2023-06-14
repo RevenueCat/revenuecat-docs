@@ -4,7 +4,7 @@ slug: create-product
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:products:read_write`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.239Z'
-updatedAt: '2023-06-09T17:19:26.964Z'
+updatedAt: '2023-06-14T14:26:26.641Z'
 category: 6483560b2e0a290051a971df
 order: 3
 parentDoc: 6483560b2e0a290051a97220

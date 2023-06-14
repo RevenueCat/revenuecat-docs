@@ -3,7 +3,7 @@ title: Error Types
 slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
-updatedAt: '2023-06-09T17:19:25.457Z'
+updatedAt: '2023-06-14T14:26:24.959Z'
 category: 6483560b2e0a290051a971df
 order: 1
 parentDoc: 6483560b2e0a290051a971ee

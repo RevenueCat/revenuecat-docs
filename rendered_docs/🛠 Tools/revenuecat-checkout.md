@@ -4,7 +4,7 @@ slug: revenuecat-checkout
 excerpt: How to set up hosted paywalls in RevenueCat
 hidden: true
 createdAt: '2022-01-12T15:25:45.137Z'
-updatedAt: '2023-06-09T17:19:48.041Z'
+updatedAt: '2023-06-14T14:26:47.050Z'
 category: 6483560b2e0a290051a971e4
 order: 0
 ---

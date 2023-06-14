@@ -4,7 +4,7 @@ slug: stripe-configuration
 excerpt: Setting up your Stripe account in RevenueCat
 hidden: true
 createdAt: '2022-01-12T15:45:27.622Z'
-updatedAt: '2023-06-09T17:19:46.927Z'
+updatedAt: '2023-06-14T14:26:45.866Z'
 category: 6483560b2e0a290051a971d8
 order: 0
 parentDoc: 6483560b2e0a290051a972a1

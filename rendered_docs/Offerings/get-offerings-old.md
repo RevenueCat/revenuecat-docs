@@ -5,7 +5,7 @@ excerpt: Gets the offerings for your app.
 hidden: true
 metadata: 
 createdAt: '2020-12-30T01:38:59.895Z'
-updatedAt: '2023-06-09T17:19:27.809Z'
+updatedAt: '2023-06-14T14:26:27.488Z'
 category: 6483560b2e0a290051a971d9
 order: 0
 ---

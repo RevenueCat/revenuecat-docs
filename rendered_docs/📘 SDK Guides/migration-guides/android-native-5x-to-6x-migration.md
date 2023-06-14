@@ -4,7 +4,7 @@ slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
-updatedAt: '2023-06-09T17:19:35.802Z'
+updatedAt: '2023-06-14T14:26:34.894Z'
 category: 6483560b2e0a290051a971e9
 order: 2
 parentDoc: 6483560b2e0a290051a9728c

@@ -3,7 +3,7 @@ title: Active Trials Chart
 slug: active-trials-chart
 hidden: false
 createdAt: '2022-10-19T15:37:33.630Z'
-updatedAt: '2023-06-09T17:19:32.664Z'
+updatedAt: '2023-06-14T14:26:31.955Z'
 category: 6483560b2e0a290051a971e1
 order: 15
 parentDoc: 6483560b2e0a290051a97247

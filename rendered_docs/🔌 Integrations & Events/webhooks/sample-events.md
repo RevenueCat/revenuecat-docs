@@ -4,7 +4,7 @@ slug: sample-events
 excerpt: Example webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T16:36:52.205Z'
-updatedAt: '2023-06-09T17:19:42.137Z'
+updatedAt: '2023-06-14T14:26:41.142Z'
 category: 6483560b2e0a290051a971e2
 order: 2
 parentDoc: 6483560b2e0a290051a972ad

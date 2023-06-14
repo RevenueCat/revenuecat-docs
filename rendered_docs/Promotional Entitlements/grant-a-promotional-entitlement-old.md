@@ -6,7 +6,7 @@ excerpt: Grants a user a promotional entitlement. Does not override or defer a s
 hidden: true
 metadata: 
 createdAt: '2019-08-09T05:30:42.631Z'
-updatedAt: '2023-06-09T17:19:28.016Z'
+updatedAt: '2023-06-14T14:26:27.753Z'
 category: 6483560b2e0a290051a971de
 order: 0
 ---

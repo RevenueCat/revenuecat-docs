@@ -15,7 +15,7 @@ metadata:
     3: 630
     4: "#fbabaf"
 createdAt: '2020-10-07T00:35:55.719Z'
-updatedAt: '2023-06-09T17:19:38.352Z'
+updatedAt: '2023-06-14T14:26:37.433Z'
 category: 6483560b2e0a290051a971e2
 order: 4
 ---

@@ -3,7 +3,7 @@ title: Conversion to Paying Chart
 slug: conversion-to-paying-chart
 hidden: false
 createdAt: '2022-10-19T15:35:15.210Z'
-updatedAt: '2023-06-09T17:19:33.082Z'
+updatedAt: '2023-06-14T14:26:32.345Z'
 category: 6483560b2e0a290051a971e1
 order: 11
 parentDoc: 6483560b2e0a290051a97247

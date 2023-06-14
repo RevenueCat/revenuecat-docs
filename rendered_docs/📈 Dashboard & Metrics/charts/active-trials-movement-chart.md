@@ -3,7 +3,7 @@ title: Active Trials Movement Chart
 slug: active-trials-movement-chart
 hidden: false
 createdAt: '2022-10-19T15:38:12.219Z'
-updatedAt: '2023-06-09T17:19:32.723Z'
+updatedAt: '2023-06-14T14:26:32.018Z'
 category: 6483560b2e0a290051a971e1
 order: 16
 parentDoc: 6483560b2e0a290051a97247

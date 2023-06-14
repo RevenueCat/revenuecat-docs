@@ -4,7 +4,7 @@ slug: override-offering
 excerpt: Overrides the current Offering for a specific user
 hidden: false
 createdAt: '2023-04-12T01:31:25.956Z'
-updatedAt: '2023-06-09T17:19:29.484Z'
+updatedAt: '2023-06-14T14:26:29.198Z'
 category: 6483560b2e0a290051a971d6
 order: 999
 ---

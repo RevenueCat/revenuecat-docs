@@ -4,7 +4,7 @@ slug: google-play-quota-increase-request
 excerpt: What to do when you hit the Google Play Developer API limit
 hidden: false
 createdAt: '2023-04-11T15:04:43.569Z'
-updatedAt: '2023-06-09T17:19:37.042Z'
+updatedAt: '2023-06-14T14:26:36.139Z'
 category: 6483560b2e0a290051a971e6
 order: 4
 parentDoc: 6483560b2e0a290051a972ae

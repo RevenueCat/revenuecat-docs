@@ -3,7 +3,7 @@ title: Initial Conversion Chart
 slug: initial-conversion-chart
 hidden: false
 createdAt: '2022-10-19T15:35:52.758Z'
-updatedAt: '2023-06-09T17:19:33.169Z'
+updatedAt: '2023-06-14T14:26:32.420Z'
 category: 6483560b2e0a290051a971e1
 order: 12
 parentDoc: 6483560b2e0a290051a97247

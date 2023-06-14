@@ -3,7 +3,7 @@ title: Using Purchases 5.x for Google Play
 slug: using-purchases-5x-for-google-play
 hidden: true
 createdAt: '2023-03-28T16:21:16.254Z'
-updatedAt: '2023-06-09T17:19:37.183Z'
+updatedAt: '2023-06-14T14:26:36.309Z'
 category: 6483560b2e0a290051a971e6
 order: 3
 parentDoc: 6483560b2e0a290051a972ae

@@ -7,7 +7,7 @@ metadata:
   title: Google Play Checklists
   description: Check your configuration set up step by step.
 createdAt: '2023-04-25T20:10:32.492Z'
-updatedAt: '2023-06-09T17:19:42.454Z'
+updatedAt: '2023-06-14T14:26:41.483Z'
 category: 6483560b2e0a290051a971e7
 order: 0
 parentDoc: 6483560b2e0a290051a9729e

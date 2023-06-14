@@ -5,7 +5,7 @@ excerpt: Updates subscriber attributes for a user.
 hidden: false
 metadata: 
 createdAt: '2023-04-12T01:31:25.955Z'
-updatedAt: '2023-06-09T17:19:28.745Z'
+updatedAt: '2023-06-14T14:26:28.364Z'
 category: 6483560b2e0a290051a971d6
 order: 999
 ---

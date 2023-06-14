@@ -3,7 +3,7 @@ title: Creating Offerings to Test
 slug: creating-offerings-to-test
 hidden: false
 createdAt: '2022-12-08T05:04:57.377Z'
-updatedAt: '2023-06-09T17:19:47.626Z'
+updatedAt: '2023-06-14T14:26:46.553Z'
 category: 6483560b2e0a290051a971e4
 order: 1
 parentDoc: 6483560b2e0a290051a97242

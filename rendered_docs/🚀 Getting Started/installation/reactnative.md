@@ -14,7 +14,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-20T17:32:28.902Z'
-updatedAt: '2023-06-09T17:19:45.930Z'
+updatedAt: '2023-06-14T14:26:45.020Z'
 category: 6483560b2e0a290051a971d8
 order: 2
 parentDoc: 6483560b2e0a290051a97300

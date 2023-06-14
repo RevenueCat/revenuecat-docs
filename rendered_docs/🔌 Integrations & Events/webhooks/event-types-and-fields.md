@@ -4,7 +4,7 @@ slug: event-types-and-fields
 excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T19:27:15.768Z'
-updatedAt: '2023-06-09T17:19:42.031Z'
+updatedAt: '2023-06-14T14:26:41.052Z'
 category: 6483560b2e0a290051a971e2
 order: 0
 parentDoc: 6483560b2e0a290051a972ad

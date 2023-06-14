@@ -4,7 +4,7 @@ slug: building-new
 excerpt: Adding purchases and subscriptions to an app for the first time
 hidden: false
 createdAt: '2023-04-14T03:06:34.045Z'
-updatedAt: '2023-06-09T17:19:42.884Z'
+updatedAt: '2023-06-14T14:26:41.928Z'
 category: 6483560b2e0a290051a971d5
 order: 1
 ---

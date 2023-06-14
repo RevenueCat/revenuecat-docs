@@ -3,7 +3,7 @@ title: Amazon Store (beta)
 slug: amazon-store-beta
 hidden: true
 createdAt: '2021-01-28T23:11:17.232Z'
-updatedAt: '2023-06-09T17:19:43.536Z'
+updatedAt: '2023-06-14T14:26:42.576Z'
 category: 6483560b2e0a290051a971d8
 order: 18
 ---

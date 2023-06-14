@@ -3,7 +3,7 @@ title: Rate Limit
 slug: rate-limit
 hidden: false
 createdAt: '2023-04-11T22:43:01.120Z'
-updatedAt: '2023-06-09T17:19:27.546Z'
+updatedAt: '2023-06-14T14:26:27.242Z'
 category: 6483560b2e0a290051a971df
 order: 4
 ---

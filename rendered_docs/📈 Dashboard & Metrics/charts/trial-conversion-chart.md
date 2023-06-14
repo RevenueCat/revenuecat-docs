@@ -3,7 +3,7 @@ title: Trial Conversion Chart
 slug: trial-conversion-chart
 hidden: false
 createdAt: '2022-10-19T15:36:28.718Z'
-updatedAt: '2023-06-09T17:19:33.877Z'
+updatedAt: '2023-06-14T14:26:33.090Z'
 category: 6483560b2e0a290051a971e1
 order: 13
 parentDoc: 6483560b2e0a290051a97247

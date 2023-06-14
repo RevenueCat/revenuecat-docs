@@ -4,7 +4,7 @@ slug: legacy-observer-mode
 excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
 createdAt: '2022-05-31T23:05:56.746Z'
-updatedAt: '2023-06-09T17:19:37.401Z'
+updatedAt: '2023-06-14T14:26:36.534Z'
 category: 6483560b2e0a290051a971e6
 order: 11
 ---
