@@ -34,8 +34,6 @@ end
 #
 # @param [String] version The version of the docs to create.
 # @param [String] readme_api_key API key for the ReadMe account that has access to the document.
-#
-# @return [Hash] Ruby data structure with the version's information.
 def create_version(version, readme_api_key)
     most_recent_version = get_most_recent_version(readme_api_key)
     UI.message("Creating version #{version} from #{most_recent_version}")
@@ -50,7 +48,6 @@ def create_version(version, readme_api_key)
     result = readme_api_request(version_url, Net::HTTP::Post, readme_api_key, request_body)
 
     if result.success?
-        result.value
         UI.message("Version #{result.value['version']} created")
     else
         UI.user_error!("Error creating version #{version}.\n#{result.error}")
