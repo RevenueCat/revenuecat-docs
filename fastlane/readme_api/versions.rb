@@ -18,15 +18,15 @@ end
 #
 # @return [Hash] Ruby data structure with the version's information.
 def get_version_information(version, readme_api_key)
-    response = readme_api_request(ReadmeApiUrls.version(version), Net::HTTP::Get, readme_api_key)
+    result = readme_api_request(ReadmeApiUrls.version(version), Net::HTTP::Get, readme_api_key)
 
-    if response.code == '200'
-        JSON.parse(response.read_body)
-    elsif response.code == '404'
+    if result.success?
+        result.value
+    elsif result.error.response_code == '404'
         UI.error("Version #{version} does not exist.")
         {}
     else
-        UI.user_error!("Error retrieving version #{version}.\nCode: #{response.code}\nBody: #{response.read_body}")
+        UI.user_error!("Error retrieving version #{version}.\n#{result.error}")
     end
 end
 
@@ -34,8 +34,6 @@ end
 #
 # @param [String] version The version of the docs to create.
 # @param [String] readme_api_key API key for the ReadMe account that has access to the document.
-#
-# @return [Hash] Ruby data structure with the version's information.
 def create_version(version, readme_api_key)
     most_recent_version = get_most_recent_version(readme_api_key)
     UI.message("Creating version #{version} from #{most_recent_version}")
@@ -47,13 +45,12 @@ def create_version(version, readme_api_key)
     }
 
     version_url = ReadmeApiUrls.version
-    response = readme_api_request(version_url, Net::HTTP::Post, readme_api_key, request_body)
+    result = readme_api_request(version_url, Net::HTTP::Post, readme_api_key, request_body)
 
-    if response.code == '200'
-        parsed_body = JSON.parse(response.read_body)
-        UI.message("Version #{parsed_body['version']} created")
+    if result.success?
+        UI.message("Version #{result.value['version']} created")
     else
-        UI.user_error!("Error creating version #{version}.\nCode: #{response.code}\nBody: #{response.read_body}")
+        UI.user_error!("Error creating version #{version}.\n#{result.error}")
     end
 end
 
@@ -63,13 +60,12 @@ end
 #
 # @return [Hash] Ruby data structure with the version's information.
 def get_most_recent_version(readme_api_key)
-    response = readme_api_request(ReadmeApiUrls.version, Net::HTTP::Get, readme_api_key)
+    result = readme_api_request(ReadmeApiUrls.version, Net::HTTP::Get, readme_api_key)
 
-    if response.code != '200'
-        UI.user_error!("Error retrieving most recent version from ReadMe.\nResponse code: #{response.code}\nResponse body: #{response.read_body}")
-    else
-        versions = JSON.parse(response.read_body)
-        most_recent_version = versions.max_by { |version| Gem::Version.new(version["version"]) }
+    if result.success?
+        most_recent_version = result.value.max_by { |version| Gem::Version.new(version["version"]) }
         most_recent_version['version']
+    else
+        UI.user_error!("Error retrieving most recent version from ReadMe.\n#{result.error}")
     end
 end
