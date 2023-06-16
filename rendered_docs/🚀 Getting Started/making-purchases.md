@@ -17,6 +17,7 @@ metadata:
 createdAt: '2023-06-02T20:37:18.321Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 7
+updatedAt: '2023-06-16T16:42:26.239Z'
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 ```swift 

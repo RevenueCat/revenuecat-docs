@@ -6,6 +6,7 @@ createdAt: '2022-10-13T18:44:36.495Z'
 category: 648c78a647c7f2002d529591
 order: 2
 parentDoc: 648c7ee8b319ba05991ce60c
+updatedAt: '2023-06-16T16:42:28.123Z'
 ---
 Before setting up an experiment, make sure you've created the products and offerings that you want to test and added any new products to the appropriate entitlements in your project (more on this below). You should also test the offerings you've chosen on any platform your app supports.
 

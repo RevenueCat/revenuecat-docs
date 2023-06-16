@@ -15,6 +15,7 @@ createdAt: '2021-12-01T17:53:19.547Z'
 category: 648c78a7ec91de0019fd4f79
 order: 2
 parentDoc: 648c7f065abd5900755751a0
+updatedAt: '2023-06-16T16:42:02.903Z'
 ---
 [By July 20, 2022](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en), Google requires all developers to declare how their application collects and handles user data. You'll need to ensure you are properly disclosing to your users the way you are using RevenueCat in regards to their data.
 

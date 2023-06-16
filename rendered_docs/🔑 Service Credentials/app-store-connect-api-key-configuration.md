@@ -5,6 +5,7 @@ hidden: true
 createdAt: '2023-01-03T19:30:12.606Z'
 category: 648c78a7dc963f0050281503
 order: 4
+updatedAt: '2023-06-16T16:42:11.525Z'
 ---
 You may upload an App Store Connect API key for RevenueCat to import products and prices from App Store Connect. 
 

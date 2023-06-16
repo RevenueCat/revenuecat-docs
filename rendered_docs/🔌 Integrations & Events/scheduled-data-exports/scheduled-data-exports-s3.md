@@ -7,6 +7,7 @@ createdAt: '2023-03-14T15:53:51.105Z'
 category: 648c78a54082791c882e2686
 order: 0
 parentDoc: 648c7f073e7cd10047a1a82b
+updatedAt: '2023-06-16T16:42:07.980Z'
 ---
 To start receiving these deliveries, you'll need the following details:
 

@@ -6,6 +6,7 @@ hidden: true
 createdAt: '2023-03-30T20:01:00.198Z'
 category: 648c78a7dc963f0050281503
 order: 5
+updatedAt: '2023-06-16T16:42:12.199Z'
 ---
 In order for RevenueCat's servers to communicate with Google on your behalf, you need to provide a set of service credentials. The process for configuring these credentials is a bit complex, but the added level of control improves security by providing RevenueCat with only the access we need. 
 [block:callout]

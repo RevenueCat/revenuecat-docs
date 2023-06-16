@@ -16,6 +16,7 @@ createdAt: '2020-04-06T21:46:10.813Z'
 category: 648c78a49909bc0c3debff17
 order: 0
 parentDoc: 648c7ee63d0e7f00669ced48
+updatedAt: '2023-06-16T16:41:57.011Z'
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

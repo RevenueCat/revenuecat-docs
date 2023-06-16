@@ -18,6 +18,7 @@ createdAt: '2019-12-20T21:05:57.489Z'
 category: 648c78a099dd520072cf6530
 order: 1
 parentDoc: 648c7f0806750b000c6ec33b
+updatedAt: '2023-06-16T16:42:13.276Z'
 ---
 It's a dangerous world out there! But you can make things much safer by enabling two-factor authentication in your RevenueCat account settings.
 

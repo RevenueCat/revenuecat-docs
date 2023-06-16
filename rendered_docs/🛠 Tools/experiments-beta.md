@@ -7,4 +7,5 @@ type: link
 link_url: https://www.revenuecat.com/docs/experiments
 category: 648c78a647c7f2002d529591
 order: 2
+updatedAt: '2023-06-16T16:42:28.008Z'
 ---

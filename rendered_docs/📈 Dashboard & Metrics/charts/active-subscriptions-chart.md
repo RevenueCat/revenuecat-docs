@@ -6,6 +6,7 @@ createdAt: '2022-10-19T15:26:14.770Z'
 category: 648c78a49909bc0c3debff17
 order: 1
 parentDoc: 648c7ee8b4629e1fd0fb39b5
+updatedAt: '2023-06-16T16:41:53.434Z'
 ---
 ## Definition
 The Active Subscriptions chart measures the number of unique paid subscriptions that have not expired at the end of each period.

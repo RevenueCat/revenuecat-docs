@@ -15,6 +15,7 @@ createdAt: '2022-06-21T17:37:20.347Z'
 category: 648c78a099dd520072cf6530
 order: 2
 parentDoc: 648c7f0806750b000c6ec33b
+updatedAt: '2023-06-16T16:42:12.851Z'
 ---
 # Account Security & 2FA
 

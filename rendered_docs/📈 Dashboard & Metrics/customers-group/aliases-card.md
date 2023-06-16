@@ -17,6 +17,7 @@ createdAt: '2020-04-06T21:46:10.612Z'
 category: 648c78a49909bc0c3debff17
 order: 7
 parentDoc: 648c7ee63d0e7f00669ced48
+updatedAt: '2023-06-16T16:41:56.612Z'
 ---
 The App User IDs will hold both the Original App User ID and the list of Aliases a particular customer has.
 

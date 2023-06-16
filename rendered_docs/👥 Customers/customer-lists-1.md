@@ -7,4 +7,5 @@ type: link
 link_url: https://www.revenuecat.com/docs/customer-lists
 category: 648c78a343e9f503a273d2d6
 order: 3
+updatedAt: '2023-06-16T16:41:51.563Z'
 ---

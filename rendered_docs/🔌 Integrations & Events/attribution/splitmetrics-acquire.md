@@ -15,6 +15,7 @@ createdAt: '2022-05-27T16:53:09.333Z'
 category: 648c78a54082791c882e2686
 order: 7
 parentDoc: 648c7ee73ccbe61ab66dce20
+updatedAt: '2023-06-16T16:42:06.337Z'
 ---
 With our SplitMetrics Acquire | Formerly SearchAdsHQ integration you can:
 

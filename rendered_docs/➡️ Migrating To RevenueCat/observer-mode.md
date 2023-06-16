@@ -18,6 +18,7 @@ metadata:
 createdAt: '2023-05-30T15:16:00.743Z'
 category: 648c78a2becc511ba812b3f7
 order: 1
+updatedAt: '2023-06-16T16:41:51.165Z'
 ---
 Observer Mode enables you to migrate your existing subscribers to RevenueCat while retaining your existing code for fetching products, making purchases, and checking subscription status. This allows you to access to the advanced charting, webhooks, and integrations that RevenueCat provides as quickly as possible and with minimal engineering effort.
 

@@ -17,6 +17,7 @@ createdAt: '2020-07-30T17:03:23.384Z'
 category: 648c78a49909bc0c3debff17
 order: 3
 parentDoc: 648c7ee63d0e7f00669ced48
+updatedAt: '2023-06-16T16:41:57.395Z'
 ---
 You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the **Current Offering** card. This can be useful for:
 

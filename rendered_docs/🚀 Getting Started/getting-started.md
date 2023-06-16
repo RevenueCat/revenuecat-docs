@@ -6,6 +6,7 @@ hidden: false
 createdAt: '2022-11-16T20:18:33.888Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 1
+updatedAt: '2023-06-16T16:42:23.434Z'
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 

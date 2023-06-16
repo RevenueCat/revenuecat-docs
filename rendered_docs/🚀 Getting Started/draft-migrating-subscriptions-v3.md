@@ -6,6 +6,7 @@ hidden: true
 createdAt: '2021-12-29T03:23:56.845Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 20
+updatedAt: '2023-06-16T16:42:15.007Z'
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. You can use the Purchases SDK to replace all of your in-app-purchase code, or you can just use it along side your current stack to track in-app-purchases and benefit from our charting, webhooks, and other integrations.
 

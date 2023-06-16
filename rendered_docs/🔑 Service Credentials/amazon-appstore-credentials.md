@@ -14,6 +14,7 @@ metadata:
 createdAt: '2021-12-03T14:59:24.094Z'
 category: 648c78a7dc963f0050281503
 order: 2
+updatedAt: '2023-06-16T16:42:11.397Z'
 ---
 The Amazon Shared Secret allows RevenueCat to connect with Amazon on your behalf. 
 

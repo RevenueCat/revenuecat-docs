@@ -18,6 +18,7 @@ createdAt: '2020-07-01T20:11:18.247Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 4
 parentDoc: 648c7ee85e81230012ca5edf
+updatedAt: '2023-06-16T16:42:22.859Z'
 ---
 To set up products for Stripe, start by logging into the Stripe Dashboard. This guide assumes basic knowledge of Stripe and the Stripe Dashboard. For more information, visit Stripe's [documentation and guides for the Dashboard](https://stripe.com/docs/dashboard).
 

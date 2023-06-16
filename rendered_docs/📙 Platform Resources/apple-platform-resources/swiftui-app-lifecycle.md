@@ -18,6 +18,7 @@ createdAt: '2020-06-30T18:43:10.805Z'
 category: 648c78a7ec91de0019fd4f79
 order: 2
 parentDoc: 648c7f0801ab9d0074c85913
+updatedAt: '2023-06-16T16:42:02.086Z'
 ---
 With the next iteration of SwiftUI announced at WWDC 2020, entire apps can be created with just a simple struct conforming to the new `App` protocol, like so:
 

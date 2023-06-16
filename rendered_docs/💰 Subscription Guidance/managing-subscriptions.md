@@ -17,6 +17,7 @@ metadata:
 createdAt: '2021-01-15T19:53:13.255Z'
 category: 648c78a4e3e59c1ef6311572
 order: 2
+updatedAt: '2023-06-16T16:41:52.227Z'
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
 

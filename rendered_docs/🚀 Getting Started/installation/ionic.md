@@ -17,6 +17,7 @@ createdAt: '2020-04-07T20:32:01.037Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 5
 parentDoc: 648c7f084ca0960014e5d032
+updatedAt: '2023-06-16T16:42:24.387Z'
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 ```text Cordova

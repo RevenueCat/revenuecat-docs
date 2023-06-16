@@ -17,6 +17,7 @@ createdAt: '2020-06-29T17:38:11.890Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 0
 parentDoc: 648c7f08ffabff002ab59fe7
+updatedAt: '2023-06-16T16:42:14.214Z'
 ---
 [App Extensions](https://developer.apple.com/app-extensions/) in iOS are an important component of the iOS ecosystem that are supported by RevenueCat. The most popular use of App Extensions for subscription apps are Today Widgets and iMessage apps.
 

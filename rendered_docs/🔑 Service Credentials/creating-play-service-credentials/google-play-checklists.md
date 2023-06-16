@@ -10,6 +10,7 @@ createdAt: '2023-04-25T20:10:32.492Z'
 category: 648c78a7dc963f0050281503
 order: 0
 parentDoc: 648c7ee9e340a5000b2703ba
+updatedAt: '2023-06-16T16:42:11.658Z'
 ---
 The processes for setting up Google Play service credentials and real-time developer notifications to communicate with RevenueCat on your behalf can be complex, and span across multiple consoles and dashboards. Use this handy checklist to go through and make sure you hit each step in your configuration.
 

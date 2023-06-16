@@ -6,6 +6,7 @@ createdAt: '2022-10-19T15:30:31.866Z'
 category: 648c78a49909bc0c3debff17
 order: 3
 parentDoc: 648c7ee8b4629e1fd0fb39b5
+updatedAt: '2023-06-16T16:41:54.352Z'
 ---
 ## Definition
 Churn measures the percentage of active subscriptions that were lost during a given period that have not yet resubscribed.

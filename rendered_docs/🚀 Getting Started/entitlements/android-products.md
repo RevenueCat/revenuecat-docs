@@ -18,6 +18,7 @@ createdAt: '2020-06-26T22:04:24.057Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 1
 parentDoc: 648c7ee85e81230012ca5edf
+updatedAt: '2023-06-16T16:42:22.450Z'
 ---
 To set up products for Android devices, start by logging into Google Play Console. Google Play Console is Google's central hub for managing app releases, testing, in-app purchases, and more. 
 

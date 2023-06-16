@@ -7,6 +7,7 @@ createdAt: '2023-04-27T19:27:15.768Z'
 category: 648c78a54082791c882e2686
 order: 0
 parentDoc: 648c7ee7de5aa2000aea06e2
+updatedAt: '2023-06-16T16:42:10.985Z'
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
 

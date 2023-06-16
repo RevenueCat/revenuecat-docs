@@ -6,6 +6,7 @@ createdAt: '2022-12-08T05:04:57.377Z'
 category: 648c78a647c7f2002d529591
 order: 1
 parentDoc: 648c7ee8b319ba05991ce60c
+updatedAt: '2023-06-16T16:42:28.263Z'
 ---
 In this guide we'll cover how to craft your test hypothesis, and how to set up a new Offering in RevenueCat to test your hypothesis.
 

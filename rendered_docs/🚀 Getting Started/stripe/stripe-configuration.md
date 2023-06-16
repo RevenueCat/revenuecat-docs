@@ -7,6 +7,7 @@ createdAt: '2022-01-12T15:45:27.622Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 1
 parentDoc: 648c7ee9adad5603ae95e620
+updatedAt: '2023-06-16T16:42:27.066Z'
 ---
 In order to use [RevenueCat Checkout](doc:revenuecat-checkout) or manually send Stripe purchases to RevenueCat from your own paywall, you'll need to connect your Stripe account to RevenueCat, create products, and attach those products to your offerings and entitlements.
 

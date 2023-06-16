@@ -7,6 +7,7 @@ createdAt: '2020-09-29T15:21:39.999Z'
 category: 648c78a7ec91de0019fd4f79
 order: 3
 parentDoc: 648c7ee7ad45780012e23932
+updatedAt: '2023-06-16T16:42:04.548Z'
 ---
 RevenueCat does not require server notifications from Google Play, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 

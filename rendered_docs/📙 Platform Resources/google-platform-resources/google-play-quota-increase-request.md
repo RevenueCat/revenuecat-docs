@@ -7,6 +7,7 @@ createdAt: '2023-04-11T15:04:43.569Z'
 category: 648c78a7ec91de0019fd4f79
 order: 4
 parentDoc: 648c7f065abd5900755751a0
+updatedAt: '2023-06-16T16:42:02.756Z'
 ---
 Google Play developers may receive an email from RevenueCat indicating that their Google Play Developer API Quota has been or is at risk of being exceeded, and that you need to request a quota increase from Google.
 

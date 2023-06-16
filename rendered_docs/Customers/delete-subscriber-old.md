@@ -3,10 +3,11 @@ title: Delete Subscriber
 slug: delete-subscriber-old
 excerpt: Permanently deletes a subscriber.
 hidden: true
-metadata:
+metadata: 
 createdAt: '2019-08-09T05:20:54.035Z'
 category: 648c78a1ad45780012e19229
 order: 2
+updatedAt: '2023-06-16T16:41:38.113Z'
 ---
 > 🚧 Secret API Key Required
 > 

@@ -17,6 +17,7 @@ createdAt: '2020-07-29T17:30:24.269Z'
 category: 648c78a54082791c882e2686
 order: 6
 parentDoc: 648c7ee73ccbe61ab66dce20
+updatedAt: '2023-06-16T16:42:06.182Z'
 ---
 With our Singular integration you can:
 

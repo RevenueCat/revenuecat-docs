@@ -13,6 +13,7 @@ metadata:
 createdAt: '2022-02-09T15:48:53.904Z'
 category: 648c78a7ec91de0019fd4f79
 order: 1
+updatedAt: '2023-06-16T16:42:01.253Z'
 ---
 RevenueCat provides SDK's and integrations for Amazon to make in-app purchase and subscription development simple. Use these resources to take full advantage of all RevenueCat has to offer for the Amazon Appstore.
 

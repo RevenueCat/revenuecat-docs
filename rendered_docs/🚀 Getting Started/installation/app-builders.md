@@ -7,6 +7,7 @@ createdAt: '2023-01-31T15:58:56.111Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 8
 parentDoc: 648c7f084ca0960014e5d032
+updatedAt: '2023-06-16T16:42:23.877Z'
 ---
 The increase of no and low code app building solutions is on an upward trend. It's an exciting upgrade in technological accessibility and a promising look into possibility, and one that we look forward to being able to support in the future. 
 

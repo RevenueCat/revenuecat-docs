@@ -6,6 +6,7 @@ hidden: true
 createdAt: '2022-03-02T00:14:25.151Z'
 category: 648c78a49909bc0c3debff17
 order: 5
+updatedAt: '2023-06-16T16:41:59.722Z'
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.
 

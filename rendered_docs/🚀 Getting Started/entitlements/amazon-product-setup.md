@@ -16,6 +16,7 @@ createdAt: '2021-12-03T14:37:38.429Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 3
 parentDoc: 648c7ee85e81230012ca5edf
+updatedAt: '2023-06-16T16:42:22.326Z'
 ---
 To set up products for the Amazon Appstore, start by logging into your [Amazon developer account](https://developer.amazon.com/apps-and-games).
 

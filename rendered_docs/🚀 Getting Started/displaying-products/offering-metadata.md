@@ -6,6 +6,7 @@ createdAt: '2023-05-12T16:04:40.191Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 0
 parentDoc: 648c7ee8f6668b004fda3cdc
+updatedAt: '2023-06-16T16:42:14.585Z'
 ---
 Metadata allows attaching arbitrary information as key/value pairs to your Offering to control how to display your products inside your app. The metadata you configure in an Offering is available from the RevenueCat SDK. For example, you could use it to remotely configure strings on your paywall, or even URLs of images shown on the paywall.
 

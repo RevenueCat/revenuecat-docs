@@ -6,6 +6,7 @@ createdAt: '2022-10-19T15:36:28.718Z'
 category: 648c78a49909bc0c3debff17
 order: 13
 parentDoc: 648c7ee8b4629e1fd0fb39b5
+updatedAt: '2023-06-16T16:41:56.073Z'
 ---
 ## Definition
 The Trial Conversion chart gives you insight into the conversion of customers starting free trials, through their conversion into paying subscriptions.

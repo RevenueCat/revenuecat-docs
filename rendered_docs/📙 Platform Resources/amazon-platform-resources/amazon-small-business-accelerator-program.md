@@ -6,6 +6,7 @@ createdAt: '2022-08-12T14:05:45.511Z'
 category: 648c78a7ec91de0019fd4f79
 order: 0
 parentDoc: 648c7ee82fac1f0064960305
+updatedAt: '2023-06-16T16:42:01.118Z'
 ---
 Amazon supports a [Small Business Accelerator Program](https://developer.amazon.com/apps-and-games/blogs/2021/06/small-business-accelerator-program) that reduces fees from app sales from 30% to 20%.
 

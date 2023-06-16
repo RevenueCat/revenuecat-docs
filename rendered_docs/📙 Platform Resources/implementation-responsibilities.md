@@ -13,6 +13,7 @@ metadata:
 createdAt: '2020-10-14T18:30:27.528Z'
 category: 648c78a7ec91de0019fd4f79
 order: 0
+updatedAt: '2023-06-16T16:42:03.385Z'
 ---
 # Overview
 RevenueCat is the single source-of-truth for your subscription status across iOS, Android, and web. The complicated process surrounding receipt validation and interacting with the various native frameworks like Apple's StoreKit and Google's BillingClient are handled automatically when using RevenueCat's SDK.

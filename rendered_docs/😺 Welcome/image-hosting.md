@@ -5,6 +5,7 @@ hidden: true
 createdAt: '2023-04-14T03:03:58.025Z'
 category: 648c78a099dd520072cf6530
 order: 5
+updatedAt: '2023-06-16T16:42:12.724Z'
 ---
 ![](https://files.readme.io/f7bb90b-Adding-RevenueCat-to-your-app.png)
 

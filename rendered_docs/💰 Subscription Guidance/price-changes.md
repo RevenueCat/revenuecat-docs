@@ -17,6 +17,7 @@ metadata:
 createdAt: '2020-07-01T18:49:02.585Z'
 category: 648c78a4e3e59c1ef6311572
 order: 3
+updatedAt: '2023-06-16T16:41:52.353Z'
 ---
 If subscription prices are changed via App Store Connect or Google Play, any active subscribers may need to opt-in to the new price. If the user does not opt-in, their subscription may be canceled by [Apple](https://help.apple.com/app-store-connect/#/devc9870599e) or [Google](https://support.google.com/googleplay/android-developer/answer/140504?hl=en).
 

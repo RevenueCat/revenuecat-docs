@@ -6,6 +6,7 @@ createdAt: '2022-10-19T15:29:56.036Z'
 category: 648c78a49909bc0c3debff17
 order: 2
 parentDoc: 648c7ee8b4629e1fd0fb39b5
+updatedAt: '2023-06-16T16:41:53.564Z'
 ---
 ## Definition
 The Active Subscriptions Movement chart measures the change in unique paid subscriptions over a period. Active Subscriptions Movement can be thought of as a breakdown of what caused the change in the [Active Subscriptions](doc:active-subscriptions-chart) count between two periods.

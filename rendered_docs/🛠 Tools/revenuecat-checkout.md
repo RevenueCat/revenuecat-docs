@@ -6,6 +6,7 @@ hidden: true
 createdAt: '2022-01-12T15:25:45.137Z'
 category: 648c78a647c7f2002d529591
 order: 0
+updatedAt: '2023-06-16T16:42:29.000Z'
 ---
 RevenueCat Checkout enables developers to set up hosted paywalls in RevenueCat to provide customers with an easy-to-use alternative to in-app purchases. RevenueCat Checkout uses Stripe under-the-hood, so your existing Stripe connection and products are already compatible with RevenueCat Checkout hosted paywalls.
 

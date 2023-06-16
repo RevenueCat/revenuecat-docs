@@ -7,6 +7,7 @@ createdAt: '2023-05-15T18:35:31.067Z'
 category: 648c78a4ec91de0019fd4f76
 order: 0
 parentDoc: 648c7ee83ccbe61ab66dce23
+updatedAt: '2023-06-16T16:42:29.274Z'
 ---
 RevenueCat caches data in several places to improve performance. This includes the Dashboard’s Overview, Customer Lists, and the SDK’s CustomerInfo object.
 

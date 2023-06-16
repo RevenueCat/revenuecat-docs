@@ -6,6 +6,7 @@ createdAt: '2023-01-26T09:43:22.898Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 2
 parentDoc: 648c7ee85e81230012ca5edf
+updatedAt: '2023-06-16T16:42:22.575Z'
 ---
 # RevenueCat compatibility with Google May 2022 Subscription Changes
 

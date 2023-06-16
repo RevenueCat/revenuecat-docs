@@ -6,6 +6,7 @@ createdAt: '2022-10-13T18:43:40.091Z'
 category: 648c78a647c7f2002d529591
 order: 0
 parentDoc: 648c7ee8b319ba05991ce60c
+updatedAt: '2023-06-16T16:42:28.397Z'
 ---
 Experiments allow you to answer questions about your users' behaviors and app's business by A/B testing two offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
 

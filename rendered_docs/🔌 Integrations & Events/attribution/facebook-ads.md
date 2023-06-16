@@ -18,6 +18,7 @@ createdAt: '2023-03-30T19:33:09.403Z'
 category: 648c78a54082791c882e2686
 order: 4
 parentDoc: 648c7ee73ccbe61ab66dce20
+updatedAt: '2023-06-16T16:42:05.804Z'
 ---
 With our Facebook Ads integration you can:
 

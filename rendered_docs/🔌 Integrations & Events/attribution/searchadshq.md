@@ -18,6 +18,7 @@ createdAt: '2020-07-30T17:43:45.879Z'
 category: 648c78a54082791c882e2686
 order: 9
 parentDoc: 648c7ee73ccbe61ab66dce20
+updatedAt: '2023-06-16T16:42:06.055Z'
 ---
 With our SearchAdsHQ integration you can:
 * Accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate.
