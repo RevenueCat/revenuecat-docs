@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-06-02T20:37:18.321Z'
-updatedAt: '2023-06-02T20:37:18.321Z'
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:file]

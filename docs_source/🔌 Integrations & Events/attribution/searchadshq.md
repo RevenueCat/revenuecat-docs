@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#e9acb0"
 createdAt: '2020-07-30T17:43:45.879Z'
-updatedAt: '2021-12-03T04:07:47.324Z'
 ---
 With our SearchAdsHQ integration you can:
 * Accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate.

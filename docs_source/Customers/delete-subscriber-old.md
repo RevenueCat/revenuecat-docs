@@ -5,7 +5,6 @@ excerpt: Permanently deletes a subscriber.
 hidden: true
 metadata:
 createdAt: '2019-08-09T05:20:54.035Z'
-updatedAt: '2023-04-12T01:46:43.140Z'
 ---
 > 🚧 Secret API Key Required
 > 

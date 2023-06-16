@@ -5,7 +5,6 @@ excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: true
 metadata:
 createdAt: '2020-09-23T22:55:40.021Z'
-updatedAt: '2022-07-21T14:55:12.429Z'
 ---
 [block:callout]
 {

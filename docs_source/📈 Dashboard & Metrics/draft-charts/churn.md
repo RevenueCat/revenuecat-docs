@@ -3,7 +3,6 @@ title: Churn
 slug: churn
 hidden: true
 createdAt: '2022-06-28T21:07:31.798Z'
-updatedAt: '2022-06-28T21:07:31.798Z'
 ---
 ## Churn
 **Segments**: Yes

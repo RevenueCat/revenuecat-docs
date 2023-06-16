@@ -4,7 +4,6 @@ slug: data-export-version-4
 excerpt: Available since June 2023 (latest version)
 hidden: false
 createdAt: '2023-05-19T16:00:00.905Z'
-updatedAt: '2023-06-14T17:20:05.179Z'
 ---
 > 👍 
 > 

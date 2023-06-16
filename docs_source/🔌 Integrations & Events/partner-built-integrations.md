@@ -4,7 +4,6 @@ slug: partner-built-integrations
 excerpt: Connecting RevenueCat to Alternative Platforms
 hidden: false
 createdAt: '2023-02-07T17:58:01.794Z'
-updatedAt: '2023-04-11T17:14:01.224Z'
 ---
 Maybe you already use a certain platform and are hoping for a way to send it data from RevenueCat, or are looking to fill a specific need or use case, a new way to calculate revenue or push marketing efforts. 
 

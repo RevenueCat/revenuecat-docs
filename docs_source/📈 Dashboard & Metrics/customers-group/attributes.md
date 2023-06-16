@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.010Z'
-updatedAt: '2023-03-27T23:15:31.131Z'
 ---
 The 'Attributes' card displays any [Subscriber Attributes](doc:subscriber-attributes) that have been saved for the user and allows you to add new attributes or edit existing ones.
 [block:image]

@@ -3,7 +3,6 @@ title: Overriding transfer behavior
 slug: overriding-transfer-behavior
 hidden: true
 createdAt: '2023-05-31T01:51:30.825Z'
-updatedAt: '2023-05-31T03:58:22.827Z'
 ---
 It is possible to override the [transfer behavior](doc:restoring-purchases#transferring-purchases-seen-on-multiple-app-user-ids) for individual subscribers using the REST API. Overriding the transfer behavior for subscriber means that if a purchase currently associated with that subscriber is seen on another identified subscriber, the override applies instead of the setting configured on the project level.
 

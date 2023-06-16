@@ -4,7 +4,6 @@ slug: caching
 excerpt: How caching works with RevenueCat
 hidden: false
 createdAt: '2023-05-15T18:35:31.067Z'
-updatedAt: '2023-05-24T14:44:16.883Z'
 ---
 RevenueCat caches data in several places to improve performance. This includes the Dashboard’s Overview, Customer Lists, and the SDK’s CustomerInfo object.
 

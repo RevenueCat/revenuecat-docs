@@ -4,7 +4,6 @@ slug: override-offering
 excerpt: Overrides the current Offering for a specific user
 hidden: false
 createdAt: '2023-04-12T01:31:25.956Z'
-updatedAt: '2023-04-12T01:51:45.837Z'
 ---
 > 🚧 Secret API Key Required
 > 

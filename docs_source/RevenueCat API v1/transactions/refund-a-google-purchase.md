@@ -7,7 +7,6 @@ excerpt: Issues a refund for the most recent purchase of a Google product and re
 hidden: false
 metadata:
 createdAt: '2023-04-12T01:31:25.958Z'
-updatedAt: '2023-04-12T01:57:38.648Z'
 ---
 > 🚧 Secret API Key Required
 > 

@@ -4,7 +4,6 @@ slug: draft-customer-lists
 excerpt: Cohort and export your customers
 hidden: true
 createdAt: '2022-03-02T00:14:25.151Z'
-updatedAt: '2023-06-16T16:17:48.173Z'
 category: 648c78a49909bc0c3debff17
 order: 5
 ---

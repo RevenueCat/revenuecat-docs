@@ -4,7 +4,6 @@ slug: defer-a-google-subscription
 excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: false
 createdAt: '2023-04-12T01:31:25.956Z'
-updatedAt: '2023-04-12T01:59:05.402Z'
 ---
 > 🚧 Secret API Key Required
 > 

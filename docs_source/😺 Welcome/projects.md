@@ -12,7 +12,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-01-06T20:42:37.662Z'
-updatedAt: '2023-04-14T03:12:36.294Z'
 ---
 # Register for a free account
 

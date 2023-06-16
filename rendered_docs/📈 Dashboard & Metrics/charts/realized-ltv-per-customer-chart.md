@@ -3,7 +3,6 @@ title: Realized LTV per Customer Chart
 slug: realized-ltv-per-customer-chart
 hidden: false
 createdAt: '2022-10-19T15:32:27.383Z'
-updatedAt: '2023-06-16T16:17:44.656Z'
 category: 648c78a49909bc0c3debff17
 order: 6
 parentDoc: 648c7ee8b4629e1fd0fb39b5

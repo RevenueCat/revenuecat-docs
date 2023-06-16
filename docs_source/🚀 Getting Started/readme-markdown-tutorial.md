@@ -4,7 +4,6 @@ slug: readme-markdown-tutorial
 excerpt: Common markdown elements and their ReadMe interpretations
 hidden: true
 createdAt: '2023-02-06T21:01:59.579Z'
-updatedAt: '2023-02-06T21:05:44.560Z'
 ---
 <!--
 Hidden Markdown Comment

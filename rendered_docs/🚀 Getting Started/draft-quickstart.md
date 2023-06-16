@@ -4,7 +4,6 @@ slug: draft-quickstart
 excerpt: Get up and running with mobile subscriptions
 hidden: true
 createdAt: '2021-05-26T18:44:55.163Z'
-updatedAt: '2023-06-16T16:18:04.984Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 19
 ---

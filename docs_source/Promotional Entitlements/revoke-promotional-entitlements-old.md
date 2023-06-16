@@ -6,7 +6,6 @@ excerpt: Revokes all promotional entitlements for a given entitlement identifier
 hidden: true
 metadata:
 createdAt: '2019-08-09T05:51:54.980Z'
-updatedAt: '2021-11-24T03:11:55.453Z'
 ---
 [block:callout]
 {

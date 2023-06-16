@@ -13,7 +13,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:10.813Z'
-updatedAt: '2023-03-27T21:57:10.122Z'
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

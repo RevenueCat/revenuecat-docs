@@ -14,7 +14,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:10.612Z'
-updatedAt: '2023-04-11T16:31:44.114Z'
 ---
 The App User IDs will hold both the Original App User ID and the list of Aliases a particular customer has.
 

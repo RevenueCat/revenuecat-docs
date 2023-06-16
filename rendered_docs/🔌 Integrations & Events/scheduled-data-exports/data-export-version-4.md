@@ -4,7 +4,6 @@ slug: data-export-version-4
 excerpt: Available since June 2023 (latest version)
 hidden: false
 createdAt: '2023-05-19T16:00:00.905Z'
-updatedAt: '2023-06-16T16:17:56.816Z'
 category: 648c78a54082791c882e2686
 order: 3
 parentDoc: 648c7f073e7cd10047a1a82b

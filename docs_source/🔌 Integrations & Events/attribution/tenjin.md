@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:52:25.456Z'
-updatedAt: '2023-03-28T21:52:25.456Z'
 ---
 With our Tenjin integration you can:
 

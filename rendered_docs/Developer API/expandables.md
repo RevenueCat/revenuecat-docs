@@ -3,7 +3,6 @@ title: Expandables
 slug: expandables
 hidden: false
 createdAt: '2023-04-11T22:25:56.858Z'
-updatedAt: '2023-06-16T16:17:30.275Z'
 category: 648c78a5d7d50a06b022afb2
 order: 2
 ---

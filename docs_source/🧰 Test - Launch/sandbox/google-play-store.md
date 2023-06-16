@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-24T19:19:00.629Z'
-updatedAt: '2022-06-24T19:19:00.629Z'
 ---
 [block:callout]
 {

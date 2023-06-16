@@ -14,7 +14,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-05-15T19:23:48.680Z'
-updatedAt: '2023-05-15T19:23:48.680Z'
 ---
 RevenueCat makes it easy to determine subscription status and more with the _Purchases SDK_ and [REST API](https://docs.revenuecat.com/reference). 
 

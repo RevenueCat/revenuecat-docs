@@ -5,7 +5,6 @@ excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: true
 metadata:
 createdAt: '2018-05-08T17:13:32.048Z'
-updatedAt: '2023-03-14T20:31:12.840Z'
 ---
 [block:callout]
 {

@@ -4,7 +4,6 @@ slug: configuring-products-legacy
 excerpt: Use Entitlements and Offerings to organize and display products
 hidden: true
 createdAt: '2020-07-02T01:54:48.923Z'
-updatedAt: '2020-07-02T01:54:48.923Z'
 ---
 [block:callout]
 {

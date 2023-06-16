@@ -5,7 +5,6 @@ excerpt: This document provides a standard recommendation for RFA users looking 
   incorporate an IAP channel.
 hidden: false
 createdAt: '2023-06-13T20:56:58.444Z'
-updatedAt: '2023-06-13T21:28:48.706Z'
 ---
 # Web First Users
 
