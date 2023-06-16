@@ -1,32 +1,5 @@
 [
   {
-    "title": "Home",
-    "slug": "welcome",
-    "order": 0,
-    "reference": false,
-    "_id": "6421b235414b45007a0bd1ac",
-    "project": "5ae768fde9566300035d794e",
-    "version": "6421b235414b45007a0bd295",
-    "isAPI": false,
-    "createdAt": "2019-02-01T01:54:48.105Z",
-    "__v": 0,
-    "type": "guide",
-    "id": "6421b235414b45007a0bd1ac"
-  },
-  {
-    "title": "😺 Welcome",
-    "slug": "welcome-1",
-    "order": 1,
-    "reference": false,
-    "_id": "6438c2fe64e273004a1707dc",
-    "project": "5ae768fde9566300035d794e",
-    "version": "6421b235414b45007a0bd295",
-    "createdAt": "2023-04-14T03:05:34.580Z",
-    "__v": 0,
-    "type": "guide",
-    "id": "6438c2fe64e273004a1707dc"
-  },
-  {
     "title": "RevenueCat API v1",
     "slug": "revenuecat-api",
     "order": 1,
@@ -41,6 +14,19 @@
     "__v": 0,
     "type": "reference",
     "id": "6421b235414b45007a0bd1a5"
+  },
+  {
+    "title": "😺 Welcome",
+    "slug": "welcome-1",
+    "order": 1,
+    "reference": false,
+    "_id": "6438c2fe64e273004a1707dc",
+    "project": "5ae768fde9566300035d794e",
+    "version": "6421b235414b45007a0bd295",
+    "createdAt": "2023-04-14T03:05:34.580Z",
+    "__v": 0,
+    "type": "guide",
+    "id": "6438c2fe64e273004a1707dc"
   },
   {
     "title": "🚀 Getting Started",
@@ -71,19 +57,6 @@
     "id": "6421b235414b45007a0bd1b5"
   },
   {
-    "title": "Offerings",
-    "slug": "offerings",
-    "order": 3,
-    "reference": true,
-    "_id": "6421b235414b45007a0bd1b6",
-    "project": "5ae768fde9566300035d794e",
-    "version": "6421b235414b45007a0bd295",
-    "createdAt": "2022-07-21T14:50:11.445Z",
-    "__v": 0,
-    "type": "reference",
-    "id": "6421b235414b45007a0bd1b6"
-  },
-  {
     "title": "➡️ Migrating To RevenueCat",
     "slug": "migrating-your-app",
     "order": 3,
@@ -97,17 +70,17 @@
     "id": "6421b235414b45007a0bd1af"
   },
   {
-    "title": "👥 Customers",
-    "slug": "customers-subscription-status",
-    "order": 4,
-    "reference": false,
-    "_id": "6421b235414b45007a0bd1b2",
+    "title": "Offerings",
+    "slug": "offerings",
+    "order": 3,
+    "reference": true,
+    "_id": "6421b235414b45007a0bd1b6",
     "project": "5ae768fde9566300035d794e",
     "version": "6421b235414b45007a0bd295",
-    "createdAt": "2022-06-22T17:45:53.921Z",
+    "createdAt": "2022-07-21T14:50:11.445Z",
     "__v": 0,
-    "type": "guide",
-    "id": "6421b235414b45007a0bd1b2"
+    "type": "reference",
+    "id": "6421b235414b45007a0bd1b6"
   },
   {
     "title": "Transactions & Purchases",
@@ -121,6 +94,19 @@
     "__v": 0,
     "type": "reference",
     "id": "6421b235414b45007a0bd1b4"
+  },
+  {
+    "title": "👥 Customers",
+    "slug": "customers-subscription-status",
+    "order": 4,
+    "reference": false,
+    "_id": "6421b235414b45007a0bd1b2",
+    "project": "5ae768fde9566300035d794e",
+    "version": "6421b235414b45007a0bd295",
+    "createdAt": "2022-06-22T17:45:53.921Z",
+    "__v": 0,
+    "type": "guide",
+    "id": "6421b235414b45007a0bd1b2"
   },
   {
     "title": "🧰 Test & Launch",
@@ -163,19 +149,6 @@
     "id": "6421b235414b45007a0bd1b1"
   },
   {
-    "title": "Developer API",
-    "slug": "developer-api",
-    "order": 7,
-    "reference": true,
-    "_id": "6436d456df2fae16bd7d8765",
-    "project": "5ae768fde9566300035d794e",
-    "version": "6421b235414b45007a0bd295",
-    "createdAt": "2023-04-12T15:55:02.810Z",
-    "__v": 0,
-    "type": "reference",
-    "id": "6436d456df2fae16bd7d8765"
-  },
-  {
     "title": "📈 Dashboard & Metrics",
     "slug": "dashboard",
     "order": 7,
@@ -190,17 +163,17 @@
     "id": "6421b235414b45007a0bd1a9"
   },
   {
-    "title": "RevenueCat API v1",
-    "slug": "revenuecat-api-v1",
-    "order": 8,
+    "title": "Developer API",
+    "slug": "developer-api",
+    "order": 7,
     "reference": true,
-    "_id": "643609ec71d2cb04b3850752",
+    "_id": "6436d456df2fae16bd7d8765",
     "project": "5ae768fde9566300035d794e",
     "version": "6421b235414b45007a0bd295",
-    "createdAt": "2023-04-12T01:31:24.343Z",
+    "createdAt": "2023-04-12T15:55:02.810Z",
     "__v": 0,
     "type": "reference",
-    "id": "643609ec71d2cb04b3850752"
+    "id": "6436d456df2fae16bd7d8765"
   },
   {
     "title": "🔌 Integrations & Events",
@@ -215,6 +188,19 @@
     "__v": 0,
     "type": "guide",
     "id": "6421b235414b45007a0bd1a7"
+  },
+  {
+    "title": "RevenueCat API v1",
+    "slug": "revenuecat-api-v1",
+    "order": 8,
+    "reference": true,
+    "_id": "643609ec71d2cb04b3850752",
+    "project": "5ae768fde9566300035d794e",
+    "version": "6421b235414b45007a0bd295",
+    "createdAt": "2023-04-12T01:31:24.343Z",
+    "__v": 0,
+    "type": "reference",
+    "id": "643609ec71d2cb04b3850752"
   },
   {
     "title": "Attribution",
