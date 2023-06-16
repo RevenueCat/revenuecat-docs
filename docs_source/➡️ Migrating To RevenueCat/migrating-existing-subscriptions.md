@@ -34,7 +34,10 @@ Whether you're looking to replace all of your in-app-purchase code, or use Reven
 
 If you're building in-app purchases into your app for the first time, a migration should not be required and you can start from our [Quickstart](doc:getting-started) guide.
 
-If you have any questions about migrating your app to RevenueCat, or have a high volume of historical receipts in import, feel free to [contact sales](https://www.revenuecat.com/demo/) to see how we can help with the process.
+If you have any questions about migrating your app to RevenueCat, or have a high volume of historical receipts in import, feel free to [contact sales](https://www.revenuecat.com/demo/) to see how we can help with the process. 
+
+# Determining Your Migration Path
+Migrating existing subscribers to RevenueCat can be done server-side, or client-side. A server side migration is preferable whenever possible because it ensures that all subscriptions will be recorded in RevenueCat regardless of any in-app activity.
 
 **Do you have all of the raw base64 Apple receipts and/or purchase tokens saved in your database?
 **

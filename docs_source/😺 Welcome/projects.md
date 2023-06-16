@@ -30,7 +30,7 @@ RevenueCat accounts are free to set up, all you need is an email address.
 > 
 > RevenueCat cannot transfer individual Projects between RevenueCat accounts at this time. If you anticipate needing to transfer ownership of a Project in the future, make a separate RevenueCat account to own that Project.
 
-# Configure a new project
+# Configure a new Project
 
 A Project is a set of Apps, and Apps are paired with a single platform. For example, a typical Project might contain one iOS App and one Google Play Store App. All Apps within one Project share the same basic setup, including subscription status, integrations, and webhooks. 
 

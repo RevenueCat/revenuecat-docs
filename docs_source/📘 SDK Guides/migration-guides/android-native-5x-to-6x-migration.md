@@ -4,7 +4,7 @@ slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
-updatedAt: '2023-05-16T16:33:38.101Z'
+updatedAt: '2023-06-12T17:09:58.516Z'
 ---
 ## Google Product setup
 
@@ -30,8 +30,6 @@ Google introduced a lot of new concepts in their new subscription model. Here ar
   ]
 }
 [/block]
-
-
 
 - **Phase**: Allows to specify the pricing of the offer. You can add up to 2 “phases” to an offer. There are 3 types of offer:
   - Free trial: It provides access for free for a specific period of time
@@ -80,8 +78,6 @@ Currently, this functionality is limited to importing subscriptions, but one-tim
 }
 [/block]
 
-
-
 ### 2. Manual Import
 
 For manual import, you need to add both your subscription ID and your base plan ID when adding a new product. 
@@ -103,8 +99,6 @@ For manual import, you need to add both your subscription ID and your base plan 
 }
 [/block]
 
-
-
 You can find this information in Google Play Console here:
 
 [block:image]
@@ -123,8 +117,6 @@ You can find this information in Google Play Console here:
   ]
 }
 [/block]
-
-
 
 After you’ve added your products, you can assign them to packages the same as before. You can follow the documentation [here](doc:entitlements).  If you select a non backwards-compatible product and the [app compatibility setting](doc:google-subscriptions-and-backwards-compatibility) is set to "SDK v6+ and backwards compatible", you will have the ability to configure a backwards compatible fallback product. This product will be available for purchase in previous versions of the SDK which don't yet support non backwards compatible products.
 
@@ -146,7 +138,7 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 
 ### Migration implementation steps
 
-1. Update RevenueCat to version `6.0.1`. You can do this in your app’s module build.gradle.
+1. Update RevenueCat to version `6.4.0`. You can do this in your app’s module build.gradle.
 
 [block:file]
 {"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_1.kt"}
@@ -157,8 +149,9 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 [block:file]
 {"language":"Text","name":"Flutter","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_3.txt"}
 [/block]
-
-
+[block:file]
+{"language":"Text","name":"Cordova","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_4.txt"}
+[/block]
 
 2. Adapt your paywall to use the new SDK. 
 
@@ -168,16 +161,12 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 Follow the migration reference doc to migrate all the changes. These are some examples of code changes you might have to do:
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_4.kt"}
-[/block]
-
-
-
-[block:file]
 {"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_5.kt"}
 [/block]
 
-
+[block:file]
+{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_6.kt"}
+[/block]
 
 3. If you are using products with offers:
 

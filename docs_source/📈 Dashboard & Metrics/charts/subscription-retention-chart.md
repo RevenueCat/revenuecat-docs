@@ -3,7 +3,7 @@ title: Subscription Retention Chart
 slug: subscription-retention-chart
 hidden: false
 createdAt: '2022-10-19T15:37:02.622Z'
-updatedAt: '2023-05-22T23:23:31.350Z'
+updatedAt: '2023-06-14T16:50:48.672Z'
 ---
 ## Definition
 
@@ -70,17 +70,19 @@ For each period, we measure:
   "data": {
     "h-0": "Question",
     "h-1": "Answer",
-    "0-0": "How are refunds handled in Subscription Retention?",
-    "0-1": "Refunded subscriptions are treated like subscriptions that churned during the period that the refund occurred in.",
-    "1-0": "How are product changes handled in Subscription Retention?",
-    "1-1": "This chart measures retention on a per-product basis.  \n  \nIf a subscriber changes products, they would be counted as “churned” on the old product and start a new “retention journey” on the new one. Their new cohort would be based on the date the transaction for the new product was completed.",
-    "2-0": "Can I measure Subscription Retention across all product durations?",
-    "2-1": "Subscription Retention is filtered by product duration based on the selected Retention Period, and does not support measuring retention across all product durations today.  \n  \nThis is to ensure that the selected Retention Period (e.g. Yearly) maps to the available retention points in a subscriber’s lifecylce.  \n  \nFor example, a monthly subscriber who retained for only 10 months would not be counted as a retained subscriber at 1 year, but has a vastly superior retention rate (and therefore lifetime value) when compared to the subscriber who retained for 2 months, and only the Monthly Retention Period would show that contrast.  \n  \nWe’ll continue improving this chart to allow for more flexible retention measurements in the future.",
-    "3-0": "How are incomplete periods displayed in Subscription Retention?",
-    "3-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions."
+    "0-0": "How are resubscribes handled in Subscription Retention?",
+    "0-1": "If a user churns, but later resubscribes, they will be counted as a retained subscription in the original purchase period.",
+    "1-0": "How are refunds handled in Subscription Retention?",
+    "1-1": "Refunded subscriptions are treated like subscriptions that churned during the period that the refund occurred in.",
+    "2-0": "How are product changes handled in Subscription Retention?",
+    "2-1": "This chart measures retention on a per-product basis.  \n  \nIf a subscriber changes products, they would be counted as “churned” on the old product and start a new “retention journey” on the new one. Their new cohort would be based on the date the transaction for the new product was completed.",
+    "3-0": "Can I measure Subscription Retention across all product durations?",
+    "3-1": "Subscription Retention is filtered by product duration based on the selected Retention Period, and does not support measuring retention across all product durations today.  \n  \nThis is to ensure that the selected Retention Period (e.g. Yearly) maps to the available retention points in a subscriber’s lifecycle.  \n  \nFor example, a monthly subscriber who retained for only 10 months would not be counted as a retained subscriber at 1 year, but has a vastly superior retention rate (and therefore lifetime value) when compared to the subscriber who retained for 2 months, and only the Monthly Retention Period would show that contrast.  \n  \nWe’ll continue improving this chart to allow for more flexible retention measurements in the future.",
+    "4-0": "How are incomplete periods displayed in Subscription Retention?",
+    "4-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions."
   },
   "cols": 2,
-  "rows": 4,
+  "rows": 5,
   "align": [
     "left",
     "left"
