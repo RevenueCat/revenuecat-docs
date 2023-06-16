@@ -3,7 +3,7 @@ title: App Store Connect API Key Configuration
 slug: app-store-connect-api-key-configuration
 hidden: true
 createdAt: '2023-01-03T19:30:12.606Z'
-updatedAt: '2023-06-16T16:18:00.830Z'
+updatedAt: '2023-06-16T16:20:38.526Z'
 category: 648c78a7dc963f0050281503
 order: 4
 ---

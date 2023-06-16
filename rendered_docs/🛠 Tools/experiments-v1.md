@@ -4,7 +4,7 @@ slug: experiments-v1
 excerpt: A/B testing two offerings in your app
 hidden: false
 createdAt: '2022-10-13T18:43:05.969Z'
-updatedAt: '2023-06-16T16:18:11.581Z'
+updatedAt: '2023-06-16T16:20:44.569Z'
 category: 648c78a647c7f2002d529591
 order: 3
 ---

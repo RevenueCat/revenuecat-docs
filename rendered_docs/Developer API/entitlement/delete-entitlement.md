@@ -4,7 +4,7 @@ slug: delete-entitlement
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:entitlements:read_write`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.241Z'
-updatedAt: '2023-06-16T16:17:28.172Z'
+updatedAt: '2023-06-16T16:20:19.159Z'
 category: 648c78a5d7d50a06b022afb2
 order: 2
 parentDoc: 648c7ee6d7d50a06b0233459

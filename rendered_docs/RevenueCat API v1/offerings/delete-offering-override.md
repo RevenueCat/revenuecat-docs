@@ -5,7 +5,7 @@ excerpt: Reset the offering overrides back to the current offering for a specifi
   user
 hidden: false
 createdAt: '2023-04-12T01:31:25.957Z'
-updatedAt: '2023-06-16T16:17:37.610Z'
+updatedAt: '2023-06-16T16:20:24.181Z'
 category: 648c78a01e4bc0001816c9fa
 order: 999
 ---

@@ -3,7 +3,7 @@ title: Churn
 slug: churn
 hidden: true
 createdAt: '2022-06-28T21:07:31.798Z'
-updatedAt: '2023-06-16T16:17:47.751Z'
+updatedAt: '2023-06-16T16:20:30.242Z'
 category: 648c78a49909bc0c3debff17
 order: 2
 parentDoc: 648c7ee8afbbbc001d6a0c55

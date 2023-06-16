@@ -4,7 +4,7 @@ slug: scheduled-data-exports-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: false
 createdAt: '2023-03-14T15:53:51.105Z'
-updatedAt: '2023-06-16T16:17:57.107Z'
+updatedAt: '2023-06-16T16:20:36.332Z'
 category: 648c78a54082791c882e2686
 order: 0
 parentDoc: 648c7f073e7cd10047a1a82b

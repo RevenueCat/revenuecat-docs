@@ -3,7 +3,7 @@ title: Error Codes
 slug: error-codes
 hidden: false
 createdAt: '2023-04-11T22:26:44.561Z'
-updatedAt: '2023-06-16T16:17:29.456Z'
+updatedAt: '2023-06-16T16:20:19.821Z'
 category: 648c78a5d7d50a06b022afb2
 order: 0
 parentDoc: 648c7ee7295bce0041c10522

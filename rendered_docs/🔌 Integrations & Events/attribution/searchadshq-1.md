@@ -3,7 +3,7 @@ title: SearchAdsHQ
 slug: searchadshq-1
 hidden: false
 createdAt: '2022-06-02T21:07:09.989Z'
-updatedAt: '2023-06-16T16:17:54.921Z'
+updatedAt: '2023-06-16T16:20:35.047Z'
 type: link
 link_url: https://www.revenuecat.com/docs/splitmetrics-acquire
 category: 648c78a54082791c882e2686

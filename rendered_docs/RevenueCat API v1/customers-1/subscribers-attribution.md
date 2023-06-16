@@ -5,7 +5,7 @@ excerpt: Attaches attribution data to a subscriber from specific supported netwo
 hidden: false
 metadata: 
 createdAt: '2023-04-12T01:31:25.952Z'
-updatedAt: '2023-06-16T16:17:36.377Z'
+updatedAt: '2023-06-16T16:20:23.421Z'
 category: 648c78a01e4bc0001816c9fa
 order: 999
 ---

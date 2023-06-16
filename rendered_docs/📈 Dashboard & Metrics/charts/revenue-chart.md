@@ -3,7 +3,7 @@ title: Revenue Chart
 slug: revenue-chart
 hidden: false
 createdAt: '2022-10-19T15:34:40.122Z'
-updatedAt: '2023-06-16T16:17:45.071Z'
+updatedAt: '2023-06-16T16:20:28.678Z'
 category: 648c78a49909bc0c3debff17
 order: 10
 parentDoc: 648c7ee8b4629e1fd0fb39b5

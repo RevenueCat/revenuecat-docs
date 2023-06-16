@@ -4,7 +4,7 @@ slug: android-with-jetpack-compose
 excerpt: Process a transaction with an Android app built with Jetpack Compose
 hidden: false
 createdAt: '2022-12-05T12:43:33.896Z'
-updatedAt: '2023-06-16T16:18:08.676Z'
+updatedAt: '2023-06-16T16:20:42.933Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 0
 parentDoc: 648c7ee749931a000cca34d8

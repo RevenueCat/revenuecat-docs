@@ -3,7 +3,7 @@ title: Refund Rate Chart
 slug: refund-rate-chart
 hidden: false
 createdAt: '2022-10-19T15:31:06.563Z'
-updatedAt: '2023-06-16T16:17:44.932Z'
+updatedAt: '2023-06-16T16:20:28.568Z'
 category: 648c78a49909bc0c3debff17
 order: 4
 parentDoc: 648c7ee8b4629e1fd0fb39b5

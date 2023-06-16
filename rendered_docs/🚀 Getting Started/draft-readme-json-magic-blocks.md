@@ -3,7 +3,7 @@ title: "[Draft] Readme json magic-blocks"
 slug: draft-readme-json-magic-blocks
 hidden: true
 createdAt: '2023-03-03T21:31:29.059Z'
-updatedAt: '2023-06-16T16:18:05.148Z'
+updatedAt: '2023-06-16T16:20:41.012Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 25
 ---

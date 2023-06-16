@@ -3,7 +3,7 @@ title: Pagination
 slug: pagination
 hidden: false
 createdAt: '2023-04-11T22:25:34.753Z'
-updatedAt: '2023-06-16T16:17:33.337Z'
+updatedAt: '2023-06-16T16:20:21.766Z'
 category: 648c78a5d7d50a06b022afb2
 order: 1
 ---

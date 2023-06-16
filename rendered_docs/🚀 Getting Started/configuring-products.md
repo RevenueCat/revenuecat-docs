@@ -4,7 +4,7 @@ slug: configuring-products
 excerpt: Understanding Offers and Entitlements and configuring products with RevenueCat
 hidden: true
 createdAt: '2020-06-29T17:46:24.356Z'
-updatedAt: '2023-06-16T16:18:03.598Z'
+updatedAt: '2023-06-16T16:20:40.101Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 16
 ---

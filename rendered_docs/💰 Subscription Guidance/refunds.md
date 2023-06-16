@@ -4,7 +4,7 @@ slug: refunds
 excerpt: Handling and reacting to refunded purchases
 hidden: false
 createdAt: '2022-09-15T18:57:27.264Z'
-updatedAt: '2023-06-16T16:17:41.988Z'
+updatedAt: '2023-06-16T16:20:26.768Z'
 category: 648c78a4e3e59c1ef6311572
 order: 4
 ---

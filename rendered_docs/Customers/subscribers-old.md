@@ -5,7 +5,7 @@ excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: true
 metadata: 
 createdAt: '2018-05-08T17:13:32.048Z'
-updatedAt: '2023-06-16T16:17:26.199Z'
+updatedAt: '2023-06-16T16:20:18.428Z'
 category: 648c78a1ad45780012e19229
 order: 0
 ---

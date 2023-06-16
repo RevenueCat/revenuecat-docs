@@ -4,7 +4,7 @@ slug: how-grace-periods-work
 excerpt: What happens when a user encounters a billing issue
 hidden: false
 createdAt: '2022-09-15T18:31:21.266Z'
-updatedAt: '2023-06-16T16:17:41.286Z'
+updatedAt: '2023-06-16T16:20:26.392Z'
 category: 648c78a4e3e59c1ef6311572
 order: 1
 ---

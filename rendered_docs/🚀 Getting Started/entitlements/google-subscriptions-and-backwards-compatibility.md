@@ -3,7 +3,7 @@ title: Google Subscriptions and Backwards Compatibility
 slug: google-subscriptions-and-backwards-compatibility
 hidden: false
 createdAt: '2023-01-26T09:43:22.898Z'
-updatedAt: '2023-06-16T16:18:05.611Z'
+updatedAt: '2023-06-16T16:20:41.254Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 2
 parentDoc: 648c7ee85e81230012ca5edf
