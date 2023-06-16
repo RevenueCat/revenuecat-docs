@@ -3,7 +3,7 @@ title: Google Subscriptions and Backwards Compatibility
 slug: google-subscriptions-and-backwards-compatibility
 hidden: false
 createdAt: '2023-01-26T09:43:22.898Z'
-updatedAt: '2023-04-10T13:18:32.057Z'
+updatedAt: '2023-06-14T20:11:49.000Z'
 ---
 # RevenueCat compatibility with Google May 2022 Subscription Changes
 
@@ -85,10 +85,10 @@ If neither of these helps, please contact our [support team](https://www.revenue
 
 The following table shows which SDK versions require backwards compatible products and which versions support all Google Play products:
 
-| RevenueCat SDK           | Version requiring backwards compatible product | Versions supporting all products |
-| :----------------------- | :--------------------------------------------- | :------------------------------- |
-| purchases-android        | v5 and below                                   | v6 and above                     |
-| purchases-react-native   | v5 and below                                   | _support coming soon_            |
-| purchases-flutter        | v4 and below                                   | _support coming soon_            |
-| purchases-unity          | v4 and below                                   | _support coming soon_            |
+| RevenueCat SDK           | Version requiring backwards compatible product | Versions supporting all products           |
+| :----------------------- | :--------------------------------------------- | :----------------------------------------- |
+| purchases-android        | v5 and below                                   | v6 and above                               |
+| purchases-react-native   | v5 and below                                   | Beta available on pre-release v6 and above |
+| purchases-flutter        | v4 and below                                   | Beta available on pre-release v6 and above |
+| purchases-unity          | v4 and below                                   | Beta available on pre-release v4 and above |
 | cordova-plugin-purchases | v3 and below                                   | _support coming soon_            |

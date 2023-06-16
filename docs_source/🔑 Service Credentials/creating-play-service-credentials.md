@@ -4,13 +4,13 @@ slug: creating-play-service-credentials
 excerpt: Step-by-step guide for creating your Play service credentials
 hidden: false
 createdAt: '2023-03-21T20:33:13.482Z'
-updatedAt: '2023-06-02T21:10:31.788Z'
+updatedAt: '2023-06-09T10:15:36.263Z'
 ---
 In order for RevenueCat's servers to communicate with Google on your behalf, you need to provide a set of service credentials. The process for configuring these credentials is a bit complex, but the added level of control improves security by providing RevenueCat with only the access we need.
 
 > 📘 Credentials can take up to 36 hours after being created to be valid
 > 
-> It can take up to 36 hours for your Play Service Credentials to work properly with the Google Play Developer API. You may see "Invalid Play Store credentials" errors (503 or 521) and be unable to make purchases with RevenueCat until this happens.]
+> It can take up to 36 hours for your Play Service Credentials to work properly with the Google Play Developer API. You may see "Invalid Play Store credentials" errors (503 or 521) and be unable to make purchases with RevenueCat until this happens.
 
 # Setup
 
@@ -184,7 +184,47 @@ Find your credentials JSON file that was downloaded in Step 2 and either drop it
 > 
 > While you’re in your RevenueCat Play Store App settings and waiting for your credentials to activate, set up your [Google Real-Time Developer Notifications](https://www.revenuecat.com/docs/google-server-notifications). If you enabled Pub/Sub in Step 2 of this doc, skip ahead to [step 2](https://www.revenuecat.com/docs/google-server-notifications#2-choose-a-pubsub-topic-id) of the setup.
 
+# Check the status of your credentials
 
+With our Google Play credential validation, we will validate every time Google credentials are (re)uploaded or at any time through a click of a button. A summary message will appear with the results of the validation to provide you additional information about the status of your Google credentials.
+
+Once your credentials are valid, you will see a "Valid credentials" message under your uploaded JSON file with all permissions checked.
+
+![](https://files.readme.io/c7680f9-Screen_Shot_2023-06-05_at_7.23.15_AM.png)
+
+## Troubleshooting the credential validation
+
+Before starting to dive deeper in troubleshooting your credentials, you should confirm the following:
+
+- The JSON file uploaded to RevenueCat is the correct file
+- You have re-uploaded the credentials into RevenueCat
+
+### subscriptions API
+
+If the permission to call subscriptions API validation is not passing, that means we were unable to use your credentials to receive a response from Google's [GET subscriptions endpoint](https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptionsv2/get). 
+
+Ensure that you have granted the following permissions:
+
+- View financial data in [step 3a](https://docs-origin.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions)
+- Manage orders and subscriptions in [step 3a](https://www.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions)
+
+### inappproducts API
+
+If the permission to call inappproducts API validation is not passing, that means we were unable to use your credentials to receive a response from Google's [GET inappproducts endpoint](https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts/get).
+
+Ensure that you have granted the following permission:
+
+- View app information and download bulk reports (read-only) in [step 3a](https://docs-origin.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions) 
+
+### monetization API
+
+If the permission to call monetization API validation is not passing, that means we were unable to use your credentials to receive a response from Google's [LIST monetization endpoint](https://developers.google.com/android-publisher/api-ref/rest/v3/monetization.subscriptions/list). 
+
+Ensure that you have granted the following permission:
+
+- View financial data in [step 3a](https://docs-origin.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions) 
+
+After making changes to your Google credentials, it may take 24 hours, up to 36 hours, for the changes to populate throughout Google's servers. 
 
 # Troubleshooting
 

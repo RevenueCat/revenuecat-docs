@@ -15,7 +15,7 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-30T19:33:09.403Z'
-updatedAt: '2023-03-30T19:33:09.403Z'
+updatedAt: '2023-06-08T12:34:17.678Z'
 ---
 With our Facebook Ads integration you can:
 
