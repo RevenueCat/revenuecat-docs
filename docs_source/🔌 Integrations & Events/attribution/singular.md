@@ -3,16 +3,6 @@ title: Singular
 slug: singular
 excerpt: Integrate Purchases SDK with Singular for precise revenue tracking
 hidden: false
-metadata:
-  title: Singular In-App Purchase Integration – RevenueCat
-  description: Accurately track subscriptions generated from Singular campaigns, allowing
-    you to know precisely how much revenue your campaigns generate.
-  image:
-    0: https://files.readme.io/06aba6a-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-07-29T17:30:24.269Z'
 ---
 With our Singular integration you can:

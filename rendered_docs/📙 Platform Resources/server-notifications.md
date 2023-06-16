@@ -3,17 +3,6 @@ title: Platform Server Notifications
 slug: server-notifications
 excerpt: Informing RevenueCat of updates to user purchases
 hidden: false
-metadata:
-  title: Platform server notifications – RevenueCat
-  description: RevenueCat does not require server notifications from the App Store
-    or Play Store, however doing so can speed up webhook and integration delivery
-    times and reduce lag time for Charts.
-  image:
-    0: https://files.readme.io/6d0399f-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-09-15T19:16:00.342Z'
 category: 648c78a7ec91de0019fd4f79
 order: 7

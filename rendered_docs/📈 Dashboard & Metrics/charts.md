@@ -3,18 +3,6 @@ title: Charts
 slug: charts
 excerpt: Analyzing your subscription business with visualizations
 hidden: false
-metadata:
-  title: Charts – RevenueCat
-  description: RevenueCat charts allow you to understand your user base with key subscription
-    specific metrics, filters, and segments. All charts are generated from the current
-    snapshot of purchase receipts saved in RevenueCat and work independently from
-    any in-app usage.
-  image:
-    0: https://files.readme.io/99cce20-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-27T21:48:14.553Z'
 category: 648c78a49909bc0c3debff17
 order: 1

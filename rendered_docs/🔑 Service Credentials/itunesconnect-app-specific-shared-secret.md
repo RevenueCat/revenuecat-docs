@@ -3,16 +3,6 @@ title: Apple App Store
 slug: itunesconnect-app-specific-shared-secret
 excerpt: Getting your App Store Connect App-Specific Shared Secret
 hidden: false
-metadata:
-  title: Apple App-Specific Shared Secret – RevenueCat
-  description: The App-Specific Shared Secret allows RevenueCat to connect with Apple
-    on your behalf. Here is where to find it in App Store Connect.
-  image:
-    0: https://files.readme.io/6855303-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-13T01:37:10.974Z'
 category: 648c78a7dc963f0050281503
 order: 0

@@ -3,16 +3,6 @@ title: Apple Family Sharing
 slug: apple-family-sharing
 excerpt: Let users share their subscriptions with Family Sharing
 hidden: false
-metadata:
-  title: Apple Family Sharing – RevenueCat
-  description: This guide covers how to opt-in your subscriptions to family sharing
-    and how RevenueCat handles family-shared purchases.
-  image:
-    0: https://files.readme.io/89781f2-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-02-09T20:34:15.268Z'
 category: 648c78a7ec91de0019fd4f79
 order: 3

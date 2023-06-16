@@ -3,14 +3,6 @@ title: Superwall
 slug: superwall
 excerpt: Integrate in-app purchase events from RevenueCat with Superwall
 hidden: false
-metadata:
-  title: Superwall Integration – RevenueCat
-  image:
-    0: https://files.readme.io/12648e0-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-01-11T20:35:00.013Z'
 ---
 > 👍 

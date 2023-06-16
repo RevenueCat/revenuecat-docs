@@ -3,17 +3,6 @@ title: Quickstart (old)
 slug: getting-started-old
 excerpt: Get up and running with mobile subscriptions
 hidden: true
-metadata:
-  title: Quickstart – RevenueCat
-  description: This guide will walk you through a practical example to get you up
-    and running with subscriptions and the Purchases SDK with only a few lines of
-    code.
-  image:
-    0: https://files.readme.io/02a97df-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-12-09T20:31:16.384Z'
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.

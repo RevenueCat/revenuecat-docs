@@ -3,17 +3,6 @@ title: iOS Subscription Offers
 slug: ios-subscription-offers
 excerpt: Implementing iOS Subscription Offers with Purchases SDK
 hidden: false
-metadata:
-  title: Implementing iOS Subscription Offers – RevenueCat
-  description: In iOS 12.2, Apple announced a new feature for subscription developers
-    called “Subscription Offers.” Subscription offers allow developers to apply custom
-    pricing and trials to existing and lapsed subscriptions.
-  image:
-    0: https://files.readme.io/bbc86b3-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-22T15:16:54.349Z'
 ---
 [block:callout]

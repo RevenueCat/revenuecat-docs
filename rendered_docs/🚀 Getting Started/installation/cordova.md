@@ -3,16 +3,6 @@ title: Cordova
 slug: cordova
 excerpt: Instructions for installing Purchases SDK for Cordova
 hidden: false
-metadata:
-  title: Install Cordova SDK – RevenueCat
-  description: The RevenueCat Purchases SDK handles the pain points of in-app purchases
-    and subscriptions for Cordova, so you can get back to building your app.
-  image:
-    0: https://files.readme.io/b5c8b69-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-20T17:32:08.635Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 4

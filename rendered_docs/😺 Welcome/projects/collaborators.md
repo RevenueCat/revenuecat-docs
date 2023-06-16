@@ -3,17 +3,6 @@ title: Invite your team
 slug: collaborators
 excerpt: Invite others to collaborate on your project
 hidden: false
-metadata:
-  title: Add Collaborators – RevenueCat
-  description: Collaborators allow you to share apps in RevenueCat with other people
-    without having to share any login credentials. You can limit the access of specific
-    collaborators to "Admin" or "Read Only".
-  image:
-    0: https://files.readme.io/1b702da-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-14T03:14:43.593Z'
 category: 648c78a099dd520072cf6530
 order: 0

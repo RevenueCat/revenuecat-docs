@@ -3,16 +3,6 @@ title: Google Play Offers
 slug: google-play-offers
 excerpt: Setting up your offers in Google Play Console
 hidden: false
-metadata:
-  title: Google Play Offers – RevenueCat
-  description: 'Google Play offers different types of offers: subscription offers
-    and promo codes'
-  image:
-    0: https://files.readme.io/0a48f07-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-04-21T21:42:29.264Z'
 category: 648c78a4e3e59c1ef6311572
 order: 1

@@ -3,14 +3,6 @@ title: In-App Purchase Key Configuration
 slug: in-app-purchase-key-configuration
 excerpt: Guide on how to set up iOS in-app purchase keys.
 hidden: false
-metadata:
-  title: In-App Purchase Key Configuration – RevenueCat
-  image:
-    0: https://files.readme.io/88bf693-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-02-02T00:31:49.564Z'
 ---
 For RevenueCat to securely authenticate and validate a [Subscription Offer](https://docs.revenuecat.com/docs/ios-subscription-offers) request with Apple, you'll need to upload an in-app purchase key. In order to enable [customer lookup](https://docs.revenuecat.com/docs/customer-lists#find-an-individual-customer) via Order ID for iOS apps, you'll also need to provide an Issuer ID.

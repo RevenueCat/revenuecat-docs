@@ -3,14 +3,6 @@ title: Legacy Mac Apps
 slug: legacy-mac-apps
 excerpt: Configuring legacy Mac apps with RevenueCat
 hidden: false
-metadata:
-  title: Legacy Mac Apps – RevenueCat
-  image:
-    0: https://files.readme.io/c1e4bb3-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-04-22T00:21:12.343Z'
 category: 648c78a7ec91de0019fd4f79
 order: 4

@@ -3,14 +3,6 @@ title: Billing and account settings
 slug: account-management
 excerpt: Managing your account and changing plans
 hidden: false
-metadata:
-  title: Account Management – RevenueCat
-  image:
-    0: https://files.readme.io/a6df1d6-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-06-21T17:37:20.347Z'
 ---
 # Account Security & 2FA

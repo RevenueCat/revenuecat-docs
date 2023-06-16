@@ -3,14 +3,6 @@ title: SplitMetrics Acquire
 slug: splitmetrics-acquire
 excerpt: Formerly SearchAdsHQ
 hidden: false
-metadata:
-  title: Splitmetrics Acquire Integration – RevenueCat
-  image:
-    0: https://files.readme.io/cef7b15-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-05-27T16:53:09.333Z'
 ---
 With our SplitMetrics Acquire | Formerly SearchAdsHQ integration you can:

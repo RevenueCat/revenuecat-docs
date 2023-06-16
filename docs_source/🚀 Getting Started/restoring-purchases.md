@@ -3,14 +3,6 @@ title: Restoring Purchases
 slug: restoring-purchases
 excerpt: Re-sync purchased transactions from Apple, Google, or Amazon
 hidden: false
-metadata:
-  title: Restoring In-App Purchases – RevenueCat
-  image:
-    0: https://files.readme.io/e69acd8-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-04-28T16:33:56.375Z'
 ---
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).

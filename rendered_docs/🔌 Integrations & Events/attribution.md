@@ -3,18 +3,6 @@ title: Attribution Providers
 slug: attribution
 excerpt: Integrate and collect attribution data with Purchases SDK
 hidden: false
-metadata:
-  title: In-App Purchase Attribution – RevenueCat
-  description: It’s important to know which marketing efforts are most effective at
-    acquiring new users and keeping them engaged. RevenueCat can integrate with your
-    attribution provider to track how much revenue was driven by each source and ad
-    network.
-  image:
-    0: https://files.readme.io/f5215ed-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-06-23T17:21:20.022Z'
 category: 648c78a54082791c882e2686
 order: 3
