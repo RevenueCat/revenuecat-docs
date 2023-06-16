@@ -3,18 +3,6 @@ title: Apple App Privacy
 slug: apple-app-privacy
 excerpt: How to fill out the questionnaire
 hidden: false
-metadata:
-  title: Apple App Privacy Disclosure – RevenueCat
-  description: Starting December 8, 2020, Apple requires a privacy disclosure for
-    all new apps and app updates. As RevenueCat is a third-party to your app, you’ll
-    need to ensure you are properly disclosing to your users the ways you are using
-    RevenueCat in regards to their data.
-  image:
-    0: https://files.readme.io/99cd8f8-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-11-10T18:05:47.960Z'
 ---
 Starting December 8, 2020, Apple requires a privacy disclosure for all new apps and app updates. As RevenueCat is a third-party to your app, you’ll need to ensure you are properly disclosing to your users the ways you are using RevenueCat in regards to their data.

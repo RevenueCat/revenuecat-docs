@@ -3,17 +3,6 @@ title: ETL Exports
 slug: etl-exports-legacy
 excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
-metadata:
-  title: ETL Exports – RevenueCat
-  description: RevenueCat can automatically send data deliveries of all of your apps'
-    transaction data to various cloud storage providers. These are in the form of
-    .csv files delivered daily.
-  image:
-    0: https://files.readme.io/d919a50-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-10-02T02:46:37.589Z'
 category: 648c78a54082791c882e2686
 order: 6

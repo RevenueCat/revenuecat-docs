@@ -2,17 +2,6 @@
 title: Promotionals
 slug: promotionals
 hidden: false
-metadata:
-  title: Grant promotional access – RevenueCat
-  description: Promotional subscriptions allow you to give a user access to premium
-    content for a specific amount of time without requiring them to make a purchase
-    or redeem a promo code.
-  image:
-    0: https://files.readme.io/15bebe9-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.587Z'
 ---
 [block:callout]

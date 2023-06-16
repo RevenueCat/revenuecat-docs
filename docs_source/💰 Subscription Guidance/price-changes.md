@@ -3,17 +3,6 @@ title: Changing Prices
 slug: price-changes
 excerpt: Adjusting your pricing model
 hidden: false
-metadata:
-  title: Price changes – RevenueCat
-  description: If subscription prices are changed via App Store Connect or Google
-    Play, any active subscribers will need to opt-in to the new price. If the user
-    does not opt-in, their subscription will be canceled by Apple or Google.
-  image:
-    0: https://files.readme.io/d9f6fcd-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-07-01T18:49:02.585Z'
 ---
 If subscription prices are changed via App Store Connect or Google Play, any active subscribers may need to opt-in to the new price. If the user does not opt-in, their subscription may be canceled by [Apple](https://help.apple.com/app-store-connect/#/devc9870599e) or [Google](https://support.google.com/googleplay/android-developer/answer/140504?hl=en).

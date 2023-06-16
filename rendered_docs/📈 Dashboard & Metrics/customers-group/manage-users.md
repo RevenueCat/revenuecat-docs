@@ -2,17 +2,6 @@
 title: Deleting Users
 slug: manage-users
 hidden: false
-metadata:
-  title: Deleting Users – RevenueCat
-  description: You can delete a user under the 'Manage' card at the bottom of the
-    page. Deleting a user will also remove all their purchase history for sandbox
-    and production data which could change how charts and reports appear.
-  image:
-    0: https://files.readme.io/480dc45-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.709Z'
 category: 648c78a49909bc0c3debff17
 order: 8

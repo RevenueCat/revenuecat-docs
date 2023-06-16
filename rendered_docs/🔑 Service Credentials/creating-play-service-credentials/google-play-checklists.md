@@ -3,9 +3,6 @@ title: Google Play Checklists
 slug: google-play-checklists
 excerpt: Check your configuration setup step by step.
 hidden: false
-metadata:
-  title: Google Play Checklists
-  description: Check your configuration set up step by step.
 createdAt: '2023-04-25T20:10:32.492Z'
 category: 648c78a7dc963f0050281503
 order: 0

@@ -3,17 +3,6 @@ title: iOS Product Setup
 slug: ios-products
 excerpt: Setting up your in-app purchases in App Store Connect
 hidden: false
-metadata:
-  title: iOS in-app product setup – RevenueCat
-  description: To set up products for iOS, iPadOS, macOS, tvOS, and watchOS, start
-    by logging into App Store Connect. App Store Connect is Apple's central hub for
-    managing app releases, TestFlight, in-app purchases, and more.
-  image:
-    0: https://files.readme.io/d23de59-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-06-26T22:03:53.379Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 0

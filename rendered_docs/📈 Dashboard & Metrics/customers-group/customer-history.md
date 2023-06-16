@@ -2,17 +2,6 @@
 title: Customer History
 slug: customer-history
 hidden: false
-metadata:
-  title: Customer In-App Purchase History – RevenueCat
-  description: The 'Customer History' card shows a timeline of transactions and activity
-    for the selected customer. These can be useful for debugging and triaging support
-    issues by understanding when critical events happened for the customer.
-  image:
-    0: https://files.readme.io/3f3e512-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:07.215Z'
 category: 648c78a49909bc0c3debff17
 order: 1

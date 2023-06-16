@@ -2,14 +2,6 @@
 title: Amazon Platform Resources
 slug: amazon-platform-resources
 hidden: false
-metadata:
-  title: Amazon Platform Resources – RevenueCat
-  image:
-    0: https://files.readme.io/0aa7408-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-02-09T15:48:53.904Z'
 category: 648c78a7ec91de0019fd4f79
 order: 1

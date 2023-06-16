@@ -3,18 +3,6 @@ title: Overview
 slug: welcome
 excerpt: Everything you need to implement and manage in-app purchases and subscriptions
 hidden: false
-metadata:
-  title: Documentation – RevenueCat
-  description: Build a customized mobile subscription business with RevenueCat. We
-    do the heavy lifting of normalizing subscribers from any source and maintain a
-    single source of truth for subscription status, so you can get back to building
-    your app.
-  image:
-    0: https://files.readme.io/afd3a3b-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-14T03:10:28.250Z'
 category: 648c78a099dd520072cf6530
 order: 0

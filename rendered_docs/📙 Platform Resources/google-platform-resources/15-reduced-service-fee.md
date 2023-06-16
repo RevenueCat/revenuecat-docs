@@ -3,14 +3,6 @@ title: 15% Reduced Service Fee
 slug: 15-reduced-service-fee
 excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
-metadata:
-  title: 15% Reduced Service Free – RevenueCat
-  image:
-    0: https://files.readme.io/e2830c4-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-10-05T15:55:44.276Z'
 category: 648c78a7ec91de0019fd4f79
 order: 1

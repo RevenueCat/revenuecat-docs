@@ -3,17 +3,6 @@ title: App Store Small Business Program
 slug: app-store-small-business-program
 excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
-metadata:
-  title: App Store Small Business Program – RevenueCat
-  description: Apple recently announced the new App Store Small Business Program,
-    aiming to reduce Apple's commission of App Store sales for small businesses from
-    30% to 15%.
-  image:
-    0: https://files.readme.io/ea86a4a-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-12-11T16:33:54.497Z'
 category: 648c78a7ec91de0019fd4f79
 order: 1

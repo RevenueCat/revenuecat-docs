@@ -3,17 +3,6 @@ title: Stripe Web Payments
 slug: stripe
 excerpt: Allow your users to subscribe to your app via Stripe
 hidden: false
-metadata:
-  title: Stripe web payments – RevenueCat
-  description: Our Stripe integration allows you to let users subscribe on your website,
-    and automatically unlock access to the same subscription content through the Purchases
-    SDK.
-  image:
-    0: https://files.readme.io/56047f9-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-05-24T20:09:54.235Z'
 ---
 RevenueCat currently supports web payments through Stripe. This allows you to let users subscribe on your own website using Stripe, and automatically unlock access based on the Stripe subscription through the _Purchases SDK_.

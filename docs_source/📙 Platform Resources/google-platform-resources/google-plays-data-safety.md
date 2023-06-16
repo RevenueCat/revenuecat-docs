@@ -3,14 +3,6 @@ title: Google Play's Data Safety
 slug: google-plays-data-safety
 excerpt: How to fill out the questionnaire
 hidden: false
-metadata:
-  title: Google Play's Data Safety – RevenueCat
-  image:
-    0: https://files.readme.io/4bd442e-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-12-01T17:53:19.547Z'
 ---
 [By July 20, 2022](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en), Google requires all developers to declare how their application collects and handles user data. You'll need to ensure you are properly disclosing to your users the way you are using RevenueCat in regards to their data.

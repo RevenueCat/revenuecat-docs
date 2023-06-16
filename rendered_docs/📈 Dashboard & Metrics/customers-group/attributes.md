@@ -3,17 +3,6 @@ title: Attributes
 slug: attributes
 excerpt: Add new user attributes or edit existing ones
 hidden: false
-metadata:
-  title: Subscriber attributes – RevenueCat
-  description: The 'Attributes' card displays any Subscriber Attributes that have
-    been saved for the user, and allows you to add new attributes or edit existing
-    ones.
-  image:
-    0: https://files.readme.io/550f817-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.010Z'
 category: 648c78a49909bc0c3debff17
 order: 5

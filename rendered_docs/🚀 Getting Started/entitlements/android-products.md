@@ -3,17 +3,6 @@ title: Google Play Product Setup
 slug: android-products
 excerpt: Setting up your in-app purchases in Google Play Billing
 hidden: false
-metadata:
-  title: Android in-app product set up – RevenueCat
-  description: To setup products for Android devices, start by logging into the Google
-    Play Console. Google Play Console is Google's central hub for managing app releases,
-    testing, in-app purchases, and more.
-  image:
-    0: https://files.readme.io/16d0540-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-06-26T22:04:24.057Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 1

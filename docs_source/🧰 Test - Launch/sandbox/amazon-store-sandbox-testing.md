@@ -2,14 +2,6 @@
 title: Amazon Appstore
 slug: amazon-store-sandbox-testing
 hidden: false
-metadata:
-  title: Amazon Appstore Sandbox Testing – RevenueCat
-  image:
-    0: https://files.readme.io/473e061-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-11-16T15:51:06.005Z'
 ---
 [block:callout]

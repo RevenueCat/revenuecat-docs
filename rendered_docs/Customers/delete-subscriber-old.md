@@ -3,7 +3,6 @@ title: Delete Subscriber
 slug: delete-subscriber-old
 excerpt: Permanently deletes a subscriber.
 hidden: true
-metadata:
 createdAt: '2019-08-09T05:20:54.035Z'
 category: 648c78a1ad45780012e19229
 order: 2

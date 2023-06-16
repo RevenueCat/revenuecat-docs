@@ -3,17 +3,6 @@ title: Configuring Products
 slug: entitlements
 excerpt: Use Entitlements and Offerings to organize and display products
 hidden: false
-metadata:
-  title: Configuring in-app products – RevenueCat
-  description: The RevenueCat dashboard allows you to configure your available in-app
-    products remotely so you can control how they're presented without the need to
-    update your app.
-  image:
-    0: https://files.readme.io/d9c46d9-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-28T13:04:14.121Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 2

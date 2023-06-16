@@ -604,32 +604,23 @@ def update_doc_information(filename, category_id, order, parent_doc_id)
         file = File.read(filename)
         yaml_header, content = file.split('---', 3)[1..-1]
         yaml_data = YAML.load(yaml_header)
-        updated = false
 
         original_category = yaml_data['category']
         if original_category != category_id
             UI.message("Updating category of #{filename} from #{original_category} to #{category_id}")
             yaml_data['category'] = category_id
-            updated = true
         end
 
         original_order = yaml_data['order']
         if original_order != order
             UI.message("Updating order of #{filename} from #{original_order} to #{order}")
             yaml_data['order'] = order
-            updated = true
         end
 
         original_parent = yaml_data['parentDoc']
         if parent_doc_id && original_parent != parent_doc_id
             UI.message("Updating parent of #{filename} from #{original_parent} to #{parent_doc_id}")
             yaml_data['parentDoc'] = parent_doc_id
-            updated = true
-        end
-
-        if updated
-            current_date = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%S.%LZ')
-            yaml_data['updatedAt'] = current_date
         end
 
         File.write(filename, "#{yaml_data.to_yaml}---#{content}")

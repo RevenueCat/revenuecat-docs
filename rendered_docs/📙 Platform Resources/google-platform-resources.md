@@ -2,14 +2,6 @@
 title: Google Platform Resources
 slug: google-platform-resources
 hidden: false
-metadata:
-  title: Google Platform Resources – RevenueCat
-  image:
-    0: https://files.readme.io/b78ec5d-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-12-21T20:03:37.821Z'
 category: 648c78a7ec91de0019fd4f79
 order: 3

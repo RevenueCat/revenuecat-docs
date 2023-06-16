@@ -3,18 +3,6 @@ title: Segment
 slug: segment
 excerpt: Integrate in-app subscription events from RevenueCat with Segment
 hidden: false
-metadata:
-  title: Segment Integration – RevenueCat
-  description: RevenueCat can automatically send subscription events into Segment.
-    From there, you pass these events on to any of the hundreds of other integrations
-    on their platform. This is useful for tracking all events and revenue that occur
-    for your app even if it's not active for a period of time.
-  image:
-    0: https://files.readme.io/fd03751-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-27T20:08:30.175Z'
 ---
 > 👍 

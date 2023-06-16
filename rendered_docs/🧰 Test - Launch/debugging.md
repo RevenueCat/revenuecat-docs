@@ -3,18 +3,6 @@ title: Debugging
 slug: debugging
 excerpt: View and understand Purchases logs
 hidden: false
-metadata:
-  title: Debugging – RevenueCat
-  description: Purchases will log important information and errors to help you understand
-    what is going on behind the scenes. You can enable more detailed debug logs with
-    the `debugLogsEnabled` flag. You can set this immediately in your app while testing,
-    before you configure Purchases.
-  image:
-    0: https://files.readme.io/126dacb-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-05-01T23:06:34.463Z'
 category: 648c78a4ec91de0019fd4f76
 order: 0
