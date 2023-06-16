@@ -12,8 +12,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-01-18T18:46:58.144Z'
-updatedAt: '2023-06-09T17:19:34.051Z'
-category: 6483560b2e0a290051a971e1
+updatedAt: '2023-06-16T16:17:45.697Z'
+category: 648c78a49909bc0c3debff17
 order: 2
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.

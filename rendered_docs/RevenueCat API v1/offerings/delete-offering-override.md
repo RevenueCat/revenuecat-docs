@@ -5,8 +5,8 @@ excerpt: Reset the offering overrides back to the current offering for a specifi
   user
 hidden: false
 createdAt: '2023-04-12T01:31:25.957Z'
-updatedAt: '2023-06-09T17:19:29.297Z'
-category: 6483560b2e0a290051a971d6
+updatedAt: '2023-06-16T16:17:37.610Z'
+category: 648c78a01e4bc0001816c9fa
 order: 999
 ---
 > 🚧 Secret API Key Required

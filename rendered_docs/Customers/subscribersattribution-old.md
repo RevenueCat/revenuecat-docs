@@ -5,8 +5,8 @@ excerpt: Attaches attribution data to a subscriber from specific supported netwo
 hidden: true
 metadata: 
 createdAt: '2018-09-27T16:25:45.671Z'
-updatedAt: '2023-06-09T17:19:23.996Z'
-category: 6483560b2e0a290051a971d7
+updatedAt: '2023-06-16T16:17:26.440Z'
+category: 648c78a1ad45780012e19229
 order: 3
 ---
 ###Attribution Source Network Codes

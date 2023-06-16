@@ -4,8 +4,8 @@ slug: draft-quickstart
 excerpt: Get up and running with mobile subscriptions
 hidden: true
 createdAt: '2021-05-26T18:44:55.163Z'
-updatedAt: '2023-06-09T17:19:44.475Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:04.984Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 19
 ---
 This guide will walk you through how to get up and running with subscriptions and the Purchases SDK with only a few lines of code.

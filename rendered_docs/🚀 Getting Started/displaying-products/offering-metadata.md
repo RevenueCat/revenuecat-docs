@@ -3,7 +3,10 @@ title: Offering metadata (beta)
 slug: offering-metadata
 hidden: false
 createdAt: '2023-05-12T16:04:40.191Z'
-updatedAt: '2023-05-31T17:01:05.451Z'
+updatedAt: '2023-06-16T16:18:04.167Z'
+category: 648c78a1dbb1aa005e52ed52
+order: 0
+parentDoc: 648c7ee8f6668b004fda3cdc
 ---
 Metadata allows attaching arbitrary information as key/value pairs to your Offering to control how to display your products inside your app. The metadata you configure in an Offering is available from the RevenueCat SDK. For example, you could use it to remotely configure strings on your paywall, or even URLs of images shown on the paywall.
 
@@ -68,8 +71,8 @@ You can access metadata directly from the Offering object in the RevenueCat SDKs
 Purchases.shared.getOfferings { (offerings, error) in
     if let offering = offerings?.current {
         let paywallTitle = offering.getMetadataValue(for: "title", default: "Get Pro")
-				let paywallSubtitle = offering.getMetadataValue(for: "subtitle", default: "Unlock all the features")
-				let paywallButton = offering.getMetadataValue(for: "button", default: "Redeem Trial")
+        let paywallSubtitle = offering.getMetadataValue(for: "subtitle", default: "Unlock all the features")
+        let paywallButton = offering.getMetadataValue(for: "button", default: "Redeem Trial")
     }
 }
 ```

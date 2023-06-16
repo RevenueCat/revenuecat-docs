@@ -14,10 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-10-02T02:49:29.429Z'
-updatedAt: '2023-06-09T17:19:39.593Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:17:55.921Z'
+category: 648c78a54082791c882e2686
 order: 0
-parentDoc: 6483560b2e0a290051a972ba
+parentDoc: 648c7ee7afbbbc001d6a0c53
 ---
 To start receiving these deliveries, you'll need the following details:
 1. Access key ID

@@ -6,8 +6,8 @@ excerpt: Records a purchase for a user from iOS, Android, or Stripe and will cre
 hidden: true
 metadata: 
 createdAt: '2018-05-08T17:27:35.964Z'
-updatedAt: '2023-06-09T17:19:30.290Z'
-category: 6483560b2e0a290051a971db
+updatedAt: '2023-06-16T16:17:39.486Z'
+category: 648c78a341e07c0c6151fa1e
 order: 0
 ---
 # Parameter Reference

@@ -3,10 +3,10 @@ title: Churn Chart
 slug: churn-chart
 hidden: false
 createdAt: '2022-10-19T15:30:31.866Z'
-updatedAt: '2023-06-09T17:19:32.990Z'
-category: 6483560b2e0a290051a971e1
+updatedAt: '2023-06-16T16:17:43.786Z'
+category: 648c78a49909bc0c3debff17
 order: 3
-parentDoc: 6483560b2e0a290051a97247
+parentDoc: 648c7ee8b4629e1fd0fb39b5
 ---
 ## Definition
 Churn measures the percentage of active subscriptions that were lost during a given period that have not yet resubscribed.

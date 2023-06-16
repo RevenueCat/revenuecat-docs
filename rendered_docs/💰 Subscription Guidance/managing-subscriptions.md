@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-01-15T19:53:13.255Z'
-updatedAt: '2023-06-09T17:19:31.766Z'
-category: 6483560b2e0a290051a971e0
+updatedAt: '2023-06-16T16:17:41.427Z'
+category: 648c78a4e3e59c1ef6311572
 order: 2
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
@@ -49,10 +49,27 @@ You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscripti
 
 ## Google Play
 
-In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Setting the proration mode optional but will default to `IMMEDIATE_WITH_TIME_PRORATION`.
+In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Proration mode is optional and will default to `IMMEDIATE_WITHOUT_TIME_PRORATION`.
 
-```text Kotlin
+```kotlin Kotlin
+Purchases.sharedInstance.purchase(
+    PurchaseParams.Builder(requireActivity(), pkg)
+        .oldProductId("old_product_id")
+        .googleProrationMode(GoogleProrationMode.IMMEDIATE_WITHOUT_PRORATION)
+        .build(),
+    object : PurchaseCallback {
+        override fun onCompleted(storeTransaction: StoreTransaction, customerInfo: CustomerInfo) {
+            val entitlement = customerInfo.entitlements["my_entitlement_identifier"]
+            if (entitlement != null && entitlement.isActive) {
+                // Unlock that great "pro" content
+            }
+        }
 
+        override fun onError(purchasesError: PurchasesError, b: Boolean) {
+            // No purchase
+        }
+    }
+)
 ```
 ```java Java
 Purchases.getSharedInstance().purchase(
@@ -76,9 +93,32 @@ Purchases.getSharedInstance().purchase(
 );
 ```
 
-> 📘 Supported proration modes
-> 
-> RevenueCat currently only supports the proration modes `IMMEDIATE_WITH_TIME_PRORATION` and `IMMEDIATE_WITHOUT_PRORATION`. Using alternate proration modes will work accurately for the customer subscription, but the pricing will not be correctly reflected in RevenueCat
+Google documentation provides [examples of each proration mode](https://developer.android.com/google/play/billing/subscriptions#proration), behavior when [upgrading with free trial or intro price offers](https://developer.android.com/google/play/billing/subscriptions#upgrade-free-trial), and [recommendations](https://developer.android.com/google/play/billing/subscriptions#proration-recommendations) for which proration mode to use in different scenarios.
+
+[block:parameters]
+{
+  "data": {
+    "h-0": "Mode",
+    "h-1": "Description",
+    "0-0": "**IMMEDIATE_WITHOUT_PRORATION**",
+    "0-1": "Old subscription is cancelled, and new subscription takes effect immediately.  \nUser is charged for the full price of the new subscription on the old subscription's expiration date.  \nThis is the default behavior.  \n  \nGoogle recommends this mode for upgrading while in a free trial.",
+    "1-0": "**IMMEDIATE_WITH_TIME_PRORATION**",
+    "1-1": "Old subscription is cancelled, and new subscription takes effect immediately.  \nAny time remaining on the old subscription is used to push out the first payment date for the new subscription.  \nUser is charged the full price of new subscription once that prorated time has passed.  \nThe purchase will fail if this mode is used when switching between  `SubscriptionOption`s of the same `StoreProduct`",
+    "2-0": "**IMMEDIATE_AND_CHARGE_FULL_PRICE**",
+    "2-1": "Replacement takes effect immediately, and the user is charged full price of new plan and is given a full billing cycle of subscription, plus remaining prorated time from the old plan.",
+    "3-0": "**IMMEDIATE_AND_CHARGE_PRORATED_PRICE**",
+    "3-1": "Replacement takes effect immediately, and the billing cycle remains the same. The price difference for the remaining period is then charged to the user.  \n  \nNote: This option is available only for a subscription upgrade, where the price per unit of time increases.  \n  \nGoogle recommends this mode for upgrading to a more expensive tier, and for upgrading while in a free trial which will end access to the free trial.",
+    "4-0": "**DEFERRED**",
+    "4-1": "Replacement takes effect when the old plan expires, and the new price will be charged at the same time.  \n  \nGoogle recommends this mode for downgrading to a less expensive tier, and for changing recurring period on the same tier (from monthly to annual).  \n  \n**Important**: [Google Server Notifications](doc:google-server-notifications) are required to be configured for `DEFERRED` mode to work properly."
+  },
+  "cols": 2,
+  "rows": 5,
+  "align": [
+    "left",
+    "left"
+  ]
+}
+[/block]
 
 ## Amazon Appstore
 
@@ -99,9 +139,7 @@ For Apple transactions,  prorated revenue **will not** be shown in the [Customer
 
 ## Google Play
 
-RevenueCat assumes that the proration mode is `IMMEDIATE_WITH_TIME_PRORATION` or `IMMEDIATE_WITHOUT_PRORATION` for all pricing calculations. This mode will take effect immediately, and the subscription period immediately after the product change has revenue of $0.
-
-If you choose a different proration mode, the subscription status will be reflected correctly but the RevenueCat price calculation will be off.
+For Google transactions, prorated revenue will be shown in the [Customer History](doc:customer-history) page and will be calculated for your chart and overview data.
 
 # Cancelling Subscriptions
 
@@ -115,7 +153,7 @@ Cancelling (or unsubscribing) from subscriptions is handled differently on each 
     "0-0": "Apple",
     "0-1": "Apple does not allow developers to manage subscriptions on behalf of users. Your customers have to manually opt-out of renewal. The [Apple subscription terms](https://support.apple.com/en-us/HT202039) require users to cancel subscriptions at least 24 hours before the next renewal.",
     "1-0": "Google Play",
-    "1-1": "Google allows developers to cancel subscriptions on behalf of customers via Google Play Console or Google's API.  \n  \nIf you're looking to refund and revoke a subscription via RevenueCat's dashboard, see [Refunds](doc:refunds).",
+    "1-1": "Google allows developers to cancel auto-renewing subscriptions on behalf of customers via Google Play Console or Google's API. For prepaid subscriptions, neither the customer nor the developer can cancel the subscription as it already has an expiration date.  \n  \nIf you're looking to refund and revoke a subscription via RevenueCat's dashboard, see [Refunds](doc:refunds).",
     "2-0": "Stripe",
     "2-1": "Subscriptions can be cancelled on behalf of customers via the Stripe dashboard or REST API. Refer to Stripe documentation for more info.",
     "3-0": "Amazon",

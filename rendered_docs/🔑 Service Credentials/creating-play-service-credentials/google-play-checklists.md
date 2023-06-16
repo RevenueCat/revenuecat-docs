@@ -7,10 +7,10 @@ metadata:
   title: Google Play Checklists
   description: Check your configuration set up step by step.
 createdAt: '2023-04-25T20:10:32.492Z'
-updatedAt: '2023-06-09T17:19:42.454Z'
-category: 6483560b2e0a290051a971e7
+updatedAt: '2023-06-16T16:18:00.975Z'
+category: 648c78a7dc963f0050281503
 order: 0
-parentDoc: 6483560b2e0a290051a9729e
+parentDoc: 648c7ee9e340a5000b2703ba
 ---
 The processes for setting up Google Play service credentials and real-time developer notifications to communicate with RevenueCat on your behalf can be complex, and span across multiple consoles and dashboards. Use this handy checklist to go through and make sure you hit each step in your configuration.
 

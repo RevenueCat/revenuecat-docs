@@ -4,10 +4,10 @@ slug: android-with-jetpack-compose
 excerpt: Process a transaction with an Android app built with Jetpack Compose
 hidden: false
 createdAt: '2022-12-05T12:43:33.896Z'
-updatedAt: '2023-06-09T17:19:46.367Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:08.676Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 0
-parentDoc: 6483560b2e0a290051a972dd
+parentDoc: 648c7ee749931a000cca34d8
 ---
 Jetpack Compose is a new modern toolkit for building native UI for Android. One major difference in Jetpack Compose is the absence of `Activity`.  The `purchasePackage()` and `purchasePackageWith()` functions accept an `Activity` as the first parameter but an `Activity` is not easily accessible in a `@Composable` function.
 

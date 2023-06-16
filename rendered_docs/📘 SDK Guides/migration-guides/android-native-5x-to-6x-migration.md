@@ -4,10 +4,10 @@ slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
-updatedAt: '2023-06-09T17:19:35.802Z'
-category: 6483560b2e0a290051a971e9
+updatedAt: '2023-06-16T16:17:49.153Z'
+category: 648c78a700eed20b3679da4e
 order: 2
-parentDoc: 6483560b2e0a290051a9728c
+parentDoc: 648c7ee650eac80027fe8f2e
 ---
 ## Google Product setup
 
@@ -33,8 +33,6 @@ Google introduced a lot of new concepts in their new subscription model. Here ar
   ]
 }
 [/block]
-
-
 
 - **Phase**: Allows to specify the pricing of the offer. You can add up to 2 “phases” to an offer. There are 3 types of offer:
   - Free trial: It provides access for free for a specific period of time
@@ -83,8 +81,6 @@ Currently, this functionality is limited to importing subscriptions, but one-tim
 }
 [/block]
 
-
-
 ### 2. Manual Import
 
 For manual import, you need to add both your subscription ID and your base plan ID when adding a new product. 
@@ -106,8 +102,6 @@ For manual import, you need to add both your subscription ID and your base plan 
 }
 [/block]
 
-
-
 You can find this information in Google Play Console here:
 
 [block:image]
@@ -126,8 +120,6 @@ You can find this information in Google Play Console here:
   ]
 }
 [/block]
-
-
 
 After you’ve added your products, you can assign them to packages the same as before. You can follow the documentation [here](doc:entitlements).  If you select a non backwards-compatible product and the [app compatibility setting](doc:google-subscriptions-and-backwards-compatibility) is set to "SDK v6+ and backwards compatible", you will have the ability to configure a backwards compatible fallback product. This product will be available for purchase in previous versions of the SDK which don't yet support non backwards compatible products.
 
@@ -149,19 +141,20 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 
 ### Migration implementation steps
 
-1. Update RevenueCat to version `6.0.1`. You can do this in your app’s module build.gradle.
+1. Update RevenueCat to version `6.4.0`. You can do this in your app’s module build.gradle.
 
 ```kotlin 
-implementation "com.revenuecat.purchases:purchases:6.0.1"
+implementation "com.revenuecat.purchases:purchases:6.4.0"
 ```
 ```Text React Native
-npm install --save react-native-purchases@next
+npm install --save react-native-purchases@6.0.0
 ```
 ```Text Flutter
-flutter pub add purchases_flutter:5.0.0-beta.2
+flutter pub add purchases_flutter:5.0.0
 ```
-
-
+```Text Cordova
+cordova plugin add cordova-plugin-purchases@4.0.0 --save
+```
 
 2. Adapt your paywall to use the new SDK. 
 
@@ -192,8 +185,6 @@ Purchases.sharedInstance.getOfferingsWith(
 )
 ```
 
-
-
 ```kotlin 
 // To purchase a subscription with a free trial
 
@@ -216,8 +207,6 @@ Purchases.sharedInstance.purchaseWith(
     onSuccess = { _, _ -> /* handle success */ }
 )
 ```
-
-
 
 3. If you are using products with offers:
 

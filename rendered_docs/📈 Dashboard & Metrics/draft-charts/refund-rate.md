@@ -3,10 +3,10 @@ title: Refund Rate
 slug: refund-rate
 hidden: true
 createdAt: '2022-06-28T21:08:07.413Z'
-updatedAt: '2023-06-09T17:19:35.202Z'
-category: 6483560b2e0a290051a971e1
+updatedAt: '2023-06-16T16:17:47.888Z'
+category: 648c78a49909bc0c3debff17
 order: 3
-parentDoc: 6483560b2e0a290051a9726c
+parentDoc: 648c7ee8afbbbc001d6a0c55
 ---
 ## Refund Rate
 **Segments:** Yes

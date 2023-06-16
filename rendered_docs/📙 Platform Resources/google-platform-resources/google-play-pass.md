@@ -11,10 +11,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-01-15T01:12:53.088Z'
-updatedAt: '2023-06-09T17:19:36.939Z'
-category: 6483560b2e0a290051a971e6
+updatedAt: '2023-06-16T16:17:51.248Z'
+category: 648c78a7ec91de0019fd4f79
 order: 0
-parentDoc: 6483560b2e0a290051a972ae
+parentDoc: 648c7f065abd5900755751a0
 ---
 [Google Play Pass](https://developer.android.com/google-play/guides/play-pass) is a program that gives subscribers access to hundreds of apps and games, free of ads and in-app purchases. 
 

@@ -5,8 +5,8 @@ excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: true
 metadata: 
 createdAt: '2020-09-23T22:55:40.021Z'
-updatedAt: '2023-06-09T17:19:30.198Z'
-category: 6483560b2e0a290051a971db
+updatedAt: '2023-06-16T16:17:39.336Z'
+category: 648c78a341e07c0c6151fa1e
 order: 3
 ---
 [block:callout]

@@ -6,8 +6,8 @@ excerpt: RevenueCat can automatically send subscription events to the integratio
 hidden: false
 metadata: 
 createdAt: '2022-06-02T15:51:10.109Z'
-updatedAt: '2023-06-09T17:19:41.821Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:17:59.961Z'
+category: 648c78a54082791c882e2686
 order: 2
 ---
 With our integrations you can send subscription events and purchase data with the platform you already use, or choose one that fits your workflow. So whether you are looking for patterns in user behavior, ways to engage with and retain your customers, or product analytics that can help your marketing team level up, in-app purchase events can be sent by RevenueCat to the integration of your choice. 

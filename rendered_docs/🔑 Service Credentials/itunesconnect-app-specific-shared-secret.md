@@ -14,8 +14,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-04-13T01:37:10.974Z'
-updatedAt: '2023-06-09T17:19:42.661Z'
-category: 6483560b2e0a290051a971e7
+updatedAt: '2023-06-16T16:18:01.450Z'
+category: 648c78a7dc963f0050281503
 order: 0
 ---
 The App-Specific Shared Secret allows RevenueCat to connect with Apple on your behalf. 

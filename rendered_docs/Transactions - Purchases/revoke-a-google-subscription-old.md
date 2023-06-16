@@ -7,8 +7,8 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
 hidden: true
 metadata: 
 createdAt: '2020-03-04T21:44:22.200Z'
-updatedAt: '2023-06-09T17:19:30.469Z'
-category: 6483560b2e0a290051a971db
+updatedAt: '2023-06-16T16:17:39.773Z'
+category: 648c78a341e07c0c6151fa1e
 order: 2
 ---
 > 🚧 Secret API Key Required

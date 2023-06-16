@@ -4,37 +4,21 @@ slug: how-grace-periods-work
 excerpt: What happens when a user encounters a billing issue
 hidden: false
 createdAt: '2022-09-15T18:31:21.266Z'
-updatedAt: '2023-06-09T17:19:31.227Z'
-category: 6483560b2e0a290051a971e0
+updatedAt: '2023-06-16T16:17:41.286Z'
+category: 648c78a4e3e59c1ef6311572
 order: 1
 ---
 If a customer is unable to complete their purchase due to an invalid or expired payment method, supported stores offer an optional grace period. Grace periods allow the customer to retain access to their subscription purchase for a short period of time while the store attempts to renew the subscription. This prevents disruption for paid features, and can improve the user experience for your app.
 
 Grace Periods are optional and customizable on certain platforms.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Store",
-    "h-1": "Required?",
-    "h-2": "Duration",
-    "0-0": "App Store",
-    "0-1": "Optional",
-    "0-2": "6 days (weekly products)\n16 days (monthly and up)",
-    "1-0": "Google Play",
-    "1-1": "Optional",
-    "1-2": "Customizable",
-    "2-0": "Stripe",
-    "2-1": "Optional",
-    "2-2": "Customizable",
-    "3-0": "Amazon",
-    "3-1": "❌ Not supported",
-    "3-2": "N/A"
-  },
-  "cols": 3,
-  "rows": 4
-}
-[/block]
+| Store       | Required?       | Duration                                                                                                                                             |
+| :---------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App Store   | Optional        | [Customizable](https://developer.apple.com/help/app-store-connect/manage-subscriptions/enable-billing-grace-period-for-auto-renewable-subscriptions) |
+| Google Play | Optional        | [Customizable](https://developer.android.com/google/play/billing/subscriptions)                                                                      |
+| Stripe      | Optional        | Customizable                                                                                                                                         |
+| Amazon      | ❌ Not supported | N/A          |
+
 # Encountering Billing Issues
 
 As mentioned, billing issues occur when a user is unable to complete a subscription purchase due to an invalid or expired payment method. When this occurs, RevenueCat sends a `BILLING_ISSUE` event to webhooks, integrations, and the customer history page.
@@ -56,6 +40,7 @@ Once a user corrects their payment method, RevenueCat will send a renewal event.
 ## Dashboard
 
 Customers who enter into a grace period will have events added to their [Customer History](doc:customers).
+
 [block:image]
 {
   "images": [
@@ -63,14 +48,14 @@ Customers who enter into a grace period will have events added to their [Custome
       "image": [
         "https://files.readme.io/4265860-Screen_Shot_2022-09-15_at_2.46.12_PM.png",
         "Screen Shot 2022-09-15 at 2.46.12 PM.png",
-        1244,
-        294,
-        "#000000"
+        1244
       ],
+      "align": "center",
       "sizing": "80",
       "border": true
     }
   ]
 }
 [/block]
+
 Additionally, subscriptions that are currently in a grace period will still be considered "active," since the customer retains access to their entitlement throughout their grace period. Distinct customers who are currently in a grace period can be counted through Customer Lists using the "Billing Issue Trial" and "Billing Issue" statuses.

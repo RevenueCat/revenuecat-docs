@@ -15,10 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:08.010Z'
-updatedAt: '2023-06-09T17:19:34.303Z'
-category: 6483560b2e0a290051a971e1
+updatedAt: '2023-06-16T16:17:46.138Z'
+category: 648c78a49909bc0c3debff17
 order: 5
-parentDoc: 6483560b2e0a290051a97257
+parentDoc: 648c7ee63d0e7f00669ced48
 ---
 The 'Attributes' card displays any [Subscriber Attributes](doc:subscriber-attributes) that have been saved for the user and allows you to add new attributes or edit existing ones.
 [block:image]

@@ -15,10 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-24T19:19:00.629Z'
-updatedAt: '2023-06-09T17:19:48.822Z'
-category: 6483560b2e0a290051a971dd
+updatedAt: '2023-06-16T16:18:13.275Z'
+category: 648c78a4ec91de0019fd4f76
 order: 1
-parentDoc: 6483560b2e0a290051a972e1
+parentDoc: 648c7ee85d0303006e6d8fcc
 ---
 [block:callout]
 {

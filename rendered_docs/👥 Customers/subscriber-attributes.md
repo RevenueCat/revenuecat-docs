@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-03-02T07:47:34.104Z'
-updatedAt: '2023-06-09T17:19:31.060Z'
-category: 6483560b2e0a290051a971dc
+updatedAt: '2023-06-16T16:17:40.834Z'
+category: 648c78a343e9f503a273d2d6
 order: 2
 ---
 Subscriber attributes are useful for storing additional, structured information on a user. For example, you could store your user's email address and additional system identifiers directly in RevenueCat. Attributes will not be seen by your users unless you choose to explicitly show them yourself.

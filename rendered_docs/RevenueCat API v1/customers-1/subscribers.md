@@ -4,8 +4,8 @@ slug: subscribers
 excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: false
 createdAt: '2023-04-12T01:31:25.949Z'
-updatedAt: '2023-06-09T17:19:28.594Z'
-category: 6483560b2e0a290051a971d6
+updatedAt: '2023-06-16T16:17:36.541Z'
+category: 648c78a01e4bc0001816c9fa
 order: 999
 ---
 > 📘 Get OR create a subscriber

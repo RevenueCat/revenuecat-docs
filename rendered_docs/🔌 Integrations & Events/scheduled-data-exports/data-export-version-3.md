@@ -1,10 +1,13 @@
 ---
-title: Export Version 3 [DRAFT]
+title: Data Export Version 3
 slug: data-export-version-3
-hidden: true
-metadata: 
+excerpt: Available from January 2023 to June 2023.
+hidden: false
 createdAt: '2023-05-19T16:10:54.333Z'
-updatedAt: '2023-06-01T14:26:26.141Z'
+updatedAt: '2023-06-16T16:17:56.666Z'
+category: 648c78a54082791c882e2686
+order: 2
+parentDoc: 648c7f073e7cd10047a1a82b
 ---
 > 👍 
 > 
@@ -84,7 +87,7 @@ updatedAt: '2023-06-01T14:26:26.141Z'
     "13-2": "The gross revenue generated from the transaction. All prices are converted to USD. Can be null if product prices haven't been collected from the user's device.",
     "14-0": "`takehome_percentage`",
     "14-1": "",
-    "14-2": "[OUTDATED] The estimated percentage of the transaction price that will be paid out to developers after commissions, but before VAT and DST taxes are taken into account. (will be either 0.7 or 0.85)  \n  \nWe recommend using `tax_percentage` and `commission_percentage` to calculate proceeds instead. [Learn more here](https://www.revenuecat.com/docs/taxes-and-commissions).",
+    "14-2": "[DEPRECATED] The estimated percentage of the transaction price that will be paid out to developers after commissions, but before VAT and DST taxes are taken into account. (will be either 0.7 or 0.85)  \n  \nWe recommend using `tax_percentage` and `commission_percentage` to calculate proceeds instead. [Learn more here](https://www.revenuecat.com/docs/taxes-and-commissions).",
     "15-0": "`tax_percentage`\\*",
     "15-1": "",
     "15-2": "The portion of a transaction’s price that will be deducted by the store for taxes. VAT & Digital Services Taxes may be withheld by stores depending on the store and country. To learn more about how RevenueCat estimates taxes, [click here](https://www.revenuecat.com/docs/taxes-and-commissions).",

@@ -4,10 +4,10 @@ slug: event-types-and-fields
 excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T19:27:15.768Z'
-updatedAt: '2023-06-09T17:19:42.031Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:18:00.250Z'
+category: 648c78a54082791c882e2686
 order: 0
-parentDoc: 6483560b2e0a290051a972ad
+parentDoc: 648c7ee7de5aa2000aea06e2
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
 
@@ -172,8 +172,6 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
 }
 ```
 
-
-
 # Common Fields
 
 [block:parameters]
@@ -255,7 +253,7 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
     "3-0": "`period_type`",
     "3-1": "String",
     "3-2": "Period type of the transaction.",
-    "3-3": "`TRIAL`, for free trials.  \n  \n `INTRO`, for introductory pricing.  \n  \n `NORMAL`, standard subscription.  \n  \n`PROMOTIONAL`, for subscriptions granted through RevenueCat.",
+    "3-3": "`TRIAL`, for free trials.  \n  \n `INTRO`, for introductory pricing.  \n  \n `NORMAL`, standard subscription.  \n  \n`PROMOTIONAL`, for subscriptions granted through RevenueCat.  \n  \n`PREPAID`,for Play Store prepaid transactions .",
     "4-0": "`purchased_at_ms`",
     "4-1": "Integer",
     "4-2": "Time when the transaction was purchased. Measured in milliseconds since Unix epoch",

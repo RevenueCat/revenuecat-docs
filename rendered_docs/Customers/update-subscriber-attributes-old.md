@@ -5,8 +5,8 @@ excerpt: Updates subscriber attributes for a user.
 hidden: true
 metadata: 
 createdAt: '2020-03-10T01:14:10.675Z'
-updatedAt: '2023-06-09T17:19:24.093Z'
-category: 6483560b2e0a290051a971d7
+updatedAt: '2023-06-16T16:17:26.696Z'
+category: 648c78a1ad45780012e19229
 order: 1
 ---
 [block:api-header]

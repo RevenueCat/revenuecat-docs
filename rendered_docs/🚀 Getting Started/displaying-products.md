@@ -16,8 +16,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-31T22:56:54.298Z'
-updatedAt: '2023-06-09T17:19:44.134Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:04.323Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 6
 ---
 If you've [configured Offerings](doc:entitlements) in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates.

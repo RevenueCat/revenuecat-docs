@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-21T21:22:46.073Z'
-updatedAt: '2023-06-09T17:19:46.089Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:08.204Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 3
 ---
 *Purchases* is our SDK that correctly implements purchases and subscriptions across platforms while syncing tokens with the RevenueCat server. Check out the install guides below integrate the SDK into all of your apps.

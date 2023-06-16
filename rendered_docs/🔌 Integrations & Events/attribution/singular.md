@@ -14,10 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-07-29T17:30:24.269Z'
-updatedAt: '2023-06-09T17:19:39.147Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:17:55.203Z'
+category: 648c78a54082791c882e2686
 order: 6
-parentDoc: 6483560b2e0a290051a972b6
+parentDoc: 648c7ee73ccbe61ab66dce20
 ---
 With our Singular integration you can:
 

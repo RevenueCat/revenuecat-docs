@@ -15,10 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2019-12-20T21:05:57.489Z'
-updatedAt: '2023-06-09T17:19:43.279Z'
-category: 6483560b2e0a290051a971d5
+updatedAt: '2023-06-16T16:18:02.718Z'
+category: 648c78a099dd520072cf6530
 order: 1
-parentDoc: 6483560b2e0a290051a972ff
+parentDoc: 648c7f0806750b000c6ec33b
 ---
 It's a dangerous world out there! But you can make things much safer by enabling two-factor authentication in your RevenueCat account settings.
 
