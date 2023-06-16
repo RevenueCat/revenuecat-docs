@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-04-07T05:51:02.908Z'
-updatedAt: '2023-04-07T05:51:02.908Z'
 ---
 With our AppsFlyer integration you can:
 

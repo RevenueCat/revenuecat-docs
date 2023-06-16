@@ -15,7 +15,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:34:30.366Z'
-updatedAt: '2023-03-28T21:34:30.366Z'
 ---
 With our Branch integration you can:
 

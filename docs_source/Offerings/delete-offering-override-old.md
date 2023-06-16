@@ -6,7 +6,6 @@ excerpt: Reset the offering overrides back to the current offering for a specifi
 hidden: true
 metadata:
 createdAt: '2020-09-30T21:24:12.413Z'
-updatedAt: '2022-07-21T15:05:10.410Z'
 ---
 [block:callout]
 {

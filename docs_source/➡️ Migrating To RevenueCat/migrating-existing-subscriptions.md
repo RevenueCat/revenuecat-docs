@@ -17,7 +17,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-02T20:33:26.499Z'
-updatedAt: '2023-03-02T20:33:26.499Z'
 ---
 [block:parameters]
 {

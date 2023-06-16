@@ -4,7 +4,6 @@ slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
 hidden: false
 createdAt: '2023-01-09T02:40:39.741Z'
-updatedAt: '2023-06-12T17:09:58.516Z'
 ---
 ## Google Product setup
 

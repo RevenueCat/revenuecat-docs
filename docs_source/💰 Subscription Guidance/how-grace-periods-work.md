@@ -4,7 +4,6 @@ slug: how-grace-periods-work
 excerpt: What happens when a user encounters a billing issue
 hidden: false
 createdAt: '2022-09-15T18:31:21.266Z'
-updatedAt: '2023-06-15T18:21:52.347Z'
 ---
 If a customer is unable to complete their purchase due to an invalid or expired payment method, supported stores offer an optional grace period. Grace periods allow the customer to retain access to their subscription purchase for a short period of time while the store attempts to renew the subscription. This prevents disruption for paid features, and can improve the user experience for your app.
 

@@ -15,7 +15,6 @@ metadata:
     3: 630
     4: "#fbabaf"
 createdAt: '2020-10-07T00:35:55.719Z'
-updatedAt: '2020-10-07T00:35:55.719Z'
 ---
 [block:callout]
 {

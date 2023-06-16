@@ -3,7 +3,6 @@ title: Error Types
 slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
-updatedAt: '2023-05-23T11:21:43.127Z'
 ---
 ## `authentication_error`
 

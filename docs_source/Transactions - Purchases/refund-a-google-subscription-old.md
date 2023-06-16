@@ -7,7 +7,6 @@ excerpt: Issues a refund for the most recent purchase of a Google product and re
 hidden: true
 metadata:
 createdAt: '2021-04-23T20:27:09.243Z'
-updatedAt: '2022-07-21T14:56:23.818Z'
 ---
 [block:callout]
 {

@@ -4,7 +4,6 @@ slug: scheduled-data-exports
 excerpt: Data deliveries of all of your apps' transaction data (formerly ETL Exports)
 hidden: false
 createdAt: '2023-03-14T15:53:17.647Z'
-updatedAt: '2023-06-14T17:19:46.350Z'
 ---
 > 👍 
 > 

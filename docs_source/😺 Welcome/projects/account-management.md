@@ -12,7 +12,6 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-06-21T17:37:20.347Z'
-updatedAt: '2023-05-02T14:57:52.279Z'
 ---
 # Account Security & 2FA
 

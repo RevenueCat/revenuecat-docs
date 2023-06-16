@@ -6,7 +6,6 @@ excerpt: Grants a user a promotional entitlement. Does not override or defer a s
 hidden: false
 metadata:
 createdAt: '2023-04-12T01:31:25.953Z'
-updatedAt: '2023-04-12T01:39:03.573Z'
 ---
 > 🚧 Secret API Key Required
 > 

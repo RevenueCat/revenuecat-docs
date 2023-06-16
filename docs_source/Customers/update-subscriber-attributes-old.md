@@ -5,7 +5,6 @@ excerpt: Updates subscriber attributes for a user.
 hidden: true
 metadata:
 createdAt: '2020-03-10T01:14:10.675Z'
-updatedAt: '2020-12-04T01:39:50.154Z'
 ---
 [block:api-header]
 {
