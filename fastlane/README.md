@@ -64,6 +64,14 @@ folder, STRING Folder to recurse through and extract code blocks from all markdo
 Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
 
 
+### remove_updated_at
+
+```sh
+[bundle exec] fastlane remove_updated_at
+```
+
+
+
 ### embed_code_blocks
 
 ```sh
