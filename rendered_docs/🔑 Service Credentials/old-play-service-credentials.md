@@ -4,7 +4,6 @@ slug: old-play-service-credentials
 excerpt: Step-by-step guide for creating your Play service credentials
 hidden: true
 createdAt: '2023-03-30T20:01:00.198Z'
-updatedAt: '2023-06-16T16:18:01.590Z'
 category: 648c78a7dc963f0050281503
 order: 5
 ---

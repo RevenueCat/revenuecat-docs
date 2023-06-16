@@ -4,7 +4,6 @@ slug: taxes-and-commissions
 excerpt: How RevenueCat estimates taxes and commissions for transactions
 hidden: false
 createdAt: '2022-06-07T20:41:47.792Z'
-updatedAt: '2023-06-16T16:17:48.635Z'
 category: 648c78a49909bc0c3debff17
 order: 7
 ---

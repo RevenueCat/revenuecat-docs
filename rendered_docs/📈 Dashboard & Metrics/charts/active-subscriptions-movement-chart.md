@@ -3,7 +3,6 @@ title: Active Subscriptions Movement Chart
 slug: active-subscriptions-movement-chart
 hidden: false
 createdAt: '2022-10-19T15:29:56.036Z'
-updatedAt: '2023-06-16T16:17:43.076Z'
 category: 648c78a49909bc0c3debff17
 order: 2
 parentDoc: 648c7ee8b4629e1fd0fb39b5

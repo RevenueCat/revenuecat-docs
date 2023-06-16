@@ -4,7 +4,6 @@ slug: apple-search-ads
 excerpt: Collect and view Apple Search Ads attribution in RevenueCat using AdServices
 hidden: false
 createdAt: '2022-05-23T14:12:29.055Z'
-updatedAt: '2023-06-16T16:17:54.340Z'
 category: 648c78a54082791c882e2686
 order: 1
 parentDoc: 648c7ee73ccbe61ab66dce20

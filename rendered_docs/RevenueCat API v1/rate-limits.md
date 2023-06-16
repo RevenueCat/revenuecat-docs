@@ -3,7 +3,6 @@ title: Rate Limits
 slug: rate-limits
 hidden: true
 createdAt: '2021-11-18T20:51:32.232Z'
-updatedAt: '2023-06-16T16:17:38.258Z'
 category: 648c78a01e4bc0001816c9fa
 order: 0
 ---

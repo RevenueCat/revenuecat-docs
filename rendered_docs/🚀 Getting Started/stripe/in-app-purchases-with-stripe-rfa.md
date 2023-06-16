@@ -5,7 +5,6 @@ excerpt: This document provides a standard recommendation for RFA users looking 
   incorporate an IAP channel.
 hidden: false
 createdAt: '2023-06-13T20:56:58.444Z'
-updatedAt: '2023-06-16T16:18:09.531Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 0
 parentDoc: 648c7ee9adad5603ae95e620

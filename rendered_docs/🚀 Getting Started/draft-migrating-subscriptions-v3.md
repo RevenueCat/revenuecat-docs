@@ -4,7 +4,6 @@ slug: draft-migrating-subscriptions-v3
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2021-12-29T03:23:56.845Z'
-updatedAt: '2023-06-16T16:18:04.680Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 20
 ---

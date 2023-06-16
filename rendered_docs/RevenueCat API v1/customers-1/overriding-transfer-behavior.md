@@ -3,7 +3,6 @@ title: Overriding transfer behavior
 slug: overriding-transfer-behavior
 hidden: true
 createdAt: '2023-05-31T01:51:30.825Z'
-updatedAt: '2023-06-16T16:17:36.220Z'
 category: 648c78a01e4bc0001816c9fa
 order: 999
 ---

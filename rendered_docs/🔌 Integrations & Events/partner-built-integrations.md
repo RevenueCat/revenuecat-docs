@@ -4,7 +4,6 @@ slug: partner-built-integrations
 excerpt: Connecting RevenueCat to Alternative Platforms
 hidden: false
 createdAt: '2023-02-07T17:58:01.794Z'
-updatedAt: '2023-06-16T16:17:56.518Z'
 category: 648c78a54082791c882e2686
 order: 8
 ---

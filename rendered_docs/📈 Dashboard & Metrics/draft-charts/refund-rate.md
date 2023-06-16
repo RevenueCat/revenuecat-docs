@@ -3,7 +3,6 @@ title: Refund Rate
 slug: refund-rate
 hidden: true
 createdAt: '2022-06-28T21:08:07.413Z'
-updatedAt: '2023-06-16T16:17:47.888Z'
 category: 648c78a49909bc0c3debff17
 order: 3
 parentDoc: 648c7ee8afbbbc001d6a0c55

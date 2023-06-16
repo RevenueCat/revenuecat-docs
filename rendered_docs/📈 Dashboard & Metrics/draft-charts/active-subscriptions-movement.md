@@ -3,7 +3,6 @@ title: Active Subscriptions Movement
 slug: active-subscriptions-movement
 hidden: true
 createdAt: '2022-06-28T20:15:28.170Z'
-updatedAt: '2023-06-16T16:17:47.462Z'
 category: 648c78a49909bc0c3debff17
 order: 1
 parentDoc: 648c7ee8afbbbc001d6a0c55

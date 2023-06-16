@@ -4,7 +4,6 @@ slug: getting-started
 excerpt: Get up and running with mobile subscriptions
 hidden: false
 createdAt: '2022-11-16T20:18:33.888Z'
-updatedAt: '2023-06-16T16:18:06.375Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 1
 ---

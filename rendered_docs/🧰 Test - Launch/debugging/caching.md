@@ -4,7 +4,6 @@ slug: caching
 excerpt: How caching works with RevenueCat
 hidden: false
 createdAt: '2023-05-15T18:35:31.067Z'
-updatedAt: '2023-06-16T16:18:12.194Z'
 category: 648c78a4ec91de0019fd4f76
 order: 0
 parentDoc: 648c7ee83ccbe61ab66dce23

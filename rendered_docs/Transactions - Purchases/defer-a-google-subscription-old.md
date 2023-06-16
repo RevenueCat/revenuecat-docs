@@ -3,9 +3,8 @@ title: 'Google Play: Defer a Subscription'
 slug: defer-a-google-subscription-old
 excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: true
-metadata: 
+metadata:
 createdAt: '2020-09-23T22:55:40.021Z'
-updatedAt: '2023-06-16T16:17:39.336Z'
 category: 648c78a341e07c0c6151fa1e
 order: 3
 ---
