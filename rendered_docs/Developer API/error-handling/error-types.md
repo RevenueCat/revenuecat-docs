@@ -3,10 +3,10 @@ title: Error Types
 slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
-updatedAt: '2023-06-09T17:19:25.457Z'
-category: 6483560b2e0a290051a971df
+updatedAt: '2023-06-16T16:17:29.730Z'
+category: 648c78a5d7d50a06b022afb2
 order: 1
-parentDoc: 6483560b2e0a290051a971ee
+parentDoc: 648c7ee7295bce0041c10522
 ---
 ## `authentication_error`
 

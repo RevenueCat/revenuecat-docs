@@ -4,8 +4,8 @@ slug: getting-started
 excerpt: Get up and running with mobile subscriptions
 hidden: false
 createdAt: '2022-11-16T20:18:33.888Z'
-updatedAt: '2023-06-09T17:19:45.250Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:06.375Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 1
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.

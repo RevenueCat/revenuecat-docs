@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-07-01T18:49:02.585Z'
-updatedAt: '2023-06-09T17:19:31.838Z'
-category: 6483560b2e0a290051a971e0
+updatedAt: '2023-06-16T16:17:41.572Z'
+category: 648c78a4e3e59c1ef6311572
 order: 3
 ---
 If subscription prices are changed via App Store Connect or Google Play, any active subscribers may need to opt-in to the new price. If the user does not opt-in, their subscription may be canceled by [Apple](https://help.apple.com/app-store-connect/#/devc9870599e) or [Google](https://support.google.com/googleplay/android-developer/answer/140504?hl=en).

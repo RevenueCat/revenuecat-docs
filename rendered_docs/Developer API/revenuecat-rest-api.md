@@ -3,8 +3,8 @@ title: Overview (v2)
 slug: revenuecat-rest-api
 hidden: false
 createdAt: '2023-04-11T22:34:48.009Z'
-updatedAt: '2023-06-09T17:19:27.623Z'
-category: 6483560b2e0a290051a971df
+updatedAt: '2023-06-16T16:17:35.015Z'
+category: 648c78a5d7d50a06b022afb2
 order: 0
 ---
 > 📘 New to RevenueCat?

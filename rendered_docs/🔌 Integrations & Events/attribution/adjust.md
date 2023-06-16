@@ -15,10 +15,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-03-28T21:07:09.611Z'
-updatedAt: '2023-06-09T17:19:38.438Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:17:54.193Z'
+category: 648c78a54082791c882e2686
 order: 0
-parentDoc: 6483560b2e0a290051a972b6
+parentDoc: 648c7ee73ccbe61ab66dce20
 ---
 With our Adjust integration you can:
 

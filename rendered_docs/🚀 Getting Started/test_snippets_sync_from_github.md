@@ -5,8 +5,8 @@ excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and G
   Action!
 hidden: true
 createdAt: '2022-12-01T15:38:57.843Z'
-updatedAt: '2023-06-09T17:19:47.086Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:10.076Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 23
 ---
 ###  Test Snippets synced from local code

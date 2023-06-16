@@ -11,10 +11,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2022-03-23T14:39:58.758Z'
-updatedAt: '2023-06-09T17:19:35.726Z'
-category: 6483560b2e0a290051a971e9
+updatedAt: '2023-06-16T16:17:48.896Z'
+category: 648c78a700eed20b3679da4e
 order: 1
-parentDoc: 6483560b2e0a290051a9728c
+parentDoc: 648c7ee650eac80027fe8f2e
 ---
 [block:callout]
 {

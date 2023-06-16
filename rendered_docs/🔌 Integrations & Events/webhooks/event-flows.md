@@ -4,10 +4,10 @@ slug: event-flows
 excerpt: How webhooks are sent from RevenueCat
 hidden: false
 createdAt: '2022-07-29T14:20:20.439Z'
-updatedAt: '2023-06-09T17:19:41.946Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:18:00.107Z'
+category: 648c78a54082791c882e2686
 order: 1
-parentDoc: 6483560b2e0a290051a972ad
+parentDoc: 648c7ee7de5aa2000aea06e2
 ---
 You’ll receive many [Webhooks](doc:webhooks) throughout a subscriber’s journey in your app. We’ve compiled a list of several common event flows to illustrate the events you might receive in some common scenarios.
 

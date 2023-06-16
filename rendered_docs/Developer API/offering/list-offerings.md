@@ -4,8 +4,8 @@ slug: list-offerings
 excerpt: 'This endpoint requires the following permission(s): `project_configuration:offerings:read`.'
 hidden: false
 createdAt: '2023-04-12T15:55:05.246Z'
-updatedAt: '2023-06-09T17:19:25.923Z'
-category: 6483560b2e0a290051a971df
+updatedAt: '2023-06-16T16:17:31.226Z'
+category: 648c78a5d7d50a06b022afb2
 order: 3
-parentDoc: 6483560b2e0a290051a971f3
+parentDoc: 648c7f0671aff300502f84a5
 ---

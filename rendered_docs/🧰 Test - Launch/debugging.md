@@ -16,19 +16,16 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-05-01T23:06:34.463Z'
-updatedAt: '2023-06-09T17:19:48.394Z'
-category: 6483560b2e0a290051a971dd
+updatedAt: '2023-06-16T16:18:12.539Z'
+category: 648c78a4ec91de0019fd4f76
 order: 0
 ---
-[block:callout]
-{
-  "type": "success",
-  "body": "This section assumes you've followed our [Quickstart](doc:getting-started-1) section of our Getting Started guide to install and configure our SDK."
-}
-[/block]
-# Debugging
+> 👍 
+> 
+> This section assumes you've followed our [Quickstart](doc:getting-started-1) section of our Getting Started guide to install and configure our SDK.
 
 RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
+
 ```swift 
 Purchases.logLevel = .debug
 Purchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)
@@ -63,79 +60,150 @@ Purchases.SetDebugLogsEnabled(true);
 Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 ```
 
+> 📘 OS_ACTIVITY_MODE and Common iOS Issues
+> 
+> On iOS, disabling `OS_ACTIVITY_MODE` in your Xcode scheme will block debug logs from printing in the console. If you have debug logs enabled, but don't see any output, go to `Product -> Scheme -> Edit Scheme...` in Xcode and uncheck the `OS_ACTIVITY_MODE` environment variable.
+> 
+> Flutter projects using Swift may fail to show debug logs in the console if you are using Visual Studio Code, Android Studio, or other IDE's to run your project. We recommend running your Flutter project using Xcode to view debug logs from the Purchases SDK.
 
-[block:callout]
+# Debug UI
+
+RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+
+[block:image]
 {
-  "type": "info",
-  "title": "OS_ACTIVITY_MODE and Common iOS Issues",
-  "body": "On iOS, disabling `OS_ACTIVITY_MODE` in your Xcode scheme will block debug logs from printing in the console. If you have debug logs enabled, but don't see any output, go to `Product -> Scheme -> Edit Scheme...` in Xcode and uncheck the `OS_ACTIVITY_MODE` environment variable.\n\nFlutter projects using Swift may fail to show debug logs in the console if you are using Visual Studio Code, Android Studio, or other IDE's to run your project. We recommend running your Flutter project using Xcode to view debug logs from the Purchases SDK."
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/03f4de1-simulator_screenshot_0e51e44b-dd33-41f6-9c26-ca3bed754b34.png",
+        null,
+        "RevenueCat iOS Debug UI"
+      ],
+      "align": "center",
+      "sizing": "240px",
+      "border": true
+    }
+  ]
 }
 [/block]
 
-## Filtering *Purchases* Logs
-All logs from the SDK are prepended with "`[Purchases]`", you can use this string as a filter in your log output to clearly see the logs that are from *Purchases*.
+```swift SwiftUI
+// To display the overlay in SwiftUI, add the `.debugRevenueCatOverlay()` to your view.
 
-## Debug Logs Legend
+// This will display it automatically on app-launch:
+ContentView()
+  .debugRevenueCatOverlay()
+
+// Alternatively, you can control when to present it:
+@State private var debugOverlayVisible: Bool = false
+
+var body: some View {
+    Button {
+        self.debugOverlayVisible = true
+    } label: {
+        Text("Display debug screen"
+    }
+        .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
+}
+```
+```swift UIKit
+// To display the overlay in UIKit, use the `presentDebugRevenueCatOverlay` method on any UIViewController:
+self.presentDebugRevenueCatOverlay()  
+
+// or, initialize the DebugViewController and present it manually:
+let debugOverlay = RevenueCat.DebugViewController()  
+self.present(debugOverlay, animated: true)
+```
+
+You can export your configuration details in JSON format to share with RevenueCat support if you need to open a support ticket.
+
+Note: The debug UI won't compile for release builds, so you'll need to disable the behavior before archiving for release.
+
+## Reference
+
+| Debug Section | Details                                                                                                                                                                                        |
+| :------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Diagnostics   | The status of your configuration based on access to the RevenueCat API with your API key                                                                                                       |
+| Configuration | SDK configuration based on your `configure` parameters                                                                                                                                         |
+| Customer Info | The configured users’ IDs as well as entitlement details                                                                                                                                       |
+| Offerings     | Each of your configured Offerings, packages, and products. Only includes Offerings with products accessible via StoreKit. See our guide on Empty Offerings if your Offerings aren’t populating |
+
+# Debug Logs
+
+All logs from the SDK are prepended with "`[Purchases]`", you can use this string as a filter in your log output to clearly see the logs that are from _Purchases_.
+
+## Reference
+
 Emojis currently available on the following platforms:
-* Android version >= 4.0.2
-* iOS version >= 3.10.1
+
+- Android version >= 4.0.2
+- iOS version >= 3.10.1
+
 [block:parameters]
 {
   "data": {
     "h-0": "Icon(s)",
     "h-1": "Log Level",
     "h-2": "Description",
+    "h-3": "Required Actions",
     "0-0": "🍎 ‼️",
-    "0-1": "Error\nWarn",
+    "0-1": "Error  \nWarn",
     "0-2": "Error/warning messages generated from Apple",
+    "0-3": "View [error handling doc](doc:errors) if on Error level",
     "1-0": "🤖 ‼️",
-    "1-1": "Error\nWarn",
+    "1-1": "Error  \nWarn",
     "1-2": "Error/warning messages generated from Google",
+    "1-3": "View [error handling doc](doc:errors) if on Error level",
+    "2-0": "📦 ‼️",
+    "2-1": "Error  \nWarn",
+    "2-2": "Error/warning messages generated from Amazon",
+    "2-3": "View [error handling doc](doc:errors) if on Error level",
     "3-0": "😿 ‼️",
     "3-1": "Error",
     "3-2": "Error messages generated from RevenueCat",
+    "3-3": "View [error handling doc](doc:errors)",
     "4-0": "😻",
     "4-1": "Debug",
     "4-2": "Success messages generated from RevenueCat",
+    "4-3": "No action required, for informational purposes.",
     "5-0": "😻💰",
     "5-1": "Info",
     "5-2": "RevenueCat received purchase information",
+    "5-3": "No action required, for informational purposes.",
     "6-0": "💰",
     "6-1": "Debug",
     "6-2": "Messages related to your products",
+    "6-3": "No action required, for informational purposes.",
     "7-0": "ℹ️",
-    "7-1": "Debug\nInfo",
+    "7-1": "Debug  \nInfo",
     "7-2": "Messages detailing events that occur in your app cycle",
+    "7-3": "No action required, for informational purposes.",
     "8-0": "👤",
     "8-1": "Debug",
     "8-2": "Messages related to a user's App User ID",
+    "8-3": "No action required, for informational purposes.",
     "9-0": "⚠️",
     "9-1": "Warn",
     "9-2": "Warning messages about implementation",
-    "h-3": "Required Actions",
-    "0-3": "View [error handling doc](doc:errors) if on Error level",
-    "1-3": "View [error handling doc](doc:errors) if on Error level",
-    "3-3": "View [error handling doc](doc:errors)",
-    "4-3": "No action required, for informational purposes.",
-    "5-3": "No action required, for informational purposes.",
-    "6-3": "No action required, for informational purposes.",
-    "7-3": "No action required, for informational purposes.",
-    "8-3": "No action required, for informational purposes.",
-    "9-3": "View log message for additional information.",
-    "2-1": "Error\nWarn",
-    "2-2": "Error/warning messages generated from Amazon",
-    "2-3": "View [error handling doc](doc:errors) if on Error level",
-    "2-0": "📦 ‼️"
+    "9-3": "View log message for additional information."
   },
   "cols": 4,
-  "rows": 10
+  "rows": 10,
+  "align": [
+    "left",
+    "left",
+    "left",
+    "left"
+  ]
 }
 [/block]
+
 Messages that have the double red exclamation marks prefix (‼️) attached provides important information regarding your implementation and may require your attention. Paying attention to the source of the message will assist you during the development process. Be sure to address these logs before shipping your app. 
 
-# Sample Output
+## Sample Output
 
 Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an eye out for any `ERROR` level logs, status codes other than `200`, or any `Invalid Product Identifiers`.
+
 ```text 
 [Purchases] - DEBUG: Debug logging enabled.
 [Purchases] - DEBUG: SDK Version - 2.0.0
@@ -206,5 +274,5 @@ Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an 
 
 # Next Steps
 
-* If you spotted any errors while debugging, make sure you're [handling errors correctly :fa-arrow-right:](doc:errors)
-* You've verified that *Purchases* is running correctly, time to start [making purchases in sandbox :fa-arrow-right:](doc:sandbox)
+- If you spotted any errors while debugging, make sure you're [handling errors correctly ](doc:errors)
+- You've verified that _Purchases_ is running correctly, time to start [making purchases in sandbox ](doc:sandbox)

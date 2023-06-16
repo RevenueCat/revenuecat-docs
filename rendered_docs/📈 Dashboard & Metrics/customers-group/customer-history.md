@@ -14,10 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2020-04-06T21:46:07.215Z'
-updatedAt: '2023-06-09T17:19:34.523Z'
-category: 6483560b2e0a290051a971e1
+updatedAt: '2023-06-16T16:17:46.615Z'
+category: 648c78a49909bc0c3debff17
 order: 1
-parentDoc: 6483560b2e0a290051a97257
+parentDoc: 648c7ee63d0e7f00669ced48
 ---
 The 'Customer History' card shows a timeline of transactions and activity for the selected customer. These can be useful for debugging and triaging support issues by understanding when critical events happened for the customer.
 
@@ -76,9 +76,13 @@ Ex: Checking the event_timestamp_ms will show that the renewal occurs after the 
 
 Android purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access. By refunding directly through RevenueCat you can ensure that refunds are accounted for in all charts and integrations.
 
-Apple doesn’t allow developers to grant refunds themselves, only through Apple customer support. However, Apple refunds are tracked with RevenueCat and accounted for in all charts and integrations.
+![](https://files.readme.io/e2cb2fe-Screenshot_2023-06-12_at_15.01.32.png)
 
-![](https://files.readme.io/6fc40df-Screen_Shot_2020-06-01_at_7.46.14_AM.png "Screen Shot 2020-06-01 at 7.46.14 AM.png")
+In case of subscriptions in trial period, you have the option to cancel the subscription and prevent the user from converting to a paid subscription.
+
+![](https://files.readme.io/07fe246-Screenshot_2023-06-12_at_14.58.30.png)
+
+Apple doesn’t allow developers to grant refunds themselves, only through Apple customer support. However, Apple refunds are tracked with RevenueCat and accounted for in all charts and integrations.
 
 # Next Steps
 

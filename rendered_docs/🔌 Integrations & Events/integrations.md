@@ -5,8 +5,8 @@ excerpt: Learn about events and integrations from RevenueCat
 hidden: false
 metadata: 
 createdAt: '2023-04-14T03:01:04.122Z'
-updatedAt: '2023-06-09T17:19:39.903Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:17:56.367Z'
+category: 648c78a54082791c882e2686
 order: 0
 ---
 Events notify you in near real-time to any changes that occur to a customer's subscription and can automatically be sent into a variety of [third-party tools](doc:/third-party-integrations) and [attribution networks](doc:attribution) to get clean, consistent, and trustworthy data in all of your systems.

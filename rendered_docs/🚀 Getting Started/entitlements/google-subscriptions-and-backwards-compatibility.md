@@ -3,10 +3,10 @@ title: Google Subscriptions and Backwards Compatibility
 slug: google-subscriptions-and-backwards-compatibility
 hidden: false
 createdAt: '2023-01-26T09:43:22.898Z'
-updatedAt: '2023-06-09T17:19:44.817Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:05.611Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 2
-parentDoc: 6483560b2e0a290051a97290
+parentDoc: 648c7ee85e81230012ca5edf
 ---
 # RevenueCat compatibility with Google May 2022 Subscription Changes
 
@@ -88,10 +88,10 @@ If neither of these helps, please contact our [support team](https://www.revenue
 
 The following table shows which SDK versions require backwards compatible products and which versions support all Google Play products:
 
-| RevenueCat SDK           | Version requiring backwards compatible product | Versions supporting all products |
-| :----------------------- | :--------------------------------------------- | :------------------------------- |
-| purchases-android        | v5 and below                                   | v6 and above                     |
-| purchases-react-native   | v5 and below                                   | _support coming soon_            |
-| purchases-flutter        | v4 and below                                   | _support coming soon_            |
-| purchases-unity          | v4 and below                                   | _support coming soon_            |
+| RevenueCat SDK           | Version requiring backwards compatible product | Versions supporting all products           |
+| :----------------------- | :--------------------------------------------- | :----------------------------------------- |
+| purchases-android        | v5 and below                                   | v6 and above                               |
+| purchases-react-native   | v5 and below                                   | Beta available on pre-release v6 and above |
+| purchases-flutter        | v4 and below                                   | Beta available on pre-release v6 and above |
+| purchases-unity          | v4 and below                                   | Beta available on pre-release v4 and above |
 | cordova-plugin-purchases | v3 and below                                   | _support coming soon_            |

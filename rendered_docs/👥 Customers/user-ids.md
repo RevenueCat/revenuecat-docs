@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-05-09T18:27:09.193Z'
-updatedAt: '2023-06-09T17:19:31.148Z'
-category: 6483560b2e0a290051a971dc
+updatedAt: '2023-06-16T16:17:40.982Z'
+category: 648c78a343e9f503a273d2d6
 order: 0
 ---
 RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.

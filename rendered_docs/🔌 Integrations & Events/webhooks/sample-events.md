@@ -4,10 +4,10 @@ slug: sample-events
 excerpt: Example webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T16:36:52.205Z'
-updatedAt: '2023-06-09T17:19:42.137Z'
-category: 6483560b2e0a290051a971e2
+updatedAt: '2023-06-16T16:18:00.414Z'
+category: 648c78a54082791c882e2686
 order: 2
-parentDoc: 6483560b2e0a290051a972ad
+parentDoc: 648c7ee7de5aa2000aea06e2
 ---
 These are some representative samples of webhooks you might receive from RevenueCat. Keep in mind that webhooks can include additional fields to what's shown here.
 

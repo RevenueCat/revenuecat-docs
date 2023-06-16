@@ -5,8 +5,8 @@ excerpt: Overrides the current Offering for a specific user
 hidden: true
 metadata: 
 createdAt: '2020-09-30T21:21:26.551Z'
-updatedAt: '2023-06-09T17:19:27.947Z'
-category: 6483560b2e0a290051a971d9
+updatedAt: '2023-06-16T16:17:35.482Z'
+category: 648c78a25d0303006e6cf4fd
 order: 1
 ---
 [block:callout]

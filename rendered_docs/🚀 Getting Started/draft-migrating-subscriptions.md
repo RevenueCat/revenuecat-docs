@@ -4,8 +4,8 @@ slug: draft-migrating-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2022-05-31T22:03:36.901Z'
-updatedAt: '2023-06-09T17:19:44.388Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:04.818Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 21
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. 

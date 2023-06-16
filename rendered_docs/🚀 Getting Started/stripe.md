@@ -15,8 +15,8 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2023-05-24T20:09:54.235Z'
-updatedAt: '2023-06-09T17:19:47.009Z'
-category: 6483560b2e0a290051a971d8
+updatedAt: '2023-06-16T16:18:09.939Z'
+category: 648c78a1dbb1aa005e52ed52
 order: 11
 ---
 RevenueCat currently supports web payments through Stripe. This allows you to let users subscribe on your own website using Stripe, and automatically unlock access based on the Stripe subscription through the _Purchases SDK_.

@@ -14,10 +14,10 @@ metadata:
     3: 627
     4: "#f7f5f5"
 createdAt: '2021-02-09T20:34:15.268Z'
-updatedAt: '2023-06-09T17:19:36.442Z'
-category: 6483560b2e0a290051a971e6
+updatedAt: '2023-06-16T16:17:50.353Z'
+category: 648c78a7ec91de0019fd4f79
 order: 3
-parentDoc: 6483560b2e0a290051a97255
+parentDoc: 648c7f0801ab9d0074c85913
 ---
 Apple allows any in-app purchases to be shared within a family using [Family Sharing](https://developer.apple.com/documentation/storekit/in-app_purchase/supporting_family_sharing_in_your_app). This is great for apps that tend to be used by groups of people, like video streaming services and kids' apps, without needing users to share their Apple ID. This guide covers how to opt-in your subscriptions to family sharing and how RevenueCat handles family-shared purchases.
 

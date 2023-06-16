@@ -3,9 +3,9 @@ title: Promotional Subscriptions
 slug: promotional-subscriptions
 hidden: false
 createdAt: '2022-08-16T13:57:03.093Z'
-updatedAt: '2023-06-09T17:19:31.910Z'
+updatedAt: '2023-06-16T16:17:41.834Z'
 type: link
 link_url: https://www.revenuecat.com/docs/promotionals
-category: 6483560b2e0a290051a971e0
+category: 648c78a4e3e59c1ef6311572
 order: 5
 ---
