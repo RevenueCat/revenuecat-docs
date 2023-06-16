@@ -2,14 +2,6 @@
 title: Implementation Responsibilities
 slug: implementation-responsibilities
 hidden: false
-metadata:
-  title: Implementation Responsibilities – RevenueCat
-  image:
-    0: https://files.readme.io/f747df0-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-10-14T18:30:27.528Z'
 ---
 # Overview

@@ -2,17 +2,6 @@
 title: Configuring Experiments
 slug: configuring-experiments
 hidden: true
-metadata:
-  title: Configuring Experiments – RevenueCat
-  description: Before setting up an experiment, make sure you've created the products
-    and offerings that you want to test and added any new products to the appropriate
-    entitlements.
-  image:
-    0: https://files.readme.io/4870309-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-07-09T16:50:48.063Z'
 category: 648c78a647c7f2002d529591
 order: 1

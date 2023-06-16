@@ -3,17 +3,6 @@ title: Making Purchases
 slug: making-purchases
 excerpt: Process a transaction with Apple or Google
 hidden: false
-metadata:
-  title: Making in-app purchases using the SDK – RevenueCat
-  description: When it comes time to make a purchase, Purchases SDK has a simple method,
-    `purchasePackage`, that takes a package from the fetched Offering and purchases
-    the underlying product with Apple or Google.
-  image:
-    0: https://files.readme.io/222c22e-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-06-02T20:37:18.321Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 7

@@ -3,17 +3,6 @@ title: App Store Rejections
 slug: app-store-rejections
 excerpt: Your app was rejected. Now what?
 hidden: false
-metadata:
-  title: App Store rejection reasons & fixes – RevenueCat
-  description: Your app is finally complete! But, after a few days in review, you
-    get the dreaded 'Rejected' message. Now what? Let's work through some common rejection
-    reasons and the best way to get your app back on track.
-  image:
-    0: https://files.readme.io/6fb2e64-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-06-10T15:10:23.774Z'
 category: 648c78a4ec91de0019fd4f76
 order: 4

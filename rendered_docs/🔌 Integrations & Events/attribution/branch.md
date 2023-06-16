@@ -3,17 +3,6 @@ title: Branch
 slug: branch
 excerpt: Integrate Purchases SDK with Branch for precise revenue tracking
 hidden: false
-metadata:
-  title: Branch In-App Purchase Integration – RevenueCat
-  description: With our Branch integration, you can accurately track subscriptions
-    generated from Branch campaigns, allowing you to know precisely how much revenue
-    your campaigns generate. And more!
-  image:
-    0: https://files.readme.io/73d6beb-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-28T21:34:30.366Z'
 category: 648c78a54082791c882e2686
 order: 3

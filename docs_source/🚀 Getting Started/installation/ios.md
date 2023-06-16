@@ -3,17 +3,6 @@ title: iOS
 slug: ios
 excerpt: Instructions for installing RevenueCat SDK for iOS
 hidden: false
-metadata:
-  title: Install iOS SDK – RevenueCat
-  description: RevenueCat handles the pain points of in-app purchases and subscriptions
-    for iOS, so you can get back to building your app. All you need to get started
-    is a free API key.
-  image:
-    0: https://files.readme.io/48b408b-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-27T15:06:13.281Z'
 ---
 # What is RevenueCat?

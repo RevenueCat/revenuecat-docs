@@ -3,16 +3,6 @@ title: Overview
 slug: overview
 excerpt: In-app purchase dashboard
 hidden: false
-metadata:
-  title: In-App Purchase Dashboard – RevenueCat
-  description: The RevenueCat Overview is your in-app purchase hub for quick metrics
-    on the health of your business.
-  image:
-    0: https://files.readme.io/f2b85dd-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-04-02T23:21:02.437Z'
 category: 648c78a49909bc0c3debff17
 order: 0

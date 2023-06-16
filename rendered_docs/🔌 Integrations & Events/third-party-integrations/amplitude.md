@@ -3,18 +3,6 @@ title: Amplitude
 slug: amplitude
 excerpt: Integrate in-app subscription events from RevenueCat with Amplitude
 hidden: false
-metadata:
-  title: Amplitude Integration – RevenueCat
-  description: 'RevenueCat can automatically send subscription revenue events into
-    Amplitude. This is useful for seeing all events and revenue that occur for your
-    app even if it''s not active for a period of time. The Amplitude integration tracks
-    the following events:'
-  image:
-    0: https://files.readme.io/2b7bab7-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:08.891Z'
 category: 648c78a54082791c882e2686
 order: 1

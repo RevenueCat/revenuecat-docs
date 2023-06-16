@@ -4,7 +4,6 @@ slug: revoke-promotional-entitlements
 excerpt: Revokes all promotional entitlements for a given entitlement identifier and
   app user ID.
 hidden: false
-metadata:
 createdAt: '2023-04-12T01:31:25.953Z'
 ---
 > 🚧 Secret API Key Required

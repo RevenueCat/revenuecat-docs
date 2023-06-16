@@ -2,14 +2,6 @@
 title: Android Native - 4.x to 5.x Migration
 slug: android-native-4x-to-5x-migration
 hidden: true
-metadata:
-  title: Android Native - 4.x to 5.x Migration – RevenueCat
-  image:
-    0: https://files.readme.io/cce2f5a-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-03-23T14:39:58.758Z'
 category: 648c78a700eed20b3679da4e
 order: 1

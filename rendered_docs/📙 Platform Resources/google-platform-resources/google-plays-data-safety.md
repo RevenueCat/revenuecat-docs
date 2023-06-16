@@ -3,14 +3,6 @@ title: Google Play's Data Safety
 slug: google-plays-data-safety
 excerpt: How to fill out the questionnaire
 hidden: false
-metadata:
-  title: Google Play's Data Safety – RevenueCat
-  image:
-    0: https://files.readme.io/4bd442e-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-12-01T17:53:19.547Z'
 category: 648c78a7ec91de0019fd4f79
 order: 2

@@ -3,16 +3,6 @@ title: Unity
 slug: unity
 excerpt: Instructions for installing Purchases SDK for Unity
 hidden: false
-metadata:
-  title: Install Unity SDK – RevenueCat
-  description: The RevenueCat Purchases SDK handles the pain points of in-app purchases
-    and subscriptions for Unity, so you can get back to building your app.
-  image:
-    0: https://files.readme.io/3bedede-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-20T17:32:01.487Z'
 ---
 # What is RevenueCat?

@@ -3,14 +3,6 @@ title: Setting up RevenueCat
 slug: projects
 excerpt: Create a free account, add a Project, and invite your team
 hidden: false
-metadata:
-  title: Projects – RevenueCat
-  image:
-    0: https://files.readme.io/7d4314f-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-01-06T20:42:37.662Z'
 ---
 # Register for a free account

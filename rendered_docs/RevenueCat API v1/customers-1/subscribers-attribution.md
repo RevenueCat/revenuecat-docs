@@ -3,7 +3,6 @@ title: Add User Attribution Data
 slug: subscribers-attribution
 excerpt: Attaches attribution data to a subscriber from specific supported networks.
 hidden: false
-metadata:
 createdAt: '2023-04-12T01:31:25.952Z'
 category: 648c78a01e4bc0001816c9fa
 order: 999

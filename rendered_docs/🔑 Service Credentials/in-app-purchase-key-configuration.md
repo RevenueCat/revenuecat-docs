@@ -3,14 +3,6 @@ title: In-App Purchase Key Configuration
 slug: in-app-purchase-key-configuration
 excerpt: Guide on how to set up iOS in-app purchase keys.
 hidden: false
-metadata:
-  title: In-App Purchase Key Configuration – RevenueCat
-  image:
-    0: https://files.readme.io/88bf693-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2022-02-02T00:31:49.564Z'
 category: 648c78a7dc963f0050281503
 order: 3

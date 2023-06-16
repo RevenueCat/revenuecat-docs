@@ -3,17 +3,6 @@ title: Facebook Ads
 slug: facebook-ads
 excerpt: Integrate Purchases SDK with Facebook Ads for precise revenue tracking
 hidden: false
-metadata:
-  title: Facebook Ads In-App Purchase Integration – RevenueCat
-  description: With our Facebook Ads integration, you can accurately track subscriptions
-    generated from Facebook Ad campaigns, allowing you to know precisely how much
-    revenue your campaigns generate. And more!
-  image:
-    0: https://files.readme.io/e3949cb-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-30T19:33:09.403Z'
 category: 648c78a54082791c882e2686
 order: 4

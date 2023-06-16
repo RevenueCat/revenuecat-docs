@@ -3,17 +3,6 @@ title: API Keys & Authentication
 slug: authentication
 excerpt: Manage your API keys to authenticate with RevenueCat
 hidden: false
-metadata:
-  title: Authentication – RevenueCat
-  description: 'RevenueCat authenticates requests from the REST API and Purchases
-    SDK using your app''s API keys. All requests must include a valid key. There are
-    also two types of API keys: public and secret.'
-  image:
-    0: https://files.readme.io/10e3130-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-14T03:13:35.791Z'
 ---
 RevenueCat authenticates requests from the [REST API](https://docs.revenuecat.com/reference) and the RevenueCat SDK using your app's API keys. All requests must include a valid API key. There are also two types of API keys: public and secret.

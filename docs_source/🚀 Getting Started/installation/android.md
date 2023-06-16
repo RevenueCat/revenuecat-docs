@@ -3,16 +3,6 @@ title: Android
 slug: android
 excerpt: Instructions for installing Purchases SDK for Android
 hidden: false
-metadata:
-  title: Install Android SDK – RevenueCat
-  description: RevenueCat handles the pain points of in-app purchases and subscriptions
-    for Android, so you can get back to building your app.
-  image:
-    0: https://files.readme.io/e87f981-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-17T16:07:45.008Z'
 ---
 # What is RevenueCat?

@@ -3,17 +3,6 @@ title: Slack
 slug: slack
 excerpt: Send in-app subscription events to Slack
 hidden: false
-metadata:
-  title: Slack Integration – RevenueCat
-  description: RevenueCat can send you Slack message to a channel any time an event
-    happens in your app. This lets you keep a close pulse on your app and celebrate
-    those money making moments!
-  image:
-    0: https://files.readme.io/7feca32-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-27T20:08:38.893Z'
 ---
 > 👍 

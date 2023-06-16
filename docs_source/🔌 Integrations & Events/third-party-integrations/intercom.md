@@ -3,18 +3,6 @@ title: Intercom
 slug: intercom
 excerpt: Send in-app subscription events from RevenueCat to Intercom
 hidden: false
-metadata:
-  title: Intercom Integration – RevenueCat
-  description: RevenueCat can automatically send subscription revenue events to Intercom.
-    This can be helpful in understanding what stage a customer is in to react accordingly.
-    With accurate and up-to-date subscription data in Intercom, you'll be set to turbo
-    charge your customer support.
-  image:
-    0: https://files.readme.io/043595f-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:47.176Z'
 ---
 > 👍 

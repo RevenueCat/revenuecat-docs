@@ -3,18 +3,6 @@ title: Braze
 slug: braze
 excerpt: Integrate in-app subscription events from RevenueCat with Braze
 hidden: false
-metadata:
-  title: Braze Integration – RevenueCat
-  description: RevenueCat can automatically send subscription revenue events to Braze.
-    This can be helpful in understanding what stage a customer is in to react accordingly.
-    With accurate and up-to-date subscription data in Braze, you'll be set to turbocharge
-    your campaigns.
-  image:
-    0: https://files.readme.io/5b41162-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-04-27T20:07:18.024Z'
 category: 648c78a54082791c882e2686
 order: 2

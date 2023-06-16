@@ -3,18 +3,6 @@ title: Error Handling
 slug: errors
 excerpt: Handling errors in Purchases SDK
 hidden: false
-metadata:
-  title: Error Handling – RevenueCat
-  description: With the exception of NetworkError, PurchaseCancelledError or StoreProblemError,
-    retrying a failed operation with the same arguments won't succeed. For failed
-    purchases, assume the user wasn't charged, unless a `StoreProblemError` occurred
-    - in which case the user may or may not have been charged.
-  image:
-    0: https://files.readme.io/a5a8894-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-27T15:08:14.630Z'
 category: 648c78a4ec91de0019fd4f76
 order: 1

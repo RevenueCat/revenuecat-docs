@@ -3,16 +3,6 @@ title: Amazon S3
 slug: etl-s3-deprecated
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-metadata:
-  title: Amazon S3 – RevenueCat
-  description: Once you have this information, you can add it to the S3 integration
-    settings for your app in RevenueCat.
-  image:
-    0: https://files.readme.io/9894d95-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-10-02T02:49:29.429Z'
 ---
 To start receiving these deliveries, you'll need the following details:

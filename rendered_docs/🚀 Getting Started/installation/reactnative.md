@@ -3,16 +3,6 @@ title: React Native
 slug: reactnative
 excerpt: Instructions for installing Purchases SDK for React Native
 hidden: false
-metadata:
-  title: Install React Native SDK – RevenueCat
-  description: The RevenueCat Purchases SDK handles the pain points of in-app purchases
-    and subscriptions for React Native, so you can get back to building your app.
-  image:
-    0: https://files.readme.io/85087e6-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-20T17:32:28.902Z'
 category: 648c78a1dbb1aa005e52ed52
 order: 2

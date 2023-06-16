@@ -3,19 +3,6 @@ title: Migrating Subscriptions
 slug: migrating-existing-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: false
-metadata:
-  title: Migrating in-app subscriptions to RevenueCat
-  description: If you already have an existing app that is using subscriptions, it's
-    easy to migrate them over to RevenueCat. You can use the Purchases SDK to replace
-    all of your in-app-purchase code, or you can just use it alongside your current
-    stack to track in-app-purchases and benefit from our charting, webhooks, and other
-    integrations.
-  image:
-    0: https://files.readme.io/a57161b-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-03-02T20:33:26.499Z'
 category: 648c78a2becc511ba812b3f7
 order: 0

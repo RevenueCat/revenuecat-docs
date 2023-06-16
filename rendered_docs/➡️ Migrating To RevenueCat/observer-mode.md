@@ -3,18 +3,6 @@ title: Observer Mode
 slug: observer-mode
 excerpt: Using RevenueCat without changing existing purchase code
 hidden: false
-metadata:
-  title: Observer Mode – RevenueCat
-  description: In some cases, if you have already built a functioning subscription
-    system, it may not be possible or feasible to use the Purchases SDK to make purchases.
-    However, you can still use the SDK to get access to the advanced charting, webhooks,
-    and attribution that RevenueCat can provide.
-  image:
-    0: https://files.readme.io/8301ff3-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2023-05-30T15:16:00.743Z'
 category: 648c78a2becc511ba812b3f7
 order: 1

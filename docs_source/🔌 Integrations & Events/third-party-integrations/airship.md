@@ -3,17 +3,6 @@ title: Airship
 slug: airship
 excerpt: Integrate in-app purchase events from RevenueCat with Airship
 hidden: false
-metadata:
-  title: Airship Integration – RevenueCat
-  description: RevenueCat can automatically sync subscription events with Airship.
-    This is useful for pairing customer lifecycle events and revenue with Airship's
-    features.
-  image:
-    0: https://files.readme.io/62b5dcd-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2021-09-30T01:49:47.596Z'
 ---
 > 👍 

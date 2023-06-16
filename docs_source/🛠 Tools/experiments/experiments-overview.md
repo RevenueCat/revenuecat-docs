@@ -2,17 +2,6 @@
 title: Experiments Overview
 slug: experiments-overview
 hidden: true
-metadata:
-  title: Experiments Overview – RevenueCat
-  description: Experiments allow you to answer questions about your users' behaviors
-    and app's business by A/B testing two offerings in your app and computing the
-    LTV of each one based on the revenue generated.
-  image:
-    0: https://files.readme.io/fd52da3-RevenueCat_Docs_OG.png
-    1: RevenueCat Docs OG.png
-    2: 1200
-    3: 627
-    4: "#f7f5f5"
 createdAt: '2020-07-09T16:43:38.169Z'
 ---
 [block:callout]

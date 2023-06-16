@@ -3,7 +3,6 @@ title: Update Subscriber Attributes
 slug: update-subscriber-attributes
 excerpt: Updates subscriber attributes for a user.
 hidden: false
-metadata:
 createdAt: '2023-04-12T01:31:25.955Z'
 ---
 ## Response
