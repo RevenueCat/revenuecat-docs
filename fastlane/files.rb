@@ -3,6 +3,7 @@ def markdown_files(folder = SOURCE_FOLDER)
         Dir.glob("#{folder}/**/*.md")
     end
 end
+
 def yaml_data(filename)
     Dir.chdir(root_dir) do
         file = File.read(filename)
