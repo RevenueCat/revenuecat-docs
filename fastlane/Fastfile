@@ -19,10 +19,9 @@ require 'pathname'
 require 'yaml'
 import 'readme_api/api.rb'
 import 'readme_api/versions.rb'
+import 'categories.rb'
+import 'files.rb'
 
-CATEGORIES_FILE = "docs_source/categories.json"
-CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
-CATEGORIES_MAP_FILE = "docs_source/categories_map.json"
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
 RENDER_FOLDER = "rendered_docs"
@@ -159,6 +158,9 @@ lane :update_docs_structure do |options|
     UI.user_error!("Missing README API key") unless readme_api_key
 
     folder_path = RENDER_FOLDER
+
+    # TODO replace with production
+    update_categories_file(CATEGORIES_TEST_FILE, readme_api_key)
 
     markdown_files(folder_path).each do |file|
         UI.message("Updating #{file}")
@@ -373,6 +375,10 @@ lane :sync_order_with_test_project do |options|
             end
         end
     end
+end
+
+lane :check_docs do |options|
+    check_docs_for_category(RENDER_FOLDER)
 end
 
 ##
@@ -605,10 +611,12 @@ def update_doc_information(filename, category_id, order, parent_doc_id)
         yaml_header, content = file.split('---', 3)[1..-1]
         yaml_data = YAML.load(yaml_header)
 
-        original_category = yaml_data['category']
-        if original_category != category_id
-            UI.message("Updating category of #{filename} from #{original_category} to #{category_id}")
-            yaml_data['category'] = category_id
+        original_category = yaml_data['categorySlug']
+        category_slug = find_category_slug_from_id(category_id)
+        yaml_data.delete('category') # we don't want any category id, only the slug
+        if category_slug && original_category != category_slug
+            UI.message("Updating category of #{filename} from #{original_category} to #{category_slug}")
+            yaml_data['categorySlug'] = category_slug
         end
 
         original_order = yaml_data['order']
@@ -813,12 +821,6 @@ def process_code_block(code_item)
     end
 
     new_style_code_block
-end
-
-def markdown_files(folder = SOURCE_FOLDER)
-    Dir.chdir(root_dir) do
-        Dir.glob("#{folder}/**/*.md")
-    end
 end
 
 def git_repo_dirty?
