@@ -22,7 +22,8 @@ Minimum target: iOS 11.0+
 To use this plugin, add `purchases_flutter` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/)  (and run an implicit dart pub get):
 ```yaml pubspec.yaml
 dependencies:
-  purchases_flutter: ^4.0.0
+  purchases_flutter: ^4.1.0
+
 ```
 
 Alternatively run this command:
