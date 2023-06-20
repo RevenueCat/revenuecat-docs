@@ -138,6 +138,14 @@ readme_api_key, STRING Readme API key for the project
 force_update_categories BOOLEAN True will force the categories.json to be updated, false will use the existing categories.json
 
 
+### check_docs
+
+```sh
+[bundle exec] fastlane check_docs
+```
+
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
