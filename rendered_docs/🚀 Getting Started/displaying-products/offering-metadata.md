@@ -3,7 +3,7 @@ title: Offering metadata (beta)
 slug: offering-metadata
 hidden: false
 createdAt: '2023-05-12T16:04:40.191Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 0
 parentDoc: 648c7ee8f6668b004fda3cdc
 ---

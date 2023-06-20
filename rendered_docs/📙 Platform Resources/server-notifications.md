@@ -4,7 +4,7 @@ slug: server-notifications
 excerpt: Informing RevenueCat of updates to user purchases
 hidden: false
 createdAt: '2022-09-15T19:16:00.342Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 7
 ---
 Platform Server Notifications are notifications sent from **supported stores _to_ RevenueCat**, and are configured in the dashboards of each store. These notifications are intended to inform RevenueCat of updates to purchases, so we can ensure we send events in a timely manner.

@@ -4,7 +4,7 @@ slug: subscribers
 excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: false
 createdAt: '2023-04-12T01:31:25.949Z'
-category: 648c78a01e4bc0001816c9fa
+categorySlug: revenuecat-api-v1
 order: 999
 ---
 > 📘 Get OR create a subscriber

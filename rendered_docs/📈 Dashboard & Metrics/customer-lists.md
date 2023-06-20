@@ -4,7 +4,7 @@ slug: customer-lists
 excerpt: Cohort and export your customers
 hidden: false
 createdAt: '2021-01-18T18:46:58.144Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 2
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.

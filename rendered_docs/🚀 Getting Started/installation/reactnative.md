@@ -4,7 +4,7 @@ slug: reactnative
 excerpt: Instructions for installing Purchases SDK for React Native
 hidden: false
 createdAt: '2023-03-20T17:32:28.902Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 2
 parentDoc: 648c7f084ca0960014e5d032
 ---

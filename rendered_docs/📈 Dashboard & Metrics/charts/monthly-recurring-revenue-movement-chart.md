@@ -3,7 +3,7 @@ title: Monthly Recurring Revenue Movement Chart
 slug: monthly-recurring-revenue-movement-chart
 hidden: false
 createdAt: '2022-10-19T15:34:02.217Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 9
 parentDoc: 648c7ee8b4629e1fd0fb39b5
 ---

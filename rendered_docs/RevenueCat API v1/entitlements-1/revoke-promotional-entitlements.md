@@ -5,7 +5,7 @@ excerpt: Revokes all promotional entitlements for a given entitlement identifier
   app user ID.
 hidden: false
 createdAt: '2023-04-12T01:31:25.953Z'
-category: 648c78a01e4bc0001816c9fa
+categorySlug: revenuecat-api-v1
 order: 999
 ---
 > 🚧 Secret API Key Required

@@ -4,7 +4,7 @@ slug: sample-apps
 excerpt: Example usage of RevenueCat's SDK
 hidden: false
 createdAt: '2022-10-18T14:05:26.509Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 9
 ---
 Sample apps are currently included in each SDK repository and demonstrate how to integrate the SDK in your own apps.

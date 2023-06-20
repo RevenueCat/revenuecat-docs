@@ -4,7 +4,7 @@ slug: price-changes
 excerpt: Adjusting your pricing model
 hidden: false
 createdAt: '2020-07-01T18:49:02.585Z'
-category: 648c78a4e3e59c1ef6311572
+categorySlug: subscription-guidance
 order: 3
 ---
 If subscription prices are changed via App Store Connect or Google Play, any active subscribers may need to opt-in to the new price. If the user does not opt-in, their subscription may be canceled by [Apple](https://help.apple.com/app-store-connect/#/devc9870599e) or [Google](https://support.google.com/googleplay/android-developer/answer/140504?hl=en).

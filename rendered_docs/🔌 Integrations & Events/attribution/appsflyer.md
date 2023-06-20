@@ -4,7 +4,7 @@ slug: appsflyer
 excerpt: Integrate Purchases SDK with AppsFlyer for precise revenue tracking
 hidden: false
 createdAt: '2023-04-07T05:51:02.908Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 2
 parentDoc: 648c7ee73ccbe61ab66dce20
 ---

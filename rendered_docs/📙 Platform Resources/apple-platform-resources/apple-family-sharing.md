@@ -4,7 +4,7 @@ slug: apple-family-sharing
 excerpt: Let users share their subscriptions with Family Sharing
 hidden: false
 createdAt: '2021-02-09T20:34:15.268Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 3
 parentDoc: 648c7f0801ab9d0074c85913
 ---

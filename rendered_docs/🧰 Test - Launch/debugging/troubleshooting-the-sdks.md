@@ -3,7 +3,7 @@ title: Troubleshooting the SDKs
 slug: troubleshooting-the-sdks
 hidden: false
 createdAt: '2021-05-03T18:59:17.242Z'
-category: 648c78a4ec91de0019fd4f76
+categorySlug: test-launch
 order: 1
 parentDoc: 648c7ee83ccbe61ab66dce23
 ---

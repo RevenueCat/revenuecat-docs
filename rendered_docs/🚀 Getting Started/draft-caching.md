@@ -4,8 +4,8 @@ slug: draft-caching
 excerpt: Working with the cache
 hidden: true
 createdAt: '2020-04-14T01:50:29.653Z'
-category: 648c78a1dbb1aa005e52ed52
-order: 15
+categorySlug: getting-started
+order: 14
 ---
 The Purchases SDK caches the user's subscription information, products, packages, offerings, and entitlements to make sure your app works in the event of a network outage.
 

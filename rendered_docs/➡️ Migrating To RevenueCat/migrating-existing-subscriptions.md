@@ -4,7 +4,7 @@ slug: migrating-existing-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: false
 createdAt: '2023-03-02T20:33:26.499Z'
-category: 648c78a2becc511ba812b3f7
+categorySlug: ️-migrating-to-revenuecat
 order: 0
 ---
 [block:parameters]

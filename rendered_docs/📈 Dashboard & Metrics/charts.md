@@ -4,7 +4,7 @@ slug: charts
 excerpt: Analyzing your subscription business with visualizations
 hidden: false
 createdAt: '2023-03-27T21:48:14.553Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 1
 ---
 [block:callout]

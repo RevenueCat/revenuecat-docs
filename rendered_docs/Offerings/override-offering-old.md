@@ -4,7 +4,7 @@ slug: override-offering-old
 excerpt: Overrides the current Offering for a specific user
 hidden: true
 createdAt: '2020-09-30T21:21:26.551Z'
-category: 648c78a25d0303006e6cf4fd
+categorySlug: offerings
 order: 1
 ---
 [block:callout]

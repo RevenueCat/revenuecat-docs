@@ -4,7 +4,7 @@ slug: webhooks
 excerpt: Enhanced server-to-server notifications from webhooks
 hidden: false
 createdAt: '2023-04-27T20:36:54.104Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 1
 ---
 > 👍 

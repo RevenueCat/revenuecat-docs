@@ -4,7 +4,7 @@ slug: stripe-server-notifications
 excerpt: Sending Stripe server notifications to RevenueCat
 hidden: false
 createdAt: '2020-09-29T15:21:50.023Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 2
 parentDoc: 648c7ee7ad45780012e23932
 ---

@@ -4,7 +4,7 @@ slug: new-charts-transition
 excerpt: Migrating workflows from Original Charts to the New Charts beta
 hidden: true
 createdAt: '2021-06-10T16:41:59.584Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 0
 parentDoc: 648c7ee8b4629e1fd0fb39b5
 ---

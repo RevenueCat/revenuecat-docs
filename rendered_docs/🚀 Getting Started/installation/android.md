@@ -4,7 +4,7 @@ slug: android
 excerpt: Instructions for installing Purchases SDK for Android
 hidden: false
 createdAt: '2023-04-17T16:07:45.008Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 1
 parentDoc: 648c7f084ca0960014e5d032
 ---

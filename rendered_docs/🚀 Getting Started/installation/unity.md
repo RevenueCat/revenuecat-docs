@@ -4,7 +4,7 @@ slug: unity
 excerpt: Instructions for installing Purchases SDK for Unity
 hidden: false
 createdAt: '2023-03-20T17:32:01.487Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 6
 parentDoc: 648c7f084ca0960014e5d032
 ---

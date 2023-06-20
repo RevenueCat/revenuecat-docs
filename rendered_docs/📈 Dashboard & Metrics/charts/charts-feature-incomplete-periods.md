@@ -3,7 +3,7 @@ title: 'Charts Feature: Incomplete Periods'
 slug: charts-feature-incomplete-periods
 hidden: false
 createdAt: '2022-12-23T06:33:08.471Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 17
 parentDoc: 648c7ee8b4629e1fd0fb39b5
 ---

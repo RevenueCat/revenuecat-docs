@@ -5,7 +5,7 @@ excerpt: Revokes all promotional entitlements for a given entitlement identifier
   app user ID.
 hidden: true
 createdAt: '2019-08-09T05:51:54.980Z'
-category: 648c78a4c1e1d0002ce08aeb
+categorySlug: promotional-entitlements
 order: 1
 ---
 [block:callout]

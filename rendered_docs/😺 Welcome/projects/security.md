@@ -4,7 +4,7 @@ slug: security
 excerpt: Enabling two-factor authentication for your RevenueCat account
 hidden: false
 createdAt: '2019-12-20T21:05:57.489Z'
-category: 648c78a099dd520072cf6530
+categorySlug: welcome
 order: 1
 parentDoc: 648c7f0806750b000c6ec33b
 ---

@@ -4,7 +4,7 @@ slug: defer-a-google-subscription-old
 excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: true
 createdAt: '2020-09-23T22:55:40.021Z'
-category: 648c78a341e07c0c6151fa1e
+categorySlug: transactions-purchases
 order: 3
 ---
 [block:callout]

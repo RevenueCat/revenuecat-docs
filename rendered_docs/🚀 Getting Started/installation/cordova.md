@@ -4,7 +4,7 @@ slug: cordova
 excerpt: Instructions for installing Purchases SDK for Cordova
 hidden: false
 createdAt: '2023-03-20T17:32:08.635Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 4
 parentDoc: 648c7f084ca0960014e5d032
 ---

@@ -3,7 +3,7 @@ title: Rate Limit
 slug: rate-limit
 hidden: false
 createdAt: '2023-04-11T22:43:01.120Z'
-category: 648c78a5d7d50a06b022afb2
+categorySlug: developer-api
 order: 4
 ---
 We will return the following headers on all successful requests:

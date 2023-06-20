@@ -3,7 +3,7 @@ title: Churn
 slug: churn
 hidden: true
 createdAt: '2022-06-28T21:07:31.798Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 2
 parentDoc: 648c7ee8afbbbc001d6a0c55
 ---

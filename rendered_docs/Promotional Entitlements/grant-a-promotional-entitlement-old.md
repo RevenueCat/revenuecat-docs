@@ -5,7 +5,7 @@ excerpt: Grants a user a promotional entitlement. Does not override or defer a s
   transaction, applied simultaneously.
 hidden: true
 createdAt: '2019-08-09T05:30:42.631Z'
-category: 648c78a4c1e1d0002ce08aeb
+categorySlug: promotional-entitlements
 order: 0
 ---
 [block:callout]

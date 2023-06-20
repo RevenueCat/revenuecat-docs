@@ -3,7 +3,7 @@ title: Amazon Small Business Accelerator Program
 slug: amazon-small-business-accelerator-program
 hidden: false
 createdAt: '2022-08-12T14:05:45.511Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 0
 parentDoc: 648c7ee82fac1f0064960305
 ---

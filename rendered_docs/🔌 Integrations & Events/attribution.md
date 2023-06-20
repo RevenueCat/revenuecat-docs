@@ -4,7 +4,7 @@ slug: attribution
 excerpt: Integrate and collect attribution data with Purchases SDK
 hidden: false
 createdAt: '2022-06-23T17:21:20.022Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 3
 ---
 [block:callout]

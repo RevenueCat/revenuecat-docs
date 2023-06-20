@@ -4,7 +4,7 @@ slug: account-management
 excerpt: Managing your account and changing plans
 hidden: false
 createdAt: '2022-06-21T17:37:20.347Z'
-category: 648c78a099dd520072cf6530
+categorySlug: welcome
 order: 2
 parentDoc: 648c7f0806750b000c6ec33b
 ---

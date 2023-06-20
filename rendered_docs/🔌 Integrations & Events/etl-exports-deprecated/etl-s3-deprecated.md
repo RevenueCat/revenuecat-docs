@@ -4,7 +4,7 @@ slug: etl-s3-deprecated
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
 createdAt: '2020-10-02T02:49:29.429Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 0
 parentDoc: 648c7ee7afbbbc001d6a0c53
 ---

@@ -4,7 +4,7 @@ slug: launch-checklist
 excerpt: Purchases SDK pre-launch checklist
 hidden: false
 createdAt: '2023-01-11T10:40:23.101Z'
-category: 648c78a4ec91de0019fd4f76
+categorySlug: test-launch
 order: 3
 ---
 This document contains a checklist of things to consider before launching subscriptions in your app to production.

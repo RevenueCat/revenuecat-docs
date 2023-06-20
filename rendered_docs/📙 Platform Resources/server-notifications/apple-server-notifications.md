@@ -4,7 +4,7 @@ slug: apple-server-notifications
 excerpt: Sending App Store server notifications to RevenueCat
 hidden: false
 createdAt: '2020-09-29T15:21:09.333Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 0
 parentDoc: 648c7ee7ad45780012e23932
 ---
