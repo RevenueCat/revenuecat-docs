@@ -1,8 +1,8 @@
 name: Check docs ✅
 
 on:
-  push
-  pull_request
+  push:
+  pull_request:
 
 jobs:
   embed_code:
