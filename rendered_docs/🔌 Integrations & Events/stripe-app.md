@@ -5,7 +5,7 @@ excerpt: Install and use the RevenueCat App in Stripe App Marketplace
 hidden: false
 createdAt: '2022-04-13T22:30:41.204Z'
 category: 648c78a54082791c882e2686
-order: 8
+order: 9
 ---
 The RevenueCat App in Stripe's App Marketplace combines Stripe’s customer and billing data with enriched data from RevenueCat’s native cross-platform SDKs and subscription backend. Rather than context switching between RevenueCat’s customer details and Stripe’s customer profile in multiple windows, the RevenueCat App combines RevenueCat data into a single page view within Stripe. 
 

@@ -5,7 +5,7 @@ excerpt: Get up and running with mobile subscriptions
 hidden: true
 createdAt: '2021-05-26T18:44:55.163Z'
 category: 648c78a1dbb1aa005e52ed52
-order: 18
+order: 19
 ---
 This guide will walk you through how to get up and running with subscriptions and the Purchases SDK with only a few lines of code.
 
