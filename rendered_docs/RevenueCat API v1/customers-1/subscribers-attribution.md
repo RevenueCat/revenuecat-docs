@@ -4,7 +4,7 @@ slug: subscribers-attribution
 excerpt: Attaches attribution data to a subscriber from specific supported networks.
 hidden: false
 createdAt: '2023-04-12T01:31:25.952Z'
-category: 648c78a01e4bc0001816c9fa
+categorySlug: revenuecat-api-v1
 order: 999
 ---
 ### Attribution Source Network Codes

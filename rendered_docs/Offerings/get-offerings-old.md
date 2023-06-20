@@ -4,7 +4,7 @@ slug: get-offerings-old
 excerpt: Gets the offerings for your app.
 hidden: true
 createdAt: '2020-12-30T01:38:59.895Z'
-category: 648c78a25d0303006e6cf4fd
+categorySlug: offerings
 order: 0
 ---
 [block:callout]

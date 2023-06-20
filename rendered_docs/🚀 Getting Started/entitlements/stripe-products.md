@@ -4,7 +4,7 @@ slug: stripe-products
 excerpt: Setting up products in the Stripe Dashboard
 hidden: false
 createdAt: '2020-07-01T20:11:18.247Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 4
 parentDoc: 648c7ee85e81230012ca5edf
 ---

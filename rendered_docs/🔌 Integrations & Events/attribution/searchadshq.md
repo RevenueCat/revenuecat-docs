@@ -4,7 +4,7 @@ slug: searchadshq
 excerpt: Integrate Purchases SDK with SearchAdsHQ for precise revenue tracking
 hidden: true
 createdAt: '2020-07-30T17:43:45.879Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 9
 parentDoc: 648c7ee73ccbe61ab66dce20
 ---

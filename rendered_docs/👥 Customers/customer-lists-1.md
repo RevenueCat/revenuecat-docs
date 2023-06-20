@@ -5,6 +5,6 @@ hidden: false
 createdAt: '2022-06-24T13:13:14.597Z'
 type: link
 link_url: https://www.revenuecat.com/docs/customer-lists
-category: 648c78a343e9f503a273d2d6
+categorySlug: customers-1
 order: 3
 ---

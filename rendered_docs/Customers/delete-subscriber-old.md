@@ -4,7 +4,7 @@ slug: delete-subscriber-old
 excerpt: Permanently deletes a subscriber.
 hidden: true
 createdAt: '2019-08-09T05:20:54.035Z'
-category: 648c78a1ad45780012e19229
+categorySlug: customers
 order: 2
 ---
 > 🚧 Secret API Key Required

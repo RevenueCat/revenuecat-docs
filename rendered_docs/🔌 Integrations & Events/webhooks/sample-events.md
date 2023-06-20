@@ -4,7 +4,7 @@ slug: sample-events
 excerpt: Example webhooks sent from RevenueCat
 hidden: false
 createdAt: '2023-04-27T16:36:52.205Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 2
 parentDoc: 648c7ee7de5aa2000aea06e2
 ---

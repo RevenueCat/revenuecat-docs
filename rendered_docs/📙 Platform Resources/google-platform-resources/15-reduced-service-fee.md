@@ -4,7 +4,7 @@ slug: 15-reduced-service-fee
 excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
 createdAt: '2021-10-05T15:55:44.276Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 1
 parentDoc: 648c7f065abd5900755751a0
 ---

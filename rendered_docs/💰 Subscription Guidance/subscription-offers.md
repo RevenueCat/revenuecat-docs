@@ -4,7 +4,7 @@ slug: subscription-offers
 excerpt: How to give your customers subscription discounts
 hidden: false
 createdAt: '2022-06-21T21:53:53.114Z'
-category: 648c78a4e3e59c1ef6311572
+categorySlug: subscription-guidance
 order: 0
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.

@@ -3,7 +3,7 @@ title: Active Entitlements
 slug: active-entitlements
 hidden: false
 createdAt: '2020-04-06T21:46:06.712Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 2
 parentDoc: 648c7ee63d0e7f00669ced48
 ---

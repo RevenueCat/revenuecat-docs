@@ -3,7 +3,7 @@ title: Experiments Results
 slug: experiments-results
 hidden: true
 createdAt: '2020-07-09T16:53:54.410Z'
-category: 648c78a647c7f2002d529591
+categorySlug: tools
 order: 2
 parentDoc: 648c7ee8bb1ecb1d12ba7ba3
 ---

@@ -4,7 +4,7 @@ slug: ios-products
 excerpt: Setting up your in-app purchases in App Store Connect
 hidden: false
 createdAt: '2020-06-26T22:03:53.379Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 0
 parentDoc: 648c7ee85e81230012ca5edf
 ---

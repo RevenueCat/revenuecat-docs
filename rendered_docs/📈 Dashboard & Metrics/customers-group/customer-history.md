@@ -3,7 +3,7 @@ title: Customer History
 slug: customer-history
 hidden: false
 createdAt: '2020-04-06T21:46:07.215Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 1
 parentDoc: 648c7ee63d0e7f00669ced48
 ---

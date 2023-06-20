@@ -4,8 +4,8 @@ slug: configuring-products
 excerpt: Understanding Offers and Entitlements and configuring products with RevenueCat
 hidden: true
 createdAt: '2020-06-29T17:46:24.356Z'
-category: 648c78a1dbb1aa005e52ed52
-order: 16
+categorySlug: getting-started
+order: 15
 ---
 The RevenueCat dashboard allows you to specify what level of access each product should unlock for your users, which can greatly simplify your in-app code to check for subscription access. The dashboard also allows you to configure which in-app products are shown to your users remotely, so you can control how they're presented without the need to update your app. This is great for experimenting how different product configurations affect key subscription metrics.
 

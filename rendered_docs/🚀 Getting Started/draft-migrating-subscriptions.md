@@ -4,8 +4,8 @@ slug: draft-migrating-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
 createdAt: '2022-05-31T22:03:36.901Z'
-category: 648c78a1dbb1aa005e52ed52
-order: 21
+categorySlug: getting-started
+order: 20
 ---
 If you already have an existing app that is using subscriptions, it's easy to migrate them over to RevenueCat. 
 Whether you're looking to replace all of your in-app-purchase code, or use RevenueCat along side your current setup in [Observer Mode](doc:observer-mode), this guide will help you get started.

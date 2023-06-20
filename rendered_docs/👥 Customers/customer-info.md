@@ -4,7 +4,7 @@ slug: customer-info
 excerpt: Determining the subscription status for a user.
 hidden: false
 createdAt: '2023-05-15T19:23:48.680Z'
-category: 648c78a343e9f503a273d2d6
+categorySlug: customers-1
 order: 1
 ---
 RevenueCat makes it easy to determine subscription status and more with the _Purchases SDK_ and [REST API](https://docs.revenuecat.com/reference). 

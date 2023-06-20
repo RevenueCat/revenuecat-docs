@@ -4,7 +4,7 @@ slug: activity
 excerpt: Real-time transaction dashboard
 hidden: true
 createdAt: '2020-04-02T23:21:08.116Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 4
 ---
 [block:callout]

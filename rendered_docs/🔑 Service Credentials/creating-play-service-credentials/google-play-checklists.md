@@ -4,7 +4,7 @@ slug: google-play-checklists
 excerpt: Check your configuration setup step by step.
 hidden: false
 createdAt: '2023-04-25T20:10:32.492Z'
-category: 648c78a7dc963f0050281503
+categorySlug: service-credentials
 order: 0
 parentDoc: 648c7ee9e340a5000b2703ba
 ---

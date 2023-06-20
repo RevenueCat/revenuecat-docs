@@ -3,7 +3,7 @@ title: Google Play Pass
 slug: google-play-pass
 hidden: false
 createdAt: '2021-01-15T01:12:53.088Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 0
 parentDoc: 648c7f065abd5900755751a0
 ---

@@ -4,7 +4,7 @@ slug: app-store-rejections
 excerpt: Your app was rejected. Now what?
 hidden: false
 createdAt: '2020-06-10T15:10:23.774Z'
-category: 648c78a4ec91de0019fd4f76
+categorySlug: test-launch
 order: 4
 ---
 [block:callout]

@@ -4,7 +4,7 @@ slug: adjust
 excerpt: Integrate Purchases SDK with Adjust for precise revenue tracking
 hidden: false
 createdAt: '2023-03-28T21:07:09.611Z'
-category: 648c78a54082791c882e2686
+categorySlug: integrations-events
 order: 0
 parentDoc: 648c7ee73ccbe61ab66dce20
 ---

@@ -3,7 +3,7 @@ title: Monthly Recurring Revenue (MRR) Chart
 slug: monthly-recurring-revenue-mrr-chart
 hidden: false
 createdAt: '2022-10-19T15:33:28.776Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 8
 parentDoc: 648c7ee8b4629e1fd0fb39b5
 ---

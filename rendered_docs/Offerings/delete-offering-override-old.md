@@ -5,7 +5,7 @@ excerpt: Reset the offering overrides back to the current offering for a specifi
   user
 hidden: true
 createdAt: '2020-09-30T21:24:12.413Z'
-category: 648c78a25d0303006e6cf4fd
+categorySlug: offerings
 order: 2
 ---
 [block:callout]

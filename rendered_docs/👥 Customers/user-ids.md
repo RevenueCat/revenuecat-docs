@@ -4,7 +4,7 @@ slug: user-ids
 excerpt: How RevenueCat handles user identity
 hidden: false
 createdAt: '2023-05-09T18:27:09.193Z'
-category: 648c78a343e9f503a273d2d6
+categorySlug: customers-1
 order: 0
 ---
 RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.

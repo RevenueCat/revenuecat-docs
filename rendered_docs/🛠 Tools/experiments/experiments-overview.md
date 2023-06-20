@@ -3,7 +3,7 @@ title: Experiments Overview
 slug: experiments-overview
 hidden: true
 createdAt: '2020-07-09T16:43:38.169Z'
-category: 648c78a647c7f2002d529591
+categorySlug: tools
 order: 0
 parentDoc: 648c7ee8bb1ecb1d12ba7ba3
 ---

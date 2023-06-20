@@ -3,7 +3,7 @@ title: Amazon Appstore
 slug: amazon-store-sandbox-testing
 hidden: false
 createdAt: '2021-11-16T15:51:06.005Z'
-category: 648c78a4ec91de0019fd4f76
+categorySlug: test-launch
 order: 2
 parentDoc: 648c7ee85d0303006e6d8fcc
 ---

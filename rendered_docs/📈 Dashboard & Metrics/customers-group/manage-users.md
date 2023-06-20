@@ -3,7 +3,7 @@ title: Deleting Users
 slug: manage-users
 hidden: false
 createdAt: '2020-04-06T21:46:08.709Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 8
 parentDoc: 648c7ee63d0e7f00669ced48
 ---

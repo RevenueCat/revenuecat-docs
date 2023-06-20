@@ -4,7 +4,7 @@ slug: experiments
 excerpt: A/B testing two offerings in your app
 hidden: true
 createdAt: '2020-07-09T16:40:41.516Z'
-category: 648c78a647c7f2002d529591
+categorySlug: tools
 order: 1
 ---
 [block:callout]

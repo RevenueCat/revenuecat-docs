@@ -4,7 +4,7 @@ slug: subscribers-old
 excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: true
 createdAt: '2018-05-08T17:13:32.048Z'
-category: 648c78a1ad45780012e19229
+categorySlug: customers
 order: 0
 ---
 [block:callout]

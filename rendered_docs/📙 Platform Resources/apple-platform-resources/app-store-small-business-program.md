@@ -4,7 +4,7 @@ slug: app-store-small-business-program
 excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
 createdAt: '2020-12-11T16:33:54.497Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 1
 parentDoc: 648c7f0801ab9d0074c85913
 ---

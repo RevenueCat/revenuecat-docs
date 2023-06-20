@@ -5,6 +5,6 @@ hidden: false
 createdAt: '2022-08-16T13:57:03.093Z'
 type: link
 link_url: https://www.revenuecat.com/docs/promotionals
-category: 648c78a4e3e59c1ef6311572
+categorySlug: subscription-guidance
 order: 5
 ---

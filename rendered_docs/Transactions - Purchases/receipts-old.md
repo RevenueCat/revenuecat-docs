@@ -5,7 +5,7 @@ excerpt: Records a purchase for a user from iOS, Android, or Stripe and will cre
   a user if they don't already exist.
 hidden: true
 createdAt: '2018-05-08T17:27:35.964Z'
-category: 648c78a341e07c0c6151fa1e
+categorySlug: transactions-purchases
 order: 0
 ---
 # Parameter Reference

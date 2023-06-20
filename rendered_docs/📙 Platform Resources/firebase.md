@@ -4,7 +4,7 @@ slug: firebase
 excerpt: Integrate your Firebase app with RevenueCat
 hidden: true
 createdAt: '2022-05-11T20:25:11.081Z'
-category: 648c78a7ec91de0019fd4f79
+categorySlug: platform-resources
 order: 4
 ---
 # What is RevenueCat?

@@ -3,7 +3,7 @@ title: Active Trials Chart
 slug: active-trials-chart
 hidden: false
 createdAt: '2022-10-19T15:37:33.630Z'
-category: 648c78a49909bc0c3debff17
+categorySlug: dashboard-metrics
 order: 15
 parentDoc: 648c7ee8b4629e1fd0fb39b5
 ---

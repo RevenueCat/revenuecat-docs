@@ -4,7 +4,7 @@ slug: ionic
 excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
 createdAt: '2020-04-07T20:32:01.037Z'
-category: 648c78a1dbb1aa005e52ed52
+categorySlug: getting-started
 order: 5
 parentDoc: 648c7f084ca0960014e5d032
 ---

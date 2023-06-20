@@ -4,8 +4,8 @@ slug: readme-markdown-tutorial
 excerpt: Common markdown elements and their ReadMe interpretations
 hidden: true
 createdAt: '2023-02-06T21:01:59.579Z'
-category: 648c78a1dbb1aa005e52ed52
-order: 24
+categorySlug: getting-started
+order: 23
 ---
 <!--
 Hidden Markdown Comment

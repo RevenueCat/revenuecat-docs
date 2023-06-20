@@ -3,7 +3,7 @@ title: Rate Limits
 slug: rate-limits
 hidden: true
 createdAt: '2021-11-18T20:51:32.232Z'
-category: 648c78a01e4bc0001816c9fa
+categorySlug: revenuecat-api-v1
 order: 0
 ---
 # Outline

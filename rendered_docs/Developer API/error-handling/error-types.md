@@ -3,7 +3,7 @@ title: Error Types
 slug: error-types
 hidden: false
 createdAt: '2023-04-11T22:27:04.677Z'
-category: 648c78a5d7d50a06b022afb2
+categorySlug: developer-api
 order: 1
 parentDoc: 648c7ee7295bce0041c10522
 ---
