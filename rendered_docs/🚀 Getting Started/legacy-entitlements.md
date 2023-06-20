@@ -4,7 +4,7 @@ slug: legacy-entitlements
 hidden: true
 createdAt: '2019-08-29T20:15:45.785Z'
 category: 648c78a1dbb1aa005e52ed52
-order: 11
+order: 12
 ---
 [block:callout]
 {

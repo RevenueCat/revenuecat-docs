@@ -5,7 +5,7 @@ excerpt: Setting up S3 access keys for data transfer
 hidden: true
 createdAt: '2020-10-07T00:35:55.719Z'
 category: 648c78a54082791c882e2686
-order: 4
+order: 5
 ---
 [block:callout]
 {
