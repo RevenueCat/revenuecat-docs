@@ -5,7 +5,7 @@ excerpt: Connecting RevenueCat to Alternative Platforms
 hidden: false
 createdAt: '2023-02-07T17:58:01.794Z'
 category: 648c78a54082791c882e2686
-order: 8
+order: 7
 ---
 Maybe you already use a certain platform and are hoping for a way to send it data from RevenueCat, or are looking to fill a specific need or use case, a new way to calculate revenue or push marketing efforts. 
 

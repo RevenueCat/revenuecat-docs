@@ -5,7 +5,7 @@ excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
 createdAt: '2020-10-02T02:46:37.589Z'
 category: 648c78a54082791c882e2686
-order: 6
+order: 5
 ---
 [block:callout]
 {
