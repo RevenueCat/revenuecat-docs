@@ -5,7 +5,7 @@ excerpt: Migrating to Offerings from a legacy setup
 hidden: true
 createdAt: '2019-09-21T00:32:27.183Z'
 category: 648c78a1dbb1aa005e52ed52
-order: 13
+order: 12
 ---
 [block:embed]
 {
