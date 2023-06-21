@@ -49,7 +49,7 @@ jobs:
           name: Install rdme
           command: npm install -g rdme@8.6.4
       - run:
-          name: Render docs
+          name: Syncing files to Readme
           command: |
             bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
 
@@ -63,7 +63,7 @@ jobs:
       - revenuecat/install-gem-unix-dependencies:
           cache-version: v1
       - run:
-          name: Syncing files to Readme
+          name: Render docs
           command: |
             bundle exec fastlane open_syncing_pr github_pr_token:$GITHUB_TOKEN readme_api_key:$README_API_KEY
 
