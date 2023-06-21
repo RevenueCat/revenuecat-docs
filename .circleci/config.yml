@@ -75,27 +75,27 @@ workflows:
 
   render-markdown:
     jobs:
-      - render-markdown:
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: main
+      - render-markdown
+#          filters:
+#            tags:
+#              ignore: /.*/
+#            branches:
+#              only: main
 
   sync:
     jobs:
       - hold:
           type: approval
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: sync/*
+#          filters:
+#            tags:
+#              ignore: /.*/
+#            branches:
+#              only: sync/*
       - sync-files-to-readme:
           requires:
             - hold
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: sync/*
+#          filters:
+#            tags:
+#              ignore: /.*/
+#            branches:
+#              only: sync/*
