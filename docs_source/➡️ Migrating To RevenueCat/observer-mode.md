@@ -18,7 +18,6 @@ Observer Mode may be set up as part of your migration strategy to RevenueCat, or
 | Experiments                  | ❌             | ✅                |
 | Fetching Products            | ❌             | ✅                |
 | Making Purchases             | ❌             | ✅                |
-| Checking Subscription Status | ❌ \*\*        | ✅                |
 
 \*_information based around the "last seen time" and "country" may not be complete in Observer Mode_
 
