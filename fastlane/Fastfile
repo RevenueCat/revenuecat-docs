@@ -31,11 +31,6 @@ update_fastlane
 
 default_platform(:ios)
 
-desc "Install dependencies"
-lane :bootstrap do
-    sh "npm", "install", "-g", "rdme@8.6.4-next.2"
-end
-
 lane :ios_tests do
     Dir.chdir(File.join(root_dir, "projects", "iOS")) do
         sh "xcodebuild -scheme ApplePlatforms-Package -destination 'generic/platform=iOS'"

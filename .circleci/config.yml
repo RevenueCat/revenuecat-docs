@@ -1,0 +1,102 @@
+version: 2.1
+
+orbs:
+  revenuecat: revenuecat/sdks-common-config@2.2.0
+  node: circleci/node@5.1.0
+
+commands:
+  setup-git-credentials:
+    steps:
+      - run:
+          name: Setup Git config
+          command: |
+            git config user.email $GIT_EMAIL
+            git config user.name $GIT_USERNAME
+
+  trust-github-key:
+    steps:
+      - run:
+          name: Trust GitHub key
+          command: |
+            for ip in $(dig @8.8.8.8 github.com +short); \
+            do ssh-keyscan github.com,$ip; \
+            ssh-keyscan $ip; \
+            done 2>/dev/null >> ~/.ssh/known_hosts
+
+jobs:
+  check-files:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Check rendered docs are safe to sync
+          command: bundle exec fastlane check_docs
+
+  sync-files-to-readme:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: false
+          node-version: "16.13.1"
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Install rdme
+          command: npm install -g rdme@8.6.4
+      - run:
+          name: Syncing files to Readme
+          command: |
+            bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
+
+  render-markdown:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - setup-git-credentials
+      - trust-github-key
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Render docs
+          command: |
+            bundle exec fastlane open_syncing_pr github_pr_token:$GITHUB_TOKEN readme_api_key:$README_API_KEY
+
+
+workflows:
+  version: 2
+  check-files:
+    jobs:
+      - check-files
+
+  render-markdown:
+    jobs:
+      - render-markdown:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: main
+
+  sync:
+    jobs:
+      - hold:
+          type: approval
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: sync/*
+      - sync-files-to-readme:
+          requires:
+            - hold
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: sync/*
