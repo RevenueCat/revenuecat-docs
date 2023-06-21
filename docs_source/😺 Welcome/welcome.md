@@ -15,8 +15,6 @@ RevenueCat is a powerful and reliable in-app purchase server that makes it easy 
 }
 [/block]
 
-
-
 # Powering existing subscriptions with RevenueCat
 
 [block:html]
