@@ -7,8 +7,6 @@ createdAt: '2023-05-09T18:27:09.193Z'
 categorySlug: customers-1
 order: 0
 ---
-RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.
-
 # What is a customer in RevenueCat?
 
 In RevenueCat, the term "customer" refers to the person using an app that utilizes RevenueCat to handle or track the user's purchases. Every customer has a unique <<glossary:CustomerInfo>> object that can be referenced via their App User ID. As described below, the RevenueCat SDK will automatically generate anonymous App User IDs for customers unless a custom App User ID is provided by the developer. Some apps will use a combination of both custom and anonymous App User IDs, or only one App User ID type.
