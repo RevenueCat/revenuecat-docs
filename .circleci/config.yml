@@ -91,7 +91,7 @@ workflows:
             tags:
               ignore: /.*/
             branches:
-              only: sync/*
+              only: /^sync\/.*/
       - sync-files-to-readme:
           requires:
             - hold
@@ -99,4 +99,4 @@ workflows:
             tags:
               ignore: /.*/
             branches:
-              only: sync/*
+              only: /^sync\/.*/
