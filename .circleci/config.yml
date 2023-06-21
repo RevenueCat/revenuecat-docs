@@ -12,9 +12,6 @@ jobs:
       - revenuecat/install-gem-unix-dependencies:
           cache-version: v1
       - run:
-          name: Bootstrap fastlane
-          command: bundle exec fastlane bootstrap
-      - run:
           name: Check rendered docs are safe to sync
           command: bundle exec fastlane check_docs
 
