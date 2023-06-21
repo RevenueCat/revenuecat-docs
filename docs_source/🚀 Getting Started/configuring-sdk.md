@@ -6,10 +6,6 @@ createdAt: '2020-06-29T17:25:26.484Z'
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 
-> 📘 Using an older SDK (v3.x)?
-> 
-> View our migration guide to v4.x [here](doc:ios-native-3x-to-4x-migration) or view our legacy docs [here](https://docs.revenuecat.com/v3.3/docs).
-
 # Basic Configuration
 
 ## Initialization
