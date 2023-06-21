@@ -42,7 +42,6 @@ jobs:
       - checkout
       - node/install:
           install-yarn: false
-          install-npm: true
           node-version: "16.13.1"
       - revenuecat/install-gem-unix-dependencies:
           cache-version: v1
@@ -78,21 +77,21 @@ workflows:
   render-markdown:
     jobs:
       - render-markdown
-#          filters:
-#            tags:
-#              ignore: /.*/
-#            branches:
-#              only: main
+  #          filters:
+  #            tags:
+  #              ignore: /.*/
+  #            branches:
+  #              only: main
 
   sync:
     jobs:
       - hold:
           type: approval
-#          filters:
-#            tags:
-#              ignore: /.*/
-#            branches:
-#              only: sync/*
+      #          filters:
+      #            tags:
+      #              ignore: /.*/
+      #            branches:
+      #              only: sync/*
       - sync-files-to-readme:
           requires:
             - hold
