@@ -139,7 +139,7 @@ public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
 {
     public override void CustomerInfoReceived(Purchases.CustomerInfo customerInfo)
     {
-        // display new CustomerInfo
+        // display new PurchaserInfo
     }
 
     private void Start()
@@ -198,6 +198,7 @@ public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
         });
     }
 }
+
 ```
 
 # Unity Editor
