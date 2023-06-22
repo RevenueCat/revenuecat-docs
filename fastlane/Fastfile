@@ -31,11 +31,6 @@ update_fastlane
 
 default_platform(:ios)
 
-lane :ios_tests do
-    Dir.chdir(File.join(root_dir, "projects", "iOS")) do
-        sh "xcodebuild -scheme ApplePlatforms-Package -destination 'generic/platform=iOS'"
-    end
-end
 
 lane :copy_docs_source_to_render_folder do
     Dir.chdir(root_dir) do
