@@ -1,4 +1,5 @@
 require_relative '../utils.rb'
+require_relative '../files.rb'
 
 def extract_code_blocks(source_folder)
     markdown_files.each do |file_name|
