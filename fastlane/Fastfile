@@ -22,7 +22,6 @@ import 'readme_api/versions.rb'
 import 'categories.rb'
 import 'files.rb'
 import 'code_blocks/code_blocks.rb'
-import 'utils.rb'
 
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
@@ -556,10 +555,6 @@ def post_category(type, title, readme_api_key)
     Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
     end
-end
-
-def root_dir
-    File.dirname(Dir.pwd)
 end
 
 def git_repo_dirty?
