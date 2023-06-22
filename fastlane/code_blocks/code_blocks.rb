@@ -2,7 +2,7 @@ require_relative '../utils.rb'
 require_relative '../files.rb'
 
 def extract_code_blocks(source_folder)
-    markdown_files.each do |file_name|
+    markdown_files(source_folder).each do |file_name|
         UI.message("🔨 Processing #{file_name}...")
         current_folder = File.dirname(file_name)
         UI.message("🔨 Current folder #{current_folder}...")

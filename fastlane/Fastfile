@@ -238,7 +238,7 @@ lane :update_docs_categories do |options|
 
     categories = get_json_from_file(CATEGORIES_TEST_FILE)
 
-    markdown_files.each do |file|
+    markdown_files(SOURCE_FOLDER).each do |file|
         file_without_folder_path = file.gsub("#{SOURCE_FOLDER}/", "")
         category_name = file_without_folder_path.split("/")[0]
         UI.message("file_without_folder_path #{file_without_folder_path} Category name: #{category_name}")

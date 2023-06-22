@@ -1,4 +1,4 @@
-def markdown_files(folder = SOURCE_FOLDER)
+def markdown_files(folder)
     Dir.chdir(root_dir) do
         Dir.glob("#{folder}/**/*.md")
     end
