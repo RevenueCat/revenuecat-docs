@@ -2,11 +2,24 @@ require_relative '../files.rb'
 
 UI = Fastlane::UI
 
-def replace_code_group(original, replacement, file_contents)
-    json = JSON.parse("[#{replacement.join(",\n")}]")
-    pretty_json = JSON.pretty_generate(json)
-    replacement = "[block:file]\n#{pretty_json}\n[/block]\n"
-    file_contents.gsub(original.join, replacement)
+def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
+    UI.message("🔨 Extracting code blocks from #{from_files}...")
+    from_files.each do |file_name|
+        UI.message("🔨 Processing #{file_name}...")
+        current_folder = File.dirname(file_name)
+        UI.message("🔨 Current folder #{current_folder}...")
+        folder_inside_docs_source = current_folder.sub(/^#{source_folder}\//, "")
+        output_dir = "#{code_blocks_folder}/#{folder_inside_docs_source}"
+
+        file_contents = get_file_contents(file_name)
+
+        create_folder(output_dir)
+
+        file_contents = convert_old_style_code_blocks(file_contents)
+
+        modified_file_content = replace_code_block_group(file_contents, file_name, output_dir)
+        write_file_contents(file_name, modified_file_content)
+    end
 end
 
 def replace_code_block_group(file_contents, file_name, output_dir)
@@ -53,24 +66,11 @@ def replace_code_block_group(file_contents, file_name, output_dir)
     modified_file_content
 end
 
-def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
-    UI.message("🔨 Extracting code blocks from #{from_files}...")
-    from_files.each do |file_name|
-        UI.message("🔨 Processing #{file_name}...")
-        current_folder = File.dirname(file_name)
-        UI.message("🔨 Current folder #{current_folder}...")
-        folder_inside_docs_source = current_folder.sub(/^#{source_folder}\//, "")
-        output_dir = "#{code_blocks_folder}/#{folder_inside_docs_source}"
-
-        file_contents = get_file_contents(file_name)
-
-        create_folder(output_dir)
-
-        file_contents = convert_old_style_code_blocks(file_contents)
-
-        modified_file_content = replace_code_block_group(file_contents, file_name, output_dir)
-        write_file_contents(file_name, modified_file_content)
-    end
+def replace_code_group(original, replacement, file_contents)
+    json = JSON.parse("[#{replacement.join(",\n")}]")
+    pretty_json = JSON.pretty_generate(json)
+    replacement = "[block:file]\n#{pretty_json}\n[/block]\n"
+    file_contents.gsub(original.join, replacement)
 end
 
 def embed_code_blocks(render_folder, source_folder)
