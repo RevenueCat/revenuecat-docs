@@ -59,7 +59,7 @@ def replace_code_block_group(file_contents, file_name, output_dir)
     code_block_group_replacement = []
     counter = 0
 
-    lines = file_contents.read_lines
+    lines = file_contents.each_line.to_a
     modified_file_content = file_contents.dup
     lines.each_with_index do |line, line_index|
         beginning_or_end_of_block = line.start_with?('```')
