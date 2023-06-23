@@ -3,7 +3,6 @@ title: Amazon Appstore
 slug: amazon-appstore-credentials
 excerpt: Getting your Amazon Appstore Shared Secret
 hidden: false
-createdAt: '2021-12-03T14:59:24.094Z'
 categorySlug: service-credentials
 order: 2
 ---

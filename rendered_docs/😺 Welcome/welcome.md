@@ -3,7 +3,6 @@ title: Overview
 slug: welcome
 excerpt: Everything you need to implement and manage in-app purchases and subscriptions
 hidden: false
-createdAt: '2023-04-14T03:10:28.250Z'
 categorySlug: welcome
 order: 0
 ---

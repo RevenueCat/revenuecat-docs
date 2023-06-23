@@ -4,7 +4,6 @@ slug: delete-offering-override
 excerpt: Reset the offering overrides back to the current offering for a specific
   user
 hidden: false
-createdAt: '2023-04-12T01:31:25.957Z'
 categorySlug: revenuecat-api-v1
 order: 999
 ---

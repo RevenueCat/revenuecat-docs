@@ -3,7 +3,6 @@ title: Airship
 slug: airship
 excerpt: Integrate in-app purchase events from RevenueCat with Airship
 hidden: false
-createdAt: '2021-09-30T01:49:47.596Z'
 categorySlug: integrations-events
 order: 0
 parentDoc: 648c7ee701881d1af934bf16

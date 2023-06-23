@@ -3,7 +3,6 @@ title: Customer Lists
 slug: customer-lists
 excerpt: Cohort and export your customers
 hidden: false
-createdAt: '2021-01-18T18:46:58.144Z'
 categorySlug: dashboard-metrics
 order: 2
 ---

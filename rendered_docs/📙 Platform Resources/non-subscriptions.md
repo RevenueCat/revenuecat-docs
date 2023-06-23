@@ -3,7 +3,6 @@ title: Non-Subscription Purchases
 slug: non-subscriptions
 excerpt: Using RevenueCat beyond subscriptions
 hidden: false
-createdAt: '2020-06-04T17:15:44.078Z'
 categorySlug: platform-resources
 order: 5
 ---

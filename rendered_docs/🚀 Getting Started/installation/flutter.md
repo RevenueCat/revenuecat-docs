@@ -3,7 +3,6 @@ title: Flutter
 slug: flutter
 excerpt: Instructions for installing Purchases SDK for Flutter
 hidden: false
-createdAt: '2023-03-20T17:32:16.412Z'
 categorySlug: getting-started
 order: 3
 parentDoc: 648c7f084ca0960014e5d032
@@ -24,7 +23,6 @@ To use this plugin, add `purchases_flutter` as a [dependency in your pubspec.yam
 dependencies:
   purchases_flutter: ^4.0.0
 ```
-
 Alternatively run this command:
 
 ```
@@ -51,7 +49,6 @@ You should now be able to import `purchases_flutter`.
 ```kotlin Import Purchases
 import 'package:purchases_flutter/purchases_flutter.dart';
 ```
-
 
 [block:callout]
 {

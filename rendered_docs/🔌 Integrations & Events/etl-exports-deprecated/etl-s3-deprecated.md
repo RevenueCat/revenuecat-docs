@@ -3,7 +3,6 @@ title: Amazon S3
 slug: etl-s3-deprecated
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-createdAt: '2020-10-02T02:49:29.429Z'
 categorySlug: integrations-events
 order: 0
 parentDoc: 648c7ee7afbbbc001d6a0c53
@@ -90,7 +89,6 @@ In the policy editor, switch to the JSON view and paste in the following code. B
     ]
 }
 ```
-
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]
 {

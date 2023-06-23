@@ -3,7 +3,6 @@ title: Google Play Store
 slug: creating-play-service-credentials
 excerpt: Step-by-step guide for creating your Play service credentials
 hidden: false
-createdAt: '2023-03-21T20:33:13.482Z'
 categorySlug: service-credentials
 order: 1
 ---

@@ -3,7 +3,6 @@ title: iOS
 slug: ios
 excerpt: Instructions for installing RevenueCat SDK for iOS
 hidden: false
-createdAt: '2023-03-27T15:06:13.281Z'
 categorySlug: getting-started
 order: 0
 parentDoc: 648c7f084ca0960014e5d032
@@ -62,17 +61,14 @@ To always use the latest release, add the following to your Podfile:
 ```ruby Podfile
 pod 'RevenueCat'
 ```
-
 Alternatively, pin to a specific minor version:
 ```ruby 
 pod 'RevenueCat', '~> 4.15'
 ```
-
 And then run:
 ```ruby Terminal
 pod install
 ```
-
 This will add `RevenueCat.framework` to your workspace.
 
 
@@ -82,12 +78,10 @@ To always use the latest release, add the following to your Cartfile:
 ```text Cartfile
 github "revenuecat/purchases-ios"
 ```
-
 Alternatively, pin to a specific minor version:
 ```text 
 github "revenuecat/purchases-ios" ~> 4.15.0
 ```
-
 ### Carthage with XCFrameworks
 
 If you're using Carthage version >= 0.37, you can use RevenueCat as an XCFramework instead of a Universal Framework. This makes setup easier, since you don't have to set up build phases at all. 
@@ -95,7 +89,6 @@ To use XCFrameworks with Carthage, you need to pass in `--use-xcframeworks`.
 ```shell Terminal
 carthage update --use-xcframeworks
 ```
-
 More information on using XCFrameworks with Carthage is available at https://github.com/carthage/Carthage/#building-platform-independent-xcframeworks-xcode-12-and-above
 [block:callout]
 {
@@ -109,7 +102,6 @@ Run:
 ```text 
 carthage update
 ```
-
 # Import the SDK
 [block:callout]
 {
@@ -129,7 +121,6 @@ import RevenueCat
 
 #import "Purchases.h"
 ```
-
 
 [block:callout]
 {

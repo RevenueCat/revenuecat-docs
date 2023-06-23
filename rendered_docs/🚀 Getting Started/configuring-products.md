@@ -3,7 +3,6 @@ title: "[New] Configuring Products"
 slug: configuring-products
 excerpt: Understanding Offers and Entitlements and configuring products with RevenueCat
 hidden: true
-createdAt: '2020-06-29T17:46:24.356Z'
 categorySlug: getting-started
 order: 15
 ---

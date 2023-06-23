@@ -3,7 +3,6 @@ title: Offerings Migration Guide
 slug: offerings-migration
 excerpt: Migrating to Offerings from a legacy setup
 hidden: true
-createdAt: '2019-09-21T00:32:27.183Z'
 categorySlug: getting-started
 order: 12
 ---
@@ -45,7 +44,6 @@ func fetchOffering() {
     }
 }
 ```
-
 The above code sample fetches the offerings from the server, unpacks the current Offering, and prints out the available packages. There's no need to hardcode any strings, making remote configuration a breeze.
 
 ##2. More configuration options

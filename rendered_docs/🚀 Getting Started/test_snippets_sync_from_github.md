@@ -4,7 +4,6 @@ slug: test_snippets_sync_from_github
 excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and GitHub
   Action!
 hidden: true
-createdAt: '2022-12-01T15:38:57.843Z'
 categorySlug: getting-started
 order: 22
 ---

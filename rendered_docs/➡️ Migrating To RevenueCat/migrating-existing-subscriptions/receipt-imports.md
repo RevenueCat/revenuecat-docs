@@ -3,7 +3,6 @@ title: Importing Receipts
 slug: receipt-imports
 excerpt: Importing existing customers into RevenueCat
 hidden: false
-createdAt: '2022-05-31T22:11:14.243Z'
 categorySlug: ️-migrating-to-revenuecat
 order: 0
 parentDoc: 648c7f06dbb1aa005e5369ea

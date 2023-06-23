@@ -5,7 +5,6 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
   the last purchase. If you want to refund a one-time Google purchase, see [refund
   a Google purchase](ref:refund-a-google-subscription).
 hidden: true
-createdAt: '2020-03-04T21:44:22.200Z'
 categorySlug: transactions-purchases
 order: 2
 ---

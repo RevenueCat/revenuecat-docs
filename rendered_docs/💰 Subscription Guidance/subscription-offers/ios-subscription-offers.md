@@ -3,7 +3,6 @@ title: iOS Subscription Offers
 slug: ios-subscription-offers
 excerpt: Implementing iOS Subscription Offers with Purchases SDK
 hidden: false
-createdAt: '2023-03-22T15:16:54.349Z'
 categorySlug: subscription-guidance
 order: 0
 parentDoc: 648c7ee735f772038eae5f4c
@@ -165,7 +164,6 @@ if (paymentDiscount) {
   	// Payment discount fetched
 }
 ```
-
 ### Purchase the Product with the Promotional Offer
 
 After successfully fetching the `PromoOffer`, you can now display the Promotional Offer to the user however you'd like. If the user chooses to purchase, pass a `Package` and `PromoOffer` to the `.purchase(package:promotionalOffer:)` method.
@@ -187,7 +185,6 @@ Purchases.shared.purchase(package: package, promotionalOffer: promoOffer) { tran
 ```javascript React Native
 const purchaseMade = await Purchases.purchaseDiscountedPackage(package, paymentDiscount);
 ```
-
 # Offer Codes
 
 With iOS 14, Apple announced a new feature for subscription developers called “Offer Codes.” Offer Codes allow developers to offer custom pricing and trials, in the form of a redeemable code, to their customers.
@@ -225,7 +222,6 @@ To allow your users to redeem Offer Codes, you'll need to present the Offer Code
 ```swift Swift
 Purchases.shared.presentCodeRedemptionSheet()
 ```
-
 Apple does not provide a callback to determine if the code redemption was successful. Since the Purchases SDK will automatically pick up on new transactions that enter the underlying transaction queue, you should implement the `receivedUpdated` [delegate or listener](doc:configuring-sdk) to respond to changes in `CustomerInfo`. Once we sync the Offer Code transaction, we'll automatically refresh CustomerInfo.
 [block:callout]
 {

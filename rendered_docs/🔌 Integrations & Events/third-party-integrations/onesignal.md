@@ -3,7 +3,6 @@ title: OneSignal
 slug: onesignal
 excerpt: Integrate RevenueCat subscription status with OneSignal
 hidden: false
-createdAt: '2020-08-26T17:22:44.480Z'
 categorySlug: integrations-events
 order: 9
 parentDoc: 648c7ee701881d1af934bf16

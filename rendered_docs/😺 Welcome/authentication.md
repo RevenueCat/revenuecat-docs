@@ -3,7 +3,6 @@ title: API Keys & Authentication
 slug: authentication
 excerpt: Manage your API keys to authenticate with RevenueCat
 hidden: false
-createdAt: '2023-04-14T03:13:35.791Z'
 categorySlug: welcome
 order: 4
 ---

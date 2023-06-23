@@ -2,7 +2,6 @@
 title: Using Purchases 5.x for Google Play
 slug: using-purchases-5x-for-google-play
 hidden: true
-createdAt: '2023-03-28T16:21:16.254Z'
 categorySlug: platform-resources
 order: 3
 parentDoc: 648c7f065abd5900755751a0

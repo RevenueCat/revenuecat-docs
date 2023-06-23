@@ -2,7 +2,6 @@
 title: iOS Native - 3.x to 4.x Migration
 slug: ios-native-3x-to-4x-migration
 hidden: false
-createdAt: '2021-09-30T14:32:30.784Z'
 categorySlug: sdk-guides
 order: 0
 parentDoc: 648c7ee650eac80027fe8f2e

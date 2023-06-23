@@ -2,7 +2,6 @@
 title: Image Hosting
 slug: image-hosting
 hidden: true
-createdAt: '2023-04-14T03:03:58.025Z'
 categorySlug: welcome
 order: 5
 ---

@@ -3,7 +3,6 @@ title: macOS / Catalyst
 slug: macos
 excerpt: Instructions for installing Purchases SDK for macOS / Catalyst
 hidden: false
-createdAt: '2023-03-20T17:31:45.016Z'
 categorySlug: getting-started
 order: 7
 parentDoc: 648c7f084ca0960014e5d032
@@ -35,17 +34,14 @@ To always use the latest release, add the following to your Podfile:
 ```ruby Podfile
 pod 'RevenueCat'
 ```
-
 Alternatively, pin to a specific minor version (e.g. 3.10):
 ```ruby 
 pod 'RevenueCat', '~> 4.15'
 ```
-
 And then run:
 ```ruby Terminal
 pod install
 ```
-
 This will add `RevenueCat.framework` to your workspace.
 
 ## Install via Swift Package Manager
@@ -61,7 +57,6 @@ import RevenueCat
 ```objectivec 
 #import "RCPurchases.h"
 ```
-
 
 [block:callout]
 {

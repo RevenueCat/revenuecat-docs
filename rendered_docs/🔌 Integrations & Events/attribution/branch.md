@@ -3,7 +3,6 @@ title: Branch
 slug: branch
 excerpt: Integrate Purchases SDK with Branch for precise revenue tracking
 hidden: false
-createdAt: '2023-03-28T21:34:30.366Z'
 categorySlug: integrations-events
 order: 3
 parentDoc: 648c7ee73ccbe61ab66dce20

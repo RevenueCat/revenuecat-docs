@@ -3,7 +3,6 @@ title: Unity
 slug: unity
 excerpt: Instructions for installing Purchases SDK for Unity
 hidden: false
-createdAt: '2023-03-20T17:32:01.487Z'
 categorySlug: getting-started
 order: 6
 parentDoc: 648c7f084ca0960014e5d032
@@ -199,7 +198,6 @@ public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
     }
 }
 ```
-
 # Unity Editor
 
 Running the Purchases SDK is unsupported in the Unity Editor at this time, and may result in `NullReferenceException: Object reference not set to an instance of an object` errors. Please build and run your app instead.
@@ -279,7 +277,6 @@ dependencies {
     }
 }
 ```
-
 Perform a clean up of the resolved dependencies using the `Assets/External Dependency Manager/Android Resolver/Delete Resolved Libraries` menu. This will cleanup the previously downloaded .aars in `Assets/Plugins/Android`. Otherwise you could end up with duplicated classes errors. 
 
 Also make sure to perform a resolve, so External Dependency Manager adds the right dependencies to the generated `build.gradle`.

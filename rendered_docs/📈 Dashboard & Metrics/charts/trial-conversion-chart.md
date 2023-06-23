@@ -2,7 +2,6 @@
 title: Trial Conversion Chart
 slug: trial-conversion-chart
 hidden: false
-createdAt: '2022-10-19T15:36:28.718Z'
 categorySlug: dashboard-metrics
 order: 13
 parentDoc: 648c7ee8b4629e1fd0fb39b5

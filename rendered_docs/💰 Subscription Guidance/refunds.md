@@ -3,7 +3,6 @@ title: Handling Refunds
 slug: refunds
 excerpt: Handling and reacting to refunded purchases
 hidden: false
-createdAt: '2022-09-15T18:57:27.264Z'
 categorySlug: subscription-guidance
 order: 4
 ---

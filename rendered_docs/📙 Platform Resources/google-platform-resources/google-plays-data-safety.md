@@ -3,7 +3,6 @@ title: Google Play's Data Safety
 slug: google-plays-data-safety
 excerpt: How to fill out the questionnaire
 hidden: false
-createdAt: '2021-12-01T17:53:19.547Z'
 categorySlug: platform-resources
 order: 2
 parentDoc: 648c7f065abd5900755751a0

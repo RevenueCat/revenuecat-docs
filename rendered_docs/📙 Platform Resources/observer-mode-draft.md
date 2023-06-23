@@ -3,7 +3,6 @@ title: "[DRAFT] Observer Mode"
 slug: observer-mode-draft
 excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
-createdAt: '2022-05-18T16:50:15.163Z'
 categorySlug: platform-resources
 order: 10
 ---
@@ -157,7 +156,6 @@ await Purchases.setup("my_api_key", observerMode: true);
 ```text Unity
 See "Enable Observer Mode in Unity configuration" below
 ```
-
 ### Enable Observer Mode in Unity configuration (Unity Only)
 [block:image]
 {
@@ -201,7 +199,6 @@ Purchases.getSharedInstance().syncPurchases();
 // is successful in your existing code
 Purchases.syncPurchases();
 ```
-
 
 [block:callout]
 {

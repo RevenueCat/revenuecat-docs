@@ -3,7 +3,6 @@ title: Android with Jetpack Compose
 slug: android-with-jetpack-compose
 excerpt: Process a transaction with an Android app built with Jetpack Compose
 hidden: false
-createdAt: '2022-12-05T12:43:33.896Z'
 categorySlug: getting-started
 order: 0
 parentDoc: 648c7ee749931a000cca34d8
@@ -18,7 +17,6 @@ fun Context.findActivity(): Activity? = when (this) {
     else -> null
 }
 ```
-
 So example below shows how to check the nullable `Activity?` returned by `LocalContext.current.findActivity()` and pass it into `purchase(package:)`.
 ```kotlin 
 LocalContext.current.findActivity()?.let { activity ->

@@ -3,7 +3,6 @@ title: Apple App Store Server Notifications
 slug: apple-server-notifications
 excerpt: Sending App Store server notifications to RevenueCat
 hidden: false
-createdAt: '2020-09-29T15:21:09.333Z'
 categorySlug: platform-resources
 order: 0
 parentDoc: 648c7ee7ad45780012e23932

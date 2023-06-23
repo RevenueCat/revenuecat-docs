@@ -3,7 +3,6 @@ title: Observer Mode
 slug: observer-mode
 excerpt: Using RevenueCat without changing existing purchase code
 hidden: false
-createdAt: '2023-05-30T15:16:00.743Z'
 categorySlug: ️-migrating-to-revenuecat
 order: 1
 ---
@@ -20,6 +19,7 @@ Observer Mode may be set up as part of your migration strategy to RevenueCat, or
 | Experiments                  | ❌             | ✅                |
 | Fetching Products            | ❌             | ✅                |
 | Making Purchases             | ❌             | ✅                |
+| Checking Subscription Status | ❌ \*\*        | ✅                |
 
 \*_information based around the "last seen time" and "country" may not be complete in Observer Mode_
 

@@ -3,7 +3,6 @@ title: "[DRAFT] Caching"
 slug: draft-caching
 excerpt: Working with the cache
 hidden: true
-createdAt: '2020-04-14T01:50:29.653Z'
 categorySlug: getting-started
 order: 14
 ---

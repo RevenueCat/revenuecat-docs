@@ -3,7 +3,6 @@ title: Changing Prices
 slug: price-changes
 excerpt: Adjusting your pricing model
 hidden: false
-createdAt: '2020-07-01T18:49:02.585Z'
 categorySlug: subscription-guidance
 order: 3
 ---

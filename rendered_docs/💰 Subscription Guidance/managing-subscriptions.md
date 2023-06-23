@@ -3,7 +3,6 @@ title: Upgrades, Downgrades, & Management
 slug: managing-subscriptions
 excerpt: Making changes to a customer's subscription
 hidden: false
-createdAt: '2021-01-15T19:53:13.255Z'
 categorySlug: subscription-guidance
 order: 2
 ---

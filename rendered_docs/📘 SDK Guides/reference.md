@@ -2,7 +2,6 @@
 title: SDK Reference
 slug: reference
 hidden: true
-createdAt: '2022-12-07T22:23:50.354Z'
 categorySlug: sdk-guides
 order: 1
 ---

@@ -4,7 +4,6 @@ slug: third-party-integrations
 excerpt: RevenueCat can automatically send subscription events to the integration
   platform of your choice.
 hidden: false
-createdAt: '2022-06-02T15:51:10.109Z'
 categorySlug: integrations-events
 order: 2
 ---

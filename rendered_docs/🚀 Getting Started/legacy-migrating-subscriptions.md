@@ -3,7 +3,6 @@ title: "[Legacy] Migrating Subscriptions"
 slug: legacy-migrating-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
-createdAt: '2022-05-31T23:05:24.398Z'
 categorySlug: getting-started
 order: 21
 ---
@@ -54,7 +53,6 @@ if (isSubscribedInOldSystem && !isSubscribedInRevenueCat)
   Purchases.shared.syncPurchases { (customerInfo, error) in }
 }
 ```
-
 When a subscriber launches with the first version containing *Purchases*, it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {

@@ -2,7 +2,6 @@
 title: Refund Rate
 slug: refund-rate
 hidden: true
-createdAt: '2022-06-28T21:08:07.413Z'
 categorySlug: dashboard-metrics
 order: 3
 parentDoc: 648c7ee8afbbbc001d6a0c55

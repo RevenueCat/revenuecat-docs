@@ -3,7 +3,6 @@ title: Firebase Apps
 slug: firebase
 excerpt: Integrate your Firebase app with RevenueCat
 hidden: true
-createdAt: '2022-05-11T20:25:11.081Z'
 categorySlug: platform-resources
 order: 4
 ---
@@ -74,7 +73,6 @@ func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInf
     NotificationCenter.default.post(name: Notification.Name(rawValue: "com.RevenueCat.customerInfoUpdatedNotification"), object: nil)
 }
 ```
-
 ## Android
 ```kotlin 
 class MainApplication: Application() {
@@ -128,7 +126,6 @@ class UpsellActivity : AppCompatActivity(), UpdatedCustomerInfoListener {
     }
 }
 ```
-
 
 [block:callout]
 {
@@ -302,7 +299,6 @@ exports.handleSubscriberAlias = functions.pubsub.topic('rc-subscriber-alias').on
   return null;
 });
 ```
-
 
 [block:callout]
 {

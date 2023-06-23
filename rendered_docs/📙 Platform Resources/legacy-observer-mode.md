@@ -3,7 +3,6 @@ title: "[Legacy] Observer Mode"
 slug: legacy-observer-mode
 excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
-createdAt: '2022-05-31T23:05:56.746Z'
 categorySlug: platform-resources
 order: 11
 ---
@@ -56,7 +55,6 @@ await Purchases.setup("my_api_key", observerMode: true);
 See "Enable Observer Mode in Unity configuration" below
 ```
 
-
 [block:callout]
 {
   "type": "danger",
@@ -106,7 +104,6 @@ Purchases.getSharedInstance().syncPurchases();
 // is successful in your existing code
 Purchases.syncPurchases();
 ```
-
 
 [block:callout]
 {

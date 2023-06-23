@@ -3,7 +3,6 @@ title: Adding subscriptions to your app
 slug: building-new
 excerpt: Adding purchases and subscriptions to an app for the first time
 hidden: false
-createdAt: '2023-04-14T03:06:34.045Z'
 categorySlug: welcome
 order: 1
 ---

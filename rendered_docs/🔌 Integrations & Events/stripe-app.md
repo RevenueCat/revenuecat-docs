@@ -3,7 +3,6 @@ title: Stripe Dashboard App
 slug: stripe-app
 excerpt: Install and use the RevenueCat App in Stripe App Marketplace
 hidden: false
-createdAt: '2022-04-13T22:30:41.204Z'
 categorySlug: integrations-events
 order: 8
 ---

@@ -3,7 +3,6 @@ title: Apple App Store
 slug: itunesconnect-app-specific-shared-secret
 excerpt: Getting your App Store Connect App-Specific Shared Secret
 hidden: false
-createdAt: '2023-04-13T01:37:10.974Z'
 categorySlug: service-credentials
 order: 0
 ---

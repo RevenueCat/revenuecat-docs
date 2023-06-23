@@ -2,7 +2,6 @@
 title: Conversion to Paying Chart
 slug: conversion-to-paying-chart
 hidden: false
-createdAt: '2022-10-19T15:35:15.210Z'
 categorySlug: dashboard-metrics
 order: 11
 parentDoc: 648c7ee8b4629e1fd0fb39b5

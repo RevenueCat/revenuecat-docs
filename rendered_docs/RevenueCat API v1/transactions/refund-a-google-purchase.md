@@ -5,7 +5,6 @@ excerpt: Issues a refund for the most recent purchase of a Google product and re
   access. Works for subscription and non-subscription purchases that occurred in the
   last 365 days.
 hidden: false
-createdAt: '2023-04-12T01:31:25.958Z'
 categorySlug: revenuecat-api-v1
 order: 999
 ---

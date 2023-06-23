@@ -3,7 +3,6 @@ title: Get Offerings
 slug: get-offerings-old
 excerpt: Gets the offerings for your app.
 hidden: true
-createdAt: '2020-12-30T01:38:59.895Z'
 categorySlug: offerings
 order: 0
 ---

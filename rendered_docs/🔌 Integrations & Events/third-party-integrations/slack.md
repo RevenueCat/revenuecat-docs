@@ -3,7 +3,6 @@ title: Slack
 slug: slack
 excerpt: Send in-app subscription events to Slack
 hidden: false
-createdAt: '2023-04-27T20:08:38.893Z'
 categorySlug: integrations-events
 order: 11
 parentDoc: 648c7ee701881d1af934bf16

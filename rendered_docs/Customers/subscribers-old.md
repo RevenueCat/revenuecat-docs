@@ -3,7 +3,6 @@ title: Get or Create Subscriber
 slug: subscribers-old
 excerpt: Gets the latest subscriber info or creates one if it doesn't exist.
 hidden: true
-createdAt: '2018-05-08T17:13:32.048Z'
 categorySlug: customers
 order: 0
 ---

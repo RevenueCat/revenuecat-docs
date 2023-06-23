@@ -2,7 +2,6 @@
 title: iOS App Extensions
 slug: ios-app-extensions
 hidden: false
-createdAt: '2020-06-29T17:38:11.890Z'
 categorySlug: getting-started
 order: 0
 parentDoc: 648c7f08ffabff002ab59fe7

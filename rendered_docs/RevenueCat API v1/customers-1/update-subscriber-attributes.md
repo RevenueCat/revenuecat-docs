@@ -3,7 +3,6 @@ title: Update Subscriber Attributes
 slug: update-subscriber-attributes
 excerpt: Updates subscriber attributes for a user.
 hidden: false
-createdAt: '2023-04-12T01:31:25.955Z'
 categorySlug: revenuecat-api-v1
 order: 999
 ---

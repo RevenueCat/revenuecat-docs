@@ -3,7 +3,6 @@ title: Free Trials & Promo Offers
 slug: subscription-offers
 excerpt: How to give your customers subscription discounts
 hidden: false
-createdAt: '2022-06-21T21:53:53.114Z'
 categorySlug: subscription-guidance
 order: 0
 ---

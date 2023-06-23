@@ -3,7 +3,6 @@ title: Amazon S3 (OLD)
 slug: amazon-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-createdAt: '2020-10-07T00:35:55.719Z'
 categorySlug: integrations-events
 order: 4
 ---
@@ -171,7 +170,6 @@ where start_time > (CURRENT_DATE - INTERVAL '28 days')
 and is_sandbox = false;
 ```
 
-
 [block:api-header]
 {
   "title": "Creating Amazon S3 Credentials"
@@ -225,7 +223,6 @@ In the policy editor, switch to the JSON view and paste in the following code. B
     ]
 }
 ```
-
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]
 {

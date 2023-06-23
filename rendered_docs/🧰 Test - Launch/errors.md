@@ -3,7 +3,6 @@ title: Error Handling
 slug: errors
 excerpt: Handling errors in Purchases SDK
 hidden: false
-createdAt: '2023-03-27T15:08:14.630Z'
 categorySlug: test-launch
 order: 1
 ---
@@ -64,7 +63,6 @@ if (error) {
 
 }
 ```
-
 ## Android Errors
 On Android, when an error has occurred, the `onError` listener will receive a `PurchasesError` object.
 
@@ -91,7 +89,6 @@ with(error) {
     }
 }
 ```
-
 # Legend
 When debugging errors, it's important to consider whether the error was thrown by RevenueCat, Apple, or Google. This can help you pinpoint where to look for a resolution. 
 [block:parameters]

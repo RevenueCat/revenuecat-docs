@@ -2,7 +2,6 @@
 title: Rate Limit
 slug: rate-limit
 hidden: false
-createdAt: '2023-04-11T22:43:01.120Z'
 categorySlug: developer-api
 order: 4
 ---

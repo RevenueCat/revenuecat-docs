@@ -2,7 +2,6 @@
 title: Overriding transfer behavior
 slug: overriding-transfer-behavior
 hidden: true
-createdAt: '2023-05-31T01:51:30.825Z'
 categorySlug: revenuecat-api-v1
 order: 999
 ---

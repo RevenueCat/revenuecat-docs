@@ -2,7 +2,6 @@
 title: Amazon Platform Resources
 slug: amazon-platform-resources
 hidden: false
-createdAt: '2022-02-09T15:48:53.904Z'
 categorySlug: platform-resources
 order: 1
 ---

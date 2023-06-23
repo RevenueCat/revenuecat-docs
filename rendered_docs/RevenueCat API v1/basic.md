@@ -2,7 +2,6 @@
 title: Overview (v1)
 slug: basic
 hidden: false
-createdAt: '2018-10-01T11:03:55.483Z'
 categorySlug: revenuecat-api-v1
 order: 999
 ---
@@ -33,7 +32,6 @@ Certain endpoints require secret keys, which should be kept out of any publicly 
 ```text Authorization Header
 Authorization: Bearer YOUR_REVENUECAT_API_KEY
 ```
-
 ## Request Payload
 
 The body of the `POST` requests should be encoded in JSON and have the 'Content-Type' header set to 'application/json'.
@@ -41,14 +39,12 @@ The body of the `POST` requests should be encoded in JSON and have the 'Content-
 Content-Type: application/json
 ```
 
-
 ```json sample body
 {
   "app_user_id": "user-1456",
   "fetch_token": "MQABC...EFH1234="
 }
 ```
-
 
 [block:api-header]
 {

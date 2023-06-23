@@ -3,7 +3,6 @@ title: "[Draft] Quickstart v2"
 slug: draft-quickstart
 excerpt: Get up and running with mobile subscriptions
 hidden: true
-createdAt: '2021-05-26T18:44:55.163Z'
 categorySlug: getting-started
 order: 18
 ---
@@ -168,7 +167,6 @@ function onDeviceReady() {
 ```text Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
-
 When in development, we recommend enabling more verbose debug logs. For more information about these logs, see our [Debugging](doc:debugging) guide.  
 
 If you're planning to use RevenueCat alongside your existing purchase code, check out our guide on [Observer Mode](doc:observer-mode).
@@ -277,7 +275,6 @@ curl --request GET \
   --header 'Content-Type: application/json' \
   --header 'X-Platform: stripe'
 ```
-
 
 [block:html]
 {
@@ -409,7 +406,6 @@ curl -X POST \
   }'
 ```
 
-
 [block:html]
 {
   "html": "<body>\n  <h3> See it in action </h3>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift#L78-L95\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/develop/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/paywall/PaywallFragment.kt#L55-L66\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/develop/examples/purchase-tester-java/src/main/java/com/revenuecat/purchasetester/java/UpsellActivity.java#L111-L127\" target=\"_blank\"  class=\"button-text\">Java</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/develop/revenuecat_examples/MagicWeather/lib/src/views/paywall.dart#L53-L61\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/develop/examples/MagicWeather/src/components/PackageItem/index.js#L15-L31\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
@@ -511,7 +507,6 @@ curl --request GET \
   --header 'Content-Type: application/json'
 ```
 
-
 [block:html]
 {
   "html": "<body>\n  <h3> See it in action </h3>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/UserViewController.swift#L37-L45\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/develop/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/weather/WeatherFragment.kt#L69-L84\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/develop/examples/purchase-tester-java/src/main/java/com/revenuecat/purchasetester/java/InitialActivity.java#L29-L45\" target=\"_blank\"  class=\"button-text\">Java</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/develop/revenuecat_examples/MagicWeather/lib/src/views/weather.dart#L31-L39\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/develop/examples/MagicWeather/src/screens/WeatherScreen/index.js#L29-L46\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
@@ -587,7 +582,6 @@ purchases.RestoreTransactions((info, error) =>
 });
 ```
 
-
 [block:html]
 {
   "html": "<body>\n  <h3> See it in action </h3>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/UserViewController.swift#L107-L123\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/develop/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/user/UserFragment.kt#L78-L85\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/develop/examples/purchase-tester-java/src/main/java/com/revenuecat/purchasetester/java/CatsActivity.java#L43-L57\" target=\"_blank\"  class=\"button-text\">Java</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/develop/revenuecat_examples/MagicWeather/lib/src/views/user.dart#L29-L50\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/develop/examples/MagicWeather/src/components/RestorePurchasesButton/index.js#L11-L18\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
@@ -657,7 +651,6 @@ public override void PurchaserInfoReceived(Purchases.PurchaserInfo purchaserInfo
     // handle any changes to purchaserInfo
 }
 ```
-
 
 [block:html]
 {
