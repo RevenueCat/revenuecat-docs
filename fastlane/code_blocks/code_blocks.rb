@@ -6,7 +6,7 @@ def replace_code_group(original, replacement, file_contents)
     json = JSON.parse("[#{replacement.join(",\n")}]")
     pretty_json = JSON.pretty_generate(json)
     replacement = "[block:file]\n#{pretty_json}\n[/block]\n"
-    file_contents.gsub(original, replacement)
+    file_contents.gsub(original.join, replacement)
 end
 
 def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
@@ -26,8 +26,8 @@ def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
 
         file_contents = convert_old_style_code_blocks(file_contents)
 
-        current_code_block = ""
-        code_block_group = ""
+        current_code_block = []
+        code_block_group = []
         code_block_group_replacement = []
         counter = 0
 
@@ -35,35 +35,35 @@ def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
         modified_file_content = file_contents.dup
         lines.each_with_index do |line, line_index|
             beginning_or_end_of_block = line.start_with?('```')
-            inside_block = current_code_block != ""
+            inside_block = !current_code_block.empty?
             if beginning_or_end_of_block
-                is_beginning_of_block = current_code_block == "" && line[3..].strip != ''
-                is_end_of_block = current_code_block != ""
+                is_beginning_of_block = current_code_block.empty? && line[3..].strip != ''
+                is_end_of_block = !current_code_block.empty?
                 if is_beginning_of_block
-                    current_code_block += line
-                    code_block_group += line
+                    current_code_block << line
+                    code_block_group << line
                 elsif is_end_of_block
-                    current_code_block += line
-                    code_block_group += line
+                    current_code_block << line
+                    code_block_group << line
                     filename_without_ext = File.basename(file_name, ".md")
                     UI.message("🔨 Processing code block #{counter} in #{file_name}...")
-                    code_block_information = extract_block_to_file(output_dir, filename_without_ext, current_code_block, counter)
+                    code_block_information = extract_block_to_file(output_dir, filename_without_ext, current_code_block.join, counter)
                     if code_block_information.length > 0
                         code_block_group_replacement << code_block_information.to_json
-                        current_code_block = ""
+                        current_code_block = []
                         counter += 1
                     end
                     next_line = lines[line_index + 1]
                     more_code_blocks_in_group = next_line && next_line.start_with?('```')
                     unless more_code_blocks_in_group
                         modified_file_content = replace_code_group(code_block_group, code_block_group_replacement, modified_file_content)
-                        code_block_group = ""
+                        code_block_group = []
                         code_block_group_replacement = []
                     end
                 end
             elsif inside_block
-                current_code_block += line
-                code_block_group += line
+                current_code_block << line
+                code_block_group << line
             end
         end
         write_file_contents(file_name, modified_file_content)
