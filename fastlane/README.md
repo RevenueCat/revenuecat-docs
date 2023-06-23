@@ -13,30 +13,6 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
-### bootstrap
-
-```sh
-[bundle exec] fastlane bootstrap
-```
-
-Install dependencies
-
-### ios_tests
-
-```sh
-[bundle exec] fastlane ios_tests
-```
-
-
-
-### copy_docs_source_to_render_folder
-
-```sh
-[bundle exec] fastlane copy_docs_source_to_render_folder
-```
-
-
-
 ### sync_files_to_readme
 
 ```sh

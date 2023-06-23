@@ -1,12 +1,22 @@
 require_relative '../files.rb'
 
-def extract_code_blocks(source_folder)
-    markdown_files(source_folder).each do |file_name|
+UI = Fastlane::UI
+
+def replace_code_group(original, replacement, file_contents)
+    json = JSON.parse("[#{replacement.join(",\n")}]")
+    pretty_json = JSON.pretty_generate(json)
+    replacement = "[block:file]\n#{pretty_json}\n[/block]\n"
+    file_contents.gsub(original, replacement)
+end
+
+def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
+    UI.message("🔨 Extracting code blocks from #{from_files}...")
+    from_files.each do |file_name|
         UI.message("🔨 Processing #{file_name}...")
         current_folder = File.dirname(file_name)
         UI.message("🔨 Current folder #{current_folder}...")
         folder_inside_docs_source = current_folder.sub(/^#{source_folder}\//, "")
-        output_dir = "code_blocks/#{folder_inside_docs_source}"
+        output_dir = "#{code_blocks_folder}/#{folder_inside_docs_source}"
 
         file_contents = get_file_contents(file_name)
 
@@ -16,19 +26,47 @@ def extract_code_blocks(source_folder)
 
         file_contents = convert_old_style_code_blocks(file_contents)
 
-        code_blocks = file_contents.scan(/```\w+[\s\S]+?```/)
-        total_blocks = code_blocks.length
+        current_code_block = ""
+        code_block_group = ""
+        code_block_group_replacement = []
+        counter = 0
 
-        code_blocks.each_with_index.map do |block, index|
-            filename_without_ext = File.basename(file_name, ".md")
-            UI.message("🔨 Processing code block #{index + 1}/#{total_blocks} in #{file_name}...")
-            code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
-            if code_block_information.length > 0
-                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
+        lines = file_contents.each_line.to_a
+        modified_file_content = file_contents.dup
+        lines.each_with_index do |line, line_index|
+            beginning_or_end_of_block = line.start_with?('```')
+            inside_block = current_code_block != ""
+            if beginning_or_end_of_block
+                is_beginning_of_block = current_code_block == "" && line[3..].strip != ''
+                is_end_of_block = current_code_block != ""
+                if is_beginning_of_block
+                    current_code_block += line
+                    code_block_group += line
+                elsif is_end_of_block
+                    current_code_block += line
+                    code_block_group += line
+                    filename_without_ext = File.basename(file_name, ".md")
+                    UI.message("🔨 Processing code block #{counter} in #{file_name}...")
+                    code_block_information = extract_block_to_file(output_dir, filename_without_ext, current_code_block, counter)
+                    if code_block_information.length > 0
+                        code_block_group_replacement << code_block_information.to_json
+                        current_code_block = ""
+                        counter += 1
+                    end
+                    next_line = lines[line_index + 1]
+                    more_code_blocks_in_group = next_line && next_line.start_with?('```')
+                    unless more_code_blocks_in_group
+                        modified_file_content = replace_code_group(code_block_group, code_block_group_replacement, modified_file_content)
+                        code_block_group = ""
+                        code_block_group_replacement = []
+                    end
+                end
+            elsif inside_block
+                current_code_block += line
+                code_block_group += line
             end
         end
-
-        write_file_contents(file_name, file_contents)
+        write_file_contents(file_name, modified_file_content)
     end
 end
 
@@ -78,19 +116,16 @@ end
 # }
 # [/block]
 #
-# @param file_block [String] the input string containing the code block. This is the entire string that contains the
-# file block including the [block:file] and [/block] tags
+# @param block [String] the input string containing the code block. This is the entire string that contains the
+# file block including the [block:file] and [/block] tags.
 # @return [String] a string containing the code blocks from all the files within the file block
-def embed_code_from_files(file_block)
-    block = extract_code_block(file_block)
+def embed_code_from_files(block)
     new_content = []
 
-    block.each_line do |line|
-        next if line.start_with?("[")
-        file_tag_content = line.strip
-        json = JSON.parse(file_tag_content)
-        UI.message("Extracted json: #{block}")
-
+    block = block.gsub(/\[block:file\]|\[\/block\]/, '')
+    json_array = JSON.parse(block)
+    UI.message("🔨 Processing #{json_array}...")
+    json_array.each do |json|
         language = json['language']
         file_path = json['file']
         name = json['name']
@@ -146,7 +181,7 @@ def convert_old_style_code_blocks(input)
             new_style_code_blocks += process_code_block(code_item)
         end
 
-        new_style_code_blocks
+        new_style_code_blocks.chomp
     end
 end
 

@@ -25,6 +25,7 @@ import 'code_blocks/code_blocks.rb'
 
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
+CODE_BLOCKS_FOLDER = "code_blocks"
 RENDER_FOLDER = "rendered_docs"
 REPO_NAME = "revenuecat-docs"
 
@@ -46,7 +47,8 @@ Extracts code blocks from within the [block:code] and [/block] tags and saves ea
 folder, STRING Folder to recurse through and extract code blocks from all markdown files. Path is relative to the root of the project.
 DESC
 lane :extract_code_blocks do |options|
-    extract_code_blocks(SOURCE_FOLDER)
+    markdown_files = markdown_files(SOURCE_FOLDER)
+    extract_code_blocks(SOURCE_FOLDER, CODE_BLOCKS_FOLDER, markdown_files)
 end
 
 desc <<-DESC
@@ -69,7 +71,7 @@ lane :open_syncing_pr do |options|
     create_version_if_needed(current_version, readme_api_key)
 
     create_new_branch_and_checkout(new_branch_name)
-    embed_code_blocks
+    embed_code_blocks(RENDER_FOLDER, SOURCE_FOLDER)
     update_docs_structure(options)
 
     pr_title = "Syncing #{latest_commit_sha} with #{current_version}"
@@ -88,7 +90,7 @@ end
 
 desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
 lane :embed_code_blocks do |options|
-    embed_code_blocks(RENDER_FOLDER, SOURCE_FOLDER, CODE_BLOCKS_FOLDER)
+    embed_code_blocks(RENDER_FOLDER, SOURCE_FOLDER)
 end
 
 desc <<-DESC
@@ -617,10 +619,4 @@ def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labe
         team_reviewers: ['vegaro']
         # team_reviewers: ['support'] TODO: Disabled until we are ready to use it
     )
-end
-
-def write_file_contents(file, file_contents)
-    Dir.chdir(root_dir) do
-        File.write(file, file_contents)
-    end
 end
