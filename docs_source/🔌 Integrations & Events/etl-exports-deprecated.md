@@ -3,7 +3,6 @@ title: ETL Exports
 slug: etl-exports-deprecated
 excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
-createdAt: '2022-12-15T02:43:30.576Z'
 ---
 [block:callout]
 {

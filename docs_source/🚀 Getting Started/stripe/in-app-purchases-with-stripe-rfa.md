@@ -4,7 +4,6 @@ slug: in-app-purchases-with-stripe-rfa
 excerpt: This document provides a standard recommendation for RFA users looking to
   incorporate an IAP channel.
 hidden: false
-createdAt: '2023-06-13T20:56:58.444Z'
 ---
 # Web First Users
 

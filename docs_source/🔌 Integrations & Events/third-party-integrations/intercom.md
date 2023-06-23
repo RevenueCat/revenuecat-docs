@@ -3,7 +3,6 @@ title: Intercom
 slug: intercom
 excerpt: Send in-app subscription events from RevenueCat to Intercom
 hidden: false
-createdAt: '2023-04-27T20:07:47.176Z'
 ---
 > 👍 
 > 

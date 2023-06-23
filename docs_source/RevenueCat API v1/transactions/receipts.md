@@ -4,7 +4,6 @@ slug: receipts
 excerpt: Records a purchase for a user from iOS, Android, or Stripe and will create
   a user if they don't already exist.
 hidden: false
-createdAt: '2023-04-12T01:31:25.951Z'
 ---
 # Parameter Reference
 

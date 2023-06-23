@@ -2,7 +2,6 @@
 title: Active Entitlements
 slug: active-entitlements
 hidden: false
-createdAt: '2020-04-06T21:46:06.712Z'
 ---
 The 'Entitlements' card gives you a quick glance at the current entitlement status for a user. You can see which product(s) or [Entitlement(s)](doc:entitlements) have been purchased, and when they'll renew or cancel.  
 

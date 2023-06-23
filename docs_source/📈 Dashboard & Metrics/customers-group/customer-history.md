@@ -2,7 +2,6 @@
 title: Customer History
 slug: customer-history
 hidden: false
-createdAt: '2020-04-06T21:46:07.215Z'
 ---
 The 'Customer History' card shows a timeline of transactions and activity for the selected customer. These can be useful for debugging and triaging support issues by understanding when critical events happened for the customer.
 

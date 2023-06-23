@@ -3,7 +3,6 @@ title: Identifying Customers
 slug: user-ids
 excerpt: How RevenueCat handles user identity
 hidden: false
-createdAt: '2023-05-09T18:27:09.193Z'
 ---
 # What is a customer in RevenueCat?
 

@@ -3,7 +3,6 @@ title: Firebase Apps
 slug: firebase
 excerpt: Integrate your Firebase app with RevenueCat
 hidden: true
-createdAt: '2022-05-11T20:25:11.081Z'
 ---
 # What is RevenueCat?
 

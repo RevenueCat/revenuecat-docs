@@ -3,7 +3,6 @@ title: iOS
 slug: ios
 excerpt: Instructions for installing RevenueCat SDK for iOS
 hidden: false
-createdAt: '2023-03-27T15:06:13.281Z'
 ---
 # What is RevenueCat?
 

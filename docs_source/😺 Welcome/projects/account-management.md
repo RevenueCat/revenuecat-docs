@@ -3,7 +3,6 @@ title: Billing and account settings
 slug: account-management
 excerpt: Managing your account and changing plans
 hidden: false
-createdAt: '2022-06-21T17:37:20.347Z'
 ---
 # Account Security & 2FA
 

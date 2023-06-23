@@ -3,7 +3,6 @@ title: Apple App Store & TestFlight
 slug: apple-app-store
 excerpt: Testing purchases in App Store Sandbox
 hidden: false
-createdAt: '2023-05-30T14:34:37.349Z'
 ---
 > 👍 
 > 

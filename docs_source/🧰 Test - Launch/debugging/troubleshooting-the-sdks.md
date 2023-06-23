@@ -2,7 +2,6 @@
 title: Troubleshooting the SDKs
 slug: troubleshooting-the-sdks
 hidden: false
-createdAt: '2021-05-03T18:59:17.242Z'
 ---
 Having trouble with our SDKs? This guide covers common issues and solutions. Go through each topic and see if it matches your issue. If you went through this guide and you're still having problems, reach out to us in any of the following channels:
 

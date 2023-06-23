@@ -2,7 +2,6 @@
 title: Overview (v2)
 slug: revenuecat-rest-api
 hidden: false
-createdAt: '2023-04-11T22:34:48.009Z'
 ---
 > 📘 New to RevenueCat?
 > 

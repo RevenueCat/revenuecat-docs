@@ -2,7 +2,6 @@
 title: Promotionals
 slug: promotionals
 hidden: false
-createdAt: '2020-04-06T21:46:08.587Z'
 ---
 [block:callout]
 {

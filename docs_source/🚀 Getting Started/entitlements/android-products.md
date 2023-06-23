@@ -3,7 +3,6 @@ title: Google Play Product Setup
 slug: android-products
 excerpt: Setting up your in-app purchases in Google Play Billing
 hidden: false
-createdAt: '2020-06-26T22:04:24.057Z'
 ---
 To set up products for Android devices, start by logging into Google Play Console. Google Play Console is Google's central hub for managing app releases, testing, in-app purchases, and more. 
 

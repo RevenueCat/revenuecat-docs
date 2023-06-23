@@ -3,7 +3,6 @@ title: Android
 slug: android
 excerpt: Instructions for installing Purchases SDK for Android
 hidden: false
-createdAt: '2023-04-17T16:07:45.008Z'
 ---
 # What is RevenueCat?
 

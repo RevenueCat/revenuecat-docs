@@ -4,7 +4,6 @@ slug: revoke-promotional-entitlements-old
 excerpt: Revokes all promotional entitlements for a given entitlement identifier and
   app user ID.
 hidden: true
-createdAt: '2019-08-09T05:51:54.980Z'
 ---
 [block:callout]
 {

@@ -3,7 +3,6 @@ title: Account security
 slug: security
 excerpt: Enabling two-factor authentication for your RevenueCat account
 hidden: false
-createdAt: '2019-12-20T21:05:57.489Z'
 ---
 It's a dangerous world out there! But you can make things much safer by enabling two-factor authentication in your RevenueCat account settings.
 

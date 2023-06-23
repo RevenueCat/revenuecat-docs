@@ -2,7 +2,6 @@
 title: Android Native - 4.x to 5.x Migration
 slug: android-native-4x-to-5x-migration
 hidden: true
-createdAt: '2022-03-23T14:39:58.758Z'
 ---
 [block:callout]
 {

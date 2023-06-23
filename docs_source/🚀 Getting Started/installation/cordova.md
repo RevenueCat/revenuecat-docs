@@ -3,7 +3,6 @@ title: Cordova
 slug: cordova
 excerpt: Instructions for installing Purchases SDK for Cordova
 hidden: false
-createdAt: '2023-03-20T17:32:08.635Z'
 ---
 # What is RevenueCat?
 

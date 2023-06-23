@@ -3,7 +3,6 @@ title: Unity
 slug: unity
 excerpt: Instructions for installing Purchases SDK for Unity
 hidden: false
-createdAt: '2023-03-20T17:32:01.487Z'
 ---
 # What is RevenueCat?
 

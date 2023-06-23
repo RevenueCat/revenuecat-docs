@@ -2,7 +2,6 @@
 title: Trial Conversion Chart
 slug: trial-conversion-chart
 hidden: false
-createdAt: '2022-10-19T15:36:28.718Z'
 ---
 ## Definition
 The Trial Conversion chart gives you insight into the conversion of customers starting free trials, through their conversion into paying subscriptions.

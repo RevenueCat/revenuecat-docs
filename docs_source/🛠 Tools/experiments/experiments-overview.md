@@ -2,7 +2,6 @@
 title: Experiments Overview
 slug: experiments-overview
 hidden: true
-createdAt: '2020-07-09T16:43:38.169Z'
 ---
 [block:callout]
 {

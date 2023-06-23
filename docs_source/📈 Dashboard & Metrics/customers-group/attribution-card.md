@@ -2,7 +2,6 @@
 title: Attribution
 slug: attribution-card
 hidden: false
-createdAt: '2020-04-06T21:46:08.734Z'
 ---
 If you're sending attribution information to RevenueCat through the Purchases SDK, we will display the latest information from the network in the **Attribution** card for the customer. 
 

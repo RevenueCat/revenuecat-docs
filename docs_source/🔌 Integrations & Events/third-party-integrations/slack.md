@@ -3,7 +3,6 @@ title: Slack
 slug: slack
 excerpt: Send in-app subscription events to Slack
 hidden: false
-createdAt: '2023-04-27T20:08:38.893Z'
 ---
 > 👍 
 > 

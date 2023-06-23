@@ -3,7 +3,6 @@ title: Attributes
 slug: attributes
 excerpt: Add new user attributes or edit existing ones
 hidden: false
-createdAt: '2020-04-06T21:46:08.010Z'
 ---
 The 'Attributes' card displays any [Subscriber Attributes](doc:subscriber-attributes) that have been saved for the user and allows you to add new attributes or edit existing ones.
 [block:image]

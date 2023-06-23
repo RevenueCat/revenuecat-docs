@@ -3,7 +3,6 @@ title: Braze
 slug: braze
 excerpt: Integrate in-app subscription events from RevenueCat with Braze
 hidden: false
-createdAt: '2023-04-27T20:07:18.024Z'
 ---
 > 👍 
 > 

@@ -3,7 +3,6 @@ title: Restoring Purchases
 slug: restoring-purchases
 excerpt: Re-sync purchased transactions from Apple, Google, or Amazon
 hidden: false
-createdAt: '2021-04-28T16:33:56.375Z'
 ---
 Restoring purchases is a mechanism by which your user can restore their in-app purchases, reactivating any content that had previously been purchased **from the same store account** (Apple, Google, or Amazon).
 

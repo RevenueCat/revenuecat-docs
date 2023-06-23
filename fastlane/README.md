@@ -58,10 +58,10 @@ Updates rendered docs folder to the current category, order and parent informati
 readme_api_key, STRING Readme API key for the project
 
 
-### remove_categories_from_docs_source
+### clean_docs_source_headers
 
 ```sh
-[bundle exec] fastlane remove_categories_from_docs_source
+[bundle exec] fastlane clean_docs_source_headers
 ```
 
 Removes all categories from docs_source
@@ -118,6 +118,14 @@ force_update_categories BOOLEAN True will force the categories.json to be update
 
 ```sh
 [bundle exec] fastlane check_docs
+```
+
+
+
+### migration
+
+```sh
+[bundle exec] fastlane migration
 ```
 
 

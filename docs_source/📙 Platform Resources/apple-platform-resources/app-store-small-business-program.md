@@ -3,7 +3,6 @@ title: App Store Small Business Program
 slug: app-store-small-business-program
 excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
-createdAt: '2020-12-11T16:33:54.497Z'
 ---
 Apple recently announced the new App Store Small Business Program, aiming to reduce Apple's commission of App Store sales for small businesses from 30% to 15%.
 

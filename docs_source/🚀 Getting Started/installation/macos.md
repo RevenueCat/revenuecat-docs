@@ -3,7 +3,6 @@ title: macOS / Catalyst
 slug: macos
 excerpt: Instructions for installing Purchases SDK for macOS / Catalyst
 hidden: false
-createdAt: '2023-03-20T17:31:45.016Z'
 ---
 # What is RevenueCat?
 

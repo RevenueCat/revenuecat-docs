@@ -3,7 +3,6 @@ title: Ionic
 slug: ionic
 excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
-createdAt: '2020-04-07T20:32:01.037Z'
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 [block:file]

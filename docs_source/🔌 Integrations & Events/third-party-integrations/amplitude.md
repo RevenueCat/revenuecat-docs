@@ -3,7 +3,6 @@ title: Amplitude
 slug: amplitude
 excerpt: Integrate in-app subscription events from RevenueCat with Amplitude
 hidden: false
-createdAt: '2023-04-27T20:07:08.891Z'
 ---
 > 👍 
 > 

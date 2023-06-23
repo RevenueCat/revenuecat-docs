@@ -2,7 +2,6 @@
 title: Active Subscriptions
 slug: active-subscriptions
 hidden: true
-createdAt: '2022-06-28T20:13:26.756Z'
 ---
 **Segments:** Yes
 **Filters:** Yes

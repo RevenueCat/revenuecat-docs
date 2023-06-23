@@ -3,7 +3,6 @@ title: Apple Family Sharing
 slug: apple-family-sharing
 excerpt: Let users share their subscriptions with Family Sharing
 hidden: false
-createdAt: '2021-02-09T20:34:15.268Z'
 ---
 Apple allows any in-app purchases to be shared within a family using [Family Sharing](https://developer.apple.com/documentation/storekit/in-app_purchase/supporting_family_sharing_in_your_app). This is great for apps that tend to be used by groups of people, like video streaming services and kids' apps, without needing users to share their Apple ID. This guide covers how to opt-in your subscriptions to family sharing and how RevenueCat handles family-shared purchases.
 

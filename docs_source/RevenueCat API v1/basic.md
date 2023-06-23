@@ -2,7 +2,6 @@
 title: Overview (v1)
 slug: basic
 hidden: false
-createdAt: '2018-10-01T11:03:55.483Z'
 ---
 [block:callout]
 {

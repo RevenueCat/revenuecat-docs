@@ -125,10 +125,10 @@ end
 desc <<-DESC
 Removes all categories from docs_source
 DESC
-lane :remove_categories_from_docs_source do |options|
+lane :clean_docs_source_headers do |options|
     folder_path = SOURCE_FOLDER
 
-    markdown_source_files.each do |filename|
+    markdown_files(SOURCE_FOLDER).each do |filename|
         next if filename == '.' || filename == '..'
         file_without_folder_path = filename.gsub("#{folder_path}/", "")
         UI.message("Updating #{file_without_folder_path}")
@@ -139,6 +139,9 @@ lane :remove_categories_from_docs_source do |options|
             yaml_data = YAML.load(yaml_header)
 
             yaml_data.delete('category')
+            yaml_data.delete('metadata')
+            yaml_data.delete('createdAt')
+            yaml_data.delete('updatedAt')
 
             File.write(filename, "#{yaml_data.to_yaml}---#{content}")
         end
@@ -325,6 +328,12 @@ lane :check_docs do |options|
     check_docs_for_category(RENDER_FOLDER)
 end
 
+lane :migration do |options|
+    markdown_files = markdown_files(SOURCE_FOLDER)
+    extract_code_blocks(SOURCE_FOLDER, CODE_BLOCKS_FOLDER, markdown_files)
+    clean_docs_source_headers
+end
+
 # Updates the order and parentDocSlug for a given doc.
 #
 # @param [String] doc_slug The slug of the doc to update
@@ -437,16 +446,6 @@ def get_doc_information_from_header(filename)
         yaml_header, _ = file.split('---', 3)[1..-1]
         YAML.load(yaml_header)
     end
-end
-
-# Replace emoji with -- to match how folders are exported from readme.
-# Also replaces & with - to match how folders are exported from readme.
-# This is needed because the folder names have emojis or & in their titles and Readme
-# doesn't add the emojis to the folder name.
-#
-# @param [String] text Text to clean
-def clean_category_title(text)
-    text.gsub(/\p{Emoji}/, "--").gsub(/&/, "-")
 end
 
 # Get the JSON from a file.

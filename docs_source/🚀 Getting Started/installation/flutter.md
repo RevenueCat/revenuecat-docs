@@ -3,7 +3,6 @@ title: Flutter
 slug: flutter
 excerpt: Instructions for installing Purchases SDK for Flutter
 hidden: false
-createdAt: '2023-03-20T17:32:16.412Z'
 ---
 # What is RevenueCat?
 

@@ -2,7 +2,6 @@
 title: Customer Details
 slug: basic-information
 hidden: false
-createdAt: '2020-04-06T21:46:10.813Z'
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

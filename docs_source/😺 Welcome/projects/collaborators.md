@@ -3,7 +3,6 @@ title: Invite your team
 slug: collaborators
 excerpt: Invite others to collaborate on your project
 hidden: false
-createdAt: '2023-04-14T03:14:43.593Z'
 ---
 Collaborators allow other people to access your RevenueCat Project without having to share any login credentials. You can limit the access of specific collaborators to "Admin", "Read Only", or "Customer Support".
 

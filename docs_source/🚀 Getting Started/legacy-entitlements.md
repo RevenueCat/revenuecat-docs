@@ -2,7 +2,6 @@
 title: Legacy Entitlements
 slug: legacy-entitlements
 hidden: true
-createdAt: '2019-08-29T20:15:45.785Z'
 ---
 [block:callout]
 {

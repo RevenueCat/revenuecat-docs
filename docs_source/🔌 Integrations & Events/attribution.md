@@ -3,7 +3,6 @@ title: Attribution Providers
 slug: attribution
 excerpt: Integrate and collect attribution data with Purchases SDK
 hidden: false
-createdAt: '2022-06-23T17:21:20.022Z'
 ---
 [block:callout]
 {

@@ -2,7 +2,6 @@
 title: Subscription Retention Chart
 slug: subscription-retention-chart
 hidden: false
-createdAt: '2022-10-19T15:37:02.622Z'
 ---
 ## Definition
 

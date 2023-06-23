@@ -3,7 +3,6 @@ title: AppsFlyer
 slug: appsflyer
 excerpt: Integrate Purchases SDK with AppsFlyer for precise revenue tracking
 hidden: false
-createdAt: '2023-04-07T05:51:02.908Z'
 ---
 With our AppsFlyer integration you can:
 
