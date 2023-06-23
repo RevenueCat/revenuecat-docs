@@ -3,7 +3,6 @@ title: Amazon Appstore
 slug: amazon-appstore-credentials
 excerpt: Getting your Amazon Appstore Shared Secret
 hidden: false
-createdAt: '2021-12-03T14:59:24.094Z'
 ---
 The Amazon Shared Secret allows RevenueCat to connect with Amazon on your behalf. 
 

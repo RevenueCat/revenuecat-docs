@@ -3,7 +3,6 @@ title: SDK Migration Guides
 slug: migration-guides
 excerpt: Making migrations as easy as possible
 hidden: false
-createdAt: '2021-09-30T14:30:12.220Z'
 ---
 As RevenueCat's SDK evolves over time and continues to simplify purchasing logic across platforms, implementation changes can be required when upgrading from one major version to another. We've tried to simplify these migrations and make the process as easy as possible.
 

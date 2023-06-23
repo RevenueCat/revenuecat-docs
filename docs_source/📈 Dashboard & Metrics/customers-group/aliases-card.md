@@ -2,7 +2,6 @@
 title: App User IDs
 slug: aliases-card
 hidden: false
-createdAt: '2020-04-06T21:46:10.612Z'
 ---
 The App User IDs will hold both the Original App User ID and the list of Aliases a particular customer has.
 

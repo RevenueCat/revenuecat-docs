@@ -3,7 +3,6 @@ title: 'Google Play: Defer a Subscription'
 slug: defer-a-google-subscription
 excerpt: Defers the purchase of a Google Subscription to a later date.
 hidden: false
-createdAt: '2023-04-12T01:31:25.956Z'
 ---
 > 🚧 Secret API Key Required
 > 

@@ -3,7 +3,6 @@ title: Offering Override
 slug: offering-override
 excerpt: Override the current offering that displays in your app
 hidden: false
-createdAt: '2020-07-30T17:03:23.384Z'
 ---
 You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the **Current Offering** card. This can be useful for:
 

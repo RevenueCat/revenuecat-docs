@@ -3,7 +3,6 @@ title: Free Trials & Promo Offers
 slug: subscription-offers
 excerpt: How to give your customers subscription discounts
 hidden: false
-createdAt: '2022-06-21T21:53:53.114Z'
 ---
 Subscription offers give you the opportunity to provide limited time discounts in order to attract or retain subscribers and can be an important part of a subscription lifecycle.
 

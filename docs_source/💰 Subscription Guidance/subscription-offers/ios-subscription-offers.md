@@ -3,7 +3,6 @@ title: iOS Subscription Offers
 slug: ios-subscription-offers
 excerpt: Implementing iOS Subscription Offers with Purchases SDK
 hidden: false
-createdAt: '2023-03-22T15:16:54.349Z'
 ---
 [block:callout]
 {

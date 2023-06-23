@@ -3,7 +3,6 @@ title: Handling Refunds
 slug: refunds
 excerpt: Handling and reacting to refunded purchases
 hidden: false
-createdAt: '2022-09-15T18:57:27.264Z'
 ---
 Refunds are handled differently on each platform. It's recommended to set up [Platform Server Notifications](doc:server-notifications) for the best performance. 
 

@@ -3,7 +3,6 @@ title: Facebook Ads
 slug: facebook-ads
 excerpt: Integrate Purchases SDK with Facebook Ads for precise revenue tracking
 hidden: false
-createdAt: '2023-03-30T19:33:09.403Z'
 ---
 With our Facebook Ads integration you can:
 

@@ -2,7 +2,6 @@
 title: Active Subscriptions Movement
 slug: active-subscriptions-movement
 hidden: true
-createdAt: '2022-06-28T20:15:28.170Z'
 ---
 ## Active Subscriptions Movement
 **Segments:** No

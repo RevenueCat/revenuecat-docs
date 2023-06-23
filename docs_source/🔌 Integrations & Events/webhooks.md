@@ -3,7 +3,6 @@ title: Webhooks
 slug: webhooks
 excerpt: Enhanced server-to-server notifications from webhooks
 hidden: false
-createdAt: '2023-04-27T20:36:54.104Z'
 ---
 > 👍 
 > 

@@ -3,7 +3,6 @@ title: Migrating Subscriptions
 slug: migrating-existing-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: false
-createdAt: '2023-03-02T20:33:26.499Z'
 ---
 [block:parameters]
 {

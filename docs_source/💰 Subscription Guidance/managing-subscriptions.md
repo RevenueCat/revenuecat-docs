@@ -3,7 +3,6 @@ title: Upgrades, Downgrades, & Management
 slug: managing-subscriptions
 excerpt: Making changes to a customer's subscription
 hidden: false
-createdAt: '2021-01-15T19:53:13.255Z'
 ---
 Some parts of a customer's subscription can be managed directly through RevenueCat, other parts can only be managed by the customer directly in the respective stores (Apple, Google, Stripe, and Amazon). Learn how to upgrade/downgrade, cancel, and refund subscriptions here! 
 

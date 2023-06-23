@@ -3,7 +3,6 @@ title: Segment
 slug: segment
 excerpt: Integrate in-app subscription events from RevenueCat with Segment
 hidden: false
-createdAt: '2023-04-27T20:08:30.175Z'
 ---
 > 👍 
 > 

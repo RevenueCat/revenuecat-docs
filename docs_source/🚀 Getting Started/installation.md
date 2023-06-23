@@ -3,7 +3,6 @@ title: Installing the SDK
 slug: installation
 excerpt: Add the Purchases SDK to your mobile app
 hidden: false
-createdAt: '2022-06-21T21:22:46.073Z'
 ---
 *Purchases* is our SDK that correctly implements purchases and subscriptions across platforms while syncing tokens with the RevenueCat server. Check out the install guides below integrate the SDK into all of your apps.
 

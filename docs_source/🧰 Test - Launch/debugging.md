@@ -3,7 +3,6 @@ title: Debugging
 slug: debugging
 excerpt: View and understand Purchases logs
 hidden: false
-createdAt: '2023-05-01T23:06:34.463Z'
 ---
 > 👍 
 > 

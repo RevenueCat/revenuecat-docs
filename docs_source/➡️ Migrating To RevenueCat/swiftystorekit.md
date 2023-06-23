@@ -3,7 +3,6 @@ title: SwiftyStoreKit Migration
 slug: swiftystorekit
 excerpt: Migrate your SwiftyStoreKit app to RevenueCat
 hidden: false
-createdAt: '2023-02-21T22:07:41.716Z'
 ---
 If you use SwiftyStoreKit in your iOS app and are looking for an alternative that includes receipt validation, server-side status tracking, cross-platform support and more - RevenueCat is the ideal choice for your app!
 

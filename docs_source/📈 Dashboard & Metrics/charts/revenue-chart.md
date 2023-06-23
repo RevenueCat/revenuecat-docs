@@ -2,7 +2,6 @@
 title: Revenue Chart
 slug: revenue-chart
 hidden: false
-createdAt: '2022-10-19T15:34:40.122Z'
 ---
 ## Definition
 

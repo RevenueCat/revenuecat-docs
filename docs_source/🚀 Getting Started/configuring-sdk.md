@@ -2,7 +2,6 @@
 title: Configuring the SDK
 slug: configuring-sdk
 hidden: false
-createdAt: '2020-06-29T17:25:26.484Z'
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 

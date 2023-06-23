@@ -3,7 +3,6 @@ title: CleverTap
 slug: clevertap
 excerpt: Integrate in-app subscription events from RevenueCat with CleverTap
 hidden: false
-createdAt: '2020-10-23T02:20:59.696Z'
 ---
 > 👍 
 > 

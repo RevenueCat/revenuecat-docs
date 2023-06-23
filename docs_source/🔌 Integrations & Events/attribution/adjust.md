@@ -3,7 +3,6 @@ title: Adjust
 slug: adjust
 excerpt: Integrate Purchases SDK with Adjust for precise revenue tracking
 hidden: false
-createdAt: '2023-03-28T21:07:09.611Z'
 ---
 With our Adjust integration you can:
 

@@ -3,7 +3,6 @@ title: Error Handling
 slug: errors
 excerpt: Handling errors in Purchases SDK
 hidden: false
-createdAt: '2023-03-27T15:08:14.630Z'
 ---
 [block:callout]
 {

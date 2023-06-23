@@ -3,7 +3,6 @@ title: React Native
 slug: reactnative
 excerpt: Instructions for installing Purchases SDK for React Native
 hidden: false
-createdAt: '2023-03-20T17:32:28.902Z'
 ---
 # What is RevenueCat?
 

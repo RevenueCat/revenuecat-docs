@@ -3,7 +3,6 @@ title: Making Purchases
 slug: making-purchases
 excerpt: Process a transaction with Apple or Google
 hidden: false
-createdAt: '2023-06-02T20:37:18.321Z'
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:file]

@@ -3,7 +3,6 @@ title: Mixpanel
 slug: mixpanel
 excerpt: Integrate in-app subscription events from RevenueCat with Mixpanel
 hidden: false
-createdAt: '2023-04-27T20:08:03.274Z'
 ---
 > 👍 
 > 

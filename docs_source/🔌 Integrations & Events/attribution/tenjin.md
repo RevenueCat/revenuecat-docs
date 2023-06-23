@@ -3,7 +3,6 @@ title: Tenjin
 slug: tenjin
 excerpt: Integrate Purchases SDK with Tenjin for precise revenue tracking
 hidden: false
-createdAt: '2023-03-28T21:52:25.456Z'
 ---
 With our Tenjin integration you can:
 

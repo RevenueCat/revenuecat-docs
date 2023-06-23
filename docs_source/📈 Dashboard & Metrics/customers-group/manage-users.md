@@ -2,7 +2,6 @@
 title: Deleting Users
 slug: manage-users
 hidden: false
-createdAt: '2020-04-06T21:46:08.709Z'
 ---
 You can delete a user under the 'Manage' card at the bottom of the page. Deleting a user will also remove all their purchase history for sandbox and production data which could change how charts and reports appear. Deleting users should only be used to remove accounts you may have set up for testing or if the user requests their data to be deleted.
 

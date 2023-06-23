@@ -2,7 +2,6 @@
 title: Refund Rate
 slug: refund-rate
 hidden: true
-createdAt: '2022-06-28T21:08:07.413Z'
 ---
 ## Refund Rate
 **Segments:** Yes

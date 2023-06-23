@@ -3,7 +3,6 @@ title: Override a Customer's Current Offering
 slug: override-offering-old
 excerpt: Overrides the current Offering for a specific user
 hidden: true
-createdAt: '2020-09-30T21:21:26.551Z'
 ---
 [block:callout]
 {

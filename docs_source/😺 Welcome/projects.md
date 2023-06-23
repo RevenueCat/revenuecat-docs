@@ -3,7 +3,6 @@ title: Setting up RevenueCat
 slug: projects
 excerpt: Create a free account, add a Project, and invite your team
 hidden: false
-createdAt: '2022-01-06T20:42:37.662Z'
 ---
 # Register for a free account
 

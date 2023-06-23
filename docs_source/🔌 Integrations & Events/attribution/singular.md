@@ -3,7 +3,6 @@ title: Singular
 slug: singular
 excerpt: Integrate Purchases SDK with Singular for precise revenue tracking
 hidden: false
-createdAt: '2020-07-29T17:30:24.269Z'
 ---
 With our Singular integration you can:
 

@@ -3,7 +3,6 @@ title: Amazon S3 (OLD)
 slug: amazon-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-createdAt: '2020-10-07T00:35:55.719Z'
 ---
 [block:callout]
 {

@@ -3,7 +3,6 @@ title: Amazon S3
 slug: etl-s3-deprecated
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-createdAt: '2020-10-02T02:49:29.429Z'
 ---
 To start receiving these deliveries, you'll need the following details:
 1. Access key ID

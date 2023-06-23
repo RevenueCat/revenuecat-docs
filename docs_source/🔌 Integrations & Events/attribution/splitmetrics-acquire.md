@@ -3,7 +3,6 @@ title: SplitMetrics Acquire
 slug: splitmetrics-acquire
 excerpt: Formerly SearchAdsHQ
 hidden: false
-createdAt: '2022-05-27T16:53:09.333Z'
 ---
 With our SplitMetrics Acquire | Formerly SearchAdsHQ integration you can:
 

@@ -3,7 +3,6 @@ title: App Subscription Launch Checklist
 slug: launch-checklist
 excerpt: Purchases SDK pre-launch checklist
 hidden: false
-createdAt: '2023-01-11T10:40:23.101Z'
 ---
 This document contains a checklist of things to consider before launching subscriptions in your app to production.
 [block:api-header]

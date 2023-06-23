@@ -3,7 +3,6 @@ title: Common Webhook Flows
 slug: event-flows
 excerpt: How webhooks are sent from RevenueCat
 hidden: false
-createdAt: '2022-07-29T14:20:20.439Z'
 ---
 You’ll receive many [Webhooks](doc:webhooks) throughout a subscriber’s journey in your app. We’ve compiled a list of several common event flows to illustrate the events you might receive in some common scenarios.
 

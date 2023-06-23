@@ -2,7 +2,6 @@
 title: Amazon Appstore
 slug: amazon-store-sandbox-testing
 hidden: false
-createdAt: '2021-11-16T15:51:06.005Z'
 ---
 [block:callout]
 {

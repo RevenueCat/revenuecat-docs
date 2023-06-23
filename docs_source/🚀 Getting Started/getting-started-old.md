@@ -3,7 +3,6 @@ title: Quickstart (old)
 slug: getting-started-old
 excerpt: Get up and running with mobile subscriptions
 hidden: true
-createdAt: '2022-12-09T20:31:16.384Z'
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 

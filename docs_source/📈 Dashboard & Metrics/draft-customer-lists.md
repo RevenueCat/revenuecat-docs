@@ -3,7 +3,6 @@ title: "[DRAFT] Customer Lists"
 slug: draft-customer-lists
 excerpt: Cohort and export your customers
 hidden: true
-createdAt: '2022-03-02T00:14:25.151Z'
 ---
 RevenueCat Customer Lists allow you to cohort and export groups of customers based on some interactions with your app and/or purchase behavior.
 
