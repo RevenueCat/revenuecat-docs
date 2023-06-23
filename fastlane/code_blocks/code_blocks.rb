@@ -119,27 +119,26 @@ end
 # }
 # [/block]
 #
-# @param block [String] the input string containing the code block. This is the entire string that contains the
-# file block including the [block:file] and [/block] tags.
+# @param code_blocks_group_with_tags [String] the input string containing the code block. This is the entire string that
+# contains the file block including the [block:file] and [/block] tags.
 # @return [String] a string containing the code blocks from all the files within the file block
-def embed_code_from_files(block)
-    new_content = []
+def embed_code_from_files(code_blocks_group_with_tags)
+    embedded_code_blocks_group = []
 
-    block_file_regex = /\[block:file\]|\[\/block\]/
-    block = block.gsub(block_file_regex, '')
-    json_array = JSON.parse(block)
-    UI.message("🔨 Processing #{json_array}...")
-    json_array.each do |json|
-        language = json['language']
-        file_path = json['file']
-        name = json['name']
+    code_blocks_group_json_array = code_blocks_group_with_tags.gsub(/\[block:file\]|\[\/block\]/, '')
+    code_block_information_array = JSON.parse(code_blocks_group_json_array)
+    UI.message("🔨 Processing #{code_block_information_array}...")
+    code_block_information_array.each do |code_block_information|
+        language = code_block_information['language']
+        file_path = code_block_information['file']
+        name = code_block_information['name']
         next unless File.exist?(file_path)
 
         file_content = File.read(file_path)
-        new_content.push "```#{language} #{name}\n#{file_content}\n```"
+        embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
-    new_content.join("\n").strip
+    embedded_code_blocks_group.join("\n").strip
 end
 
 # Searches for is [block:code][/block] and replaces it with the Readme flavored markdown style code blocks.
