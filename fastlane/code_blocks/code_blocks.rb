@@ -22,6 +22,37 @@ def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
     end
 end
 
+##
+# Extracts all code within backticks to a file and adds the file information in a [block:file] block.
+# This function also works with code blocks that are all together forming a code block group.
+#
+# For example this block in a markdown file named docs_source/➡️ Migrating To RevenueCat/purchase-completed.md:
+#
+# ```swift
+# let purchaseCompleted = "com.myapp.product1"
+# ```
+# ```kotlin
+# val purchaseCompleted = "com.myapp.product1"
+# ```
+#
+# Will be converted to:
+# [block:file]
+# [{
+#      "language":"swift",
+#      "name":"Swift",
+#      "file":"code_blocks/➡️ Migrating To RevenueCat/purchase-completed.swift"
+#  },
+#  {
+#      "language":"kotlin",
+#      "name":"Kotlin",
+#      "file":"code_blocks/➡️ Migrating To RevenueCat/purchase-completed_2.kt"
+#  }]
+# [/block]
+#
+# @param file_contents [String] the input string containing the whole content of the file
+# @param file_name [String] the name of the file being processed
+# @param output_dir [String] the directory where the extracted code blocks will be saved
+# @return [String] a string equal to the file_contents but with the code blocks replaced by a [block:file] block
 def replace_code_block_group(file_contents, file_name, output_dir)
     current_code_block = []
     code_block_group = []
@@ -33,17 +64,25 @@ def replace_code_block_group(file_contents, file_name, output_dir)
     lines.each_with_index do |line, line_index|
         beginning_or_end_of_block = line.start_with?('```')
         inside_block = !current_code_block.empty?
+
+        # Check if the line is the beginning or end of a code block
         if beginning_or_end_of_block
             is_beginning_of_block = current_code_block.empty? && line[3..].strip != ''
             is_end_of_block = !current_code_block.empty?
+
             if is_beginning_of_block
+                # Process the beginning of a code block
                 current_code_block << line
                 code_block_group << line
+
             elsif is_end_of_block
+                # Process the end of a code block
                 current_code_block << line
                 code_block_group << line
                 filename_without_ext = File.basename(file_name, ".md")
                 UI.message("🔨 Processing code block #{counter} in #{file_name}...")
+
+                # Extract the code block to a file and obtain the block information
                 code_block_information = extract_block_to_file(output_dir, filename_without_ext, current_code_block.join, counter)
                 if code_block_information.length > 0
                     code_block_group_replacement << code_block_information.to_json
@@ -52,6 +91,8 @@ def replace_code_block_group(file_contents, file_name, output_dir)
                 end
                 next_line = lines[line_index + 1]
                 next_line_is_beginning_of_block = next_line && next_line.start_with?('```') && next_line[3..].strip != ''
+
+                # Reached the end of a code block group, replace the code block group with the extracted files information
                 unless next_line_is_beginning_of_block
                     modified_file_content = replace_code_group(code_block_group, code_block_group_replacement, modified_file_content)
                     code_block_group = []
@@ -59,6 +100,7 @@ def replace_code_block_group(file_contents, file_name, output_dir)
                 end
             end
         elsif inside_block
+            # Process lines inside a code block
             current_code_block << line
             code_block_group << line
         end
