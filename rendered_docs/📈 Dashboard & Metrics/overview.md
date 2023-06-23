@@ -3,7 +3,6 @@ title: Overview
 slug: overview
 excerpt: In-app purchase dashboard
 hidden: false
-createdAt: '2020-04-02T23:21:02.437Z'
 categorySlug: dashboard-metrics
 order: 0
 ---

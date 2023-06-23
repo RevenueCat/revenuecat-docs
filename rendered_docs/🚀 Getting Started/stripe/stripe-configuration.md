@@ -3,7 +3,6 @@ title: "[Beta] Stripe Configuration"
 slug: stripe-configuration
 excerpt: Setting up your Stripe account in RevenueCat
 hidden: true
-createdAt: '2022-01-12T15:45:27.622Z'
 categorySlug: getting-started
 order: 1
 parentDoc: 648c7ee9adad5603ae95e620

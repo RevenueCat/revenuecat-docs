@@ -3,7 +3,6 @@ title: App Store Small Business Program
 slug: app-store-small-business-program
 excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
-createdAt: '2020-12-11T16:33:54.497Z'
 categorySlug: platform-resources
 order: 1
 parentDoc: 648c7f0801ab9d0074c85913

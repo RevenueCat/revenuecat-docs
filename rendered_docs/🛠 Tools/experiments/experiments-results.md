@@ -2,7 +2,6 @@
 title: Experiments Results
 slug: experiments-results
 hidden: true
-createdAt: '2020-07-09T16:53:54.410Z'
 categorySlug: tools
 order: 2
 parentDoc: 648c7ee8bb1ecb1d12ba7ba3

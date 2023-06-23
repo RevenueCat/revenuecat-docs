@@ -3,7 +3,6 @@ title: Offering Override
 slug: offering-override
 excerpt: Override the current offering that displays in your app
 hidden: false
-createdAt: '2020-07-30T17:03:23.384Z'
 categorySlug: dashboard-metrics
 order: 3
 parentDoc: 648c7ee63d0e7f00669ced48

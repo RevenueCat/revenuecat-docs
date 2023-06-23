@@ -3,7 +3,6 @@ title: Sandbox Testing
 slug: sandbox
 excerpt: Making in-app purchases from a test account
 hidden: false
-createdAt: '2022-10-31T14:08:19.865Z'
 categorySlug: test-launch
 order: 2
 ---

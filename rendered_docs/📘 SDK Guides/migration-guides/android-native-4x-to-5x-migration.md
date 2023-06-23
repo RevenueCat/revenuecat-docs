@@ -2,7 +2,6 @@
 title: Android Native - 4.x to 5.x Migration
 slug: android-native-4x-to-5x-migration
 hidden: true
-createdAt: '2022-03-23T14:39:58.758Z'
 categorySlug: sdk-guides
 order: 1
 parentDoc: 648c7ee650eac80027fe8f2e
@@ -48,12 +47,10 @@ The `configure` function has been changed to accept a `PurchasesConfiguration.Bu
 ```kotlin 
 Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())
 ```
-
 or for Amazon:
 ```kotlin 
 Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).build())
 ```
-
 ## Making purchases
 `purchasePackage` and `purchaseProduct` callbacks have been changed to return a `StoreTransaction` instead of a `Purchase` in the `onCompleted`.  
 

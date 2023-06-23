@@ -3,7 +3,6 @@ title: "[Beta] RevenueCat Checkout"
 slug: revenuecat-checkout
 excerpt: How to set up hosted paywalls in RevenueCat
 hidden: true
-createdAt: '2022-01-12T15:25:45.137Z'
 categorySlug: tools
 order: 0
 ---
@@ -172,14 +171,12 @@ Once a user has been redirected back to your app after clicking the link in the 
 ```swift 
 Purchases.shared.invalidateCustomerInfoCache()
 ```
-
 After the cache has been invalidated, you can fetch CustomerInfo again to retrieve the latest information about the customer and their purchases and unlock the features they are entitled to.
 ```swift 
 Purchases.shared.getCustomerInfo { info, error in 
 	// customerInfo contains the latest purchases                                  
 }
 ```
-
 # 5. Managing RevenueCat Checkout Purchases
 
 Your customers can manage their subscription by clicking the 'Manage' link in their purchase confirmation email, or you can link them to the management page directly by building their unique URL:

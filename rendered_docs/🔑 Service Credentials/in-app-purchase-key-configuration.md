@@ -3,7 +3,6 @@ title: In-App Purchase Key Configuration
 slug: in-app-purchase-key-configuration
 excerpt: Guide on how to set up iOS in-app purchase keys.
 hidden: false
-createdAt: '2022-02-02T00:31:49.564Z'
 categorySlug: service-credentials
 order: 3
 ---

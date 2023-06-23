@@ -3,7 +3,6 @@ title: Restoring Purchases
 slug: restoring-purchases
 excerpt: Re-sync purchased transactions from Apple, Google, or Amazon
 hidden: false
-createdAt: '2021-04-28T16:33:56.375Z'
 categorySlug: getting-started
 order: 8
 ---

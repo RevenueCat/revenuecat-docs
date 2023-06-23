@@ -3,7 +3,6 @@ title: Amazon Product Setup
 slug: amazon-product-setup
 excerpt: Setting up your in-app purchases in the Amazon Appstore
 hidden: false
-createdAt: '2021-12-03T14:37:38.429Z'
 categorySlug: getting-started
 order: 3
 parentDoc: 648c7ee85e81230012ca5edf

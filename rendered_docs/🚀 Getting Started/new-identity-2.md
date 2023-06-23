@@ -2,7 +2,6 @@
 title: "[DRAFT] Identity 2"
 slug: new-identity-2
 hidden: true
-createdAt: '2019-09-27T23:32:42.637Z'
 categorySlug: getting-started
 order: 13
 ---
@@ -41,7 +40,6 @@ Purchases.setup("public_sdk_key");
 ```csharp Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
-
 
 [block:callout]
 {
@@ -87,7 +85,6 @@ Purchases.setup("public_sdk_key", "my_app_user_id");
 ```csharp Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
-
 ## Set App User ID after configuration
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.identify()`. The most common cases are users creating accounts or logging in. 
 ```swift 
@@ -181,7 +178,6 @@ purchases.Identify("my_app_user_id", (purchaserInfo, error) => {
   // purchaserInfo updated for my_app_user_id
 });
 ```
-
 
 [block:callout]
 {

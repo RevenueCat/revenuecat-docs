@@ -3,7 +3,6 @@ title: Invite your team
 slug: collaborators
 excerpt: Invite others to collaborate on your project
 hidden: false
-createdAt: '2023-04-14T03:14:43.593Z'
 categorySlug: welcome
 order: 0
 parentDoc: 648c7f0806750b000c6ec33b

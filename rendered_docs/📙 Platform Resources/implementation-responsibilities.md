@@ -2,7 +2,6 @@
 title: Implementation Responsibilities
 slug: implementation-responsibilities
 hidden: false
-createdAt: '2020-10-14T18:30:27.528Z'
 categorySlug: platform-resources
 order: 0
 ---

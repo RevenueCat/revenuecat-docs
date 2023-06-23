@@ -3,7 +3,6 @@ title: Google Play Store
 slug: google-play-store
 excerpt: Testing purchases in Play Store Sandbox
 hidden: false
-createdAt: '2022-06-24T19:19:00.629Z'
 categorySlug: test-launch
 order: 1
 parentDoc: 648c7ee85d0303006e6d8fcc

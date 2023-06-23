@@ -2,7 +2,6 @@
 title: Refund Rate Chart
 slug: refund-rate-chart
 hidden: false
-createdAt: '2022-10-19T15:31:06.563Z'
 categorySlug: dashboard-metrics
 order: 4
 parentDoc: 648c7ee8b4629e1fd0fb39b5

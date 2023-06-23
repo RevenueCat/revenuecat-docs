@@ -3,7 +3,6 @@ title: Firebase
 slug: firebase-integration
 excerpt: Integrate in-app purchase events from RevenueCat with Firebase
 hidden: false
-createdAt: '2022-04-06T23:08:59.811Z'
 categorySlug: integrations-events
 order: 4
 parentDoc: 648c7ee701881d1af934bf16

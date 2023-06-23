@@ -3,7 +3,6 @@ title: "[DRAFT] Migrating Subscriptions"
 slug: draft-migrating-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
-createdAt: '2022-05-31T22:03:36.901Z'
 categorySlug: getting-started
 order: 20
 ---
@@ -55,7 +54,6 @@ if (isSubscribedInOldSystem && !isSubscribedInRevenueCat)
   Purchases.shared.syncPurchases { (customerInfo, error) in }
 }
 ```
-
 When a subscriber launches with the first version containing RevenueCat it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {

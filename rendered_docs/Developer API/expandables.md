@@ -2,7 +2,6 @@
 title: Expandables
 slug: expandables
 hidden: false
-createdAt: '2023-04-11T22:25:56.858Z'
 categorySlug: developer-api
 order: 2
 ---

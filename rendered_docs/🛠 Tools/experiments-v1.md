@@ -3,7 +3,6 @@ title: Experiments
 slug: experiments-v1
 excerpt: A/B testing two offerings in your app
 hidden: false
-createdAt: '2022-10-13T18:43:05.969Z'
 categorySlug: tools
 order: 3
 ---

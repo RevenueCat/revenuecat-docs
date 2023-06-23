@@ -3,7 +3,6 @@ title: App Builders
 slug: app-builders
 excerpt: No and Low Code Development Tools, RevenueCat, and You
 hidden: false
-createdAt: '2023-01-31T15:58:56.111Z'
 categorySlug: getting-started
 order: 8
 parentDoc: 648c7f084ca0960014e5d032

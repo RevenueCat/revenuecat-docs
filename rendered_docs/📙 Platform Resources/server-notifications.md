@@ -3,7 +3,6 @@ title: Platform Server Notifications
 slug: server-notifications
 excerpt: Informing RevenueCat of updates to user purchases
 hidden: false
-createdAt: '2022-09-15T19:16:00.342Z'
 categorySlug: platform-resources
 order: 7
 ---

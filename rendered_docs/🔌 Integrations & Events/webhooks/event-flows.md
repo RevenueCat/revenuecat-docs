@@ -3,7 +3,6 @@ title: Common Webhook Flows
 slug: event-flows
 excerpt: How webhooks are sent from RevenueCat
 hidden: false
-createdAt: '2022-07-29T14:20:20.439Z'
 categorySlug: integrations-events
 order: 1
 parentDoc: 648c7ee7de5aa2000aea06e2

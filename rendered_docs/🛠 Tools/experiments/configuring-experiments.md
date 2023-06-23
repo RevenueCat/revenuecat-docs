@@ -2,7 +2,6 @@
 title: Configuring Experiments
 slug: configuring-experiments
 hidden: true
-createdAt: '2020-07-09T16:50:48.063Z'
 categorySlug: tools
 order: 1
 parentDoc: 648c7ee8bb1ecb1d12ba7ba3

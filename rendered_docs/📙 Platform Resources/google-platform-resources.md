@@ -2,7 +2,6 @@
 title: Google Platform Resources
 slug: google-platform-resources
 hidden: false
-createdAt: '2020-12-21T20:03:37.821Z'
 categorySlug: platform-resources
 order: 3
 ---

@@ -3,7 +3,6 @@ title: "[DRAFT] Migrating Subscriptions v3"
 slug: draft-migrating-subscriptions-v3
 excerpt: How to migrate subscriptions from your existing setup
 hidden: true
-createdAt: '2021-12-29T03:23:56.845Z'
 categorySlug: getting-started
 order: 19
 ---
@@ -85,7 +84,6 @@ if (isSubscribedInOldSystem && !isSubscribedInRevenueCat)
   Purchases.shared.syncPurchases { (purchaserInfo, error) in }
 }
 ```
-
 When a subscriber launches with the first version containing *Purchases*, it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {
@@ -162,7 +160,6 @@ for (let record of records) {
   sleep(1);
 }
 ```
-
 ## Bulk imports
 
 For large datasets that aren't practical to import through the REST API, you can send us a .csv file to import manually. [Email us](mailto:support@revenuecat.com) with the below information and we'll be in touch. Please note that depending on the size, bulk imports can take time to complete, sometimes up to several days or weeks for the largest data sets. Please keep this in consideration as you are planning your launch.

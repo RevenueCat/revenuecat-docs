@@ -3,7 +3,6 @@ title: SDK Quickstart
 slug: getting-started
 excerpt: Get up and running with mobile subscriptions
 hidden: false
-createdAt: '2022-11-16T20:18:33.888Z'
 categorySlug: welcome
 order: 6
 ---

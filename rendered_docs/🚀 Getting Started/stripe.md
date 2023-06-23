@@ -3,7 +3,6 @@ title: Stripe Web Payments
 slug: stripe
 excerpt: Allow your users to subscribe to your app via Stripe
 hidden: false
-createdAt: '2023-05-24T20:09:54.235Z'
 categorySlug: getting-started
 order: 10
 ---

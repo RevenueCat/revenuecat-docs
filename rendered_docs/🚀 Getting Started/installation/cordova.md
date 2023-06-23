@@ -3,7 +3,6 @@ title: Cordova
 slug: cordova
 excerpt: Instructions for installing Purchases SDK for Cordova
 hidden: false
-createdAt: '2023-03-20T17:32:08.635Z'
 categorySlug: getting-started
 order: 4
 parentDoc: 648c7f084ca0960014e5d032
@@ -16,7 +15,6 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 ```shell 
 cordova plugin add cordova-plugin-purchases --save
 ```
-
 # Additional iOS Setup
 
 ## Add In-app Purchase Capability to Project

@@ -2,7 +2,6 @@
 title: Creating Offerings to Test
 slug: creating-offerings-to-test
 hidden: false
-createdAt: '2022-12-08T05:04:57.377Z'
 categorySlug: tools
 order: 1
 parentDoc: 648c7ee8b319ba05991ce60c

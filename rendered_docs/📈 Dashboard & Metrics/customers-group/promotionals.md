@@ -2,7 +2,6 @@
 title: Promotionals
 slug: promotionals
 hidden: false
-createdAt: '2020-04-06T21:46:08.587Z'
 categorySlug: dashboard-metrics
 order: 4
 parentDoc: 648c7ee63d0e7f00669ced48

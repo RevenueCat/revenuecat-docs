@@ -3,7 +3,6 @@ title: Ionic
 slug: ionic
 excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
-createdAt: '2020-04-07T20:32:01.037Z'
 categorySlug: getting-started
 order: 5
 parentDoc: 648c7f084ca0960014e5d032
@@ -33,7 +32,6 @@ npm install @awesome-cordova-plugins/purchases
 ionic cap sync
 ```
 
-
 [block:callout]
 {
   "type": "warning",
@@ -62,7 +60,6 @@ constructor(public platform: Platform, private purchases: Purchases) {
     }
 }
 ```
-
 
 [block:api-header]
 {

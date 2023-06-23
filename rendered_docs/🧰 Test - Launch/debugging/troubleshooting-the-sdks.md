@@ -2,7 +2,6 @@
 title: Troubleshooting the SDKs
 slug: troubleshooting-the-sdks
 hidden: false
-createdAt: '2021-05-03T18:59:17.242Z'
 categorySlug: test-launch
 order: 1
 parentDoc: 648c7ee83ccbe61ab66dce23
@@ -105,7 +104,6 @@ post_install do |installer|
     end
   end
 ```
-
 ** 4. ** Follow the [troubleshooting steps for iOS](doc:troubleshooting-the-sdks#ios).
 
 # Common Issues

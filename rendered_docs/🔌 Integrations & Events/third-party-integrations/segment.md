@@ -3,7 +3,6 @@ title: Segment
 slug: segment
 excerpt: Integrate in-app subscription events from RevenueCat with Segment
 hidden: false
-createdAt: '2023-04-27T20:08:30.175Z'
 categorySlug: integrations-events
 order: 10
 parentDoc: 648c7ee701881d1af934bf16

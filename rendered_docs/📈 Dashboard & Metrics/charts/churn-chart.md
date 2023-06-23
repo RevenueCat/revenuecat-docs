@@ -2,7 +2,6 @@
 title: Churn Chart
 slug: churn-chart
 hidden: false
-createdAt: '2022-10-19T15:30:31.866Z'
 categorySlug: dashboard-metrics
 order: 3
 parentDoc: 648c7ee8b4629e1fd0fb39b5

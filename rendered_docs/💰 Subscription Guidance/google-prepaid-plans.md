@@ -3,7 +3,6 @@ title: Google Prepaid Plans
 slug: google-prepaid-plans
 excerpt: Setting up your prepaid plan in Google Play Console
 hidden: false
-createdAt: '2023-06-14T23:13:10.753Z'
 categorySlug: subscription-guidance
 order: 6
 ---

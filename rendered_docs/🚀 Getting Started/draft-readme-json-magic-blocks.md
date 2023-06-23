@@ -2,7 +2,6 @@
 title: "[Draft] Readme json magic-blocks"
 slug: draft-readme-json-magic-blocks
 hidden: true
-createdAt: '2023-03-03T21:31:29.059Z'
 categorySlug: getting-started
 order: 24
 ---
@@ -19,7 +18,6 @@ Plain text
 ```javascript 
 // Javascript code
 ```
-
 
 [block:callout]
 {

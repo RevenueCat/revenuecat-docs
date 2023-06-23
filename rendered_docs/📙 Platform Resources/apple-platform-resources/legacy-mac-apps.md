@@ -3,7 +3,6 @@ title: Legacy Mac Apps
 slug: legacy-mac-apps
 excerpt: Configuring legacy Mac apps with RevenueCat
 hidden: false
-createdAt: '2021-04-22T00:21:12.343Z'
 categorySlug: platform-resources
 order: 4
 parentDoc: 648c7f0801ab9d0074c85913
@@ -88,7 +87,6 @@ Purchases.setForceUniversalAppStore(true)
 Purchases.configure()
 // ...
 ```
-
 
 [block:callout]
 {

@@ -3,7 +3,6 @@ title: Activity
 slug: activity
 excerpt: Real-time transaction dashboard
 hidden: true
-createdAt: '2020-04-02T23:21:08.116Z'
 categorySlug: dashboard-metrics
 order: 4
 ---

@@ -2,7 +2,6 @@
 title: Pagination
 slug: pagination
 hidden: false
-createdAt: '2023-04-11T22:25:34.753Z'
 categorySlug: developer-api
 order: 1
 ---

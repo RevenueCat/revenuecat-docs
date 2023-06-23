@@ -2,7 +2,6 @@
 title: Annual Recurring Revenue (ARR) Chart
 slug: annual-recurring-revenue-arr-chart
 hidden: false
-createdAt: '2022-10-19T15:31:46.168Z'
 categorySlug: dashboard-metrics
 order: 5
 parentDoc: 648c7ee8b4629e1fd0fb39b5

@@ -2,7 +2,6 @@
 title: Experiments Overview
 slug: experiments-overview-v1
 hidden: false
-createdAt: '2022-10-13T18:43:40.091Z'
 categorySlug: tools
 order: 0
 parentDoc: 648c7ee8b319ba05991ce60c

@@ -3,7 +3,6 @@ title: Google Real-Time Developer Notifications [old]
 slug: old-google-server-notifications
 excerpt: Sending Google Play server notifications to RevenueCat
 hidden: true
-createdAt: '2020-09-29T15:21:39.999Z'
 categorySlug: platform-resources
 order: 3
 parentDoc: 648c7ee7ad45780012e23932

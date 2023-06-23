@@ -3,7 +3,6 @@ title: Configuring Products
 slug: entitlements
 excerpt: Use Entitlements and Offerings to organize and display products
 hidden: false
-createdAt: '2023-04-28T13:04:14.121Z'
 categorySlug: getting-started
 order: 1
 ---

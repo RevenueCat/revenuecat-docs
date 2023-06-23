@@ -3,7 +3,6 @@ title: "\U0001F522 Support First Steps"
 slug: support-first-steps
 excerpt: We can help, but we need your help first.
 hidden: false
-createdAt: '2022-10-13T20:24:32.602Z'
 categorySlug: revenuecat-support
 order: 0
 ---

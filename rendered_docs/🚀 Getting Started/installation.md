@@ -3,7 +3,6 @@ title: Installing the SDK
 slug: installation
 excerpt: Add the Purchases SDK to your mobile app
 hidden: false
-createdAt: '2022-06-21T21:22:46.073Z'
 categorySlug: getting-started
 order: 2
 ---

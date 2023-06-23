@@ -3,7 +3,6 @@ title: Apple Platform Resources
 slug: apple-platform-resources
 excerpt: Additional resources for easy RevenueCat & Apple Platform development
 hidden: false
-createdAt: '2020-12-14T16:52:52.451Z'
 categorySlug: platform-resources
 order: 2
 ---

@@ -3,7 +3,6 @@ title: SearchAdsHQ
 slug: searchadshq
 excerpt: Integrate Purchases SDK with SearchAdsHQ for precise revenue tracking
 hidden: true
-createdAt: '2020-07-30T17:43:45.879Z'
 categorySlug: integrations-events
 order: 9
 parentDoc: 648c7ee73ccbe61ab66dce20
@@ -24,7 +23,6 @@ import iAd
 Purchases.automaticAppleSearchAdsAttributionCollection = true
 Purchases.configure(withAPIKey: "public_sdk_key")
 ```
-
 Our guide on [Apple Search Ads attribution](doc:apple-search-ads) outlines this step in more detail.
 
 The integration also accepts some optional device-specific data below:
@@ -54,7 +52,6 @@ Purchases.shared.setAttributes([
     "$idfa" : ASIdentifierManager.shared().advertisingIdentifier.uuidString
 ])
 ```
-
 
 [block:callout]
 {

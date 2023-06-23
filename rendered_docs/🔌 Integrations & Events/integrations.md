@@ -3,7 +3,6 @@ title: Events Overview
 slug: integrations
 excerpt: Learn about events and integrations from RevenueCat
 hidden: false
-createdAt: '2023-04-14T03:01:04.122Z'
 categorySlug: integrations-events
 order: 0
 ---

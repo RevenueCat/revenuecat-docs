@@ -3,7 +3,6 @@ title: Using RevenueCat in existing apps
 slug: existing-apps
 excerpt: Supercharging your existing app business with RevenueCat
 hidden: false
-createdAt: '2023-04-14T03:07:40.629Z'
 categorySlug: welcome
 order: 2
 ---

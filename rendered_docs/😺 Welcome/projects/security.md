@@ -3,7 +3,6 @@ title: Account security
 slug: security
 excerpt: Enabling two-factor authentication for your RevenueCat account
 hidden: false
-createdAt: '2019-12-20T21:05:57.489Z'
 categorySlug: welcome
 order: 1
 parentDoc: 648c7f0806750b000c6ec33b

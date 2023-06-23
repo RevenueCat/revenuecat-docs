@@ -3,7 +3,6 @@ title: ETL Exports
 slug: etl-exports-legacy
 excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
-createdAt: '2020-10-02T02:46:37.589Z'
 categorySlug: integrations-events
 order: 5
 ---

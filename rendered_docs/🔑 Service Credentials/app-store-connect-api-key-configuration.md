@@ -2,7 +2,6 @@
 title: App Store Connect API Key Configuration
 slug: app-store-connect-api-key-configuration
 hidden: true
-createdAt: '2023-01-03T19:30:12.606Z'
 categorySlug: service-credentials
 order: 4
 ---

@@ -3,7 +3,6 @@ title: Subscriber Attributes
 slug: subscriber-attributes
 excerpt: Adding custom properties to users in RevenueCat
 hidden: false
-createdAt: '2020-03-02T07:47:34.104Z'
 categorySlug: customers-1
 order: 2
 ---

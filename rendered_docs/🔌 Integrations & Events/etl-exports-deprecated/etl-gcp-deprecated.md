@@ -3,7 +3,6 @@ title: Google Cloud Storage
 slug: etl-gcp-deprecated
 excerpt: Setting up Google Cloud Storage access keys for data transfer
 hidden: true
-createdAt: '2020-10-02T02:50:53.583Z'
 categorySlug: integrations-events
 order: 1
 parentDoc: 648c7ee7afbbbc001d6a0c53

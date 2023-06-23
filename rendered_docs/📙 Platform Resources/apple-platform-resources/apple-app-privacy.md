@@ -3,7 +3,6 @@ title: Apple App Privacy
 slug: apple-app-privacy
 excerpt: How to fill out the questionnaire
 hidden: false
-createdAt: '2020-11-10T18:05:47.960Z'
 categorySlug: platform-resources
 order: 0
 parentDoc: 648c7f0801ab9d0074c85913

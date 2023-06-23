@@ -3,7 +3,6 @@ title: "[DRAFT] Overview"
 slug: draft-overview
 excerpt: In-app purchase dashboard
 hidden: true
-createdAt: '2022-03-29T18:31:13.011Z'
 categorySlug: dashboard-metrics
 order: 6
 ---

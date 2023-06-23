@@ -3,7 +3,6 @@ title: Data Export Version 4
 slug: data-export-version-4
 excerpt: Available since June 2023 (latest version)
 hidden: false
-createdAt: '2023-05-19T16:00:00.905Z'
 categorySlug: integrations-events
 order: 3
 parentDoc: 648c7f073e7cd10047a1a82b

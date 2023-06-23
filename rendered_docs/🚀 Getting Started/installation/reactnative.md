@@ -3,7 +3,6 @@ title: React Native
 slug: reactnative
 excerpt: Instructions for installing Purchases SDK for React Native
 hidden: false
-createdAt: '2023-03-20T17:32:28.902Z'
 categorySlug: getting-started
 order: 2
 parentDoc: 648c7f084ca0960014e5d032
@@ -28,7 +27,6 @@ npm install --save react-native-purchases
 ```shell yarn
 yarn add react-native-purchases
 ```
-
 ### Option 1.2: Manual linking
 ```shell npm
 npm install --save react-native-purchases
@@ -36,12 +34,10 @@ npm install --save react-native-purchases
 ```shell yarn
 yarn add react-native-purchases
 ```
-
 After that, you should link the library to the native projects by doing:
 ```shell 
 react-native link react-native-purchases
 ```
-
 ## Option 2: Using Expo
 
 RevenueCat with Expo, you will have to create Development Builds, which can be done either by using EAS, or by making builds that are compatible with Xcode and Android Studio. 
@@ -75,7 +71,6 @@ If your project already uses Cocoapods to install iOS dependencies, common in Ex
 ```yaml Podfile
 pod 'RNPurchases', :path => '../node_modules/react-native-purchases', :inhibit_warnings => true, :modular_headers => false
 ```
-
 
 In your iOS folder, run `pod install`. If you've just upgraded ExpoKit, you might need to upgrade cocoapods to the newest version: `sudo gem install cocoapods`.
 
@@ -130,7 +125,6 @@ You should now be able to import `Purchases`.
 import Purchases from 'react-native-purchases';
 ```
 
-
 [block:callout]
 {
   "type": "info",
@@ -142,7 +136,6 @@ import Purchases from 'react-native-purchases';
 ```xml AndroidManifest.xml
 <uses-permission android:name="com.android.vending.BILLING" />
 ```
-
 
 [block:callout]
 {

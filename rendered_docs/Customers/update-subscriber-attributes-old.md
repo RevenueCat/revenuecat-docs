@@ -3,7 +3,6 @@ title: Update Subscriber Attributes
 slug: update-subscriber-attributes-old
 excerpt: Updates subscriber attributes for a user.
 hidden: true
-createdAt: '2020-03-10T01:14:10.675Z'
 categorySlug: customers
 order: 1
 ---

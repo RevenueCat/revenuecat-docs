@@ -3,7 +3,6 @@ title: Android
 slug: android
 excerpt: Instructions for installing Purchases SDK for Android
 hidden: false
-createdAt: '2023-04-17T16:07:45.008Z'
 categorySlug: getting-started
 order: 1
 parentDoc: 648c7f084ca0960014e5d032
@@ -16,13 +15,12 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 ## Installation
 
-Purchases for Android (Google Play) is available on Maven and can be included via Gradle.
+Purchases for Android (Google Play and Amazon Appstore) is available on Maven and can be included via Gradle.
 
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
 
 ```groovy build.gradle
-implementation 'com.revenuecat.purchases:purchases:6.1.0'
-
+implementation 'com.revenuecat.purchases:purchases:6.0.0'
 ```
 
 

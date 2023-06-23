@@ -3,7 +3,6 @@ title: SwiftUI App Lifecycle
 slug: swiftui-app-lifecycle
 excerpt: Initializing the Purchases SDK in SwiftUI
 hidden: true
-createdAt: '2020-06-30T18:43:10.805Z'
 categorySlug: platform-resources
 order: 2
 parentDoc: 648c7f0801ab9d0074c85913

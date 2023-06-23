@@ -3,7 +3,6 @@ title: Singular
 slug: singular
 excerpt: Integrate Purchases SDK with Singular for precise revenue tracking
 hidden: false
-createdAt: '2020-07-29T17:30:24.269Z'
 categorySlug: integrations-events
 order: 6
 parentDoc: 648c7ee73ccbe61ab66dce20

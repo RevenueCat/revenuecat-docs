@@ -3,7 +3,6 @@ title: Making Purchases
 slug: making-purchases
 excerpt: Process a transaction with Apple or Google
 hidden: false
-createdAt: '2023-06-02T20:37:18.321Z'
 categorySlug: getting-started
 order: 6
 ---
@@ -112,7 +111,6 @@ purchases.PurchasePackage(package, (productIdentifier, customerInfo, userCancell
   }
 });
 ```
-
 The `purchase(package:)` completion block will contain an updated [CustomerInfo](doc:purchaserinfo) object if successful, along with some details about the transaction.
 
 If the `error `object is present, then the purchase failed. See our guide on [Error Handling](doc:errors) for the specific error types.

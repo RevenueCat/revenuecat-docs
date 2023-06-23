@@ -2,7 +2,6 @@
 title: Error Handling
 slug: error-handling
 hidden: false
-createdAt: '2023-04-11T22:26:23.246Z'
 categorySlug: developer-api
 order: 3
 ---

@@ -3,7 +3,6 @@ title: Caching
 slug: caching
 excerpt: How caching works with RevenueCat
 hidden: false
-createdAt: '2023-05-15T18:35:31.067Z'
 categorySlug: test-launch
 order: 0
 parentDoc: 648c7ee83ccbe61ab66dce23

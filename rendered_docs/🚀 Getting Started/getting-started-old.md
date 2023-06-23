@@ -3,7 +3,6 @@ title: Quickstart (old)
 slug: getting-started-old
 excerpt: Get up and running with mobile subscriptions
 hidden: true
-createdAt: '2022-12-09T20:31:16.384Z'
 categorySlug: getting-started
 order: 0
 ---
@@ -301,7 +300,6 @@ function onDeviceReady() {
 ```text Unity
 See Unity installation instructions https://docs.revenuecat.com/docs/unity
 ```
-
 When in development, we recommend enabling more verbose debug logs. For more information about these logs, see our [Debugging](doc:debugging) guide.  
 
 If you're planning to use RevenueCat alongside your existing purchase code, check out our guide on [Observer Mode](doc:observer-mode).
@@ -409,7 +407,6 @@ curl --request GET \
   --header 'Content-Type: application/json' \
   --header 'X-Platform: stripe'
 ```
-
 
 [block:html]
 {
@@ -537,7 +534,6 @@ curl -X POST \
   }'
 ```
 
-
 [block:html]
 {
   "html": "<body>\n  <h3> See it in action </h3>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift#L78-L95\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/paywall/PaywallFragment.kt#L55-L66\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/paywall.dart#L53-L61\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/components/PackageItem/index.js#L15-L31\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
@@ -637,7 +633,6 @@ curl --request GET \
   --header 'Content-Type: application/json'
 ```
 
-
 [block:html]
 {
   "html": "<body>\n  <h3> See it in action </h3>\n  <a href=\"https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/UserViewController.swift#L37-L45\" target=\"_blank\" class=\"button-text\">Swift</a>\n  <a href=\"https://github.com/RevenueCat/purchases-android/blob/main/examples/MagicWeather/app/src/main/java/com/revenuecat/sample/ui/weather/WeatherFragment.kt#L69-L84\" target=\"_blank\" class=\"button-text\">Kotlin</a>\n  <a href=\"https://github.com/RevenueCat/purchases-flutter/blob/main/revenuecat_examples/MagicWeather/lib/src/views/weather.dart#L31-L39\" target=\"_blank\" class=\"button-text\">Flutter</a>\n  <a href=\"https://github.com/RevenueCat/react-native-purchases/blob/main/examples/MagicWeather/src/screens/WeatherScreen/index.js#L29-L46\" target=\"_blank\"  class=\"button-text\">React Native</a>\n</body>\n"
@@ -717,7 +712,6 @@ purchases.RestoreTransactions((info, error) =>
     //... check purchaserInfo to see if entitlement is now active
 });
 ```
-
 
 [block:html]
 {
@@ -813,7 +807,6 @@ public override void PurchaserInfoReceived(Purchases.PurchaserInfo purchaserInfo
     // handle any changes to purchaserInfo
 }
 ```
-
 
 [block:html]
 {

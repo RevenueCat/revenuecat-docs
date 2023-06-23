@@ -3,7 +3,6 @@ title: Google Play Product Setup
 slug: android-products
 excerpt: Setting up your in-app purchases in Google Play Billing
 hidden: false
-createdAt: '2020-06-26T22:04:24.057Z'
 categorySlug: getting-started
 order: 1
 parentDoc: 648c7ee85e81230012ca5edf

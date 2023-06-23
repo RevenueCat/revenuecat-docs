@@ -3,7 +3,6 @@ title: Sample Apps
 slug: sample-apps
 excerpt: Example usage of RevenueCat's SDK
 hidden: false
-createdAt: '2022-10-18T14:05:26.509Z'
 categorySlug: platform-resources
 order: 9
 ---
