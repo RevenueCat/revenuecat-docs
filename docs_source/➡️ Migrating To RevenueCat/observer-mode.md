@@ -17,6 +17,7 @@ Observer Mode may be set up as part of your migration strategy to RevenueCat, or
 | Experiments                  | ❌             | ✅                |
 | Fetching Products            | ❌             | ✅                |
 | Making Purchases             | ❌             | ✅                |
+| Checking Subscription Status | ❌ \*\*        | ✅                |
 
 \*_information based around the "last seen time" and "country" may not be complete in Observer Mode_
 
@@ -88,22 +89,38 @@ No special requirements
 ## 1. Configure the SDK
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"Java","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_6.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "Java",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_6.cs"
+  }
+]
 [/block]
 
 ### Enable Observer Mode in Unity Editor (Unity Only)
@@ -129,10 +146,18 @@ No special requirements
 On Android with Amazon Store (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncObserverModeAmazonPurchase` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 
 [block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.cs"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.kt"}
+[
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.cs"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.kt"
+  }
+]
 [/block]
 
 # Configuring Integrations

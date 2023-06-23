@@ -81,7 +81,13 @@ Stripe subscriptions are automatically refreshed by RevenueCat the same way as s
 > One-time purchases require using Stripe Checkout, and you'll need to send us the Checkout Session ID as the fetch_token. Additionally, you'll need to use Stripe's [Prices](https://stripe.com/docs/api/prices) objects as [SKU's](https://stripe.com/docs/api/skus) are not supported. RevenueCat supports both one-time purchases and subscriptions made through Stripe Checkout.
 
 [block:file]
-{"language":"curl","name":"","file":"code_blocks/🚀 Getting Started/stripe_1.curl"}
+[
+  {
+    "language": "curl",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/stripe_1.curl"
+  }
+]
 [/block]
 
 > 📘 App User ID is required

@@ -168,13 +168,23 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 Create an `identityRequest` and add it to the `MParticleOptions` that you pass to the `start()` method on the mParticle SDK to set the same App User Id that is set in RevenueCat.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_2.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_3.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_2.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_3.java"
+  }
+]
 [/block]
 
 
@@ -182,25 +192,45 @@ Create an `identityRequest` and add it to the `MParticleOptions` that you pass t
 mParticle also allows you to log a user in after starting the SDK and log a user out; you should handle both of these cases:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_4.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_5.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_6.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_4.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_5.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_6.java"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_7.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_8.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_9.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_7.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_8.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_9.java"
+  }
+]
 [/block]
 
 
@@ -259,35 +289,63 @@ While still on the Customer View, click into the test purchase event in the [Cus
 Below are sample JSONs that are delivered to mParticle for the different event types.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_10.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_11.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_12.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_13.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_14.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_15.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_16.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_10.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_11.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_12.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_13.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_14.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_15.json"
+  },
+  {
+    "language": "json",
+    "name": "Uncancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_16.json"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_17.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_18.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_19.json"}
+[
+  {
+    "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_17.json"
+  },
+  {
+    "language": "json",
+    "name": "Billing Issue",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_18.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mparticle_19.json"
+  }
+]
 [/block]

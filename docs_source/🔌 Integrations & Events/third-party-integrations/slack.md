@@ -161,32 +161,58 @@ Once you've set up a webhook in your Slack workspace. Enter the details into the
 Below are sample JSONs that are delivered to Slack for each event type.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_1.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_2.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_3.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_4.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_5.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_6.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_1.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_2.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_3.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_4.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_5.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_6.json"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_7.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_8.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/slack_9.json"}
+[
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_7.json"
+  },
+  {
+    "language": "json",
+    "name": "Billing Issue",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_8.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/slack_9.json"
+  }
+]
 [/block]

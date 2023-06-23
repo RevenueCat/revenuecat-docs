@@ -41,9 +41,14 @@ The way to do this is: if your existing subscription code knows you have a subsc
 
 See the following pseudo example.
 [block:file]
-{"language":"javascript","name":"Example","file":"code_blocks/🚀 Getting Started/draft-migrating-subscriptions_1.js"}
+[
+  {
+    "language": "javascript",
+    "name": "Example",
+    "file": "code_blocks/🚀 Getting Started/draft-migrating-subscriptions_1.js"
+  }
+]
 [/block]
-
 When a subscriber launches with the first version containing RevenueCat it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {

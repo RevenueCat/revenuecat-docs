@@ -161,13 +161,23 @@ We recommend keeping the Mixpanel SDK identifier the same as RevenueCat's App Us
 If a user has that subscriber attribute set it will be used instead of the RevenueCat App User ID in the Mixpanel events.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_2.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_3.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_2.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_3.java"
+  }
+]
 [/block]
 
 
@@ -206,23 +216,41 @@ After you've set up the _Purchases SDK_ and Mixpanel SDK, you can "turn on" the 
 Below are sample JSONs that are delivered to Mixpanel for events.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_4.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_5.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_6.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_7.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_8.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_9.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_10.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_4.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_5.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_6.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_7.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_8.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_9.json"
+  },
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/mixpanel_10.json"
+  }
+]
 [/block]

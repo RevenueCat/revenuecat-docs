@@ -131,24 +131,39 @@ No special requirements
 
 ## 1. Configure the SDK
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/📙 Platform Resources/observer-mode-draft_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "Java",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_5.js"
+  },
+  {
+    "language": "text",
+    "name": "Unity",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_6.txt"
+  }
+]
 [/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/📙 Platform Resources/observer-mode-draft_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/📙 Platform Resources/observer-mode-draft_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"Java","file":"code_blocks/📙 Platform Resources/observer-mode-draft_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/📙 Platform Resources/observer-mode-draft_5.js"}
-[/block]
-[block:file]
-{"language":"text","name":"Unity","file":"code_blocks/📙 Platform Resources/observer-mode-draft_6.txt"}
-[/block]
-
 ### Enable Observer Mode in Unity configuration (Unity Only)
 [block:image]
 {
@@ -178,15 +193,24 @@ No special requirements
 
 On Android (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the `syncPurchases` method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded**.
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📙 Platform Resources/observer-mode-draft_7.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_7.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_8.java"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/📙 Platform Resources/observer-mode-draft_9.js"
+  }
+]
 [/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/📙 Platform Resources/observer-mode-draft_8.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/📙 Platform Resources/observer-mode-draft_9.js"}
-[/block]
-
 
 [block:callout]
 {

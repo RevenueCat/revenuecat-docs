@@ -155,13 +155,23 @@ If you're using the Amplitude SDK, you can set the User Id to match the RevenueC
 Configure the Amplitude SDK with the same App User Id as RevenueCat or use the `.setUserId()` method on the Amplitude SDK.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_2.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_3.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_2.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_3.java"
+  }
+]
 [/block]
 
 
@@ -215,41 +225,73 @@ After you've set up the _Purchases SDK_ and Amplitude SDK to have the same user 
 Below are sample JSONs that are delivered to Amplitude for each event type.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_4.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_5.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Conversion","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_6.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_7.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_8.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_9.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_10.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_4.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_5.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Conversion",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_6.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_7.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_8.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_9.json"
+  },
+  {
+    "language": "json",
+    "name": "Uncancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_10.json"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_11.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Subscription Paused","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_12.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_13.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_14.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_15.json"}
+[
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_11.json"
+  },
+  {
+    "language": "json",
+    "name": "Subscription Paused",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_12.json"
+  },
+  {
+    "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_13.json"
+  },
+  {
+    "language": "json",
+    "name": "Billing Issues",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_14.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/amplitude_15.json"
+  }
+]
 [/block]

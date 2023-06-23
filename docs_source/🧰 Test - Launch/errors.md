@@ -25,12 +25,19 @@ When investigating or logging errors, review the `errorUserInfo` dictionary, pay
 
 ### Examples
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🧰 Test - Launch/errors_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/errors_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/errors_2.m"
+  }
+]
 [/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🧰 Test - Launch/errors_2.m"}
-[/block]
-
 ## Android Errors
 On Android, when an error has occurred, the `onError` listener will receive a `PurchasesError` object.
 
@@ -41,9 +48,14 @@ When investigating or logging errors, review the properties of `PurchasesError`:
 
 ### Examples
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🧰 Test - Launch/errors_3.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/errors_3.kt"
+  }
+]
 [/block]
-
 # Legend
 When debugging errors, it's important to consider whether the error was thrown by RevenueCat, Apple, or Google. This can help you pinpoint where to look for a resolution. 
 [block:parameters]

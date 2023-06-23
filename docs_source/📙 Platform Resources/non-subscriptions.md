@@ -63,7 +63,13 @@ Each package should contain a different quantity of coins. For our example, let'
 Attach your products to each package, and you're ready to use to Purchases SDK to display your offering. On iOS, you could fetch the offering like this:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/non-subscriptions_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/non-subscriptions_1.swift"
+  }
+]
 [/block]
 
 
@@ -73,7 +79,13 @@ For more information displaying products, check out the [Displaying Products](do
 When you're ready to purchase one of the coin packages, pass the package object to the Purchases SDK, like the following:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/non-subscriptions_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/non-subscriptions_2.swift"
+  }
+]
 [/block]
 
 

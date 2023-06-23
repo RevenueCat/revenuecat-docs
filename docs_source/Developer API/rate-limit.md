@@ -15,5 +15,11 @@ If you reach the rate limit, as indicated by a `429` [error code](https://www.re
 Below is an example of the response body that will be sent when the rate limit is reached. The content of the field `backoff_ms` is equal to the `Retry-After` header.
 
 [block:file]
-{"language":"json","name":"Sample error response","file":"code_blocks/Developer API/rate-limit_1.json"}
+[
+  {
+    "language": "json",
+    "name": "Sample error response",
+    "file": "code_blocks/Developer API/rate-limit_1.json"
+  }
+]
 [/block]

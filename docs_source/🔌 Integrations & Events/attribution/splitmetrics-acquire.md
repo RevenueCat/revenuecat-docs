@@ -17,7 +17,13 @@ The SplitMetrics Acquire integration requires that Apple Search Ads attribution 
 The simplest way to collect this information is by setting the `automaticAppleSearchAdsAttributionCollection` property to `true` **before** configuring the _Purchases SDK_.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/splitmetrics-acquire_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/splitmetrics-acquire_1.swift"
+  }
+]
 [/block]
 
 
@@ -33,7 +39,13 @@ The integration also accepts some optional device-specific data below:
 This data should be sent to RevenueCat through reserved [Subscriber Attributes](doc:subscriber-attributes) keys. 
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/splitmetrics-acquire_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/splitmetrics-acquire_2.swift"
+  }
+]
 [/block]
 
 

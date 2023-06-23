@@ -12,12 +12,18 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 ## Installation
 
-Purchases for Android (Google Play) is available on Maven and can be included via Gradle.
+Purchases for Android (Google Play and Amazon Appstore) is available on Maven and can be included via Gradle.
 
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
 
 [block:file]
-{"language":"groovy","name":"build.gradle","file":"code_blocks/🚀 Getting Started/installation/android_1.groovy"}
+[
+  {
+    "language": "groovy",
+    "name": "build.gradle",
+    "file": "code_blocks/🚀 Getting Started/installation/android_1.groovy"
+  }
+]
 [/block]
 
 
@@ -27,7 +33,13 @@ Purchases for Android (Google Play) is available on Maven and can be included vi
 You should now be able to import `Purchases`.
 
 [block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/installation/android_2.java"}
+[
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/installation/android_2.java"
+  }
+]
 [/block]
 
 
@@ -43,7 +55,13 @@ We are adding Proguard rules to the library so you don't need to do anything. If
 Add a new dependency to the build.gradle apart from the regular `purchases` dependency. These new dependencies have the classes needed to use Amazon IAP:
 
 [block:file]
-{"language":"groovy","name":"build.gradle","file":"code_blocks/🚀 Getting Started/installation/android_3.groovy"}
+[
+  {
+    "language": "groovy",
+    "name": "build.gradle",
+    "file": "code_blocks/🚀 Getting Started/installation/android_3.groovy"
+  }
+]
 [/block]
 
 

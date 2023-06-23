@@ -62,9 +62,14 @@ Navigate to the IAM Policy dashboard in your AWS console and click **‘Create p
 [/block]
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
 [block:file]
-{"language":"json","name":"Access Policy","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated/etl-s3-deprecated_1.json"}
+[
+  {
+    "language": "json",
+    "name": "Access Policy",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-deprecated/etl-s3-deprecated_1.json"
+  }
+]
 [/block]
-
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
 [block:image]
 {

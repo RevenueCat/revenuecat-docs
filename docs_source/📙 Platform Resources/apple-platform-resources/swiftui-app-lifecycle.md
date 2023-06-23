@@ -7,7 +7,13 @@ hidden: true
 With the next iteration of SwiftUI announced at WWDC 2020, entire apps can be created with just a simple struct conforming to the new `App` protocol, like so:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_1.swift"
+  }
+]
 [/block]
 
 Without traditional application delegate methods commonly used to initialize the SDK, it can seem a little confusing as to where the SDK should be initialized.
@@ -17,7 +23,13 @@ Without traditional application delegate methods commonly used to initialize the
 For basic initialization without delegate methods, you can implement the App `init` method:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_2.swift"
+  }
+]
 [/block]
 
 # Option 2: App Delegate
@@ -29,7 +41,13 @@ Another method of initialization is to use the new `@UIApplicationDelegateAdapto
 Begin by creating a delegate class and initializing the *Purchases* SDK like the following:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_3.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_3.swift"
+  }
+]
 [/block]
 
 ### Attaching the Delegate
@@ -37,7 +55,13 @@ Begin by creating a delegate class and initializing the *Purchases* SDK like the
 As previously mentioned, the new `@UIApplicationDelegateAdaptor` property attaches the delegate to the new SwiftUI App struct. Add the property wrapper like the following:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_4.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/apple-platform-resources/swiftui-app-lifecycle_4.swift"
+  }
+]
 [/block]
 
 Build and run the app, and *Purchases* will be initialized on app launch.

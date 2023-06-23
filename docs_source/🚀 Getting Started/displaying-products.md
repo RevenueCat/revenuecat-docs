@@ -21,28 +21,48 @@ Offerings are fetched through the SDK based on their [configuration](doc:entitle
 The `getOfferings` method will fetch the Offerings from RevenueCat. These are pre-fetched in most cases on app launch, so the completion block to get offerings won't need to make a network request in most cases. 
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_7.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_8.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_7.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_8.cs"
+  }
+]
 [/block]
 
 
@@ -70,28 +90,48 @@ Offerings can be updated at any time, and the changes will go into effect for al
 It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_9.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_10.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_11.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_12.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_13.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_14.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_15.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_16.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_9.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_10.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_11.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_12.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_13.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_14.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_15.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_16.cs"
+  }
+]
 [/block]
 
 
@@ -128,25 +168,43 @@ Packages can be access in a few different ways:
 3. via the package identifier directly
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_17.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_18.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_19.kt"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_20.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_21.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_22.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_23.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_17.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_18.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_19.kt"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_20.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_21.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_22.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_23.cs"
+  }
+]
 [/block]
 
 
@@ -156,28 +214,48 @@ Packages can be access in a few different ways:
 Each Package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the `storeProduct` property:
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🚀 Getting Started/displaying-products_24.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_25.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/🚀 Getting Started/displaying-products_26.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"Java","file":"code_blocks/🚀 Getting Started/displaying-products_27.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_28.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_29.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_30.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_31.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_24.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_25.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_26.kt"
+  },
+  {
+    "language": "java",
+    "name": "Java",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_27.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_28.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_29.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_30.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_31.cs"
+  }
+]
 [/block]
 
 
@@ -191,28 +269,48 @@ For example, displaying a higher priced Offering to users that came from [paid a
 This can be accomplished with custom Offering identifiers for each of these "cohorts".
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🚀 Getting Started/displaying-products_32.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/🚀 Getting Started/displaying-products_33.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_34.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/displaying-products_35.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/displaying-products_36.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/displaying-products_37.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/displaying-products_38.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/displaying-products_39.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_32.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_33.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_34.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_35.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_36.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_37.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_38.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_39.cs"
+  }
+]
 [/block]
 
 

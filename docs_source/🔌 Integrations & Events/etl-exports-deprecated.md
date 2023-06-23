@@ -138,11 +138,21 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 
 The following sample queries are in Postgresql.
 [block:file]
-{"language":"pgsql","name":"Active Trials","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated_1.pgsql"}
-[/block]
-[block:file]
-{"language":"pgsql","name":"Active Subscriptions","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated_2.pgsql"}
-[/block]
-[block:file]
-{"language":"pgsql","name":"Revenue","file":"code_blocks/🔌 Integrations & Events/etl-exports-deprecated_3.pgsql"}
+[
+  {
+    "language": "pgsql",
+    "name": "Active Trials",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-deprecated_1.pgsql"
+  },
+  {
+    "language": "pgsql",
+    "name": "Active Subscriptions",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-deprecated_2.pgsql"
+  },
+  {
+    "language": "pgsql",
+    "name": "Revenue",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-deprecated_3.pgsql"
+  }
+]
 [/block]

@@ -9,28 +9,48 @@ Restoring purchases is a mechanism by which your user can restore their in-app p
 It is recommended that all apps have some way for users to trigger the `restorePurchases` method, even if you require all customers to create accounts. 
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/restoring-purchases_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/restoring-purchases_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/restoring-purchases_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/restoring-purchases_7.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/restoring-purchases_8.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_7.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_8.cs"
+  }
+]
 [/block]
 
 

@@ -25,10 +25,18 @@ The Singular integration requires some device-specific data. RevenueCat will onl
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `collectDeviceIdentifiers()`. 
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/singular_1.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/singular_2.kt"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/singular_1.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/singular_2.kt"
+  }
+]
 [/block]
 
 You should make sure to call `collectDeviceIdentifiers()` after the _Purchases SDK_ is configured, and before the first purchase occurs. It's safe to call this multiple times, as only the new/updated values will be sent to RevenueCat.

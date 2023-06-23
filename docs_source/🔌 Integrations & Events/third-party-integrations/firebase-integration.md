@@ -57,7 +57,13 @@ Before installing this extension, set up the following Firebase services in your
 You should make sure to use the Firebase UID as the RevenueCat app user ID when setting the Firebase user identity in RevenueCat. This step is optional, but highly recommended as a best practice for the Google Analytics portion of this integration. The Firebase Extension portion **requires** this step to be completed.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_1.swift"
+  }
+]
 [/block]
 
 
@@ -71,7 +77,13 @@ In order to send subscriber lifecycle events to Google Analytics, you must set t
 Please ensure you're getting the app instance ID from the [Firebase Analytics](https://firebase.google.com/docs/analytics/get-started) package.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_2.swift"
+  }
+]
 [/block]
 
 
@@ -322,7 +334,13 @@ You will be charged a small amount (typically around $0.01/month) for the Fireba
 Set your security rules so that only authenticated users can access customer information, and that each user can only access their own information. 
 
 [block:file]
-{"language":"text","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_3.txt"}
+[
+  {
+    "language": "text",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_3.txt"
+  }
+]
 [/block]
 
 
@@ -530,46 +548,80 @@ Navigate to your Firebase dashboard > Firestore Database to find events sent for
 Below are sample JSONs that are delivered to Firestore Database for each event type. 
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_4.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_5.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_6.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_7.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_8.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_9.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_4.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_5.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_6.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_7.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_8.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_9.json"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_10.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_11.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Subscription Paused","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_12.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_13.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_14.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_15.json"}
-[/block]
-[block:file]
-{"language":"json,json","name":"Transfer","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_16.json,json"}
+[
+  {
+    "language": "json",
+    "name": "Uncancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_10.json"
+  },
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_11.json"
+  },
+  {
+    "language": "json",
+    "name": "Subscription Paused",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_12.json"
+  },
+  {
+    "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_13.json"
+  },
+  {
+    "language": "json",
+    "name": "Billing Issues",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_14.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_15.json"
+  },
+  {
+    "language": "json,json",
+    "name": "Transfer",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_16.json,json"
+  }
+]
 [/block]
 
 
@@ -581,7 +633,13 @@ Below are sample JSONs that are delivered to Firestore Database for each event t
 To check access to entitlements, you can either [use the RevenueCat SDK](https://docs.revenuecat.com/docs/getting-started#10-get-subscription-status) or use Firebase Authentication custom claims. For example, to check whether the current user has access to an entitlement called `premium`, you could use the following Firebase code:
 
 [block:file]
-{"language":"javascript","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_17.js"}
+[
+  {
+    "language": "javascript",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_17.js"
+  }
+]
 [/block]
 
 
@@ -591,7 +649,13 @@ To check access to entitlements, you can either [use the RevenueCat SDK](https:/
 To list a user's active subscriptions, you could use the following Firebase code:
 
 [block:file]
-{"language":"javascript","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_18.js"}
+[
+  {
+    "language": "javascript",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/firebase-integration_18.js"
+  }
+]
 [/block]
 
 

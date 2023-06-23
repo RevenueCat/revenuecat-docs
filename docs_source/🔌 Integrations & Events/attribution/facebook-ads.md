@@ -36,16 +36,28 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
 > If you are requesting the App Tracking permission through ATT to access the IDFA, you can call `.collectDeviceIdentifiers()` _again_ if the customer accepts the permission to update the `$idfa` attribute in RevenueCat.
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_1.swift"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_2.js"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_3.kt"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_4.js"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/facebook-ads_1.swift"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/facebook-ads_2.js"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/facebook-ads_3.kt"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/facebook-ads_4.js"
+  }
+]
 [/block]
 
 
@@ -71,7 +83,13 @@ You should make sure to set attributes after the _Purchases SDK_ is configured, 
 As noted above, you'll need to disable all client side tracking of revenue to prevent double counting of revenue in Facebook Ads Manager. To continue tracking install and usage events, you'll need to call Facebook's 'activate app' event after configuration:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/facebook-ads_5.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/facebook-ads_5.swift"
+  }
+]
 [/block]
 
 

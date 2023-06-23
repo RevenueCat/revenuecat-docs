@@ -88,9 +88,14 @@ You can find the latest version of our SDKs here:
 ** 2. ** Upgrade to the [latest version of React-Native](https://reactnative.dev/docs/upgrading).
 ** 3. ** If you're setting `BUILD_LIBRARY_FOR_DISTRIBUTION` in your Podfile, ensure RevenueCat's targets are excluded.
 [block:file]
-{"language":"ruby","name":"","file":"code_blocks/🧰 Test - Launch/debugging/troubleshooting-the-sdks_1.ruby"}
+[
+  {
+    "language": "ruby",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/debugging/troubleshooting-the-sdks_1.ruby"
+  }
+]
 [/block]
-
 ** 4. ** Follow the [troubleshooting steps for iOS](doc:troubleshooting-the-sdks#ios).
 
 # Common Issues

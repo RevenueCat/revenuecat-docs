@@ -80,9 +80,14 @@ If you are going to add an iOS app, enter the iOS/universal Mac app's bundle ID 
 
 This step is only required if you have both a legacy Mac app and an iOS/universal Mac app. In the **universal Mac app**, add this line of code right before `Purchases.configure`:
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/apple-platform-resources/legacy-mac-apps_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/apple-platform-resources/legacy-mac-apps_1.swift"
+  }
+]
 [/block]
-
 
 [block:callout]
 {

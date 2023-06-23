@@ -17,15 +17,25 @@ Apple recommends registering an `SKPaymentTransactionObserver` as soon as the ap
 
 **SwiftyStoreKit:**
 [block:file]
-{"language":"swift","name":"AppDelegate.swift","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "AppDelegate.swift",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_1.swift"
+  }
+]
 [/block]
-
 
 **RevenueCat:**
 [block:file]
-{"language":"swift","name":"AppDelegate.swift","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "AppDelegate.swift",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_2.swift"
+  }
+]
 [/block]
-
 **Migration Steps:**
 Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with the *Purchases SDK* `configure()` method.
 
@@ -36,14 +46,24 @@ Remove the SwiftyStoreKit `completeTransactions()` method, and replace it with t
 
 **SwiftyStoreKit:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_3.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_3.swift"
+  }
+]
 [/block]
-
 **RevenueCat:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_4.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_4.swift"
+  }
+]
 [/block]
-
 **Migration Steps:**
 In RevenueCat, Offerings are [configured in the dashboard](doc:entitlements), and mapped to `SKProduct`s. Once you setup your products in RevenueCat, replace `retrieveProductsInfo()` in SwiftyStoreKit with `offerings()` in *Purchases SDK*.
 
@@ -54,14 +74,24 @@ Products are automatically fetched and cached when the *Purchases SDK* is config
 
 **SwiftyStoreKit:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_5.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_5.swift"
+  }
+]
 [/block]
-
 **RevenueCat:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_6.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_6.swift"
+  }
+]
 [/block]
-
 **Migration Steps:**
 In SwiftyStoreKit, purchases can be initiated from a product Id or an `SKProduct`. In *Purchases SDK* the preferred method is to provide a package to purchase. Replace the `purchaseProduct()` method in SwiftyStoreKit with `purchase(package:)`, and pass the package that was included with the RevenueCat Offering.
 
@@ -73,14 +103,24 @@ To check if the subscription has been successfully activated, check if the `cust
 
 **SwiftyStoreKit:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_7.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_7.swift"
+  }
+]
 [/block]
-
 **RevenueCat:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_8.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_8.swift"
+  }
+]
 [/block]
-
 **Migration Steps:**
 RevenueCat handles purchases initiated through the App Store with an optional delegate method. Replace the `shouldAddStorePaymentHandler` in SwiftyStoreKit with the `shouldPurchasePromoProduct` in *Purchases SDK*.
 
@@ -90,14 +130,24 @@ With *Purchases SDK* you have the option of deferring the purchase until a later
 
 **SwiftyStoreKit:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_9.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_9.swift"
+  }
+]
 [/block]
-
 **RevenueCat:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_10.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_10.swift"
+  }
+]
 [/block]
-
 **Migration Steps:**
 The *Purchases SDK* has a similar method to SwiftyStoreKit to restore transactions - replace `restorePurchases()` in SwiftyStoreKit with `restoreTransactions()`. To check if the subscription has been restored, check if the `customerInfo` object contains an active entitlement for the "pro" content you configured in the RevenueCat dashboard.
 
@@ -110,14 +160,24 @@ Receipts are automatically verified by RevenueCat. You don't need any local or s
 
 **SwiftyStoreKit:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_11.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_11.swift"
+  }
+]
 [/block]
-
 **RevenueCat:**
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_12.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/➡️ Migrating To RevenueCat/swiftystorekit_12.swift"
+  }
+]
 [/block]
-
 **Migration Steps:**
 RevenueCat keeps a subscribers status up-to-date on the server and shares this information with the *Purchases SDK* to determine what subscriptions are active for the current user. 
 

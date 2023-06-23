@@ -30,10 +30,18 @@ The Adjust integration requires some device-specific data. RevenueCat will only 
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper methods to `collectDeviceIdentifiers()` and `setAdjustId()`. 
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/adjust_1.swift"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/adjust_2.java"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/adjust_1.swift"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/adjust_2.java"
+  }
+]
 [/block]
 
 
@@ -162,5 +170,11 @@ Adjust [does not accept events with revenue less than 0.001](https://help.adjust
 Below is a sample event sent to Adjust. The type of the event (e.g. initial purchase) is defined by the `event_token`. Note that product identifiers, subscriber attributes, app user IDs, etc. don't get sent to Adjust.
 
 [block:file]
-{"language":"json","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/adjust_3.json"}
+[
+  {
+    "language": "json",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/adjust_3.json"
+  }
+]
 [/block]

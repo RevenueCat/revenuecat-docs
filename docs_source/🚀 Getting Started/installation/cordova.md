@@ -10,9 +10,14 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 # Installation
 [block:file]
-{"language":"shell","name":"","file":"code_blocks/🚀 Getting Started/installation/cordova_1.shell"}
+[
+  {
+    "language": "shell",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/installation/cordova_1.shell"
+  }
+]
 [/block]
-
 # Additional iOS Setup
 
 ## Add In-app Purchase Capability to Project

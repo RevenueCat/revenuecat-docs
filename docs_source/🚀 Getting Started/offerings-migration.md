@@ -26,9 +26,14 @@ There are a few major improvements over the legacy system.
 ## 1. No hardcoded strings
 With new Offerings, you can now fully reference products without any hard coded strings. This will make your paywall code more robust and allow maximum configurability from the backend.
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/offerings-migration_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/offerings-migration_1.swift"
+  }
+]
 [/block]
-
 The above code sample fetches the offerings from the server, unpacks the current Offering, and prints out the available packages. There's no need to hardcode any strings, making remote configuration a breeze.
 
 ##2. More configuration options

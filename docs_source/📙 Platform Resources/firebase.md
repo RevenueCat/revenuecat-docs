@@ -26,14 +26,24 @@ Below are practical examples of setting this up in your application:
 
 ## iOS
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📙 Platform Resources/firebase_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/firebase_1.swift"
+  }
+]
 [/block]
-
 ## Android
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📙 Platform Resources/firebase_2.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/firebase_2.kt"
+  }
+]
 [/block]
-
 
 [block:callout]
 {
@@ -67,9 +77,14 @@ The URL of the `incomingWebhook` function should be pasted into the RevenueCat d
 [/block]
 ## Function Code
 [block:file]
-{"language":"javascript","name":"index.js","file":"code_blocks/📙 Platform Resources/firebase_3.js"}
+[
+  {
+    "language": "javascript",
+    "name": "index.js",
+    "file": "code_blocks/📙 Platform Resources/firebase_3.js"
+  }
+]
 [/block]
-
 
 [block:callout]
 {

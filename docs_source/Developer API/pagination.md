@@ -8,7 +8,13 @@ Top-level API resources have support for bulk fetches via "list" API methods. Fo
 When a response or a field contains multiple entities of the same type, it returns a `list` object of the following structure:
 
 [block:file]
-{"language":"json","name":"JSON","file":"code_blocks/Developer API/pagination_1.json"}
+[
+  {
+    "language": "json",
+    "name": "JSON",
+    "file": "code_blocks/Developer API/pagination_1.json"
+  }
+]
 [/block]
 
 

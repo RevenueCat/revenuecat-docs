@@ -12,19 +12,35 @@ This was synced from GitHub actions when merging to main
 Here is the code to configure the SDK:
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_1.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_2.kt"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/test_snippets_sync_from_github_1.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/test_snippets_sync_from_github_2.kt"
+  }
+]
 [/block]
 
 If you're building for the Amazon Appstore, you can use flavors to determine which keys to use. In your build.gradle:
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_3.kt"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/test_snippets_sync_from_github_4.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/test_snippets_sync_from_github_3.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/test_snippets_sync_from_github_4.kt"
+  }
+]
 [/block]
 
 

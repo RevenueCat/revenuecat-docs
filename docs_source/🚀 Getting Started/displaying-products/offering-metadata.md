@@ -63,10 +63,18 @@ After saving your changes, you'll be navigated back to the summary page for your
 You can access metadata directly from the Offering object in the RevenueCat SDKs.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/displaying-products/offering-metadata_1.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/displaying-products/offering-metadata_2.kt"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/offering-metadata_1.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/offering-metadata_2.kt"
+  }
+]
 [/block]
 
 ## Offering metadata limits

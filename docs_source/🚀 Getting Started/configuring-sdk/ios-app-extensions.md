@@ -12,7 +12,13 @@ To enable data sharing between the main app and extensions, you'll need to use X
 After you enable app groups, you will be able to access a user's active subscriptions in your App Extension by configuring _Purchases_ with a custom UserDefaults that's shared across your App Extension.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk/ios-app-extensions_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk/ios-app-extensions_1.swift"
+  }
+]
 [/block]
 
 

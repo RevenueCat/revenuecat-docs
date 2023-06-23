@@ -101,19 +101,33 @@ Apple Search Ads provides two different types of attribution data, one a Standar
 The standard attribution data collection does not require user consent and can be enabled by calling `Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()` after calling `configure`:
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_2.m"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_3.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_4.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_5.js"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_2.m"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_3.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_4.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_5.js"
+  }
+]
 [/block]
 
 That's it! The Purchases SDK will collect the attribution token and send it to RevenueCat in the background.
@@ -127,7 +141,13 @@ If the user rejects tracking, the Standard attribution data can still be collect
 To request consent from a user, implement the `requestTrackingAuthorization` method before enabling automatic collection:
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_6.swift"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_6.swift"
+  }
+]
 [/block]
 
 After automatic collection is enabled, Purchases will sync the attribution token with the RevenueCat backend. Please note that if you enable automatic collection _before_ requesting authorization, the attribution token will only be valid for Standard and not Detailed attribution data.

@@ -15,30 +15,49 @@ The *Purchases SDK* allows you to specify your own user identifiers or use anony
 [/block]
 If you don't provide an App User ID when instantiating the Purchases SDK, RevenueCat will create a new random App User ID for you and cache it on the device. In the event that the user deletes and reinstalls the app, a new random App User ID will be generated.
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_7.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_8.cs"
+  }
+]
 [/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/new-identity-2_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/new-identity-2_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/new-identity-2_7.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/new-identity-2_8.cs"}
-[/block]
-
 
 [block:callout]
 {
@@ -61,57 +80,95 @@ Using an externally managed App User ID also provides a mechanism by which to re
 ## Set App User ID on configuration
 If you have your own App User IDs, you can pass those on instantiation to *Purchases*.
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_9.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_9.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_10.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_11.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_12.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_13.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_14.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_15.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_16.cs"
+  }
+]
 [/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_10.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_11.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_12.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/new-identity-2_13.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/new-identity-2_14.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/new-identity-2_15.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/new-identity-2_8.cs"}
-[/block]
-
 ## Set App User ID after configuration
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.identify()`. The most common cases are users creating accounts or logging in. 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_17.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_17.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_18.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_19.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_20.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_21.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_22.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_23.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/new-identity-2_24.cs"
+  }
+]
 [/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_18.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_19.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/new-identity-2_20.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/new-identity-2_21.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/new-identity-2_22.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/new-identity-2_23.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/new-identity-2_24.cs"}
-[/block]
-
 
 [block:callout]
 {
