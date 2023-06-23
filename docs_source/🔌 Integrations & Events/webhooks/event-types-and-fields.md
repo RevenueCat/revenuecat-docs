@@ -122,7 +122,13 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
 Webhook events are serialized in JSON. The body of a `POST` request to your server will contain the serialized event, as well as the API version. 
 
 [block:file]
-{"language":"json","name":"","file":"code_blocks/🔌 Integrations & Events/webhooks/event-types-and-fields_1.json"}
+[
+  {
+    "language": "json",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/webhooks/event-types-and-fields_1.json"
+  }
+]
 [/block]
 
 # Common Fields

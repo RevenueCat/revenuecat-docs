@@ -11,28 +11,48 @@ hidden: false
 RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🧰 Test - Launch/debugging_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🧰 Test - Launch/debugging_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🧰 Test - Launch/debugging_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🧰 Test - Launch/debugging_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🧰 Test - Launch/debugging_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🧰 Test - Launch/debugging_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Unity","file":"code_blocks/🧰 Test - Launch/debugging_7.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🧰 Test - Launch/debugging_8.js"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/debugging_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/debugging_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/debugging_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/debugging_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🧰 Test - Launch/debugging_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🧰 Test - Launch/debugging_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Unity",
+    "file": "code_blocks/🧰 Test - Launch/debugging_7.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🧰 Test - Launch/debugging_8.js"
+  }
+]
 [/block]
 
 > 📘 OS_ACTIVITY_MODE and Common iOS Issues
@@ -63,10 +83,18 @@ RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays 
 [/block]
 
 [block:file]
-{"language":"swift","name":"SwiftUI","file":"code_blocks/🧰 Test - Launch/debugging_9.swift"}
-[/block]
-[block:file]
-{"language":"swift","name":"UIKit","file":"code_blocks/🧰 Test - Launch/debugging_10.swift"}
+[
+  {
+    "language": "swift",
+    "name": "SwiftUI",
+    "file": "code_blocks/🧰 Test - Launch/debugging_9.swift"
+  },
+  {
+    "language": "swift",
+    "name": "UIKit",
+    "file": "code_blocks/🧰 Test - Launch/debugging_10.swift"
+  }
+]
 [/block]
 
 You can export your configuration details in JSON format to share with RevenueCat support if you need to open a support ticket.
@@ -159,10 +187,18 @@ Messages that have the double red exclamation marks prefix (‼️) attached pro
 Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an eye out for any `ERROR` level logs, status codes other than `200`, or any `Invalid Product Identifiers`.
 
 [block:file]
-{"language":"text","name":"","file":"code_blocks/🧰 Test - Launch/debugging_11.txt"}
-[/block]
-[block:file]
-{"language":"text","name":"With emojis","file":"code_blocks/🧰 Test - Launch/debugging_12.txt"}
+[
+  {
+    "language": "text",
+    "name": "",
+    "file": "code_blocks/🧰 Test - Launch/debugging_11.txt"
+  },
+  {
+    "language": "text",
+    "name": "With emojis",
+    "file": "code_blocks/🧰 Test - Launch/debugging_12.txt"
+  }
+]
 [/block]
 
 # Next Steps

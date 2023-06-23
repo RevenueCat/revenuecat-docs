@@ -4,6 +4,8 @@ slug: user-ids
 excerpt: How RevenueCat handles user identity
 hidden: false
 ---
+RevenueCat provides a source of truth for a customer's [subscription status](https://www.revenuecat.com/docs/customer-info) across different platforms. User identity is one of the most important components of many mobile applications, and it's crucial to make sure the subscription status that RevenueCat is tracking is associated with the correct user.
+
 # What is a customer in RevenueCat?
 
 In RevenueCat, the term "customer" refers to the person using an app that utilizes RevenueCat to handle or track the user's purchases. Every customer has a unique <<glossary:CustomerInfo>> object that can be referenced via their App User ID. As described below, the RevenueCat SDK will automatically generate anonymous App User IDs for customers unless a custom App User ID is provided by the developer. Some apps will use a combination of both custom and anonymous App User IDs, or only one App User ID type.
@@ -17,28 +19,48 @@ Overall, the concept of a customer in RevenueCat is central to the platform's ab
 If you don't provide an App User ID when instantiating the Purchases SDK, RevenueCat will generate a new random App User ID for you and cache it on the device. In the event that the user deletes and reinstalls the app, a new random App User ID will be generated.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/👥 Customers/user-ids_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/👥 Customers/user-ids_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/👥 Customers/user-ids_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/👥 Customers/user-ids_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/user-ids_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/user-ids_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/👥 Customers/user-ids_7.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_8.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/user-ids_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/user-ids_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/👥 Customers/user-ids_7.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/user-ids_8.cs"
+  }
+]
 [/block]
 
 > 📘 
@@ -69,28 +91,48 @@ Using an externally managed App User ID also provides a mechanism by which to re
 If you have your own App User IDs at app launch, you can pass those on instantiation to _Purchases_.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/👥 Customers/user-ids_9.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/👥 Customers/user-ids_10.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/👥 Customers/user-ids_11.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/👥 Customers/user-ids_12.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/user-ids_13.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/user-ids_14.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/👥 Customers/user-ids_15.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_16.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_9.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_10.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_11.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_12.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/user-ids_13.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/user-ids_14.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/👥 Customers/user-ids_15.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/user-ids_16.cs"
+  }
+]
 [/block]
 
 Often times, you may not have your own App User IDs until later in the application lifecycle. In these cases, you can pass the App User ID  later through the `.logIn()` method.
@@ -100,28 +142,48 @@ Often times, you may not have your own App User IDs until later in the applicati
 If your app doesn't receive its own App User ID until later in its lifecycle, you can set (or change) the App User ID at any time by calling `.logIn()`. If the logged in identity does not already exist in RevenueCat, it will be created automatically. 
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/👥 Customers/user-ids_17.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/👥 Customers/user-ids_18.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/👥 Customers/user-ids_19.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/👥 Customers/user-ids_20.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/user-ids_21.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/user-ids_22.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/👥 Customers/user-ids_23.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/user-ids_24.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_17.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_18.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_19.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/👥 Customers/user-ids_20.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/user-ids_21.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/user-ids_22.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/👥 Customers/user-ids_23.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/user-ids_24.cs"
+  }
+]
 [/block]
 
 #### `logIn()` method alias behavior

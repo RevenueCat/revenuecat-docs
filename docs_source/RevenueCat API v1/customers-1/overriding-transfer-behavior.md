@@ -18,5 +18,11 @@ To override the behavior on an individual subscriber basis, make a request to th
 ## Example
 
 [block:file]
-{"language":"Text","name":"cURL","file":"code_blocks/RevenueCat API v1/customers-1/overriding-transfer-behavior_1.txt"}
+[
+  {
+    "language": "Text",
+    "name": "cURL",
+    "file": "code_blocks/RevenueCat API v1/customers-1/overriding-transfer-behavior_1.txt"
+  }
+]
 [/block]

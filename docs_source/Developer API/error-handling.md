@@ -8,7 +8,13 @@ RevenueCat uses [standard HTTP status codes](https://rcv2.readme.io/reference/er
 Successful modifications return the modified entity. Errors return the following fields:
 
 [block:file]
-{"language":"json","name":"Sample error response","file":"code_blocks/Developer API/error-handling_1.json"}
+[
+  {
+    "language": "json",
+    "name": "Sample error response",
+    "file": "code_blocks/Developer API/error-handling_1.json"
+  }
+]
 [/block]
 
 For more information on the `type` field and how to resolve these errors, please visit our [Error Types](ref:error-types) documentation.

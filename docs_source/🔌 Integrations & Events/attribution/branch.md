@@ -27,16 +27,28 @@ If you prefer to keep a separate user identity between Branch and RevenueCat, se
 > You will need to add the Branch SDK to your app before you can connect it with RevenueCat
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_2.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_3.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/attribution/branch_4.js"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_2.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_3.java"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_4.js"
+  }
+]
 [/block]
 
 
@@ -56,13 +68,23 @@ The Branch integration accepts some device-specific data that can be sent to Rev
 These properties can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `collectDeviceIdentifiers()`. 
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/branch_5.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective C","file":"code_blocks/🔌 Integrations & Events/attribution/branch_6.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/branch_7.kt"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_5.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective C",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_6.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_7.kt"
+  }
+]
 [/block]
 
 

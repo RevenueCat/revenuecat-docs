@@ -125,11 +125,21 @@ We try to normalize or at least annotate these quirks as much as possible, but b
 
 The following sample queries are in Postgresql.
 [block:file]
-{"language":"sql","name":"Active Trials","file":"code_blocks/🔌 Integrations & Events/etl-exports-legacy_1.sql"}
-[/block]
-[block:file]
-{"language":"sql","name":"Active Subscriptions","file":"code_blocks/🔌 Integrations & Events/etl-exports-legacy_2.sql"}
-[/block]
-[block:file]
-{"language":"sql","name":"Revenue","file":"code_blocks/🔌 Integrations & Events/etl-exports-legacy_3.sql"}
+[
+  {
+    "language": "sql",
+    "name": "Active Trials",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-legacy_1.sql"
+  },
+  {
+    "language": "sql",
+    "name": "Active Subscriptions",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-legacy_2.sql"
+  },
+  {
+    "language": "sql",
+    "name": "Revenue",
+    "file": "code_blocks/🔌 Integrations & Events/etl-exports-legacy_3.sql"
+  }
+]
 [/block]

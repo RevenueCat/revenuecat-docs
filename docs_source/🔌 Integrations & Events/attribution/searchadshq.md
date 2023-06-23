@@ -15,9 +15,14 @@ The SearchAdsHQ integration requires that Apple Search Ads attribution data is s
 
 The simplest way to collect this information is by setting the `automaticAppleSearchAdsAttributionCollection` property to `true` **before** configuring the *Purchases SDK*.
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/attribution/searchadshq_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/searchadshq_1.swift"
+  }
+]
 [/block]
-
 Our guide on [Apple Search Ads attribution](doc:apple-search-ads) outlines this step in more detail.
 
 The integration also accepts some optional device-specific data below:
@@ -37,9 +42,14 @@ The integration also accepts some optional device-specific data below:
 [/block]
 This data should be sent to RevenueCat through reserved [Subscriber Attributes](doc:subscriber-attributes) keys. 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/🔌 Integrations & Events/attribution/searchadshq_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/searchadshq_2.swift"
+  }
+]
 [/block]
-
 
 [block:callout]
 {

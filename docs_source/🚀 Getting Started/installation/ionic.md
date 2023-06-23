@@ -6,12 +6,19 @@ hidden: false
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 [block:file]
-{"language":"text","name":"Cordova","file":"code_blocks/🚀 Getting Started/installation/ionic_1.txt"}
+[
+  {
+    "language": "text",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_1.txt"
+  },
+  {
+    "language": "text",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_2.txt"
+  }
+]
 [/block]
-[block:file]
-{"language":"text","name":"Capacitor","file":"code_blocks/🚀 Getting Started/installation/ionic_2.txt"}
-[/block]
-
 
 [block:callout]
 {
@@ -28,9 +35,14 @@ Please refer to our [documentation](https://ionicframework.com/docs/native/purch
 [/block]
 Angular apps can use either Cordova or Capacitor to build native mobile apps. For Angular, the import path should end with `/ngx`.
 [block:file]
-{"language":"typescript","name":"","file":"code_blocks/🚀 Getting Started/installation/ionic_3.ts"}
+[
+  {
+    "language": "typescript",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_3.ts"
+  }
+]
 [/block]
-
 
 [block:api-header]
 {
@@ -39,5 +51,11 @@ Angular apps can use either Cordova or Capacitor to build native mobile apps. Fo
 [/block]
 Import the plugin object then use its static methods:
 [block:file]
-{"language":"typescript","name":"","file":"code_blocks/🚀 Getting Started/installation/ionic_4.ts"}
+[
+  {
+    "language": "typescript",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_4.ts"
+  }
+]
 [/block]

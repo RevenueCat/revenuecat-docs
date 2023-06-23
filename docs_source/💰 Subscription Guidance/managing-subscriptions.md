@@ -37,10 +37,18 @@ You can refer to this [blog post](https://www.revenuecat.com/blog/ios-subscripti
 In order to perform upgrades and downgrades for Google Play subscriptions, you will need to set the old product ID on `PurchaseParams.Builder`. Proration mode is optional and will default to `IMMEDIATE_WITHOUT_TIME_PRORATION`.
 
 [block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_1.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"Java","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_2.java"}
+[
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/💰 Subscription Guidance/managing-subscriptions_1.kt"
+  },
+  {
+    "language": "java",
+    "name": "Java",
+    "file": "code_blocks/💰 Subscription Guidance/managing-subscriptions_2.java"
+  }
+]
 [/block]
 
 Google documentation provides [examples of each proration mode](https://developer.android.com/google/play/billing/subscriptions#proration), behavior when [upgrading with free trial or intro price offers](https://developer.android.com/google/play/billing/subscriptions#upgrade-free-trial), and [recommendations](https://developer.android.com/google/play/billing/subscriptions#proration-recommendations) for which proration mode to use in different scenarios.
@@ -131,10 +139,18 @@ Google requires developers to allow customers to cancel a subscription within ap
 > `managementURL` is not supported on Amazon.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_3.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/💰 Subscription Guidance/managing-subscriptions_4.kt"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/💰 Subscription Guidance/managing-subscriptions_3.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/💰 Subscription Guidance/managing-subscriptions_4.kt"
+  }
+]
 [/block]
 
 > 🚧 Deleting a User

@@ -157,26 +157,46 @@ Once your account is connected, you can configure the event names that we'll sen
 Below are sample JSONs that are delivered to Intercom for each event.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_1.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_2.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_3.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_4.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_5.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_6.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_7.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_8.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_1.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_2.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_3.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_4.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_5.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_6.json"
+  },
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_7.json"
+  },
+  {
+    "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/intercom_8.json"
+  }
+]
 [/block]

@@ -58,7 +58,13 @@ Additionally, products in Google Play should be marked as Backwards Compatible.
 Purchases for Android can be installed by adding the following to your `build.gradle`:
 
 [block:file]
-{"language":"Text","name":"build.gradle","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_1.txt"}
+[
+  {
+    "language": "Text",
+    "name": "build.gradle",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_1.txt"
+  }
+]
 [/block]
 
 
@@ -70,7 +76,13 @@ Purchases for Android v5.x supports BillingClient 4.0.
 With version 5.x installed, you can import `Purchases`:
 
 [block:file]
-{"language":"Text","name":"Java","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_2.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Java",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_2.txt"
+  }
+]
 [/block]
 
 
@@ -84,7 +96,13 @@ You should add `-keep class com.revenuecat.purchases.** { *; }` to you Proguard 
 After importing `Purchases`, you can initialize the SDK with your API key:
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_3.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_3.txt"
+  }
+]
 [/block]
 
 
@@ -96,7 +114,13 @@ After importing `Purchases`, you can initialize the SDK with your API key:
 **Only** backwards compatible purchases, as mentioned above, can be fetched using Purchases for Android 5.x. Calling the `getOfferings` method will fetch your product configuration from RevenueCat:
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_4.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_4.txt"
+  }
+]
 [/block]
 
 
@@ -116,7 +140,13 @@ Packages can be access in a few different ways:
 - via the package identifier directly
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_5.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_5.txt"
+  }
+]
 [/block]
 
 
@@ -124,7 +154,13 @@ Packages can be access in a few different ways:
 Each package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the storeProduct property:
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_6.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_6.txt"
+  }
+]
 [/block]
 
 
@@ -134,7 +170,13 @@ Each package includes an underlying product that includes more information about
 The SDK has a simple method, purchase(package:), that takes a package from the fetched Offering and purchases the underlying product with Google:
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_7.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_7.txt"
+  }
+]
 [/block]
 
 
@@ -160,7 +202,13 @@ Observer Mode is optional, and enables you to capture new or migrate your existi
 When configuring the SDK, pass the `observerMode` property as part of the configuration builder:
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_8.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_8.txt"
+  }
+]
 [/block]
 
 
@@ -170,5 +218,11 @@ When configuring the SDK, pass the `observerMode` property as part of the config
 On Android with Google Play (including cross-platform SDKs running on Android), any time a purchase or restore occurs in your app you should call the syncPurchases method to record it in RevenueCat. **Failure to do so will result in no purchases being recorded.**
 
 [block:file]
-{"language":"Text","name":"Kotlin","file":"code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_9.txt"}
+[
+  {
+    "language": "Text",
+    "name": "Kotlin",
+    "file": "code_blocks/📙 Platform Resources/google-platform-resources/using-purchases-5x-for-google-play_9.txt"
+  }
+]
 [/block]

@@ -167,14 +167,24 @@ RevenueCat Checkout supports a customizable link that is displayed in your paywa
 
 Once a user has been redirected back to your app after clicking the link in the paywall, you should immediately invalidate the CustomerInfo cache:
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🛠 Tools/revenuecat-checkout_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🛠 Tools/revenuecat-checkout_1.swift"
+  }
+]
 [/block]
-
 After the cache has been invalidated, you can fetch CustomerInfo again to retrieve the latest information about the customer and their purchases and unlock the features they are entitled to.
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🛠 Tools/revenuecat-checkout_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🛠 Tools/revenuecat-checkout_2.swift"
+  }
+]
 [/block]
-
 # 5. Managing RevenueCat Checkout Purchases
 
 Your customers can manage their subscription by clicking the 'Manage' link in their purchase confirmation email, or you can link them to the management page directly by building their unique URL:

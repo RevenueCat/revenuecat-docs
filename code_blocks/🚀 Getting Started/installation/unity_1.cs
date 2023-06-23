@@ -6,7 +6,7 @@ public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
 {
     public override void CustomerInfoReceived(Purchases.CustomerInfo customerInfo)
     {
-        // display new PurchaserInfo
+        // display new CustomerInfo
     }
 
     private void Start()

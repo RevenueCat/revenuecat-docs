@@ -71,9 +71,14 @@ The way to do this is: if your existing subscription code knows you have a subsc
 
 See the following pseudo-code for an example.
 [block:file]
-{"language":"javascript","name":"Client side migration example","file":"code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_1.js"}
+[
+  {
+    "language": "javascript",
+    "name": "Client side migration example",
+    "file": "code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_1.js"
+  }
+]
 [/block]
-
 When a subscriber launches with the first version containing *Purchases*, it will trigger a sync. Once the sync is complete, it won't be triggered again.
 [block:callout]
 {
@@ -105,9 +110,14 @@ More info in the [API Reference here](https://docs.revenuecat.com/reference#rece
 
 Here's a pseudo-code sample to illustrate how this process would look like as a one-time migration job to import receipts into RevenueCat:
 [block:file]
-{"language":"javascript","name":"Migration script","file":"code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_2.js"}
+[
+  {
+    "language": "javascript",
+    "name": "Migration script",
+    "file": "code_blocks/🚀 Getting Started/draft-migrating-subscriptions-v3_2.js"
+  }
+]
 [/block]
-
 ## Bulk imports
 
 For large datasets that aren't practical to import through the REST API, you can send us a .csv file to import manually. [Email us](mailto:support@revenuecat.com) with the below information and we'll be in touch. Please note that depending on the size, bulk imports can take time to complete, sometimes up to several days or weeks for the largest data sets. Please keep this in consideration as you are planning your launch.

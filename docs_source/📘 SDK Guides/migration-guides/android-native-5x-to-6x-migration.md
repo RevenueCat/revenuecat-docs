@@ -139,16 +139,28 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 1. Update RevenueCat to version `6.4.0`. You can do this in your app’s module build.gradle.
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_1.kt"}
-[/block]
-[block:file]
-{"language":"Text","name":"React Native","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_2.txt"}
-[/block]
-[block:file]
-{"language":"Text","name":"Flutter","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_3.txt"}
-[/block]
-[block:file]
-{"language":"Text","name":"Cordova","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_4.txt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_1.kt"
+  },
+  {
+    "language": "Text",
+    "name": "React Native",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_2.txt"
+  },
+  {
+    "language": "Text",
+    "name": "Flutter",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_3.txt"
+  },
+  {
+    "language": "Text",
+    "name": "Cordova",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_4.txt"
+  }
+]
 [/block]
 
 2. Adapt your paywall to use the new SDK. 
@@ -159,11 +171,23 @@ With v6.x, you can choose to pass in a `StoreProduct`, a `Package`, or a `Subscr
 Follow the migration reference doc to migrate all the changes. These are some examples of code changes you might have to do:
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_5.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_5.kt"
+  }
+]
 [/block]
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_6.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/android-native-5x-to-6x-migration_6.kt"
+  }
+]
 [/block]
 
 3. If you are using products with offers:

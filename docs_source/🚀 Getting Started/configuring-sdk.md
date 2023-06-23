@@ -5,6 +5,10 @@ hidden: false
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 
+> 📘 Using an older SDK (v3.x)?
+> 
+> View our migration guide to v4.x [here](doc:ios-native-3x-to-4x-migration) or view our legacy docs [here](https://docs.revenuecat.com/v3.3/docs).
+
 # Basic Configuration
 
 ## Initialization
@@ -16,28 +20,48 @@ You should only configure _Purchases_ once, usually early in your application li
 Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/configuring-sdk_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/configuring-sdk_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/configuring-sdk_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/configuring-sdk_7.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/configuring-sdk_8.cs"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_7.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_8.cs"
+  }
+]
 [/block]
 
 > ❗️ iOS 15+ Prewarming

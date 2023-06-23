@@ -125,5 +125,11 @@ The payload should be passed along **as-is** in the data value of your request. 
 
 Here's a basic example of these steps using Node, Express, and Axios:
 [block:file]
-{"language":"javascript","name":"","file":"code_blocks/📙 Platform Resources/server-notifications/apple-server-notifications_1.js"}
+[
+  {
+    "language": "javascript",
+    "name": "",
+    "file": "code_blocks/📙 Platform Resources/server-notifications/apple-server-notifications_1.js"
+  }
+]
 [/block]

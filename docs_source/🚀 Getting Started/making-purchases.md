@@ -6,30 +6,49 @@ hidden: false
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_6.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_7.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_8.cs"
+  }
+]
 [/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🚀 Getting Started/making-purchases_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/🚀 Getting Started/making-purchases_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🚀 Getting Started/making-purchases_6.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Cordova","file":"code_blocks/🚀 Getting Started/making-purchases_7.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/🚀 Getting Started/making-purchases_8.cs"}
-[/block]
-
 The `purchase(package:)` completion block will contain an updated [CustomerInfo](doc:purchaserinfo) object if successful, along with some details about the transaction.
 
 If the `error `object is present, then the purchase failed. See our guide on [Error Handling](doc:errors) for the specific error types.

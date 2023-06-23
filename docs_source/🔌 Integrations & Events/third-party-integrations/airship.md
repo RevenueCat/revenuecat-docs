@@ -159,16 +159,28 @@ If you're using the Airship SDK, you can either send the channel ID to RevenueCa
 Setting the Airship channel ID in RevenueCat is the preferred way for identifying users in Airship. Call `setAirshipChannelID` on the Purchases SDK to have RevenueCat use the channel ID to send events to Airship.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_4.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_4.java"
+  }
+]
 [/block]
 
 
@@ -178,16 +190,28 @@ Setting the Airship channel ID in RevenueCat is the preferred way for identifyin
 **Setting the Airship channel ID in RevenueCat is preferred over using Named Users, even if you have a user authentication system.** However, if you're already using Named Users in your Airship integration, you have the option to set the Named User in the Airship SDK as the same app user ID as RevenueCat. Ensure [Named Users is enabled in your Airship dashboard](https://docs.airship.com/guides/messaging/user-guide/project/enable-features/#named-users).
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_5.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_6.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_7.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_8.java"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_5.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_6.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_7.kt"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_8.java"
+  }
+]
 [/block]
 
 
@@ -223,38 +247,68 @@ After you've set up the _Purchase_ SDK and Airship SDK to have the same user ide
 Below are sample JSONs that are delivered to Airship for each event type.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_9.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_10.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_11.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_12.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_13.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_14.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_15.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_9.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_10.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_11.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_12.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_13.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_14.json"
+  },
+  {
+    "language": "json",
+    "name": "Uncancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_15.json"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_16.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_17.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Billing Issue","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_18.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/airship_19.json"}
+[
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_16.json"
+  },
+  {
+    "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_17.json"
+  },
+  {
+    "language": "json",
+    "name": "Billing Issue",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_18.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/airship_19.json"
+  }
+]
 [/block]

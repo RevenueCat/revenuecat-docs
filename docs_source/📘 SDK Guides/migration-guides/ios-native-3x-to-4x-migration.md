@@ -291,11 +291,23 @@ These types replace native StoreKit types in all public API methods that used th
 
 Prior to the Swift migration, `Purchases` exposed errors as `NSError`'s, so one could detect errors like this:
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/ios-native-3x-to-4x-migration_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/ios-native-3x-to-4x-migration_1.swift"
+  }
+]
 [/block]
 Starting from Version 4, this becomes much simpler:
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/📘 SDK Guides/migration-guides/ios-native-3x-to-4x-migration_2.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/📘 SDK Guides/migration-guides/ios-native-3x-to-4x-migration_2.swift"
+  }
+]
 [/block]
 
 # New APIs

@@ -15,25 +15,43 @@ Subscriber attributes are useful for storing additional, structured information 
 Subscriber attributes can be set through the SDK by passing a dictionary of strings to the `setAttributes()` method on the shared Purchases instance. 
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/👥 Customers/subscriber-attributes_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"Objective-C","file":"code_blocks/👥 Customers/subscriber-attributes_2.m"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/👥 Customers/subscriber-attributes_3.kt"}
-[/block]
-[block:file]
-{"language":"java","name":"Java","file":"code_blocks/👥 Customers/subscriber-attributes_4.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/subscriber-attributes_5.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/subscriber-attributes_6.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/subscriber-attributes_7.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_2.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_3.kt"
+  },
+  {
+    "language": "java",
+    "name": "Java",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_4.java"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_5.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_6.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_7.cs"
+  }
+]
 [/block]
 
 
@@ -172,19 +190,33 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
 Reserved attributes can be written directly by setting the key (don't forget the `$` prefix) or with special helper methods:
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/👥 Customers/subscriber-attributes_8.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/👥 Customers/subscriber-attributes_9.kt"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/subscriber-attributes_10.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/subscriber-attributes_11.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/subscriber-attributes_12.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_8.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_9.kt"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_10.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_11.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_12.cs"
+  }
+]
 [/block]
 
 
@@ -194,19 +226,33 @@ Reserved attributes can be written directly by setting the key (don't forget the
 Push tokens can be used to engage with your users through Apple apns or Google cloud messaging. These can be saved in RevenueCat through system callbacks after the user accepts the push notification permissions in your app.
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/👥 Customers/subscriber-attributes_13.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/👥 Customers/subscriber-attributes_14.kt"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/subscriber-attributes_15.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/subscriber-attributes_16.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/subscriber-attributes_17.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_13.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_14.kt"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_15.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_16.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_17.cs"
+  }
+]
 [/block]
 
 
@@ -216,19 +262,33 @@ Push tokens can be used to engage with your users through Apple apns or Google c
 Any attribute can be cleared by passing `null` or an empty string as the key value. Individual attributes can also be cleared for a specific user in their [customer view](doc:customers).
 
 [block:file]
-{"language":"swift","name":"Swift","file":"code_blocks/👥 Customers/subscriber-attributes_18.swift"}
-[/block]
-[block:file]
-{"language":"kotlin","name":"Kotlin","file":"code_blocks/👥 Customers/subscriber-attributes_19.kt"}
-[/block]
-[block:file]
-{"language":"javascript","name":"Flutter","file":"code_blocks/👥 Customers/subscriber-attributes_20.js"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/👥 Customers/subscriber-attributes_21.js"}
-[/block]
-[block:file]
-{"language":"csharp","name":"Unity","file":"code_blocks/👥 Customers/subscriber-attributes_22.cs"}
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_18.swift"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_19.kt"
+  },
+  {
+    "language": "javascript",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_20.js"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_21.js"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_22.cs"
+  }
+]
 [/block]
 
 

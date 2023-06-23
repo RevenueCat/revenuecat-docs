@@ -10,7 +10,13 @@ For example, a `product` object will have an associated `app_id` field. This `ap
 ### Without `expand` query param
 
 [block:file]
-{"language":"json","name":"GET /products/prod1a2b3c4d5","file":"code_blocks/Developer API/expandables_1.json"}
+[
+  {
+    "language": "json",
+    "name": "GET /products/prod1a2b3c4d5",
+    "file": "code_blocks/Developer API/expandables_1.json"
+  }
+]
 [/block]
 
 
@@ -18,7 +24,13 @@ For example, a `product` object will have an associated `app_id` field. This `ap
 ### With `expand` query param:
 
 [block:file]
-{"language":"json","name":"GET /products/prod1a2b3c4d5?expand=app","file":"code_blocks/Developer API/expandables_2.json"}
+[
+  {
+    "language": "json",
+    "name": "GET /products/prod1a2b3c4d5?expand=app",
+    "file": "code_blocks/Developer API/expandables_2.json"
+  }
+]
 [/block]
 
 

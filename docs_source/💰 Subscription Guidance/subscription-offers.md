@@ -30,7 +30,13 @@ The Purchases SDK allows for easy checking of eligibility for introductory offer
 RevenueCat uses a best-effort approach to checking eligibility based on previous purchases by the customer. The native store payment sheet will ultimately display the correct eligibility before the customer subscribes.
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/💰 Subscription Guidance/subscription-offers_1.swift"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/💰 Subscription Guidance/subscription-offers_1.swift"
+  }
+]
 [/block]
 
 
@@ -65,7 +71,13 @@ If you want to have greater control over which offer gets applied to purchases, 
 The `subscriptionOptions` property also has a number of convenience properties that allow finding the right offer to apply for your customer. The `defaultOption` property finds the offer with the longest free trial period or the cheapest introductory offer. In addition, the following properties are available:
 
 [block:file]
-{"language":"kotlin","name":"","file":"code_blocks/💰 Subscription Guidance/subscription-offers_2.kt"}
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/💰 Subscription Guidance/subscription-offers_2.kt"
+  }
+]
 [/block]
 
 

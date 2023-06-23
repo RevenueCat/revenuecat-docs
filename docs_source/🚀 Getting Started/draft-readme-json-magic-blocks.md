@@ -11,12 +11,19 @@ Plain text
 [/block]
 
 [block:file]
-{"language":"c","name":"","file":"code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_1.c"}
+[
+  {
+    "language": "c",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_1.c"
+  },
+  {
+    "language": "javascript",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_2.js"
+  }
+]
 [/block]
-[block:file]
-{"language":"javascript","name":"","file":"code_blocks/🚀 Getting Started/draft-readme-json-magic-blocks_2.js"}
-[/block]
-
 
 [block:callout]
 {

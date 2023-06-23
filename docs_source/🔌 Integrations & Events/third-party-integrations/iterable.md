@@ -175,19 +175,33 @@ In order to associate RevenueCat data with the Iterable User Profile, either the
 To attribute an event to an Iterable Campaign ID and/or Template ID, set the `$iterableCampaignId` and/or `$iterableTemplateId` subscriber attributes through the RevenueCat SDK or [REST API](https://docs.revenuecat.com/reference/update-subscriber-attributes).
 
 [block:file]
-{"language":"swift","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_1.swift"}
-[/block]
-[block:file]
-{"language":"objectivec","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_2.m"}
-[/block]
-[block:file]
-{"language":"java","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_3.java"}
-[/block]
-[block:file]
-{"language":"javascript","name":"React Native","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_4.js"}
-[/block]
-[block:file]
-{"language":"curl","name":"","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_5.curl"}
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_1.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_2.m"
+  },
+  {
+    "language": "java",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_3.java"
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_4.js"
+  },
+  {
+    "language": "curl",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_5.curl"
+  }
+]
 [/block]
 
 
@@ -250,43 +264,75 @@ Navigate to your Iterable dashboard > Insights > Logs. To find Purchase events n
 Below are sample JSONs that are delivered to Iterable for events.
 
 [block:file]
-{"language":"json","name":"Initial Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_6.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Started","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_7.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Converted","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_8.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Trial Cancelled","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_9.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Renewal","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_10.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Cancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_11.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Uncancellation","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_12.json"}
+[
+  {
+    "language": "json",
+    "name": "Initial Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_6.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Started",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_7.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Converted",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_8.json"
+  },
+  {
+    "language": "json",
+    "name": "Trial Cancelled",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_9.json"
+  },
+  {
+    "language": "json",
+    "name": "Renewal",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_10.json"
+  },
+  {
+    "language": "json",
+    "name": "Cancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_11.json"
+  },
+  {
+    "language": "json",
+    "name": "Uncancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_12.json"
+  }
+]
 [/block]
 
 
 
 [block:file]
-{"language":"json","name":"Non Subscription Purchase","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_13.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Subscription Paused","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_14.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Expiration","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_15.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Billing Issues","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_16.json"}
-[/block]
-[block:file]
-{"language":"json","name":"Product Change","file":"code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_17.json"}
+[
+  {
+    "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_13.json"
+  },
+  {
+    "language": "json",
+    "name": "Subscription Paused",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_14.json"
+  },
+  {
+    "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_15.json"
+  },
+  {
+    "language": "json",
+    "name": "Billing Issues",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_16.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/iterable_17.json"
+  }
+]
 [/block]
 
 

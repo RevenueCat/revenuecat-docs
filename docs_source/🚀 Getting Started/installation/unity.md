@@ -127,9 +127,14 @@ The Purchases package will include a MonoBehavior called Purchases. This will be
 
 The Purchases behavior takes one additional parameter, a GameObject with a Purchases.Listener component. This will be where you handle purchase events, and updated subscriber information from RevenueCat. Here is a simple example:
 [block:file]
-{"language":"csharp","name":"","file":"code_blocks/🚀 Getting Started/installation/unity_1.cs"}
+[
+  {
+    "language": "csharp",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/installation/unity_1.cs"
+  }
+]
 [/block]
-
 # Unity Editor
 
 Running the Purchases SDK is unsupported in the Unity Editor at this time, and may result in `NullReferenceException: Object reference not set to an instance of an object` errors. Please build and run your app instead.
@@ -200,9 +205,14 @@ In order to do that, make sure you have `Custom Main Gradle Template` selected i
 [/block]
 Modify the `mainTemplate.gradle` to include the following at the end of the dependencies block:
 [block:file]
-{"language":"groovy","name":"","file":"code_blocks/🚀 Getting Started/installation/unity_2.groovy"}
+[
+  {
+    "language": "groovy",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/installation/unity_2.groovy"
+  }
+]
 [/block]
-
 Perform a clean up of the resolved dependencies using the `Assets/External Dependency Manager/Android Resolver/Delete Resolved Libraries` menu. This will cleanup the previously downloaded .aars in `Assets/Plugins/Android`. Otherwise you could end up with duplicated classes errors. 
 
 Also make sure to perform a resolve, so External Dependency Manager adds the right dependencies to the generated `build.gradle`.
