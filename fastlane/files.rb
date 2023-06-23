@@ -21,3 +21,15 @@ end
 def root_dir
     File.dirname(Dir.pwd)
 end
+
+def write_file_contents(file, file_contents)
+    Dir.chdir(root_dir) do
+        File.write(file, file_contents)
+    end
+end
+
+def create_folder(output_dir)
+    Dir.chdir(root_dir) do
+        FileUtils.mkdir_p(output_dir)
+    end
+end

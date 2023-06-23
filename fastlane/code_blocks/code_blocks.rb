@@ -1,35 +1,118 @@
 require_relative '../files.rb'
 
-def extract_code_blocks(source_folder)
-    markdown_files(source_folder).each do |file_name|
+UI = Fastlane::UI
+
+def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
+    UI.message("🔨 Extracting code blocks from #{from_files}...")
+    from_files.each do |file_name|
         UI.message("🔨 Processing #{file_name}...")
         current_folder = File.dirname(file_name)
         UI.message("🔨 Current folder #{current_folder}...")
         folder_inside_docs_source = current_folder.sub(/^#{source_folder}\//, "")
-        output_dir = "code_blocks/#{folder_inside_docs_source}"
+        output_dir = "#{code_blocks_folder}/#{folder_inside_docs_source}"
 
         file_contents = get_file_contents(file_name)
 
-        Dir.chdir(root_dir) do
-            FileUtils.mkdir_p(output_dir)
-        end
+        create_folder(output_dir)
 
         file_contents = convert_old_style_code_blocks(file_contents)
 
-        code_blocks = file_contents.scan(/```\w+[\s\S]+?```/)
-        total_blocks = code_blocks.length
-
-        code_blocks.each_with_index.map do |block, index|
-            filename_without_ext = File.basename(file_name, ".md")
-            UI.message("🔨 Processing code block #{index + 1}/#{total_blocks} in #{file_name}...")
-            code_block_information = extract_block_to_file(output_dir, filename_without_ext, block, index)
-            if code_block_information.length > 0
-                file_contents.gsub!("#{block}", "[block:file]\n#{code_block_information.to_json}\n[/block]")
-            end
-        end
-
-        write_file_contents(file_name, file_contents)
+        modified_file_content = replace_code_block_group(file_contents, file_name, output_dir)
+        write_file_contents(file_name, modified_file_content)
     end
+end
+
+##
+# Extracts all code within backticks to a file and adds the file information in a [block:file] block.
+# This function also works with code blocks that are all together forming a code block group.
+#
+# For example this block in a markdown file named docs_source/➡️ Migrating To RevenueCat/purchase-completed.md:
+#
+# ```swift
+# let purchaseCompleted = "com.myapp.product1"
+# ```
+# ```kotlin
+# val purchaseCompleted = "com.myapp.product1"
+# ```
+#
+# Will be converted to:
+# [block:file]
+# [{
+#      "language":"swift",
+#      "name":"Swift",
+#      "file":"code_blocks/➡️ Migrating To RevenueCat/purchase-completed.swift"
+#  },
+#  {
+#      "language":"kotlin",
+#      "name":"Kotlin",
+#      "file":"code_blocks/➡️ Migrating To RevenueCat/purchase-completed_2.kt"
+#  }]
+# [/block]
+#
+# @param file_contents [String] the input string containing the whole content of the file
+# @param file_name [String] the name of the file being processed
+# @param output_dir [String] the directory where the extracted code blocks will be saved
+# @return [String] a string equal to the file_contents but with the code blocks replaced by a [block:file] block
+def replace_code_block_group(file_contents, file_name, output_dir)
+    current_code_block = []
+    code_block_group = []
+    code_block_group_replacement = []
+    counter = 0
+
+    lines = file_contents.read_lines
+    modified_file_content = file_contents.dup
+    lines.each_with_index do |line, line_index|
+        beginning_or_end_of_block = line.start_with?('```')
+        inside_block = !current_code_block.empty?
+
+        # Check if the line is the beginning or end of a code block
+        if beginning_or_end_of_block
+            is_beginning_of_block = current_code_block.empty? && line[3..].strip != ''
+            is_end_of_block = !current_code_block.empty?
+
+            if is_beginning_of_block
+                # Process the beginning of a code block
+                current_code_block << line
+                code_block_group << line
+
+            elsif is_end_of_block
+                # Process the end of a code block
+                current_code_block << line
+                code_block_group << line
+                filename_without_ext = File.basename(file_name, ".md")
+                UI.message("🔨 Processing code block #{counter} in #{file_name}...")
+
+                # Extract the code block to a file and obtain the block information
+                code_block_information = extract_block_to_file(output_dir, filename_without_ext, current_code_block.join, counter)
+                if code_block_information.length > 0
+                    code_block_group_replacement << code_block_information.to_json
+                    current_code_block = []
+                    counter += 1
+                end
+                next_line = lines[line_index + 1]
+                next_line_is_beginning_of_block = next_line && next_line.start_with?('```') && next_line[3..].strip != ''
+
+                # Reached the end of a code block group, replace the code block group with the extracted files information
+                unless next_line_is_beginning_of_block
+                    modified_file_content = replace_code_group(code_block_group, code_block_group_replacement, modified_file_content)
+                    code_block_group = []
+                    code_block_group_replacement = []
+                end
+            end
+        elsif inside_block
+            # Process lines inside a code block
+            current_code_block << line
+            code_block_group << line
+        end
+    end
+    modified_file_content
+end
+
+def replace_code_group(original, replacement, file_contents)
+    json = JSON.parse("[#{replacement.join(",\n")}]")
+    pretty_json = JSON.pretty_generate(json)
+    replacement = "[block:file]\n#{pretty_json}\n[/block]\n"
+    file_contents.gsub(original.join, replacement)
 end
 
 def embed_code_blocks(render_folder, source_folder)
@@ -78,29 +161,26 @@ end
 # }
 # [/block]
 #
-# @param file_block [String] the input string containing the code block. This is the entire string that contains the
-# file block including the [block:file] and [/block] tags
+# @param code_blocks_group_with_tags [String] the input string containing the code block. This is the entire string that
+# contains the file block including the [block:file] and [/block] tags.
 # @return [String] a string containing the code blocks from all the files within the file block
-def embed_code_from_files(file_block)
-    block = extract_code_block(file_block)
-    new_content = []
+def embed_code_from_files(code_blocks_group_with_tags)
+    embedded_code_blocks_group = []
 
-    block.each_line do |line|
-        next if line.start_with?("[")
-        file_tag_content = line.strip
-        json = JSON.parse(file_tag_content)
-        UI.message("Extracted json: #{block}")
-
-        language = json['language']
-        file_path = json['file']
-        name = json['name']
+    code_blocks_group_json_array = code_blocks_group_with_tags.gsub(/\[block:file\]|\[\/block\]/, '')
+    code_block_information_array = JSON.parse(code_blocks_group_json_array)
+    UI.message("🔨 Processing #{code_block_information_array}...")
+    code_block_information_array.each do |code_block_information|
+        language = code_block_information['language']
+        file_path = code_block_information['file']
+        name = code_block_information['name']
         next unless File.exist?(file_path)
 
         file_content = File.read(file_path)
-        new_content.push "```#{language} #{name}\n#{file_content}\n```"
+        embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
-    new_content.join("\n").strip
+    embedded_code_blocks_group.join("\n").strip
 end
 
 # Searches for is [block:code][/block] and replaces it with the Readme flavored markdown style code blocks.
@@ -146,7 +226,7 @@ def convert_old_style_code_blocks(input)
             new_style_code_blocks += process_code_block(code_item)
         end
 
-        new_style_code_blocks
+        new_style_code_blocks.chomp
     end
 end
 
