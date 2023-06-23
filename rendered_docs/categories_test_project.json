@@ -284,5 +284,18 @@
     "__v": 0,
     "type": "guide",
     "id": "648c78a700eed20b3679da4e"
+  },
+  {
+    "title": "New Folder",
+    "slug": "new-folder",
+    "order": 9999,
+    "reference": false,
+    "_id": "6495bfb00ab40500586fbeec",
+    "project": "648c774ff7a238006cd33d2a",
+    "version": "648c78385e81230012c9d386",
+    "createdAt": "2023-06-23T15:52:16.575Z",
+    "__v": 0,
+    "type": "guide",
+    "id": "6495bfb00ab40500586fbeec"
   }
 ]
