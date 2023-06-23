@@ -28,7 +28,7 @@ def replace_code_block_group(file_contents, file_name, output_dir)
     code_block_group_replacement = []
     counter = 0
 
-    lines = file_contents.each_line.to_a
+    lines = file_contents.read_lines
     modified_file_content = file_contents.dup
     lines.each_with_index do |line, line_index|
         beginning_or_end_of_block = line.start_with?('```')
@@ -125,7 +125,8 @@ end
 def embed_code_from_files(block)
     new_content = []
 
-    block = block.gsub(/\[block:file\]|\[\/block\]/, '')
+    block_file_regex = /\[block:file\]|\[\/block\]/
+    block = block.gsub(block_file_regex, '')
     json_array = JSON.parse(block)
     UI.message("🔨 Processing #{json_array}...")
     json_array.each do |json|
