@@ -51,8 +51,8 @@ def replace_code_block_group(file_contents, file_name, output_dir)
                     counter += 1
                 end
                 next_line = lines[line_index + 1]
-                more_code_blocks_in_group = next_line && next_line.start_with?('```')
-                unless more_code_blocks_in_group
+                next_line_is_beginning_of_block = next_line && next_line.start_with?('```') && next_line[3..].strip != ''
+                unless next_line_is_beginning_of_block
                     modified_file_content = replace_code_group(code_block_group, code_block_group_replacement, modified_file_content)
                     code_block_group = []
                     code_block_group_replacement = []
