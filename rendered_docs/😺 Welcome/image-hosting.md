@@ -2,7 +2,7 @@
 title: Image Hosting
 slug: image-hosting
 hidden: true
-categorySlug: welcome
+categorySlug: welcome-1
 order: 5
 ---
 ![](https://files.readme.io/f7bb90b-Adding-RevenueCat-to-your-app.png)

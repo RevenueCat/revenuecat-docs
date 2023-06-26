@@ -3,7 +3,7 @@ title: App Store Rejections
 slug: app-store-rejections
 excerpt: Your app was rejected. Now what?
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 4
 ---
 [block:callout]

@@ -2,9 +2,9 @@
 title: Active Subscriptions Chart
 slug: active-subscriptions-chart
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 1
-parentDoc: 648c7ee8b4629e1fd0fb39b5
+parentDoc: 649983b4c31b2e000a3c187e
 ---
 ## Definition
 The Active Subscriptions chart measures the number of unique paid subscriptions that have not expired at the end of each period.

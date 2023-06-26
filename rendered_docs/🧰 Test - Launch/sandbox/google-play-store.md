@@ -3,9 +3,9 @@ title: Google Play Store
 slug: google-play-store
 excerpt: Testing purchases in Play Store Sandbox
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 1
-parentDoc: 648c7ee85d0303006e6d8fcc
+parentDoc: 649983b4c31b2e000a3c186e
 ---
 [block:callout]
 {

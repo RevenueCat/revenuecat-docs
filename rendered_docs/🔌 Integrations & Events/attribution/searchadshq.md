@@ -3,9 +3,9 @@ title: SearchAdsHQ
 slug: searchadshq
 excerpt: Integrate Purchases SDK with SearchAdsHQ for precise revenue tracking
 hidden: true
-categorySlug: integrations-events
+categorySlug: integrations
 order: 9
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 649983b4c31b2e000a3c1860
 ---
 With our SearchAdsHQ integration you can:
 * Accurately track subscriptions generated from Apple Search Ads campaigns, allowing you to know precisely how much revenue your campaigns generate.

@@ -3,9 +3,9 @@ title: React Native
 slug: reactnative
 excerpt: Instructions for installing Purchases SDK for React Native
 hidden: false
-categorySlug: getting-started
+categorySlug: documentation
 order: 2
-parentDoc: 648c7f084ca0960014e5d032
+parentDoc: 649983b4c31b2e000a3c1864
 ---
 # What is RevenueCat?
 

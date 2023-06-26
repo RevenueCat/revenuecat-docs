@@ -3,7 +3,7 @@ title: Firebase Apps
 slug: firebase
 excerpt: Integrate your Firebase app with RevenueCat
 hidden: true
-categorySlug: platform-resources
+categorySlug: resources
 order: 4
 ---
 # What is RevenueCat?

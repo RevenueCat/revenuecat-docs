@@ -3,9 +3,9 @@ title: Event Types and Fields
 slug: event-types-and-fields
 excerpt: The types of webhooks sent from RevenueCat
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 0
-parentDoc: 648c7ee7de5aa2000aea06e2
+parentDoc: 649983b4c31b2e000a3c185e
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
 

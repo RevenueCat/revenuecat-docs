@@ -3,5 +3,5 @@ title: Transactions
 slug: transactions
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 2
 ---

@@ -3,7 +3,7 @@ title: Subscriber Attributes
 slug: subscriber-attributes
 excerpt: Adding custom properties to users in RevenueCat
 hidden: false
-categorySlug: customers-1
+categorySlug: customers-subscription-status
 order: 2
 ---
 Subscriber attributes are useful for storing additional, structured information on a user. For example, you could store your user's email address and additional system identifiers directly in RevenueCat. Attributes will not be seen by your users unless you choose to explicitly show them yourself.

@@ -3,7 +3,7 @@ title: Migrating Subscriptions
 slug: migrating-existing-subscriptions
 excerpt: How to migrate subscriptions from your existing setup
 hidden: false
-categorySlug: ️-migrating-to-revenuecat
+categorySlug: migrating-your-app
 order: 0
 ---
 [block:parameters]

@@ -3,9 +3,9 @@ title: New Charts Transition
 slug: new-charts-transition
 excerpt: Migrating workflows from Original Charts to the New Charts beta
 hidden: true
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 0
-parentDoc: 648c7ee8b4629e1fd0fb39b5
+parentDoc: 649983b4c31b2e000a3c187e
 ---
 # Known Issues
 

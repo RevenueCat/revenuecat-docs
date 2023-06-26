@@ -3,9 +3,9 @@ title: SplitMetrics Acquire
 slug: splitmetrics-acquire
 excerpt: Formerly SearchAdsHQ
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 7
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 649983b4c31b2e000a3c1860
 ---
 With our SplitMetrics Acquire | Formerly SearchAdsHQ integration you can:
 

@@ -4,8 +4,8 @@ slug: test_snippets_sync_from_github
 excerpt: Update your docs automatically with `rdme`, ReadMe's official CLI and GitHub
   Action!
 hidden: true
-categorySlug: getting-started
-order: 22
+categorySlug: documentation
+order: 23
 ---
 ###  Test Snippets synced from local code
 

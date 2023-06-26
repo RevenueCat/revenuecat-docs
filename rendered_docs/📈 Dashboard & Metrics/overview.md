@@ -3,7 +3,7 @@ title: Overview
 slug: overview
 excerpt: In-app purchase dashboard
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 0
 ---
 The RevenueCat Overview is your in-app purchase hub of key metrics on the health of your business. 

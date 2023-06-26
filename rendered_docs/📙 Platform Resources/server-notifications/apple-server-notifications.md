@@ -3,9 +3,9 @@ title: Apple App Store Server Notifications
 slug: apple-server-notifications
 excerpt: Sending App Store server notifications to RevenueCat
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 0
-parentDoc: 648c7ee7ad45780012e23932
+parentDoc: 649983b4c31b2e000a3c1885
 ---
 RevenueCat does not require server notifications from the App Store, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 

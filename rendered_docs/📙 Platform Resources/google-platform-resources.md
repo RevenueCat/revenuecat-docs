@@ -2,7 +2,7 @@
 title: Google Platform Resources
 slug: google-platform-resources
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 3
 ---
 RevenueCat provides SDK's and integrations for <<glossary:Google Platforms>> to make in-app purchase and subscription development simple. Use these resources to take full advantage of all RevenueCat has to offer for Google Platforms.

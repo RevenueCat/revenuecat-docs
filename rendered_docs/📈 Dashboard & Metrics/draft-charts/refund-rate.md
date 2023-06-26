@@ -2,9 +2,9 @@
 title: Refund Rate
 slug: refund-rate
 hidden: true
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 3
-parentDoc: 648c7ee8afbbbc001d6a0c55
+parentDoc: 649983b4c31b2e000a3c18fa
 ---
 ## Refund Rate
 **Segments:** Yes

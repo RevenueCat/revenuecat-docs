@@ -3,9 +3,9 @@ title: Billing and account settings
 slug: account-management
 excerpt: Managing your account and changing plans
 hidden: false
-categorySlug: welcome
+categorySlug: welcome-1
 order: 2
-parentDoc: 648c7f0806750b000c6ec33b
+parentDoc: 649983b4c31b2e000a3c18de
 ---
 # Account Security & 2FA
 

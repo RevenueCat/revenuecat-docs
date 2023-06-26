@@ -3,7 +3,7 @@ title: Error Handling
 slug: errors
 excerpt: Handling errors in Purchases SDK
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 1
 ---
 [block:callout]

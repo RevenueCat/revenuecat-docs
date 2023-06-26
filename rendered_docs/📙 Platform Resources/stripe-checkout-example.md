@@ -3,7 +3,7 @@ title: Stripe Checkout Example
 slug: stripe-checkout-example
 excerpt: A simple implementation of Stripe Checkout and RevenueCat
 hidden: true
-categorySlug: platform-resources
+categorySlug: resources
 order: 6
 ---
 RevenueCat supports web payments through Stripe. This allows you to let users subscribe on your own website, and automatically unlock access to the same subscription content through the Purchases SDK.

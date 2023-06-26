@@ -4,7 +4,7 @@ slug: experiments-results-v1
 hidden: false
 categorySlug: tools
 order: 3
-parentDoc: 648c7ee8b319ba05991ce60c
+parentDoc: 649983b4c31b2e000a3c1904
 ---
 Within 24 hours of your experiment's launch you'll start seeing data on the Results page. RevenueCat offers experiment results through each step of the subscription journey to give you a comprehensive view of the impact of your test. You can dig into these results in a few different ways, which we'll cover below.
 

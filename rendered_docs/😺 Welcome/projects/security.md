@@ -3,9 +3,9 @@ title: Account security
 slug: security
 excerpt: Enabling two-factor authentication for your RevenueCat account
 hidden: false
-categorySlug: welcome
+categorySlug: welcome-1
 order: 1
-parentDoc: 648c7f0806750b000c6ec33b
+parentDoc: 649983b4c31b2e000a3c18de
 ---
 It's a dangerous world out there! But you can make things much safer by enabling two-factor authentication in your RevenueCat account settings.
 

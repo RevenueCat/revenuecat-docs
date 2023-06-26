@@ -3,9 +3,9 @@ title: Amazon Product Setup
 slug: amazon-product-setup
 excerpt: Setting up your in-app purchases in the Amazon Appstore
 hidden: false
-categorySlug: getting-started
+categorySlug: documentation
 order: 3
-parentDoc: 648c7ee85e81230012ca5edf
+parentDoc: 649983b4c31b2e000a3c185b
 ---
 To set up products for the Amazon Appstore, start by logging into your [Amazon developer account](https://developer.amazon.com/apps-and-games).
 

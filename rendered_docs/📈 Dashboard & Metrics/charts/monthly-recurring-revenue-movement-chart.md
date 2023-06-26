@@ -2,9 +2,9 @@
 title: Monthly Recurring Revenue Movement Chart
 slug: monthly-recurring-revenue-movement-chart
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 9
-parentDoc: 648c7ee8b4629e1fd0fb39b5
+parentDoc: 649983b4c31b2e000a3c187e
 ---
 ## Definition
 The Monthly Recurring Revenue Movement chart shows how New Subscriptions and Churned Subscriptions affect MRR. New MRR is MRR that was added during the period by New Subscriptions. Churned MRR is MRR that was lost in the period by Churned Subscriptions.

@@ -3,7 +3,7 @@ title: Checking Subscription Status
 slug: customer-info
 excerpt: Determining the subscription status for a user.
 hidden: false
-categorySlug: customers-1
+categorySlug: customers-subscription-status
 order: 1
 ---
 RevenueCat makes it easy to determine subscription status and more with the _Purchases SDK_ and [REST API](https://docs.revenuecat.com/reference). 

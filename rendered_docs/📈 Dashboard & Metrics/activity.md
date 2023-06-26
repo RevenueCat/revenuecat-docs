@@ -3,7 +3,7 @@ title: Activity
 slug: activity
 excerpt: Real-time transaction dashboard
 hidden: true
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 4
 ---
 [block:callout]

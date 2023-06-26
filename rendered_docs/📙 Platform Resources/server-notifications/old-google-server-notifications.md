@@ -3,9 +3,9 @@ title: Google Real-Time Developer Notifications [old]
 slug: old-google-server-notifications
 excerpt: Sending Google Play server notifications to RevenueCat
 hidden: true
-categorySlug: platform-resources
+categorySlug: resources
 order: 3
-parentDoc: 648c7ee7ad45780012e23932
+parentDoc: 649983b4c31b2e000a3c1885
 ---
 RevenueCat does not require server notifications from Google Play, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 
