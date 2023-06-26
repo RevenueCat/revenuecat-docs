@@ -2,8 +2,8 @@
 title: Configuring the SDK
 slug: configuring-sdk
 hidden: false
-categorySlug: getting-started
-order: 3
+categorySlug: documentation
+order: 4
 ---
 If this is your first time integrating RevenueCat into your app, we recommend following our [Quickstart](https://docs.revenuecat.com/docs/getting-started) guide.
 

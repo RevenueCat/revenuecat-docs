@@ -4,6 +4,6 @@ slug: nolow-code-app-builders
 hidden: false
 type: link
 link_url: https://www.revenuecat.com/docs/app-builders
-categorySlug: platform-resources
+categorySlug: resources
 order: 8
 ---

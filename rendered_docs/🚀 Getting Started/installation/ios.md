@@ -3,9 +3,9 @@ title: iOS
 slug: ios
 excerpt: Instructions for installing RevenueCat SDK for iOS
 hidden: false
-categorySlug: getting-started
+categorySlug: documentation
 order: 0
-parentDoc: 648c7f084ca0960014e5d032
+parentDoc: 649983b4c31b2e000a3c1864
 ---
 # What is RevenueCat?
 

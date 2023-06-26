@@ -3,9 +3,9 @@ title: Amazon S3
 slug: etl-s3-deprecated
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-categorySlug: integrations-events
+categorySlug: integrations
 order: 0
-parentDoc: 648c7ee7afbbbc001d6a0c53
+parentDoc: 649983b4c31b2e000a3c191e
 ---
 To start receiving these deliveries, you'll need the following details:
 1. Access key ID

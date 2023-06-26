@@ -3,8 +3,8 @@ title: SDK Quickstart
 slug: getting-started
 excerpt: Get up and running with mobile subscriptions
 hidden: false
-categorySlug: welcome
-order: 6
+categorySlug: documentation
+order: 1
 ---
 This guide will walk you through how to get up and running with subscriptions and RevenueCat's SDK with only a few lines of code.
 

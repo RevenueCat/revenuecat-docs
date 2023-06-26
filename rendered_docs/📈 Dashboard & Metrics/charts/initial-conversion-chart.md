@@ -2,9 +2,9 @@
 title: Initial Conversion Chart
 slug: initial-conversion-chart
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 12
-parentDoc: 648c7ee8b4629e1fd0fb39b5
+parentDoc: 649983b4c31b2e000a3c187e
 ---
 ## Definition
 The Initial Conversion chart shows what proportion of new customers subscribe to or purchase any product. This includes trial starts, direct subscription purchases (with or without introductory offers), and purchases of non-renewing IAPs like consumables.

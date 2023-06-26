@@ -3,9 +3,9 @@ title: Stripe Server Notifications
 slug: stripe-server-notifications
 excerpt: Sending Stripe server notifications to RevenueCat
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 2
-parentDoc: 648c7ee7ad45780012e23932
+parentDoc: 649983b4c31b2e000a3c1885
 ---
 RevenueCat does not require server notifications from Stripe, however doing so can speed up webhook and integration delivery times and reduce lag time for [Charts](doc:charts).
 

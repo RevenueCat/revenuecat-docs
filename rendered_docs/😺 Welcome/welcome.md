@@ -3,7 +3,7 @@ title: Overview
 slug: welcome
 excerpt: Everything you need to implement and manage in-app purchases and subscriptions
 hidden: false
-categorySlug: welcome
+categorySlug: welcome-1
 order: 0
 ---
 RevenueCat is a powerful and reliable in-app purchase server that makes it easy to build, analyze, and grow your subscriber base whether you're just starting out or already have millions of customers.

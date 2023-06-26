@@ -4,6 +4,6 @@ slug: promotional-subscriptions
 hidden: false
 type: link
 link_url: https://www.revenuecat.com/docs/promotionals
-categorySlug: subscription-guidance
+categorySlug: offers-lifecycle-guidance
 order: 5
 ---

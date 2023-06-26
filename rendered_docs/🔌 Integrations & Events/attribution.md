@@ -3,7 +3,7 @@ title: Attribution Providers
 slug: attribution
 excerpt: Integrate and collect attribution data with Purchases SDK
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 3
 ---
 [block:callout]

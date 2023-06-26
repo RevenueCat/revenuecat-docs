@@ -3,8 +3,8 @@ title: Amazon S3 (OLD)
 slug: amazon-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: true
-categorySlug: integrations-events
-order: 4
+categorySlug: integrations
+order: 5
 ---
 [block:callout]
 {

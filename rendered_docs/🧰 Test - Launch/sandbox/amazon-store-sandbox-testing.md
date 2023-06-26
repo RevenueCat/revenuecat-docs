@@ -2,9 +2,9 @@
 title: Amazon Appstore
 slug: amazon-store-sandbox-testing
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 2
-parentDoc: 648c7ee85d0303006e6d8fcc
+parentDoc: 649983b4c31b2e000a3c186e
 ---
 [block:callout]
 {

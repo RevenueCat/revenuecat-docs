@@ -4,7 +4,8 @@ slug: get-offerings
 excerpt: Gets the offerings for your app.
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 2
+parentDoc: 649983b4c31b2e000a3c193a
 ---
 > 📘 X-Platform is required
 > 

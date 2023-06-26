@@ -4,6 +4,7 @@ slug: overriding-transfer-behavior
 hidden: true
 categorySlug: revenuecat-api-v1
 order: 999
+parentDoc: 649983b4c31b2e000a3c1937
 ---
 It is possible to override the [transfer behavior](doc:restoring-purchases#transferring-purchases-seen-on-multiple-app-user-ids) for individual subscribers using the REST API. Overriding the transfer behavior for subscriber means that if a purchase currently associated with that subscriber is seen on another identified subscriber, the override applies instead of the setting configured on the project level.
 

@@ -3,8 +3,8 @@ title: "[Draft] Quickstart v2"
 slug: draft-quickstart
 excerpt: Get up and running with mobile subscriptions
 hidden: true
-categorySlug: getting-started
-order: 18
+categorySlug: documentation
+order: 19
 ---
 This guide will walk you through how to get up and running with subscriptions and the Purchases SDK with only a few lines of code.
 

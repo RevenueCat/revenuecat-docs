@@ -3,9 +3,9 @@ title: Amazon S3
 slug: scheduled-data-exports-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 0
-parentDoc: 648c7f073e7cd10047a1a82b
+parentDoc: 649983b4c31b2e000a3c1929
 ---
 To start receiving these deliveries, you'll need the following details:
 

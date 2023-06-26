@@ -3,8 +3,8 @@ title: Configuring Products [LEGACY]
 slug: configuring-products-legacy
 excerpt: Use Entitlements and Offerings to organize and display products
 hidden: true
-categorySlug: getting-started
-order: 16
+categorySlug: documentation
+order: 17
 ---
 [block:callout]
 {

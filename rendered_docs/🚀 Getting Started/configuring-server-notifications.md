@@ -4,6 +4,6 @@ slug: configuring-server-notifications
 hidden: false
 type: link
 link_url: https://www.revenuecat.com/docs/server-notifications
-categorySlug: getting-started
-order: 9
+categorySlug: documentation
+order: 10
 ---

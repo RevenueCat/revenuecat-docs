@@ -2,7 +2,7 @@
 title: Rate Limits
 slug: rate-limits
 hidden: true
-categorySlug: revenuecat-api-v1
+categorySlug: revenuecat-api
 order: 0
 ---
 # Outline

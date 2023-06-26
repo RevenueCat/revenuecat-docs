@@ -2,9 +2,9 @@
 title: Google Play Pass
 slug: google-play-pass
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 0
-parentDoc: 648c7f065abd5900755751a0
+parentDoc: 649983b4c31b2e000a3c18c5
 ---
 [Google Play Pass](https://developer.android.com/google-play/guides/play-pass) is a program that gives subscribers access to hundreds of apps and games, free of ads and in-app purchases. 
 

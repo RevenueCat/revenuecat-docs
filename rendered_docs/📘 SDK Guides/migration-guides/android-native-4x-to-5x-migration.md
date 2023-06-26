@@ -2,9 +2,9 @@
 title: Android Native - 4.x to 5.x Migration
 slug: android-native-4x-to-5x-migration
 hidden: true
-categorySlug: sdk-guides
+categorySlug: sdk-reference
 order: 1
-parentDoc: 648c7ee650eac80027fe8f2e
+parentDoc: 649983b4c31b2e000a3c18d4
 ---
 [block:callout]
 {

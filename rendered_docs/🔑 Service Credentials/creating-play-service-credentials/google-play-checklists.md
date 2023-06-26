@@ -5,7 +5,7 @@ excerpt: Check your configuration setup step by step.
 hidden: false
 categorySlug: service-credentials
 order: 0
-parentDoc: 648c7ee9e340a5000b2703ba
+parentDoc: 649983b4c31b2e000a3c192c
 ---
 The processes for setting up Google Play service credentials and real-time developer notifications to communicate with RevenueCat on your behalf can be complex, and span across multiple consoles and dashboards. Use this handy checklist to go through and make sure you hit each step in your configuration.
 

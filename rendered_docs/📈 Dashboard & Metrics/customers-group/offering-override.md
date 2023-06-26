@@ -3,9 +3,9 @@ title: Offering Override
 slug: offering-override
 excerpt: Override the current offering that displays in your app
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 3
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 649983b4c31b2e000a3c186b
 ---
 You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the **Current Offering** card. This can be useful for:
 

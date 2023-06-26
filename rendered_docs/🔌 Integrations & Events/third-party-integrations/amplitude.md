@@ -3,9 +3,9 @@ title: Amplitude
 slug: amplitude
 excerpt: Integrate in-app subscription events from RevenueCat with Amplitude
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 1
-parentDoc: 648c7ee701881d1af934bf16
+parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 

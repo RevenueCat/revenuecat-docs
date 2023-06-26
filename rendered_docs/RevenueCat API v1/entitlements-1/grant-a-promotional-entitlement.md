@@ -5,7 +5,8 @@ excerpt: Grants a user a promotional entitlement. Does not override or defer a s
   transaction, applied simultaneously.
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 0
+parentDoc: 649983b4c31b2e000a3c1939
 ---
 > 🚧 Secret API Key Required
 > 

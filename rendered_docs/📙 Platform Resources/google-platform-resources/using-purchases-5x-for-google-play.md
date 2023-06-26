@@ -2,9 +2,9 @@
 title: Using Purchases 5.x for Google Play
 slug: using-purchases-5x-for-google-play
 hidden: true
-categorySlug: platform-resources
+categorySlug: resources
 order: 3
-parentDoc: 648c7f065abd5900755751a0
+parentDoc: 649983b4c31b2e000a3c18c5
 ---
 > 🚧 Legacy documentation
 > 

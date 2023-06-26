@@ -3,9 +3,9 @@ title: AppsFlyer
 slug: appsflyer
 excerpt: Integrate Purchases SDK with AppsFlyer for precise revenue tracking
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 2
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 649983b4c31b2e000a3c1860
 ---
 With our AppsFlyer integration you can:
 

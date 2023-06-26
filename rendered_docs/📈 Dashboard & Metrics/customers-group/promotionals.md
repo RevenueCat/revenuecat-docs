@@ -2,9 +2,9 @@
 title: Promotionals
 slug: promotionals
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 4
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 649983b4c31b2e000a3c186b
 ---
 [block:callout]
 {

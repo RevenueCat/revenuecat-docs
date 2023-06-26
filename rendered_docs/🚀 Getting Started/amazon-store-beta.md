@@ -2,8 +2,8 @@
 title: Amazon Store (beta)
 slug: amazon-store-beta
 hidden: true
-categorySlug: getting-started
-order: 17
+categorySlug: documentation
+order: 18
 ---
 [block:api-header]
 {

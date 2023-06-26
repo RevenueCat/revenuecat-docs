@@ -2,9 +2,9 @@
 title: Troubleshooting the SDKs
 slug: troubleshooting-the-sdks
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 1
-parentDoc: 648c7ee83ccbe61ab66dce23
+parentDoc: 649983b4c31b2e000a3c186d
 ---
 Having trouble with our SDKs? This guide covers common issues and solutions. Go through each topic and see if it matches your issue. If you went through this guide and you're still having problems, reach out to us in any of the following channels:
 
