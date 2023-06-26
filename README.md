@@ -136,3 +136,35 @@ After making the changes, and pressing the `Commit changes…` button, make sure
 For a guide to writing in Markdown, see this [(hidden) page](https://www.revenuecat.com/docs/readme-markdown-tutorial) in our docs.
 
 ## Video Tutorials
+
+<a href="https://www.loom.com/share/93733fcd62c443299ec902dc07ce28d5">
+    <p>How to Sync Changes with Readme 🔄 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/93733fcd62c443299ec902dc07ce28d5-with-play.gif">
+  </a>
+  
+<a href="https://www.loom.com/share/5d6a4b1188e34da29873eb65e65f5e2e">
+    <p>Editing Code Snippet  👨‍💻 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5d6a4b1188e34da29873eb65e65f5e2e-with-play.gif">
+  </a>
+  
+<a href="https://www.loom.com/share/00b6932a5d5346e291f9d6c60780bd50">
+    <p>How to Create a New Document in a New Folder 📂 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/00b6932a5d5346e291f9d6c60780bd50-with-play.gif">
+  </a>
+  
+<a href="https://www.loom.com/share/075df6b931f94e0190574792cac5eaa1">
+    <p>Creating a New Document in an Existing Folder 📝 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/075df6b931f94e0190574792cac5eaa1-with-play.gif">
+  </a>
+
+<a href="https://www.loom.com/share/182145b7c04d41d0b066cfaafbcbcf23">
+    <p>How to Delete a Doc - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/182145b7c04d41d0b066cfaafbcbcf23-with-play.gif">
+  </a>
+
+  <a href="https://www.loom.com/share/193831f5cb1148d8ace73c3a400cd6c6">
+    <p>Organizing Docs Menu 📝 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/193831f5cb1148d8ace73c3a400cd6c6-with-play.gif">
+  </a>
+
+  
