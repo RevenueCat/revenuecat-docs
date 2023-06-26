@@ -5,8 +5,7 @@ CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
 CATEGORIES_MAP_FILE = "docs_source/categories_map.json"
 
 def find_category_slug_from_id(category_id)
-    # TODO replace with production file
-    file = File.read(CATEGORIES_TEST_FILE)
+    file = File.read(CATEGORIES_FILE)
     categories = JSON.parse(file)
     matching_category = categories.find { |category| category['id'] == category_id }
     matching_category ? matching_category['slug'] : nil
