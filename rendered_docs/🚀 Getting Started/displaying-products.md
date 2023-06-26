@@ -3,8 +3,8 @@ title: Displaying Products
 slug: displaying-products
 excerpt: Build dynamic paywalls and control available products remotely
 hidden: false
-categorySlug: getting-started
-order: 5
+categorySlug: documentation
+order: 6
 ---
 If you've [configured Offerings](doc:entitlements) in RevenueCat, you can control which products are shown to users without requiring an app update. Building paywalls that are dynamic and can react to different product configurations gives you maximum flexibility to make remote updates.
 

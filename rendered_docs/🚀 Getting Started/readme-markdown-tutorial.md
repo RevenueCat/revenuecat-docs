@@ -3,8 +3,8 @@ title: ReadMe Markdown Tutorial
 slug: readme-markdown-tutorial
 excerpt: Common markdown elements and their ReadMe interpretations
 hidden: true
-categorySlug: getting-started
-order: 23
+categorySlug: documentation
+order: 24
 ---
 <!--
 Hidden Markdown Comment

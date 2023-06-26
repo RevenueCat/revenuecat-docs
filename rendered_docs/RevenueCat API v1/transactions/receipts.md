@@ -5,7 +5,8 @@ excerpt: Records a purchase for a user from iOS, Android, or Stripe and will cre
   a user if they don't already exist.
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 0
+parentDoc: 649983b4c31b2e000a3c1938
 ---
 # Parameter Reference
 

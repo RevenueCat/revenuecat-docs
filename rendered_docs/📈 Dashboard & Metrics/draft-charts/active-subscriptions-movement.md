@@ -2,9 +2,9 @@
 title: Active Subscriptions Movement
 slug: active-subscriptions-movement
 hidden: true
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 1
-parentDoc: 648c7ee8afbbbc001d6a0c55
+parentDoc: 649983b4c31b2e000a3c18fa
 ---
 ## Active Subscriptions Movement
 **Segments:** No

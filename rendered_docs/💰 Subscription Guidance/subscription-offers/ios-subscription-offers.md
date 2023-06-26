@@ -3,9 +3,9 @@ title: iOS Subscription Offers
 slug: ios-subscription-offers
 excerpt: Implementing iOS Subscription Offers with Purchases SDK
 hidden: false
-categorySlug: subscription-guidance
+categorySlug: offers-lifecycle-guidance
 order: 0
-parentDoc: 648c7ee735f772038eae5f4c
+parentDoc: 649983b4c31b2e000a3c18f5
 ---
 [block:callout]
 {

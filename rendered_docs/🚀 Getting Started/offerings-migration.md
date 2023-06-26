@@ -3,8 +3,8 @@ title: Offerings Migration Guide
 slug: offerings-migration
 excerpt: Migrating to Offerings from a legacy setup
 hidden: true
-categorySlug: getting-started
-order: 12
+categorySlug: documentation
+order: 13
 ---
 [block:embed]
 {

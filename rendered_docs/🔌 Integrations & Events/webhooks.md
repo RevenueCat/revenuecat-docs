@@ -3,7 +3,7 @@ title: Webhooks
 slug: webhooks
 excerpt: Enhanced server-to-server notifications from webhooks
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 1
 ---
 > 👍 

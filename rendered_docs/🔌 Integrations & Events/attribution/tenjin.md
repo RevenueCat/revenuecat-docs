@@ -3,9 +3,9 @@ title: Tenjin
 slug: tenjin
 excerpt: Integrate Purchases SDK with Tenjin for precise revenue tracking
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 8
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 649983b4c31b2e000a3c1860
 ---
 With our Tenjin integration you can:
 

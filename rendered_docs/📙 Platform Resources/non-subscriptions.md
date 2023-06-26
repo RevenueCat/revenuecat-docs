@@ -3,7 +3,7 @@ title: Non-Subscription Purchases
 slug: non-subscriptions
 excerpt: Using RevenueCat beyond subscriptions
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 5
 ---
 Although RevenueCat is primarily used to handle subscription purchases, our SDK will track all purchases, including consumable and non-consumable in-app purchases (**IAPs**). This makes it easy to track your app's total revenue with RevenueCat's powerful reporting features.

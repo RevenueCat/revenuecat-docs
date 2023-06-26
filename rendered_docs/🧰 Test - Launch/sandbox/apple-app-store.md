@@ -3,9 +3,9 @@ title: Apple App Store & TestFlight
 slug: apple-app-store
 excerpt: Testing purchases in App Store Sandbox
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 0
-parentDoc: 648c7ee85d0303006e6d8fcc
+parentDoc: 649983b4c31b2e000a3c186e
 ---
 > 👍 
 > 

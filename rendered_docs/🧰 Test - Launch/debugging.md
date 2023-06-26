@@ -3,7 +3,7 @@ title: Debugging
 slug: debugging
 excerpt: View and understand Purchases logs
 hidden: false
-categorySlug: test-launch
+categorySlug: testing
 order: 0
 ---
 > 👍 

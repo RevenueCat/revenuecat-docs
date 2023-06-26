@@ -3,7 +3,7 @@ title: Apple Platform Resources
 slug: apple-platform-resources
 excerpt: Additional resources for easy RevenueCat & Apple Platform development
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 2
 ---
 RevenueCat provides SDK's and integrations for <<glossary:Apple Platforms>> to make in-app purchase and subscription development simple. Use these resources to take full advantage of all RevenueCat has to offer for Apple Platforms.

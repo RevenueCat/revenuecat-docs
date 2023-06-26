@@ -3,7 +3,7 @@ title: Charts
 slug: charts
 excerpt: Analyzing your subscription business with visualizations
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 1
 ---
 [block:callout]

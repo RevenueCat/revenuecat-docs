@@ -3,9 +3,9 @@ title: Importing Receipts
 slug: receipt-imports
 excerpt: Importing existing customers into RevenueCat
 hidden: false
-categorySlug: ️-migrating-to-revenuecat
+categorySlug: migrating-your-app
 order: 0
-parentDoc: 648c7f06dbb1aa005e5369ea
+parentDoc: 649983b4c31b2e000a3c185f
 ---
 If you already have existing purchases or subscriptions and have been saving the complete raw receipt files or tokens, you can import those purchases into RevenueCat. If you don't have the proper data saved on your server, see the client-side migration section of the [Migrating Subscriptions](doc:migrating-existing-subscriptions) doc.
 

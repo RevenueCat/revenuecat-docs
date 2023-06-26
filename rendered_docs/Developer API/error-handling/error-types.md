@@ -4,7 +4,7 @@ slug: error-types
 hidden: false
 categorySlug: developer-api
 order: 1
-parentDoc: 648c7ee7295bce0041c10522
+parentDoc: 649983b4c31b2e000a3c1932
 ---
 ## `authentication_error`
 

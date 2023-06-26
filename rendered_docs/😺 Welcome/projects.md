@@ -3,7 +3,7 @@ title: Setting up RevenueCat
 slug: projects
 excerpt: Create a free account, add a Project, and invite your team
 hidden: false
-categorySlug: welcome
+categorySlug: welcome-1
 order: 3
 ---
 # Register for a free account

@@ -4,9 +4,9 @@ slug: in-app-purchases-with-stripe-rfa
 excerpt: This document provides a standard recommendation for RFA users looking to
   incorporate an IAP channel.
 hidden: false
-categorySlug: getting-started
+categorySlug: documentation
 order: 0
-parentDoc: 648c7ee9adad5603ae95e620
+parentDoc: 649983b4c31b2e000a3c1863
 ---
 # Web First Users
 

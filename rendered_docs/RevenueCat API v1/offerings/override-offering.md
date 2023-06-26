@@ -4,7 +4,8 @@ slug: override-offering
 excerpt: Overrides the current Offering for a specific user
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 0
+parentDoc: 649983b4c31b2e000a3c193a
 ---
 > 🚧 Secret API Key Required
 > 

@@ -2,7 +2,7 @@
 title: Implementation Responsibilities
 slug: implementation-responsibilities
 hidden: false
-categorySlug: platform-resources
+categorySlug: resources
 order: 0
 ---
 # Overview

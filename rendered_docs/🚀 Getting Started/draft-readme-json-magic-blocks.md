@@ -2,8 +2,8 @@
 title: "[Draft] Readme json magic-blocks"
 slug: draft-readme-json-magic-blocks
 hidden: true
-categorySlug: getting-started
-order: 24
+categorySlug: documentation
+order: 25
 ---
 Plain text
 [block:api-header]
