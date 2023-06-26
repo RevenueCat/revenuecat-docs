@@ -2,9 +2,9 @@
 title: Attribution
 slug: attribution-card
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 6
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 649983b4c31b2e000a3c186b
 ---
 If you're sending attribution information to RevenueCat through the Purchases SDK, we will display the latest information from the network in the **Attribution** card for the customer. 
 

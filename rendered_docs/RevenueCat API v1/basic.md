@@ -3,7 +3,7 @@ title: Overview (v1)
 slug: basic
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 0
 ---
 [block:callout]
 {

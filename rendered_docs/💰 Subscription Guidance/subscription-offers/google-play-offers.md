@@ -3,9 +3,9 @@ title: Google Play Offers
 slug: google-play-offers
 excerpt: Setting up your offers in Google Play Console
 hidden: false
-categorySlug: subscription-guidance
+categorySlug: offers-lifecycle-guidance
 order: 1
-parentDoc: 648c7ee735f772038eae5f4c
+parentDoc: 649983b4c31b2e000a3c18f5
 ---
 [block:callout]
 {

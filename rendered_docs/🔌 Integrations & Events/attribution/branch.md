@@ -3,9 +3,9 @@ title: Branch
 slug: branch
 excerpt: Integrate Purchases SDK with Branch for precise revenue tracking
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 3
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 649983b4c31b2e000a3c1860
 ---
 With our Branch integration you can:
 

@@ -3,8 +3,8 @@ title: ETL Exports
 slug: etl-exports-deprecated
 excerpt: Data deliveries of all of your apps' transaction data
 hidden: true
-categorySlug: integrations-events
-order: 9
+categorySlug: integrations
+order: 6
 ---
 [block:callout]
 {

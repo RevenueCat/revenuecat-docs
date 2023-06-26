@@ -3,9 +3,9 @@ title: SwiftUI App Lifecycle
 slug: swiftui-app-lifecycle
 excerpt: Initializing the Purchases SDK in SwiftUI
 hidden: true
-categorySlug: platform-resources
+categorySlug: resources
 order: 2
-parentDoc: 648c7f0801ab9d0074c85913
+parentDoc: 649983b4c31b2e000a3c18c4
 ---
 With the next iteration of SwiftUI announced at WWDC 2020, entire apps can be created with just a simple struct conforming to the new `App` protocol, like so:
 

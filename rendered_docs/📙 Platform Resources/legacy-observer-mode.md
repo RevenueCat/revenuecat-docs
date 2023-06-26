@@ -3,7 +3,7 @@ title: "[Legacy] Observer Mode"
 slug: legacy-observer-mode
 excerpt: Using RevenueCat without changing existing purchase code
 hidden: true
-categorySlug: platform-resources
+categorySlug: resources
 order: 11
 ---
 Observer Mode enables you to do a partial implementation of RevenueCat's SDK, giving you access to the advanced charting, webhooks, and attribution that RevenueCat provides—without affecting your existing purchase code. This is useful if you already have a functioning subscription system to manage your purchases and have infrastructure or code policy restrictions that prevent you from fully integrating third-party software.

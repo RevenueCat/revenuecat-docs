@@ -6,7 +6,8 @@ excerpt: Immediately revokes access to a Google Subscription and issues a refund
   a Google purchase](ref:refund-a-google-subscription).
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 1
+parentDoc: 649983b4c31b2e000a3c1938
 ---
 > 🚧 Secret API Key Required
 > 

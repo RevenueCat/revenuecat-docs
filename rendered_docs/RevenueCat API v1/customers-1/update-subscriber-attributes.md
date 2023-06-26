@@ -4,7 +4,8 @@ slug: update-subscriber-attributes
 excerpt: Updates subscriber attributes for a user.
 hidden: false
 categorySlug: revenuecat-api-v1
-order: 999
+order: 3
+parentDoc: 649983b4c31b2e000a3c1937
 ---
 ## Response
 

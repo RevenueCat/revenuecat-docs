@@ -3,9 +3,9 @@ title: Android
 slug: android
 excerpt: Instructions for installing Purchases SDK for Android
 hidden: false
-categorySlug: getting-started
+categorySlug: documentation
 order: 1
-parentDoc: 648c7f084ca0960014e5d032
+parentDoc: 649983b4c31b2e000a3c1864
 ---
 # What is RevenueCat?
 

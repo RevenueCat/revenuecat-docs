@@ -2,9 +2,9 @@
 title: App User IDs
 slug: aliases-card
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 7
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 649983b4c31b2e000a3c186b
 ---
 The App User IDs will hold both the Original App User ID and the list of Aliases a particular customer has.
 

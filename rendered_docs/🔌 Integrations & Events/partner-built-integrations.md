@@ -3,8 +3,8 @@ title: Partner-Built Integrations
 slug: partner-built-integrations
 excerpt: Connecting RevenueCat to Alternative Platforms
 hidden: false
-categorySlug: integrations-events
-order: 7
+categorySlug: integrations
+order: 8
 ---
 Maybe you already use a certain platform and are hoping for a way to send it data from RevenueCat, or are looking to fill a specific need or use case, a new way to calculate revenue or push marketing efforts. 
 

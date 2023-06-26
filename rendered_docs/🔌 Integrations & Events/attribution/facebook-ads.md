@@ -3,9 +3,9 @@ title: Facebook Ads
 slug: facebook-ads
 excerpt: Integrate Purchases SDK with Facebook Ads for precise revenue tracking
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 4
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 649983b4c31b2e000a3c1860
 ---
 With our Facebook Ads integration you can:
 

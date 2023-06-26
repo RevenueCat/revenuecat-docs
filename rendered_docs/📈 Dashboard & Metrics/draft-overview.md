@@ -3,7 +3,7 @@ title: "[DRAFT] Overview"
 slug: draft-overview
 excerpt: In-app purchase dashboard
 hidden: true
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 6
 ---
 The RevenueCat Overview is your in-app purchase hub for quick metrics on the health of your business. 

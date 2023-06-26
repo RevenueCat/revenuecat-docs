@@ -4,6 +4,6 @@ slug: customer-lists-1
 hidden: false
 type: link
 link_url: https://www.revenuecat.com/docs/customer-lists
-categorySlug: customers-1
+categorySlug: customers-subscription-status
 order: 3
 ---

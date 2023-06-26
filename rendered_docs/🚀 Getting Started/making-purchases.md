@@ -3,8 +3,8 @@ title: Making Purchases
 slug: making-purchases
 excerpt: Process a transaction with Apple or Google
 hidden: false
-categorySlug: getting-started
-order: 6
+categorySlug: documentation
+order: 7
 ---
 The SDK has a simple method, `purchase(package:)`, that takes a package from the fetched Offering and purchases the underlying product with Apple, Google, or Amazon. 
 ```swift 

@@ -2,9 +2,9 @@
 title: Customer Details
 slug: basic-information
 hidden: false
-categorySlug: dashboard-metrics
+categorySlug: dashboard
 order: 0
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 649983b4c31b2e000a3c186b
 ---
 Basic customer information, including their total amount spent in your app, is presented at the top of the page.
 [block:image]

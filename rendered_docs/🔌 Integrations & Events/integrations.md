@@ -3,7 +3,7 @@ title: Events Overview
 slug: integrations
 excerpt: Learn about events and integrations from RevenueCat
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 0
 ---
 Events notify you in near real-time to any changes that occur to a customer's subscription and can automatically be sent into a variety of [third-party tools](doc:/third-party-integrations) and [attribution networks](doc:attribution) to get clean, consistent, and trustworthy data in all of your systems.

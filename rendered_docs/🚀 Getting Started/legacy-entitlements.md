@@ -2,8 +2,8 @@
 title: Legacy Entitlements
 slug: legacy-entitlements
 hidden: true
-categorySlug: getting-started
-order: 11
+categorySlug: documentation
+order: 12
 ---
 [block:callout]
 {

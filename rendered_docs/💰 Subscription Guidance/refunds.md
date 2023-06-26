@@ -3,7 +3,7 @@ title: Handling Refunds
 slug: refunds
 excerpt: Handling and reacting to refunded purchases
 hidden: false
-categorySlug: subscription-guidance
+categorySlug: offers-lifecycle-guidance
 order: 4
 ---
 Refunds are handled differently on each platform. It's recommended to set up [Platform Server Notifications](doc:server-notifications) for the best performance. 

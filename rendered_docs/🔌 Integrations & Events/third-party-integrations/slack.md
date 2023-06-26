@@ -3,9 +3,9 @@ title: Slack
 slug: slack
 excerpt: Send in-app subscription events to Slack
 hidden: false
-categorySlug: integrations-events
+categorySlug: integrations
 order: 11
-parentDoc: 648c7ee701881d1af934bf16
+parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 
