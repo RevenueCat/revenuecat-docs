@@ -1,8 +1,6 @@
 import 'files.rb'
 
 CATEGORIES_FILE = "docs_source/categories.json"
-CATEGORIES_TEST_FILE = "docs_source/categories_test_project.json"
-CATEGORIES_MAP_FILE = "docs_source/categories_map.json"
 
 def find_category_slug_from_id(category_id)
     file = File.read(CATEGORIES_FILE)
