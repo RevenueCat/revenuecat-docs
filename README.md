@@ -50,7 +50,8 @@ If you want to add a snippet to a file in the **docs_source** folder, create a f
 
 If you want to add a tab with another language so it looks like this: 
 
-![Screenshot 2023-06-09 at 5.14.17 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/becfe188-cfaf-4372-833d-7bd222373f43/Screenshot_2023-06-09_at_5.14.17_PM.png)
+![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/e7adf318-332a-4089-ba4b-84807cdb72d0)
+
 
 Simply add a [block:file] block with a JSON array with the other files for the other snippets:
 
@@ -88,29 +89,23 @@ Small edits can easily be made within Github itself, without the need to clone (
 
 1. Make a new branch in Github
 
-![Choose a descriptive name, such as [your name]/[description]](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eba6c5bb-c394-44a9-83a9-a53a29e2106b/SCR-20230609-ikig.png)
-
-Choose a descriptive name, such as [your name]/[description]
+![Choose a descriptive name, such as [your name]/[description]](https://github.com/RevenueCat/revenuecat-docs/assets/664544/2105b93c-c7f1-4017-8867-35f5248b97ae)
 
 1. Select your file from **********************docs_source**********************
 
-![SCR-20230609-ipsg.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8ad9abc8-b541-429b-92b4-6721b27d7708/SCR-20230609-ipsg.png)
+<img width="406" alt="Screenshot 2023-06-26 at 4 06 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/a0d7e9b2-706d-4312-8d6e-bc41fff233be">
 
 1. Click **Edit this file** in the upper-right corner
 
-![SCR-20230609-iqcb.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d541363-53e9-49f4-abc6-2b99f456ef45/SCR-20230609-iqcb.png)
+<img width="544" alt="Screenshot 2023-06-26 at 4 06 52 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b899b891-25e1-49fa-a219-19f047793828">
 
 1. When you are done editing the document, click **Commit changes…** in the upper-right corner
 
-![Add a descriptive message in the pop-up that follows.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/41c1f67d-b935-42c6-9240-6be290b3dec2/SCR-20230609-iqnd.png)
-
-Add a descriptive message in the pop-up that follows.
+<img width="536" alt="Add a descriptive message in the pop-up that follows." src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b397d44e-6de7-4c6c-b49b-a5fef6981899">
 
 1. You can choose to start a pull request with the changes, if you don’t, navigate to the ************Pull requests************ tab. A banner will pop up with your new branch. Click ********************************************Compare & pull request********************************************
 
-![If the banner is missing, click ********************************New pull request******************************** and select your branch](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a70534ee-511d-4530-b57e-981a74db7a05/SCR-20230609-irhq.png)
-
-If the banner is missing, click ********************************New pull request******************************** and select your branch
+<img width="634" alt="If the banner is missing, click ********************************New pull request******************************** and select your branch" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/c7cea5c0-1f35-406f-9549-ebbf15a7fd18">
 
 1. Make any changes to the PR template (1), select ****************RevenueCat/support**************** as a reviewer (2), and click ************************Create pull request************************ (3)
 
@@ -118,23 +113,21 @@ If the banner is missing, click ********************************New pull request
 
 A second PR will be auto-generated. After reviewing the **************************rendered_docs************************** in the PR, approve the PR squash and merge it.
 
-![Screenshot 2023-06-09 at 6.34.09 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a059a4a1-845e-4768-8675-ad66d99c28a0/Screenshot_2023-06-09_at_6.34.09_PM.png)
-
-![Screenshot 2023-06-09 at 6.33.25 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f28058f-701a-4782-a490-d90f0026e1c4/Screenshot_2023-06-09_at_6.33.25_PM.png)
+<img width="745" alt="Screenshot 2023-06-26 at 4 08 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/4ee4bbe4-ae20-4004-9681-77a35d7ea781">
 
 ## 📑 Editing multiple documents
 
 Once your branch is creating in the previous step, you can keep editing docs in that branch. Pick your branch in the home of the repository by clicking the caret down next to `main`:
 
-![Screenshot 2023-06-09 at 5.26.08 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/705a6409-432e-4375-83eb-b0970b9db45b/Screenshot_2023-06-09_at_5.26.08_PM.png)
+<img width="460" alt="Screenshot 2023-06-26 at 4 08 54 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/3b33477c-8adc-4439-afce-efe402e3b54f">
 
 Once in your branch, follow the same steps and navigate to another file and edit it.
 
-![SCR-20230609-iqcb.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4d541363-53e9-49f4-abc6-2b99f456ef45/SCR-20230609-iqcb.png)
+<img width="543" alt="Screenshot 2023-06-26 at 4 09 05 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/77268b41-9934-4dcf-9f94-5c501e3e2b14">
 
 After making the changes, and pressing the `Commit changes…` button, make sure you select `Commit directly to the ...` button, so the changes are pushed to the branch that was opened before.
 
-![Screenshot 2023-06-09 at 5.32.32 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f2727d44-5573-4c5d-af6c-75267c3558bb/Screenshot_2023-06-09_at_5.32.32_PM.png)
+<img width="345" alt="Screenshot 2023-06-26 at 4 09 18 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/93cde391-bc7b-4f1d-83c2-1f8c7644c1f1">
 
 ************Note:************ At this time, changing the folder of a doc, or removing whole folders is not supported. Feel free to reach out to [Support](https://revenuecat.slack.com/archives/CSSCSV4TF) for assistance, for these type of changes that require technical knowledge of Git.
 
