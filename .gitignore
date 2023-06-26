@@ -499,3 +499,4 @@ doc/api/
 # explicitly ignore resolved Package so we always get the latest version from SPM
 projects/iOS/Package.resolved
 **/**/.DS_Store
+rendered_docs/categories.json
