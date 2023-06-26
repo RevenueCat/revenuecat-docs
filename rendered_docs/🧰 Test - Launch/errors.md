@@ -248,6 +248,7 @@ Indicates that the user is ineligible for the specific Subscription Offer.
 Some possible causes:
 - User has already used this Offer
 - Offer not available in specific region
+- User has no current or previous subscription
 
 **Resolution:**
 If a user is not eligible for a Subscription Offer, be sure to update your UI to reflect normal pricing or terms. [`.paymentDiscount(...)`](https://docs.revenuecat.com/docs/ios-subscription-offers#fetch-payment-discount) is the best way to check for Subscription Offer eligibility. If you are testing in sandbox and already tested a purchase with that offer, you may want to [create a new sandbox user](https://docs.revenuecat.com/docs/apple-app-store#create-a-sandbox-test-account) to try again.
