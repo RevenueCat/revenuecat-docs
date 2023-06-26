@@ -5,7 +5,7 @@ excerpt: Integrate Purchases SDK with Singular for precise revenue tracking
 hidden: false
 categorySlug: integrations-events
 order: 6
-parentDoc: 648c7ee73ccbe61ab66dce20
+parentDoc: 6499848d103e5f0042e48039
 ---
 With our Singular integration you can:
 

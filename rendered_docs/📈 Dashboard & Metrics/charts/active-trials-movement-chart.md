@@ -4,7 +4,7 @@ slug: active-trials-movement-chart
 hidden: false
 categorySlug: dashboard-metrics
 order: 16
-parentDoc: 648c7ee8b4629e1fd0fb39b5
+parentDoc: 6499848d103e5f0042e480c4
 ---
 ## Definition
 The Active Trials Movement chart measures the change in unique active free trials over a period. Active Trials Movement can be thought of as a breakdown of what caused the change in the Active Trials count between two periods.

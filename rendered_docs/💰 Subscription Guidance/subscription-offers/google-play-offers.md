@@ -5,7 +5,7 @@ excerpt: Setting up your offers in Google Play Console
 hidden: false
 categorySlug: subscription-guidance
 order: 1
-parentDoc: 648c7ee735f772038eae5f4c
+parentDoc: 6499848d103e5f0042e48038
 ---
 [block:callout]
 {

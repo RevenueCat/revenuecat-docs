@@ -5,7 +5,7 @@ excerpt: Configuring legacy Mac apps with RevenueCat
 hidden: false
 categorySlug: platform-resources
 order: 4
-parentDoc: 648c7f0801ab9d0074c85913
+parentDoc: 6499848d103e5f0042e480f5
 ---
 For newer Mac apps, in-app purchases can be shared across Mac and iOS apps. This is called [Universal Purchases](https://developer.apple.com/support/universal-purchase/). 
 [block:callout]

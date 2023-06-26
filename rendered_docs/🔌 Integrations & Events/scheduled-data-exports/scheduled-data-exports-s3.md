@@ -5,7 +5,7 @@ excerpt: Setting up S3 access keys for data transfer
 hidden: false
 categorySlug: integrations-events
 order: 0
-parentDoc: 648c7f073e7cd10047a1a82b
+parentDoc: 6499848d103e5f0042e480f4
 ---
 To start receiving these deliveries, you'll need the following details:
 

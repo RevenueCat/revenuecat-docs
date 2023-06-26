@@ -4,7 +4,7 @@ slug: google-subscriptions-and-backwards-compatibility
 hidden: false
 categorySlug: getting-started
 order: 2
-parentDoc: 648c7ee85e81230012ca5edf
+parentDoc: 6499848d103e5f0042e480ab
 ---
 # RevenueCat compatibility with Google May 2022 Subscription Changes
 

@@ -4,7 +4,7 @@ slug: promotionals
 hidden: false
 categorySlug: dashboard-metrics
 order: 4
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 6499848d103e5f0042e47ffa
 ---
 [block:callout]
 {

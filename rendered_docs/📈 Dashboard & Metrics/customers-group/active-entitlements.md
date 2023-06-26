@@ -4,7 +4,7 @@ slug: active-entitlements
 hidden: false
 categorySlug: dashboard-metrics
 order: 2
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 6499848d103e5f0042e47ffa
 ---
 The 'Entitlements' card gives you a quick glance at the current entitlement status for a user. You can see which product(s) or [Entitlement(s)](doc:entitlements) have been purchased, and when they'll renew or cancel.  
 

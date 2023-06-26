@@ -5,7 +5,7 @@ excerpt: How to have the reduced commission rate reflected in RevenueCat
 hidden: false
 categorySlug: platform-resources
 order: 1
-parentDoc: 648c7f065abd5900755751a0
+parentDoc: 6499848d103e5f0042e480ec
 ---
 Google allows developers that earn less than $1,000,000 USD per year to enroll in a reduced service fee tier. The service fee is 15%, instead of the usual 30%. RevenueCat automatically assumes developers are enrolled in the reduced service fee tier.
 

@@ -5,7 +5,7 @@ excerpt: No and Low Code Development Tools, RevenueCat, and You
 hidden: false
 categorySlug: getting-started
 order: 8
-parentDoc: 648c7f084ca0960014e5d032
+parentDoc: 6499848d103e5f0042e480fb
 ---
 The increase of no and low code app building solutions is on an upward trend. It's an exciting upgrade in technological accessibility and a promising look into possibility, and one that we look forward to being able to support in the future. 
 

@@ -5,7 +5,7 @@ excerpt: Send in-app subscription events to Slack
 hidden: false
 categorySlug: integrations-events
 order: 11
-parentDoc: 648c7ee701881d1af934bf16
+parentDoc: 6499848d103e5f0042e4802e
 ---
 > 👍 
 > 

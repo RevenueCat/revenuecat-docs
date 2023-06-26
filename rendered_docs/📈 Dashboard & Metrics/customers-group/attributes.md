@@ -5,7 +5,7 @@ excerpt: Add new user attributes or edit existing ones
 hidden: false
 categorySlug: dashboard-metrics
 order: 5
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 6499848d103e5f0042e47ffa
 ---
 The 'Attributes' card displays any [Subscriber Attributes](doc:subscriber-attributes) that have been saved for the user and allows you to add new attributes or edit existing ones.
 [block:image]

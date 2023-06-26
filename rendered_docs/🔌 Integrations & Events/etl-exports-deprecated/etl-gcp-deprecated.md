@@ -5,7 +5,7 @@ excerpt: Setting up Google Cloud Storage access keys for data transfer
 hidden: true
 categorySlug: integrations-events
 order: 1
-parentDoc: 648c7ee7afbbbc001d6a0c53
+parentDoc: 6499848d103e5f0042e48066
 ---
 RevenueCat can automatically send data deliveries of all of your apps' transaction data to a Google Cloud Storage bucket. These are in the form of .csv files delivered daily.
 

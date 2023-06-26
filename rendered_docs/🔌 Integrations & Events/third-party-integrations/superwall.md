@@ -5,7 +5,7 @@ excerpt: Integrate in-app purchase events from RevenueCat with Superwall
 hidden: false
 categorySlug: integrations-events
 order: 13
-parentDoc: 648c7ee701881d1af934bf16
+parentDoc: 6499848d103e5f0042e4802e
 ---
 > 👍 
 > 

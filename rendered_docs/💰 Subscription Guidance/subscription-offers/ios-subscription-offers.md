@@ -5,7 +5,7 @@ excerpt: Implementing iOS Subscription Offers with Purchases SDK
 hidden: false
 categorySlug: subscription-guidance
 order: 0
-parentDoc: 648c7ee735f772038eae5f4c
+parentDoc: 6499848d103e5f0042e48038
 ---
 [block:callout]
 {

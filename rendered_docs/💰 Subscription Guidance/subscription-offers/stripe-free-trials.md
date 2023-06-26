@@ -5,7 +5,7 @@ excerpt: Setting up free trials in Stripe or Stripe Checkout
 hidden: false
 categorySlug: subscription-guidance
 order: 2
-parentDoc: 648c7ee735f772038eae5f4c
+parentDoc: 6499848d103e5f0042e48038
 ---
 [block:api-header]
 {

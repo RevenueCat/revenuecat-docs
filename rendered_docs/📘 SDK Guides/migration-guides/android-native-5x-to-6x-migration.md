@@ -5,7 +5,7 @@ excerpt: New Google subscription model migration
 hidden: false
 categorySlug: sdk-guides
 order: 2
-parentDoc: 648c7ee650eac80027fe8f2e
+parentDoc: 6499848d103e5f0042e47ffd
 ---
 ## Google Product setup
 

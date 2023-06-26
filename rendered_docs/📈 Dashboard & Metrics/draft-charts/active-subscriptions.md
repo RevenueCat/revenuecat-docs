@@ -4,7 +4,7 @@ slug: active-subscriptions
 hidden: true
 categorySlug: dashboard-metrics
 order: 0
-parentDoc: 648c7ee8afbbbc001d6a0c55
+parentDoc: 6499848d103e5f0042e480c1
 ---
 **Segments:** Yes
 **Filters:** Yes

@@ -4,7 +4,7 @@ slug: customer-history
 hidden: false
 categorySlug: dashboard-metrics
 order: 1
-parentDoc: 648c7ee63d0e7f00669ced48
+parentDoc: 6499848d103e5f0042e47ffa
 ---
 The 'Customer History' card shows a timeline of transactions and activity for the selected customer. These can be useful for debugging and triaging support issues by understanding when critical events happened for the customer.
 

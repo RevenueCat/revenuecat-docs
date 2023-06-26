@@ -4,7 +4,7 @@ slug: using-purchases-5x-for-google-play
 hidden: true
 categorySlug: platform-resources
 order: 3
-parentDoc: 648c7f065abd5900755751a0
+parentDoc: 6499848d103e5f0042e480ec
 ---
 > 🚧 Legacy documentation
 > 

@@ -5,7 +5,7 @@ excerpt: Integrate RevenueCat subscription status with OneSignal
 hidden: false
 categorySlug: integrations-events
 order: 9
-parentDoc: 648c7ee701881d1af934bf16
+parentDoc: 6499848d103e5f0042e4802e
 ---
 > 👍 
 > 

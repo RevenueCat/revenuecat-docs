@@ -5,7 +5,7 @@ excerpt: Managing your account and changing plans
 hidden: false
 categorySlug: welcome
 order: 2
-parentDoc: 648c7f0806750b000c6ec33b
+parentDoc: 6499848d103e5f0042e480f6
 ---
 # Account Security & 2FA
 

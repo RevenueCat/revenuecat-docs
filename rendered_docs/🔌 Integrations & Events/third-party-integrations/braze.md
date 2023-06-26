@@ -5,7 +5,7 @@ excerpt: Integrate in-app subscription events from RevenueCat with Braze
 hidden: false
 categorySlug: integrations-events
 order: 2
-parentDoc: 648c7ee701881d1af934bf16
+parentDoc: 6499848d103e5f0042e4802e
 ---
 > 👍 
 > 

@@ -5,7 +5,7 @@ excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 categorySlug: integrations-events
 order: 0
-parentDoc: 648c7ee7de5aa2000aea06e2
+parentDoc: 6499848d103e5f0042e48079
 ---
 RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
 

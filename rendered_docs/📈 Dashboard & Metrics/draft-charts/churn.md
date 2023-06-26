@@ -4,7 +4,7 @@ slug: churn
 hidden: true
 categorySlug: dashboard-metrics
 order: 2
-parentDoc: 648c7ee8afbbbc001d6a0c55
+parentDoc: 6499848d103e5f0042e480c1
 ---
 ## Churn
 **Segments**: Yes

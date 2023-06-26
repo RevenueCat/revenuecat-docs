@@ -5,7 +5,7 @@ excerpt: How caching works with RevenueCat
 hidden: false
 categorySlug: test-launch
 order: 0
-parentDoc: 648c7ee83ccbe61ab66dce23
+parentDoc: 6499848d103e5f0042e4809b
 ---
 RevenueCat caches data in several places to improve performance. This includes the Dashboard’s Overview, Customer Lists, and the SDK’s CustomerInfo object.
 

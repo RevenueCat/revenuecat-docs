@@ -4,7 +4,7 @@ slug: configuring-experiments-v1
 hidden: false
 categorySlug: tools
 order: 2
-parentDoc: 648c7ee8b319ba05991ce60c
+parentDoc: 6499848d103e5f0042e480c2
 ---
 Before setting up an experiment, make sure you've created the products and offerings that you want to test and added any new products to the appropriate entitlements in your project (more on this below). You should also test the offerings you've chosen on any platform your app supports.
 

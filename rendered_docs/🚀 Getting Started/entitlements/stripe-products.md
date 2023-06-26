@@ -5,7 +5,7 @@ excerpt: Setting up products in the Stripe Dashboard
 hidden: false
 categorySlug: getting-started
 order: 4
-parentDoc: 648c7ee85e81230012ca5edf
+parentDoc: 6499848d103e5f0042e480ab
 ---
 To set up products for Stripe, start by logging into the Stripe Dashboard. This guide assumes basic knowledge of Stripe and the Stripe Dashboard. For more information, visit Stripe's [documentation and guides for the Dashboard](https://stripe.com/docs/dashboard).
 

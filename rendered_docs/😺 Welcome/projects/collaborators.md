@@ -5,7 +5,7 @@ excerpt: Invite others to collaborate on your project
 hidden: false
 categorySlug: welcome
 order: 0
-parentDoc: 648c7f0806750b000c6ec33b
+parentDoc: 6499848d103e5f0042e480f6
 ---
 Collaborators allow other people to access your RevenueCat Project without having to share any login credentials. You can limit the access of specific collaborators to "Admin", "Read Only", or "Customer Support".
 

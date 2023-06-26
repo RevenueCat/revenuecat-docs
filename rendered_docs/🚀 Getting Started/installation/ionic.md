@@ -5,7 +5,7 @@ excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
 categorySlug: getting-started
 order: 5
-parentDoc: 648c7f084ca0960014e5d032
+parentDoc: 6499848d103e5f0042e480fb
 ---
 Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 ```text Cordova

@@ -4,7 +4,7 @@ slug: creating-offerings-to-test
 hidden: false
 categorySlug: tools
 order: 1
-parentDoc: 648c7ee8b319ba05991ce60c
+parentDoc: 6499848d103e5f0042e480c2
 ---
 In this guide we'll cover how to craft your test hypothesis, and how to set up a new Offering in RevenueCat to test your hypothesis.
 

@@ -5,7 +5,7 @@ excerpt: Instructions for installing Purchases SDK for macOS / Catalyst
 hidden: false
 categorySlug: getting-started
 order: 7
-parentDoc: 648c7f084ca0960014e5d032
+parentDoc: 6499848d103e5f0042e480fb
 ---
 # What is RevenueCat?
 

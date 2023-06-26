@@ -5,7 +5,7 @@ excerpt: Migrating workflows from Original Charts to the New Charts beta
 hidden: true
 categorySlug: dashboard-metrics
 order: 0
-parentDoc: 648c7ee8b4629e1fd0fb39b5
+parentDoc: 6499848d103e5f0042e480c4
 ---
 # Known Issues
 
