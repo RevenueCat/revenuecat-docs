@@ -27,6 +27,11 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
     "file": "code_blocks/🚀 Getting Started/configuring-sdk_1.swift"
   },
   {
+    "language": "SwiftUI",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_2.swift"
+  },
+  {
     "language": "objectivec",
     "name": "",
     "file": "code_blocks/🚀 Getting Started/configuring-sdk_2.m"
