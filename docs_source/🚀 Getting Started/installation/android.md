@@ -12,7 +12,7 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 ## Installation
 
-Purchases for Android (Google Play and Amazon Appstore) is available on Maven and can be included via Gradle.
+Purchases for Android (Google Play and Amazon Appstore) is available on Maven and can be included via Gradle. This is a change
 
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
 
