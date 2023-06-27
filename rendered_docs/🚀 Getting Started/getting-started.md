@@ -353,11 +353,20 @@ The SDK will automatically fetch the [configured Offerings](doc:entitlements#off
 Below is an example of fetching Offerings. You can utilize Offerings to organize your paywall screen. See our guide on [Displaying Products](doc:displaying-products) for more information and best practices.
 
 ```swift 
+// Using completion blocks
 Purchases.shared.getOfferings { (offerings, error) in
 	if let offerings = offerings {
 	  // Display current offering with offerings.current
   }
 }
+// Using Swift Concurrency
+do {
+    let offerings = try await Purchases.shared.offerings()
+    // Display current offering with offerings.current
+} catch let error { 
+    // handle error
+}
+
 ```
 ```objectivec 
 [[RCPurchases sharedPurchases] getOfferingsWithCompletion:^(RCOfferings *offerings, NSError *error) {
