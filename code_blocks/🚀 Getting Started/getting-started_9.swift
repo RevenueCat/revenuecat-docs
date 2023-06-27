@@ -4,7 +4,7 @@ Purchases.shared.getOfferings { (offerings, error) in
 	  // Display current offering with offerings.current
   }
 }
-// using Swift Concurrency
+// Using Swift Concurrency
 do {
     let offerings = try await Purchases.shared.offerings()
     // Display current offering with offerings.current
