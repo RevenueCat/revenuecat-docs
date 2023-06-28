@@ -29,8 +29,15 @@ RevenueCat makes it easy to determine subscription status and more with the _Pur
 The <<glossary:CustomerInfo>> object contains all of the purchase and subscription data available about the user. This object is updated whenever a purchase or restore occurs and periodically throughout the lifecycle of your app. The latest information can always be retrieved by calling `getCustomerInfo()`:
 
 ```swift 
+// Using Completion Blocks
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
     // access latest customerInfo
+}
+// Using Swift Concurrency
+do {
+    let customerInfo = try await Purchases.shared.customerInfo()
+} catch {
+    // handle error
 }
 ```
 ```objectivec 
