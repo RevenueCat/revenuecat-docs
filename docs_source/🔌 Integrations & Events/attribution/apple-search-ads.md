@@ -113,9 +113,9 @@ The standard attribution data collection does not require user consent and can b
     "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_2.m"
   },
   {
-    "language": "javascript",
+    "language": "dart",
     "name": "Flutter",
-    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_3.js"
+    "file": "code_blocks/🔌 Integrations & Events/attribution/apple-search-ads_3.dart"
   },
   {
     "language": "javascript",

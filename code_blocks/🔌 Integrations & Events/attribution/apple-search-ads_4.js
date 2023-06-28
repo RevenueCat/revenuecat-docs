@@ -1,18 +1,20 @@
+import {Platform} from 'react-native';
+
+//...
+
 export default class App extends React.Component {
- 
+
   componentDidMount() {
-    Purchases.setDebugLogsEnabled(true);
-    
+    Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
+
     if (Platform.OS === 'ios') {
-    	await Purchases.setup("public_ios_sdk_key");
+      await Purchases.configure({apiKey: "<public_apple_api_key>"});
     } else if (Platform.OS === 'android') {
-    	await Purchases.setup("public_google_sdk_key");
-      
+      await Purchases.configure({apiKey: "<public_google_api_key>"});
+
       // OR: if building for Amazon, be sure to follow the installation instructions then:
-    	await Purchases.setup({ apiKey: "public_amazon_sdk_key", useAmazon: true });
+      await Purchases.configure({apiKey: "<public_amazon_api_key>", useAmazon: true});
     }
-    
-    await Purchases.enableAdServicesAttributionTokenCollection();
-    
+    Purchases.enableAdServicesAttributionTokenCollection();
   }
 }
