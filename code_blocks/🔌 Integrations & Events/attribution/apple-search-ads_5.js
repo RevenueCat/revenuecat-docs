@@ -1,7 +1,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-  Purchases.setDebugLogsEnabled(true);
+  Purchases.setLogLevel(LOG_LEVEL.DEBUG);
   if (window.cordova.platformId === 'ios') {
     Purchases.configureWith({apiKey: "<public_apple_api_key>"});
   } else if (window.cordova.platformId === 'android') {
