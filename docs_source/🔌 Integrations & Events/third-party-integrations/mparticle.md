@@ -15,7 +15,7 @@ With our mParticle integration, you can:
 - Use the API to identify users who are at risk of churning and begin a campaign to win them back.
 - Set up push notifications and emails to users who have subscribed to your product but do not engage very much.
 
-With accurate and up-to-date subscription data in Mixpanel, you'll be set to turbocharge your campaigns ⚡️
+With accurate and up-to-date subscription data in mParticle, you'll be set to turbocharge your campaigns ⚡️
 
 # Events
 
