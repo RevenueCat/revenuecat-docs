@@ -81,9 +81,14 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
   },
   {
     "language": "kotlin",
-    "name": "",
+    "name": "Kotlin",
     "file": "code_blocks/🔌 Integrations & Events/attribution/branch_7.kt"
-  }
+  },
+  {
+    "language": "javascript",
+    "name": "React Native",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_8.js"
+  },
 ]
 [/block]
 
