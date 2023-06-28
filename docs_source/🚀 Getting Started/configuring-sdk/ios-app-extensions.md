@@ -21,6 +21,8 @@ After you enable app groups, you will be able to access a user's active subscrip
 ]
 [/block]
 
+Now the app extension and parent app can both use the shared UserDefaults suite.
 
-
-Now the app extension and parent app can both use the a shared UserDefaults suite.
+> 🚧 Purchases aren't allowed on extensions
+> 
+> Even though you can configure the SDK, it's just read-only. Purchasing will not work because extensions don't have access to the parent's app Bundle and therefore can't extract the receipt after a purchase.
