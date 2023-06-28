@@ -16,17 +16,17 @@ We have switched from editing our [docs](https://www.revenuecat.com/docs) in Rea
 
 [The repository](https://github.com/RevenueCat/revenuecat-docs) contains two important folders:
 
-**************docs_source************** contains the raw markdown documents for editing
+**docs_source** contains the raw markdown documents for editing
 
-**************************rendered_docs************************** contains auto-generated docs in ReadMe-flavored markdown
+**rendered_docs** contains auto-generated docs in ReadMe-flavored markdown
 
-**************code_blocks************** contains the code blocks (snippets) that get embedded in the files in the `rendered_docs` folder
+**code_blocks** contains the code blocks (snippets) that get embedded in the files in the `rendered_docs` folder
 
 ## 🔧 How it works
 
-Edit documents in ********************docs_source********************. When you finish editing, open a pull request (PR).
+Edit documents in **docs_source**. When you finish editing, open a pull request (PR).
 
-When your PR is approved, a CircleCI job is triggered to render the documents into ReadMe-flavored markdown in **************************rendered_docs.**************************
+When your PR is approved, a CircleCI job is triggered to render the documents into ReadMe-flavored markdown in **rendered_docs.**
 
 A second PR will be automatically generated. This PR contains your rendered documents and should be reviewed thoroughly for any errors in the rendering process. 
 
@@ -36,7 +36,7 @@ When the second PR is approved, another CircleCI build is triggered to send all 
 
 We want to make it easy to unit test code snippets in the future. We also want to be able to use code linters and formatters on our code snippets. It’s pretty common to see in Readme code snippets that don’t have the correct indentation, or that broke with an SDK version update. To solve this, we decided to add the capability to have code snippets living in a different file than the document where they live. This file will have the right extension so code editors and GitHub detect the language they are written with. 
 
-If you want to add a snippet to a file in the **docs_source** folder, create a file in the **************code_blocks************** folder with the right extension. For example *configuring_sdk.swift*, then add a reference to that snippet in the doc you want to edit inside the **docs_source** folder using a `[block:file]` tag:
+If you want to add a snippet to a file in the **docs_source** folder, create a file in the **code_blocks** folder with the right extension. For example *configuring_sdk.swift*, then add a reference to that snippet in the doc you want to edit inside the **docs_source** folder using a `[block:file]` tag:
 
 ```jsx
 [block:file]
@@ -73,7 +73,7 @@ Simply add a [block:file] block with a JSON array with the other files for the o
 ## ⛓️ Current limitations
 
 - ReadMe categories cannot be edited or rearranged in Github. They must be edited in ReadMe itself. This is due to limitations in the Readme API.
-- When the second (auto-generated) PR is deleted, ******************************************************************************************************************************your changes are still in the main branch.************************************************************************************* Unless you revert these changes, they will be sent to Github the next time any synchronizing PR is approved. The synchronizing PR will show all the changes that will be synchronized after merged.
+- When the second (auto-generated) PR is deleted, **your changes are still in the main branch.** Unless you revert these changes, they will be sent to Github the next time any synchronizing PR is approved. The synchronizing PR will show all the changes that will be synchronized after merged.
 
 ## 🎁 Features planned
 
@@ -91,7 +91,7 @@ Small edits can easily be made within Github itself, without the need to clone (
 
 ![Choose a descriptive name, such as [your name]/[description]](https://github.com/RevenueCat/revenuecat-docs/assets/664544/2105b93c-c7f1-4017-8867-35f5248b97ae)
 
-1. Select your file from **********************docs_source**********************
+1. Select your file from **docs_source**
 
 <img width="406" alt="Screenshot 2023-06-26 at 4 06 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/a0d7e9b2-706d-4312-8d6e-bc41fff233be">
 
@@ -103,15 +103,15 @@ Small edits can easily be made within Github itself, without the need to clone (
 
 <img width="536" alt="Add a descriptive message in the pop-up that follows." src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b397d44e-6de7-4c6c-b49b-a5fef6981899">
 
-1. You can choose to start a pull request with the changes, if you don’t, navigate to the ************Pull requests************ tab. A banner will pop up with your new branch. Click ********************************************Compare & pull request********************************************
+1. You can choose to start a pull request with the changes, if you don’t, navigate to the **Pull requests** tab. A banner will pop up with your new branch. Click **Compare & pull request**
 
 <img width="634" alt="If the banner is missing, click ********************************New pull request******************************** and select your branch" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/c7cea5c0-1f35-406f-9549-ebbf15a7fd18">
 
-1. Make any changes to the PR template (1), select ****************RevenueCat/support**************** as a reviewer (2), and click ************************Create pull request************************ (3)
+1. Make any changes to the PR template (1), select **RevenueCat/support** as a reviewer (2), and click **Create pull request** (3)
 
 ### Pull request #2
 
-A second PR will be auto-generated. After reviewing the **************************rendered_docs************************** in the PR, approve the PR squash and merge it.
+A second PR will be auto-generated. After reviewing the **rendered_docs** in the PR, approve the PR squash and merge it.
 
 <img width="745" alt="Screenshot 2023-06-26 at 4 08 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/4ee4bbe4-ae20-4004-9681-77a35d7ea781">
 
@@ -129,7 +129,7 @@ After making the changes, and pressing the `Commit changes…` button, make sure
 
 <img width="345" alt="Screenshot 2023-06-26 at 4 09 18 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/93cde391-bc7b-4f1d-83c2-1f8c7644c1f1">
 
-************Note:************ At this time, changing the folder of a doc, or removing whole folders is not supported. Feel free to reach out to [Support](https://revenuecat.slack.com/archives/CSSCSV4TF) for assistance, for these type of changes that require technical knowledge of Git.
+**Note:** At this time, changing the folder of a doc, or removing whole folders is not supported. Feel free to reach out to [Support](https://revenuecat.slack.com/archives/CSSCSV4TF) for assistance, for these type of changes that require technical knowledge of Git.
 
 ## 🖊️ Markdown Tutorial
 
