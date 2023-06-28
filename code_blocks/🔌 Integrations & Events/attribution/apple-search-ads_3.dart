@@ -12,7 +12,7 @@ Future<void> initPlatformState() async {
     configuration = PurchasesConfiguration(<public_google_api_key>);
     if (buildingForAmazon) {
       // use your preferred way to determine if this build is for Amazon store
-      // checkout our MagicWeather sample for a suggestion
+      // check our MagicWeather sample for a suggestion
       configuration = AmazonConfiguration(<public_amazon_api_key>);
     }
   }
