@@ -116,6 +116,12 @@ Testing on the simulator requires one of these SDK versions:
 > 
 > While you can upload a StoreKit configuration file with a macOS app, this setup is currently incompatible with the SDK. When making test purchases on the simulator, the transactions will appear to go through but you'll receive an error from our backend. It's recommended to test without configuration files until this is addressed.
 
+> ❗️ StoreKit testing won't show cancellation or refund events
+> 
+> While you can cancel and refund subscriptions through Xcode's **Manage Transactions...** window, these types of events are not stored in the receipt and will not appear on the RevenueCat dashboard. 
+>
+> However, the RevenueCat SDK is still able to detect there are no active subscriptions and the appropriate entitlements will be removed when the app is restarted again.
+
 ## Step 1: Add a StoreKit Configuration File
 
 Go to **File > New > File...** in the menu bar and select **StoreKit Configuration File**. Save the file in the top-level folder of your project and add it to your targets.
