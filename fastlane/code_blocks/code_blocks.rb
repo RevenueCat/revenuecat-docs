@@ -176,7 +176,7 @@ def embed_code_from_files(code_blocks_group_with_tags)
         name = code_block_information['name']
         next unless File.exist?(file_path)
 
-        file_content = File.read(file_path)
+        file_content = File.read(file_path).strip
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
