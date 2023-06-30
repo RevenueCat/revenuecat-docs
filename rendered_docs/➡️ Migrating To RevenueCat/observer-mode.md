@@ -177,8 +177,11 @@ public class MainApplication extends Application {
     }
 }
 ```
-```javascript Flutter
-await Purchases.setup(<my_api_key>, observerMode: true);
+```dart Flutter
+await Purchases.configure(
+    PurchasesConfiguration(<public_sdk_key>)
+      ..observerMode = true
+);
 ```
 ```csharp Unity
 // Observer mode can be configured through the Unity Editor. 
