@@ -7,13 +7,13 @@ hidden: false
 
 # Purpose
 
-A malicious user could intercept and modify requests by performing a machine-in-the-middle ([MitM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) attack to grant themselves entitlements without actually purchasing through a store.
+As data travels between your app, RevenueCat, and the app stores, a malicious user could intercept and modify requests by performing a machine-in-the-middle ([MitM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) attack to grant themselves entitlements without actually paying you.
 
-In order to prevent that, the native (iOS/Android) SDKs, together with the backend, verify responses by checking a cryptographic signature.
+To prevent this, our native (iOS/Android) SDKs, together with our backend, will verify responses by checking a cryptographic signature.
 
 ## Configuration
 
-SDKs can be configured in one of 3 `EntitlementVerificationMode`s:
+SDKs can be configured in one of 3 `EntitlementVerificationMode`'s:
 
 - Disabled (*default*): equivalent to no verification. Susceptible to MiTM attacks.
 - Informational (*beta*): No behavior change, but the result of verification is included in `EntitlementInfos` / `EntitlementInfo`.
@@ -67,7 +67,7 @@ When configuring the SDK with `EntitlementVerificationMode.informational`, `Enti
 
 ### Cache invalidation
 
-Transitioning an app from `EntitlementVerificationMode.disabled` to `EntitlementVerificationMode.informational` means that cached data would not be verified. In order for a user to be able to rely on this new behavior, the SDKs invalidates caches when this change is detected, so that all subsequent data requests are guaranteed to have a validation information.
+Transitioning an app from `EntitlementVerificationMode.disabled` to `EntitlementVerificationMode.informational` means that cached data would not be verified. In order for a user to be able to rely on this new behavior, the SDKs invalidate caches when this change is detected, so that all subsequent data requests are guaranteed to have validation information.
 
 ### Key replacement
 
