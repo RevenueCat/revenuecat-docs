@@ -152,7 +152,7 @@ _Applicable to the latest version_
     "22-3": "`011223344556677`",
     "22-4": "",
     "23-0": "`refunded_at`",
-    "23-1": "When a full refund was detected, `null` if none was detected.",
+    "23-1": "When a refund was detected, `null` if none was detected. Is not set in the case of upgraded transactions for which the App Store issues a partial refund.",
     "23-2": "datetime",
     "23-3": "`2023-02-20 05:47:55`",
     "23-4": "✅",
