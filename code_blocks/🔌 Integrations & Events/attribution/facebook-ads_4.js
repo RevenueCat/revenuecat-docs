@@ -7,8 +7,8 @@
 import FBSDK from "react-native-fbsdk"
 
 //...
-Purchases.setDebugLogsEnabled(true);
-Purchases.setup("public_sdk_key");
+Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
+Purchases.configure({ apiKey: <public_sdk_key> });
 //...
 
 // Automatically collect the $idfa, $idfv, and $ip values
