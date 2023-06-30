@@ -89,6 +89,11 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
     "name": "React Native",
     "file": "code_blocks/🔌 Integrations & Events/attribution/branch_8.js"
   },
+  {
+    "language": "javascript",
+    "name": "Cordova",
+    "file": "code_blocks/🔌 Integrations & Events/attribution/branch_cordova.js"
+  },
 ]
 [/block]
 
