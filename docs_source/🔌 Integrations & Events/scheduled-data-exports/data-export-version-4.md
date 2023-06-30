@@ -32,7 +32,7 @@ When a transaction is refunded, the current `price_in_usd` and `price_in_purchas
 
 To instead equip you to measure gross revenue before refunds, we've introduced new `purchase_price_in_usd` and `purchase_price_in_purchased_currency` fields which will remain set at the original purchase price even after a refund.
 
-By sourcing your analysis' with these fields, you'll be able to measure gross revenue before refunds, or measure gross revenue by checking if `refunded_at` is null.
+By sourcing your analysis' with these fields, you'll be able to measure gross revenue before refunds.
 
 ### Country fields
 
@@ -164,12 +164,12 @@ By sourcing your analysis' with these fields, you'll be able to measure gross re
     "15-3": "`false`",
     "15-4": "",
     "16-0": "`price_in_usd`",
-    "16-1": "The revenue (converted to USD) generated from the transaction after accounting for refunds. Can be null if product prices haven't been collected from the user's device. ",
+    "16-1": "The revenue (converted to USD) generated from the transaction after accounting for full and partial refunds. Can be null if product prices haven't been collected from the user's device. ",
     "16-2": "float",
     "16-3": "`0`",
     "16-4": "✅",
     "17-0": "`purchase_price_in_usd`\\*",
-    "17-1": "The gross revenue (converted to USD) generated from the transaction. Remains set for refunded transactions. Refer to `refunded_at` to determine refund state. Can be null if product prices haven't been collected from the user's device.",
+    "17-1": "The gross revenue (converted to USD) generated from the transaction. Remains set for refunded transactions. Can be null if product prices haven't been collected from the user's device.",
     "17-2": "float",
     "17-3": "`9.99`",
     "17-4": "✅",
@@ -199,7 +199,7 @@ By sourcing your analysis' with these fields, you'll be able to measure gross re
     "22-3": "`011223344556677`",
     "22-4": "",
     "23-0": "`refunded_at`",
-    "23-1": "When a refund was detected, `null` if none was detected. Can be checked for existence to indicate transactions which have been refunded.",
+    "23-1": "When a refund was detected, `null` if none was detected. Is not set in the case of upgraded transactions for which the App Store issues a partial refund.",
     "23-2": "datetime",
     "23-3": "`2023-02-20 05:47:55`",
     "23-4": "✅",
@@ -219,12 +219,12 @@ By sourcing your analysis' with these fields, you'll be able to measure gross re
     "26-3": "`GBP`",
     "26-4": "✅",
     "27-0": "`price_in_purchased_currency`",
-    "27-1": "The revenue (in the purchased currency) generated from the transaction after accounting for refunds. Can be null if product prices haven't been collected from the user's device.",
+    "27-1": "The revenue (in the purchased currency) generated from the transaction after accounting for full and partial refunds. Can be null if product prices haven't been collected from the user's device.",
     "27-2": "float",
     "27-3": "`0`",
     "27-4": "✅",
     "28-0": "`purchase_price_in_purchased_currency`\\*",
-    "28-1": "The gross revenue (in the purchased currency) generated from the transaction. Remains set for refunded transactions. Refer to `refunded_at` to determine refund state. Can be null if product prices haven't been collected from the user's device.",
+    "28-1": "The gross revenue (in the purchased currency) generated from the transaction. Remains set for refunded transactions. Can be null if product prices haven't been collected from the user's device.",
     "28-2": "float",
     "28-3": "`3.99`",
     "28-4": "✅",
