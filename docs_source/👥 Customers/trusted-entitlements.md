@@ -19,6 +19,26 @@ SDKs can be configured in one of 3 `EntitlementVerificationMode`s:
 - Informational (*beta*): No behavior change, but the result of verification is included in `EntitlementInfos` / `EntitlementInfo`.
 - Enforced (*coming soon*): verification failures result in `ErrorCode.signatureVerificationFailed` error being thrown.
 
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/👥 Customers/trusted-entitlements.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "",
+    "file": "code_blocks/👥 Customers/trusted-entitlements.m"
+  },
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/👥 Customers/trusted-entitlements.kt"
+  }
+]
+[/block]
+
 ## Verification
 
 When configuring the SDK with `EntitlementVerificationMode.informational`, `EntitlementInfo` contains the verification result:
