@@ -21,12 +21,29 @@ You should only configure _Purchases_ once, usually early in your application li
 
 Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 
-```swift 
+```swift Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   
     Purchases.logLevel = .debug
     Purchases.configure(withAPIKey: <public_apple_api_key>, appUserID: <app_user_id>)
   
+}
+```
+```swift SwiftUI
+import Purchases
+
+@main
+struct SampleApp: App {
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: <public_apple_api_key>, appUserID: <app_user_id>)
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
 }
 ```
 ```objectivec 

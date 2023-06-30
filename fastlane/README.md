@@ -78,42 +78,6 @@ readme_api_key, STRING Readme API key for the project
 readme_api_key_test STRING Readme API key for the test project
 
 
-### sync_categories_between_projects
-
-```sh
-[bundle exec] fastlane sync_categories_between_projects
-```
-
-Updates the JSON files containing the categories for a Readme.com project, including categories.json,
-categories_test_project.json and categories_map.json and creates matching categories in the readme test project.
-readme_api_key, STRING Readme API key for the project
-readme_api_key_test STRING Readme API key for the test project
-
-
-### update_docs_categories
-
-```sh
-[bundle exec] fastlane update_docs_categories
-```
-
-Updates categories for all the docs in a folder. It tries to guess the category using the folder that contains the
-document and uses Readme's API as a backup
-readme_api_key, STRING Readme API key for the project
-force_update_categories BOOLEAN True will force the categories.json to be updated, false will use the existing categories.json
-
-
-### sync_order_with_test_project
-
-```sh
-[bundle exec] fastlane sync_order_with_test_project
-```
-
-Updates categories for all the docs in a folder. It tries to guess the category using the folder that contains the
-document and uses Readme's API as a backup
-readme_api_key, STRING Readme API key for the project
-force_update_categories BOOLEAN True will force the categories.json to be updated, false will use the existing categories.json
-
-
 ### check_docs
 
 ```sh
