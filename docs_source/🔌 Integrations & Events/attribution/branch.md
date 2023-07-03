@@ -93,7 +93,7 @@ These properties can be set manually, like any other [Subscriber Attributes](doc
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🔌 Integrations & Events/attribution/branch_cordova.js"
-  },
+  }
 ]
 [/block]
 
