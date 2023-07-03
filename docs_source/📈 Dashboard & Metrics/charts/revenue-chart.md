@@ -71,9 +71,11 @@ For each period, we measure:
     "1-1": "Due to limitations in available information, accurate revenue tracking is not yet supported on initial purchases made with Offer Codes, and those purchases will be set to $0. Revenue from subsequent renewals will be tracked normally. [Learn more here](https://www.revenuecat.com/docs/ios-subscription-offers#considerations).",
     "2-0": "How are product price changes accounted for in revenue?",
     "2-1": "Once we detect a product price change in a specific country or currency, we’ll begin applying it to new subscribers immediately. We expect that existing subscribers are grandfathered in at the current price, and therefore revenue reporting will be inaccurate if that is not the case.  \nWe recommend creating a new product instead of changing the price on an existing product. [Learn more here](https://www.revenuecat.com/docs/price-changes)."
+    "3-0": "What exchange rates are used when converting to USD?",
+    "3-1": "We convert transactions to USD using the exchange rate of the purchased currency on the day of purchase. This may differ from how other sources handle exchange rates. For example, Apple's Sales and Trends reports use a rolling average of the previous month's exchange rates, while their payments to developers are exchanged at or near the time of payment. [More info] (https://developer.apple.com/help/app-store-connect/measure-app-performance/differences-in-reporting-tools)."
   },
   "cols": 2,
-  "rows": 3,
+  "rows": 4,
   "align": [
     "left",
     "left"
