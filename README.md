@@ -12,6 +12,8 @@ We have switched from editing our [docs](https://www.revenuecat.com/docs) in Rea
     1. To give a clear example, let’s say someone makes a change to version 4, while version 5 is getting ready to be published. There’s no easy way in Readme to bring those updates from v4 to v5 while this one is in the works.
     2. There’s also not a clear way to find out someone made a change to a particular version in Readme since edits can be made directly to the docs without using the “Suggested edits” functionality
 
+#### If you aren't comfortable using Github, please let Support know or open an Issue with your requested change here: https://github.com/RevenueCat/revenuecat-docs/issues/new
+
 ## 🗂️ Github organization
 
 [The repository](https://github.com/RevenueCat/revenuecat-docs) contains two important folders:
