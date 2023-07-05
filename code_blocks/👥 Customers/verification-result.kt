@@ -1,4 +1,4 @@
-Purchases.sharedInstance.getCustomerInfo({ error -> /* Optional error handling */ }) { customerInfo ->
+Purchases.sharedInstance.getCustomerInfoWith({ error -> /* Optional error handling */ }) { customerInfo ->
     when (customerInfo.entitlements.verificationResult) {
         /// No verification was done.
         ///
