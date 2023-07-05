@@ -39,7 +39,7 @@ await Purchases.configure(PurchasesConfiguration(<public_sdk_key>));
 Purchases.configure({apiKey: <public_sdk_key>});
 ```
 ```javascript Cordova
-Purchases.setup(<public_sdk_key>);
+Purchases.configureWith({ apiKey: <public_sdk_key> });
 ```
 ```csharp Unity
 // The SDK can be configured through the Unity Editor. 
