@@ -140,6 +140,13 @@ Indicates a network error occurred during the operation.
 **Resolution:** 
 Make sure the device has an internet connection and try again. If you are testing in sandbox, make sure your outgoing connections is turned on. You can find this in XCode under signing & capabilities > App Sandbox > Outgoing connections (Client).
 _______________________________________________________________________________
+####😿 `OFFLINE_CONNECTION_ERROR`
+**Problem:** 
+Indicates the device was offline when attempting a network request.
+
+**Resolution:** 
+Make sure the device has an internet connection and try again.
+_______________________________________________________________________________
 ####😿 `OPERATION_ALREADY_IN_PROGRESS`
 **Problem:**  
 Indicates an identical operation is already in progress. For example, making two identical purchase attempts at the same time.
