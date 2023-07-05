@@ -63,6 +63,8 @@ When configuring the SDK with `EntitlementVerificationMode.informational`, `Enti
 ]
 [/block]
 
+Additionally, verification errors are always forwarded to `Purchases.errorHandler`.
+
 ## Edge cases
 
 ### Cache invalidation
