@@ -4,6 +4,20 @@ orbs:
   revenuecat: revenuecat/sdks-common-config@2.2.0
   node: circleci/node@5.1.0
 
+aliases:
+  syncing-branches: &syncing-branches
+    filters:
+      tags:
+        ignore: /.*/
+      branches:
+        only: /^sync\/.*/
+  non-syncing-branches: &non-syncing-branches
+    filters:
+      tags:
+        ignore: /.*/
+      branches:
+        ignore: /^sync\/.*/
+
 commands:
   setup-git-credentials:
     steps:
@@ -24,7 +38,7 @@ commands:
             done 2>/dev/null >> ~/.ssh/known_hosts
 
 jobs:
-  check-files:
+  preview-docs:
     docker:
       - image: cimg/ruby:3.1.2
     steps:
@@ -32,8 +46,36 @@ jobs:
       - revenuecat/install-gem-unix-dependencies:
           cache-version: v1
       - run:
-          name: Check rendered docs are safe to sync
-          command: bundle exec fastlane check_docs
+          name: Render modified docs
+          command: bundle exec fastlane preview_rendered_docs
+      - store_artifacts:
+          path: temp
+          destination: temp
+      - run:
+          name: Post artifacts as comment
+          command: bundle exec fastlane post_circleci_artifacts
+
+  check-rendering:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Check rendered docs can render
+          command: bundle exec fastlane embed_code_blocks
+
+  check-categories:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Check rendered docs have categories
+          command: bundle exec fastlane check_docs_categories
 
   sync-files-to-readme:
     docker:
@@ -53,7 +95,7 @@ jobs:
           command: |
             bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
 
-  render-markdown:
+  open-syncing-pr:
     docker:
       - image: cimg/ruby:3.1.2
     steps:
@@ -71,9 +113,9 @@ jobs:
 workflows:
   version: 2
 
-  render-markdown:
+  open-syncing-pr:
     jobs:
-      - render-markdown:
+      - open-syncing-pr:
           filters:
             tags:
               ignore: /.*/
@@ -82,21 +124,18 @@ workflows:
 
   sync:
     jobs:
-      - check-files
+      - check-categories: *syncing-branches
       - hold:
           type: approval
           requires:
-            - check-files
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: /^sync\/.*/
+            - check-categories
+          <<: *syncing-branches
       - sync-files-to-readme:
           requires:
             - hold
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: /^sync\/.*/
+          <<: *syncing-branches
+
+  test:
+    jobs:
+      - check-rendering: *non-syncing-branches
+      - preview-docs: *non-syncing-branches
