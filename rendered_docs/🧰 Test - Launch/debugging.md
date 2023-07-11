@@ -31,8 +31,11 @@ Purchases.setDebugLogsEnabled(true);
 Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());
 ```
 ```javascript React Native
-Purchases.setDebugLogsEnabled(true);
-Purchases.setup(<public_sdk_key>, <my_app_user_id>);
+Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
+Purchases.configure({
+    apiKey: "<public_sdk_key>",
+    appUserID: "<my_app_user_id>",
+});
 ```
 ```javascript Flutter
 await Purchases.setDebugLogsEnabled(true);

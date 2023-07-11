@@ -89,7 +89,7 @@ The following table shows which SDK versions require backwards compatible produc
 | RevenueCat SDK           | Version requiring backwards compatible product | Versions supporting all products           |
 | :----------------------- | :--------------------------------------------- | :----------------------------------------- |
 | purchases-android        | v5 and below                                   | v6 and above                               |
-| purchases-react-native   | v5 and below                                   | Beta available on pre-release v6 and above |
-| purchases-flutter        | v4 and below                                   | Beta available on pre-release v6 and above |
-| purchases-unity          | v4 and below                                   | Beta available on pre-release v4 and above |
-| cordova-plugin-purchases | v3 and below                                   | _support coming soon_            |
+| purchases-react-native   | v5 and below                                   | v6 and above                               |
+| purchases-flutter        | v4 and below                                   | v5 and above                               |
+| purchases-unity          | v4 and below                                   | _support coming soon_                      |
+| cordova-plugin-purchases | v3 and below                                   | v4 and above                               |
