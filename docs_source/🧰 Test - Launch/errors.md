@@ -145,6 +145,14 @@ If this occurs while testing in sandbox you can try:
 - Repeating the operation later.
 - Create a new sandbox user on iOS.
 _______________________________________________________________________________
+####🤷 `SIGNATURE_VERIFICATION_FAILED`
+**Problem:**
+Indicates that the SDK detected a request was tampered.
+
+**Resolution:**
+- Ensure that a proxy is not modifying responses from our API.
+- See [the docs](doc:trusted-entitlements) for more information.
+_______________________________________________________________________________
 ####😿 `UNEXPECTED_BACKEND_RESPONSE_ERROR` 
 **Problem:** 
 Indicates the SDK received an unexpected response from the server.
