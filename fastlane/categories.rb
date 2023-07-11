@@ -9,7 +9,7 @@ def find_category_slug_from_id(category_id)
     matching_category ? matching_category['slug'] : nil
 end
 
-def check_docs_for_category(folder)
+def check_docs_have_categories(folder)
     markdown_files(folder).each do |file|
         yaml_data = yaml_data(file)
 
