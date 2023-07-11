@@ -29,6 +29,13 @@ RevenueCat makes it easy to determine subscription status and more with the _Pur
 The <<glossary:CustomerInfo>> object contains all of the purchase and subscription data available about the user. This object is updated whenever a purchase or restore occurs and periodically throughout the lifecycle of your app. The latest information can always be retrieved by calling `getCustomerInfo()`:
 
 ```swift 
+// Using Swift Concurrency
+do {
+    let customerInfo = try await Purchases.shared.customerInfo()
+} catch {
+    // handle error
+}
+// Using Completion Blocks
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
     // access latest customerInfo
 }
@@ -277,18 +284,20 @@ CustomerInfo updates are not pushed to your app from the RevenueCat backend, upd
 Depending on your app, it may be sufficient to ignore the delegate and simply handle changes to customer information the next time your app is launched. Or throughout your app as you request new `CustomerInfo` objects.
 
 ```swift 
-// Additional configure setup
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
-    Purchases.logLevel = .debug
-    Purchases.configure(withAPIKey: <public_sdk_key>)
-    Purchases.shared.delegate = self // make sure to set this after calling configure
-}
+// Option 1: using PurchasesDelegate:
+Purchases.logLevel = .debug
+Purchases.configure(withAPIKey: <public_sdk_key>)
+Purchases.shared.delegate = self // make sure to set this after calling configure
 
 extension AppDelegate: PurchasesDelegate {
     func purchases(_ purchases: Purchases, receivedUpdated customerInfo: Purchases.CustomerInfo) {
         // handle any changes to customerInfo
     }
+}
+
+// Option 2: using Swift Concurrency:
+for try await customerInfo in Purchases.shared.customerInfoStream {
+    // handle any changes to customerInfo
 }
 ```
 ```objectivec 

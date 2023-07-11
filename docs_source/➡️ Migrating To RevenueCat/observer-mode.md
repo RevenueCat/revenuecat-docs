@@ -111,9 +111,9 @@ No special requirements
     "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_4.java"
   },
   {
-    "language": "javascript",
+    "language": "dart",
     "name": "Flutter",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.js"
+    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.dart"
   },
   {
     "language": "csharp",

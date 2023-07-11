@@ -140,6 +140,13 @@ Indicates a network error occurred during the operation.
 **Resolution:** 
 Make sure the device has an internet connection and try again. If you are testing in sandbox, make sure your outgoing connections is turned on. You can find this in XCode under signing & capabilities > App Sandbox > Outgoing connections (Client).
 _______________________________________________________________________________
+####😿 `OFFLINE_CONNECTION_ERROR`
+**Problem:** 
+Indicates the device was offline when attempting a network request.
+
+**Resolution:** 
+Make sure the device has an internet connection and try again.
+_______________________________________________________________________________
 ####😿 `OPERATION_ALREADY_IN_PROGRESS`
 **Problem:**  
 Indicates an identical operation is already in progress. For example, making two identical purchase attempts at the same time.
@@ -170,6 +177,14 @@ If everything was working while testing, you shouldn't have to do anything to ha
 If this occurs while testing in sandbox you can try:
 - Repeating the operation later.
 - Create a new sandbox user on iOS.
+_______________________________________________________________________________
+####🤷 `SIGNATURE_VERIFICATION_FAILED`
+**Problem:**
+Indicates that the SDK detected a request was tampered.
+
+**Resolution:**
+- Ensure that a proxy is not modifying responses from our API.
+- See [the docs](doc:trusted-entitlements) for more information.
 _______________________________________________________________________________
 ####😿 `UNEXPECTED_BACKEND_RESPONSE_ERROR` 
 **Problem:** 
@@ -248,6 +263,7 @@ Indicates that the user is ineligible for the specific Subscription Offer.
 Some possible causes:
 - User has already used this Offer
 - Offer not available in specific region
+- User has no current or previous subscription
 
 **Resolution:**
 If a user is not eligible for a Subscription Offer, be sure to update your UI to reflect normal pricing or terms. [`.paymentDiscount(...)`](https://docs.revenuecat.com/docs/ios-subscription-offers#fetch-payment-discount) is the best way to check for Subscription Offer eligibility. If you are testing in sandbox and already tested a purchase with that offer, you may want to [create a new sandbox user](https://docs.revenuecat.com/docs/apple-app-store#create-a-sandbox-test-account) to try again.

@@ -1,4 +1,5 @@
 require_relative '../files.rb'
+require_relative '../git.rb'
 
 UI = Fastlane::UI
 
@@ -116,7 +117,7 @@ def replace_code_group(original, replacement, file_contents)
 end
 
 def embed_code_blocks(render_folder, source_folder)
-    copy_docs_source_to_render_folder(source_folder, render_folder)
+    clone_folder(source_folder, render_folder)
 
     Dir.chdir(root_dir) do
         Dir.glob("#{render_folder}/**/*.md").each do |file_name|
@@ -133,11 +134,37 @@ def embed_code_blocks(render_folder, source_folder)
     end
 end
 
-def copy_docs_source_to_render_folder(source_folder, render_folder)
-    Dir.chdir(root_dir) do
-        FileUtils.rm_rf render_folder
-        FileUtils.copy_entry source_folder, render_folder
+def preview_rendered_docs(render_folder, temp_folder, source_folder)
+    backup_folder = "#{render_folder}_backup"
+    clone_folder(render_folder, backup_folder)
+
+    embed_code_blocks(render_folder, source_folder)
+
+    restore_forefronts(backup_folder, render_folder)
+    delete_folder(backup_folder)
+
+    copy_modified_markdown_files(render_folder, temp_folder)
+end
+
+def restore_forefronts(backup_folder, render_folder)
+    markdown_files(render_folder).each do |file_name|
+        path_inside_render_folder = file_name.gsub("#{render_folder}/", '')
+        backup_file_path = "#{backup_folder}/#{path_inside_render_folder}"
+        if file_exists(backup_file_path)
+            forefront = get_forefront(file_name)
+            forefront_backup = get_forefront(backup_file_path)
+            replace_in_file(file_name, forefront, forefront_backup)
+        end
     end
+end
+
+def copy_modified_markdown_files(render_folder, temp_folder)
+    modified_files = git_modified_markdown_files(render_folder)
+    UI.message("🔨 Copying #{modified_files} to temp folder...")
+
+    recreate_folder(temp_folder)
+
+    copy_to(modified_files, temp_folder)
 end
 
 ##
@@ -176,7 +203,7 @@ def embed_code_from_files(code_blocks_group_with_tags)
         name = code_block_information['name']
         next unless File.exist?(file_path)
 
-        file_content = File.read(file_path)
+        file_content = File.read(file_path).strip
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
