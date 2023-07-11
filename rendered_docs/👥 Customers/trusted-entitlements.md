@@ -4,6 +4,7 @@ slug: trusted-entitlements
 excerpt: Protect your purchases from attackers by enabling Response Signature Verification
 hidden: false
 categorySlug: customers-subscription-status
+order: 999
 ---
 
 # Purpose
