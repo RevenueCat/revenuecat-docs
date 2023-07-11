@@ -19,5 +19,8 @@ RSpec.describe 'Fastfile' do
         it 'embed_code_blocks' do
             embed_code_blocks('rendered_docs', 'docs_source')
         end
+        it 'preview_docs' do
+            preview_rendered_docs('temp', 'docs_source')
+        end
     end
 end

@@ -21,12 +21,15 @@ import 'readme_api/api.rb'
 import 'readme_api/versions.rb'
 import 'categories.rb'
 import 'files.rb'
+import 'circleci_api/api.rb'
 import 'code_blocks/code_blocks.rb'
+import 'rendering.rb'
 
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
 CODE_BLOCKS_FOLDER = "code_blocks"
 RENDER_FOLDER = "rendered_docs"
+TEMPORARY_RENDER_FOLDER = "temp"
 REPO_NAME = "revenuecat-docs"
 
 update_fastlane
@@ -91,6 +94,20 @@ end
 desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
 lane :embed_code_blocks do |options|
     embed_code_blocks(RENDER_FOLDER, SOURCE_FOLDER)
+end
+
+desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
+lane :preview_rendered_docs do |options|
+    preview_rendered_docs(RENDER_FOLDER, TEMPORARY_RENDER_FOLDER, SOURCE_FOLDER)
+end
+
+desc "Embeds code blocks from all files within the [block:file] and [/block] tags"
+lane :post_circleci_artifacts do |options|
+    circleci_build_num = ENV['CIRCLE_BUILD_NUM']
+    circleci_token = ENV['CIRCLE_TOKEN']
+    github_token = ENV['GITHUB_TOKEN']
+
+    post_circleci_artifacts(circleci_build_num, circleci_token, github_token)
 end
 
 desc <<-DESC
@@ -159,8 +176,8 @@ lane :update_categories_file do |options|
     update_categories_file(CATEGORIES_FILE, readme_api_key)
 end
 
-lane :check_docs do |options|
-    check_docs_for_category(RENDER_FOLDER)
+lane :check_docs_categories do |options|
+    check_docs_have_categories(RENDER_FOLDER)
 end
 
 lane :migration do |options|
