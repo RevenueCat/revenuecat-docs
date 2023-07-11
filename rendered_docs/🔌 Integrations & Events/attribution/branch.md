@@ -90,11 +90,24 @@ Purchases.shared.attribution.collectDeviceIdentifiers()
 // ...
 [[RCPurchases sharedPurchases] collectDeviceIdentifiers];
 ```
-```kotlin 
+```kotlin Kotlin
 //..
 Purchases.configure(this, "public_sdk_key")
 //..
 Purchases.sharedInstance.collectDeviceIdentifiers()
+```
+```javascript React Native
+import Purchases from 'react-native-purchases';
+// ..
+Purchases.configure({apiKey: <public_sdk_key>});
+// ..
+Purchases.collectDeviceIdentifiers();
+```
+```javascript Cordova
+// ..
+Purchases.configureWith({apiKey: <public_sdk_key>});
+// ..
+Purchases.collectDeviceIdentifiers();
 ```
 
 

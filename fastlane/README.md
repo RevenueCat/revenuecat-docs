@@ -48,6 +48,22 @@ Embeds code blocks from all files and opens a pull request preparing the docs fo
 
 Embeds code blocks from all files within the [block:file] and [/block] tags
 
+### preview_rendered_docs
+
+```sh
+[bundle exec] fastlane preview_rendered_docs
+```
+
+Embeds code blocks from all files within the [block:file] and [/block] tags
+
+### post_circleci_artifacts
+
+```sh
+[bundle exec] fastlane post_circleci_artifacts
+```
+
+Embeds code blocks from all files within the [block:file] and [/block] tags
+
 ### update_docs_structure
 
 ```sh
@@ -78,10 +94,10 @@ readme_api_key, STRING Readme API key for the project
 readme_api_key_test STRING Readme API key for the test project
 
 
-### check_docs
+### check_docs_categories
 
 ```sh
-[bundle exec] fastlane check_docs
+[bundle exec] fastlane check_docs_categories
 ```
 
 
