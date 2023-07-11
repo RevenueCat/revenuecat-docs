@@ -11,6 +11,12 @@ As data travels between your app, RevenueCat, and the app stores, a malicious us
 
 To prevent this, our native (iOS/Android) SDKs, together with our backend, will verify responses by checking a cryptographic signature.
 
+> 📘
+>
+> Trusted entitlements is supported in iOS SDK version 4.25.0 and up, and Android SDK version 6.6.0 and up.
+>
+> Flutter, React Native, Cordova and Unity support coming soon.
+
 ## Configuration
 
 SDKs can be configured in one of 3 `EntitlementVerificationMode`'s:
