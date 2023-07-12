@@ -9,7 +9,7 @@ order: 999
 
 # Purpose
 
-Revenuecat uses strong SSL to secure communications against interception. But the user is in control of the client device, and, while not an easy process, they can configure it to allow and execute ([MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) attacks to grant themselves entitlements without actually paying you.
+Revenuecat uses strong SSL to secure communications against interception. But the user is in control of the client device, and, while not an easy process, they can configure it to allow and execute [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks to grant themselves entitlements without actually paying you.
 
 To prevent this, in addition to SSL for secure communications, our native (iOS/Android) SDKs, together with our backend, will verify responses integrity by checking a cryptographic signature.
 
