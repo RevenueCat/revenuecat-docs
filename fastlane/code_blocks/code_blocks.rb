@@ -119,18 +119,16 @@ end
 def embed_code_blocks(render_folder, source_folder)
     clone_folder(source_folder, render_folder)
 
-    Dir.chdir(root_dir) do
-        Dir.glob("#{render_folder}/**/*.md").each do |file_name|
-            file_contents = File.read(file_name)
+    markdown_files(render_folder).each do |file_name|
+        file_contents = get_file_contents(file_name)
 
-            file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
-                UI.message("🔨 Processing file block #{index} in #{file_name}...")
-                code_to_embed = embed_code_from_files(block)
-                file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
-            end
-
-            File.write(file_name, file_contents)
+        file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
+            UI.message("🔨 Processing file block #{index} in #{file_name}...")
+            code_to_embed = embed_code_from_files(block)
+            file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
         end
+
+        write_file_contents(file_name, file_contents)
     end
 end
 
@@ -201,9 +199,9 @@ def embed_code_from_files(code_blocks_group_with_tags)
         language = code_block_information['language']
         file_path = code_block_information['file']
         name = code_block_information['name']
-        next unless File.exist?(file_path)
+        next unless file_exists(file_path)
 
-        file_content = File.read(file_path).strip
+        file_content = get_file_contents(file_path).strip
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
