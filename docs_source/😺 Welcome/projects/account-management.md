@@ -14,7 +14,9 @@ You can change your account email and name from your [account settings](https://
 
 ## Transfer account ownership
 
-Projects cannot be transferred between RevenueCat accounts at this time. If you need to switch the owner of an account, please follow the instructions above for changing your account email.
+Projects can be transferred between RevenueCat accounts by following one of two processes:
+1. If you are transferring all of the projects in your account, it is recommended that you change the email of the account to the new owner's email to give the new owner control over the account. If that's the case, use a new email. Please follow the instructions above for changing your account email.
+2. If you want to transfer some but not all projects from your RevenueCat account to another RevenueCat account, [contact RevenueCat Support](https://app.revenuecat.com/settings/support) for assistance.
 
 # Billing and plan changes
 
