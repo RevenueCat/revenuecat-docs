@@ -212,14 +212,14 @@ end
 # Get the region from the file
 # For example calling this method:
 # Purchases.logLevel = .debug
-# //MARK: Observer mode configuration
+# // MARK: Observer mode configuration
 # Purchases.configure(
 #   with: Configuration.Builder(withAPIKey: Constants.apiKey)
 #     .with(appUserID: <app_user_id>)
 #     .with(observerMode: true)
 #     .build()
 # )
-# //ENDMARK
+# // END
 # will return
 # Purchases.configure(
 #   with: Configuration.Builder(withAPIKey: Constants.apiKey)
@@ -232,7 +232,7 @@ def extract_region_from_file(file_path, region, language)
 
     case language
     when 'swift'
-        marked_region = file_content.scan(/\/\/MARK: #{region}\n(.*?)\/\/END/m).flatten.first
+        marked_region = file_content.scan(/\/\/\s*MARK:\s*#{region}\n(.*?)\/\/\s*END/m).flatten.first
         unless marked_region == nil
             return marked_region.strip
         end
