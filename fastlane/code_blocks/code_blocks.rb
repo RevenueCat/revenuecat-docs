@@ -199,14 +199,47 @@ def embed_code_from_files(code_blocks_group_with_tags)
         language = code_block_information['language']
         file_path = code_block_information['file']
         name = code_block_information['name']
+        region = code_block_information['region']
         next unless file_exists(file_path)
 
-        file_content = get_file_contents(file_path).strip
+        file_content = extract_region_from_file(file_path, region, language)
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
     embedded_code_blocks_group.join("\n").strip
 end
+
+# Get the region from the file
+# For example calling this method:
+# Purchases.logLevel = .debug
+# //MARK: Observer mode configuration
+# Purchases.configure(
+#   with: Configuration.Builder(withAPIKey: Constants.apiKey)
+#     .with(appUserID: <app_user_id>)
+#     .with(observerMode: true)
+#     .build()
+# )
+# //ENDMARK
+# will return
+# Purchases.configure(
+#   with: Configuration.Builder(withAPIKey: Constants.apiKey)
+#     .with(appUserID: <app_user_id>)
+#     .with(observerMode: true)
+#     .build()
+# )
+def extract_region_from_file(file_path, region, language)
+    file_content = get_file_contents(file_path).strip
+
+    case language
+    when 'swift'
+        marked_region = file_content.scan(/\/\/MARK: #{region}\n(.*?)\/\/END/m).flatten.first
+        unless marked_region == nil
+            return marked_region.strip
+        end
+    end
+    return file_content
+end
+
 
 # Searches for is [block:code][/block] and replaces it with the Readme flavored markdown style code blocks.
 # For example:

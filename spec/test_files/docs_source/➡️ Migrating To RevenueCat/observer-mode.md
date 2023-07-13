@@ -93,32 +93,33 @@ No special requirements
   {
     "language": "swift",
     "name": "Swift",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift",
+    "region": "Observer mode configuration"
   },
   {
     "language": "objectivec",
     "name": "Objective-C",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.m"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_2.m"
   },
   {
     "language": "kotlin",
     "name": "Kotlin",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"
   },
   {
     "language": "java",
     "name": "Java",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_4.java"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_4.java"
   },
   {
     "language": "dart",
     "name": "Flutter",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.dart"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_5.dart"
   },
   {
     "language": "csharp",
     "name": "Unity",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_6.cs"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_6.cs"
   }
 ]
 [/block]
@@ -150,12 +151,12 @@ On Android with Amazon Store (including cross-platform SDKs running on Android),
   {
     "language": "csharp",
     "name": "Unity",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.cs"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_7.cs"
   },
   {
     "language": "kotlin",
     "name": "",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.kt"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_8.kt"
   }
 ]
 [/block]

@@ -1,3 +1,5 @@
+Whatever other code we don't care about
+//MARK: Observer mode configuration
 Purchases.logLevel = .debug
 Purchases.configure(
   with: Configuration.Builder(withAPIKey: Constants.apiKey)
@@ -5,3 +7,4 @@ Purchases.configure(
     .with(observerMode: true)
     .build()
 )
+//END
