@@ -236,6 +236,11 @@ def extract_region_from_file(file_path, region, language)
         unless marked_region == nil
             return marked_region.strip
         end
+    when 'kotlin'
+        marked_region = file_content.scan(/\/\/\s*region\s*#{region}\n(.*?)\/\/\s*endregion/m).flatten.first
+        unless marked_region == nil
+            return marked_region.strip
+        end
     end
     return file_content
 end

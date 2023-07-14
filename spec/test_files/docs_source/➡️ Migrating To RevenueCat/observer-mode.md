@@ -104,7 +104,8 @@ No special requirements
   {
     "language": "kotlin",
     "name": "Kotlin",
-    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"
+    "file": "spec/test_files/code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt",
+    "region": "Observer mode configuration"
   },
   {
     "language": "java",

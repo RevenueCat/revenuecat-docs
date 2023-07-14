@@ -1,3 +1,4 @@
+// region Observer mode configuration
 // If you're targeting only Google Play Store
 class MainApplication: Application() {
     override fun onCreate() {
@@ -34,3 +35,4 @@ class MainApplication: Application() {
         }
     }
 }
+// endregion
