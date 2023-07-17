@@ -119,18 +119,16 @@ end
 def embed_code_blocks(render_folder, source_folder)
     clone_folder(source_folder, render_folder)
 
-    Dir.chdir(root_dir) do
-        Dir.glob("#{render_folder}/**/*.md").each do |file_name|
-            file_contents = File.read(file_name)
+    markdown_files(render_folder).each do |file_name|
+        file_contents = get_file_contents(file_name)
 
-            file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
-                UI.message("🔨 Processing file block #{index} in #{file_name}...")
-                code_to_embed = embed_code_from_files(block)
-                file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
-            end
-
-            File.write(file_name, file_contents)
+        file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
+            UI.message("🔨 Processing file block #{index} in #{file_name}...")
+            code_to_embed = embed_code_from_files(block)
+            file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
         end
+
+        write_file_contents(file_name, file_contents)
     end
 end
 
@@ -201,14 +199,52 @@ def embed_code_from_files(code_blocks_group_with_tags)
         language = code_block_information['language']
         file_path = code_block_information['file']
         name = code_block_information['name']
-        next unless File.exist?(file_path)
+        region = code_block_information['region']
+        next unless file_exists(file_path)
 
-        file_content = File.read(file_path).strip
+        file_content = extract_region_from_file(file_path, region, language)
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
     end
 
     embedded_code_blocks_group.join("\n").strip
 end
+
+# Get the region from the file
+# For example calling this method:
+# Purchases.logLevel = .debug
+# // MARK: Observer mode configuration
+# Purchases.configure(
+#   with: Configuration.Builder(withAPIKey: Constants.apiKey)
+#     .with(appUserID: <app_user_id>)
+#     .with(observerMode: true)
+#     .build()
+# )
+# // END
+# will return
+# Purchases.configure(
+#   with: Configuration.Builder(withAPIKey: Constants.apiKey)
+#     .with(appUserID: <app_user_id>)
+#     .with(observerMode: true)
+#     .build()
+# )
+def extract_region_from_file(file_path, region, language)
+    file_content = get_file_contents(file_path).strip
+
+    case language
+    when 'swift'
+        marked_region = file_content.scan(/\/\/\s*MARK:\s*#{region}\n(.*?)\/\/\s*END/m).flatten.first
+        unless marked_region == nil
+            return marked_region.strip
+        end
+    when 'kotlin'
+        marked_region = file_content.scan(/\/\/\s*region\s*#{region}\n(.*?)\/\/\s*endregion/m).flatten.first
+        unless marked_region == nil
+            return marked_region.strip
+        end
+    end
+    return file_content
+end
+
 
 # Searches for is [block:code][/block] and replaces it with the Readme flavored markdown style code blocks.
 # For example:
