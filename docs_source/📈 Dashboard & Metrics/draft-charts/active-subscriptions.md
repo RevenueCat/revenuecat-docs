@@ -25,13 +25,3 @@ This chart is useful for understanding the number of individual, recurring relat
   ]
 }
 [/block]
-
-[block:image]
-{
-  "images": [
-    {
-      "image": []
-    }
-  ]
-}
-[/block]
