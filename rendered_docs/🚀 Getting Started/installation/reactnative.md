@@ -145,21 +145,7 @@ import Purchases from 'react-native-purchases';
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/91edf94-65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
-        "65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
-        668,
-        107,
-        "#fafafc"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/91edf94-65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png "65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png")
 # Expo special instructions
 
 `react-native-purchases` works with all of the approaches that Expo offers. These approaches are managed workflow, bare workflow, and ExpoKit.
