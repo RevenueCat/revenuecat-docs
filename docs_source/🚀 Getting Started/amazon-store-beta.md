@@ -329,12 +329,54 @@ When you're ready to test purchasing the products, start a Live App test with a 
 ### Live App Testing (LAT)
 
 1. Submit your app to the [App Testing Service](https://developer.amazon.com/apps-and-games/test).
-![](https://files.readme.io/f701287-app_testing.png "app_testing.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/f701287-app_testing.png",
+        "app_testing.png",
+        820,
+        544,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 * Submit the APK for your app to LAT.
-![](https://files.readme.io/93bdcaa-drop_APK.png "drop APK.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/93bdcaa-drop_APK.png",
+        "drop APK.png",
+        562,
+        440,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 2. Have your group of testers test your app via LAT:
 * Go back to your developer dashboard and select your app from the **'App List'**. Here you will select **'Live App Testing'**.
-![](https://files.readme.io/cbab3b9-LAT.png "LAT.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/cbab3b9-LAT.png",
+        "LAT.png",
+        544,
+        574,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:image]
 {

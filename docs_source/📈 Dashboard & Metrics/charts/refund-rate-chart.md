@@ -45,4 +45,18 @@ For each period we count:
 }
 [/block]
 
-![](https://files.readme.io/1377659-refundrate.png "refundrate.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/1377659-refundrate.png",
+        "refundrate.png",
+        1372,
+        898,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]

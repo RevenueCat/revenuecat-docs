@@ -71,7 +71,21 @@ No special requirements
 }
 [/block]
 ## Enable Observer Mode in Unity configuration (Unity Only)
-![](https://files.readme.io/399c9ad-Screen_Shot_2019-05-31_at_12.07.34_PM.png "Screen Shot 2019-05-31 at 12.07.34 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/399c9ad-Screen_Shot_2019-05-31_at_12.07.34_PM.png",
+        "Screen Shot 2019-05-31 at 12.07.34 PM.png",
+        482,
+        388,
+        "#b9b9b9"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {

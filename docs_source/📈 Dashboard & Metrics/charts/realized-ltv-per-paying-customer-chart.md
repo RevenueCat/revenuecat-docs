@@ -72,4 +72,18 @@ For each period, we measure:
 }
 [/block]
 
-![](https://files.readme.io/f8ef97f-RealizedLTVperPayingCustomer.png "RealizedLTVperPayingCustomer.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/f8ef97f-RealizedLTVperPayingCustomer.png",
+        "RealizedLTVperPayingCustomer.png",
+        1376,
+        894,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]

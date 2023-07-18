@@ -18,9 +18,37 @@ We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the Ope
    - Download the `external-dependency-manager-latest.unitypackage` file from the root of the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) repo.
    - [Import](https://docs.unity3d.com/Manual/AssetPackagesImport.html) the downloaded `unitypackage` to your project.
 2. Then, you can add the OpenUPM scoped registry. To do this, go to your project's settings -> Package Manager, and add a new scoped registry with URL `https://package.openupm.com` and scopes: `com.openupm` and `com.revenuecat.purchases-unity`. It should look like this:
-![](https://files.readme.io/2284314-project-settings-openupm.jpg "project-settings-openupm.jpg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/2284314-project-settings-openupm.jpg",
+        "project-settings-openupm.jpg",
+        1570,
+        1104,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 3. Then, go to the Package Manager and from "My Registries", select the RevenueCat package and click on Install.
-![](https://files.readme.io/368ba43-package-manager-revenuecat.jpg "package-manager-revenuecat.jpg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/368ba43-package-manager-revenuecat.jpg",
+        "package-manager-revenuecat.jpg",
+        1598,
+        1196,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {
@@ -43,7 +71,21 @@ Download the latest version of [**Purchases.unitypackage**](https://github.com/R
 
 Import the downloaded unitypackage to your Unity project. Make sure the `PlayServiceResolver` and the `ExternalDependencyManager` folders are also added. These folders will install the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) plugin, which will add all the Android and iOS dependencies automatically when building your project.
 If you're running `purchases-unity` v3.5.1 or later, also make sure that the `RevenueCatPostInstall` script is added, since it will set up `StoreKit` for iOS and prevent issues when uploading builds to App Store Connect in Unity 2020.
-![](https://files.readme.io/db7fc97-Screen_Shot_2020-08-06_at_9.58.34_AM.png "Screen Shot 2020-08-06 at 9.58.34 AM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/db7fc97-Screen_Shot_2020-08-06_at_9.58.34_AM.png",
+        "Screen Shot 2020-08-06 at 9.58.34 AM.png",
+        488,
+        647,
+        "#b5b5b4"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {
@@ -62,7 +104,21 @@ If you're running `purchases-unity` v3.5.1 or later, also make sure that the `Re
 [/block]
 ## Create a GameObject with the Purchases behavior
 The Purchases package will include a MonoBehavior called Purchases. This will be your access point to RevenueCat from inside Unity. It should be instantiated once and kept as a singleton. You can use properties to configure your API Key, app user ID (if you have one), and product identifiers you want to fetch.
-![](https://files.readme.io/a20fb79-Screen_Shot_2022-08-03_at_3.04.56_PM.png "Screen Shot 2022-08-03 at 3.04.56 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/a20fb79-Screen_Shot_2022-08-03_at_3.04.56_PM.png",
+        "Screen Shot 2022-08-03 at 3.04.56 PM.png",
+        1706,
+        910,
+        "#313231"
+      ]
+    }
+  ]
+}
+[/block]
 ## Link StoreKit (iOS only)
 
 `StoreKit` should automatically be linked. If you run into any issues, add *StoreKit.framework* to *Linked Frameworks and Libraries* in Xcode.
@@ -132,7 +188,21 @@ If using RevenueCat alongside Unity IAP 2.2.0+ or other plugin that includes the
 The easiest way to remove the error would be to tell Gradle to not include the billingclient library that Unity IAP is already including.
 
 In order to do that, make sure you have `Custom Main Gradle Template` selected in the Android Player Settings... That should create a `mainTemplate.gradle` inside the `Assets/Plugins/Android`.
-![](https://files.readme.io/711eca6-8925eda-Screen_Shot_2020-05-05_at_1.49.57_PM.png "8925eda-Screen_Shot_2020-05-05_at_1.49.57_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/711eca6-8925eda-Screen_Shot_2020-05-05_at_1.49.57_PM.png",
+        "8925eda-Screen_Shot_2020-05-05_at_1.49.57_PM.png",
+        326,
+        170,
+        "#bdbdbd"
+      ]
+    }
+  ]
+}
+[/block]
 Modify the `mainTemplate.gradle` to include the following at the end of the dependencies block:
 [block:file]
 [
@@ -151,7 +221,21 @@ Also make sure to perform a resolve, so External Dependency Manager adds the rig
 
 When exporting your project to Android, in the Build Settings window, make sure you uncheck the `Symlink Sources` checkbox. That will make it so Unity actually uses the correct source files for our SDK.
 
-![](https://files.readme.io/98a2d95-unity-symlink-sources-unchecked.jpg "unity-symlink-sources-unchecked.jpg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/98a2d95-unity-symlink-sources-unchecked.jpg",
+        "unity-symlink-sources-unchecked.jpg",
+        1276,
+        1254,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 # Next Steps
 
 * Now that you've installed the Purchases SDK in your Unity app, get started [building with Purchases :fa-arrow-right:](https://www.revenuecat.com/docs/getting-started#4-using-revenuecats-purchases-sdk)

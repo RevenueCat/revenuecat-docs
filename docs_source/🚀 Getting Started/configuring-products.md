@@ -44,7 +44,21 @@ After your products are set up in the stores, you'll also need to set up a 1-to-
 Navigate to the Products tab in the Settings for your app in the RevenueCat dashboard. To add a new product, click the **+ New** button and enter the product identifier **exactly as it appears in the store**, as well as the store that the product belongs to.
 
 These product identifiers are the link between RevenueCat, and Apple, Google, Stripe.
-![](https://files.readme.io/98e472c-products.png "products.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/98e472c-products.png",
+        "products.png",
+        1410,
+        764,
+        "#f6f7f7"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {
@@ -69,7 +83,21 @@ Most apps only have one entitlement, but create as many as you need. For example
 Once entitlements are created, you should attach products to entitlements. This lets RevenueCat know which entitlements to unlock for users after they purchase a specific product.
 
 When viewing an Entitlement, click the **Attach** button to attach a product. If you've already added your products, you'll be able to select one from the list to attach.
-![](https://files.readme.io/0b89878-24b5651-Screen_Shot_2019-09-24_at_8.44.52_PM.png "24b5651-Screen_Shot_2019-09-24_at_8.44.52_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/0b89878-24b5651-Screen_Shot_2019-09-24_at_8.44.52_PM.png",
+        "24b5651-Screen_Shot_2019-09-24_at_8.44.52_PM.png",
+        1424,
+        850,
+        "#f8f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 When a product that is attached to an entitlement is purchased, that entitlement becomes active for the duration of the product. Subscription products will unlock entitlements for the subscription duration, and non-consumable and consumable purchases that are attached to an entitlement will unlock that content **forever**.
 
 If you have non-subscription products, you may or may not want to add them to entitlements depending on your use case. If the product is non-consumable (e.g. lifetime access to "pro" features), you likely want to attach it to an entitlement. However, if it is consumable (e.g. purchase more lives in a game) you likely do not want to add them to an entitlement. 
@@ -105,7 +133,21 @@ Offerings are the the selection of products that are "offered" to a user on your
 Offerings allow you to choose which combination of products are shown to a user on your paywall or upsell screen. For example your default Offering may contain a monthly and annual subscription, but you might want to experiment with Offerings with a different combination of subscription durations, trial lengths, prices, etc.
 
 Within each Offering, there must be one or more **Packages**. Packages are simply a group of equivalent products across iOS and Android. If your app is available on multiple platforms, then a Package would contain all of the equivalent product Ids from each platform. 
-![](https://files.readme.io/c4f0b08-Screen_Shot_2020-07-01_at_6.35.06_PM.png "Screen Shot 2020-07-01 at 6.35.06 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c4f0b08-Screen_Shot_2020-07-01_at_6.35.06_PM.png",
+        "Screen Shot 2020-07-01 at 6.35.06 PM.png",
+        1448,
+        699,
+        "#ecdbda"
+      ]
+    }
+  ]
+}
+[/block]
 ### Creating an Offering
 
 To create an Offering, navigate to the Offerings tab to your app's settings in the RevenueCat dashboard, and click **+ New** to get started.
@@ -121,11 +163,53 @@ If you build your paywall to reference the `current` Offering, instead of hardco
 Each Offering you create should contain at least one Package that holds cross-platform products. 
 
 To create a package, click into your new Offering, then click **+ New** in the Packages section. In the popup, choose an **Identifier** from the dropdown that corresponds with the duration of the package. If a duration isn't suitable for your package (e.g. consumable purchases), then you can choose a custom identifier. Include a **Description**, then click **Add**. 
-![](https://files.readme.io/392984c-f3c7513-Screen_Shot_2019-09-24_at_9.00.21_PM.png "f3c7513-Screen_Shot_2019-09-24_at_9.00.21_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/392984c-f3c7513-Screen_Shot_2019-09-24_at_9.00.21_PM.png",
+        "f3c7513-Screen_Shot_2019-09-24_at_9.00.21_PM.png",
+        1424,
+        848,
+        "#f7f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 Click into the newly created package and begin attaching product by clicking **Attach**.
-![](https://files.readme.io/7c327ed-Screen_Shot_2020-06-29_at_2.37.36_PM.png "Screen_Shot_2020-06-29_at_2.37.36_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/7c327ed-Screen_Shot_2020-06-29_at_2.37.36_PM.png",
+        "Screen_Shot_2020-06-29_at_2.37.36_PM.png",
+        841,
+        434,
+        "#f8f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 In the popup you'll see dropdowns to select the appropriate product for each store. Choose the appropriate products, then click **Attach**.
-![](https://files.readme.io/d7fdca7-41db7d0-Screen_Shot_2019-09-24_at_9.05.56_PM.png "41db7d0-Screen_Shot_2019-09-24_at_9.05.56_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/d7fdca7-41db7d0-Screen_Shot_2019-09-24_at_9.05.56_PM.png",
+        "41db7d0-Screen_Shot_2019-09-24_at_9.05.56_PM.png",
+        1620,
+        966,
+        "#f4f4f4"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {
@@ -136,7 +220,21 @@ In the popup you'll see dropdowns to select the appropriate product for each sto
 Continue this process until all of the packages are created for your Offering, and all Offerings are created.
 
 The packages within an offering can be updated at any time, and their display order can be modified by dragging their position in the table. This display order will be reflected in the SDK when you fetch Offerings.
-![](https://files.readme.io/9185a10-7ec7062-Screen_Shot_2019-09-26_at_1.45.45_PM.png "7ec7062-Screen_Shot_2019-09-26_at_1.45.45_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/9185a10-7ec7062-Screen_Shot_2019-09-26_at_1.45.45_PM.png",
+        "7ec7062-Screen_Shot_2019-09-26_at_1.45.45_PM.png",
+        841,
+        499,
+        "#f7f7f8"
+      ]
+    }
+  ]
+}
+[/block]
 # Next Steps
 You've successfully created Entitlements, Offerings, and Packages, and have attached products to be used in your app. 
 

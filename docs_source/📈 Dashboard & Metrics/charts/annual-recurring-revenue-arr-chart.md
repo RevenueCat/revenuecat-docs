@@ -37,4 +37,18 @@ For each period, we multiply its MRR by 12 to yield the ARR for that period. Lea
 }
 [/block]
 
-![](https://files.readme.io/0686a83-ARR.png "ARR.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/0686a83-ARR.png",
+        "ARR.png",
+        1380,
+        815,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]

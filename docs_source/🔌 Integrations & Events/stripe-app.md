@@ -39,9 +39,37 @@ To install the RevenueCat App in Stripe, navigate to the [RevenueCat App](https:
 }
 [/block]
 Select 'Install'
-![](https://files.readme.io/93f135c-Screen_Shot_2022-04-26_at_5.36.14_PM.png "Screen Shot 2022-04-26 at 5.36.14 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/93f135c-Screen_Shot_2022-04-26_at_5.36.14_PM.png",
+        "Screen Shot 2022-04-26 at 5.36.14 PM.png",
+        950,
+        1418,
+        "#fbf9fa"
+      ]
+    }
+  ]
+}
+[/block]
 Select 'Sign in with RevenueCat' and log in with your RevenueCat account credentials.
-![](https://files.readme.io/8a5b7a8-Screen_Shot_2022-07-07_at_2.17.30_PM.png "Screen Shot 2022-07-07 at 2.17.30 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/8a5b7a8-Screen_Shot_2022-07-07_at_2.17.30_PM.png",
+        "Screen Shot 2022-07-07 at 2.17.30 PM.png",
+        280,
+        256,
+        "#f8f7f7"
+      ]
+    }
+  ]
+}
+[/block]
 The RevenueCat App is now installed to your Stripe account! 
 [block:callout]
 {

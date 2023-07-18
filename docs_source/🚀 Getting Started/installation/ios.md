@@ -37,7 +37,21 @@ RevenueCat for iOS can be installed either via [CocoaPods](doc:ios#section-insta
 You can use Swift Package Manager to add RevenueCat to your Xcode project. Select `File » Add Packages... ` and enter the repository URL of the `https://github.com/RevenueCat/purchases-ios.git` into the search bar (top right). Set the Dependency Rule to `Up to next major`, and the version number to `4.0.0 < 5.0.0`. Check `RevenueCat` when a prompt for "Choose Package Products for purchases-ios" appears. Finally, choose the target where you want to use it. 
 
 The library should have been added to the Swift Package Dependencies section and you should be able to import it now.
-![](https://files.readme.io/bd6e034-Screen_Shot_2022-06-23_at_10.03.57.png "Screen Shot 2022-06-23 at 10.03.57.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/bd6e034-Screen_Shot_2022-06-23_at_10.03.57.png",
+        "Screen Shot 2022-06-23 at 10.03.57.png",
+        429,
+        66,
+        "#eaeff4"
+      ]
+    }
+  ]
+}
+[/block]
 ## Install via CocoaPods
 
 To always use the latest release, add the following to your Podfile:
@@ -159,7 +173,21 @@ You should now be able to `import RevenueCat`.
 }
 [/block]
 
-![](https://files.readme.io/65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png "Screen Shot 2018-12-18 at 9.15.09 AM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
+        "Screen Shot 2018-12-18 at 9.15.09 AM.png",
+        668,
+        107,
+        "#fafafc"
+      ]
+    }
+  ]
+}
+[/block]
 # Next Steps
 
 * Now that you've installed the SDK in your iOS app, get started by [configuring an instance of Purchases :fa-arrow-right:](https://www.revenuecat.com/docs/getting-started#4-using-revenuecats-purchases-sdk)

@@ -81,7 +81,21 @@ Click "Add base plan" and fill out the associated fields. Make sure to set a pri
 [/block]
 To mark a base plan as backwards compatible, click the overflow menu on the base plan and select "Use for deprecated billing methods".
 
-![](https://files.readme.io/0375be4-f309ab8-Screen_Shot_2022-07-07_at_2.12.18_PM.png "f309ab8-Screen_Shot_2022-07-07_at_2.12.18_PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/0375be4-f309ab8-Screen_Shot_2022-07-07_at_2.12.18_PM.png",
+        "f309ab8-Screen_Shot_2022-07-07_at_2.12.18_PM.png",
+        869,
+        73,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {

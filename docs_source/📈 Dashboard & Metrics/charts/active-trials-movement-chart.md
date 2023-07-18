@@ -43,4 +43,18 @@ For each period, we measure:
 }
 [/block]
 
-![](https://files.readme.io/e5be9bd-ActiveTrialsMvmt.png "ActiveTrialsMvmt.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/e5be9bd-ActiveTrialsMvmt.png",
+        "ActiveTrialsMvmt.png",
+        1413,
+        862,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]

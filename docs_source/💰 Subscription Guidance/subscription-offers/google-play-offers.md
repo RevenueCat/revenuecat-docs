@@ -18,7 +18,21 @@ To create an offer, navigate to the subscription product in Google Play, click "
 
 
 
-![](https://files.readme.io/f614dc5-Screenshot_2023-03-21_at_12.51.41.png "Screenshot 2023-03-21 at 12.51.41.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/f614dc5-Screenshot_2023-03-21_at_12.51.41.png",
+        "Screenshot 2023-03-21 at 12.51.41.png",
+        1780,
+        918,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 On the following page, you can set up a unique offer ID, eligibility criteria, tags, and pricing phases. Tags can be used to [identify offers in the RevenueCat SDK](doc:subscription-offers#more-control-over-offer-selection).
 
 ## Eligibility criteria
@@ -31,7 +45,21 @@ Google Play has three eligibility criteria:
 
 **Developer determined**: Offers with this eligibility criterion will always show up in the `subscriptionOptions` of the `StoreProduct` in the SDK and you are responsible for determining whether or not to apply the offer to a customer or not. If you are relying on the RevenueCat SDK automatically applying free trials and introductory periods and you do not want a developer determined offer to be automatically selected, apply the tag `rc-ignore-offer` to the offer.
 
-![](https://files.readme.io/a1c62ce-Screenshot_2023-03-27_at_21.30.06.png "Screenshot 2023-03-27 at 21.30.06.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/a1c62ce-Screenshot_2023-03-27_at_21.30.06.png",
+        "Screenshot 2023-03-27 at 21.30.06.png",
+        1370,
+        248,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 ## Pricing phases
 
 Each offer can have up to two pricing phases, and each pricing phase can be a free trial period, a discount on the recurring payment, or a single fixed payment providing access for a specified period of time.
@@ -99,9 +127,37 @@ To create promo codes for your app, go to Google Play’s Console ‘All applica
 In the sidebar select** Promo Codes**.
 
 
-![](https://files.readme.io/6ff2522-Screen_Shot_2021-04-22_at_11.55.16_AM.jpeg "Screen Shot 2021-04-22 at 11.55.16 AM.jpeg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/6ff2522-Screen_Shot_2021-04-22_at_11.55.16_AM.jpeg",
+        "Screen Shot 2021-04-22 at 11.55.16 AM.jpeg",
+        404,
+        508,
+        "#f7f7f7"
+      ]
+    }
+  ]
+}
+[/block]
 ### Creating a Promotion
-![](https://files.readme.io/8cd8703-Screen_Shot_2021-04-25_at_3.04.07_PM.jpeg "Screen Shot 2021-04-25 at 3.04.07 PM.jpeg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/8cd8703-Screen_Shot_2021-04-25_at_3.04.07_PM.jpeg",
+        "Screen Shot 2021-04-25 at 3.04.07 PM.jpeg",
+        1601,
+        106,
+        "#ebeaed"
+      ]
+    }
+  ]
+}
+[/block]
 After selecting **Create promo code**, you will provide several pieces of metadata to provide to create your promotion:
 [block:parameters]
 {
@@ -156,13 +212,41 @@ After selecting **Save** your promotion will be created! 🎉
 ### Accessing One-time Codes
 
 Google automatically generates one-time codes. A link titled, "Download codes" provides access to the automatically generated codes. 
-![](https://files.readme.io/9fce84d-Screen_Shot_2021-04-22_at_11.41.34_AM.jpeg "Screen Shot 2021-04-22 at 11.41.34 AM.jpeg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/9fce84d-Screen_Shot_2021-04-22_at_11.41.34_AM.jpeg",
+        "Screen Shot 2021-04-22 at 11.41.34 AM.jpeg",
+        758,
+        344,
+        "#fcfbfb"
+      ]
+    }
+  ]
+}
+[/block]
 ### Live Promotions 
 
 Promo codes become active once the status reads Live.
 
 
-![](https://files.readme.io/50ca0f3-Screen_Shot_2021-04-22_at_12.01.49_PM.jpeg "Screen Shot 2021-04-22 at 12.01.49 PM.jpeg")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/50ca0f3-Screen_Shot_2021-04-22_at_12.01.49_PM.jpeg",
+        "Screen Shot 2021-04-22 at 12.01.49 PM.jpeg",
+        1597,
+        193,
+        "#f6f6f8"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {

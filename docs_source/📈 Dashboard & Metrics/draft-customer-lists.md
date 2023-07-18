@@ -15,7 +15,21 @@ Lists are a segment of your customers inside RevenueCat, this can include both p
 }
 [/block]
 
-![](https://files.readme.io/0a60dde-lists.png "lists.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/0a60dde-lists.png",
+        "lists.png",
+        2100,
+        1410,
+        "#f8f9f9"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {
@@ -29,7 +43,21 @@ Lists are a segment of your customers inside RevenueCat, this can include both p
 You can look up an individual customer by an exact match of their App User ID, Transaction ID, Email Attribute, or Order ID (iOS only). To find a customer via Order ID, you can follow our guide on setting up [In-App Purchase Keys](https://docs.revenuecat.com/docs/in-app-purchase-key-configuration) to unlock this feature. The transaction must show as completed in the [Apple Purchase History](https://support.apple.com/en-gb/HT204088) to be considered a valid Order ID. 
 
 Looking up customers in RevenueCat is real-time, as soon as a customer exists in RevenueCat they will be searchable here.
-![](https://files.readme.io/a243acd-Screenshot_at_Feb_01_11-31-53.png "Screenshot at Feb 01 11-31-53.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/a243acd-Screenshot_at_Feb_01_11-31-53.png",
+        "Screenshot at Feb 01 11-31-53.png",
+        306,
+        156,
+        "#f9f9f9"
+      ]
+    }
+  ]
+}
+[/block]
 # Viewing a List
 
 ## Choose a project
@@ -124,7 +152,21 @@ In addition to Default Lists, you can create new Custom Lists with any combinati
 # Overview Metrics
 
 For each list, RevenueCat computes overview metrics for the cohort of customers.
-![](https://files.readme.io/0bcb4bf-overview.png "overview.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/0bcb4bf-overview.png",
+        "overview.png",
+        1690,
+        314,
+        "#fafafa"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:parameters]
 {
@@ -147,7 +189,21 @@ For each list, RevenueCat computes overview metrics for the cohort of customers.
 # List Data
 
 For each list, RevenueCat displays the 100 most recently seen customers in the dashboard.
-![](https://files.readme.io/5421c40-rows.png "rows.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/5421c40-rows.png",
+        "rows.png",
+        1586,
+        664,
+        "#f7f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 The dashboard shows the App User ID, purchase status, total spent (USD) and the latest product identifier purchased. Additional columns are available when exporting data.
 [block:callout]
 {
@@ -159,7 +215,21 @@ The dashboard shows the App User ID, purchase status, total spent (USD) and the 
 # Filters
 
 Filters allow you to choose which customers appear in your list. You can create custom lists with any combination of filters. **All filters are applied as AND filters**.
-![](https://files.readme.io/c77835d-Screenshot_2022-04-01_at_10.58.18.png "Screenshot 2022-04-01 at 10.58.18.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c77835d-Screenshot_2022-04-01_at_10.58.18.png",
+        "Screenshot 2022-04-01 at 10.58.18.png",
+        1198,
+        814,
+        "#fafbfb"
+      ]
+    }
+  ]
+}
+[/block]
 The first filter is a default filter applied to every customer list. You can choose whether the list should be limited to only those customers that have purchases (e.g., started a trial, started a subscription, or made a non-subscription purchase) or not. Lists that are limited to only customers with purchases typically load much faster, because there are many more customers without transactions than those with transactions.
 
 

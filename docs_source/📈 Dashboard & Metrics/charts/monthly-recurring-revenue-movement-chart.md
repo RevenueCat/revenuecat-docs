@@ -39,4 +39,18 @@ For each period, we measure:
 }
 [/block]
 
-![](https://files.readme.io/c9f70af-MRRMvmt.png "MRRMvmt.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c9f70af-MRRMvmt.png",
+        "MRRMvmt.png",
+        1384,
+        861,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]

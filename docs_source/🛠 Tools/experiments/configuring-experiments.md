@@ -80,7 +80,21 @@ When viewing a new experiment, you can start, edit, or delete the experiment.
 }
 [/block]
 
-![](https://files.readme.io/39cfaaa-Screen_Shot_2021-12-07_at_8.54.59_PM.png "Screen Shot 2021-12-07 at 8.54.59 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/39cfaaa-Screen_Shot_2021-12-07_at_8.54.59_PM.png",
+        "Screen Shot 2021-12-07 at 8.54.59 PM.png",
+        2510,
+        1094,
+        "#fafafb"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {

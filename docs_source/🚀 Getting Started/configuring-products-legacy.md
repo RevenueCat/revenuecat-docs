@@ -30,7 +30,21 @@ Entitlements can be unlocked by having an active subscription or making a one-ti
 }
 [/block]
 
-![](https://files.readme.io/811b48f-de42988-Entitlements_2.0_Copy.png "de42988-Entitlements_2.0_Copy.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/811b48f-de42988-Entitlements_2.0_Copy.png",
+        "de42988-Entitlements_2.0_Copy.png",
+        679,
+        1254,
+        "#fafaf9"
+      ]
+    }
+  ]
+}
+[/block]
 ##Offerings
 The selection of products that are offered to a user.
 
@@ -44,7 +58,21 @@ Each Offering contains one or more **Packages**. Packages are simply a group of 
 }
 [/block]
 
-![](https://files.readme.io/2109169-1628274-Entitlements_2.0.png "1628274-Entitlements_2.0.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/2109169-1628274-Entitlements_2.0.png",
+        "1628274-Entitlements_2.0.png",
+        1154,
+        1254,
+        "#f6f6f5"
+      ]
+    }
+  ]
+}
+[/block]
 ##Products
 Products are a one-to-one mapping of the product identifiers configured for your app in App Store Connect, Play Store and Stripe. 
 [block:api-header]
@@ -61,7 +89,21 @@ If products are not configured correctly, you will see an invalid products messa
 Navigate to the Products tab for your app in the RevenueCat dashboard. You'll see any previously purchased product identifiers already exist. 
 
 If you need to add more products, click the **+ New** button and enter the product identifier and store it belongs to.
-![](https://files.readme.io/ef131a9-Screen_Shot_2019-09-24_at_8.51.03_PM.png "Screen Shot 2019-09-24 at 8.51.03 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/ef131a9-Screen_Shot_2019-09-24_at_8.51.03_PM.png",
+        "Screen Shot 2019-09-24 at 8.51.03 PM.png",
+        1410,
+        764,
+        "#f6f7f8"
+      ]
+    }
+  ]
+}
+[/block]
 Products will also appear here automatically as they are purchased. If you see a product you never added manually, it means a receipt was sent from a user that contained that product Id.
 
 ## 3. Configure Entitlements
@@ -70,9 +112,37 @@ Navigate to the Entitlements tab for your app in the RevenueCat dashboard and cl
 You'll be prompted to enter an **Identifier** and **Description** for your entitlement then click **Add**.
 
 Click into the newly created entitlement and begin attaching products by clicking **Attach**.
-![](https://files.readme.io/24b5651-Screen_Shot_2019-09-24_at_8.44.52_PM.png "Screen Shot 2019-09-24 at 8.44.52 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/24b5651-Screen_Shot_2019-09-24_at_8.44.52_PM.png",
+        "Screen Shot 2019-09-24 at 8.44.52 PM.png",
+        1424,
+        850,
+        "#f8f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 Choose one of your previously created products, or create a new one, and click **Add**. Repeat this process until all of your products are added.
-![](https://files.readme.io/bf8b8c5-Screen_Shot_2019-09-24_at_8.49.08_PM.png "Screen Shot 2019-09-24 at 8.49.08 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/bf8b8c5-Screen_Shot_2019-09-24_at_8.49.08_PM.png",
+        "Screen Shot 2019-09-24 at 8.49.08 PM.png",
+        1418,
+        1104,
+        "#f6f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 Whenever a user purchases one of the assigned products, access to the entitlement will be unlocked for the appropriate duration.
 
 ## 4. Configure Offerings
@@ -81,18 +151,74 @@ Navigate to the Offerings tab for your app in the RevenueCat dashboard and click
 Again, you'll be prompted to enter an **Identifier** and **Description** for your offering. *Note that the offering identifier cannot be changed later*. Once you've entered this information, click **Add**.
 
 Click into the newly created offering and set up the first Package by clicking **+ New**.
-![](https://files.readme.io/f3c7513-Screen_Shot_2019-09-24_at_9.00.21_PM.png "Screen Shot 2019-09-24 at 9.00.21 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/f3c7513-Screen_Shot_2019-09-24_at_9.00.21_PM.png",
+        "Screen Shot 2019-09-24 at 9.00.21 PM.png",
+        1424,
+        848,
+        "#f7f8f8"
+      ]
+    }
+  ]
+}
+[/block]
 In the popup, choose an **Identifier** from the dropdown that corresponds with the duration of the package. If a duration isn't suitable for your package (e.g. consumable purchases), then you can choose a custom identifier. Include a **Description**, then click **Add**.
-![](https://files.readme.io/58105b2-Screen_Shot_2019-09-24_at_9.02.09_PM.png "Screen Shot 2019-09-24 at 9.02.09 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/58105b2-Screen_Shot_2019-09-24_at_9.02.09_PM.png",
+        "Screen Shot 2019-09-24 at 9.02.09 PM.png",
+        1622,
+        730,
+        "#f5f5f5"
+      ]
+    }
+  ]
+}
+[/block]
 Click into the newly created package and begin attaching product by clicking **Attach**. 
 
 In the popup you'll see dropdowns to select the appropriate product for each store. Choose the appropriate products, the click **Attach**.
 
-![](https://files.readme.io/41db7d0-Screen_Shot_2019-09-24_at_9.05.56_PM.png "Screen Shot 2019-09-24 at 9.05.56 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/41db7d0-Screen_Shot_2019-09-24_at_9.05.56_PM.png",
+        "Screen Shot 2019-09-24 at 9.05.56 PM.png",
+        1620,
+        966,
+        "#f4f4f4"
+      ]
+    }
+  ]
+}
+[/block]
 Continue this process until all of the packages are created for your Offering, and all Offerings are created.
 
 The packages within an offering can be updated at any time, and their display order can be modified by dragging their position in the table.
-![](https://files.readme.io/7ec7062-Screen_Shot_2019-09-26_at_1.45.45_PM.png "Screen Shot 2019-09-26 at 1.45.45 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/7ec7062-Screen_Shot_2019-09-26_at_1.45.45_PM.png",
+        "Screen Shot 2019-09-26 at 1.45.45 PM.png",
+        841,
+        499,
+        "#f7f7f8"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:api-header]
 {

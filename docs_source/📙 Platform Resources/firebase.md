@@ -60,7 +60,21 @@ Below is an example that uses a combination of HTTP triggers and Pub/Sub trigger
 The URL of the `incomingWebhook` function should be pasted into the RevenueCat dashboard along with a secret auth key that the function will use to verify it is actually RevenueCat that's sending the event.
 
 ## Setup
-![](https://files.readme.io/376d572-Screen_Shot_2021-12-02_at_10.53.29_AM.png "Screen Shot 2021-12-02 at 10.53.29 AM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/376d572-Screen_Shot_2021-12-02_at_10.53.29_AM.png",
+        "Screen Shot 2021-12-02 at 10.53.29 AM.png",
+        944,
+        358,
+        "#f9f9f9"
+      ]
+    }
+  ]
+}
+[/block]
 ## Function Code
 [block:file]
 [

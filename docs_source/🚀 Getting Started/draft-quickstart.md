@@ -12,7 +12,21 @@ We recommend using a company account when registering for RevenueCat and setting
 # 2. Register Your App
 
 Navigate to the RevenueCat dashboard and [add a new app :fa-arrow-right:](https://app.revenuecat.com/apps/add) from the dropdown. A single app in RevenueCat supports all platforms.
-![](https://files.readme.io/e3a8920-registering_app.png "registering_app.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/e3a8920-registering_app.png",
+        "registering_app.png",
+        638,
+        729,
+        "#f5f7f7"
+      ]
+    }
+  ]
+}
+[/block]
 The field "App name" is required to add your app into RevenueCat. The rest of the configuration fields can be added later. 
 
 After registering your app, we recommend setting up [Platform Server Notifications](doc:server-notifications). This isn't required, but will speed up [webhooks](doc:webhooks) and integration delivery times and reduce lag time updating your subscribers. 
@@ -38,7 +52,21 @@ Entitlements are the level of access that a customer is "entitled" to after purc
 
 See [Configuring Products](doc:entitlements) to set up your products and then organize them into Offerings or Entitlements.
 
-![](https://files.readme.io/55e2667-1628274-Entitlements_2.0.png "1628274-Entitlements_2.0.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/55e2667-1628274-Entitlements_2.0.png",
+        "1628274-Entitlements_2.0.png",
+        1154,
+        1254,
+        "#f6f6f5"
+      ]
+    }
+  ]
+}
+[/block]
 # 5. Install the Purchases SDK
 
 *Purchases* is the RevenueCat SDK that seamlessly implements purchases and subscriptions across platforms while syncing tokens with the RevenueCat server.

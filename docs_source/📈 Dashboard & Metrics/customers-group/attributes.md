@@ -25,7 +25,21 @@ The 'Attributes' card displays any [Subscriber Attributes](doc:subscriber-attrib
 To add a new attribute, tap the **+ New** button and enter the key name and value in the popup modal.
 
 Attribute keys must follow certain restrictions, and some key names are reserved for RevenueCat. For a full list of key name requirements refer to the [Subscriber Attributes](doc:subscriber-attributes) guide.
-![](https://files.readme.io/12cc8ce-Screenshot_2023-03-27_at_4.15.09_PM.png "Screenshot 2023-03-27 at 4.15.09 PM.png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/12cc8ce-Screenshot_2023-03-27_at_4.15.09_PM.png",
+        "Screenshot 2023-03-27 at 4.15.09 PM.png",
+        602,
+        345,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
 
 [block:callout]
 {

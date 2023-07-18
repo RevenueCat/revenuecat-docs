@@ -35,4 +35,18 @@ Refunds are handled differently on each platform. It's recommended to set up [Pl
 **Android** purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access. By refunding directly through RevenueCat you can ensure that refunds are accounted for in all charts and integrations.
 
 Apple doesn’t allow developers to grant refunds themselves, only through Apple customer support. However, Apple refunds are tracked with RevenueCat and accounted for in all charts and integrations.
-![](https://files.readme.io/9def41e-app.revenuecat.com_activity_270f6f8f_event_909c784d-ba27-4e33-8e7c-020e4db714ef_2.png "app.revenuecat.com_activity_270f6f8f_event_909c784d-ba27-4e33-8e7c-020e4db714ef (2).png")
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/9def41e-app.revenuecat.com_activity_270f6f8f_event_909c784d-ba27-4e33-8e7c-020e4db714ef_2.png",
+        "app.revenuecat.com_activity_270f6f8f_event_909c784d-ba27-4e33-8e7c-020e4db714ef (2).png",
+        1232,
+        223,
+        "#000000"
+      ]
+    }
+  ]
+}
+[/block]
