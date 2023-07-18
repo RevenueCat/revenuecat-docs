@@ -23,6 +23,42 @@ def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
     end
 end
 
+def clean_images_in_file_contents(file_contents)
+    file_contents.scan(/\[block:image\](.*?)\[\/block\]/m).each_with_index do |block, index|
+        content = block[0]
+        unless content
+            next
+        end
+        image_data = JSON.parse(content)
+        image_url = image_data['images'][0]['image'][0]
+        title = image_data['images'][0]['image'][1]
+
+        alt_text = image_data['images'][0]['image'][2] || ''
+        caption = image_data['images'][0]['caption']
+        align = image_data['images'][0]['align']
+        sizing = image_data['images'][0]['sizing']
+        # We are not supporting caption, align and sizing for now. Needs more testing
+        # html = "<img alt=\"#{alt_text}\" src=\"#{image_url}\" title=\"#{title}\" align=\"#{align}\" width=\"#{sizing}\" caption=\"#{caption}\">"
+        # file_contents.gsub!("[block:image]#{content}[/block]", html)
+        unless sizing || caption || align
+            file_contents.gsub!("[block:image]#{content}[/block]", "![](#{image_url} \"#{title}\")")
+        end
+    end
+    file_contents
+end
+
+def clean_images(source_folder)
+    markdown_files(source_folder).each do |filename|
+        file_contents = get_file_contents(filename)
+
+        UI.message("🔨 Processing #{filename}...")
+
+        cleaned_contents = clean_images_in_file_contents(file_contents)
+
+        write_file_contents(filename, cleaned_contents)
+    end
+end
+
 ##
 # Extracts all code within backticks to a file and adds the file information in a [block:file] block.
 # This function also works with code blocks that are all together forming a code block group.
