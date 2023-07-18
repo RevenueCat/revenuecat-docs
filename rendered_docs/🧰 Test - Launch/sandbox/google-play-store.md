@@ -22,21 +22,7 @@ We have been testing on emulators successfully but Google recommends using a rea
 In order to be able to test the app in the next steps of the development you are going to need to use a test user. This test user will be the user that you logged in first in your Android testing device. Note that the only way to changing the primary account on a device is to do a factory reset. 
 
 In the sidebar, click on **Settings** > **License testing**.  Add here the account you are using in your real device (the account you are logged in with).
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4de80ce-2020-10-08_21.47.36_play.google.com_9b79b3809c7c.png",
-        "2020-10-08 21.47.36 play.google.com 9b79b3809c7c.png",
-        2146,
-        1715,
-        "#fafafa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/4de80ce-2020-10-08_21.47.36_play.google.com_9b79b3809c7c.png "2020-10-08 21.47.36 play.google.com 9b79b3809c7c.png")
 # Create a closed track and add a tester to it
 
 You are going to need to publish a signed version of the app into a closed track. If you haven’t created a closed track yet, you can create one in the **Closed testing** section of the Testing menu. 
@@ -58,37 +44,9 @@ You are going to need to publish a signed version of the app into a closed track
 }
 [/block]
 When creating the closed track, you are given the chance to create a list of testers. Go ahead and create a list and name it Testers.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a1cd5a9-2020-10-08_22.02.36_play.google.com_683d7b040a55.png",
-        "2020-10-08 22.02.36 play.google.com 683d7b040a55.png",
-        1565,
-        1278,
-        "#f8f8fa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/a1cd5a9-2020-10-08_22.02.36_play.google.com_683d7b040a55.png "2020-10-08 22.02.36 play.google.com 683d7b040a55.png")
 Add again the email account you are using in your testing device to the list of tester emails, press Enter, and click **Save changes** 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ce8da10-2020-10-08_22.05.12_play.google.com_5bea8ef91d72.png",
-        "2020-10-08 22.05.12 play.google.com 5bea8ef91d72.png",
-        2009,
-        1224,
-        "#f3f3f3"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/ce8da10-2020-10-08_22.05.12_play.google.com_5bea8ef91d72.png "2020-10-08 22.05.12 play.google.com 5bea8ef91d72.png")
 Open the Opt-in URL in your testing device (or any browser that’s logged in with that testing user) to make the user a tester. You can send the URL to your device via email, for example. 
 [block:callout]
 {
@@ -131,21 +89,7 @@ Open the Opt-in URL in your testing device (or any browser that’s logged in wi
 }
 [/block]
 Opening the link in the browser will show a web similar to this, with a become tester button. Press that button and your user will be able to make testing purchases on your testing device.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c233a46-2020-10-08_22.14.44_play.google.com_2ebda75bfc29.png",
-        "2020-10-08 22.14.44 play.google.com 2ebda75bfc29.png",
-        1631,
-        998,
-        "#f1f1f1"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/c233a46-2020-10-08_22.14.44_play.google.com_2ebda75bfc29.png "2020-10-08 22.14.44 play.google.com 2ebda75bfc29.png")
 If you need more help setting this up, you can refer to Googles guide on creating testers [here](https://developer.android.com/google/play/billing/billing_testing#testing-purchases).
 [block:callout]
 {
@@ -161,41 +105,13 @@ Generate a signed APK or use Android App Bundle to upload a signed APK to the al
 # Make a purchase
 
 Before you can make a purchase, make sure your release has been approved and  available.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/08a3ebd-Screen_Shot_2020-10-22_at_12.43.43_AM.png",
-        "Screen Shot 2020-10-22 at 12.43.43 AM.png",
-        1252,
-        1197,
-        "#f6f6f7"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/08a3ebd-Screen_Shot_2020-10-22_at_12.43.43_AM.png "Screen Shot 2020-10-22 at 12.43.43 AM.png")
 Build and run your app on your test device (you don't need to sign it). You should be able to complete all purchases.
 
 # Verify transaction appears in dashboard
 
 After a purchase is successful, you should be able to view the transaction immediately in the RevenueCat dashboard. If the purchase does not appear in the dashboard, it's **not** being tracked by RevenueCat.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f12eaf9-2020-10-08_22.25.12_app.revenuecat.com_1a76f7a72226.png",
-        "2020-10-08 22.25.12 app.revenuecat.com 1a76f7a72226.png",
-        1139,
-        644,
-        "#f7f7f7"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/f12eaf9-2020-10-08_22.25.12_app.revenuecat.com_1a76f7a72226.png "2020-10-08 22.25.12 app.revenuecat.com 1a76f7a72226.png")
 
 [block:callout]
 {
