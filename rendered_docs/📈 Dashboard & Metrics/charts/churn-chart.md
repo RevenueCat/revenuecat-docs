@@ -51,18 +51,4 @@ For each period we measure:
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2835802-Churn.png",
-        "Churn.png",
-        1369,
-        900,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/2835802-Churn.png "Churn.png")

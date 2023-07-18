@@ -76,18 +76,4 @@ For each period, we measure:
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/452d65c-ConversionToPaying.png",
-        "ConversionToPaying.png",
-        1367,
-        923,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/452d65c-ConversionToPaying.png "ConversionToPaying.png")

@@ -89,21 +89,7 @@ You should now be able to `import RevenueCat`.
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
-        "Screen Shot 2018-12-18 at 9.15.09 AM.png",
-        668,
-        107,
-        "#fafafc"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png "Screen Shot 2018-12-18 at 9.15.09 AM.png")
 # Next Steps
 
 * Now that you've installed the Purchases SDK in your macOS app, get started by [configuring an instance of Purchases :fa-arrow-right:](https://www.revenuecat.com/docs/getting-started#4-using-revenuecats-purchases-sdk)

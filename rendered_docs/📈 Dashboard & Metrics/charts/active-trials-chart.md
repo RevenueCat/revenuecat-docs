@@ -40,18 +40,4 @@ To understand how that snapshot is generated for each period, check out the [Act
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f34fb0a-ActiveTrials.png",
-        "ActiveTrials.png",
-        1424,
-        824,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/f34fb0a-ActiveTrials.png "ActiveTrials.png")

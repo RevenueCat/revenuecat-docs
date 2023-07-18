@@ -58,37 +58,9 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/08d0721-Screen_Shot_2021-05-28_at_12.32.08_PM.png",
-        "Screen Shot 2021-05-28 at 12.32.08 PM.png",
-        396,
-        303,
-        "#eff2f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/08d0721-Screen_Shot_2021-05-28_at_12.32.08_PM.png "Screen Shot 2021-05-28 at 12.32.08 PM.png")
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/66c301a-65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
-        "65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png",
-        668,
-        107,
-        "#fafafc"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/66c301a-65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png "65db383-Screen_Shot_2018-12-18_at_9.15.09_AM.png")
 
 [block:callout]
 {

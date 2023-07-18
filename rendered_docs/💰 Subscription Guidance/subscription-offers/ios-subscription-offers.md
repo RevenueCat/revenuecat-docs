@@ -86,41 +86,13 @@ Promotional Offers are created from within App Store Connect and are included as
 }
 [/block]
 To create the offer there are two fields that you need to specify: Reference Name, which is just used for your reference, and the Promotional Offer Product Code, which is what you will actually use to activate a specific offer in your app.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7c62bd9-Screen_Shot_2019-04-17_at_3.39.20_PM.png",
-        "Screen Shot 2019-04-17 at 3.39.20 PM.png",
-        906,
-        568,
-        "#fafbfc"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/7c62bd9-Screen_Shot_2019-04-17_at_3.39.20_PM.png "Screen Shot 2019-04-17 at 3.39.20 PM.png")
 On the next screen you'll select the type of offer you wish to provide. Just like introductory offers, there are three types of Promotional Offers:
 
 1. Pay-up-front — The customer pays once for a period of time, e.g. $0.99 for 3 months. Allowed durations are 1, 2, 3, 6 and 12 months.
 2. Pay-as-you-go — The customer pays a reduced rate, each period, for a number of periods, e.g. $0.99 per month for 3 months. Allowed durations are 1-12 months. Can only be specified in months.
 3. Free — This is analogous to a free trial, the user receives 1 of a specified period free. The allowed durations are 3 days, 1 week, 2 weeks, 1 month, 2 months, 3 months, 6 months, and 1 year.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5bf1bca-Screen_Shot_2019-04-17_at_3.44.39_PM.png",
-        "Screen Shot 2019-04-17 at 3.44.39 PM.png",
-        907,
-        567,
-        "#fafafa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/5bf1bca-Screen_Shot_2019-04-17_at_3.44.39_PM.png "Screen Shot 2019-04-17 at 3.44.39 PM.png")
 
 [block:callout]
 {

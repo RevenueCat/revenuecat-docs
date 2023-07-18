@@ -82,21 +82,7 @@ Select Stripe as the platform, and give the app a name before clicking 'Save cha
 Create your Stripe product(s) using their [billing dashboard](https://dashboard.stripe.com/subscriptions/products). 
 
 In Stripe, a *product* can have multiple *pricing plans*. These are useful if you want to offer different price points for the same product and work similar to *offerings* and *products* in RevenueCat.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/29d2207-8154aeb-Screen_Shot_2018-12-06_at_14.26.56.png",
-        "8154aeb-Screen_Shot_2018-12-06_at_14.26.56.png",
-        1104,
-        1102,
-        "#f6f7fa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/29d2207-8154aeb-Screen_Shot_2018-12-06_at_14.26.56.png "8154aeb-Screen_Shot_2018-12-06_at_14.26.56.png")
 You can read more about products and plans in their [official documentation](https://stripe.com/docs/billing/quickstart).
 [block:callout]
 {
