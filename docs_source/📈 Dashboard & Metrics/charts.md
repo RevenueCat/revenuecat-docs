@@ -125,53 +125,11 @@ We offer three conversion rate charts to measure different aspects of your conve
 It's important to understand the relationships between these three charts, since depending on the nature of your product offerings, you may use these charts for different purposes.
 
 **If all of your products offer a free trial, then Initial Conversion = Trial Start Rate.**
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1386416-image-20230224-130028.png",
-        "image-20230224-130028.png",
-        2008,
-        1286,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/1386416-image-20230224-130028.png "image-20230224-130028.png")
 **If all of your products begin with a paid subscription, then Initial Conversion = Conversion to Paying, and Trial Conversion is not applicable to your business.**
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/611728c-image-20230224-155039.png",
-        "image-20230224-155039.png",
-        1926,
-        1232,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/611728c-image-20230224-155039.png "image-20230224-155039.png")
 **If your products contain a mix of subscriptions with and without trials, then these charts will measure distinct conversion rates. Initial Conversion will equal ([Trial Starts] + [Paying Customers]) / [New Customers], while Conversion to Paying will equal ([Trial Conversions] + [Paying Customers]) / [New Customers].**
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/179324e-image-20230224-155057.png",
-        "image-20230224-155057.png",
-        1926,
-        1232,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/179324e-image-20230224-155057.png "image-20230224-155057.png")
 ## Conversion Timeframes
 
 On our Initial Conversion and Conversion to Paying charts we offer a "Conversion Timeframe" selector that lets you choose how long to give each cohort to convert within to be included in the chart.
@@ -201,108 +159,24 @@ Additionally, cohorts that have not yet had the time fully mature (as defined by
 # Exporting Data
 
 The underlying chart data can be exported in .csv format by clicking the *Export CSV* button.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/90cf474-demo.revenuecat.com_.png",
-        "demo.revenuecat.com_.png",
-        921,
-        143,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/90cf474-demo.revenuecat.com_.png "demo.revenuecat.com_.png")
 # Saving Charts
 Your most frequently used chart configurations can be saved by clicking on the *Save* button. This will save all settings such as segments, filters, time / period settings, and bar / line view. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bbfca79-Screenshot_2023-03-27_at_2.35.10_PM.png",
-        "Screenshot 2023-03-27 at 2.35.10 PM.png",
-        965,
-        648,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/bbfca79-Screenshot_2023-03-27_at_2.35.10_PM.png "Screenshot 2023-03-27 at 2.35.10 PM.png")
 Time settings are saved relatively. Meaning if you select "last 7 days", the chart will always show the last 7 days prior to the current day (not the 7 days prior to the date the chart was saved). This does not apply to custom timeframes.
 
 Give it a name and select *Save*, your chart will be saved on the left-hand side.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e1ba744-Screenshot_2023-03-27_at_2.36.33_PM.png",
-        "Screenshot 2023-03-27 at 2.36.33 PM.png",
-        617,
-        331,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/e1ba744-Screenshot_2023-03-27_at_2.36.33_PM.png "Screenshot 2023-03-27 at 2.36.33 PM.png")
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/878cc0f-demo.revenuecat.com__1.png",
-        "demo.revenuecat.com_ (1).png",
-        302,
-        315,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/878cc0f-demo.revenuecat.com__1.png "demo.revenuecat.com_ (1).png")
 # Other Options
 ## Date Range
 Choose the the date range for the x-axis of the charts.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/60cba96-Screenshot_2023-03-27_at_2.44.10_PM.png",
-        "Screenshot 2023-03-27 at 2.44.10 PM.png",
-        187,
-        433,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/60cba96-Screenshot_2023-03-27_at_2.44.10_PM.png "Screenshot 2023-03-27 at 2.44.10 PM.png")
 ## Resolution
 Choose the time scale for the x-axis of the charts. Use a *day* timescale to see the most granular level of data and lower resolutions like *month* to spot longer term trends.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/15462d2-Screenshot_2023-03-27_at_2.46.13_PM.png",
-        "Screenshot 2023-03-27 at 2.46.13 PM.png",
-        180,
-        175,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/15462d2-Screenshot_2023-03-27_at_2.46.13_PM.png "Screenshot 2023-03-27 at 2.46.13 PM.png")
 # Timezones
 
 All charts are displayed in UTC time.

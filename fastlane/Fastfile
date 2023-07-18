@@ -165,6 +165,13 @@ lane :clean_docs_source_headers do |options|
 end
 
 desc <<-DESC
+Clean old format images
+DESC
+lane :clean_images do |options|
+    clean_images(SOURCE_FOLDER)
+end
+
+desc <<-DESC
 Updates the JSON files containing the categories for a Readme.com project.
 readme_api_key, STRING Readme API key for the project
 readme_api_key_test STRING Readme API key for the test project

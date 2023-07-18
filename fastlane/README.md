@@ -83,6 +83,15 @@ readme_api_key, STRING Readme API key for the project
 Removes all categories from docs_source
 
 
+### clean_images
+
+```sh
+[bundle exec] fastlane clean_images
+```
+
+Clean old format images
+
+
 ### update_categories_file
 
 ```sh
