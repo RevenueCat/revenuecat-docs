@@ -218,7 +218,8 @@ Xcode and Android Studio are our recommended IDEs for debugging. If you are a de
 - You can open your Xcode project directly from Google - to do so, right click on the `ios` folder, hover over Flutter, and click "OpenIOS module in Xcode". 
 - You can also run and debug your iOS project inside Android Studio itself by adding an iOS simulator and choosing it as the device before building. To do this however, you will still need Xcode installed. 
 - Flutter projects using Swift may fail to show debug logs in the console if you are using Android Studio. We recommend running your Flutter iOS project using Xcode to view debug logs from the Purchases SDK.
-- Expo apps for iOS can use Console.app on Mac to view debug logs, while Android projects are still recommended to use Android Studio. For specific help on debugging your React Native Expo project, feel free to reach out to RevenueCat Support.
+- If using Flutterflow or another low to no code app builder, it may not be possible for you to see debug logs. We recommend reaching out to the specific support team for the app builder you're using to help troubleshoot. 
+- Expo apps for iOS can use Console.app on Mac to view debug logs, while Android projects are still recommended to use Android Studio. For specific help on debugging your React Native Expo project, feel free to reach out to [contact RevenueCat support](https://app.revenuecat.com/settings/support).
 
 # Next Steps
 
