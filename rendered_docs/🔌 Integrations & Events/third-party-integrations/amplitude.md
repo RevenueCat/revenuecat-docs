@@ -184,7 +184,7 @@ Amplitude.getInstance().initialize(this, "amplitude_api_key", "my_app_user_id");
 
 
 
-## (Optional) Send Amplitude User Identifiers to RevenueCat
+## Send Amplitude User Identifiers to RevenueCat (Optional)
 
 If your App User ID in RevenueCat is different than the User ID in Amplitude, you can use the Amplitude User ID and/or Amplitude Device ID to identify events by adding a key in [Subscriber Attributes](doc:subscriber-attributes).
 
@@ -196,10 +196,6 @@ If your App User ID in RevenueCat is different than the User ID in Amplitude, yo
 If both keys are present, RevenueCat will send both the User ID and Device ID to identify events into Amplitude. If only one of the keys are present, RevenueCat will only send the available key. If no keys are present, RevenueCat will send the current RevenueCat App User ID. This property can be set and removed manually, like any other [Subscriber Attribute](doc:subscriber-attributes). For more information how Amplitude tracks unique users, view their docs [here](https://help.amplitude.com/hc/en-us/articles/115003135607-Tracking-unique-users).
 
 ## 2. Send RevenueCat Events to Amplitude
-
-> 📘 Amplitude EU Data Centre
-> 
-> [Contact RevenueCat support](https://app.revenuecat.com/settings/support) to have RevenueCat send data to Amplitude's EU data centre if your Amplitude account is hosted on EU servers.
 
 After you've set up the _Purchases SDK_ and Amplitude SDK to have the same user identity, you can "turn on" the integration and configure the event names from the RevenueCat dashboard.
 
@@ -227,6 +223,10 @@ After you've set up the _Purchases SDK_ and Amplitude SDK to have the same user 
   ]
 }
 [/block]
+
+## Set Amplitude Region (Optional)
+
+If your Amplitude account is hosted on EU servers, toggle the Amplitude Region field to `EU` in the Amplitude integration settings. The region defaults to `US`.
 
 # Sample Event
 
