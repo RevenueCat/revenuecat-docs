@@ -203,7 +203,7 @@ Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an 
 
 # Debugging with Hybrids
 
-Xcode and Android Studio are our recommended IDEs for debugging. If you are a developer who works primarily with one of our hybrid SDKs and has not encountered either before, you can follow these instructions to open your app and find the debug logs to share with RevenueCat Support or your internal team.
+Xcode and Android Studio are our recommended IDEs for debugging. If you are a developer who works primarily with one of our hybrid SDKs and have not encountered either before, you can follow these instructions to open your app and find the debug logs to share with RevenueCat Support or your internal team.
 
 ## Xcode
 
@@ -218,8 +218,8 @@ Xcode and Android Studio are our recommended IDEs for debugging. If you are a de
 - You can open your Xcode project directly from Google - to do so, right click on the `ios` folder, hover over Flutter, and click "OpenIOS module in Xcode". 
 - You can also run and debug your iOS project inside Android Studio itself by adding an iOS simulator and choosing it as the device before building. To do this however, you will still need Xcode installed. 
 - Flutter projects using Swift may fail to show debug logs in the console if you are using Android Studio. We recommend running your Flutter iOS project using Xcode to view debug logs from the Purchases SDK.
-- If using Flutterflow or another low to no code app builder, it may not be possible for you to see debug logs. We recommend reaching out to the specific support team for the app builder you're using to help troubleshoot. 
-- Expo apps for iOS can use Console.app on Mac to view debug logs, while Android projects are still recommended to use Android Studio. For specific help on debugging your React Native Expo project, feel free to reach out to [contact RevenueCat support](https://app.revenuecat.com/settings/support).
+- If using Flutterflow or another low to no code app builder, it may not be possible for you to see debug logs. We recommend reaching out to the app builder's support team directly to help troubleshoot. 
+- Expo apps for iOS can use Console.app on Mac to view debug logs, while Android projects are still recommended to use Android Studio. For specific help on debugging your React Native Expo project, feel free to reach out to [RevenueCat support](https://app.revenuecat.com/settings/support).
 
 # Next Steps
 
