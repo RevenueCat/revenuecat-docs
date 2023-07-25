@@ -136,7 +136,7 @@ workflows:
           <<: *syncing-branches
       - sync-files-to-readme:
           requires:
-            - hold
+            - manual-approval-to-sync-with-readme
           <<: *syncing-branches
 
   no-op-sync:
