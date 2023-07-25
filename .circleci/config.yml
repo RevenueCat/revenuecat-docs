@@ -77,7 +77,7 @@ jobs:
           name: Check rendered docs have categories
           command: bundle exec fastlane check_docs_categories
 
-  sync-files-to-readme:
+  sync-files-if-syncing-pr:
     docker:
       - image: cimg/ruby:3.1.2
     steps:
@@ -143,14 +143,14 @@ workflows:
           requires:
             - check-categories
           <<: *syncing-branches
-      - sync-files-to-readme:
+      - sync-files-if-syncing-pr:
           requires:
             - manual-approval-to-sync-with-readme
           <<: *syncing-branches
 
   no-op-sync:
     jobs:
-      - sync-files-to-readme: *non-syncing-branches
+      - sync-files-if-syncing-pr: *non-syncing-branches
 
   test:
     jobs:
