@@ -76,18 +76,4 @@ For each period, we measure:
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b5049b3-RealizedLTVperCustomer.png",
-        "RealizedLTVperCustomer.png",
-        1364,
-        894,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/b5049b3-RealizedLTVperCustomer.png "RealizedLTVperCustomer.png")

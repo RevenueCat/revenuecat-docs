@@ -22,21 +22,7 @@ The In-app Purchase capability isn't required to install the SDK, but it is requ
 1. In Xcode, in project manager, select your app target.
 2. Open the `Signing and Capabilities` tab.
 3. Click the `+ Capability` button and double-click on In-App Purchase.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/75574fc-Screen_Shot_2020-02-19_at_4.43.13_PM.png",
-        "Screen Shot 2020-02-19 at 4.43.13 PM.png",
-        2968,
-        1924,
-        "#ecebeb"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/75574fc-Screen_Shot_2020-02-19_at_4.43.13_PM.png "Screen Shot 2020-02-19 at 4.43.13 PM.png")
 
 ## Add Strip Frameworks Phase if using cordova-plugin-purchases 1.1.0 or lower
 

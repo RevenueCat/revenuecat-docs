@@ -16,21 +16,7 @@ order: 4
 The Activity table is a real-time activity feed of transactions being recorded for your apps. Each row represents a unique transaction. A transaction can be a trial start, trial conversion, renewal, or regular purchase. 
 
 For example, if user123 starts a trial then converts to a paid subscription they will have two rows in the Activity table.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/56d6827-Screen_Shot_2020-04-07_at_5.45.36_PM.png",
-        "Screen Shot 2020-04-07 at 5.45.36 PM.png",
-        1122,
-        786,
-        "#f6f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/56d6827-Screen_Shot_2020-04-07_at_5.45.36_PM.png "Screen Shot 2020-04-07 at 5.45.36 PM.png")
 ## Available Columns
 [block:parameters]
 {
@@ -61,21 +47,7 @@ For example, if user123 starts a trial then converts to a paid subscription they
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b5165ef-Screen_Shot_2020-04-07_at_5.46.09_PM.png",
-        "Screen Shot 2020-04-07 at 5.46.09 PM.png",
-        533,
-        53,
-        "#f4f8f7"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/b5165ef-Screen_Shot_2020-04-07_at_5.46.09_PM.png "Screen Shot 2020-04-07 at 5.46.09 PM.png")
 You can drill into a specific customer page by entering either a Store Transaction ID or App User ID into the search field. The search field only supports exact matches.
 [block:api-header]
 {
@@ -110,21 +82,7 @@ You can apply one or more filters to the Activity table to view a subset of tran
 }
 [/block]
 You can apply date restrictions to the Activity table to only show transactions that occurred within a certain date range. Note that it's possible for transactions to be recorded with a future timestamp since the stores may charge the user before a renewal date.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/54c1e19-Screen_Shot_2020-04-07_at_5.46.22_PM.png",
-        "Screen Shot 2020-04-07 at 5.46.22 PM.png",
-        172,
-        53,
-        "#77b5a7"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/54c1e19-Screen_Shot_2020-04-07_at_5.46.22_PM.png "Screen Shot 2020-04-07 at 5.46.22 PM.png")
 
 [block:api-header]
 {
@@ -132,21 +90,7 @@ You can apply date restrictions to the Activity table to only show transactions 
 }
 [/block]
 You can paginate through historical transactions by clicking the **Older** button. Clicking **Most Recent** button will reset the Activity table to the most recent transactions.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/28bd63c-Screen_Shot_2020-04-07_at_5.46.27_PM.png",
-        "Screen Shot 2020-04-07 at 5.46.27 PM.png",
-        195,
-        47,
-        "#eff7f5"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/28bd63c-Screen_Shot_2020-04-07_at_5.46.27_PM.png "Screen Shot 2020-04-07 at 5.46.27 PM.png")
 
 [block:api-header]
 {
@@ -160,18 +104,4 @@ Exporting data directly from the Activity table is not supported (yet). If you'r
 }
 [/block]
 The sandbox data toggle will change the Activity table to show either sandbox or purchases. If you don't see any transaction data after making a test purchase, make sure you've enabled the 'View sandbox data' toggle.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ef2a134-Screen_Shot_2020-04-06_at_4.29.08_PM.png",
-        "Screen Shot 2020-04-06 at 4.29.08 PM.png",
-        243,
-        52,
-        "#f8f2ef"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/ef2a134-Screen_Shot_2020-04-06_at_4.29.08_PM.png "Screen Shot 2020-04-06 at 4.29.08 PM.png")

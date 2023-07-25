@@ -500,3 +500,4 @@ doc/api/
 projects/iOS/Package.resolved
 **/**/.DS_Store
 rendered_docs/categories.json
+/spec/test_files/rendered_docs/

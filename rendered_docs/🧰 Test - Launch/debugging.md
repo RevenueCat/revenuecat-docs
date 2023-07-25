@@ -10,7 +10,7 @@ order: 0
 > 
 > This section assumes you've followed our [Quickstart](doc:getting-started-1) section of our Getting Started guide to install and configure our SDK.
 
-RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
+RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `logLevel` property. You can set this immediately in your app while testing, **before you configure Purchases**.
 
 ```swift 
 Purchases.logLevel = .debug
@@ -21,13 +21,13 @@ RCPurchases.logLevel = RCLogLevelDebug;
 [RCPurchases configureWithAPIKey:@<public_sdk_key> appUserID:@<my_app_user_id>];
 ```
 ```kotlin 
-Purchases.debugLogsEnabled = true
+Purchases.logLevel = LogLevel.DEBUG
 Purchases.configure(PurchasesConfiguration.Builder(context, apiKey = "")
             .appUserID(<my_app_user_id>)
             .build()
 ```
 ```java 
-Purchases.setDebugLogsEnabled(true);
+Purchases.setLogLevel(LogLevel.DEBUG);
 Purchases.configure(new PurchasesConfiguration.Builder(context, <api_key>).appUserID(<my_app_user_id>).build());
 ```
 ```javascript React Native
@@ -38,12 +38,12 @@ Purchases.configure({
 });
 ```
 ```javascript Flutter
-await Purchases.setDebugLogsEnabled(true);
+await Purchases.setLogLevel(LogLevel.debug);
 PurchasesConfiguration pc = PurchasesConfiguration(<public_sdk_key>);
 await Purchases.configure(pc);
 ```
 ```javascript Unity
-Purchases.SetDebugLogsEnabled(true);
+Purchases.SetLogLevel(Purchases.LogLevel.Debug);
 ```
 ```javascript Cordova
 Purchases.setLogLevel(LOG_LEVEL.DEBUG);

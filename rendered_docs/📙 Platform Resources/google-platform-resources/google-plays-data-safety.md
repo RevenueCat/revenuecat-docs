@@ -10,21 +10,7 @@ parentDoc: 649983b4c31b2e000a3c18c5
 [By July 20, 2022](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en), Google requires all developers to declare how their application collects and handles user data. You'll need to ensure you are properly disclosing to your users the way you are using RevenueCat in regards to their data.
 
 # Data collection and security
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/53e2217-Screen_Shot_2021-11-24_at_11.57.26_AM.png",
-        "Screen Shot 2021-11-24 at 11.57.26 AM.png",
-        776,
-        636,
-        "#f9fafa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/53e2217-Screen_Shot_2021-11-24_at_11.57.26_AM.png "Screen Shot 2021-11-24 at 11.57.26 AM.png")
 ### Does your app collect or share any of the required user data types?
 Select 'Yes'. RevenueCat collects a customer's purchase history. 
 
@@ -79,104 +65,20 @@ If selecting 'Yes', ensure your customers have a way to contact your support tea
 # Required Data Types
 ## Type: Financial Info
 If you are using RevenueCat, you must disclose that your app collects 'Purchase history' information from the Data types section in Google Play Console. 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/6652cde-Screen_Shot_2021-11-24_at_11.51.40_AM.png",
-        "Screen Shot 2021-11-24 at 11.51.40 AM.png",
-        2222,
-        678,
-        "#fdfdfd"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/6652cde-Screen_Shot_2021-11-24_at_11.51.40_AM.png "Screen Shot 2021-11-24 at 11.51.40 AM.png")
 ### 1. Is this data collected, shared, or both?
 This data is collected by RevenueCat. If you are using integrations set up between RevenueCat and third parties that are not considered service providers, you may need to disclose "Shared" here as well. 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0951b20-Screen_Shot_2021-11-30_at_2.00.25_PM.png",
-        "Screen Shot 2021-11-30 at 2.00.25 PM.png",
-        1598,
-        386,
-        "#f8f9fa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/0951b20-Screen_Shot_2021-11-30_at_2.00.25_PM.png "Screen Shot 2021-11-30 at 2.00.25 PM.png")
 ### 2. Is this data processed ephemerally?
 Select 'No'.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ca221b7-Screen_Shot_2021-11-24_at_11.22.03_AM.png",
-        "Screen Shot 2021-11-24 at 11.22.03 AM.png",
-        1874,
-        490,
-        "#fafafa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/ca221b7-Screen_Shot_2021-11-24_at_11.22.03_AM.png "Screen Shot 2021-11-24 at 11.22.03 AM.png")
 ### Is this data required for your app, or can users choose whether it's collected?
 This data collection is required and cannot be turned off.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7fc7ea1-Screen_Shot_2021-11-24_at_11.23.20_AM.png",
-        "Screen Shot 2021-11-24 at 11.23.20 AM.png",
-        1596,
-        252,
-        "#f5f6f6"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/7fc7ea1-Screen_Shot_2021-11-24_at_11.23.20_AM.png "Screen Shot 2021-11-24 at 11.23.20 AM.png")
 ###Why is this user data collected? / Why is this user data shared?
 Select the 'App functionality' and 'Analytics' checkboxes.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a45624a-Screen_Shot_2021-11-24_at_11.09.13_AM.png",
-        "Screen Shot 2021-11-24 at 11.09.13 AM.png",
-        671,
-        599,
-        "#f5f5f6"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/a45624a-Screen_Shot_2021-11-24_at_11.09.13_AM.png "Screen Shot 2021-11-24 at 11.09.13 AM.png")
 # What's Next
 After making your data safety selections, Google will show a preview of your app's privacy section. If you have chosen Financial Info as described above, your privacy details should look something like this: 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/46848c5-Screen_Shot_2021-11-30_at_2.11.47_PM.png",
-        "Screen Shot 2021-11-30 at 2.11.47 PM.png",
-        776,
-        585,
-        "#f8f9fa"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/46848c5-Screen_Shot_2021-11-30_at_2.11.47_PM.png "Screen Shot 2021-11-30 at 2.11.47 PM.png")
 If you're ready to submit your app to App Review, head over to our [Launch Checklist](doc:launch-checklist)  doc for more information about preparing your app for submission.

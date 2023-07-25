@@ -39,21 +39,7 @@ Promotional subscriptions allow you to give a user access to premium content for
 }
 [/block]
 To give a user promotional access to an entitlement choose the [entitlement name](doc:entitlements) and duration and click 'Grant'. You can grant multiple entitlements if you have different levels of access. You must be using RevenueCat [Entitlements](doc:entitlements) to grant promotionals.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5014886-Screenshot_2023-03-27_at_2.05.51_PM.png",
-        "Screenshot 2023-03-27 at 2.05.51 PM.png",
-        405,
-        222,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/5014886-Screenshot_2023-03-27_at_2.05.51_PM.png "Screenshot 2023-03-27 at 2.05.51 PM.png")
 Granting an entitlement from the customer page will go into effect immediately, but you may need to [refresh CustomerInfo](doc:getting-started-1#section-get-subscription-status) on the client to get the latest active entitlements. The promotional access will automatically be revoked after the selected duration. Note that promotional entitlements in the customer timeline will not show as "sandbox" transactions.
 [block:callout]
 {

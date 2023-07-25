@@ -207,6 +207,7 @@ Ensure that you have granted the following permissions:
 
 - View financial data in [step 3a](https://docs-origin.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions)
 - Manage orders and subscriptions in [step 3a](https://www.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions)
+- Once this is done, try to make a test purchase using a [Sandbox user](https://www.revenuecat.com/docs/google-play-store) in order to check if the connection to the subscriptions API is working. 
 
 ### inappproducts API
 
