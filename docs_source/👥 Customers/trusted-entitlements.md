@@ -7,21 +7,23 @@ hidden: false
 
 # Purpose
 
-As data travels between your app, RevenueCat, and the app stores, a malicious user could intercept and modify requests by performing a machine-in-the-middle ([MitM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)) attack to grant themselves entitlements without actually paying you.
+RevenueCat uses strong SSL to secure communications against interception. But the user is in control of the client device, and, while not an easy process, they can configure it to allow and execute [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks to grant themselves entitlements without actually paying you.
 
-To prevent this, our native (iOS/Android) SDKs, together with our backend, will verify responses by checking a cryptographic signature.
+To prevent this, in addition to SSL for secure communications, our native (iOS/Android) SDKs, together with our backend, will verify responses integrity by checking a cryptographic signature.
 
 > 📘
 >
-> Trusted entitlements is supported in iOS SDK version 4.25.0 and up, and Android SDK version 6.6.0 and up.
+> Trusted Entitlements is supported in iOS SDK version 4.25.0 and up, and Android SDK version 6.6.0 and up.
 >
 > Flutter, React Native, Cordova and Unity support coming soon.
+
+# Setup
 
 ## Configuration
 
 SDKs can be configured in one of 3 `EntitlementVerificationMode`'s:
 
-- Disabled (*default*): equivalent to no verification. Susceptible to MiTM attacks.
+- Disabled (*default*): equivalent to no verification. Susceptible to request tampering.
 - Informational (*beta*): No behavior change, but the result of verification is included in `EntitlementInfos` / `EntitlementInfo`.
 - Enforced (*coming soon*): verification failures result in `ErrorCode.signatureVerificationFailed` error being thrown.
 
@@ -71,23 +73,23 @@ When configuring the SDK with `EntitlementVerificationMode.informational`, `Enti
 
 Additionally, verification errors are always forwarded to `Purchases.errorHandler`.
 
-## Edge cases
+# Edge cases
 
-### Cache invalidation
+## Cache invalidation
 
 Transitioning an app from `EntitlementVerificationMode.disabled` to `EntitlementVerificationMode.informational` means that cached data would not be verified. In order for a user to be able to rely on this new behavior, the SDKs invalidate caches when this change is detected, so that all subsequent data requests are guaranteed to have validation information.
 
-### Key replacement
+## Key replacement
 
-In the very unlikely event that the public/private key needed to be replaced, this would be the process:
+We use intermediate keys that are rotated frequently. These are signed by a root key. In the very unlikely event that the root key is compromised and needs to be replaced, this would be the process:
 
 - The old pair would be considered insecure
 - A new version of API endpoints would be added
 - A new version of the SDK that uses the new set of endpoints and the new public key would be rolled out
 
-In this way, apps using the old version of the SDK would continue to work, but they would have to be updated to the new set of keys if they want to continue being secure.
+In this way, apps using the old version of the SDK would continue to work, but they would have to be updated to the new set of keys if they want to continue being secure against tampering.
 
-## Compatibility
+# Compatibility
 
 - Android 4.4+
 - iOS 13.x+

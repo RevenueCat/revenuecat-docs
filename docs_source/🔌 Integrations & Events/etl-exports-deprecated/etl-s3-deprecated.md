@@ -45,21 +45,7 @@ The below steps outline how to create an Access Key in your AWS console that Rev
 You should only give RevenueCat access to the minimum resources necessary. To do this, create a new policy that only allows access to the S3 bucket where you want your deliveries to go.
 
 Navigate to the IAM Policy dashboard in your AWS console and click **‘Create policy’**: https://console.aws.amazon.com/iam/home#/policies
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e098c42-e14f603-Screen_Shot_2019-07-10_at_7.08.18_AM.png",
-        "e14f603-Screen_Shot_2019-07-10_at_7.08.18_AM.png",
-        1704,
-        622,
-        "#eeeef0"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/e098c42-e14f603-Screen_Shot_2019-07-10_at_7.08.18_AM.png "e14f603-Screen_Shot_2019-07-10_at_7.08.18_AM.png")
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
 [block:file]
 [
@@ -71,21 +57,7 @@ In the policy editor, switch to the JSON view and paste in the following code. B
 ]
 [/block]
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c0e73e9-e107a25-Screen_Shot_2019-07-17_at_2.19.37_PM.png",
-        "e107a25-Screen_Shot_2019-07-17_at_2.19.37_PM.png",
-        1225,
-        936,
-        "#faf9f6"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/c0e73e9-e107a25-Screen_Shot_2019-07-17_at_2.19.37_PM.png "e107a25-Screen_Shot_2019-07-17_at_2.19.37_PM.png")
 Finally, give the policy a name and description.
 
 
@@ -93,114 +65,16 @@ Finally, give the policy a name and description.
 You'll next need to create an individual user that only has access to the policy you just created in Step 1. 
 
 Navigate to the IAM User dashboard in your AWS console and click **Add user**: https://console.aws.amazon.com/iam/home#/users
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/5cb11f9-f88e5d7-Screen_Shot_2019-07-10_at_6.52.59_AM.png",
-        "f88e5d7-Screen_Shot_2019-07-10_at_6.52.59_AM.png",
-        740,
-        310,
-        "#e6e2e5"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/5cb11f9-f88e5d7-Screen_Shot_2019-07-10_at_6.52.59_AM.png "f88e5d7-Screen_Shot_2019-07-10_at_6.52.59_AM.png")
 Enter a **User name** and choose **Programmatic access**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/267658d-4dca1f9-Screen_Shot_2019-07-10_at_6.53.47_AM.png",
-        "4dca1f9-Screen_Shot_2019-07-10_at_6.53.47_AM.png",
-        2038,
-        1022,
-        "#f9f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/267658d-4dca1f9-Screen_Shot_2019-07-10_at_6.53.47_AM.png "4dca1f9-Screen_Shot_2019-07-10_at_6.53.47_AM.png")
 Choose the option to **Add user to a group**, and click **Create group**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a6f1984-b0cbff9-Screen_Shot_2019-07-10_at_6.54.48_AM.png",
-        "b0cbff9-Screen_Shot_2019-07-10_at_6.54.48_AM.png",
-        2004,
-        848,
-        "#f2f3f4"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/a6f1984-b0cbff9-Screen_Shot_2019-07-10_at_6.54.48_AM.png "b0cbff9-Screen_Shot_2019-07-10_at_6.54.48_AM.png")
 **Select the Policy name you created from Step 1**, then click **Create group**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/128afb2-b6f169d-Screen_Shot_2019-07-10_at_7.06.58_AM.png",
-        "b6f169d-Screen_Shot_2019-07-10_at_7.06.58_AM.png",
-        2364,
-        980,
-        "#f0f0f1"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/128afb2-b6f169d-Screen_Shot_2019-07-10_at_7.06.58_AM.png "b6f169d-Screen_Shot_2019-07-10_at_7.06.58_AM.png")
 Once the group is created, select it and click **Next**, optionally add any tags to the group.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/fdd4b15-da89475-Screen_Shot_2019-07-10_at_7.10.38_AM.png",
-        "da89475-Screen_Shot_2019-07-10_at_7.10.38_AM.png",
-        2014,
-        1204,
-        "#f3f5f5"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/fdd4b15-da89475-Screen_Shot_2019-07-10_at_7.10.38_AM.png "da89475-Screen_Shot_2019-07-10_at_7.10.38_AM.png")
 Review and click **Create user**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/123edce-9a74401-Screen_Shot_2019-07-10_at_7.11.15_AM.png",
-        "9a74401-Screen_Shot_2019-07-10_at_7.11.15_AM.png",
-        1980,
-        1216,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/123edce-9a74401-Screen_Shot_2019-07-10_at_7.11.15_AM.png "9a74401-Screen_Shot_2019-07-10_at_7.11.15_AM.png")
 Finally, you can download the secure access credentials or copy them from the dashboard.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c861408-a46bfd2-Screen_Shot_2019-07-10_at_7.11.48_AM.png",
-        "a46bfd2-Screen_Shot_2019-07-10_at_7.11.48_AM.png",
-        2002,
-        824,
-        "#f2f4f1"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/c861408-a46bfd2-Screen_Shot_2019-07-10_at_7.11.48_AM.png "a46bfd2-Screen_Shot_2019-07-10_at_7.11.48_AM.png")

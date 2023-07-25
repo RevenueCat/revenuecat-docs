@@ -77,23 +77,36 @@ jobs:
           name: Check rendered docs have categories
           command: bundle exec fastlane check_docs_categories
 
-  sync-files-to-readme:
+  sync-files-if-syncing-pr:
     docker:
       - image: cimg/ruby:3.1.2
     steps:
-      - checkout
-      - node/install:
-          install-yarn: false
-          node-version: "16.13.1"
-      - revenuecat/install-gem-unix-dependencies:
-          cache-version: v1
-      - run:
-          name: Install rdme
-          command: npm install -g rdme@8.6.4
-      - run:
-          name: Syncing files to Readme
-          command: |
-            bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
+      - when:
+          condition:
+            not:
+              equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
+          steps:
+            - run:
+                name: Skipping syncing since this is a not syncing branch
+                command:
+                    echo "Skipping syncing since this is a not syncing branch"
+      - when:
+          condition:
+            equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
+          steps:
+            - checkout
+            - node/install:
+                install-yarn: false
+                node-version: "16.13.1"
+            - revenuecat/install-gem-unix-dependencies:
+                cache-version: v1
+            - run:
+                name: Install rdme
+                command: npm install -g rdme@8.6.4
+            - run:
+                name: Syncing files to Readme
+                command: |
+                  bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
 
   open-syncing-pr:
     docker:
@@ -125,15 +138,19 @@ workflows:
   sync:
     jobs:
       - check-categories: *syncing-branches
-      - hold:
+      - manual-approval-to-sync-with-readme:
           type: approval
           requires:
             - check-categories
           <<: *syncing-branches
-      - sync-files-to-readme:
+      - sync-files-if-syncing-pr:
           requires:
-            - hold
+            - manual-approval-to-sync-with-readme
           <<: *syncing-branches
+
+  no-op-sync:
+    jobs:
+      - sync-files-if-syncing-pr: *non-syncing-branches
 
   test:
     jobs:
