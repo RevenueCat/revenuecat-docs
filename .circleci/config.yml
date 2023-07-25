@@ -82,18 +82,22 @@ jobs:
       - image: cimg/ruby:3.1.2
     steps:
       - checkout
-      - node/install:
-          install-yarn: false
-          node-version: "16.13.1"
-      - revenuecat/install-gem-unix-dependencies:
-          cache-version: v1
-      - run:
-          name: Install rdme
-          command: npm install -g rdme@8.6.4
-      - run:
-          name: Syncing files to Readme
-          command: |
-            bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
+      - when:
+          condition:
+            equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
+          steps:
+            - node/install:
+                install-yarn: false
+                node-version: "16.13.1"
+            - revenuecat/install-gem-unix-dependencies:
+                cache-version: v1
+            - run:
+                name: Install rdme
+                command: npm install -g rdme@8.6.4
+            - run:
+                name: Syncing files to Readme
+                command: |
+                  bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
 
   open-syncing-pr:
     docker:
@@ -134,6 +138,10 @@ workflows:
           requires:
             - hold
           <<: *syncing-branches
+
+  no-op-sync:
+    jobs:
+      - sync-files-to-readme: *non-syncing-branches
 
   test:
     jobs:
