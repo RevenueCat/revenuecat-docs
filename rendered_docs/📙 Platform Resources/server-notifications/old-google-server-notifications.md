@@ -31,21 +31,7 @@ RevenueCat does not require server notifications from Google Play, however doing
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bc5191a-Screen_Shot_2023-03-01_at_1.56.16_PM.png",
-        "Screen Shot 2023-03-01 at 1.56.16 PM.png",
-        2394,
-        474,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/bc5191a-Screen_Shot_2023-03-01_at_1.56.16_PM.png "Screen Shot 2023-03-01 at 1.56.16 PM.png")
 2. Navigate to your ** Apps** under project settings in the RevenueCat dashboard.
 3. Select the **Play Store app**  you are adding  Google Developer Notifications. 
 4. Select view under *Service Account credentials JSON * and add your JSON object in the pop-up window. 
@@ -67,21 +53,7 @@ RevenueCat does not require server notifications from Google Play, however doing
 }
 [/block]
 6. Click *Connect to Google*.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1a6464f-Screenshot_2023-03-03_at_11.40.30.png",
-        "Screenshot 2023-03-03 at 11.40.30.png",
-        1010,
-        231,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/1a6464f-Screenshot_2023-03-03_at_11.40.30.png "Screenshot 2023-03-03 at 11.40.30.png")
 7. You will see a generated Google Cloud Pub/Sub topic ID, as shown below.
 [block:image]
 {
@@ -110,37 +82,9 @@ If you don't see any errors, your real-time developer notifications should be re
 There is an option in Google Play to send a test notification. This is a great way to verify that Google Pub/Sub is correctly connected to your RevenueCat account.
 
 Click the "Send test notification" button under the "Topic name" in the "Monetization setup" section
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/540cd15-Screen_Shot_2022-12-16_at_9.52.55_AM.png",
-        "Screen Shot 2022-12-16 at 9.52.55 AM.png",
-        1282,
-        492,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/540cd15-Screen_Shot_2022-12-16_at_9.52.55_AM.png "Screen Shot 2022-12-16 at 9.52.55 AM.png")
 Once that test notification is sent, you can go back to your app config on the RevenueCat dashboard where you connected to Google to enable real-time notifications. If the configuration was successful, you should see a "Last received" label with a recent timestamp.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a3943e9-Screen_Shot_2022-12-16_at_9.55.38_AM.png",
-        "Screen Shot 2022-12-16 at 9.55.38 AM.png",
-        685,
-        228,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/a3943e9-Screen_Shot_2022-12-16_at_9.55.38_AM.png "Screen Shot 2022-12-16 at 9.55.38 AM.png")
 # Considerations
 [block:callout]
 {

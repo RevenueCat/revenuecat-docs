@@ -12,59 +12,17 @@ An incomplete period is one where its cohort has not yet fully matured. The defi
 ## Event date cohorting
 For example, Charts such as Active Subscriptions, MRR, and Revenue, where data is cohorted by event date, the incomplete period will always be the current one (today, this week, etc). This is especially important to recognize when measuring large periods, such as your Revenue by month, where the value halfway through the month may be quite different from what the previous complete data points would show.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8d76fa7-Screen_Shot_2023-01-03_at_3.32.58_PM.png",
-        "Screen Shot 2023-01-03 at 3.32.58 PM.png",
-        2128,
-        1008,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/8d76fa7-Screen_Shot_2023-01-03_at_3.32.58_PM.png "Screen Shot 2023-01-03 at 3.32.58 PM.png")
 ## First seen date cohorting
 On the other hand, for Charts such as Realized LTV per Customer and Initial Conversion, which are cohorted by a customer's first seen date, the incomplete period is a function of the current date and the specified Customer Lifetime or Conversion Timeframe.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e507eee-Untitled.png",
-        "Untitled.png",
-        2656,
-        704,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/e507eee-Untitled.png "Untitled.png")
 ### Customer Lifetime in Realized LTV Charts
 The Customer Lifetime selector limits the time that a cohort has to mature in order for its revenue to be include in lifetime value (LTV). This allows for accurate comparisons of realized LTV between periods, where each cohort has been given equal time to mature.
 
 A specified Customer Lifetime of 30 days means that any revenue generated within the first 30 complete days of a customer's lifetime will be included in their Realized LTV. Therefore, a period is not considered complete until its cohort is at least as old as the selected Customer Lifetime (in this case, 30 days).
 
 If you change the Customer Lifetime selection to be shorter or longer, the length of the periods which will be marked as incomplete will move in the same direction.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b08d4b3-Untitled_1.png",
-        "Untitled (1).png",
-        2622,
-        1652,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/b08d4b3-Untitled_1.png "Untitled (1).png")
 ### Conversion Timeframe in Conversion Charts
 Similarly, the Conversion Timeframe selector limits the time that a cohort has to convert within in order to be counted in the measured conversion rate. This allows for accurate comparisons between periods, where each cohort has been given equal time to convert.
 

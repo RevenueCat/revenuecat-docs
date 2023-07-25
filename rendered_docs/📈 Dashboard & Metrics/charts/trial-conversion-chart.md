@@ -89,18 +89,4 @@ For each period, we measure:
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bdf3068-TrialConversion.png",
-        "TrialConversion.png",
-        1374,
-        946,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/bdf3068-TrialConversion.png "TrialConversion.png")

@@ -49,18 +49,4 @@ For a given period, the difference of these counts is the Movement measured in t
 }
 [/block]
 For more information on what’s considered an active paid subscription, [click here](doc:active-subscriptions-chart).
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2f1fec5-ActiveSubsriptionsMvmt.png",
-        "ActiveSubsriptionsMvmt.png",
-        1387,
-        859,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/2f1fec5-ActiveSubsriptionsMvmt.png "ActiveSubsriptionsMvmt.png")

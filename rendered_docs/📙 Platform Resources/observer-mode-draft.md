@@ -70,21 +70,7 @@ If you're already sending receipts to your server, you can enable Observer Mode 
 With this option, you should already have a process in place for validating receipts on your server. When you receive a receipt, you can forward it to RevenueCat via the [POST /receipts endpoint](https://docs.revenuecat.com/reference/receipts) then have your server continue doing whatever it is already. 
 
 Don't worry about validating the receipt before forwarding to RevenueCat - we always validate receipts with the stores before saving them.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8bfe65a-Screen_Shot_2022-05-31_at_2.29.22_PM.png",
-        "Screen Shot 2022-05-31 at 2.29.22 PM.png",
-        1035,
-        696,
-        "#cedddf"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/8bfe65a-Screen_Shot_2022-05-31_at_2.29.22_PM.png "Screen Shot 2022-05-31 at 2.29.22 PM.png")
 ## Requirements
 The requirements for server-side Observer Mode are the same as those for the  [POST /receipts endpoint](https://docs.revenuecat.com/reference/receipts). This includes:
 - `app_user_id`

@@ -26,21 +26,7 @@ The inputs to the model are continually updated and shown here as the experiment
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/441b7dd-Untitled.png",
-        "Untitled.png",
-        1397,
-        738,
-        "#f7f7f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/441b7dd-Untitled.png "Untitled.png")
 ## Analysis
 
 This section is useful for understanding your sample size. Larger sample sizes are less prone to flukes. The model factors this concern into its calculations, but it can be useful to understand how much data the model is processing and whether the results are skewed by the data.
@@ -75,21 +61,7 @@ This section is useful for understanding your sample size. Larger sample sizes a
 ## Example
 
 In the example shown in the below screenshot, there have been no trial completions, active subscriptions, or churn. While the model will be able to make a prediction (possibly with high confidence), it won't be representative of real-world user behavior, so in this case you should wait until you have a good distribution of data.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f9b3089-2020-07-01_22.24.00_app.revenuecat.com_ba0de658ee1a.png",
-        "2020-07-01_22.24.00_app.revenuecat.com_ba0de658ee1a.png",
-        1411,
-        749,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/f9b3089-2020-07-01_22.24.00_app.revenuecat.com_ba0de658ee1a.png "2020-07-01_22.24.00_app.revenuecat.com_ba0de658ee1a.png")
 # Results
 
 This section explains the probability that one variant has a higher LTV, how confident the model is in its prediction, and what the LTV might be for each variant. There are three parts to it: the LTV period, the LTV gauge, which shows which odds that one LTV is better at the current moment, and the chart, which shows the likelihood over time.
@@ -201,21 +173,7 @@ Each prediction is depicted by a box and whisker plot. The box represents 50% of
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d80f0cc-2020-07-01_22.32.25_app.revenuecat.com_a8725577473e.png",
-        "2020-07-01_22.32.25_app.revenuecat.com_a8725577473e.png",
-        1703,
-        885,
-        "#f7f7f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/d80f0cc-2020-07-01_22.32.25_app.revenuecat.com_a8725577473e.png "2020-07-01_22.32.25_app.revenuecat.com_a8725577473e.png")
 ## Analysis
 
 This chart can help you see why results might be toss-ups based on overlap between the predicted LTV of the two variants. The less overlap between the two measures, the clearer the winner is.

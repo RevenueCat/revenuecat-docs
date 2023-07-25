@@ -65,21 +65,7 @@ Purchases.shared.setAttributes([
 After you've set up the *Purchases SDK* to send device data to RevenueCat, you can "turn on" the integration and configure the event names from the RevenueCat dashboard.
 
 1. Navigate to your project in the RevenueCat dashboard and find the *Integrations* card in the left menu. Select **+ New** 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/460751d-Screen_Shot_2021-12-01_at_12.23.10_PM.png",
-        "Screen Shot 2021-12-01 at 12.23.10 PM.png",
-        332,
-        410,
-        "#f5f6f5"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/460751d-Screen_Shot_2021-12-01_at_12.23.10_PM.png "Screen Shot 2021-12-01 at 12.23.10 PM.png")
 2. Choose **SearchAdsHQ** from the Integrations menu.
 3. Add your SearchAdsHQ Client ID.
 4. Enter the event names that RevenueCat will send or choose the default event names.
@@ -120,21 +106,7 @@ Navigate the the [Customer View](doc:customers) for the test user that just made
 
 ## Check that the SearchAdsHQ event delivered successfully
 While still on the Customer View, click into the test purchase event in the [Customer History](doc:customer-history) and make sure that the SearchAdsHQ integration event exists and was delivered successfully. 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/dc9eef1-Screen_Shot_2020-09-14_at_7.19.02_PM.png",
-        "Screen Shot 2020-09-14 at 7.19.02 PM.png",
-        701,
-        223,
-        "#f7f2f1"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/dc9eef1-Screen_Shot_2020-09-14_at_7.19.02_PM.png "Screen Shot 2020-09-14 at 7.19.02 PM.png")
 
 [block:callout]
 {

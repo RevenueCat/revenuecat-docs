@@ -168,21 +168,7 @@ You should only give RevenueCat access to the minimum resources necessary. To do
 
 Navigate to the IAM Policy dashboard in your AWS console and click **‘Create policy’**: https://console.aws.amazon.com/iam/home#/policies
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e14f603-Screen_Shot_2019-07-10_at_7.08.18_AM.png",
-        "Screen Shot 2019-07-10 at 7.08.18 AM.png",
-        1704,
-        622,
-        "#eeeef0"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/e14f603-Screen_Shot_2019-07-10_at_7.08.18_AM.png "Screen Shot 2019-07-10 at 7.08.18 AM.png")
 In the policy editor, switch to the JSON view and paste in the following code. Be sure to replace `revenuecat-deliveries` with the name of your bucket.
 [block:file]
 [
@@ -194,21 +180,7 @@ In the policy editor, switch to the JSON view and paste in the following code. B
 ]
 [/block]
 This policy will allow RevenueCat to list the contents of your bucket, as well as read, write, delete files to it. When you've pasted in the code, click **Review policy***.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e107a25-Screen_Shot_2019-07-17_at_2.19.37_PM.png",
-        "Screen Shot 2019-07-17 at 2.19.37 PM.png",
-        1225,
-        936,
-        "#faf9f6"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/e107a25-Screen_Shot_2019-07-17_at_2.19.37_PM.png "Screen Shot 2019-07-17 at 2.19.37 PM.png")
 Finally, give the policy a name and description.
 
 
@@ -234,98 +206,14 @@ Navigate to the IAM User dashboard in your AWS console and click **Add user**: h
 }
 [/block]
 Enter a **User name** and choose **Programmatic access**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4dca1f9-Screen_Shot_2019-07-10_at_6.53.47_AM.png",
-        "Screen Shot 2019-07-10 at 6.53.47 AM.png",
-        2038,
-        1022,
-        "#f9f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/4dca1f9-Screen_Shot_2019-07-10_at_6.53.47_AM.png "Screen Shot 2019-07-10 at 6.53.47 AM.png")
 Choose the option to **Add user to a group**, and click **Create group**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b0cbff9-Screen_Shot_2019-07-10_at_6.54.48_AM.png",
-        "Screen Shot 2019-07-10 at 6.54.48 AM.png",
-        2004,
-        848,
-        "#f2f3f4"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/b0cbff9-Screen_Shot_2019-07-10_at_6.54.48_AM.png "Screen Shot 2019-07-10 at 6.54.48 AM.png")
 **Select the Policy name you created from Step 1**, then click **Create group**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/b6f169d-Screen_Shot_2019-07-10_at_7.06.58_AM.png",
-        "Screen Shot 2019-07-10 at 7.06.58 AM.png",
-        2364,
-        980,
-        "#f0f0f1"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/b6f169d-Screen_Shot_2019-07-10_at_7.06.58_AM.png "Screen Shot 2019-07-10 at 7.06.58 AM.png")
 Once the group is created, select it and click **Next**, optionally add any tags to the group.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/da89475-Screen_Shot_2019-07-10_at_7.10.38_AM.png",
-        "Screen Shot 2019-07-10 at 7.10.38 AM.png",
-        2014,
-        1204,
-        "#f3f5f5"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/da89475-Screen_Shot_2019-07-10_at_7.10.38_AM.png "Screen Shot 2019-07-10 at 7.10.38 AM.png")
 Review and click **Create user**.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9a74401-Screen_Shot_2019-07-10_at_7.11.15_AM.png",
-        "Screen Shot 2019-07-10 at 7.11.15 AM.png",
-        1980,
-        1216,
-        "#f8f8f8"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/9a74401-Screen_Shot_2019-07-10_at_7.11.15_AM.png "Screen Shot 2019-07-10 at 7.11.15 AM.png")
 Finally, you can download the secure access credentials or copy them from the dashboard.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/a46bfd2-Screen_Shot_2019-07-10_at_7.11.48_AM.png",
-        "Screen Shot 2019-07-10 at 7.11.48 AM.png",
-        2002,
-        824,
-        "#f2f4f1"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/a46bfd2-Screen_Shot_2019-07-10_at_7.11.48_AM.png "Screen Shot 2019-07-10 at 7.11.48 AM.png")
