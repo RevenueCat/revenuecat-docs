@@ -16,7 +16,10 @@ You can change your account email and name from your [account settings](https://
 
 Projects can be transferred between RevenueCat accounts by following one of two processes:
 1. If you are transferring all of the projects in your account, it is recommended that you change the email of the account to the new owner's email to give the new owner control over the account. If that's the case, use a new email. Please follow the instructions above for changing your account email.
-2. If you want to transfer some but not all projects from your RevenueCat account to another RevenueCat account, [contact RevenueCat Support](https://app.revenuecat.com/settings/support) for assistance.
+2. If you want to transfer some but not all projects from your RevenueCat account to another RevenueCat account, [contact RevenueCat Support](https://app.revenuecat.com/settings/support) for assistance. Please note the following restrictions:
+    - If your app uses Stripe and the receiving account also has Stripe apps, you need to transfer your Stripe account to them as well. RevenueCat supports only one Stripe account per developer account.
+    - If your app uses the Apple Ad Services integration, the receiving developer needs to [update the public key](doc:apple-search-ads#advanced) in App Store Connect.
+    - The receiving developer account must have a RevenueCat plan that has an equal or greater level of service than your account to ensure that all integrations continue working.
 
 # Billing and plan changes
 
