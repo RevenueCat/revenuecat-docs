@@ -16,4 +16,4 @@ The API reference documentation provides detailed information for each of the cl
 
 <a href="https://revenuecat.github.io/react-native-purchases-docs" target="_blank">React Native Reference :fa-arrow-right:</a>
 
-<a href="https://revenuecat.github.io/cordova-plugin-purchases-docs/" target="_blank">Cordova Native Reference :fa-arrow-right:</a>
+<a href="https://revenuecat.github.io/cordova-plugin-purchases-docs/" target="_blank">Cordova Reference :fa-arrow-right:</a>

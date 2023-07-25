@@ -8,7 +8,7 @@ hidden: false
 > 
 > This section assumes you've followed our [Quickstart](doc:getting-started-1) section of our Getting Started guide to install and configure our SDK.
 
-RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `debugLogsEnabled` flag. You can set this immediately in your app while testing, **before you configure Purchases**.
+RevenueCat's SDK will log important information and errors to help you understand what is going on behind the scenes. You can enable more detailed debug logs with the `logLevel` property. You can set this immediately in your app while testing, **before you configure Purchases**.
 
 [block:file]
 [
