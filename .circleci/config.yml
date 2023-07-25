@@ -81,7 +81,6 @@ jobs:
     docker:
       - image: cimg/ruby:3.1.2
     steps:
-      - checkout
       - when:
           condition:
             not:
@@ -95,6 +94,7 @@ jobs:
           condition:
             equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
           steps:
+            - checkout
             - node/install:
                 install-yarn: false
                 node-version: "16.13.1"
