@@ -84,6 +84,15 @@ jobs:
       - checkout
       - when:
           condition:
+            not:
+              equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
+          steps:
+            - run:
+                name: Skipping syncing since this is a not syncing branch
+                command:
+                    echo "Skipping syncing since this is a not syncing branch"
+      - when:
+          condition:
             equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
           steps:
             - node/install:
