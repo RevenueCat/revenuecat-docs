@@ -32,21 +32,7 @@ If you've had subscription activity in your app but this value is missing or sta
 }
 [/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bffdf75-Screen_Shot_2021-12-01_at_11.07.08_AM.png",
-        "Screen Shot 2021-12-01 at 11.07.08 AM.png",
-        1208,
-        122,
-        "#efedee"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/bffdf75-Screen_Shot_2021-12-01_at_11.07.08_AM.png "Screen Shot 2021-12-01 at 11.07.08 AM.png")
 # Billing
 
 Setting up and receiving Platform Server Notifications does not affect RevenueCat billing.

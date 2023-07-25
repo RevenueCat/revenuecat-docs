@@ -7,15 +7,17 @@ hidden: false
 
 # Purpose
 
-Revenuecat uses strong SSL to secure communications against interception. But the user is in control of the client device, and, while not an easy process, they can configure it to allow and execute [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks to grant themselves entitlements without actually paying you.
+RevenueCat uses strong SSL to secure communications against interception. But the user is in control of the client device, and, while not an easy process, they can configure it to allow and execute [MiTM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks to grant themselves entitlements without actually paying you.
 
 To prevent this, in addition to SSL for secure communications, our native (iOS/Android) SDKs, together with our backend, will verify responses integrity by checking a cryptographic signature.
 
 > 📘
 >
-> Trusted entitlements is supported in iOS SDK version 4.25.0 and up, and Android SDK version 6.6.0 and up.
+> Trusted Entitlements is supported in iOS SDK version 4.25.0 and up, and Android SDK version 6.6.0 and up.
 >
 > Flutter, React Native, Cordova and Unity support coming soon.
+
+# Setup
 
 ## Configuration
 
@@ -71,13 +73,13 @@ When configuring the SDK with `EntitlementVerificationMode.informational`, `Enti
 
 Additionally, verification errors are always forwarded to `Purchases.errorHandler`.
 
-## Edge cases
+# Edge cases
 
-### Cache invalidation
+## Cache invalidation
 
 Transitioning an app from `EntitlementVerificationMode.disabled` to `EntitlementVerificationMode.informational` means that cached data would not be verified. In order for a user to be able to rely on this new behavior, the SDKs invalidate caches when this change is detected, so that all subsequent data requests are guaranteed to have validation information.
 
-### Key replacement
+## Key replacement
 
 We use intermediate keys that are rotated frequently. These are signed by a root key. In the very unlikely event that the root key is compromised and needs to be replaced, this would be the process:
 
@@ -87,7 +89,7 @@ We use intermediate keys that are rotated frequently. These are signed by a root
 
 In this way, apps using the old version of the SDK would continue to work, but they would have to be updated to the new set of keys if they want to continue being secure against tampering.
 
-## Compatibility
+# Compatibility
 
 - Android 4.4+
 - iOS 13.x+

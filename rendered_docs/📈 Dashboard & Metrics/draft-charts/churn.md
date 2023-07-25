@@ -14,18 +14,4 @@ The Churn chart is the percentage of paid subscriptions that were lost during a 
 Churn can be negative if during a given period there were more re-subscriptions (i.e., previously churned subscribers who re-subscribed) than churned subscriptions.
 
 Churn can be relatively high for mobile apps when compared to web SaaS products. Like trial conversion, churn is another metric you should continuously monitor and work to improve. By combining churn and trial conversion you can start to make longer-term forecasts of the lifetime value of your subscribers. 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ae9fff5-Screen_Shot_2021-11-01_at_10.08.13_AM.png",
-        "Screen Shot 2021-11-01 at 10.08.13 AM.png",
-        1399,
-        831,
-        "#fdfefe"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/ae9fff5-Screen_Shot_2021-11-01_at_10.08.13_AM.png "Screen Shot 2021-11-01 at 10.08.13 AM.png")

@@ -11,21 +11,7 @@ We recommend using a company account when registering for RevenueCat and setting
 
 # 2. Create a Project 
 Navigate to the RevenueCat dashboard and [add a new project :fa-arrow-right:](https://app.revenuecat.com/overview) from the dropdown in the top navigation menu called *Projects*.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/eb2161b-Screen_Shot_2021-12-01_at_9.48.58_AM.png",
-        "Screen Shot 2021-12-01 at 9.48.58 AM.png",
-        838,
-        610,
-        "#e5e7e7"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/eb2161b-Screen_Shot_2021-12-01_at_9.48.58_AM.png "Screen Shot 2021-12-01 at 9.48.58 AM.png")
 # 3. Register Your App
 
 From **Project Settings > Apps** in the left menu of the project dashboard, select the platform for the app you will be adding.  
@@ -85,21 +71,7 @@ Entitlements are the level of access that a customer is "entitled" to after purc
 
 See [Configuring Products](doc:entitlements) to set up your products and then organize them into Offerings or Entitlements.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/55e2667-1628274-Entitlements_2.0.png",
-        "1628274-Entitlements_2.0.png",
-        1154,
-        1254,
-        "#f6f6f5"
-      ]
-    }
-  ]
-}
-[/block]
+![](https://files.readme.io/55e2667-1628274-Entitlements_2.0.png "1628274-Entitlements_2.0.png")
 # 6. Install the SDK
 
 Our SDK seamlessly implements purchases and subscriptions across platforms while syncing tokens with the RevenueCat server.
