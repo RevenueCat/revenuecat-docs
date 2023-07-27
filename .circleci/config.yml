@@ -16,7 +16,9 @@ aliases:
       tags:
         ignore: /.*/
       branches:
-        ignore: /^sync\/.*/
+        ignore:
+          - /^sync\/.*/
+          - main
 
 commands:
   setup-git-credentials:

@@ -1,5 +1,3 @@
-UI = Fastlane::UI
-
 def get_artifacts(job_id, circleci_token)
     url = URI.parse("https://circleci.com/api/v2/project/gh/RevenueCat/revenuecat-docs/#{job_id}/artifacts")
     http = Net::HTTP.new(url.host, url.port)
@@ -10,7 +8,7 @@ def get_artifacts(job_id, circleci_token)
 
     response = http.request(request)
     unless response.is_a?(Net::HTTPSuccess)
-        UI.user_error!("Error retrieving artifacts.\nCode: #{response.code}\nBody: #{response.read_body}")
+        Fastlane::UI.user_error!("Error retrieving artifacts.\nCode: #{response.code}\nBody: #{response.read_body}")
     end
 
     JSON.parse(response.body)["items"]
