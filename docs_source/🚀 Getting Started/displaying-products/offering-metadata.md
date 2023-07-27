@@ -44,15 +44,15 @@ First, navigate to the Offering you'd like to add metadata to and click **Edit**
 
 Then begin adding valid JSON in the **Metadata** field for your Offering.
 
-<img width="500" alt="Editing Metadata" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/64455910-b6c2-417e-9067-c3f773655a85">
+<img width="500" alt="Editing" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/1516d65b-4d7a-4340-839b-40ba353c8f5c">
 
 Once you've entered your desired JSON object, click **Save** to save your changes.
 
-<img width="937" alt="Editing Metadata" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/cf6ee71c-98a5-4f2d-91b6-f5c2a74e1c3c">
+<img width="500" alt="Editing" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/d2c81869-75bb-4619-b421-820b215f3a43">
 
 After saving your changes, you'll be navigated back to the summary page for your Offering, where the new metadata JSON object you've created will be displayed. (NOTE: Objects will be alphabetically ordered)
 
-<img width="500" alt="Created Metadata" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/5330ed6b-1fda-46f2-ad97-3fb54b44e652">
+<img width="935" alt="Saved" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/ef894d0c-2aaf-434b-9e28-87af4f6cd483">
 
 > 📘 
 > 
@@ -62,7 +62,6 @@ After saving your changes, you'll be navigated back to the summary page for your
 
 * Offering metadata will automatically detect and support any valid JSON data type (booleans, strings, arrays, etc).
 * Nested objects can be used to group together similar keys.
-* 
 
 ## Accessing metadata from your app
 
