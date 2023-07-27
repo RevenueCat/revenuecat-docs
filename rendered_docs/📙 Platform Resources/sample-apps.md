@@ -22,6 +22,10 @@ Sample apps are currently included in each SDK repository and demonstrate how to
   [Installation :fa-arrow-right:](doc:android) | [Sample App :fa-arrow-right:](https://github.com/RevenueCat/purchases-android/tree/main/examples/MagicWeather)
   *Kotlin Android example. Hosted in our Android SDK GitHub repository*
 
+## Kotlin Compose
+  [Installation :fa-arrow-right:](doc:android) | [Sample App :fa-arrow-right:](https://github.com/RevenueCat/purchases-android/tree/main/examples/MagicWeatherCompose)
+  *Kotlin Compose example. Hosted in our Android SDK GitHub repository*
+
 ## Java
   [Installation :fa-arrow-right:](doc:android)
   *How install the Android SDK for Java*
