@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   revenuecat: revenuecat/sdks-common-config@2.2.0
   node: circleci/node@5.1.0
+  android: circleci/android@2.3.0
 
 aliases:
   syncing-branches: &syncing-branches
@@ -38,6 +39,25 @@ commands:
             do ssh-keyscan github.com,$ip; \
             ssh-keyscan $ip; \
             done 2>/dev/null >> ~/.ssh/known_hosts
+
+  install-sdkman:
+    description: Install SDKMAN
+    steps:
+      - run:
+          name: Installing SDKMAN
+          command: |
+            if curl -s "https://get.sdkman.io?rcupdate=false" | bash; then
+              echo -e '\nsource "/home/circleci/.sdkman/bin/sdkman-init.sh"' >> $BASH_ENV
+              source $BASH_ENV
+            else
+              echo "Error installing SDKMAN, continuing with default Java" >&2
+            fi
+      - run:
+          name: Setup Java environment
+          command: |
+            if ! sdk env install; then
+              echo "Error installing Java SDK through SDKMAN, continuing with default Java" >&2
+            fi
 
 jobs:
   preview-docs:
@@ -124,6 +144,49 @@ jobs:
           command: |
             bundle exec fastlane open_syncing_pr github_pr_token:$GITHUB_TOKEN readme_api_key:$README_API_KEY
 
+  build-projects-macos:
+    resource_class: macos.x86.medium.gen2
+    macos:
+      xcode: 14.3.0
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - setup-git-credentials
+      - trust-github-key
+      - revenuecat/install-gem-mac-dependencies:
+          cache-version: v1
+      - run:
+          name: Build Swift project
+          working_directory: projects/iOS/DocsTester
+          command: swift build
+
+  build-projects-android:
+    executor:
+      name: android/android-machine
+      resource-class: medium
+      tag: 2021.10.1
+    steps:
+      - checkout
+      - install-sdkman
+      - android/restore-gradle-cache:
+          cache-prefix: v1a
+      - run:
+          name: Build Android project
+          working_directory: projects/android
+          command: ./gradlew assembleDebug
+      - android/save-gradle-cache:
+          cache-prefix: v1a
+
+  run-tests:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Run tests
+          command: bundle exec rspec
 
 workflows:
   version: 2
@@ -158,3 +221,6 @@ workflows:
     jobs:
       - check-rendering: *non-syncing-branches
       - preview-docs: *non-syncing-branches
+      - run-tests
+      - build-projects-macos
+      - build-projects-android
