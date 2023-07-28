@@ -40,19 +40,19 @@ Using Offering metadata has several advantages:
 
 First, navigate to the Offering you'd like to add metadata to and click **Edit**.
 
-<img width="500" alt="No Metadata" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/ce31d09e-9329-4902-9651-e8f02ab2de6c">
+<img width="600" alt="No Metadata" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/ce31d09e-9329-4902-9651-e8f02ab2de6c">
 
 Then begin adding valid JSON in the **Metadata** field for your Offering.
 
-<img width="500" alt="Editing" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/1516d65b-4d7a-4340-839b-40ba353c8f5c">
+<img width="600" alt="Editing 2" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/05b0b913-9ebd-45d6-883b-31169fddd8d6">
 
 Once you've entered your desired JSON object, click **Save** to save your changes.
 
-<img width="500" alt="Editing" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/d2c81869-75bb-4619-b421-820b215f3a43">
+<img width="600" alt="Editing 2" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/38232653-523e-489b-ac35-a4d666a84062">
 
 After saving your changes, you'll be navigated back to the summary page for your Offering, where the new metadata JSON object you've created will be displayed. (NOTE: Objects will be alphabetically ordered)
 
-<img width="935" alt="Saved" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/ef894d0c-2aaf-434b-9e28-87af4f6cd483">
+<img width="600" alt="Saved 2" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/6c2ae7f1-ed0d-4a69-b870-ecc2c1e01d79">
 
 > 📘 
 > 
