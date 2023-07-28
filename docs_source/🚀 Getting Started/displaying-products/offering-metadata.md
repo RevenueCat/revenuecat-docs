@@ -3,7 +3,7 @@ title: Offering metadata (beta)
 slug: offering-metadata
 hidden: false
 ---
-Metadata allows attaching arbitrary information as key/value pairs to your Offering to control how to display your products inside your app. The metadata you configure in an Offering is available from the RevenueCat SDK. For example, you could use it to remotely configure strings on your paywall, or even URLs of images shown on the paywall.
+Metadata allows you to attach a custom JSON object to your Offering that can be used to control how to display your products inside your app, determine the Offering to show based on provided attributes, and much more. The metadata you configure in an Offering is available from the RevenueCat SDK. For example, you could use it to remotely configure strings on your paywall, or even URLs of images shown on the paywall.
 
 > 📘 
 > 
@@ -40,23 +40,28 @@ Using Offering metadata has several advantages:
 
 First, navigate to the Offering you'd like to add metadata to and click **Edit**.
 
-![](https://files.readme.io/b427522-Screen_Shot_2023-05-30_at_3.47.15_PM.png)
+<img width="600" alt="No Metadata" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/ce31d09e-9329-4902-9651-e8f02ab2de6c">
 
-Then click **Add new property** to define the metadata for your Offering.
+Then begin adding valid JSON in the **Metadata** field for your Offering.
 
-![](https://files.readme.io/3245cef-Screen_Shot_2023-05-30_at_3.47.28_PM.png)
+<img width="600" alt="Editing 2" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/05b0b913-9ebd-45d6-883b-31169fddd8d6">
 
-Once you've entered all desired properties as key/value pairs, click **Save** to save your changes.
+Once you've entered your desired JSON object, click **Save** to save your changes.
 
-![](https://files.readme.io/2e32fcf-Screen_Shot_2023-05-30_at_3.48.25_PM.png)
+<img width="600" alt="Editing 2" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/38232653-523e-489b-ac35-a4d666a84062">
 
-After saving your changes, you'll be navigated back to the summary page for your Offering, where the new metadata properties you've created will be listed.
+After saving your changes, you'll be navigated back to the summary page for your Offering, where the new metadata JSON object you've created will be displayed. (NOTE: Objects will be alphabetically ordered)
 
-![](https://files.readme.io/756de89-Screen_Shot_2023-05-30_at_3.48.42_PM.png)
+<img width="600" alt="Saved 2" src="https://github.com/RevenueCat/revenuecat-docs/assets/104692013/6c2ae7f1-ed0d-4a69-b870-ecc2c1e01d79">
 
 > 📘 
 > 
-> When creating a new Offering, you'll be able to add metadata properties directly from the creation form.
+> When creating a new Offering, you'll be able to define a JSON object directly from the creation form.
+
+## Creating a JSON object
+
+* Offering metadata will automatically detect and support any valid JSON data type (booleans, strings, arrays, etc).
+* Nested objects can be used to group together similar keys.
 
 ## Accessing metadata from your app
 
@@ -79,5 +84,4 @@ You can access metadata directly from the Offering object in the RevenueCat SDKs
 
 ## Offering metadata limits
 
-- Offering metadata is limited to a total of 500 characters of JSON encoded key/value pairs. If you attempt to set more metadata on an offering, you will not be able to save the offering.
-- Additionally, individual keys are limited to 40 characters.
+- Offering metadata has a max limit of 4000 characters for the JSON object. If you reach that limit, you'll see an error when you attempt to save the Offering.
