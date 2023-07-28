@@ -106,7 +106,7 @@ jobs:
       - when:
           condition:
             not:
-              equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
+              matches: { pattern: "^sync/.*", value: << pipeline.git.branch >> }
           steps:
             - run:
                 name: Skipping syncing since this is a not syncing branch
@@ -114,7 +114,7 @@ jobs:
                     echo "Skipping syncing since this is a not syncing branch"
       - when:
           condition:
-            equal: [ /^sync\/.*/, << pipeline.git.branch >> ]
+            matches: { pattern: "^sync/.*", value: << pipeline.git.branch >> }
           steps:
             - checkout
             - node/install:
