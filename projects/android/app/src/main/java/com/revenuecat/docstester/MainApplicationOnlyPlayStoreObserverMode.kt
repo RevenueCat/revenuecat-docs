@@ -12,7 +12,7 @@ class MainApplicationOnlyPlayStoreObserverMode : Application() {
         super.onCreate()
 
         Purchases.logLevel = LogLevel.DEBUG
-        val builder = PurchasesConfiguration.Builder(this, "public_google_sdk_key")
+        val builder = PurchasesConfiguration.Builder(this, Constants.googleApiKey)
             .observerMode(true)
         Purchases.configure(builder.build())
     }
