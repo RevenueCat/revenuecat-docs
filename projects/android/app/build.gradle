@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.revenuecat.docstester'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.revenuecat.docstester"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
