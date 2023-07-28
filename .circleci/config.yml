@@ -40,8 +40,8 @@ commands:
             ssh-keyscan $ip; \
             done 2>/dev/null >> ~/.ssh/known_hosts
 
-  install-sdkman:
-    description: Install SDKMAN
+  install-java:
+    description: Install Java SDK
     steps:
       - run:
           name: Installing SDKMAN
@@ -167,7 +167,7 @@ jobs:
       tag: 2021.10.1
     steps:
       - checkout
-      - install-sdkman
+      - install-java
       - android/restore-gradle-cache:
           cache-prefix: v1a
       - run:
