@@ -48,7 +48,7 @@ Then begin adding valid JSON in the **Metadata** field for your Offering.
 
 Once you've entered your desired JSON object, click **Save** to save your changes.
 
-<img width="600" alt="Saving" src="https://files.readme.io/175995e-Saving_Final_For_Real.png">
+<img width="600" alt="Saving" src="https://files.readme.io/3aec146-175995e-Saving_Final.png">
 
 After saving your changes, you'll be navigated back to the summary page for your Offering, where the new metadata JSON object you've created will be displayed. (NOTE: Objects will be alphabetically ordered)
 
