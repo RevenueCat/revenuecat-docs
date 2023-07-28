@@ -28,11 +28,11 @@ class MainApplication : Application() {
         //     }
         // }
         if (BuildConfig.STORE == "amazon") {
-            val builder = AmazonConfiguration.Builder(this, "public_amazon_sdk_key")
+            val builder = AmazonConfiguration.Builder(this, Constants.amazonApiKey)
                 .observerMode(true)
             Purchases.configure(builder.build())
         } else if (BuildConfig.STORE == "google") {
-            val builder = PurchasesConfiguration.Builder(this, "public_google_sdk_key")
+            val builder = PurchasesConfiguration.Builder(this, Constants.googleApiKey)
                 .observerMode(true)
             Purchases.configure(builder.build())
         }
