@@ -32,7 +32,7 @@ When your PR is approved, a CircleCI job is triggered to render the documents in
 
 A second PR will be automatically generated. This PR contains your rendered documents and should be reviewed thoroughly for any errors in the rendering process. 
 
-When the second PR is approved and ready to be synced, manually approve the hold job called `manual-approval-to-sync-with-readme` another CircleCI build is triggered to send all of our docs to ReadMe through their API.
+When the second PR is reviewed and ready to be synced, manually approve the hold job called `manual-approval-to-sync-with-readme` another CircleCI build is triggered to send all of our docs to ReadMe through their API.
 
 Finally, merge that syncing pull request into the `main` branch of the repository.
 
