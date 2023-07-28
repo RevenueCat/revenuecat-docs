@@ -6,7 +6,7 @@ final class Container {
         Purchases.logLevel = .debug
         Purchases.configure(
             with: Configuration.Builder(withAPIKey: Constants.apiKey)
-                .with(appUserID: "app_user_id")
+                .with(appUserID: UserManager.appUserID)
                 .with(observerMode: true)
                 .build()
         )
