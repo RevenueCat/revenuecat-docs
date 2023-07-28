@@ -93,10 +93,10 @@ No special requirements
 ```swift Swift
 Purchases.logLevel = .debug
 Purchases.configure(
-  with: Configuration.Builder(withAPIKey: Constants.apiKey)
-    .with(appUserID: <app_user_id>)
-    .with(observerMode: true)
-    .build()
+    with: Configuration.Builder(withAPIKey: Constants.apiKey)
+        .with(appUserID: "app_user_id")
+        .with(observerMode: true)
+        .build()
 )
 ```
 ```objectivec Objective-C
@@ -106,40 +106,48 @@ configuration = [configuration withObserverMode:YES];
 configuration = [configuration withAppUserID:@<app_user_id>];
 [RCPurchases configureWithConfiguration:[configuration build]];
 ```
-```kotlin Kotlin
+```kotlin Kotlin (Play Store)
 // If you're targeting only Google Play Store
-class MainApplication: Application() {
+class MainApplicationOnlyPlayStoreObserverMode : Application() {
+    override fun onCreate() {
+        super.onCreate()
+
+        Purchases.logLevel = LogLevel.DEBUG
+        val builder = PurchasesConfiguration.Builder(this, Constants.googleApiKey)
+            .observerMode(true)
+        Purchases.configure(builder.build())
+    }
+}
+```
+```kotlin Kotlin (Play Store + Amazon Appstore)
+class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Purchases.logLevel = LogLevel.DEBUG
-        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())
-    }
-}
 
-// If you're building for the Amazon Appstore, you can use flavors to determine which keys to use
-// In your build.gradle:
-flavorDimensions "store"
-productFlavors {
-    amazon {
-        buildConfigField "String", "STORE", "\"amazon\""
-    }
-
-    google {
-        buildConfigField "String", "STORE", "\"google\""
-    }       
-}
-
-///...
-
-class MainApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-        Purchases.logLevel = LogLevel.DEBUG
-          
-        if (BuildConfig.STORE.equals("amazon")) {
-            Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).observerMode(true).build())
-        } else if (BuildConfig.STORE.equals("google")) {
-            Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).observerMode(true).build())
+        // If you're building for the Amazon Appstore, you can use flavors to determine
+        // which keys to use.
+        //
+        // Add the following to your build.gradle to create a flavor dimension called "store":
+        //
+        // flavorDimensions "store"
+        // productFlavors {
+        //     amazon {
+        //         buildConfigField "String", "STORE", "\"amazon\""
+        //     }
+        //
+        //     google {
+        //         buildConfigField "String", "STORE", "\"google\""
+        //     }
+        // }
+        if (BuildConfig.STORE == "amazon") {
+            val builder = AmazonConfiguration.Builder(this, Constants.amazonApiKey)
+                .observerMode(true)
+            Purchases.configure(builder.build())
+        } else if (BuildConfig.STORE == "google") {
+            val builder = PurchasesConfiguration.Builder(this, Constants.googleApiKey)
+                .observerMode(true)
+            Purchases.configure(builder.build())
         }
     }
 }
