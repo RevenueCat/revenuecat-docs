@@ -28,11 +28,13 @@ We have switched from editing our [docs](https://www.revenuecat.com/docs) in Rea
 
 Edit documents in **docs_source**. When you finish editing, open a pull request (PR).
 
-When your PR is approved, a CircleCI job is triggered to render the documents into ReadMe-flavored markdown in **rendered_docs.**
+When your PR is approved, a CircleCI job is triggered to render the documents into ReadMe-flavored markdown inside the **rendered_docs**.
 
 A second PR will be automatically generated. This PR contains your rendered documents and should be reviewed thoroughly for any errors in the rendering process. 
 
-When the second PR is approved, another CircleCI build is triggered to send all of our docs to ReadMe through their API.
+When the second PR is reviewed and ready to be synced, manually approve the hold job called `manual-approval-to-sync-with-readme` another CircleCI build is triggered to send all of our docs to ReadMe through their API.
+
+Finally, merge that syncing pull request into the `main` branch of the repository.
 
 ## 💻 Adding code snippets
 
@@ -113,9 +115,23 @@ Small edits can easily be made within Github itself, without the need to clone (
 
 ### Pull request #2
 
-A second PR will be auto-generated. After reviewing the **rendered_docs** in the PR, approve the PR squash and merge it.
+A second PR will be auto-generated. After reviewing the **rendered_docs** in the PR, approve the PR:
 
-<img width="745" alt="Screenshot 2023-06-26 at 4 08 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/4ee4bbe4-ae20-4004-9681-77a35d7ea781">
+![Screenshot 2023-06-09 at 6.34.09 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a059a4a1-845e-4768-8675-ad66d99c28a0/Screenshot_2023-06-09_at_6.34.09_PM.png)
+
+Then un-hold the hold job called `manual-approval-to-sync-with-readme` in CircleCI:
+
+![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/d611dc44-0340-48d7-9fb3-85ff3cf556ad)
+
+![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/26c2ef60-09f4-46be-b90a-38876377fe1a)
+
+![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/86b4bdc9-748e-4812-bd3e-e7daf0b8e1aa)
+
+A new job will start to run called `sync-files-if-syncing-pr`. When the job finishes and all checks have passed the docs will be synced. You can go ahead squash and merge the Pull Request:
+
+![Screenshot 2023-06-09 at 6.33.25 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f28058f-701a-4782-a490-d90f0026e1c4/Screenshot_2023-06-09_at_6.33.25_PM.png)
+
+If you don’t want to sync the changes with Readme yet, feel free to close the pull request and delete the branch.
 
 ## 📑 Editing multiple documents
 
