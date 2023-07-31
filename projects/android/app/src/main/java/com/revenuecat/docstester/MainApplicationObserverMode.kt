@@ -30,10 +30,14 @@ class MainApplication : Application() {
         if (BuildConfig.STORE == "amazon") {
             val builder = AmazonConfiguration.Builder(this, Constants.amazonApiKey)
                 .observerMode(true)
+                // Optionally set an app user ID for the user
+                .appUserID(UserManager.appUserID)
             Purchases.configure(builder.build())
         } else if (BuildConfig.STORE == "google") {
             val builder = PurchasesConfiguration.Builder(this, Constants.googleApiKey)
                 .observerMode(true)
+                // Optionally set an app user ID for the user
+                .appUserID(UserManager.appUserID)
             Purchases.configure(builder.build())
         }
     }
