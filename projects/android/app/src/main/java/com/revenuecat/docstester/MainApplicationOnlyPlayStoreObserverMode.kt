@@ -13,8 +13,9 @@ class MainApplicationOnlyPlayStoreObserverMode : Application() {
 
         Purchases.logLevel = LogLevel.DEBUG
         val builder = PurchasesConfiguration.Builder(this, Constants.googleApiKey)
-            .appUserID(UserManager.appUserID)
             .observerMode(true)
+            // Optionally set an app user ID for the user
+            .appUserID(UserManager.appUserID)
         Purchases.configure(builder.build())
     }
 }
