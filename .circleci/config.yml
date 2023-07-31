@@ -188,6 +188,20 @@ jobs:
           name: Run tests
           command: bundle exec rspec
 
+  lint-android-project:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - run:
+          working_directory: projects/android
+          name: Run Detekt
+          command: ./gradlew detekt
+      - run:
+          working_directory: projects/android
+          name: Run tests
+          command: ./gradlew detekt
+
 workflows:
   version: 2
 
