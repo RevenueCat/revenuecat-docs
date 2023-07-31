@@ -87,7 +87,7 @@ RevenueCat seamlessly tracks family shared purchases, so there's no additional s
 
 RevenueCat also makes it easy for developers to tell if their customer is subscribed from a family member sharing their account via the total spent metric on the dashboard. 
 
-![Family sharing details](https://github.com/RevenueCat/revenuecat-docs/assets/110858590/d3811735-59e8-4ddf-9b05-b074382fe5b0)
+<img width="350" src="https://files.readme.io/b2c687a-253415365-d3811735-59e8-4ddf-9b05-b074382fe5b0.png">
 
 
 The `is_family_share` key is included in webhook events. In the REST API, the `ownership_type` is included.
