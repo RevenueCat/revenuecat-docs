@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'io.gitlab.arturbosch.detekt' version '1.23.1'
 }
 
 android {
@@ -47,10 +48,19 @@ android {
 }
 
 dependencies {
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'com.revenuecat.purchases:purchases:+'
     implementation 'com.revenuecat.purchases:purchases-store-amazon:+'
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    autoCorrect = true
+    parallel = true
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
+    baseline = file("$rootDir/config/detekt/detekt-baseline.xml")
 }
