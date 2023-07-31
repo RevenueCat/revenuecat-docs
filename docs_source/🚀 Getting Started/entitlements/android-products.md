@@ -53,9 +53,10 @@ For example, using this format the identifier for your first product that grants
 
 For subscription products, you'll need to add a base plan. Base plans define a billing period, price, and renewal type for purchasing your subscription. Customers never purchase a subscription product directly, they always purchase a base plan of a subscription.
 
-Click "Add base plan" and fill out the associated fields. Make sure to set a price, and click "Activate". Since subscription products can only have a single base plan with the same duration and renewal type, a good way to name base plans could be `<duration>_<renewaltype>`, eg. `annual_autorenewing`.
+Click "Add base plan" and fill out the associated fields. Make sure to set a price, and click "Activate". Since Google introduced multiple base plans with Billing Client 5, it's good practice to be as clear as possible when naming your plans, such as: `<duration>-<renewaltype>`, eg. `annual-autorenewing`.
 
-![](https://files.readme.io/b3a031e-Screen_Shot_2022-06-28_at_5.53.03_PM.png "Screen Shot 2022-06-28 at 5.53.03 PM.png")
+![Screenshot 2023-07-27 at 4 56 24 PM](https://github.com/RevenueCat/revenuecat-docs/assets/104532650/adaf1875-64b7-47c9-8759-ed07765d56b9)
+
 [block:callout]
 {
   "type": "success",
@@ -68,7 +69,7 @@ Click "Add base plan" and fill out the associated fields. Make sure to set a pri
 {
   "type": "info",
   "title": "Representation of Google Play subscription products in RevenueCat",
-  "body": "RevenueCat Products map to Base Plans for Google Play subscriptions, since those are the products that customers can purchase. Newly set up products in RevenueCat follow the identifier format `<subscription_id>:<base_plan_id>`, whereas products that were set up before February 2023 follow the identifier format `<subscription_id>`."
+  "body": "RevenueCat Products map to Base Plans for Google Play subscriptions, since those are the products that customers can purchase. Newly set up products in RevenueCat follow the identifier format `<subscription_id>:<base-plan-id>`, whereas products that were set up before February 2023 follow the identifier format `<subscription_id>`."
 }
 [/block]
 
