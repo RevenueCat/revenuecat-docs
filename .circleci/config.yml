@@ -195,6 +195,10 @@ jobs:
       - checkout
       - run:
           working_directory: projects/android
+          name: Run Detekt
+          command: ./gradlew detekt
+      - run:
+          working_directory: projects/android
           name: Run tests
           command: ./gradlew detekt
 
@@ -226,10 +230,6 @@ workflows:
   no-op-sync:
     jobs:
       - sync-files-if-syncing-pr: *non-syncing-branches
-
-  lint:
-    jobs:
-      - lint-android-project
 
   test:
     jobs:
