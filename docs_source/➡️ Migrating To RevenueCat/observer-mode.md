@@ -93,7 +93,8 @@ No special requirements
   {
     "language": "swift",
     "name": "Swift",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_1.swift"
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Observer mode configuration"
   },
   {
     "language": "objectivec",
@@ -102,8 +103,15 @@ No special requirements
   },
   {
     "language": "kotlin",
-    "name": "Kotlin",
-    "file": "code_blocks/➡️ Migrating To RevenueCat/observer-mode_3.kt"
+    "name": "Kotlin (Play Store)",
+    "file": "projects/android/app/src/main/java/com/revenuecat/docstester/MainApplicationOnlyPlayStoreObserverMode.kt",
+    "region": "Observer mode configuration"
+  },
+  {
+    "language": "kotlin",
+    "name": "Kotlin (Play Store + Amazon Appstore)",
+    "file": "projects/android/app/src/main/java/com/revenuecat/docstester/MainApplicationObserverMode.kt",
+    "region": "Observer mode configuration"
   },
   {
     "language": "java",
