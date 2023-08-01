@@ -55,7 +55,7 @@ For subscription products, you'll need to add a base plan. Base plans define a b
 
 Click "Add base plan" and fill out the associated fields. Make sure to set a price, and click "Activate". Since Google introduced multiple base plans with Billing Client 5, it's good practice to be as clear as possible when naming your plans, such as: `<duration>-<renewaltype>`, eg. `annual-autorenewing`.
 
-![Screenshot 2023-07-27 at 4 56 24 PM](https://github.com/RevenueCat/revenuecat-docs/assets/104532650/adaf1875-64b7-47c9-8759-ed07765d56b9)
+![Screenshot 2023-07-27 at 4 56 24 PM](https://files.readme.io/9f32a53-image.png)
 
 [block:callout]
 {
