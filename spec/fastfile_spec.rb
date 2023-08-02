@@ -2,11 +2,8 @@ require_relative '../fastlane/readme_api/api'
 require_relative '../fastlane/code_blocks/code_blocks'
 require 'rspec'
 
-Actions = Fastlane::Actions
-
 RSpec.describe 'Fastfile' do
     before do
-        @ff = Fastlane::FastFile.new('./fastlane/Fastfile')
         # Set the current working directory to the spec folder so it behaves the same as fastlane
         current_dir = File.dirname(File.expand_path(__FILE__))
         Dir.chdir(current_dir)

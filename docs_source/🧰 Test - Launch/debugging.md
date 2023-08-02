@@ -55,11 +55,11 @@ RevenueCat's SDK will log important information and errors to help you understan
 ]
 [/block]
 
-> 📘 OS_ACTIVITY_MODE and Common iOS Issues
+> 📘 OS_ACTIVITY_MODE
 > 
 > On iOS, disabling `OS_ACTIVITY_MODE` in your Xcode scheme will block debug logs from printing in the console. If you have debug logs enabled, but don't see any output, go to `Product -> Scheme -> Edit Scheme...` in Xcode and uncheck the `OS_ACTIVITY_MODE` environment variable.
 > 
-> Flutter projects using Swift may fail to show debug logs in the console if you are using Visual Studio Code, Android Studio, or other IDE's to run your project. We recommend running your Flutter project using Xcode to view debug logs from the Purchases SDK.
+
 
 # Debug UI
 
@@ -200,6 +200,26 @@ Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an 
   }
 ]
 [/block]
+
+# Debugging with Hybrids
+
+Xcode and Android Studio are our recommended IDEs for debugging. If you are a developer who works primarily with one of our hybrid SDKs and have not encountered either before, you can follow these instructions to open your app and find the debug logs to share with RevenueCat Support or your internal team.
+
+## Xcode
+
+[Install Xcode from the App Store.](https://apps.apple.com/us/app/xcode/id497799835?mt=12). Within the main folder of your app, you should have a folder titled `ios` that contains an Xcode project file, ending in `.xcodeproj`. Open this with Xcode from your file finder or from Xcode itself. You should be able to build and run your app in Xcode without additional editing but if you are getting an error, check that all General and Build Settings are filled out. Your debugger output will open automatically upon building within the Xcode window, and from here you can follow the instructions above.
+
+## Android Studio
+
+[Install Android Studio from the Google Developers website.](https://developer.android.com/studio/install) You can open the main folder of your app in Android Studio either from the main menu or from your file finder. There shouldn't be any additional editing needed to build and run your app, although you most likely need to set up a [virtual Android device](https://developer.android.com/studio/run/managing-avds) when running your app for the first time. The debugging output will open automatically upon building within the Android Studio window, and from here you can follow the instructions above. 
+
+## Considerations
+
+- You can open your Xcode project directly from Google - to do so, right click on the `ios` folder, hover over Flutter, and click "OpenIOS module in Xcode". 
+- You can also run and debug your iOS project inside Android Studio itself by adding an iOS simulator and choosing it as the device before building. To do this however, you will still need Xcode installed. 
+- Flutter projects using Swift may fail to show debug logs in the console if you are using Android Studio. We recommend running your Flutter iOS project using Xcode to view debug logs from the Purchases SDK.
+- If using Flutterflow or another low to no code app builder, it may not be possible for you to see debug logs. We recommend reaching out to the app builder's support team directly to help troubleshoot. 
+- Expo apps for iOS can use Console.app on Mac to view debug logs, while Android projects are still recommended to use Android Studio. For specific help on debugging your React Native Expo project, feel free to reach out to [RevenueCat support](https://app.revenuecat.com/settings/support).
 
 # Next Steps
 

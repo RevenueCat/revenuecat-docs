@@ -1,5 +1,3 @@
-UI = Fastlane::UI
-
 def get_pr_comment_url(github_token, username, branch)
     url = URI.parse("https://api.github.com/repos/RevenueCat/revenuecat-docs/pulls?head=#{username}:#{branch}&state=open")
     http = Net::HTTP.new(url.host, url.port)
@@ -12,7 +10,7 @@ def get_pr_comment_url(github_token, username, branch)
     pr_response = JSON.parse(response.body)
 
     if pr_response.length == 0
-        UI.user_error!("No open PR found for branch #{branch}")
+        Fastlane::UI.user_error!("No open PR found for branch #{branch}")
     end
 
     pr_response[0]['_links']['comments']['href']
@@ -42,9 +40,9 @@ def delete_comment(comment_url, github_token)
 
     response = http.request(request)
     if response.is_a?(Net::HTTPSuccess)
-        UI.message("Deleted previous comment")
+        Fastlane::UI.message("Deleted previous comment")
     else
-        UI.error("Error deleting previous comment.\nCode: #{response.code}\nBody: #{response.read_body}")
+        Fastlane::UI.error("Error deleting previous comment.\nCode: #{response.code}\nBody: #{response.read_body}")
     end
 end
 
@@ -63,8 +61,8 @@ def post_new_comment(comment_url, body, github_token)
 
     response = http.request(request)
     if response.is_a?(Net::HTTPSuccess)
-        UI.message("New comment posted")
+        Fastlane::UI.message("New comment posted")
     else
-        UI.user_error!("Error posting new comment.\nCode: #{response.code}\nBody: #{response.read_body}")
+        Fastlane::UI.user_error!("Error posting new comment.\nCode: #{response.code}\nBody: #{response.read_body}")
     end
 end
