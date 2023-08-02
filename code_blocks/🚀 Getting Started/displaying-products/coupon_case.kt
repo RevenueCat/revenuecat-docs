@@ -12,7 +12,7 @@ for (offering in offerings.all) {
 }
 
 // Fall back on the current offerings if no match was found
-if(offeringSelected == ""){
+if (offeringSelected == "") {
     adapter.offering = offerings.current
 } else {
     adapter.offering = offerings.getOffering(offeringSelected)
