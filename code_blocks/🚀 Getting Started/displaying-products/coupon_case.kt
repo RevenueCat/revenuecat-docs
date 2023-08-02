@@ -4,7 +4,7 @@ var offeringSelected = ""
 // Make sure to gate this with logic--there's no need to check through all offerings
 // if there's no coupon code present for a user!
 
-for(offering in offerings.all) {
+for (offering in offerings.all) {
     if(offering.value.getMetadataString("coupon", "") == couponCode){
        offeringSelected = offering.key
        break
