@@ -1,5 +1,4 @@
 excluded:
-  - code_blocks
   - .git
   - .build
   - Package.swift
