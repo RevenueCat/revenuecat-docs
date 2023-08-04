@@ -119,51 +119,39 @@ Use your own hex codes, select a custom color, or use our color picker to select
 
 1. Option 1: _presentPaywallIfNeeded_ depending on an entitlement
 ```swift
-import RevenueCatUI
-
-struct App: View {
-	var body: some View {
-		ContentView()
-			.presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
-				print("Purchase completed: \(customerInfo.entitlements)")
-        }
-    }
-}
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_1.swift"
+  }
+]
 ```
 
 2. Option 2 _presentPaywallIfNeeded_ with custom logic:
 ```swift
-import RevenueCatUI
-
-struct App: View {
-	var body: some View {
-		ContentView()
-			.presentPaywallIfNeeded { customerInfo in
-				// Returning `true` will present the paywall
-				return customerInfo.entitlements.active.keys.contains("pro")
-			} purchaseCompleted: { customerInfo in
-				print("Purchase completed: \(customerInfo.entitlements)")
-        }
-    }
-}
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_2.swift"
+  }
+]
 ```
 
 3. Option 3: present manually:
 ```swift
-import RevenueCatUI
-
-struct App: View {
-	var body: some View {
- 	  ContentView()
-    	 .presentPaywallIfNeeded { customerInfo in
-			// Returning `true` will present the paywall
-			return customerInfo.entitlements.active.keys.contains("pro")
-		} purchaseCompleted: { customerInfo in
-			print("Purchase completed: \(customerInfo.entitlements)")
-		}
-	}
-}
-
+```swift
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "Swift",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_3.swift"
+  }
+]
 ```
 ## Limitations
 
