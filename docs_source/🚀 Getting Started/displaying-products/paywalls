@@ -17,7 +17,7 @@ To use RevenueCat Paywalls on iOS, simply:
 2. Update your RevenueCat SDK to version ____
 3. Add the RevenueCatUI SPM dependency to your project
 
----- SCREENSHOT ----
+<img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
 
 4. Invoke RevenueCatUI at the point in the user experience when you want to display a paywall (see below)
 
