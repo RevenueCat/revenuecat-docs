@@ -204,6 +204,10 @@ lane :migration do |options|
     clean_docs_source_headers
 end
 
+lane :check_links do |options|
+    check_links(SOURCE_FOLDER)
+end
+
 # Updates the category, order and parent for a given document.
 # It will also update the updatedAt field if needed.
 #

@@ -124,6 +124,17 @@ jobs:
           name: Check rendered docs can render
           command: bundle exec fastlane embed_code_blocks
 
+  check-links:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Check links
+          command: bundle exec fastlane check_links
+
   check-categories:
     docker:
       - image: cimg/ruby:3.1.2
@@ -302,6 +313,7 @@ workflows:
       - run-tests
       - build-projects-macos
       - build-projects-android
+      - check_links
 
   lint:
     jobs:
