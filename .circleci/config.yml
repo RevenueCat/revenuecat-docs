@@ -253,7 +253,7 @@ jobs:
           command: |
             bundle exec fastlane run swiftlint raise_if_swiftlint_error:true strict:true \
             reporter:junit output_file:fastlane/test_output/swiftlint/junit.xml \
-            config_file:projects/iOS/DocsTester/.swiftlint.yml
+            config_file:.swiftlint.yml
       - store_test_results:
           path: fastlane/test_output
       - store_artifacts:
