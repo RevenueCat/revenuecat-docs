@@ -1,5 +1,6 @@
 // handle logging in
-MParticle.sharedInstance().identity.login(identityRequest, completion: { (result: MPIdentityAPIResult?, error: Error?) in
+MParticle.sharedInstance()
+         .identity.login(identityRequest, completion: { (result: MPIdentityAPIResult?, error: Error?) in
     guard error == nil else {
         // handle error
         return

@@ -1,6 +1,6 @@
 Purchases.shared.getOfferings { (offerings, error) in
-    if let e = error {
-        print(e.localizedDescription)
+    if let error = error {
+        print(error.localizedDescription)
     }
 
     guard let offering = offerings?.current else {

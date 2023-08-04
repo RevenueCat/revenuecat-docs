@@ -1,7 +1,8 @@
 import FirebaseAuth
 import RevenueCat
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     // Configure Purchases before Firebase
     Purchases.configure(withAPIKey: "public_sdk_key")
@@ -14,8 +15,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
             // identify Purchases SDK with new Firebase user
             Purchases.shared.logIn(uid, { (info, created, error) in
-                if let e = error {
-                    print("Sign in error: \(e.localizedDescription)")
+                if let error = error {
+                    print("Sign in error: \(error.localizedDescription)")
                 } else {
                     print("User \(uid) signed in")
                 }

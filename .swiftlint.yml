@@ -3,6 +3,7 @@ excluded:
   - "**/.build"
   - "**/Package.swift"
   - "**/vendor"
+  - "**/spec"
 
 opt_in_rules:
   - sorted_imports

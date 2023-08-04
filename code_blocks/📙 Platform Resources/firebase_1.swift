@@ -1,7 +1,8 @@
 import Firebase
 import RevenueCat
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     // Configure Purchases before Firebase
     Purchases.configure(withAPIKey: "public_sdk_key")
@@ -17,8 +18,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
             // identify Purchases SDK with new Firebase user
             Purchases.shared.logIn(uid, { (info, created, error) in
-                if let e = error {
-                    print("Sign in error: \(e.localizedDescription)")
+                if let error = error {
+                    print("Sign in error: \(error.localizedDescription)")
                 } else {
                     print("User \(uid) signed in")
                 }
@@ -32,12 +33,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 // MARK: - Purchases delegate (optional)
 func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
 
-    // You can optionally post to the notification center whenever 
+    // You can optionally post to the notification center whenever
     // customer info changes.
 
-    // You can subscribe to this notification throughout your app 
-    // to refresh tableViews or change the UI based on the user's 
+    // You can subscribe to this notification throughout your app
+    // to refresh tableViews or change the UI based on the user's
     // subscription status
-
-    NotificationCenter.default.post(name: Notification.Name(rawValue: "com.RevenueCat.customerInfoUpdatedNotification"), object: nil)
+    let notificationName = Notification.Name(rawValue: "com.RevenueCat.customerInfoUpdatedNotification")
+    NotificationCenter.default.post(name: notificationName, object: nil)
 }

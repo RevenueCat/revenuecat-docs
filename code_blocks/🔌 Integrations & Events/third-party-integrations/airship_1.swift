@@ -1,4 +1,5 @@
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
   // Configure Purchases
   Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
