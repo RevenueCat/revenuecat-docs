@@ -3,7 +3,7 @@ title: Paywalls (beta)
 slug: paywalls
 hidden: true
 ---
-RevenueCat Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
+RevenueCat's Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
 ## How Paywalls work
 
@@ -88,7 +88,7 @@ We support the following variables:
 
 | Variable                  | Description                                                                                                     | Example Value     |
 | :------------------------ | :-------------------------------------------------------------------------------------------------------------- | :---------------- |
-| product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package         | MindSnacks        |
+| product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package         | CatGPT        |
 | prices                    | The localized price of a given package                                                                          | $39.99            |
 | price_per_period          | The localized price of a given package with its period length if applicable                                     | $39.99/yr         |
 | total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it is not already a monthly package | $39.99 ($1.67/mo) |
@@ -118,56 +118,57 @@ Use your own hex codes, select a custom color, or use our color picker to select
 ## How to display a Paywall in your app
 
 1. Option 1: _presentPaywallIfNeeded_ depending on an entitlement
-```
+```swift
 import RevenueCatUI
 
 struct App: View {
-var body: some View {
-   ContentView()
-     .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
-	print("Purchase completed: \(customerInfo.entitlements)")
-}
-}
+	var body: some View {
+		ContentView()
+			.presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
+				print("Purchase completed: \(customerInfo.entitlements)")
+        }
+    }
 }
 ```
 
 2. Option 2 _presentPaywallIfNeeded_ with custom logic:
-```
+```swift
 import RevenueCatUI
 
 struct App: View {
-var body: some View {
-   ContentView()
-     .presentPaywallIfNeeded { customerInfo in
-		// Returning `true` will present the paywall
-		return customerInfo.entitlements.active.keys.contains("pro")
-} purchaseCompleted: { customerInfo in
-	print("Purchase completed: \(customerInfo.entitlements)")
-}
-}
+	var body: some View {
+		ContentView()
+			.presentPaywallIfNeeded { customerInfo in
+				// Returning `true` will present the paywall
+				return customerInfo.entitlements.active.keys.contains("pro")
+			} purchaseCompleted: { customerInfo in
+				print("Purchase completed: \(customerInfo.entitlements)")
+        }
+    }
 }
 ```
 
 3. Option 3: present manually:
-```
+```swift
 import RevenueCatUI
 
 struct App: View {
-	@State
-	var displayPaywall = false
+	var body: some View {
+ 	  ContentView()
+    	 .presentPaywallIfNeeded { customerInfo in
+			// Returning `true` will present the paywall
+			return customerInfo.entitlements.active.keys.contains("pro")
+		} purchaseCompleted: { customerInfo in
+			print("Purchase completed: \(customerInfo.entitlements)")
+		}
+	}
+}
 
-var body: some View {
-		ContentView()
-  .sheet(self.$displayPaywall) {
-		PaywallView()
-}
-}
-}
 ```
 ## Limitations
 
 **Platforms** (support for more coming)
-✅  iOS 16.0
+✅  iOS 16.0 and higher
 ❌ tvOS
 ❌ watchOS
 ❌ macOS
