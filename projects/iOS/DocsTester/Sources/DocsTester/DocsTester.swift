@@ -1,6 +1,7 @@
 import RevenueCat
 
 final class Container {
+
     func observerModeConfiguration() {
         // MARK: Observer mode configuration
         Purchases.logLevel = .debug
@@ -13,5 +14,5 @@ final class Container {
         )
         // END
     }
-    
+
 }
