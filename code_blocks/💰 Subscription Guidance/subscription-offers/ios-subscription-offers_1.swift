@@ -5,7 +5,7 @@ if let discount = package.storeProduct.discounts.first {
 		} else {
 			// Promotional Offer was not validated, default to normal package terms
 		}
-	} 
+	}
 }
 
 // OR: if using async/await

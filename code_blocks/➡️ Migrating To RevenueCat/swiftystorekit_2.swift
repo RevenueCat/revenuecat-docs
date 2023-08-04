@@ -2,6 +2,6 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
     Purchases.debugLogsEnabled = true
     Purchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)
-    
+
     return true
 }

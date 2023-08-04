@@ -15,6 +15,7 @@ opt_in_rules:
 disabled_rules:
   - orphaned_doc_comment
   - blanket_disable_command
+  - unused_closure_parameter
 
 identifier_name:
   max_length:
