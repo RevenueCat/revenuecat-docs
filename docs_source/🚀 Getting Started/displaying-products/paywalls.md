@@ -119,7 +119,6 @@ Use your own hex codes, select a custom color, or use our color picker to select
 
 1. Option 1: _presentPaywallIfNeeded_ depending on an entitlement
 ```swift
-[block:file]
 [
   {
     "language": "swift",
@@ -131,7 +130,6 @@ Use your own hex codes, select a custom color, or use our color picker to select
 
 2. Option 2 _presentPaywallIfNeeded_ with custom logic:
 ```swift
-[block:file]
 [
   {
     "language": "swift",
@@ -143,8 +141,6 @@ Use your own hex codes, select a custom color, or use our color picker to select
 
 3. Option 3: present manually:
 ```swift
-```swift
-[block:file]
 [
   {
     "language": "swift",
@@ -156,11 +152,11 @@ Use your own hex codes, select a custom color, or use our color picker to select
 ## Limitations
 
 **Platforms** (support for more coming)
-✅  iOS 16.0 and higher
-❌ tvOS
-❌ watchOS
-❌ macOS
-❌ visionOS
-❌ Android
+* ✅  iOS 16.0 and higher
+* ❌ tvOS
+* ❌ watchOS
+* ❌ macOS
+* ❌ visionOS
+* ❌ Android
 
 
