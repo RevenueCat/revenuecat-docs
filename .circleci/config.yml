@@ -200,7 +200,7 @@ jobs:
     executor:
       name: android/android-machine
       resource-class: medium
-      tag: 2021.10.1
+      tag: 2023.07.1
     steps:
       - checkout
       - install-java
@@ -225,14 +225,21 @@ jobs:
           command: bundle exec rspec
 
   lint-android-project:
-    docker:
-      - image: cimg/ruby:3.1.2
+    executor:
+      name: android/android-machine
+      resource-class: medium
+      tag: 2023.07.1
     steps:
       - checkout
+      - install-java
+      - android/restore-gradle-cache:
+          cache-prefix: v1
       - run:
-          working_directory: projects/android
           name: Run Detekt
+          working_directory: projects/android
           command: ./gradlew detekt
+      - android/save-gradle-cache:
+          cache-prefix: v1
 
   lint-ios-project:
     resource_class: macos.x86.medium.gen2
