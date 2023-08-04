@@ -313,7 +313,7 @@ workflows:
       - run-tests
       - build-projects-macos
       - build-projects-android
-      - check_links
+      - check-links
 
   lint:
     jobs:
