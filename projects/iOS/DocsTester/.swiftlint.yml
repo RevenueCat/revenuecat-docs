@@ -2,6 +2,7 @@ excluded:
   - .git
   - .build
   - Package.swift
+  - "**/vendor/**"
 
 opt_in_rules:
   - sorted_imports
