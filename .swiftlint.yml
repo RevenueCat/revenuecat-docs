@@ -1,7 +1,7 @@
 excluded:
   - .git
   - "**/.build"
-  - Package.swift
+  - "**/Package.swift"
   - "**/vendor"
 
 opt_in_rules:
