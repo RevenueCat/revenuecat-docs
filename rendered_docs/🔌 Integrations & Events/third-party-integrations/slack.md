@@ -13,10 +13,6 @@ parentDoc: 649983b4c31b2e000a3c18f1
 
 RevenueCat can send you Slack message to a channel any time an event happens in your app. This lets you keep a close pulse on your app and celebrate those money making moments!
 
-With our Slack integration, you can:
-
-- Receive feedback or reviews from customers real-time, posted to a dedicated channel in your slack workspace.
-
 # Events
 
 The Slack integration tracks the following events:
