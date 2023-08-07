@@ -129,7 +129,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
   {
     "language": "swift",
     "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_1.swift"
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_1.swift"
   }
 ]
 [/block]
@@ -140,7 +140,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
   {
     "language": "swift",
     "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_2.swift"
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_2.swift"
   }
 ]
 [/block]
@@ -151,7 +151,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
   {
     "language": "swift",
     "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_3.swift"
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_3.swift"
   }
 ]
 [/block]
