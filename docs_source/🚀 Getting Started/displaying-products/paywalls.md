@@ -125,7 +125,6 @@ Use your own hex codes, select a custom color, or use our color picker to select
 
 1. Option 1: _presentPaywallIfNeeded_ depending on an entitlement
 [block:file]
-[block:file]
 [
   {
     "language": "swift",
@@ -134,9 +133,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
   }
 ]
 [/block]
-[/block]
 
-[block:file]
 2. Option 2 _presentPaywallIfNeeded_ with custom logic:
 [block:file]
 [
@@ -147,9 +144,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
   }
 ]
 [/block]
-[/block]
 
-[block:file]
 3. Option 3: present manually:
 [block:file]
 [
@@ -159,7 +154,6 @@ Use your own hex codes, select a custom color, or use our color picker to select
     "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_3.swift"
   }
 ]
-[/block]
 [/block]
 
 ## Limitations
