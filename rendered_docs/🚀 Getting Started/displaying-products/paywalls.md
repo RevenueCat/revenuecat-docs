@@ -134,7 +134,7 @@ struct App: View {
         ContentView()
             .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
                 print("Purchase completed: \(customerInfo.entitlements)")
-        }
+            }
     }
 }
 ```
@@ -151,7 +151,7 @@ struct App: View {
                 return customerInfo.entitlements.active.keys.contains("pro")
             } purchaseCompleted: { customerInfo in
                 print("Purchase completed: \(customerInfo.entitlements)")
-        }
+            }
     }
 }
 ```
