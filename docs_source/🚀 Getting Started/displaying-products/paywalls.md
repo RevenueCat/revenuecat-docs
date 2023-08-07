@@ -124,37 +124,44 @@ Use your own hex codes, select a custom color, or use our color picker to select
 ## How to display a Paywall in your app
 
 1. Option 1: _presentPaywallIfNeeded_ depending on an entitlement
-```swift
+[block:file]
+[block:file]
 [
   {
     "language": "swift",
-    "name": "Swift",
+    "name": "",
     "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_1.swift"
   }
 ]
-```
+[/block]
+[/block]
 
+[block:file]
 2. Option 2 _presentPaywallIfNeeded_ with custom logic:
-```swift
+[block:file]
 [
   {
     "language": "swift",
-    "name": "Swift",
+    "name": "",
     "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_2.swift"
   }
 ]
-```
+[/block]
+[/block]
 
+[block:file]
 3. Option 3: present manually:
-```swift
+[block:file]
 [
   {
     "language": "swift",
-    "name": "Swift",
+    "name": "",
     "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls_3.swift"
   }
 ]
-```
+[/block]
+[/block]
+
 ## Limitations
 
 **Platforms** (support for more coming)
