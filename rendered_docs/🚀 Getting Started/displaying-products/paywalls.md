@@ -2,6 +2,8 @@
 title: Paywalls (beta)
 slug: paywalls
 hidden: true
+categorySlug: documentation
+order: 999
 ---
 RevenueCat's Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
@@ -124,37 +126,52 @@ Use your own hex codes, select a custom color, or use our color picker to select
 ## How to display a Paywall in your app
 
 1. Option 1: `presentPaywallIfNeeded` depending on an entitlement
-[block:file]
-[
-  {
-    "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_1.swift"
-  }
-]
-[/block]
+```swift 
+import RevenueCatUI
+
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
+                print("Purchase completed: \(customerInfo.entitlements)")
+        }
+    }
+}
+```
 
 2. Option 2 `presentPaywallIfNeeded` with custom logic:
-[block:file]
-[
-  {
-    "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_2.swift"
-  }
-]
-[/block]
+```swift 
+import RevenueCatUI
+
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded { customerInfo in
+                // Returning `true` will present the paywall
+                return customerInfo.entitlements.active.keys.contains("pro")
+            } purchaseCompleted: { customerInfo in
+                print("Purchase completed: \(customerInfo.entitlements)")
+        }
+    }
+}
+```
 
 3. Option 3: present manually:
-[block:file]
-[
-  {
-    "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_3.swift"
-  }
-]
-[/block]
+```swift 
+import RevenueCatUI
+
+struct App: View {
+    @State
+    var displayPaywall = false
+
+    var body: some View {
+        ContentView()
+            .sheet(self.$displayPaywall) {
+                PaywallView()
+            }
+    }
+}
+```
 
 ## Limitations
 
