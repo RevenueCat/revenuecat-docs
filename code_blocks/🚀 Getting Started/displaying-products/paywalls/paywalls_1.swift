@@ -5,6 +5,6 @@ struct App: View {
         ContentView()
             .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
                 print("Purchase completed: \(customerInfo.entitlements)")
-        }
+            }
     }
 }
