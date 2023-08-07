@@ -123,7 +123,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
 
 ## How to display a Paywall in your app
 
-1. Option 1: _presentPaywallIfNeeded_ depending on an entitlement
+1. Option 1: `presentPaywallIfNeeded` depending on an entitlement
 [block:file]
 [
   {
@@ -134,7 +134,7 @@ Use your own hex codes, select a custom color, or use our color picker to select
 ]
 [/block]
 
-2. Option 2 _presentPaywallIfNeeded_ with custom logic:
+2. Option 2 `presentPaywallIfNeeded` with custom logic:
 [block:file]
 [
   {
