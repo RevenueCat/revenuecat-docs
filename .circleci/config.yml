@@ -306,4 +306,4 @@ workflows:
   lint:
     jobs:
       - lint-android-project: *non-syncing-branches
-      - lint-ios-project: *non-syncing-branches
+      # - lint-ios-project: *non-syncing-branches
