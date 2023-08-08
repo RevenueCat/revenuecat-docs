@@ -122,16 +122,16 @@ The legacy behavior is to merge (alias) any App User IDs that restore the same u
 
 `syncPurchases` is a method we provide in our SDK which allows you to programmatically trigger a restore. This method, much like restorePurchases, reactivates any content that had previously been purchased from the same store account (Apple, Google, or Amazon). 
 
-## syncPurchases considerations
+## Considerations
 
-- `syncPurchases` is usually used for [migrating subscriptions](doc:migrating-existing-subscriptions)
+- `syncPurchases` is typically used for [migrating subscriptions](doc:migrating-existing-subscriptions)
 - Since this method simulates restoring a purchase, there is a risk of transferring or aliasing an anonymous user
 
 # Restoring Purchases for Consumables and Non-renewing Subscriptions
 
-Consumables and non-renewing subscriptions cannot be restored without using an acounts system and logging in users. This is because these types of purchases do not show up on the receipt after its transaction is finished, so if you uninstall or try on a different device, the receipt will be considered a brand new one for a brand new user, with nothing on it (unless there are subscriptions or non-consumables on it).
+Consumables and non-renewing subscriptions can only be restored by using an acount system with custom [App User IDs](https://www.revenuecat.com/docs/user-ids). This is due to these types of in-app purchases not showing up on the underlying store receipt after the transaction is finished. 
 
-If you want to use restore functionality for consumable and non-renewing subscription products you would need to use an accounts system and only allow purchases for logged in users. If not, then we recommend using non-consumable or subscription products instead.
+By logging in your users with a custom App User ID, RevenueCat can continue to provide transaction details in a user's [CustomerInfo](https://www.revenuecat.com/docs/customer-info) for their previous consumable and non-renewing subscription purchases.
 
 # Next Steps
 
