@@ -197,6 +197,11 @@ Reserved attributes can be written directly by setting the key (don't forget the
     "file": "code_blocks/👥 Customers/subscriber-attributes_8.swift"
   },
   {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_23.m"
+  },
+  {
     "language": "kotlin",
     "name": "Kotlin",
     "file": "code_blocks/👥 Customers/subscriber-attributes_9.kt"
@@ -233,6 +238,11 @@ Push tokens can be used to engage with your users through Apple apns or Google c
     "file": "code_blocks/👥 Customers/subscriber-attributes_13.swift"
   },
   {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_24.m"
+  },
+  {
     "language": "kotlin",
     "name": "Kotlin",
     "file": "code_blocks/👥 Customers/subscriber-attributes_14.kt"
@@ -267,6 +277,11 @@ Any attribute can be cleared by passing `null` or an empty string as the key val
     "language": "swift",
     "name": "Swift",
     "file": "code_blocks/👥 Customers/subscriber-attributes_18.swift"
+  },
+  {
+    "language": "objectivec",
+    "name": "Objective-C",
+    "file": "code_blocks/👥 Customers/subscriber-attributes_25.m"
   },
   {
     "language": "kotlin",
