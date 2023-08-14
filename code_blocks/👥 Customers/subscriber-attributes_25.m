@@ -1,1 +1,1 @@
-[[[RCPurchases sharedPurchases] attribution]  setAttributes:@{@"age": @""}];
+[RCPurchases.sharedPurchases.attribution setAttributes:@{@"age": @""}];
