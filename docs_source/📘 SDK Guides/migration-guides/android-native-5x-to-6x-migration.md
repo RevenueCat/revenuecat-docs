@@ -126,7 +126,7 @@ With the new configuration options, there could be multiple offers available whe
 
 ## Migration Guide
 
-The full SDK migration reference can be found here: <https://github.com/RevenueCat/purchases-android/blob/v6/migrations/v6-MIGRATION.md> 
+The full SDK migration reference can be found [here](https://github.com/RevenueCat/purchases-android/blob/main/migrations/v6-MIGRATION.md).
 
 These are the abstraction models we use to support Google’s new features:
 
