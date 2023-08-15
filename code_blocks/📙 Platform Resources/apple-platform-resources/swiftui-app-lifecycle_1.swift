@@ -1,5 +1,4 @@
 struct PaywallView_Previews: PreviewProvider {
-
     private static let product = TestStoreProduct(
         localizedTitle: "My Test Product",
         price: 4.99,
