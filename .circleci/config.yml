@@ -271,12 +271,7 @@ workflows:
 
   open-syncing-pr:
     jobs:
-      - open-syncing-pr:
-          filters:
-            tags:
-              ignore: /.*/
-            branches:
-              only: main
+      - open-syncing-pr
 
   sync:
     jobs:
