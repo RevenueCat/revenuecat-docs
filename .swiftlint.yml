@@ -3,6 +3,7 @@ excluded:
   - "**/.build"
   - "**/Package.swift"
   - "**/vendor"
+  - "**/spec"
 
 opt_in_rules:
   - sorted_imports
@@ -11,10 +12,12 @@ opt_in_rules:
   - multiline_parameters
   - vertical_parameter_alignment
   - vertical_parameter_alignment_on_call
+  - if_let_shadowing
 
 disabled_rules:
   - orphaned_doc_comment
   - blanket_disable_command
+  - unused_closure_parameter
 
 identifier_name:
   max_length:

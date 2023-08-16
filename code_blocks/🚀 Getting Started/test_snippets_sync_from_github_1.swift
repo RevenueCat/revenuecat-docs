@@ -1,6 +1,6 @@
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-  
+
     Purchases.logLevel = .debug
     Purchases.configure(
     with: Configuration.Builder(withAPIKey: Constants.apiKey)
