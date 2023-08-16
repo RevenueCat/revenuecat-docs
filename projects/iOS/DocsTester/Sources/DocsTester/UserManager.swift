@@ -4,7 +4,7 @@ import Foundation
  Configuration file for your app's RevenueCat settings.
  */
 
-struct UserManager {
+enum UserManager {
 
     /*
      The app user ID to configure the SDK with

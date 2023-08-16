@@ -1,3 +1,3 @@
-Purchases.shared.getCustomerInfo { info, error in 
+Purchases.shared.getCustomerInfo { info, error in
 	// customerInfo contains the latest purchases                                  
 }
