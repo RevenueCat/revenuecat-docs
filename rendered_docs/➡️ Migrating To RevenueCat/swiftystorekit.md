@@ -19,7 +19,8 @@ Apple recommends registering an `SKPaymentTransactionObserver` as soon as the ap
 
 **SwiftyStoreKit:**
 ```swift AppDelegate.swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
     SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
 	    for purchase in purchases {
@@ -41,11 +42,12 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 **RevenueCat:**
 ```swift AppDelegate.swift
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
     Purchases.debugLogsEnabled = true
     Purchases.configure(withAPIKey: <public_sdk_key>, appUserID: <my_app_user_id>)
-    
+
     return true
 }
 ```
@@ -63,11 +65,9 @@ SwiftyStoreKit.retrieveProductsInfo([<com.RevenueCat.Purchase1>]) { result in
     if let product = result.retrievedProducts.first {
         let priceString = product.localizedPrice!
         print("Product: \(product.localizedDescription), price: \(priceString)")
-    }
-    else if let invalidProductId = result.invalidProductIDs.first {
+    } else if let invalidProductId = result.invalidProductIDs.first {
         print("Invalid product identifier: \(invalidProductId)")
-    }
-    else {
+    } else {
         print("Error: \(result.error)")
     }
 }
@@ -75,15 +75,15 @@ SwiftyStoreKit.retrieveProductsInfo([<com.RevenueCat.Purchase1>]) { result in
 **RevenueCat:**
 ```swift 
 Purchases.shared.getOfferings { (offerings, error) in
-    if let e = error {
-        print(e.localizedDescription)
+    if let error {
+        print(error.localizedDescription)
     }
-    
+
     guard let offering = offerings?.current else {
         print("No current offering configured")
         return
     }
-    
+
     for package in offering.availablePackages {
         print("Product: \(package.product.localizedDescription), price: \(package.localizedPriceString())")
     }
@@ -167,39 +167,43 @@ To check if the subscription has been successfully activated, check if the `cust
 
 **SwiftyStoreKit:**
 ```swift 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-  //...
-  
-  SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
-    // return true if the content can be delivered by your app
-    // return false otherwise
-   }
+    // ...
 
-  //...
+    SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
+        // return true if the content can be delivered by your app
+        // return false otherwise
+    }
+
+    // ...
 }
 ```
 **RevenueCat:**
 ```swift 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-  //...
-  Purchases.shared.delegate = self
-  //...
+    // ...
+    Purchases.shared.delegate = self
+    // ...
 
 }
 
-func purchases(_ purchases: Purchases, shouldPurchasePromoProduct product: SKProduct, defermentBlock makeDeferredPurchase: @escaping RCDeferredPromotionalPurchaseBlock) {
+func purchases(_ purchases: Purchases,
+               shouldPurchasePromoProduct product: SKProduct,
+               defermentBlock makeDeferredPurchase: @escaping RCDeferredPromotionalPurchaseBlock) {
 
     // Save the deferment block and call it later...
     let defermentBlock = makeDeferredPurchase
 
     // ...or call it right away to proceed with the purchase
     defermentBlock { (transaction, customerInfo, error, cancelled) in
-                    
-          if customerInfo?.entitlements.all[<pro>]?.isActive == true {
+
+        if customerInfo?.entitlements.all[<pro>]?.isActive == true {
             // Unlock that great "pro" content
-          }
+        }
     }
 }
 ```
@@ -215,11 +219,9 @@ With *Purchases SDK* you have the option of deferring the purchase until a later
 SwiftyStoreKit.restorePurchases(atomically: true) { results in
     if results.restoreFailedPurchases.count > 0 {
         print("Restore Failed: \(results.restoreFailedPurchases)")
-    }
-    else if results.restoredPurchases.count > 0 {
+    } else if results.restoredPurchases.count > 0 {
         print("Restore Success: \(results.restoredPurchases)")
-    }
-    else {
+    } else {
         print("Nothing to Restore")
     }
 }
@@ -227,8 +229,8 @@ SwiftyStoreKit.restorePurchases(atomically: true) { results in
 **RevenueCat:**
 ```swift 
 Purchases.shared.restorePurchases { (customerInfo, error) in
-    if let e = error {
-        print("Restore Failed: \(e.localizedDescription)")
+    if let error {
+        print("Restore Failed: \(error.localizedDescription)")
     } else {
         print("Restore Success: \(customerInfo?.activeEntitlements)")
     }
@@ -255,7 +257,7 @@ SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
         let purchaseResult = SwiftyStoreKit.verifyPurchase(
             productId: productId,
             inReceipt: receipt)
-            
+
         switch purchaseResult {
         case .purchased(let receiptItem):
             print("\(productId) is purchased: \(receiptItem)")

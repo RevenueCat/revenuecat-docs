@@ -295,21 +295,21 @@ These types replace native StoreKit types in all public API methods that used th
 Prior to the Swift migration, `Purchases` exposed errors as `NSError`'s, so one could detect errors like this:
 ```swift 
 if error.domain == Purchases.ErrorDomain {
-	switch Purchases.ErrorCode(_nsError: error).code {
-		case .purchaseInvalidError: break
-		default: break
-	}
+    switch Purchases.ErrorCode(_nsError: error).code {
+    case .purchaseInvalidError: break
+    default: break
+    }
 }
 ```
 Starting from Version 4, this becomes much simpler:
 ```swift 
 if let error = error as? RevenueCat.ErrorCode {
-	switch error {
-		case .purchaseInvalidError: break
-		default: break
-	}
+    switch error {
+    case .purchaseInvalidError: break
+    default: break
+    }
 } else {
-	// Error is a different type
+    // Error is a different type
 }
 ```
 
