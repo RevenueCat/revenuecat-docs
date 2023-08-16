@@ -147,7 +147,7 @@ jobs:
             - run:
                 name: Skipping syncing since this is a not syncing branch
                 command:
-                    echo "Skipping syncing since this is a not syncing branch"
+                  echo "Skipping syncing since this is a not syncing branch"
       - when:
           condition:
             matches: { pattern: "^sync/.*", value: << pipeline.git.branch >> }
@@ -164,7 +164,7 @@ jobs:
             - run:
                 name: Syncing files to Readme
                 command: |
-                  bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
+                  bundle exec fastlane sync_files_to_readme
 
   open-syncing-pr:
     docker:
@@ -178,7 +178,7 @@ jobs:
       - run:
           name: Render docs
           command: |
-            bundle exec fastlane open_syncing_pr github_pr_token:$GITHUB_TOKEN readme_api_key:$README_API_KEY
+            bundle exec fastlane open_syncing_pr
 
   build-projects-macos:
     resource_class: macos.x86.medium.gen2
