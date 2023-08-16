@@ -17,8 +17,8 @@ Subscriber attributes are useful for storing additional, structured information 
 Subscriber attributes can be set through the SDK by passing a dictionary of strings to the `setAttributes()` method on the shared Purchases instance. 
 
 ```swift Swift
-Purchases.shared.attribution.setAttributes(["age" : "24",
-                                            "custom_group_id" : "abc123"])
+Purchases.shared.attribution.setAttributes(["age": "24",
+                                            "custom_group_id": "abc123"])
 ```
 ```objectivec Objective-C
 [RCPurchases.sharedPurchases.attribution setAttributes:@{
@@ -257,7 +257,7 @@ purchases.SetPushToken(deviceToken);
 Any attribute can be cleared by passing `null` or an empty string as the key value. Individual attributes can also be cleared for a specific user in their [customer view](doc:customers).
 
 ```swift Swift
-Purchases.shared.attribution.setAttributes(["age" : ""])
+Purchases.shared.attribution.setAttributes(["age": ""])
 ```
 ```objectivec Objective-C
 [RCPurchases.sharedPurchases.attribution setAttributes:@{@"age": @""}];
