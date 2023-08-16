@@ -109,7 +109,7 @@ desc "Embeds code blocks from all files within the [block:file] and [/block] tag
 lane :post_circleci_artifacts do |options|
     circleci_build_num = ENV['CIRCLE_BUILD_NUM']
     circleci_token = ENV['CIRCLE_TOKEN']
-    github_token = ENV['GITHUB_TOKEN']
+    github_token = ENV['GITHUB_API_TOKEN']
 
     post_circleci_artifacts(circleci_build_num, circleci_token, github_token)
 end
