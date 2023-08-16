@@ -71,12 +71,11 @@ After saving your changes, you'll be navigated back to the summary page for your
 You can access metadata directly from the Offering object in the RevenueCat SDKs.
 
 ```swift 
-Purchases.shared.getOfferings { (offerings, error) in
-    if let offering = offerings?.current {
-        let paywallTitle = offering.getMetadataValue(for: "title", default: "Get Pro")
-        let paywallSubtitle = offering.getMetadataValue(for: "subtitle", default: "Unlock all the features")
-        let paywallButton = offering.getMetadataValue(for: "button", default: "Redeem Trial")
-    }
+let offerings = try await Purchases.shared.offerings()
+if let offering = offerings?.current {
+    let paywallTitle = offering.getMetadataValue(for: "title", default: "Get Pro")
+    let paywallSubtitle = offering.getMetadataValue(for: "subtitle", default: "Unlock all the features")
+    let paywallButton = offering.getMetadataValue(for: "button", default: "Redeem Trial")
 }
 ```
 ```kotlin 
@@ -94,3 +93,7 @@ Purchases.sharedInstance.getOfferingsWith({ error ->
 ## Offering metadata limits
 
 - Offering metadata has a max limit of 4000 characters for the JSON object. If you reach that limit, you'll see an error when you attempt to save the Offering.
+
+## Offering metadata use case examples
+
+You can find some example use cases in action in our [Offering Metadata example use cases](doc:offering-metadata-examples) doc.

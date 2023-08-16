@@ -85,3 +85,7 @@ You can access metadata directly from the Offering object in the RevenueCat SDKs
 ## Offering metadata limits
 
 - Offering metadata has a max limit of 4000 characters for the JSON object. If you reach that limit, you'll see an error when you attempt to save the Offering.
+
+## Offering metadata use case examples
+
+You can find some example use cases in action in our [Offering Metadata example use cases](doc:offering-metadata-examples) doc.
