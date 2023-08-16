@@ -64,13 +64,15 @@ lane :open_syncing_pr do |options|
     readme_api_key = ENV["RDME_API_KEY"]
     UI.user_error!("Missing README API key") unless readme_api_key
 
+    github_pr_token = ENV["GITHUB_API_TOKEN"]
+
     latest_commit_sha = get_latest_commit_sha
 
     current_version = get_current_version
 
     new_branch_name = "sync/#{current_version}"
 
-    validate_local_config_status_for_bump(new_branch_name)
+    validate_local_config_status_for_bump(new_branch_name, github_pr_token)
 
     create_version_if_needed(current_version, readme_api_key)
 
@@ -87,7 +89,7 @@ lane :open_syncing_pr do |options|
 
     if git_repo_dirty?
         commit_changes_and_push_current_branch("Rendered docs for commit #{latest_commit_sha}")
-        create_pr_to_main(pr_title, body, REPO_NAME, new_branch_name, [])
+        create_pr_to_main(pr_title, body, REPO_NAME, new_branch_name, github_pr_token, [])
     else
         UI.message("Repository is clean. Nothing to commit.")
     end
@@ -107,7 +109,7 @@ desc "Embeds code blocks from all files within the [block:file] and [/block] tag
 lane :post_circleci_artifacts do |options|
     circleci_build_num = ENV['CIRCLE_BUILD_NUM']
     circleci_token = ENV['CIRCLE_TOKEN']
-    github_token = ENV['GITHUB_TOKEN']
+    github_token = ENV['GITHUB_API_TOKEN']
 
     post_circleci_artifacts(circleci_build_num, circleci_token, github_token)
 end
@@ -305,9 +307,8 @@ def git_repo_dirty?
 end
 
 # Replace with fastlane plugin's
-def validate_local_config_status_for_bump(new_branch)
+def validate_local_config_status_for_bump(new_branch, github_pr_token)
     # Ensure GitHub API token is set
-    github_pr_token = ENV["GITHUB_API_TOKEN"]
     if github_pr_token.nil? || github_pr_token.empty?
         UI.error("A github_pr_token parameter or an environment variable GITHUB_API_TOKEN is required to create a pull request")
         UI.error("Please make a fastlane/.env file from the fastlane/.env.SAMPLE template")
@@ -352,8 +353,9 @@ def commit_current_changes(commit_message)
     sh("git commit -am '#{commit_message}'")
 end
 
-def create_pr_to_main(title, body, repo_name, head_branch, labels = [])
+def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labels = [])
     Actions::CreatePullRequestAction.run(
+        api_token: github_pr_token,
         title: title,
         base: 'main',
         body: body,
