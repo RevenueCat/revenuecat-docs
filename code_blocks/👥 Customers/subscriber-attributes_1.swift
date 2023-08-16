@@ -1,2 +1,2 @@
-Purchases.shared.setAttributes(["age" : "24", 
-                             "custom_group_id" : "abc123"])
+Purchases.shared.attribution.setAttributes(["age": "24",
+                                            "custom_group_id": "abc123"])

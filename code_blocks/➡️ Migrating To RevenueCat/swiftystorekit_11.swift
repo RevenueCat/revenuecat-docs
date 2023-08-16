@@ -7,7 +7,7 @@ SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
         let purchaseResult = SwiftyStoreKit.verifyPurchase(
             productId: productId,
             inReceipt: receipt)
-            
+
         switch purchaseResult {
         case .purchased(let receiptItem):
             print("\(productId) is purchased: \(receiptItem)")

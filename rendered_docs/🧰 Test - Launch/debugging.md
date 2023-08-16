@@ -81,7 +81,7 @@ RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays 
 
 // This will display it automatically on app-launch:
 ContentView()
-  .debugRevenueCatOverlay()
+    .debugRevenueCatOverlay()
 
 // Alternatively, you can control when to present it:
 @State private var debugOverlayVisible: Bool = false
@@ -90,17 +90,17 @@ var body: some View {
     Button {
         self.debugOverlayVisible = true
     } label: {
-        Text("Display debug screen"
+        Text("Display debug screen")
     }
-        .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
+    .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
 }
 ```
 ```swift UIKit
 // To display the overlay in UIKit, use the `presentDebugRevenueCatOverlay` method on any UIViewController:
-self.presentDebugRevenueCatOverlay()  
+self.presentDebugRevenueCatOverlay()
 
 // or, initialize the DebugViewController and present it manually:
-let debugOverlay = RevenueCat.DebugViewController()  
+let debugOverlay = RevenueCat.DebugViewController()
 self.present(debugOverlay, animated: true)
 ```
 
