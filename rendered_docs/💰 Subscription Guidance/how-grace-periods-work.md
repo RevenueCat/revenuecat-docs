@@ -23,6 +23,16 @@ As mentioned, billing issues occur when a user is unable to complete a subscript
 
 RevenueCat will only send **one** billing issue event -- additional payment failures won't trigger additional billing issue events, unless a renewal is successful between payment failures or the subscription ends and is restarted. 
 
+## SDK Prompt
+
+Starting in iOS 16.4+, a system-sheet will automatically be displayed if a user encounters a billing issue, with a prompt for the customer to update their payment method. You can test this behavior by following Apple's [instructions](https://developer.apple.com/documentation/storekit/in-app_purchase/testing_in-app_purchases_with_sandbox/testing_failing_subscription_renewals_and_in-app_purchases#4182397). 
+
+1. Make a sandbox purchase on a real device using iOS 16.4+
+2. Once the purchase is completed, background or close the app
+3. Disable renewals in `Settings -> App Store -> Sandbox Account -> Manage`
+4. Wait a few minutes ([depending on the product duration](https://www.revenuecat.com/blog/engineering/the-ultimate-guide-to-subscription-testing-on-ios/#h-subscription-renewal-rates-in-the-developer-sandbox)) and allow the subscription to attempt renewal. Renewal will fail.
+5. Relaunch or reopen your app, and see the billing issue prompt
+
 # Entering a Grace Period
 
 When a subscription enters a grace period, RevenueCat detects the change automatically. Users will retain access to their subscriptions, but we'll immediately send events indicating the subscription has been **cancelled**. These subscriptions are considered cancelled because they are now past due, but will not be considered expired until the end of their grace period. During this time, a subscription may convert to paid through additional billing attempts from the store or by the customer updating their billing information.

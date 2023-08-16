@@ -1,4 +1,5 @@
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
     SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
 	    for purchase in purchases {

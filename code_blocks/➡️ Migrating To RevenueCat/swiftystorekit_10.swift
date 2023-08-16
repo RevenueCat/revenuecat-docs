@@ -1,6 +1,6 @@
 Purchases.shared.restorePurchases { (customerInfo, error) in
-    if let e = error {
-        print("Restore Failed: \(e.localizedDescription)")
+    if let error {
+        print("Restore Failed: \(error.localizedDescription)")
     } else {
         print("Restore Success: \(customerInfo?.activeEntitlements)")
     }
