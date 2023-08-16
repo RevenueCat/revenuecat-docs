@@ -86,7 +86,8 @@ Begin by creating a delegate class and initializing the *Purchases* SDK like the
 import Purchases
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Purchases.debugLogsEnabled = true
         Purchases.configure(withAPIKey: "api_key")
         return true
@@ -102,7 +103,7 @@ As previously mentioned, the new `@UIApplicationDelegateAdaptor` property attach
 @main
 struct SampleApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
