@@ -66,9 +66,14 @@ lane :open_syncing_pr do |options|
 
     github_pr_token = ENV["GITHUB_API_TOKEN"]
 
-    last_commit = last_git_commit
-    last_commit_message = last_commit[:message]
-    latest_commit_sha = commit[:abbreviated_commit_hash]
+    latest_commit = last_git_commit
+    latest_commit_message = latest_commit[:message]
+    latest_commit_sha = latest_commit[:abbreviated_commit_hash]
+
+    if latest_commit_message.start_with?("[SKIP]")
+        UI.message("Skipping the lane due to commit message starting with [SKIP]: #{latest_commit_message}")
+        next
+    end
 
     current_version = get_current_version
 
