@@ -109,13 +109,14 @@ It's up to you to decide which users you want to present a Promotional Offer to.
 Before you can present a Promotional Offer to a user, you first need to fetch the `PromoOffer`. This is done by passing the `StoreProduct` and a `StoreProductDiscount` to the `.getPromotionalOffer` method, which uses the Subscription Key from above to validate the discount and to provide a valid `PromoOffer`:
 ```swift 
 if let discount = package.storeProduct.discounts.first {
-	Purchases.shared.getPromotionalOffer(forProductDiscount: discount, product: package.storeProduct) { (promoOffer, error) in
-		if let promoOffer = promoOffer {
-			// Promotional Offer validated, show terms of your offer to your customers
-		} else {
-			// Promotional Offer was not validated, default to normal package terms
-		}
-	} 
+    Purchases.shared.getPromotionalOffer(forProductDiscount: discount,
+                                         product: package.storeProduct) { (promoOffer, error) in
+        if let promoOffer {
+            // Promotional Offer validated, show terms of your offer to your customers
+        } else {
+            // Promotional Offer was not validated, default to normal package terms
+        }
+    }
 }
 
 // OR: if using async/await
@@ -140,10 +141,11 @@ if (paymentDiscount) {
 
 After successfully fetching the `PromoOffer`, you can now display the Promotional Offer to the user however you'd like. If the user chooses to purchase, pass a `Package` and `PromoOffer` to the `.purchase(package:promotionalOffer:)` method.
 ```swift 
-Purchases.shared.purchase(package: package, promotionalOffer: promoOffer) { transaction, customerInfo, error, userCancelled in
-	if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
-		// Unlock that entitlemenets content
-	}
+Purchases.shared.purchase(package: package,
+                          promotionalOffer: promoOffer) { transaction, customerInfo, error, userCancelled in
+    if customerInfo?.entitlements.all[<your_entitlement_id>]?.isActive == true {
+        // Unlock that entitlements content
+    }
 }
 ```
 ```objectivec Objective-C
