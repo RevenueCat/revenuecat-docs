@@ -173,7 +173,7 @@ Purchases.shared.invalidateCustomerInfoCache()
 ```
 After the cache has been invalidated, you can fetch CustomerInfo again to retrieve the latest information about the customer and their purchases and unlock the features they are entitled to.
 ```swift 
-Purchases.shared.getCustomerInfo { info, error in 
+Purchases.shared.getCustomerInfo { info, error in
 	// customerInfo contains the latest purchases                                  
 }
 ```

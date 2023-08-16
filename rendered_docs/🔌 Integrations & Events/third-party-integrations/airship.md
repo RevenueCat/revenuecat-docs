@@ -162,18 +162,19 @@ If you're using the Airship SDK, you can either send the channel ID to RevenueCa
 Setting the Airship channel ID in RevenueCat is the preferred way for identifying users in Airship. Call `setAirshipChannelID` on the Purchases SDK to have RevenueCat use the channel ID to send events to Airship.
 
 ```swift 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
   // Configure Purchases
   Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-  
+
   // Initialize Airship
   Airship.takeOff(launchOptions: launchOptions)
-  
+
   // Set the Airship channel ID in Purchases
   let channelID = Airship.channel.identifier
   Purchases.shared.attribution.setAirshipChannelID(channelID)
-  
+
   // ...
 
   return true
@@ -242,17 +243,18 @@ public void onCreate(Bundle savedInstanceState) {
 **Setting the Airship channel ID in RevenueCat is preferred over using Named Users, even if you have a user authentication system.** However, if you're already using Named Users in your Airship integration, you have the option to set the Named User in the Airship SDK as the same app user ID as RevenueCat. Ensure [Named Users is enabled in your Airship dashboard](https://docs.airship.com/guides/messaging/user-guide/project/enable-features/#named-users).
 
 ```swift 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+func application(application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
   // Configure Purchases
   Purchases.configure(withAPIKey: "public_sdk_key", appUserID: "my_app_user_id")
-  
+
   // Initialize Airship
   Airship.takeOff(launchOptions: launchOptions)
-  
+
   // Identify the user in Airship
   Airship.contact.identify("my_app_user_id")
-  
+
   // ...
 
   return true
