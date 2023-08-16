@@ -81,7 +81,7 @@ When you're ready to purchase one of the coin packages, pass the package object 
 
 ```swift 
 Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled)
-	if let customerInfo = customerInfo, error == nil {
+	if let customerInfo, error == nil {
 		// validate the purchase with your server, and display content
 	}
 }

@@ -1,4 +1,4 @@
-Purchases.restoreTransactions(
+Purchases.restorePurchases(
   info => {
     //... check customerInfo to see if entitlement is now active
   },

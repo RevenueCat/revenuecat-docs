@@ -12,7 +12,7 @@ It is recommended that all apps have some way for users to trigger the `restoreP
 
 ```swift 
 Purchases.shared.restorePurchases { customerInfo, error in
-    //... check customerInfo to see if entitlement is now active
+    // ... check customerInfo to see if entitlement is now active
 }
 ```
 ```objectivec 
@@ -55,7 +55,7 @@ try {
 }
 ```
 ```javascript Cordova
-Purchases.restoreTransactions(
+Purchases.restorePurchases(
   info => {
     //... check customerInfo to see if entitlement is now active
   },

@@ -1,1 +1,1 @@
-Purchases.shared.attribution.setAttributes(["age" : ""])
+Purchases.shared.attribution.setAttributes(["age": ""])

@@ -234,7 +234,7 @@ If your app has multiple entitlements and you need to check if a user is subscri
 
 ```swift 
 if !customerInfo.entitlements.active.isEmpty {
-    //user has access to some entitlement
+    // user has access to some entitlement
 }
 ```
 ```objectivec 
