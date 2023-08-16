@@ -1,5 +1,5 @@
 Purchases.shared.getOfferings { (offerings, error) in
-    if let error = error {
+    if let error {
         print(error.localizedDescription)
     }
 

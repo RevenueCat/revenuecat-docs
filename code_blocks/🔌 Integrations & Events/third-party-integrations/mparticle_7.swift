@@ -5,7 +5,7 @@ MParticle.sharedInstance()
         // handle error
         return
     }
-    guard let result = result else {
+    guard let result else {
         // handle empty result
         return
     }

@@ -13,7 +13,7 @@ options.onIdentifyComplete = { (result: MPIdentityApiResult?, error: Error?) in
         // handle error
         return
     }
-    guard let result = result else {
+    guard let result else {
         // handle empty result
         return
     }

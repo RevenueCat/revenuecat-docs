@@ -18,7 +18,7 @@ func application(_ application: UIApplication,
 
             // identify Purchases SDK with new Firebase user
             Purchases.shared.logIn(uid, { (info, created, error) in
-                if let error = error {
+                if let error {
                     print("Sign in error: \(error.localizedDescription)")
                 } else {
                     print("User \(uid) signed in")
