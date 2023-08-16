@@ -66,7 +66,9 @@ lane :open_syncing_pr do |options|
 
     github_pr_token = ENV["GITHUB_API_TOKEN"]
 
-    latest_commit_sha = get_latest_commit_sha
+    last_commit = last_git_commit
+    last_commit_message = last_commit[:message]
+    latest_commit_sha = commit[:abbreviated_commit_hash]
 
     current_version = get_current_version
 
