@@ -208,7 +208,7 @@ end
 lane :check_links do |options|
     errors = check_links_in_folder(SOURCE_FOLDER)
     if errors.length > 0
-        UI.user_error!("Found broken links:\n#{errors}")
+        UI.user_error!("Found broken links:\n#{errors.join("\n")}")
     end
 end
 
