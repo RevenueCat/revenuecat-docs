@@ -325,6 +325,7 @@ These are some representative samples of webhooks you might receive from Revenue
      "transferred_from": ["00005A1C-6091-4F81-BE77-F0A83A271AB6"],
      "transferred_to": ["4BEDB450-8EF2-11E9-B475-0800200C9A66"],
      "type": "TRANSFER",
+     "environment": "PRODUCTION"
  },
  "api_version": "1.0"
 }
