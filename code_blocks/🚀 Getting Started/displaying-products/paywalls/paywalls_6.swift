@@ -1,5 +1,8 @@
 import UIKit
 
+import RevenueCat
+import RevenueCatUI
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
