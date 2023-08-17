@@ -1,3 +1,6 @@
+import SwiftUI
+
+import RevenueCat
 import RevenueCatUI
 
 struct App: View {
