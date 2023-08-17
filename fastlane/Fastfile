@@ -24,6 +24,7 @@ import 'files.rb'
 import 'circleci_api/api.rb'
 import 'code_blocks/code_blocks.rb'
 import 'rendering.rb'
+import 'checks.rb'
 
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
