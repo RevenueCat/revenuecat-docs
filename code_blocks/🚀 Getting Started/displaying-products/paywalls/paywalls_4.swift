@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
         present(controller, animated: true, completion: nil)
     }
-    
 }
 
 extension ViewController: PaywallViewControllerDelegate {
