@@ -24,7 +24,7 @@ def check_links_in_file(markdown_file)
             response = URI.open(url)
             Fastlane::UI.message("OK - #{url}") if response.status[0] == '200'
         rescue OpenURI::HTTPError => e
-            Fastlane::UI.error("Broken link in #{markdown_file}: #{url} - #{e.message}")
+            Fastlane::UI.error("Broken link in #{markdown_file}: #{url} - #{e.message} - #{e}")
             errors << url
         rescue StandardError => e
             Fastlane::UI.message("Error checking link: #{url} - #{e.message}")
