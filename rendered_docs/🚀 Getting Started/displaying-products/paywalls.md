@@ -87,7 +87,7 @@ For some Paywall strings you may want to set values based on the package that’
 
 To make this easier and ensure accuracy, we recommend using **Variables** for these values that are package-specific.
 
-For example, to show a CTA like “Try 7 Days Free & Subscribe”, you should instead use the **{{ sub_offer_duration }}** variable, and enter “Try {{ intro_duration }} Free & Subscribe” to ensure the string is accurate for any product you use, even if you make changes to the nature of the offer in the future.
+For example, to show a CTA like “Try 7 Days Free & Subscribe”, you should instead use the **{{ sub_offer_duration }}** variable, and enter “Try {{ sub_offer_duration }} Free & Subscribe” to ensure the string is accurate for any product you use, even if you make changes to the nature of the offer in the future.
 
 We support the following variables:
 
@@ -113,7 +113,7 @@ RevenueCat Paywalls automatically check for Introductory Offer eligibility, and 
 
 #### Uploading images
 
-Use the **Select a file** button for the applicable image to upload your own to use for your Paywall. We’ll center and scale the image to fit, regardless of its aspect ratio, so we recommend using source images that are appropriate for the area of the template they cover. We support .jpg, jpeg, and .png files up to 5mb.
+Use the **Select a file** button for the applicable image to upload your own to use for your Paywall. We’ll center and scale the image to fit, regardless of its aspect ratio, so we recommend using source images that are appropriate for the area of the template they cover. We support .jpg, jpeg, and .png files up to 5MB.
 
 #### Colors
 
@@ -123,10 +123,17 @@ Use your own hex codes, select a custom color, or use our color picker to select
 > 
 > The color picker can be used outside of your browser window as well if you need to grab colors from assets in other applications.
 
-## How to display a Paywall in your app
+## How to display a fullscreen Paywall in your app
+
+RevenueCat Paywalls will, by default, show paywalls fullscreen and there are multiple ways to do this with SwiftUI and UIKit.
+
+### SwiftUI
 
 1. Option 1: `presentPaywallIfNeeded` depending on an entitlement
 ```swift 
+import SwiftUI
+
+import RevenueCat
 import RevenueCatUI
 
 struct App: View {
@@ -139,8 +146,11 @@ struct App: View {
 }
 ```
 
-2. Option 2 `presentPaywallIfNeeded` with custom logic:
+2. Option 2: `presentPaywallIfNeeded` with custom logic
 ```swift 
+import SwiftUI
+
+import RevenueCat
 import RevenueCatUI
 
 struct App: View {
@@ -156,8 +166,11 @@ struct App: View {
 }
 ```
 
-3. Option 3: present manually:
+3. Option 3: present manually
 ```swift 
+import SwiftUI
+
+import RevenueCat
 import RevenueCatUI
 
 struct App: View {
@@ -172,6 +185,118 @@ struct App: View {
     }
 }
 ```
+
+### UIKIt
+
+1. Option 1: manually present `PaywallViewController`
+```swift 
+import UIKit
+
+import RevenueCat
+import RevenueCatUI
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    @IBAction func presentPaywall() {
+        let controller = PaywallViewController()
+        controller.delegate = self
+
+        present(controller, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: PaywallViewControllerDelegate {
+
+    func paywallViewController(_ controller: PaywallViewController,
+                               didFinishPurchasingWith customerInfo: CustomerInfo) {
+
+    }
+
+}
+```
+
+## How to embed a Paywall into your views
+
+RevenueCatUI also has smaller paywalls for you to embed or overlay in your app. You could display these as inline banners in your app, overlay your app as a sheet promoting an upgrade, or as a footer in a custom paywall.
+
+This can all be done by passing `PaywallViewMode` into `PaywallView`. The options are:
+- `PaywallViewMode.fullScreen`
+- `PaywallViewMode.card`
+- `PaywallViewMode.condensedCard`
+
+### SwiftUI
+
+1. Option 1: `PaywallView` in `UIHostingController`
+```swift 
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct App: View {
+
+    var body: some View {
+        VStack {
+            ScrollView {
+                VStack {
+                    // Your custom paywall design content
+                }.frame(maxWidth: .infinity)
+            }
+
+            Spacer()
+
+            PaywallView(mode: .condensedCard) // or .card
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Color(white: 0.8)
+                .edgesIgnoringSafeArea(.all)
+        )
+    }
+
+}
+```
+
+### UIKit
+
+1. Option 1: `PaywallView` in `UIHostingController`
+```swift 
+import UIKit
+
+import RevenueCat
+import RevenueCatUI
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let paywallView = PaywallView(mode: .condensedCard) // or .card
+        paywall.delegate = self
+
+        let hostingController = UIHostingController(rootView: paywallView)
+
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+    }
+
+}
+
+extension ViewController: PaywallViewControllerDelegate {
+
+    func paywallViewController(_ controller: PaywallViewController,
+                               didFinishPurchasingWith customerInfo: CustomerInfo) {
+
+    }
+
+}
+```
+
 
 ## Limitations
 
