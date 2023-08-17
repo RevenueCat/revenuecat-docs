@@ -205,7 +205,7 @@ lane :migration do |options|
 end
 
 lane :check_links do |options|
-    check_links(SOURCE_FOLDER)
+    check_links_in_folder(SOURCE_FOLDER)
 end
 
 # Updates the category, order and parent for a given document.

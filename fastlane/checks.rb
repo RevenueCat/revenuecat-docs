@@ -1,4 +1,4 @@
-def check_links(folder)
+def check_links_in_folder(folder)
     markdown_files(folder).each do |markdown_file|
         check_links_in_file(markdown_file)
     end
