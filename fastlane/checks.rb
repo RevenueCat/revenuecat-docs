@@ -30,4 +30,5 @@ def check_links_in_file(markdown_file)
             Fastlane::UI.message("Error checking link: #{url} - #{e.message}")
         end
     end
+    errors
 end
