@@ -206,7 +206,10 @@ lane :migration do |options|
 end
 
 lane :check_links do |options|
-    check_links_in_folder(SOURCE_FOLDER)
+    errors = check_links_in_folder(SOURCE_FOLDER)
+    if errors.length > 0
+        UI.user_error!("Found broken links:\n#{errors}")
+    end
 end
 
 # Updates the category, order and parent for a given document.
