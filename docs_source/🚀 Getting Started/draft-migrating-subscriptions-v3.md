@@ -161,7 +161,7 @@ You can find a sample iOS reference csv file [here](https://github.com/RevenueCa
   * product_id
   * token
 
-You can find a reference Google Play import csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/android_receipt_import_sample.csv).
+You can find a reference Google Play import csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/Android/android_receipt_import_sample.csv).
 
 **Important: **We need to know your [API quota](https://developers.google.com/android-publisher/quotas) with Google and approximately how many remaining requests per day you have so we don't exceed your quota.
 
