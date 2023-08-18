@@ -63,7 +63,9 @@ RevenueCat's SDK will log important information and errors to help you understan
 
 # Debug UI
 
-RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+RevenueCat's iOS 4.22.0+ and Android 6.9.2+ SDKs provide an overlay for your app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+
+## iOS
 
 [block:image]
 {
@@ -100,6 +102,51 @@ RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays 
 You can export your configuration details in JSON format to share with RevenueCat support if you need to open a support ticket.
 
 Note: The debug UI won't compile for release builds, so you'll need to disable the behavior before archiving for release.
+
+## Android
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://github.com/RevenueCat/revenuecat-docs/assets/808417/77002c75-43b6-477c-8e7d-972385648a13",
+        null,
+        "RevenueCat Android Debug UI"
+      ],
+      "align": "center",
+      "sizing": "240px",
+      "border": true
+    }
+  ]
+}
+[/block]
+
+In order to use the overlay, you need to include the debug view library which is available on Maven and can be included via Gradle. Currently, this is only available as a Jetpack Compose Composable.
+
+[![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
+
+[block:file]
+[
+  {
+    "language": "groovy",
+    "name": "build.gradle",
+    "file": "code_blocks/🧰 Test - Launch/debugging_13.groovy"
+  }
+]
+[/block]
+
+Then, you can use it from your own `@Composable`'s like this:
+
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "Jetpack Compose",
+    "file": "code_blocks/🧰 Test - Launch/debugging_14.kt"
+  }
+]
+[/block]
 
 ## Reference
 
