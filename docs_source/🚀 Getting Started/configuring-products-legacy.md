@@ -53,7 +53,7 @@ Products are a one-to-one mapping of the product identifiers configured for your
 }
 [/block]
 ## 1. Set up products in the app stores
-Before products can be purchased, they need to be properly set up in App Store Connect, Play Console, and Stripe. If you've never set up products before or are experiencing issues, our posts on [iOS](https://www.revenuecat.com/2018/10/11/configuring-in-app-products-is-hard) and [Android](https://www.revenuecat.com/2019/02/22/from-zero-to_android-subscriptions-configuration) product setup may be useful. 
+Before products can be purchased, they need to be properly set up in App Store Connect, Play Console, and Stripe. If you've never set up products before or are experiencing issues, our posts on [iOS](https://www.revenuecat.com/blog/engineering/app-store-connect-in-app-purchase-guide/) and [Android](https://www.revenuecat.com/2019/02/22/from-zero-to_android-subscriptions-configuration) product setup may be useful. 
 
 If products are not configured correctly, you will see an invalid products message in the [debug logs](doc:debugging).
 
