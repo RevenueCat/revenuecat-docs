@@ -17,9 +17,6 @@ def check_links_in_file(markdown_file)
     links.each do |text, url|
         next unless url.start_with?('http')
 
-        Fastlane::UI.message("Checking link: #{url}")
-        Fastlane::UI.message("Text: #{text}")
-
         begin
             response = URI.open(url)
             Fastlane::UI.message("OK - #{url}") if response.status[0] == '200'
