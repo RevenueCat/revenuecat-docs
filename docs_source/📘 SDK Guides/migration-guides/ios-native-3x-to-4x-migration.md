@@ -58,7 +58,7 @@ Select your target in Xcode, then go to Build Phases, and ensure that your targe
 
 | Before | After |
 | :-: | :-: |
-| [link binary with libraries before](https://github.com/RevenueCat/purchases-ios/raw/main/Documentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_before_spm.png) | [link binary with libraries after](https://github.com/RevenueCat/purchases-ios/raw/main/Documentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_after_spm.png) |
+| [link binary with libraries before](https://github.com/RevenueCat/purchases-ios/raw/main/Sources/DocCDocumentation/DocCDocumentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_before_spm.png) | [link binary with libraries after](https://github.com/RevenueCat/purchases-ios/raw/main/Sources/DocCDocumentation/DocCDocumentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_after_spm.png) |
 
 **Note:**
 
@@ -86,8 +86,8 @@ Do the same with the Embed Frameworks section.
 
 | Before | After |
 | :-: | :-: |
-| [link binary with libraries before](https://github.com/RevenueCat/purchases-ios/raw/main/Documentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_before_carthage.png) | [link binary with libraries after](https://github.com/RevenueCat/purchases-ios/raw/main/Documentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_after_carthage.png) |
-| [embed frameworks before](https://github.com/RevenueCat/purchases-ios/raw/main/Documentation.docc/Resources/migration_guide_assets/embed_frameworks_before_carthage.png) | [embed frameworks after](https://github.com/RevenueCat/purchases-ios/raw/main/Documentation.docc/Resources/migration_guide_assets/embed_frameworks_after_carthage.png) |
+| [link binary with libraries before](https://github.com/RevenueCat/purchases-ios/raw/main/Sources/DocCDocumentation/DocCDocumentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_before_carthage.png) | [link binary with libraries after](https://github.com/RevenueCat/purchases-ios/raw/main/Sources/DocCDocumentation/DocCDocumentation.docc/Resources/migration_guide_assets/link_binary_with_libraries_after_carthage.png) |
+| [embed frameworks before](https://github.com/RevenueCat/purchases-ios/raw/main/Sources/DocCDocumentation/DocCDocumentation.docc/Resources/migration_guide_assets/embed_frameworks_before_carthage.png) | [embed frameworks after](https://github.com/RevenueCat/purchases-ios/raw/main/Sources/DocCDocumentation/DocCDocumentation.docc/Resources/migration_guide_assets/embed_frameworks_after_carthage.png) |
 
 ##### 1.3.2 Using Platform-specific frameworks
 
