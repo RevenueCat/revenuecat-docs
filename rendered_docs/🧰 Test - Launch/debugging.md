@@ -117,7 +117,7 @@ Note: The debug UI won't compile for release builds, so you'll need to disable t
   "images": [
     {
       "image": [
-        "https://github.com/RevenueCat/revenuecat-docs/assets/808417/77002c75-43b6-477c-8e7d-972385648a13",
+        "https://github.com/RevenueCat/revenuecat-docs/assets/808417/108f3d64-96d1-4bd7-b926-70c6676931be",
         null,
         "RevenueCat Android Debug UI"
       ],
