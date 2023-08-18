@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 def check_links_in_folder(folder)
     all_errors = []
     markdown_files(folder).each do |markdown_file|
@@ -11,10 +13,18 @@ end
 
 def check_links_in_file(markdown_file)
     markdown_content = get_file_contents(markdown_file)
-    links = markdown_content.scan(/\[([^\]]+)\]\(([^)]+)\)/)
+
+    renderer = Redcarpet::Render::HTML.new
+    markdown = Redcarpet::Markdown.new(renderer)
+
+    links = []
+
+    markdown.render(markdown_content).scan(/<a href="([^"]+)"/) do |url|
+        links << url[0]
+    end
 
     errors = []
-    links.each do |text, url|
+    links.each do |url|
         next unless url.start_with?('http')
 
         begin
