@@ -63,7 +63,7 @@ RevenueCat's SDK will log important information and errors to help you understan
 
 # Debug UI
 
-RevenueCat's iOS 4.22.0+ and Android 6.10.0+ SDKs provide an overlay for your app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+RevenueCat's iOS 4.22.0+ and Android 6.9.2+ SDKs provide an overlay for your app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
 
 ## iOS
 
