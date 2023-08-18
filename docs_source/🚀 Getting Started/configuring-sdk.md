@@ -75,7 +75,7 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
 
 > 📘 SwiftUI App Protocol
 > 
-> Using SwiftUI's App protocol? Check out our [resource](https://docs.revenuecat.com/docs/swiftui-app-lifecycle) on setting up the _Purchases_ SDK with SwiftUI.
+> Using SwiftUI's App protocol? Check out our [resource](https://www.revenuecat.com/docs/swiftui-helpers) on setting up the _Purchases_ SDK with SwiftUI.
 
 ## Enabling Debug Logs
 
