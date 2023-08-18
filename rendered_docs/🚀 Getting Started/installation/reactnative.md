@@ -152,7 +152,7 @@ import Purchases from 'react-native-purchases';
 
 ## Managed workflow
 
-The [managed workflow](https://docs.expo.dev/introduction/managed-vs-bare/#managed-workflow) allows developers to only write JavaScript / TypeScript while letting Expo tools and services take care of everything else. The Android and iOS apps are built using Expo's build service and generate development and production binaries for testing and releasing.
+The [managed workflow](https://docs.expo.dev/archive/managed-vs-bare/#managed-workflow) allows developers to only write JavaScript / TypeScript while letting Expo tools and services take care of everything else. The Android and iOS apps are built using Expo's build service and generate development and production binaries for testing and releasing.
 
 As of mid 2021, the managed workflow now supports in-app payments and works with `react-native-purchases`.  Performing a `expo install react-native-purchases` is all that needs to be done before you can start implementing RevenueCat into your app.
 
@@ -162,7 +162,7 @@ Get started with the managed workflow at [here](https://docs.expo.dev/get-starte
 
 ## Bare workflow
 
-The [bare workflow](https://docs.expo.dev/introduction/managed-vs-bare/#bare-workflow) gives developers complete native control but also allows the use of Expo libraries and services. The bare workflow is similar to a project you would get from `npx react-native init`.
+The [bare workflow](https://docs.expo.dev/archive/managed-vs-bare/#bare-workflow) gives developers complete native control but also allows the use of Expo libraries and services. The bare workflow is similar to a project you would get from `npx react-native init`.
 
 If you're planning on ejecting from Expo to use the bare workflow, upgrade your expo version first, THEN eject. It'll save you a whole lot of hassle.
 
