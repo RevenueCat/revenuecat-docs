@@ -17,12 +17,6 @@ hidden: false
 }
 [/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "If you are looking for the legacy v3.x SDK documentation, you can view that [here :fa-arrow-right:](https://docs.revenuecat.com/v3.3/docs/)."
-}
-[/block]
 Migrating from Objective-C to Swift required a number of API changes, but we feel that the changes resulted in the SDK having a more natural feel for developers.
 
 # Xcode version requirements and updated deployment targets
