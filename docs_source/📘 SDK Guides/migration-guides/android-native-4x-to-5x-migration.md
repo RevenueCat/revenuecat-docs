@@ -10,13 +10,6 @@ hidden: true
 }
 [/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "If you are looking for the legacy v4.x SDK documentation, you can view that [here :fa-arrow-right:](https://docs.revenuecat.com/v3.3/docs/)."
-}
-[/block]
-
 There were various updates to our API in this release, in order to best support the Amazon Store and to maintain parity with our iOS SDK, which recently [migrated from ObjC to Swift](doc:ios-native-3x-to-4x-migration).
 
 # Version Requirements
