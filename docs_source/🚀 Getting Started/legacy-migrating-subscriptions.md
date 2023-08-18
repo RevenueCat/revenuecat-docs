@@ -94,9 +94,9 @@ To do a receipt import we'll need 3 csv files for iOS, Android and Stripe with t
   * introductory_price (if not a free trial)
   * currency
 
-You can find a sample iOS reference csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/ios_receipt_import_sample.csv).
+You can find a sample iOS reference csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/iOS/ios_receipt_import_sample.csv).
 
-*If you don't have prices and currency with the transactions we can take a separate file with a mapping of product_id, price, currency as well. If there were any known price changes, those should also be included here. You can find a sample price mapping [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/ios_product_price_map_sample.csv).
+*If you don't have prices and currency with the transactions we can take a separate file with a mapping of product_id, price, currency as well. If there were any known price changes, those should also be included here. You can find a sample price mapping [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/iOS/ios_product_price_map_sample.csv).
 [block:callout]
 {
   "type": "info",
@@ -117,7 +117,7 @@ You can find a sample iOS reference csv file [here](https://github.com/RevenueCa
   * product_id
   * token
 
-You can find a reference Google Play import csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/android_receipt_import_sample.csv).
+You can find a reference Google Play import csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/Android/android_receipt_import_sample.csv).
 
 **Important: **We need to know your [API quota](https://developers.google.com/android-publisher/quotas) with Google and approximately how many remaining requests per day you have so we don't exceed your quota.
 
@@ -127,7 +127,7 @@ You can find a reference Google Play import csv file [here](https://github.com/R
  * app_user_id
  * subscription_token (e.g. sub_xxxxxx)
 
-You can find a reference Stripe import csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/stripe_receipt_import_sample.csv).
+You can find a reference Stripe import csv file [here](https://github.com/RevenueCat-Samples/import-csv-samples/blob/main/Stripe/stripe_receipt_import_sample.csv).
 
 *Note that Stripe subscription tokens contain only the current status can be retrieved from each Stripe subscription token. This means that Stripe charts for historical data won't be accurate.
 [block:callout]
