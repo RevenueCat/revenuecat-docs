@@ -4,6 +4,9 @@ slug: ionic
 excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
 ---
+
+We currently only offer an official Cordova plugin. Install the plugin depending on your framework: 
+
 [block:file]
 [
   {
