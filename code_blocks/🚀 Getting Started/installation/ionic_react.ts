@@ -1,8 +1,8 @@
-import { Purchases } from '@awesome-cordova-plugins/purchases';
+import Purchases, { LOG_LEVEL } from 'cordova-plugin-purchases/www/plugin';
 
 const Tab1: React.FC = () => {
-  Purchases.setDebugLogsEnabled(true);
-  Purchases.purchases.configureWith({
+    Purchases.setLogLevel(LOG_LEVEL.DEBUG); // Enable to get debug logs
+    Purchases.purchases.configureWith({
     apiKey: "my_api_key",
     appUserID: "my_app_user_id"
   });

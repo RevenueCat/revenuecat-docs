@@ -4,58 +4,59 @@ slug: ionic
 excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
 ---
-Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
 [block:file]
 [
   {
     "language": "text",
     "name": "Cordova",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_1.txt"
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_cordova.txt"
   },
   {
     "language": "text",
     "name": "Capacitor",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_2.txt"
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_capacitor.txt"
   }
 ]
 [/block]
 
-[block:callout]
-{
-  "type": "warning",
-  "body": "If you run into issues when running on Android, try going to Android Studio -> File -> Sync project with Gradle files.",
-  "title": "Note:"
-}
+## TypeScript
+
+The types are shipped inside the npm package. You can import them like this:
+
+[block:file]
+[
+  {
+    "language": "typescript",
+    "name": "TypeScript types",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_typescript.ts"
+  }
+]
 [/block]
 
-[block:api-header]
-{
-  "title": "Angular"
-}
-[/block]
-Angular apps can use either Cordova or Capacitor to build native mobile apps. For Angular, the import path should end with `/ngx`.
+## Angular
+
+Wait for the Platform to be ready, then configure the plugin in your `src/app/app.component.ts`:
+
 [block:file]
 [
   {
     "language": "typescript",
     "name": "",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_3.ts"
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_angular.ts"
   }
 ]
 [/block]
 
-[block:api-header]
-{
-  "title": "React"
-}
-[/block]
+## React
+
 Import the plugin object then use its static methods:
+
 [block:file]
 [
   {
     "language": "typescript",
     "name": "",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_4.ts"
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_react.ts"
   }
 ]
 [/block]
