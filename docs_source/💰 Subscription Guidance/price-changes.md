@@ -38,7 +38,7 @@ From this point, RevenueCat will listen to price change events from Apple's App 
 
 # Google Play Price Changes
 
-RevenueCat is able to automatically detect the price of each Google Play transaction, including price changes that apply to subsequent purchases. 
+Google Play does not make individual transaction prices directly available to developers, so RevenueCat tracks prices at the time of purchase and assumes any subscriptions will renew at this purchase price. Therefore, if you ever raise the price of a product, RevenueCat's reporting will be accurate if you choose to keep existing subscriptions at the current price as a [legacy price cohort](https://developer.android.com/google/play/billing/price-changes#existing).
 
 After you change the price of an existing subscription, here’s how it affects new users and existing subscribers:
 
