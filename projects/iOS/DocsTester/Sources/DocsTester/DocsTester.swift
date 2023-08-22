@@ -10,6 +10,8 @@ final class Container {
                 .with(observerMode: true)
                 // Optionally set an app user ID for the user
                 .with(appUserID: UserManager.appUserID)
+                // If your app uses StoreKit 2, you must enable it in the SDK
+                .with(usesStoreKit2IfAvailable: true)
                 .build()
         )
         // END
