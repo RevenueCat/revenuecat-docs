@@ -124,6 +124,17 @@ jobs:
           name: Check rendered docs can render
           command: bundle exec fastlane embed_code_blocks
 
+  check-links:
+    docker:
+      - image: cimg/ruby:3.1.2
+    steps:
+      - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
+      - run:
+          name: Check links
+          command: bundle exec fastlane check_links
+
   check-categories:
     docker:
       - image: cimg/ruby:3.1.2
@@ -147,7 +158,7 @@ jobs:
             - run:
                 name: Skipping syncing since this is a not syncing branch
                 command:
-                    echo "Skipping syncing since this is a not syncing branch"
+                  echo "Skipping syncing since this is a not syncing branch"
       - when:
           condition:
             matches: { pattern: "^sync/.*", value: << pipeline.git.branch >> }
@@ -164,7 +175,7 @@ jobs:
             - run:
                 name: Syncing files to Readme
                 command: |
-                  bundle exec fastlane sync_files_to_readme readme_api_key:$README_API_KEY
+                  bundle exec fastlane sync_files_to_readme
 
   open-syncing-pr:
     docker:
@@ -178,7 +189,7 @@ jobs:
       - run:
           name: Render docs
           command: |
-            bundle exec fastlane open_syncing_pr github_pr_token:$GITHUB_TOKEN readme_api_key:$README_API_KEY
+            bundle exec fastlane open_syncing_pr
 
   build-projects-macos:
     resource_class: macos.x86.medium.gen2
@@ -302,6 +313,7 @@ workflows:
       - run-tests
       - build-projects-macos
       - build-projects-android
+      - check-links
 
   lint:
     jobs:

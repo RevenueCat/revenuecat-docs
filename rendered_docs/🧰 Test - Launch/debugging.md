@@ -57,7 +57,9 @@ Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 
 # Debug UI
 
-RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+RevenueCat's iOS 4.22.0+ and Android 6.9.2+ SDKs provide an overlay for your app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+
+## iOS
 
 [block:image]
 {
@@ -107,6 +109,50 @@ self.present(debugOverlay, animated: true)
 You can export your configuration details in JSON format to share with RevenueCat support if you need to open a support ticket.
 
 Note: The debug UI won't compile for release builds, so you'll need to disable the behavior before archiving for release.
+
+## Android
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://github.com/RevenueCat/revenuecat-docs/assets/808417/108f3d64-96d1-4bd7-b926-70c6676931be",
+        null,
+        "RevenueCat Android Debug UI"
+      ],
+      "align": "center",
+      "sizing": "240px",
+      "border": true
+    }
+  ]
+}
+[/block]
+
+In order to use the overlay, you need to include the debug view library which is available on Maven and can be included via Gradle. Currently, this is only available as a Jetpack Compose Composable.
+
+[![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
+
+```groovy build.gradle
+debugImplementation "com.revenuecat.purchase:purchases-debugview:6.9.2"
+releaseImplementation "com.revenuecat.purchase:purchases-debugview-noop:6.9.2"
+```
+
+Then, you can use it from your own `@Composable`'s like this:
+
+```kotlin Jetpack Compose
+var displayRCDebugMenu by remember { mutableStateOf(false) }
+
+DebugRevenueCatBottomSheet(
+    onPurchaseCompleted = { /* Handle purchase completion */ },
+    onPurchaseErrored = { error ->
+        if (error.userCancelled) { /* Handle purchase cancelled */ }
+        else { /* Handle purchase error */ }
+    },
+    isVisible = displayRCDebugMenu,
+    onDismissCallback = { displayRCDebugMenu = false }
+)
+```
 
 ## Reference
 
