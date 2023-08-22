@@ -256,4 +256,4 @@ If you're getting the error "Account Not In This Store" when attempting to make 
 # Next Steps
 
 For more information, take a look at the official Apple documentation:  
-[Apple App Store: Testing in-app purchases](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Chapters/ShowUI.html)
+[Apple App Store: Testing in-app purchases](https://developer.apple.com/documentation/storekit/in-app_purchase/testing_at_all_stages_of_development_with_xcode_and_the_sandbox)
