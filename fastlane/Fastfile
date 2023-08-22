@@ -24,6 +24,7 @@ import 'files.rb'
 import 'circleci_api/api.rb'
 import 'code_blocks/code_blocks.rb'
 import 'rendering.rb'
+import 'checks.rb'
 
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
@@ -202,6 +203,13 @@ lane :migration do |options|
     markdown_files = markdown_files(SOURCE_FOLDER)
     extract_code_blocks(SOURCE_FOLDER, CODE_BLOCKS_FOLDER, markdown_files)
     clean_docs_source_headers
+end
+
+lane :check_links do |options|
+    errors = check_links_in_folder(SOURCE_FOLDER)
+    if errors.length > 0
+        UI.user_error!("Found #{errors.length} broken links:\n#{errors.join("\n")}")
+    end
 end
 
 # Updates the category, order and parent for a given document.
