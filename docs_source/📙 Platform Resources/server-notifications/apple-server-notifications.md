@@ -29,7 +29,7 @@ RevenueCat does not require server notifications from the App Store, however doi
 }
 [/block]
 3. Log in to **[App Store Connect](https://appstoreconnect.apple.com/)** and select your app.
-4. Under the **App Information > App Store Server Notifications** section, paste the entire URL from RevenueCat in both the **Production Server URL** field and the **Sandbox Server URL** field. You can use either *Version 1* or *Version 2* notifications.
+4. Under the **App Information > App Store Server Notifications** section, paste the entire URL from RevenueCat in both the **Production Server URL** field and the **Sandbox Server URL** field. You can use either *Version 1* or *Version 2* notifications, but *Version 2* notifications are recommended to use features such as [auto-detecting price changes](https://www.revenuecat.com/docs/price-changes).
 [block:image]
 {
   "images": [
