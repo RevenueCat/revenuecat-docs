@@ -1,0 +1,5 @@
+// Install Cordova plugin
+npm install cordova-plugin-purchases
+
+// Update native platform project(s) to include newly added plugin
+ionic cap sync
