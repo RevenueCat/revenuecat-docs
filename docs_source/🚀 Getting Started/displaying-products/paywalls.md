@@ -93,17 +93,17 @@ For example, to show a CTA like “Try 7 Days Free & Subscribe”, you should in
 
 We support the following variables:
 
-| Variable                  | Description                                                                                                     | Example Value     |
-| :------------------------ | :-------------------------------------------------------------------------------------------------------------- | :---------------- |
-| product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package         | CatGPT        |
-| price                     | The localized price of a given package                                                                          | $39.99            |
-| price_per_period          | The localized price of a given package with its period length if applicable                                     | $39.99/yr         |
-| total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it is not already a monthly package | $39.99 ($1.67/mo) |
-| sub_price_per_month       | The localized price of a given package converted to a monthly equivalent price                                  | $3.33             |
-| sub_duration              | The duration of the subscription; '1 month', '3 months', etc.                                                   | 1 month           |
-| sub_period                | The length of each period of the standard offer on a given package                                              | Monthly           |
-| sub_offer_duration        | The period of the introductory offer on a given package                                                         | 7 days            |
-| sub_offer_price           | The localized price of the introductory offer of a given package                                                | $4.99             |
+| Variable                  | Description                                                                                             | Example Value     |
+| :------------------------ | :------------------------------------------------------------------------------------------------------ | :---------------- |
+| product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package | CatGPT        |
+| price                     | The localized price of a given package                                                                  | $39.99            |
+| price_per_period          | The localized price of a given package with its period length if applicable                             | $39.99/yr         |
+| total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it has one                  | $39.99 ($1.67/mo) |
+| sub_price_per_month       | The localized price of a given package converted to a monthly equivalent price                          | $3.33             |
+| sub_duration              | The duration of the subscription; '1 month', '3 months', etc.                                           | 1 month           |
+| sub_period                | The length of each period of the standard offer on a given package                                      | Monthly           |
+| sub_offer_duration        | The period of the introductory offer on a given package                                                 | 7 days            |
+| sub_offer_price           | The localized price of the introductory offer of a given package                                        | $4.99             |
 
 > 📘 
 > 
