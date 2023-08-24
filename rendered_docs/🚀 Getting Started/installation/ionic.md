@@ -7,71 +7,61 @@ categorySlug: documentation
 order: 5
 parentDoc: 649983b4c31b2e000a3c1864
 ---
-Please refer to our [documentation](https://ionicframework.com/docs/native/purchases) in Ionic Native Plugin documentation for installation instructions.
+
+We currently only offer an official Cordova plugin. Install the plugin depending on your framework: 
+
 ```text Cordova
-// Install Cordova plugin
+npm install cordova-plugin-purchases
+
 ionic cordova plugin add cordova-plugin-purchases
-
-// Install TypeScript wrapper
-npm install @awesome-cordova-plugins/purchases
-
-// Install Ionic Native core library (once per project)
-npm install @awesome-cordova-plugins/core
 ```
 ```text Capacitor
 // Install Cordova plugin
 npm install cordova-plugin-purchases
 
-// Install Ionic Native core library (once per project)
-npm install @awesome-cordova-plugins/core --save
-
-// Install TypeScript wrapper
-npm install @awesome-cordova-plugins/purchases
-
 // Update native platform project(s) to include newly added plugin
 ionic cap sync
 ```
 
-[block:callout]
-{
-  "type": "warning",
-  "body": "If you run into issues when running on Android, try going to Android Studio -> File -> Sync project with Gradle files.",
-  "title": "Note:"
-}
-[/block]
+## TypeScript
 
-[block:api-header]
-{
-  "title": "Angular"
-}
-[/block]
-Angular apps can use either Cordova or Capacitor to build native mobile apps. For Angular, the import path should end with `/ngx`.
+The types are shipped inside the npm package. You can import them like this:
+
+```typescript TypeScript types
+import Purchases, {
+    PurchasesOfferings, // Types for TypeScript
+} from 'cordova-plugin-purchases/www/plugin';
+```
+
+## Angular
+
+Wait for the Platform to be ready, then configure the plugin in your `src/app/app.component.ts`:
+
 ```typescript 
 import { Platform } from "@ionic/angular";
-import { Purchases } from "@awesome-cordova-plugins/purchases/ngx";
+// TS typings for the plugin
+import Purchases, { LOG_LEVEL } from 'cordova-plugin-purchases/www/plugin';
 
-constructor(public platform: Platform, private purchases: Purchases) {
+constructor(platform: Platform) {
     platform.ready().then(() => {
-        this.purchases.setDebugLogsEnabled(true); // Enable to get debug logs
-        this.purchases.configureWith({
+        Purchases.setLogLevel(LOG_LEVEL.DEBUG); // Enable to get debug logs
+        Purchases.configureWith({
             apiKey: "my_api_key",
             appUserID: "my_app_user_id"
         });
-    }
+    });
 }
 ```
 
-[block:api-header]
-{
-  "title": "React"
-}
-[/block]
+## React
+
 Import the plugin object then use its static methods:
+
 ```typescript 
-import { Purchases } from '@awesome-cordova-plugins/purchases';
+import Purchases, { LOG_LEVEL } from 'cordova-plugin-purchases/www/plugin';
 
 const Tab1: React.FC = () => {
-  Purchases.setDebugLogsEnabled(true);
+  Purchases.setLogLevel(LOG_LEVEL.DEBUG); // Enable to get debug logs
   Purchases.purchases.configureWith({
     apiKey: "my_api_key",
     appUserID: "my_app_user_id"
