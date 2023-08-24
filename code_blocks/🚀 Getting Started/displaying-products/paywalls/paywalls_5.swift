@@ -8,7 +8,8 @@ struct YourPaywall: View {
     var body: some View {
         ScrollView {
             // Your custom paywall design content
-        }.paywallFooter()
+        }
+        .paywallFooter()
     }
 
 }
