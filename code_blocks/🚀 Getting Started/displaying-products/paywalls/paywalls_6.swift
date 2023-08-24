@@ -4,7 +4,7 @@ import RevenueCat
 import RevenueCatUI
 
 struct YourPaywall: View {
-    
+
     let offering: Offering
 
     var body: some View {
