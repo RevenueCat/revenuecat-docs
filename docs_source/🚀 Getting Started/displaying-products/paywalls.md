@@ -7,7 +7,7 @@ RevenueCat's Paywalls allow you to to remotely configure your entire paywall vie
 
 > ❗️
 > 
-> Paywalls are only available for iOS 15+ but macOS and Android support are coming soon!
+> Paywalls are only available for iOS 15+ but support for macOS, Android, and other platforms is coming soon!
 
 ## How Paywalls work
 
