@@ -35,10 +35,13 @@ You can find the latest version of our SDKs here:
 ** 4. Check the Swift version: ** Check that the value for [`SWIFT_VERSION` isn't overridden by the `Podfile`, if you have one.](https://github.com/RevenueCat/purchases-flutter/issues/168#issuecomment-796468415).
 ** 5. Enable Swift support: ** If you're getting errors when compiling Swift files after this, try adding a single, empty Swift file to the project. 
 
+### If you're using SPM: 
+** 1. ** If you're using the `RevenueCat` Package from a framework and get `(fatal) module 'RevenueCat' not found`, disable Clang's Module Verifier (`ENABLE_MODULE_VERIFIER`) from build settings. That does not work correctly with SPM as of Xcode 14.3 and 15.0 (`FB13048691`).
+
 ### If you're using CocoaPods: 
 **1. Make sure you're using the latest version of CocoaPods.** You can see your version by running `pod --version`, and find the [latest version here](https://github.com/CocoaPods/CocoaPods/releases/latest). 
 ** 2. Re-install pods:** run `pod deintegrate` and then `pod install`, then try running / archiving the project again. 
-** 3. Make sure that the deployment target is set correctly:** it should be set to `9.0` or newer for iOS or tvOS, `10.12` or newer for macOS and `6.2` or newer for watchOS. The requirements might be higher if you're using other frameworks, such as React-Native. You should check this value both in the `Podfile`, and by going into the Project settings, then select the target, and look for the value in the general tab: 
+** 3. Make sure that the deployment target is set correctly:** it should be set to `11.0` or newer for iOS or tvOS, `10.13` or newer for macOS and `6.2` or newer for watchOS. The requirements might be higher if you're using other frameworks, such as React-Native. You should check this value both in the `Podfile`, and by going into the Project settings, then select the target, and look for the value in the general tab: 
 ![](https://files.readme.io/43c42c6-Screen_Shot_2021-05-03_at_3.43.57_PM.png "Screen Shot 2021-05-03 at 3.43.57 PM.png")
 ** 4. Check the Swift version: ** Check that the value for [`SWIFT_VERSION` isn't overridden by the `Podfile`](https://github.com/RevenueCat/purchases-flutter/issues/168#issuecomment-796468415).
 ** 5. Enable Swift support: ** If you're getting errors when compiling Swift files after this, try adding a single, empty Swift file to the project. 
