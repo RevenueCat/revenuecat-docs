@@ -5,6 +5,10 @@ hidden: true
 ---
 RevenueCat's Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
+> ❗️
+> 
+> Paywalls are only available for iOS 15+ but macOS and Android support are coming soon!
+
 ## How Paywalls work
 
 ### Overview
@@ -173,18 +177,20 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 ]
 [/block]
 
-## How to embed a Paywall into your views
+## How to display a footer Paywall on your custom paywall
 
-RevenueCatUI also has smaller paywalls for you to embed or overlay in your app. You could display these as inline banners in your app, overlay your app as a sheet promoting an upgrade, or as a footer in a custom paywall.
+RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle. This is done by adding the `.paywallFooter()` view modifier to your view.
 
-This can all be done by passing `PaywallViewMode` into `PaywallView`. The options are:
-- `PaywallViewMode.fullScreen`
-- `PaywallViewMode.card`
-- `PaywallViewMode.condensedCard`
+The footer paywall mainly consists of:
+- Purchase button
+- Package details text
+- Package selection (if there are any multiple packages configured)
+
+This is all remotely configured and RevenueCatUI handles all the intro offer eligibility and purchase logic.
 
 ### SwiftUI
 
-1. Option 1: `PaywallView` in `UIHostingController`
+1. Option 1: Footer paywall with current offering
 [block:file]
 [
   {
@@ -195,9 +201,7 @@ This can all be done by passing `PaywallViewMode` into `PaywallView`. The option
 ]
 [/block]
 
-### UIKit
-
-1. Option 1: `PaywallView` in `UIHostingController`
+2. Option 2: Footer paywall with specific offering
 [block:file]
 [
   {
@@ -209,10 +213,46 @@ This can all be done by passing `PaywallViewMode` into `PaywallView`. The option
 [/block]
 
 
+## How to use custom fonts
+
+Paywalls can be configured to use the same font as your app using a `PaywallFontProvider`. A `PaywallFontProvider` can be passed as an argument into all methods for displaying paywall.
+
+By default, paywalls will use the `DefaultPaywallFontProvider`. This uses the system default font which supports dynamic type.
+
+### Use `CustomPaywallFontProvider`
+
+We also offer a `CustomPaywallFontProvider` which requires a font name. This could be something like "Arial" or "Papyrus".
+
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_7.swift"
+  }
+]
+[/block]
+
+### Use your own `PaywallFontProvider`
+
+If you need more control for your font preferences, you can create your own `PaywallFontProvider`.
+
+The following example will use a rounded system font in the paywall.
+
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/paywalls/paywalls_8.swift"
+  }
+]
+[/block]
+
 ## Limitations
 
 #### Platforms (support for more coming)
-* ✅  iOS 16.0 and higher
+* ✅  iOS 15.0 and higher
 * ❌ tvOS
 * ❌ watchOS
 * ❌ macOS
