@@ -36,7 +36,7 @@ You can find the latest version of our SDKs here:
 ** 5. Enable Swift support: ** If you're getting errors when compiling Swift files after this, try adding a single, empty Swift file to the project. 
 
 ### If you're using SPM: 
-** 1. ** If you're using the `RevenueCat` Package from a framework and get `(fatal) module 'RevenueCat' not found`, disable [Clang's Module Verifier](https://developer.apple.com/documentation/xcode/identifying-and-addressing-framework-module-issues#Enable-the-module-verifier-build-setting) (`ENABLE_MODULE_VERIFIER`) from build settings. That does not work correctly with SPM as of Xcode 14.3 and 15.0 (`FB13048691`):
+** 1. ** If you're using the `RevenueCat` Package from a framework and get `(fatal) module 'RevenueCat' not found`, disable [Clang's Module Verifier](https://developer.apple.com/documentation/xcode/identifying-and-addressing-framework-module-issues#Enable-the-module-verifier-build-setting) (`ENABLE_MODULE_VERIFIER`) from build settings. That does not work correctly with SPM as of Xcode 14.3 and 15.0 (this has been reported to Apple as Feedback `FB13048691`):
 ![](https://user-images.githubusercontent.com/685609/263088397-48938fb6-40bd-436b-a17f-dcf715524531.png "Module Verifier")
 
 ### If you're using CocoaPods: 
