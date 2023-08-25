@@ -1,30 +1,19 @@
-import UIKit
+import SwiftUI
 
 import RevenueCat
 import RevenueCatUI
 
-class ViewController: UIViewController {
+struct YourPaywall: View {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let offering: Offering
 
-        let paywallView = PaywallView(mode: .condensedCard) // or .card
-        paywall.delegate = self
-
-        let hostingController = UIHostingController(rootView: paywallView)
-
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        hostingController.didMove(toParent: self)
-    }
-
-}
-
-extension ViewController: PaywallViewControllerDelegate {
-
-    func paywallViewController(_ controller: PaywallViewController,
-                               didFinishPurchasingWith customerInfo: CustomerInfo) {
-
+    var body: some View {
+        ScrollView {
+            // Your custom paywall design content
+        }
+        .paywallFooter(offering: offering, condensed: true) { customerInfo in
+            // Purchase completed! Thank your user and dismiss your paywall
+        }
     }
 
 }
