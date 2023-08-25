@@ -7,6 +7,10 @@ order: 999
 ---
 RevenueCat's Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
+> ❗️
+> 
+> Paywalls are only available for iOS 15+ but support for macOS, Android, and other platforms is coming soon!
+
 ## How Paywalls work
 
 ### Overview
@@ -91,17 +95,17 @@ For example, to show a CTA like “Try 7 Days Free & Subscribe”, you should in
 
 We support the following variables:
 
-| Variable                  | Description                                                                                                     | Example Value     |
-| :------------------------ | :-------------------------------------------------------------------------------------------------------------- | :---------------- |
-| product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package         | CatGPT        |
-| price                     | The localized price of a given package                                                                          | $39.99            |
-| price_per_period          | The localized price of a given package with its period length if applicable                                     | $39.99/yr         |
-| total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it is not already a monthly package | $39.99 ($1.67/mo) |
-| sub_price_per_month       | The localized price of a given package converted to a monthly equivalent price                                  | $3.33             |
-| sub_duration              | The duration of the subscription; '1 month', '3 months', etc.                                                   | 1 month           |
-| sub_period                | The length of each period of the standard offer on a given package                                              | Monthly           |
-| sub_offer_duration        | The period of the introductory offer on a given package                                                         | 7 days            |
-| sub_offer_price           | The localized price of the introductory offer of a given package                                                | $4.99             |
+| Variable                  | Description                                                                                             | Example Value     |
+| :------------------------ | :------------------------------------------------------------------------------------------------------ | :---------------- |
+| product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package | CatGPT        |
+| price                     | The localized price of a given package                                                                  | $39.99            |
+| price_per_period          | The localized price of a given package with its period length if applicable                             | $39.99/yr         |
+| total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it has one                  | $39.99 ($1.67/mo) |
+| sub_price_per_month       | The localized price of a given package converted to a monthly equivalent price                          | $3.33             |
+| sub_duration              | The duration of the subscription; '1 month', '3 months', etc.                                           | 1 month           |
+| sub_period                | The length of each period of the standard offer on a given package                                      | Monthly           |
+| sub_offer_duration        | The period of the introductory offer on a given package                                                 | 7 days            |
+| sub_offer_price           | The localized price of the introductory offer of a given package                                        | $4.99             |
 
 > 📘 
 > 
@@ -219,18 +223,72 @@ extension ViewController: PaywallViewControllerDelegate {
 }
 ```
 
-## How to embed a Paywall into your views
+## How to display a footer Paywall on your custom paywall
 
-RevenueCatUI also has smaller paywalls for you to embed or overlay in your app. You could display these as inline banners in your app, overlay your app as a sheet promoting an upgrade, or as a footer in a custom paywall.
+RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle. This is done by adding the `.paywallFooter()` view modifier to your view.
 
-This can all be done by passing `PaywallViewMode` into `PaywallView`. The options are:
-- `PaywallViewMode.fullScreen`
-- `PaywallViewMode.card`
-- `PaywallViewMode.condensedCard`
+The footer paywall mainly consists of:
+- Purchase button
+- Package details text
+- Package selection (if there are any multiple packages configured)
+
+This is all remotely configured and RevenueCatUI handles all the intro offer eligibility and purchase logic.
 
 ### SwiftUI
 
-1. Option 1: `PaywallView` in `UIHostingController`
+1. Option 1: Footer paywall with current offering
+```swift 
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct YourPaywall: View {
+
+    var body: some View {
+        ScrollView {
+            // Your custom paywall design content
+        }
+        .paywallFooter()
+    }
+
+}
+```
+
+2. Option 2: Footer paywall with specific offering
+```swift 
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct YourPaywall: View {
+
+    let offering: Offering
+
+    var body: some View {
+        ScrollView {
+            // Your custom paywall design content
+        }
+        .paywallFooter(offering: offering, condensed: true) { customerInfo in
+            // Purchase completed! Thank your user and dismiss your paywall
+        }
+    }
+
+}
+```
+
+
+## How to use custom fonts
+
+Paywalls can be configured to use the same font as your app using a `PaywallFontProvider`. A `PaywallFontProvider` can be passed as an argument into all methods for displaying paywall.
+
+By default, paywalls will use the `DefaultPaywallFontProvider`. This uses the system default font which supports dynamic type.
+
+### Use `CustomPaywallFontProvider`
+
+We also offer a `CustomPaywallFontProvider` which requires a font name. This could be something like "Arial" or "Papyrus".
+
 ```swift 
 import SwiftUI
 
@@ -238,70 +296,53 @@ import RevenueCat
 import RevenueCatUI
 
 struct App: View {
-
     var body: some View {
-        VStack {
-            ScrollView {
-                VStack {
-                    // Your custom paywall design content
-                }.frame(maxWidth: .infinity)
+        ContentView()
+            .presentPaywallIfNeeded(
+                fonts: CustomPaywallFontProvider(fontName: "Arial")
+            ) { customerInfo in
+                // Returning `true` will present the paywall
+                return customerInfo.entitlements.active.keys.contains("pro")
             }
-
-            Spacer()
-
-            PaywallView(mode: .condensedCard) // or .card
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Color(white: 0.8)
-                .edgesIgnoringSafeArea(.all)
-        )
     }
-
 }
 ```
 
-### UIKit
+### Use your own `PaywallFontProvider`
 
-1. Option 1: `PaywallView` in `UIHostingController`
+If you need more control for your font preferences, you can create your own `PaywallFontProvider`.
+
+The following example will use a rounded system font in the paywall.
+
 ```swift 
-import UIKit
+import SwiftUI
 
 import RevenueCat
 import RevenueCatUI
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let paywallView = PaywallView(mode: .condensedCard) // or .card
-        paywall.delegate = self
-
-        let hostingController = UIHostingController(rootView: paywallView)
-
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        hostingController.didMove(toParent: self)
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded(
+                fonts: RoundedSystemFontProvider()
+            ) { customerInfo in
+                // Returning `true` will present the paywall
+                return customerInfo.entitlements.active.keys.contains("pro")
+            }
     }
-
 }
 
-extension ViewController: PaywallViewControllerDelegate {
-
-    func paywallViewController(_ controller: PaywallViewController,
-                               didFinishPurchasingWith customerInfo: CustomerInfo) {
-
+class RoundedSystemFontProvider: PaywallFontProvider {
+    func font(for textStyle: Font.TextStyle) -> Font {
+        return Font.system(textStyle, design: .rounded)
     }
-
 }
 ```
-
 
 ## Limitations
 
 #### Platforms (support for more coming)
-* ✅  iOS 16.0 and higher
+* ✅  iOS 15.0 and higher
 * ❌ tvOS
 * ❌ watchOS
 * ❌ macOS
