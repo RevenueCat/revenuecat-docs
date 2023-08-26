@@ -18,7 +18,7 @@ Our paywall templates use native code to deliver smooth, intuitive experiences t
 To use RevenueCat Paywalls on iOS, simply:
 
 1. Create a Paywall on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
-2. Update your RevenueCat SDK to version 4.27
+2. Update your RevenueCat SDK to version 4.26
 3. Add the RevenueCatUI SPM dependency to your project
 
 <img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
@@ -27,7 +27,7 @@ To use RevenueCat Paywalls on iOS, simply:
 
 > 📘 
 > 
-> RevenueCat Paywalls are only available on our iOS SDK and require version >= 4.27.
+> RevenueCat Paywalls are only available on our iOS SDK and require version >= 4.26.
 > 
 > Android support is coming soon.
 
