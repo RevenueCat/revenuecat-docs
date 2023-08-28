@@ -4,6 +4,7 @@ slug: offering-metadata
 hidden: false
 categorySlug: tools
 order: 3
+parentDocSlug: ''
 ---
 Metadata allows you to attach a custom JSON object to your Offering that can be used to control how to display your products inside your app, determine the Offering to show based on provided attributes, and much more. The metadata you configure in an Offering is available from the RevenueCat SDK. For example, you could use it to remotely configure strings on your paywall, or even URLs of images shown on the paywall.
 
