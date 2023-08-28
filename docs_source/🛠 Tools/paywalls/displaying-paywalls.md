@@ -1,7 +1,7 @@
 ---
 title: Displaying Paywalls
 slug: displaying-paywalls
-hidden: true
+hidden: false
 ---
 
 ## How to display a fullscreen Paywall in your app
