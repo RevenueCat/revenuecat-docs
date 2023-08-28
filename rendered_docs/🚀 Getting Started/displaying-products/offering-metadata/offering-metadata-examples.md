@@ -5,7 +5,6 @@ hidden: false
 parentDocSlug: offering-metadata
 categorySlug: documentation
 order: 999
-parentDoc: 649983b4c31b2e000a3c1887
 ---
 [Offering Metadata](doc:offering-metadata) can be utilized to create more flexible paywall experiences, target specific users with particular offerings, or make updates on the fly.  Below, we'll show some basic and advanced examples of how you can utilize offering metadata to change out the copy and button color, change the paywall description based on device language, and show a completely different paywall to customers who opened your app via a deeplink.
 

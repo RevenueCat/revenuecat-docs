@@ -2,6 +2,8 @@
 title: Displaying Paywalls
 slug: displaying-paywalls
 hidden: true
+parentDocSlug: offering-metadata
+categorySlug: documentation
 ---
 
 ## How to display a fullscreen Paywall in your app
