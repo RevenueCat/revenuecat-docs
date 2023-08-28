@@ -3,7 +3,7 @@ title: Creating Paywalls
 slug: creating-paywalls
 hidden: true
 parentDocSlug: paywalls
-categorySlug: documentation
+categorySlug: tools
 ---
 
 ## How to create a Paywall
