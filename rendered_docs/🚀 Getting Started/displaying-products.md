@@ -22,10 +22,10 @@ Offerings are fetched through the SDK based on their [configuration](doc:entitle
 
 The `getOfferings` method will fetch the Offerings from RevenueCat. These are pre-fetched in most cases on app launch, so the completion block to get offerings won't need to make a network request in most cases. 
 
-```swift 
+```swift Swift
 Purchases.shared.getOfferings { (offerings, error) in
     if let packages = offerings?.current?.availablePackages {
-        // Display packages for sale
+        self.display(packages)
     }
 }
 ```
@@ -131,10 +131,10 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
 
-```swift 
+```swift Swift
 Purchases.shared.getOfferings { (offerings, error) in
-    if let packages = offerings?.offering(identifier: "experiment_group").availablePackages {
-        // Display packages for sale
+    if let packages = offerings?.offering(identifier: "experiment_group")?.availablePackages {
+        self.display(packages)
     }
 }
 ```
@@ -246,12 +246,12 @@ Packages can be access in a few different ways:
 2. via the duration convenience property on an Offering
 3. via the package identifier directly
 
-```swift 
-offerings.offering(identifier: "experiment_group").availablePackages
+```swift Swift
+let packages = offerings.offering(identifier: "experiment_group")?.availablePackages
 // --
-offerings.offering(identifier: "experiment_group").monthly
+let monthlyPackage = offerings.offering(identifier: "experiment_group")?.monthly
 // --
-offerings.offering(identifier: "experiment_group").package(identifier: "<package_id>")
+let packageById = offerings.offering(identifier: "experiment_group")?.package(identifier: "<package_id>")
 ```
 ```objectivec 
 [offerings offeringWithIdentifier:"experiment_group"].availablePackages
@@ -303,11 +303,11 @@ offerings.All["experiment_group"].Monthly
 Each Package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the `storeProduct` property:
 
 ```swift Swift
-// Accessing the monthly product
-
 Purchases.shared.getOfferings { (offerings, error) in
-    if let package = offerings?.current?.monthly?.storeProduct {
-        // Get the price and introductory period from the StoreProduct
+    // Accessing the monthly product
+    if let product = offerings?.current?.monthly?.storeProduct {
+        // Display the product information (like price and introductory period)
+        self.display(product)
     }
 }
 ```
@@ -431,6 +431,7 @@ Purchases.shared.getOfferings { (offerings, error) in
     }
 
     // Present your paywall
+    self.display(packages)
 }
 ```
 ```objectivec Objective-C
