@@ -2,9 +2,6 @@
 title: Offering metadata example use cases
 slug: offering-metadata-examples
 hidden: false
-categorySlug: documentation
-order: 999
-parentDoc: 649983b4c31b2e000a3c1887
 ---
 [Offering Metadata](doc:offering-metadata) can be utilized to create more flexible paywall experiences, target specific users with particular offerings, or make updates on the fly.  Below, we'll show some basic and advanced examples of how you can utilize offering metadata to change out the copy and button color, change the paywall description based on device language, and show a completely different paywall to customers who opened your app via a deeplink.
 
@@ -24,17 +21,15 @@ In our current offerings, we add the metadata for the new button color and our d
 
 In our app, we set up our code to modify the appearance of our paywall if these keys are present, or fall back to our defaults if an active offering doesn’t contain these values.
 
-```kotlin 
-// Changing the button color 
-var backgroundColor = Color.parseColor(offering?.getMetadataString("button_color","#292929")
-
-viewHolder.view.findViewById<CardView>(R.id.card_view).setCardBackgroundColor(backgroundColor))
-
-// Changing the copy
-var paywallCopy = offerings.current?.getMetadataString("description", "Go premium!")
-
-root.findViewById<TextView>(R.id.description).text = paywallCopy
-```
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/color_experiment.kt"
+  }
+]
+[/block]
 
 > 📘 
 > 
@@ -62,15 +57,15 @@ In our metadata, we have set up keys and values for the languages and copy we wa
 
 Within our app, we handle the logic to check the primary language set on the device, and look to see if we find a matching metadata key. Otherwise, we fall back to our default text.
 
-```kotlin 
-// Get the default device language
-var lang = Locale.getDefault().displayLanguage
-
-// Use the default device language as your metadata key
-var localizedCopy = offerings.current?.getMetadataString(lang, "Go premium!")
-
-root.findViewById<TextView>(R.id.description).text = localizedCopy
-```
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/language_switch.kt"
+  }
+]
+[/block]
 
 With this in place, a user whose device is set to English will see the below.
 
@@ -92,27 +87,15 @@ In this example case, we’re using a coupon code that was present on a deeplink
 
 In the app, we set up the logic to look for any offerings that have a matching coupon code.
 
-```kotlin 
-var selectedOffering = ""
-
-// Search through all offerings to see if any have a matching coupon code
-// Make sure to gate this with logic--there's no need to check through all offerings
-// if there's no coupon code present for a user!
-
-for (offering in offerings.all) {
-    if (offering.value.getMetadataString("coupon", "") == couponCode) {
-       offeringSelected = offering.key
-       break
-    }
-}
-
-// Fall back on the current offerings if no match was found
-if (offeringSelected == "") {
-    adapter.offering = offerings.current
-} else {
-    adapter.offering = offerings.getOffering(offeringSelected)
-}
-```
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "",
+    "file": "code_blocks/🚀 Getting Started/displaying-products/coupon_case.kt"
+  }
+]
+[/block]
 
 When we run the app and open it with a deeplink that contains the coupon code Summer2023, instead of our current offering that contains standard priced subscriptions, they’ll see the below paywall that includes our discounted ones.
 
