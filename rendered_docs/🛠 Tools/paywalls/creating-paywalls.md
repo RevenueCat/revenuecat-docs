@@ -2,8 +2,9 @@
 title: Creating Paywalls
 slug: creating-paywalls
 hidden: true
-parentDocSlug: paywalls
 categorySlug: tools
+order: 999
+parentDoc: 64d0f9bdc52aeb0058f5ec3d
 ---
 
 ## How to create a Paywall
