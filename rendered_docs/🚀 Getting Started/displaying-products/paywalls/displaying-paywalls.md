@@ -2,7 +2,7 @@
 title: Displaying Paywalls
 slug: displaying-paywalls
 hidden: true
-parentDocSlug: offering-metadata
+parentDocSlug: paywalls
 categorySlug: documentation
 ---
 

@@ -2,7 +2,7 @@
 title: Creating Paywalls
 slug: creating-paywalls
 hidden: true
-parentDocSlug: offering-metadata
+parentDocSlug: paywalls
 categorySlug: documentation
 ---
 
