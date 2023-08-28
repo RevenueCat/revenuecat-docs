@@ -9,7 +9,7 @@ RevenueCat's Paywalls allow you to to remotely configure your entire paywall vie
 
 > ❗️
 > 
-> Paywalls are only available for iOS 15+ but support for macOS, Android, and other platforms is coming soon!
+> Paywalls are only available for iOS 15.0+ and Mac Catalyst 15.0+, but support for Android, tvOS, watchOS, and other platforms is coming soon!
 
 ## How Paywalls work
 
@@ -20,7 +20,7 @@ Our paywall templates use native code to deliver smooth, intuitive experiences t
 To use RevenueCat Paywalls on iOS, simply:
 
 1. Create a Paywall on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
-2. Update your RevenueCat SDK to version 4.27
+2. Update your RevenueCat SDK to version 4.26
 3. Add the RevenueCatUI SPM dependency to your project
 
 <img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
@@ -29,7 +29,7 @@ To use RevenueCat Paywalls on iOS, simply:
 
 > 📘 
 > 
-> RevenueCat Paywalls are only available on our iOS SDK and require version >= 4.27.
+> RevenueCat Paywalls are only available on our iOS SDK and require version >= 4.26.
 > 
 > Android support is coming soon.
 
@@ -343,6 +343,7 @@ class RoundedSystemFontProvider: PaywallFontProvider {
 
 #### Platforms (support for more coming)
 * ✅  iOS 15.0 and higher
+* ✅  Mac Catalyst 15.0 and higher
 * ❌ tvOS
 * ❌ watchOS
 * ❌ macOS
