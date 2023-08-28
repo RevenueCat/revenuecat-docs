@@ -143,10 +143,10 @@ lane :update_docs_structure do |options|
 
         UI.message("Doc information retrieved from server")
         doc_order = doc_information_from_server["order"]
-        doc_parent_doc = doc_information_from_server["parentDoc"]
+        doc_parent_doc_slug = doc_information_from_server["parentDocSlug"]
         doc_category = doc_information_from_server["category"]
 
-        update_doc_information(file, doc_category, doc_order, doc_parent_doc)
+        update_doc_information(file, doc_category, doc_order, doc_parent_doc_slug)
     end
 end
 
@@ -250,8 +250,8 @@ end
 # @param [String] filename Name of the file to update
 # @param [String] category_id ID of the category to update the document with
 # @param [String] order Order of the doc in the category
-# @param [String] parent_doc_id Parent ID of the doc
-def update_doc_information(filename, category_id, order, parent_doc_id)
+# @param [String] parent_doc_slug Parent Doc slug of the doc
+def update_doc_information(filename, category_id, order, parent_doc_slug)
     Dir.chdir(root_dir) do
         file = File.read(filename)
         yaml_header, content = file.split('---', 3)[1..-1]
@@ -271,10 +271,18 @@ def update_doc_information(filename, category_id, order, parent_doc_id)
             yaml_data['order'] = order
         end
 
-        original_parent = yaml_data['parentDoc']
-        if parent_doc_id && original_parent != parent_doc_id
-            UI.message("Updating parent of #{filename} from #{original_parent} to #{parent_doc_id}")
-            yaml_data['parentDoc'] = parent_doc_id
+        original_parent_slug = yaml_data['parentDocSlug']
+        if parent_doc_slug && original_parent_slug != parent_doc_slug
+            UI.message("Updating parent of #{filename} from #{original_parent_slug} to #{parent_doc_slug}")
+            yaml_data['parentDocSlug'] = parent_doc_slug
+        end
+
+        if yaml_data['parentDocSlug']
+            yaml_data.delete('parentDoc') # Remove 'parentDoc' if 'parentDocSlug' is set
+        else
+            # Set 'parentDoc' to '' if 'parentDocSlug' doesn't exist to be explicit about it
+            # There's a bug where readme ignores empty values for 'parentDocSlug' but not for 'parentDoc'
+            yaml_data['parentDoc'] = ''
         end
 
         File.write(filename, "#{yaml_data.to_yaml}---#{content}")
