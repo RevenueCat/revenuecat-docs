@@ -2,6 +2,7 @@
 title: Offering metadata example use cases
 slug: offering-metadata-examples
 hidden: false
+parentDocSlug: offering-metadata
 categorySlug: documentation
 order: 999
 parentDoc: 649983b4c31b2e000a3c1887
