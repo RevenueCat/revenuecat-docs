@@ -2,6 +2,8 @@
 title: Creating Paywalls
 slug: creating-paywalls
 hidden: true
+parentDocSlug: offering-metadata
+categorySlug: documentation
 ---
 
 ## How to create a Paywall
