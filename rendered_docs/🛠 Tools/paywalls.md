@@ -3,8 +3,6 @@ title: Paywalls (beta)
 slug: paywalls
 hidden: true
 categorySlug: tools
-parentDocSlug: ''
-parentDoc: ''
 order: 2
 ---
 RevenueCat's Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
