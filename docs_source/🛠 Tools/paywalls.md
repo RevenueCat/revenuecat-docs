@@ -3,15 +3,15 @@ title: Paywalls (beta)
 slug: paywalls
 hidden: false
 ---
-RevenueCat's Paywalls allow you to to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
+RevenueCat's Paywalls allow you to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
 > ❗️
 > 
 > Paywalls are only available for iOS 15.0+ and Mac Catalyst 15.0+, but support for Android, tvOS, watchOS, and other platforms is coming soon!
 
-## How Paywalls work
+# How Paywalls work
 
-### Overview
+## Overview
 
 Our paywall templates use native code to deliver smooth, intuitive experiences to your customers when you’re ready to deliver them an Offering; and you can use our Dashboard to pick the right template and configuration to meet your needs.
 
@@ -34,15 +34,15 @@ To use RevenueCat Paywalls on iOS, simply:
 > 
 > Android support is coming soon.
 
-### Offerings and Paywalls
+## Offerings and Paywalls
 
 You can think of a Paywall as an optional feature of your Offering. An Offering is the collection of Products which are organized into Packages to be displayed to your customers as a single "offer" across platforms. Now, with Paywalls, you can control the actual view that is used to display that "offer" in addition to controlling the products that are offered.
 
 Therefore, you can create a unique Paywall for each of your Offerings, and can create an unlimited number of Offerings & Paywalls for each variation you want to test with Experiments.
 
-## Limitations
+# Limitations
 
-#### Platforms (support for more coming)
+## Platforms (support for more coming)
 * ✅  iOS 15.0 and higher
 * ✅  Mac Catalyst 15.0 and higher
 * ❌ tvOS
