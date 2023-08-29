@@ -1,7 +1,7 @@
 ---
 title: Displaying Paywalls
 slug: displaying-paywalls
-hidden: true
+hidden: false
 ---
 
 # Displaying Paywalls

@@ -1,7 +1,7 @@
 ---
 title: Creating Paywalls
 slug: creating-paywalls
-hidden: true
+hidden: false
 ---
 
 # How to create a new Paywall
