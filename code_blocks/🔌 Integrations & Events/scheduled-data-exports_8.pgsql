@@ -127,9 +127,9 @@ WITH
   -- subscriber retention table. If you're not interested in pending
   -- subscriptions, you can remove pending_retention from this below query. For
   -- example:
-  -- COALESCE(retention.first_start_time, pending_retention.first_start_time) AS first_start_time,
+  --   COALESCE(retention.first_start_time, pending_retention.first_start_time) AS first_start_time,
   -- should be changed into:
-  -- retention.first_start_time AS first_start_time,
+  --   retention.first_start_time AS first_start_time,
   -- if pending retention is not needed.
   full_table AS (
     SELECT
