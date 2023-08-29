@@ -85,6 +85,10 @@ To make it easier to identify your products in RevenueCat, you can optionally se
 3. Entering your desired display name
 4. Clicking **Save**
 
+> 📘 
+> 
+> Product display names must be unique within an app. It's a good practice to include the product duration in the display name to avoid name overlaps, for example: 'My Pro Subscription Monthly', 'My Pro Subscription Yearly' etc".
+
 > 🚧 
 > 
 > Product display names are currently supported in Charts, and will be supported throughout the Dashboard in the near future.

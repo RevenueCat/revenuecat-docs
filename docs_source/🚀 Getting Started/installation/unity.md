@@ -53,13 +53,6 @@ If you're running `purchases-unity` v3.5.1 or later, also make sure that the `Re
 }
 [/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "If using the RevenueCat plugin older than 2.3.0 alongside Unity IAP or other plugin that includes the Android InAppBillingService class, or you are getting `Duplicate class com.android.vending.billing.IInAppBillingService` please update to the latest Unity SDK or see the [legacy install instructions](https://docs.revenuecat.com/v3.0/docs/unity#installation-with-unity-iap-side-by-side)",
-  "title": "Android InAppBillingService in versions of purchases-unity < 2.3.0"
-}
-[/block]
 ## Create a GameObject with the Purchases behavior
 The Purchases package will include a MonoBehavior called Purchases. This will be your access point to RevenueCat from inside Unity. It should be instantiated once and kept as a singleton. You can use properties to configure your API Key, app user ID (if you have one), and product identifiers you want to fetch.
 ![](https://files.readme.io/a20fb79-Screen_Shot_2022-08-03_at_3.04.56_PM.png "Screen Shot 2022-08-03 at 3.04.56 PM.png")
