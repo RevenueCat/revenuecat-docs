@@ -310,7 +310,7 @@ workflows:
     when:
       equal: [ sync, << pipeline.parameters.action >> ]
     jobs:
-      - open-syncing-pr:
+      - open-syncing-pr
 
   sync:
     jobs:
