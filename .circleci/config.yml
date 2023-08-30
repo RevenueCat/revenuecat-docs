@@ -308,7 +308,7 @@ workflows:
 
   trigger-open-syncing-pr:
     when:
-        equal: [ sync, << pipeline.parameters.action >> ]
+      equal: [ sync, << pipeline.parameters.action >> ]
     jobs:
       - open-syncing-pr:
 
