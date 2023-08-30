@@ -306,6 +306,12 @@ workflows:
             branches:
               only: main
 
+  trigger-open-syncing-pr:
+    when:
+        equal: [ sync, << pipeline.parameters.action >> ]
+    jobs:
+      - open-syncing-pr:
+
   sync:
     jobs:
       - check-categories: *syncing-branches
