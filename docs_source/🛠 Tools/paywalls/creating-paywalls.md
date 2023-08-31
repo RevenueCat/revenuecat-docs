@@ -104,3 +104,80 @@ Use your own hex codes, select a custom color, or use our color picker to select
 > 📘 
 > 
 > The color picker can be used outside of your browser window as well if you need to grab colors from assets in other applications.
+
+## Localization
+
+RevenueCat Paywalls come with built-in support for localization. This will allow you to customize your paywall content for all the languages that your app supports.
+
+Locales can be added to your paywall through the 'Localization' dropdown.
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c53fb56-Screenshot_2023-08-31_at_3.51.13_PM.png",
+        "",
+        ""
+      ],
+      "align": "center"
+    }
+  ]
+}
+[/block]
+
+Each paywall template may differ in the localized values that you will need to provide. The options that most templates have are:
+- Title
+- Subtitle
+- Package details
+- Package details for an introductory offer
+- Call to action
+- Call to action for an introductory offer
+
+Since RevenueCatUI allows for dynamic text with [Variables](#variables), all the output of variables will automatically localized. This includes period lengths like "Annual", "Monthly" and "Weekly" being localized to "Anual", "Mensual", and "Semanalmente". Price per period like "$6.99/mo" and "$53.99/yr" will also be localized to "$6.99/m." and "$53.99/año".
+
+Other paywall components like "Restore purchases", "Terms of Service", and "Privacy Policy" will also automatically be localized.
+
+### Supported locales
+
+We currently support all 39 locales that are supported on [App Store Connect](https://www.apple.com/ios/feature-availability/#system-language-system-language).
+
+- Arabic (Saudi Arabia) - `ar`
+- Catalan - `ca`
+- Chinese (Simplified) - `zh`
+- Chinese (Traditional) - `zh`
+- Croatian - `hr`
+- Czech - `cs`
+- Danish - `da`
+- Dutch (Netherlands) - `nl`
+- English (Australia) - `en`
+- English (Canada) - `en`
+- English (United Kingdom) - `en`
+- English (United States) - `en`
+- Finnish - `fi`
+- French (Canada) - `fr`
+- French (France) - `fr`
+- German (Germany) - `de`
+- Greek - `el`
+- Hebrew - `he`
+- Hindi - `hi`
+- Hungarian - `hu`
+- Indonesian - `id`
+- Italian - `it`
+- Japanese - `ja`
+- Korean - `ko`
+- Malay - `ms`
+- Norwegian - `no`
+- Polish - `pl`
+- Portuguese (Brazil) - `pt`
+- Portuguese (Portugal) - `pt`
+- Romanian - `ro`
+- Russian - `ru`
+- Slovak - `sk`
+- Spanish (Mexico) - `es`
+- Spanish (Spain) - `es`
+- Swedish - `sv`
+- Thai - `th`
+- Turkish - `tr`
+- Ukrainian - `uk`
+- Vietnamese - `vi`
