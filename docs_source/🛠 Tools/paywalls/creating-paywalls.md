@@ -140,7 +140,7 @@ Other paywall components like "Restore purchases", "Terms of Service", and "Priv
 
 ### Supported locales
 
-We currently support all 39 locales that are supported on [App Store Connect](https://appstoreconnect.apple.com/).
+We currently support all 39 locales that are supported on [App Store Connect](https://www.apple.com/ios/feature-availability/#system-language-system-language).
 
 - Arabic (Saudi Arabia) - `ar`
 - Catalan - `ca`
