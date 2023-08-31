@@ -24,8 +24,9 @@ The `getOfferings` method will fetch the Offerings from RevenueCat. These are pr
 [
   {
     "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_1.swift"
+    "name": "Swift",
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Displaying products"
   },
   {
     "language": "objectivec",
@@ -93,8 +94,9 @@ It's also possible to access other Offerings besides the "Current Offering" dire
 [
   {
     "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_9.swift"
+    "name": "Swift",
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Custom Offering identifiers"
   },
   {
     "language": "objectivec",
@@ -171,8 +173,9 @@ Packages can be access in a few different ways:
 [
   {
     "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_17.swift"
+    "name": "Swift",
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": " Displaying packages"
   },
   {
     "language": "objectivec",
@@ -218,7 +221,8 @@ Each Package includes an underlying product that includes more information about
   {
     "language": "swift",
     "name": "Swift",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_24.swift"
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Getting the Product"
   },
   {
     "language": "objectivec",
@@ -273,7 +277,8 @@ This can be accomplished with custom Offering identifiers for each of these "coh
   {
     "language": "swift",
     "name": "Swift",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_32.swift"
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Choosing which Offering to display"
   },
   {
     "language": "objectivec",

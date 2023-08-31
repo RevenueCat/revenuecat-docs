@@ -10,7 +10,7 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 # Requirements
 
-Xcode 13.2.0+
+Xcode 14.0.0+
 Minimum target: iOS 11.0+
 
 # Installation
@@ -34,10 +34,15 @@ RevenueCat for iOS can be installed either via [CocoaPods](doc:ios#section-insta
 [/block]
 ## Install via Swift Package Manager
 
-You can use Swift Package Manager to add RevenueCat to your Xcode project. Select `File » Add Packages... ` and enter the repository URL of the `https://github.com/RevenueCat/purchases-ios.git` into the search bar (top right). Set the Dependency Rule to `Up to next major`, and the version number to `4.0.0 < 5.0.0`. Check `RevenueCat` when a prompt for "Choose Package Products for purchases-ios" appears. Finally, choose the target where you want to use it. 
+You can use Swift Package Manager to add RevenueCat to your Xcode project. Select `File » Add Packages... ` and enter the repository URL `https://github.com/RevenueCat/purchases-ios.git` into the search bar (top right). Set the Dependency Rule to `Up to next major`, and the version number to `4.0.0 < 5.0.0`. Check `RevenueCat` when a prompt for "Choose Package Products for purchases-ios" appears. Finally, choose the target where you want to use it. 
 
 The library should have been added to the Swift Package Dependencies section and you should be able to import it now.
 ![](https://files.readme.io/bd6e034-Screen_Shot_2022-06-23_at_10.03.57.png "Screen Shot 2022-06-23 at 10.03.57.png")
+## Install via Swift Package Manager with Xcode 15
+
+Select `File » Add Packages Dependencies... ` and enter the repository URL `https://github.com/RevenueCat/purchases-ios.git` into the search bar (top right). Set the Dependency Rule to `Up to next major`, and the version number to `4.0.0 < 5.0.0`. When "Choose Package Products for purchases-ios" appears, Xcode adds all libraries to your target by default. Select "None" for `RevenueCat_CustomEntitlementComputation` and `ReceiptParser`.
+
+![](https://github.com/RevenueCat/purchases-ios/assets/685609/0ddf0c35-5681-4d38-b4dc-d2ebdae24988 "Screenshot 2023-08-29 at 08 37 25")
 ## Install via CocoaPods
 
 To always use the latest release, add the following to your Podfile:
