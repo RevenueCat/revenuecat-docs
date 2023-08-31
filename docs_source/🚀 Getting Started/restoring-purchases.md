@@ -46,6 +46,11 @@ It is recommended that all apps have some way for users to trigger the `restoreP
     "file": "code_blocks/🚀 Getting Started/restoring-purchases_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/🚀 Getting Started/restoring-purchases_8.cs"
