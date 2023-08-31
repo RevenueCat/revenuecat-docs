@@ -64,6 +64,11 @@ The <<glossary:CustomerInfo>> object contains all of the purchase and subscripti
     "file": "code_blocks/👥 Customers/customer-info_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/customer-info_get_customer_info_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/👥 Customers/customer-info_8.cs"
@@ -197,7 +202,7 @@ For most apps that only have one entitlement, the `isActive` status can be quick
   },
   {
     "language": "javascript",
-    "name": "Cordova",
+    "name": "Cordova/Capacitor",
     "file": "code_blocks/👥 Customers/customer-info_15.js"
   },
   {
@@ -244,7 +249,7 @@ If your app has multiple entitlements and you need to check if a user is subscri
   },
   {
     "language": "javascript",
-    "name": "Cordova",
+    "name": "Cordova/Capacitor",
     "file": "code_blocks/👥 Customers/customer-info_23.js"
   },
   {
@@ -301,6 +306,11 @@ Depending on your app, it may be sufficient to ignore the delegate and simply ha
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/👥 Customers/customer-info_31.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/customer-info_add_listener_capacitor.ts"
   },
   {
     "language": "csharp",
