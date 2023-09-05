@@ -9,7 +9,7 @@ struct App: View {
 
     var body: some View {
         ContentView()
-            .sheet(self.$displayPaywall) {
+            .sheet(isPresented: self.$displayPaywall) {
                 PaywallView()
             }
     }
