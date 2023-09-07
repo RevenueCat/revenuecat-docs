@@ -54,6 +54,10 @@ In addition to the results per variant that are illustrated above, you can also 
 [/block]
 The results from your experiment can also be exported in this table format using the **Export data CSV** button. This will included aggregate results per variant, and per product results, for flexible analysis.
 
+> 🚧 Automatic emails for poor performing tests
+> 
+> If the Realized LTV of your Treatment is performing meaningfully worse than your Control, we'll automatically email you to let you know about it so that you can run your test with confidence.
+
 # Metric definitions
 
 ## Initial conversion metric definitions
@@ -133,6 +137,3 @@ The results from your experiment can also be exported in this table format using
   "body": "To keep your A and B cohorts on equal footing, only new users are added to experiments. Here's an example to illustrate what can happen if existing users are added to an experiment: an existing user who is placed in a cohort might make a purchase they wouldn't otherwise make because the variant they were shown had a lower price than the default offering they previously saw. This might mean that the user made a purchase out of fear that they were missing out on a sale and wanted to lock in the price in anticipation of it going back up."
 }
 [/block]
-## Example
-
-In the example shown in the below screenshot, there have been no trial completions, active subscriptions, or churn. While the model will be able to make a prediction (possibly with high confidence), it won't be representative of real-world user behavior, so in this case you should wait until you have a good distribution of data.
