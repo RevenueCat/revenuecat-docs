@@ -95,3 +95,10 @@ If you need more control over your font preferences, you can create your own `Pa
   }
 ]
 [/block]
+
+## Default Paywall
+
+If you attempt to display a Paywall for an Offering that doesn't have one configured, the RevenueCatUI SDK will display a default Paywall.
+The default paywall displays all packages in the offering.
+On iOS it uses the app's `accentColor` for styling. 
+

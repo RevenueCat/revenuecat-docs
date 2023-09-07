@@ -167,7 +167,7 @@ Purchases.sharedInstance.purchasePackageWith(
   this,
   aPackage,
   onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
+  onSuccess = { storeTransaction, customerInfo ->
     if (customerInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
     // Unlock that great "pro" content
   }
