@@ -17,7 +17,97 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 - Custom logic with `presentPaywallIfNeeded`
 - Manually with `PaywallView` or `PaywallViewController`
 
+```swift Entitlement
+import SwiftUI
 
+import RevenueCat
+import RevenueCatUI
+
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
+                print("Purchase completed: \(customerInfo.entitlements)")
+            }
+    }
+}
+```
+```swift Custom Logic
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded { customerInfo in
+                // Returning `true` will present the paywall
+                return customerInfo.entitlements.active.keys.contains("pro")
+            } purchaseCompleted: { customerInfo in
+                print("Purchase completed: \(customerInfo.entitlements)")
+            }
+    }
+}
+```
+```swift Manually
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct App: View {
+    @State
+    var displayPaywall = false
+
+    var body: some View {
+        ContentView()
+            .sheet(isPresented: self.$displayPaywall) {
+                PaywallView()
+                // PaywallView does not have a close button 
+                // Manually add one to match your app's style 
+                .toolbar {
+                    ToolbarItem(placement: .destructiveAction) {
+                        Button {
+                            self.displayPaywall = false
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                    }
+                }
+            }
+    }
+}
+```
+```swift Manually (UIKit)
+import UIKit
+
+import RevenueCat
+import RevenueCatUI
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    @IBAction func presentPaywall() {
+        let controller = PaywallViewController()
+        controller.delegate = self
+
+        present(controller, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: PaywallViewControllerDelegate {
+
+    func paywallViewController(_ controller: PaywallViewController,
+                               didFinishPurchasingWith customerInfo: CustomerInfo) {
+
+    }
+
+}
+```
 
 ### Close Button
 
@@ -34,7 +124,44 @@ The footer paywall mainly consists of the following:
 
 This is all remotely configured and RevenueCatUI handles all the intro offer eligibility and purchase logic.
 
+```swift Current Offering
+import SwiftUI
 
+import RevenueCat
+import RevenueCatUI
+
+struct YourPaywall: View {
+
+    var body: some View {
+        ScrollView {
+            // Your custom paywall design content
+        }
+        .paywallFooter()
+    }
+
+}
+```
+```swift Specific Offering
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct YourPaywall: View {
+
+    let offering: Offering
+
+    var body: some View {
+        ScrollView {
+            // Your custom paywall design content
+        }
+        .paywallFooter(offering: offering, condensed: true) { customerInfo in
+            // Purchase completed! Thank your user and dismiss your paywall
+        }
+    }
+
+}
+```
 
 # Customization
 
@@ -48,7 +175,48 @@ We also offer a `CustomPaywallFontProvider` which requires a font name that coul
 
 If you need more control over your font preferences, you can create your own `PaywallFontProvider`. One of the following examples will use a rounded system font in the paywall.
 
+```swift By Font Name
+import SwiftUI
 
+import RevenueCat
+import RevenueCatUI
+
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded(
+                fonts: CustomPaywallFontProvider(fontName: "Arial")
+            ) { customerInfo in
+                // Returning `true` will present the paywall
+                return customerInfo.entitlements.active.keys.contains("pro")
+            }
+    }
+}
+```
+```swift Manual PaywallFontProvider
+import SwiftUI
+
+import RevenueCat
+import RevenueCatUI
+
+struct App: View {
+    var body: some View {
+        ContentView()
+            .presentPaywallIfNeeded(
+                fonts: RoundedSystemFontProvider()
+            ) { customerInfo in
+                // Returning `true` will present the paywall
+                return customerInfo.entitlements.active.keys.contains("pro")
+            }
+    }
+}
+
+class RoundedSystemFontProvider: PaywallFontProvider {
+    func font(for textStyle: Font.TextStyle) -> Font {
+        return Font.system(textStyle, design: .rounded)
+    }
+}
+```
 
 ## Default Paywall
 
