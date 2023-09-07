@@ -19,22 +19,22 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
   {
     "language": "swift",
     "name": "Entitlement",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_1.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_1.swift"
   },
   {
     "language": "swift",
     "name": "Custom Logic",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_2.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_2.swift"
   },
   {
     "language": "swift",
     "name": "Manually",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_3.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_3.swift"
   },
   {
     "language": "swift",
     "name": "Manually (UIKit)",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_4.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_4.swift"
   }
 ]
 [/block]
@@ -59,12 +59,12 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
   {
     "language": "swift",
     "name": "Current Offering",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_5.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_5.swift"
   },
   {
     "language": "swift",
     "name": "Specific Offering",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_6.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_6.swift"
   }
 ]
 [/block]
@@ -86,12 +86,12 @@ If you need more control over your font preferences, you can create your own `Pa
   {
     "language": "swift",
     "name": "By Font Name",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_7.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_7.swift"
   },
   {
     "language": "swift",
     "name": "Manual PaywallFontProvider",
-    "file": "code_blocks/🛠️ Tools/paywalls/paywalls_8.swift"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_8.swift"
   }
 ]
 [/block]
