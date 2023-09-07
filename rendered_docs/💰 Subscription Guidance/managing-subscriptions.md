@@ -161,11 +161,11 @@ Google requires developers to allow customers to cancel a subscription within ap
 
 > 📘 Include the `managementURL` on iOS
 > 
-> The `managementURL` is a great way to allow customers to check the status of and manage their subscriptions on both iOS and Android. RevenueCat will automatically provide your app with the correct `managementURL` based on the platform of the customer's device and original store they purchased their
+> The `managementURL` is a great way to allow customers to check the status of and manage their subscriptions on both iOS and Android. RevenueCat will automatically provide your app with the correct `managementURL` based on the platform of the customer's device and original store they purchased their subscription through.
 
 > ❗️ 
 > 
-> `managementURL` is not supported on Amazon.
+> `managementURL` is not supported on Amazon or Stripe.
 
 ```swift 
 Purchases.shared.getCustomerInfo { (customerInfo, error) in
