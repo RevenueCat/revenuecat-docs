@@ -62,8 +62,19 @@ struct App: View {
 
     var body: some View {
         ContentView()
-            .sheet(self.$displayPaywall) {
+            .sheet(isPresented: self.$displayPaywall) {
                 PaywallView()
+                // PaywallView does not have a close button 
+                // Manually add one to match your app's style 
+                .toolbar {
+                    ToolbarItem(placement: .destructiveAction) {
+                        Button {
+                            self.displayPaywall = false
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                    }
+                }
             }
     }
 }
@@ -97,6 +108,10 @@ extension ViewController: PaywallViewControllerDelegate {
 
 }
 ```
+
+### Close Button
+
+Paywalls displayed with `presentPaywallIfNeeded` will have a close button on the presented sheet. However, a `PaywallView` will not have a close button. This gives you full control on how to to navigate to and from your `PaywallView`. You can push it onto an existing navigation stack or show it in a sheet with a custom dismiss button using SwiftUI toolbar.
 
 ## How to display a footer Paywall on your custom paywall
 
