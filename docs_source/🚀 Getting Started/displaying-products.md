@@ -209,7 +209,7 @@ Packages can be access in a few different ways:
   },
   {
     "language": "javascript",
-    "name": "Cordova/Capacitor",
+    "name": "Capacitor/Cordova",
     "file": "code_blocks/🚀 Getting Started/displaying-products_22.js"
   },
   {

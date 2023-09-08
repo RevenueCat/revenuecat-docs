@@ -11,7 +11,7 @@ try {
   }
 }
 
-// Note: if you are not using offerings/packages to purchase Android In-app products, you can use purchaseStoreProduct and getProducts
+// Note: if you are not using offerings/packages to purchase In-app products, you can use purchaseStoreProduct and getProducts
 
 try {
   const purchaseResult = await Purchases.purchaseStoreProduct({

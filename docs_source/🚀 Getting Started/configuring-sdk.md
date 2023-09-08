@@ -64,7 +64,7 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
   {
     "language": "typescript",
     "name": "Capacitor",
-    "file": "code_blocks/🚀 Getting Started/configuring-sdk_8.ts"
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_8_capacitor.ts"
   },
   {
     "language": "csharp",

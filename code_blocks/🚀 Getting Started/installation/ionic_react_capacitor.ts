@@ -14,11 +14,11 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>My App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonButton onClick={openScanner}>Scan barcode</IonButton>
+        <IonButton onClick={purchasePackage}>Buy subscription</IonButton>
       </IonContent>
     </IonPage>
   );

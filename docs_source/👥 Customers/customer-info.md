@@ -202,7 +202,7 @@ For most apps that only have one entitlement, the `isActive` status can be quick
   },
   {
     "language": "javascript",
-    "name": "Cordova/Capacitor",
+    "name": "Capacitor/Cordova",
     "file": "code_blocks/👥 Customers/customer-info_15.js"
   },
   {
@@ -249,7 +249,7 @@ If your app has multiple entitlements and you need to check if a user is subscri
   },
   {
     "language": "javascript",
-    "name": "Cordova/Capacitor",
+    "name": "Capacitor/Cordova",
     "file": "code_blocks/👥 Customers/customer-info_23.js"
   },
   {
