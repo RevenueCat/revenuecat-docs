@@ -11,13 +11,13 @@ We currently only offer an official Cordova plugin. Install the plugin depending
 [
   {
     "language": "text",
-    "name": "Cordova",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_cordova.txt"
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_capacitor.txt"
   },
   {
     "language": "text",
-    "name": "Capacitor",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_capacitor.txt"
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_cordova.txt"
   }
 ]
 [/block]
@@ -30,13 +30,13 @@ The types are shipped inside the npm package. You can import them like this:
 [
   {
     "language": "text",
-    "name": "Cordova Typescript types",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_typescript_cordova.ts"
+    "name": "Capacitor Typescript types",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_typescript_capacitor.ts"
   },
   {
     "language": "text",
-    "name": "Capacitor Typescript types",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_typescript_capacitor.ts"
+    "name": "Cordova Typescript types",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_typescript_cordova.ts"
   }
 ]
 [/block]
@@ -49,13 +49,13 @@ Wait for the Platform to be ready, then configure the plugin in your `src/app/ap
 [
   {
     "language": "typescript",
-    "name": "Cordova",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_angular_cordova.ts"
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_angular_capacitor.ts"
   },
   {
     "language": "typescript",
-    "name": "Capacitor",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_angular_capacitor.ts"
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_angular_cordova.ts"
   }
 ]
 [/block]
@@ -68,13 +68,13 @@ Import the plugin object then use its static methods:
 [
   {
     "language": "typescript",
-    "name": "Cordova",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_react_cordova.ts"
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_react_capacitor.ts"
   },
   {
     "language": "typescript",
-    "name": "Capacitor",
-    "file": "code_blocks/🚀 Getting Started/installation/ionic_react_capacitor.ts"
+    "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_react_cordova.ts"
   }
 ]
 [/block]
