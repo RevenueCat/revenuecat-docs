@@ -14,7 +14,7 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonButton onClick={purchasePackage}>Buy subscription</IonButton>
+        <IonButton onClick={purchasePackage}>Subscribe now</IonButton>
       </IonContent>
     </IonPage>
   );
