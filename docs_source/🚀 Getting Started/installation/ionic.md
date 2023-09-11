@@ -5,7 +5,7 @@ excerpt: Instructions for Installing Purchases SDK for Ionic
 hidden: false
 ---
 
-We currently offer official Capacitor and Cordova plugins. We recommend using the Capacitor plugin when possible. Install the plugin depending on your framework:
+We offer official plugins for both Capacitor and Cordova. We recommend using the Capacitor plugin when possible. Install the plugin depending on your framework:
 
 [block:file]
 [
