@@ -5,6 +5,7 @@ hidden: false
 parentDocSlug: itunesconnect-app-specific-shared-secret
 categorySlug: service-credentials
 order: 4
+parentDoc: 649983b4c31b2e000a3c1859
 ---
 You may upload an App Store Connect API key for RevenueCat to import products and prices from App Store Connect. 
 
