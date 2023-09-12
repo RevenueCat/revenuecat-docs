@@ -50,9 +50,9 @@ If you want to add a snippet to a file in the **docs_source** folder, create a f
 [/block]
 ```
 
-If you want to add a tab with another language so it looks like this: 
+If you want to add a tab with another language so it looks like this:
 
-![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/e7adf318-332a-4089-ba4b-84807cdb72d0)
+<img width="500" alt="code1" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/74a5f259-fc56-44af-a410-966e4d1472c8">
 
 
 Simply add a [block:file] block with a JSON array with the other files for the other snippets:
@@ -91,23 +91,23 @@ Small edits can easily be made within GitHub itself, without the need to clone (
 
 Make a new branch in GitHub
 
-![Choose a descriptive name, such as [your name]/[description]](https://github.com/RevenueCat/revenuecat-docs/assets/664544/2105b93c-c7f1-4017-8867-35f5248b97ae)
+<img width="430" alt="img1" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/063f6b42-ebd4-4118-9fa6-ac33b6eacef2">
 
 Select your file from **docs_source**
 
-<img width="406" alt="Screenshot 2023-06-26 at 4 06 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/a0d7e9b2-706d-4312-8d6e-bc41fff233be">
+<img width="385" alt="img2" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/9999c215-2b63-4b82-9353-3776402f2c57">
 
 Click **Edit this file** in the upper-right corner
 
-<img width="544" alt="Screenshot 2023-06-26 at 4 06 52 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b899b891-25e1-49fa-a219-19f047793828">
+<img width="500" alt="img3" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/5f67b98e-02ae-4bc3-9574-3c3bd7b792e9">
 
 When you are done editing the document, click **Commit changes…** in the upper-right corner
 
-<img width="536" alt="Add a descriptive message in the pop-up that follows." src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b397d44e-6de7-4c6c-b49b-a5fef6981899">
+<img width="500" alt="img4" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/d9e5bcce-0afd-433c-89d5-9b8325c01b6e">
 
 You can choose to start a pull request with the changes, if you don’t, navigate to the **Pull requests** tab. A banner will pop up with your new branch. Click **Compare & pull request**
 
-<img width="634" alt="If the banner is missing, click New pull request and select your branch" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/c7cea5c0-1f35-406f-9549-ebbf15a7fd18">
+<img width="500" alt="img5" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/d816af65-ad19-461e-b2f0-3dbaa2815b94">
 
 Make any changes to the PR template (1), select **RevenueCat/support** as a reviewer (2), and click **Create pull request** (3)
 
@@ -120,19 +120,19 @@ You can also add the `[SKIP]` prefix to the commit message if you're not plannin
 
 A second PR will be auto-generated. After reviewing the **rendered_docs** in the PR, approve the PR:
 
-![Screenshot 2023-06-09 at 6.34.09 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a059a4a1-845e-4768-8675-ad66d99c28a0/Screenshot_2023-06-09_at_6.34.09_PM.png)
+<img width="500" alt="img6" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/20df6f60-9659-4e9f-88e5-81e16c5f5c38">
 
 Then un-hold the hold job called `manual-approval-to-sync-with-readme` in CircleCI:
 
-![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/d611dc44-0340-48d7-9fb3-85ff3cf556ad)
-
-![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/26c2ef60-09f4-46be-b90a-38876377fe1a)
-
-![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/86b4bdc9-748e-4812-bd3e-e7daf0b8e1aa)
+<img width="500" alt="img7" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/097c2e20-aab5-40f6-a780-c2945a11abee">
+&nbsp
+<img width="500" alt="img8" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/62525850-f90b-445d-bccd-db3ae1ae7e84">
+&nbsp
+<img width="500" alt="img9" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/126151c8-3a89-4beb-9153-dd14478d34c7">
 
 A new job will start to run called `sync-files-if-syncing-pr`. When the job finishes and all checks have passed the docs will be synced. You can go ahead squash and merge the Pull Request:
 
-![Screenshot 2023-06-09 at 6.33.25 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f28058f-701a-4782-a490-d90f0026e1c4/Screenshot_2023-06-09_at_6.33.25_PM.png)
+<img width="500" alt="img10" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/ee00b08e-29f9-45d7-a2be-9a71e34da313">
 
 If you don’t want to sync the changes with Readme yet, feel free to close the pull request and delete the branch.
 
@@ -140,15 +140,15 @@ If you don’t want to sync the changes with Readme yet, feel free to close the 
 
 Once your branch is creating in the previous step, you can keep editing docs in that branch. Pick your branch in the home of the repository by clicking the caret down next to `main`:
 
-<img width="460" alt="Screenshot 2023-06-26 at 4 08 54 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/3b33477c-8adc-4439-afce-efe402e3b54f">
+<img width="430" alt="img11" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/e6071278-425c-45ae-a526-d1350b7367f3">
 
 Once in your branch, follow the same steps and navigate to another file and edit it.
 
-<img width="543" alt="Screenshot 2023-06-26 at 4 09 05 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/77268b41-9934-4dcf-9f94-5c501e3e2b14">
+<img width="500" alt="img12" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/2b560227-788b-4388-8840-e889e114b78b">
 
 After making the changes, and pressing the `Commit changes…` button, make sure you select `Commit directly to the ...` button, so the changes are pushed to the branch that was opened before.
 
-<img width="345" alt="Screenshot 2023-06-26 at 4 09 18 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/93cde391-bc7b-4f1d-83c2-1f8c7644c1f1">
+<img width="335" alt="img13" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/c6c81bc6-0b26-4f1e-b47b-143f7333f0e8">
 
 **Note:** At this time, changing the folder of a doc, or removing whole folders is not supported. Feel free to reach out to [Support](https://revenuecat.slack.com/archives/CSSCSV4TF) for assistance, for these type of changes that require technical knowledge of Git.
 
