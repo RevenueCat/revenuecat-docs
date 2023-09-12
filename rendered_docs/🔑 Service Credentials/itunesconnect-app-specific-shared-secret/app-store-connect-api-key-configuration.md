@@ -1,7 +1,8 @@
 ---
 title: App Store Connect API Key Configuration
 slug: app-store-connect-api-key-configuration
-hidden: true
+hidden: false
+parentDocSlug: itunesconnect-app-specific-shared-secret
 categorySlug: service-credentials
 order: 4
 ---

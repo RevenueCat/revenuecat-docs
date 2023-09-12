@@ -2,7 +2,7 @@
 title: App Store Connect API Key Configuration
 slug: app-store-connect-api-key-configuration
 hidden: false
-docParentSlug: itunesconnect-app-specific-shared-secret
+parentDocSlug: itunesconnect-app-specific-shared-secret
 ---
 You may upload an App Store Connect API key for RevenueCat to import products and prices from App Store Connect. 
 
