@@ -7,7 +7,7 @@ struct App: View {
     var body: some View {
         ContentView()
             .presentPaywallIfNeeded(
-                requiredEntitlementIdentifier: "pro", 
+                requiredEntitlementIdentifier: "pro",
                 purchaseCompleted: { customerInfo in
                     print("Purchase completed: \(customerInfo.entitlements)")
                 },
