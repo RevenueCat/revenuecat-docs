@@ -41,6 +41,9 @@ Purchases.configure({apiKey: <public_sdk_key>});
 ```javascript Cordova
 Purchases.configureWith({ apiKey: <public_sdk_key> });
 ```
+```typescript Capacitor
+Purchases.configure({ apiKey: <public_sdk_key> });
+```
 ```csharp Unity
 // The SDK can be configured through the Unity Editor. 
 // See Unity installation instructions https://docs.revenuecat.com/docs/unity
@@ -102,7 +105,10 @@ await Purchases.configure(
 Purchases.configure({apiKey: <public_sdk_key>, appUserID: <my_app_user_id>});
 ```
 ```javascript Cordova
-Purchases.setup(<public_sdk_key>, <my_app_user_id>);
+Purchases.configureWith({ apiKey: <public_sdk_key>, appUserID: <my_app_user_id> });
+```
+```typescript Capacitor
+await Purchases.configure({ apiKey: <public_sdk_key>, appUserID: <my_app_user_id> });
 ```
 ```csharp Unity
 // The appUserID can be set through the Unity Editor. 
@@ -132,7 +138,7 @@ If your app doesn't receive its own App User ID until later in its lifecycle, yo
 // Configure Purchases on app launch
 Purchases.configure(withAPIKey: <my_api_key>)
 
-//...
+// ...
 
 // Later log in provided user Id
 Purchases.shared.logIn(<my_app_user_id>) { (customerInfo, created, error) in
@@ -201,7 +207,7 @@ const { customerInfo, created } = await Purchases.logIn(<my_app_user_id>);
 ```
 ```javascript Cordova
 // Configure Purchases on app launch
-Purchases.setup(<public_sdk_key>);
+Purchases.configureWith({ apiKey: <public_sdk_key> });
 
 //...
 
@@ -215,6 +221,19 @@ Purchases.logIn(
   error => {
   }
 );
+```
+```typescript Capacitor
+// Configure Purchases on app launch
+await Purchases.configure({ apiKey: <public_sdk_key> });
+
+//...
+
+// Later log in providing user Id
+try {
+  const logInResult = await Purchases.logIn({ appUserID: <my_app_user_id>});
+} catch (error) {
+  // Handle error logging in
+}
 ```
 ```csharp Unity
 // configure the SDK either through the Editor or through 

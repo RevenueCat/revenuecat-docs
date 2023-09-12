@@ -29,7 +29,7 @@ RevenueCat does not require server notifications from the App Store, however doi
 }
 [/block]
 3. Log in to **[App Store Connect](https://appstoreconnect.apple.com/)** and select your app.
-4. Under the **App Information > App Store Server Notifications** section, paste the entire URL from RevenueCat in both the **Production Server URL** field and the **Sandbox Server URL** field. You can use either *Version 1* or *Version 2* notifications.
+4. Under the **App Information > App Store Server Notifications** section, paste the entire URL from RevenueCat in both the **Production Server URL** field and the **Sandbox Server URL** field. You can use either *Version 1* or *Version 2* notifications, but *Version 2* notifications are recommended to use features such as [auto-detecting price changes](https://www.revenuecat.com/docs/price-changes).
 [block:image]
 {
   "images": [
@@ -63,7 +63,7 @@ RevenueCat does not require server notifications from the App Store, however doi
   "body": "If RevenueCat receives a notification for a user that doesn't have any purchases in RevenueCat, a 200 code will be sent and the request will be ignored, so the last received notification timestamp won't be updated. Keep this in mind when forwarding events yourself."
 }
 [/block]
-# Setting up RevenueCat to forward Apple notifications to your server
+# [Option 1 (recommended)] Setting up RevenueCat to forward Apple notifications to your server
 
 If you still want to receive Apple's notifications to your server, you can configure RevenueCat to forward them to a URL that you specify.
 
@@ -93,7 +93,7 @@ If you still want to receive Apple's notifications to your server, you can confi
   "body": "If your server needs to have specific hostnames or IP addresses on its allowlist to receive App Store Server Notifications, you can add the hostname `dps.iso.aple.com` and IP addresses `17.58.0.0/18` and `17.58.192.0/18`. These IP addresses are same for sandbox and production."
 }
 [/block]
-# Forwarding Apple notifications to RevenueCat
+# [Option 2] Forwarding Apple notifications to RevenueCat
 [block:callout]
 {
   "type": "warning",

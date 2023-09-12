@@ -22,10 +22,10 @@ Offerings are fetched through the SDK based on their [configuration](doc:entitle
 
 The `getOfferings` method will fetch the Offerings from RevenueCat. These are pre-fetched in most cases on app launch, so the completion block to get offerings won't need to make a network request in most cases. 
 
-```swift 
+```swift Swift
 Purchases.shared.getOfferings { (offerings, error) in
     if let packages = offerings?.current?.availablePackages {
-        // Display packages for sale
+        self.display(packages)
     }
 }
 ```
@@ -97,6 +97,18 @@ func displayUpsellScreen() {
   );
 }
 ```
+```typescript Capacitor
+const displayUpsellScreen = async () => {
+  try {
+    const offerings = await Purchases.getOfferings();
+    if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {  
+      // Display packages for sale
+    }
+  } catch (error) {
+    // Handle error
+  }
+}
+```
 ```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetOfferings((offerings, error) =>
@@ -131,10 +143,10 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
 
-```swift 
+```swift Swift
 Purchases.shared.getOfferings { (offerings, error) in
-    if let packages = offerings?.offering(identifier: "experiment_group").availablePackages {
-        // Display packages for sale
+    if let packages = offerings?.offering(identifier: "experiment_group")?.availablePackages {
+        self.display(packages)
     }
 }
 ```
@@ -203,6 +215,16 @@ Purchases.getOfferings(
       }
   );
 ```
+```typescript Capacitor
+try {
+  const offerings = await Purchases.getOfferings();
+  if (offerings.all["experiment_group"].availablePackages.length !== 0) {  
+    // Display packages for sale
+  }
+} catch (error) {
+  // Handle error
+}
+```
 ```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetOfferings((offerings, error) =>
@@ -246,12 +268,12 @@ Packages can be access in a few different ways:
 2. via the duration convenience property on an Offering
 3. via the package identifier directly
 
-```swift 
-offerings.offering(identifier: "experiment_group").availablePackages
+```swift Swift
+let packages = offerings.offering(identifier: "experiment_group")?.availablePackages
 // --
-offerings.offering(identifier: "experiment_group").monthly
+let monthlyPackage = offerings.offering(identifier: "experiment_group")?.monthly
 // --
-offerings.offering(identifier: "experiment_group").package(identifier: "<package_id>")
+let packageById = offerings.offering(identifier: "experiment_group")?.package(identifier: "<package_id>")
 ```
 ```objectivec 
 [offerings offeringWithIdentifier:"experiment_group"].availablePackages
@@ -281,7 +303,7 @@ offerings.all["experiment_group"].monthly
 // --
 offerings.all["experiment_group"].availablePackages.find(package => package === "<package_id>")
 ```
-```javascript Cordova
+```javascript Capacitor/Cordova
 offerings.all["experiment_group"].availablePackages
 // --
 offerings.all("experiment_group").monthly
@@ -303,11 +325,11 @@ offerings.All["experiment_group"].Monthly
 Each Package includes an underlying product that includes more information about the price, duration, and other metadata. You can access the product via the `storeProduct` property:
 
 ```swift Swift
-// Accessing the monthly product
-
 Purchases.shared.getOfferings { (offerings, error) in
-    if let package = offerings?.current?.monthly?.storeProduct {
-        // Get the price and introductory period from the StoreProduct
+    // Accessing the monthly product
+    if let product = offerings?.current?.monthly?.storeProduct {
+        // Display the product information (like price and introductory period)
+        self.display(product)
     }
 }
 ```
@@ -395,6 +417,21 @@ func displayUpsellScreen() {
   );
 }
 ```
+```typescript Capacitor
+// Accessing the monthly product
+
+const displayUpsellScreen = async () => {
+  try {
+    const offerings = await Purchases.getOfferings();
+    if (offerings.current && offerings.current.monthly) {
+      const product = offerings.current.monthly;  
+      // Get the price and introductory period from the PurchasesProduct
+    }
+  } catch (error) {
+    // Handle error
+  }
+}
+```
 ```csharp Unity
 // Accessing the monthly product
 
@@ -420,8 +457,8 @@ This can be accomplished with custom Offering identifiers for each of these "coh
 
 ```swift Swift
 Purchases.shared.getOfferings { (offerings, error) in
-    var packages : [Package]?
-    
+    var packages: [Package]?
+
     if user.isPaidDownload {
         packages = offerings?.offering(identifier: "paid_download_offer")?.availablePackages
     } else if user.signedUpOver30DaysAgo {
@@ -429,8 +466,9 @@ Purchases.shared.getOfferings { (offerings, error) in
     } else if user.recentlyChurned {
         packages = offerings?.offering(identifier: "ios_subscription_offer")?.availablePackages
     }
-    
+
     // Present your paywall
+    self.display(packages)
 }
 ```
 ```objectivec Objective-C
@@ -517,6 +555,24 @@ try {
 }
 ```
 ```javascript Cordova
+Purchases.getOfferings(
+      offerings => {
+        let packages;
+        if (user.isPaidDownload) {
+          packages = offerings.all["paid_download_offer"].availablePackages;
+        } else if (user.signedUpOver30DaysAgo) {
+          packages = offerings.all["long_term_offer"].availablePackages;
+        } else if (user.recentlyChurned) {
+          packages = offerings.all["ios_subscription_offer"].availablePackages;
+        }
+        presentPaywall(packages);
+      },
+      error => {
+
+      }
+  );
+```
+```typescript Capacitor
 Purchases.getOfferings(
       offerings => {
         let packages;

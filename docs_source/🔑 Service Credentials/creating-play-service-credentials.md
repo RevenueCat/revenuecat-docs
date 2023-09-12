@@ -207,6 +207,8 @@ Ensure that you have granted the following permissions:
 - Manage orders and subscriptions in [step 3a](https://www.revenuecat.com/docs/creating-play-service-credentials#a-grant-the-following-permissions)
 - Once this is done, try to make a test purchase using a [Sandbox user](https://www.revenuecat.com/docs/google-play-store) in order to check if the connection to the subscriptions API is working. 
 
+You will also want to make sure that you have uploaded your signed APK or Android App Bundle and have completed all the steps to approve the release.
+
 ### inappproducts API
 
 If the permission to call inappproducts API validation is not passing, that means we were unable to use your credentials to receive a response from Google's [GET inappproducts endpoint](https://developers.google.com/android-publisher/api-ref/rest/v3/inappproducts/get).

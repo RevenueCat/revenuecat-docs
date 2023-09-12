@@ -107,15 +107,16 @@ Make sure you configure *Purchases* with your public SDK key only. You can read 
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     Purchases.logLevel = .debug
     Purchases.configure(
      with: Configuration.Builder(withAPIKey: Constants.apiKey)
               .with(appUserID: "<app_user_id>")
               .build()
      )
-  
+
 }
 ```
 ```objectivec 
@@ -210,7 +211,7 @@ import 'dart:io' show Platform;
 //...
 
 Future<void> initPlatformState() async {
-  await Purchases.setDebugLogsEnabled(true);
+  await Purchases.setLogLevel(LogLevel.debug);
   
   PurchasesConfiguration configuration;
   if (Platform.isAndroid) {
@@ -289,7 +290,7 @@ The SDK will automatically fetch the [configured Offerings](doc:entitlements#off
 Below is an example of fetching Offerings. You can utilize Offerings to organize your paywall screen. See our guide on [Displaying Products](doc:displaying-products) for more information and best practices.
 ```swift 
 Purchases.shared.getOfferings { (offerings, error) in
-	if let offerings = offerings {
+	if let offerings {
 	  // Display current offering with offerings.current
   }
 }
@@ -417,7 +418,7 @@ Purchases.sharedInstance.purchasePackageWith(
   this,
   package,
   onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
+  onSuccess = { storeTransaction, customerInfo ->
     if (customerInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
     // Unlock that great "pro" content
   }
@@ -625,7 +626,7 @@ It's typical to call this method when deciding which UI to show the user and whe
 RevenueCat enables your users to restore their in-app purchases, reactivating any content that they previously purchased from the **same store account** (Apple, Google, or Amazon account). We recommend that all apps have some way for users to trigger the restore method. Note that Apple does require a restore mechanism in the event a user loses access to their purchases (e.g: uninstalling/reinstalling the app, losing their account information, etc).
 ```swift 
 Purchases.shared.restorePurchases { (customerInfo, error) in
-    //... check customerInfo to see if entitlement is now active
+    // ... check customerInfo to see if entitlement is now active
 }
 ```
 ```objectivec 
@@ -705,12 +706,13 @@ Depending on your app, it may be sufficient to ignore the delegate and simply ha
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     Purchases.logLevel = .debug
     Purchases.configure(withAPIKey: "public_sdk_key")
     Purchases.shared.delegate = self // make sure to set this after calling configure
-    
+
     return true
 }
 

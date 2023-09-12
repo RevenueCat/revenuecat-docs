@@ -18,7 +18,7 @@ The answer to this depends on the question you have, or the area that you need s
 
 Since these aren’t official integrations, but rather partner-built solutions, the partners themselves will know best how to support the implementation and management of these tools.
 
-If your questions are in regards to configuring products, entitlements, or offerings on RevenueCat’s dashboard, or how to interact with any of our metrics and charts, please don’t hesitate to contact support@revenuecat.com.
+If your questions are in regards to configuring products, entitlements, or offerings on RevenueCat’s dashboard, or how to interact with any of our metrics and charts, please don’t hesitate to [contact RevenueCat support](https://app.revenuecat.com/settings/support).
 
 
 # How Do I Get Started?

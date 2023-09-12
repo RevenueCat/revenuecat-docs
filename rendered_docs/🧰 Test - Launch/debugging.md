@@ -49,15 +49,17 @@ Purchases.SetLogLevel(Purchases.LogLevel.Debug);
 Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 ```
 
-> 📘 OS_ACTIVITY_MODE and Common iOS Issues
+> 📘 OS_ACTIVITY_MODE
 > 
 > On iOS, disabling `OS_ACTIVITY_MODE` in your Xcode scheme will block debug logs from printing in the console. If you have debug logs enabled, but don't see any output, go to `Product -> Scheme -> Edit Scheme...` in Xcode and uncheck the `OS_ACTIVITY_MODE` environment variable.
 > 
-> Flutter projects using Swift may fail to show debug logs in the console if you are using Visual Studio Code, Android Studio, or other IDE's to run your project. We recommend running your Flutter project using Xcode to view debug logs from the Purchases SDK.
+
 
 # Debug UI
 
-RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+RevenueCat's iOS 4.22.0+ and Android 6.9.2+ SDKs provide an overlay for your app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
+
+## iOS
 
 [block:image]
 {
@@ -81,7 +83,7 @@ RevenueCat's iOS 4.22.0+ SDK provides an overlay for your iOS app that displays 
 
 // This will display it automatically on app-launch:
 ContentView()
-  .debugRevenueCatOverlay()
+    .debugRevenueCatOverlay()
 
 // Alternatively, you can control when to present it:
 @State private var debugOverlayVisible: Bool = false
@@ -90,23 +92,67 @@ var body: some View {
     Button {
         self.debugOverlayVisible = true
     } label: {
-        Text("Display debug screen"
+        Text("Display debug screen")
     }
-        .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
+    .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
 }
 ```
 ```swift UIKit
 // To display the overlay in UIKit, use the `presentDebugRevenueCatOverlay` method on any UIViewController:
-self.presentDebugRevenueCatOverlay()  
+self.presentDebugRevenueCatOverlay()
 
 // or, initialize the DebugViewController and present it manually:
-let debugOverlay = RevenueCat.DebugViewController()  
+let debugOverlay = RevenueCat.DebugViewController()
 self.present(debugOverlay, animated: true)
 ```
 
 You can export your configuration details in JSON format to share with RevenueCat support if you need to open a support ticket.
 
 Note: The debug UI won't compile for release builds, so you'll need to disable the behavior before archiving for release.
+
+## Android
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://github.com/RevenueCat/revenuecat-docs/assets/808417/108f3d64-96d1-4bd7-b926-70c6676931be",
+        null,
+        "RevenueCat Android Debug UI"
+      ],
+      "align": "center",
+      "sizing": "240px",
+      "border": true
+    }
+  ]
+}
+[/block]
+
+In order to use the overlay, you need to include the debug view library which is available on Maven and can be included via Gradle. Currently, this is only available as a Jetpack Compose Composable.
+
+[![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
+
+```groovy build.gradle
+debugImplementation "com.revenuecat.purchase:purchases-debugview:6.9.2"
+releaseImplementation "com.revenuecat.purchase:purchases-debugview-noop:6.9.2"
+```
+
+Then, you can use it from your own `@Composable`'s like this:
+
+```kotlin Jetpack Compose
+var displayRCDebugMenu by remember { mutableStateOf(false) }
+
+DebugRevenueCatBottomSheet(
+    onPurchaseCompleted = { /* Handle purchase completion */ },
+    onPurchaseErrored = { error ->
+        if (error.userCancelled) { /* Handle purchase cancelled */ }
+        else { /* Handle purchase error */ }
+    },
+    isVisible = displayRCDebugMenu,
+    onDismissCallback = { displayRCDebugMenu = false }
+)
+```
 
 ## Reference
 
@@ -260,6 +306,26 @@ Below are sample logs generated when setting `debugLogsEnabled = true`. Keep an 
 [Purchases] - DEBUG: 💰 Finishing transaction annual <TRANSACTION_ID> ((null))
 [Purchases] - DEBUG: ℹ️ PaymentQueue removedTransaction: annual <TRANSACTION_ID> (null (null)) (null) - 1
 ```
+
+# Debugging with Hybrids
+
+Xcode and Android Studio are our recommended IDEs for debugging. If you are a developer who works primarily with one of our hybrid SDKs and have not encountered either before, you can follow these instructions to open your app and find the debug logs to share with RevenueCat Support or your internal team.
+
+## Xcode
+
+[Install Xcode from the App Store.](https://apps.apple.com/us/app/xcode/id497799835?mt=12). Within the main folder of your app, you should have a folder titled `ios` that contains an Xcode project file, ending in `.xcodeproj`. Open this with Xcode from your file finder or from Xcode itself. You should be able to build and run your app in Xcode without additional editing but if you are getting an error, check that all General and Build Settings are filled out. Your debugger output will open automatically upon building within the Xcode window, and from here you can follow the instructions above.
+
+## Android Studio
+
+[Install Android Studio from the Google Developers website.](https://developer.android.com/studio/install) You can open the main folder of your app in Android Studio either from the main menu or from your file finder. There shouldn't be any additional editing needed to build and run your app, although you most likely need to set up a [virtual Android device](https://developer.android.com/studio/run/managing-avds) when running your app for the first time. The debugging output will open automatically upon building within the Android Studio window, and from here you can follow the instructions above. 
+
+## Considerations
+
+- You can open your Xcode project directly from Google - to do so, right click on the `ios` folder, hover over Flutter, and click "OpenIOS module in Xcode". 
+- You can also run and debug your iOS project inside Android Studio itself by adding an iOS simulator and choosing it as the device before building. To do this however, you will still need Xcode installed. 
+- Flutter projects using Swift may fail to show debug logs in the console if you are using Android Studio. We recommend running your Flutter iOS project using Xcode to view debug logs from the Purchases SDK.
+- If using Flutterflow or another low to no code app builder, it may not be possible for you to see debug logs. We recommend reaching out to the app builder's support team directly to help troubleshoot. 
+- Expo apps for iOS can use Console.app on Mac to view debug logs, while Android projects are still recommended to use Android Studio. For specific help on debugging your React Native Expo project, feel free to reach out to [RevenueCat support](https://app.revenuecat.com/settings/support).
 
 # Next Steps
 

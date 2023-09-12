@@ -17,11 +17,11 @@ Subscriber attributes are useful for storing additional, structured information 
 Subscriber attributes can be set through the SDK by passing a dictionary of strings to the `setAttributes()` method on the shared Purchases instance. 
 
 ```swift Swift
-Purchases.shared.setAttributes(["age" : "24", 
-                             "custom_group_id" : "abc123"])
+Purchases.shared.attribution.setAttributes(["age": "24",
+                                            "custom_group_id": "abc123"])
 ```
 ```objectivec Objective-C
-[[RCPurchases sharedPurchases] setAttributes:@{
+[RCPurchases.sharedPurchases.attribution setAttributes:@{
     @"age": @"24",
     @"custom_group_id": @"abc123"
 }];
@@ -188,9 +188,14 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
 Reserved attributes can be written directly by setting the key (don't forget the `$` prefix) or with special helper methods:
 
 ```swift Swift
-Purchases.shared.setEmail("test@example.com")
-Purchases.shared.setPhoneNumber("+16505551234")
-Purchases.shared.setDisplayName("John Appleseed")
+Purchases.shared.attribution.setEmail("test@example.com")
+Purchases.shared.attribution.setPhoneNumber("+16505551234")
+Purchases.shared.attribution.setDisplayName("John Appleseed")
+```
+```objectivec Objective-C
+[RCPurchases.sharedPurchases.attribution setEmail:@"test@example.com"];
+[RCPurchases.sharedPurchases.attribution setPhoneNumber:@"+16505551234"];
+[RCPurchases.sharedPurchases.attribution setDisplayName:@"John Appleseed"];
 ```
 ```kotlin Kotlin
 Purchases.sharedInstance.setEmail("test@example.com")
@@ -222,7 +227,13 @@ Push tokens can be used to engage with your users through Apple apns or Google c
 
 ```swift Swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    Purchases.shared.setPushToken(deviceToken)
+    Purchases.shared.attribution.setPushToken(deviceToken)
+}
+```
+```objectivec Objective-C
+- (void)application:(UIApplication *)application 
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [RCPurchases.sharedPurchases.attribution setPushToken:deviceToken];
 }
 ```
 ```kotlin Kotlin
@@ -246,7 +257,10 @@ purchases.SetPushToken(deviceToken);
 Any attribute can be cleared by passing `null` or an empty string as the key value. Individual attributes can also be cleared for a specific user in their [customer view](doc:customers).
 
 ```swift Swift
-Purchases.shared.setAttributes(["age" : ""])
+Purchases.shared.attribution.setAttributes(["age": ""])
+```
+```objectivec Objective-C
+[RCPurchases.sharedPurchases.attribution setAttributes:@{@"age": @""}];
 ```
 ```kotlin Kotlin
 Purchases.sharedInstance.setAttributes(mapOf("age" to ""))

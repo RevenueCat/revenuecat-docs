@@ -1,14 +1,12 @@
 require_relative '../files.rb'
 require_relative '../git.rb'
 
-UI = Fastlane::UI
-
 def extract_code_blocks(source_folder, code_blocks_folder, from_files = [])
-    UI.message("🔨 Extracting code blocks from #{from_files}...")
+    Fastlane::UI.message("🔨 Extracting code blocks from #{from_files}...")
     from_files.each do |file_name|
-        UI.message("🔨 Processing #{file_name}...")
+        Fastlane::UI.message("🔨 Processing #{file_name}...")
         current_folder = File.dirname(file_name)
-        UI.message("🔨 Current folder #{current_folder}...")
+        Fastlane::UI.message("🔨 Current folder #{current_folder}...")
         folder_inside_docs_source = current_folder.sub(/^#{source_folder}\//, "")
         output_dir = "#{code_blocks_folder}/#{folder_inside_docs_source}"
 
@@ -117,7 +115,7 @@ def replace_code_block_group(file_contents, file_name, output_dir)
                 current_code_block << line
                 code_block_group << line
                 filename_without_ext = File.basename(file_name, ".md")
-                UI.message("🔨 Processing code block #{counter} in #{file_name}...")
+                Fastlane::UI.message("🔨 Processing code block #{counter} in #{file_name}...")
 
                 # Extract the code block to a file and obtain the block information
                 code_block_information = extract_block_to_file(output_dir, filename_without_ext, current_code_block.join, counter)
@@ -159,7 +157,7 @@ def embed_code_blocks(render_folder, source_folder)
         file_contents = get_file_contents(file_name)
 
         file_contents.scan(/\[block:file\].*?\[\/block\]/m).each_with_index.map do |block, index|
-            UI.message("🔨 Processing file block #{index} in #{file_name}...")
+            Fastlane::UI.message("🔨 Processing file block #{index} in #{file_name}...")
             code_to_embed = embed_code_from_files(block)
             file_contents.gsub!("#{block}", "#{code_to_embed.chomp}")
         end
@@ -194,7 +192,7 @@ end
 
 def copy_modified_markdown_files(render_folder, temp_folder)
     modified_files = git_modified_markdown_files(render_folder)
-    UI.message("🔨 Copying #{modified_files} to temp folder...")
+    Fastlane::UI.message("🔨 Copying #{modified_files} to temp folder...")
 
     recreate_folder(temp_folder)
 
@@ -230,13 +228,16 @@ def embed_code_from_files(code_blocks_group_with_tags)
 
     code_blocks_group_json_array = code_blocks_group_with_tags.gsub(/\[block:file\]|\[\/block\]/, '')
     code_block_information_array = JSON.parse(code_blocks_group_json_array)
-    UI.message("🔨 Processing #{code_block_information_array}...")
+    Fastlane::UI.message("🔨 Processing #{code_block_information_array}...")
     code_block_information_array.each do |code_block_information|
         language = code_block_information['language']
         file_path = code_block_information['file']
         name = code_block_information['name']
         region = code_block_information['region']
-        next unless file_exists(file_path)
+        
+        unless file_exists(file_path)
+            Fastlane::UI.user_error!("Code block file doesn't exist: #{file_path}")
+        end
 
         file_content = extract_region_from_file(file_path, region, language)
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"
@@ -266,21 +267,29 @@ end
 def extract_region_from_file(file_path, region, language)
     file_content = get_file_contents(file_path).strip
 
-    case language
-    when 'swift'
-        marked_region = file_content.scan(/\/\/\s*MARK:\s*#{region}\n(.*?)\/\/\s*END/m).flatten.first
-        unless marked_region == nil
-            return marked_region.strip
-        end
-    when 'kotlin'
-        marked_region = file_content.scan(/\/\/\s*region\s*#{region}\n(.*?)\/\/\s*endregion/m).flatten.first
-        unless marked_region == nil
-            return marked_region.strip
-        end
-    end
-    return file_content
-end
+    region_regex = case language
+                   when 'swift'
+                       /\/\/\s*MARK:\s*#{region}\n(.*?)\/\/\s*END/m
+                   when 'kotlin'
+                       /\/\/\s*region\s*#{region}\n(.*?)\/\/\s*endregion/m
+                   else
+                       nil
+                   end
 
+    return file_content unless region_regex
+
+    marked_region = file_content.scan(region_regex).flatten.first
+
+    if marked_region
+        first_line_indentation = marked_region[/\A\s*/].length
+        indented_code = marked_region.lines.map do |line|
+            line.start_with?(' ' * first_line_indentation) ? line.sub(' ' * first_line_indentation, '') : line
+        end
+        indented_code.join.strip
+    else
+        file_content
+    end
+end
 
 # Searches for is [block:code][/block] and replaces it with the Readme flavored markdown style code blocks.
 # For example:
@@ -319,7 +328,7 @@ def convert_old_style_code_blocks(input)
         codes = data["codes"]
         new_style_code_blocks = ""
 
-        UI.message("🔨 Will migrate #{codes.count} code blocks within a [block:code] tag to backticks...")
+        Fastlane::UI.message("🔨 Will migrate #{codes.count} code blocks within a [block:code] tag to backticks...")
 
         codes.each do |code_item|
             new_style_code_blocks += process_code_block(code_item)
@@ -389,7 +398,7 @@ def extract_block_to_file(output_dir, file_name_no_ext, code_block, index)
         Dir.chdir(root_dir) do
             File.write(new_file, code)
         end
-        UI.message("⚙️  Creating #{new_file}...")
+        Fastlane::UI.message("⚙️  Creating #{new_file}...")
 
         {
             "language" => language,

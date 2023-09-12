@@ -24,8 +24,9 @@ The `getOfferings` method will fetch the Offerings from RevenueCat. These are pr
 [
   {
     "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_1.swift"
+    "name": "Swift",
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Displaying products"
   },
   {
     "language": "objectivec",
@@ -56,6 +57,11 @@ The `getOfferings` method will fetch the Offerings from RevenueCat. These are pr
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🚀 Getting Started/displaying-products_7.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_get_offerings_capacitor.ts"
   },
   {
     "language": "csharp",
@@ -93,8 +99,9 @@ It's also possible to access other Offerings besides the "Current Offering" dire
 [
   {
     "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_9.swift"
+    "name": "Swift",
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Custom Offering identifiers"
   },
   {
     "language": "objectivec",
@@ -125,6 +132,11 @@ It's also possible to access other Offerings besides the "Current Offering" dire
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🚀 Getting Started/displaying-products_15.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_get_offerings_custom_id_capacitor.ts"
   },
   {
     "language": "csharp",
@@ -171,8 +183,9 @@ Packages can be access in a few different ways:
 [
   {
     "language": "swift",
-    "name": "",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_17.swift"
+    "name": "Swift",
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": " Displaying packages"
   },
   {
     "language": "objectivec",
@@ -196,7 +209,7 @@ Packages can be access in a few different ways:
   },
   {
     "language": "javascript",
-    "name": "Cordova",
+    "name": "Capacitor/Cordova",
     "file": "code_blocks/🚀 Getting Started/displaying-products_22.js"
   },
   {
@@ -218,7 +231,8 @@ Each Package includes an underlying product that includes more information about
   {
     "language": "swift",
     "name": "Swift",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_24.swift"
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Getting the Product"
   },
   {
     "language": "objectivec",
@@ -251,6 +265,11 @@ Each Package includes an underlying product that includes more information about
     "file": "code_blocks/🚀 Getting Started/displaying-products_30.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_get_offerings_product_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/🚀 Getting Started/displaying-products_31.cs"
@@ -273,7 +292,8 @@ This can be accomplished with custom Offering identifiers for each of these "coh
   {
     "language": "swift",
     "name": "Swift",
-    "file": "code_blocks/🚀 Getting Started/displaying-products_32.swift"
+    "file": "projects/iOS/DocsTester/Sources/DocsTester/DocsTester.swift",
+    "region": "Choosing which Offering to display"
   },
   {
     "language": "objectivec",
@@ -303,6 +323,11 @@ This can be accomplished with custom Offering identifiers for each of these "coh
   {
     "language": "javascript",
     "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_38.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
     "file": "code_blocks/🚀 Getting Started/displaying-products_38.js"
   },
   {

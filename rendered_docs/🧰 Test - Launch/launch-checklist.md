@@ -93,7 +93,7 @@ This document contains a checklist of things to consider before launching subscr
     "h-2": "Android",
     "0-1": "✅",
     "0-2": "✅",
-    "0-0": "Verify that all of your products are being fetched correctly by RevenueCat. \nIf any product is unavailable, there may be a [configuration issue](https://www.revenuecat.com/2018/10/11/configuring-in-app-products-is-hard)."
+    "0-0": "Verify that all of your products are being fetched correctly by RevenueCat. \nIf any product is unavailable, there may be a [configuration issue](https://www.revenuecat.com/blog/engineering/app-store-connect-in-app-purchase-guide/)."
   },
   "cols": 3,
   "rows": 1

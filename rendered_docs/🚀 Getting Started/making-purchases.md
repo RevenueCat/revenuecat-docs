@@ -25,7 +25,7 @@ Purchases.shared.purchase(package: package) { (transaction, customerInfo, error,
 Purchases.sharedInstance.purchaseWith(
   PurchaseParams.Builder(this, aPackage).build(),
   onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
+  onSuccess = { storeTransaction, customerInfo ->
     if (customerInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
       // Unlock that great "pro" content
     }
@@ -101,6 +101,37 @@ Purchases.purchaseProduct("product_id", ({ productIdentifier, customerInfo }) =>
 }, ({error, userCancelled}) => {
     // Error making purchase
 }, null, Purchases.PURCHASE_TYPE.INAPP);
+```
+```typescript Capacitor
+try {
+  const purchaseResult = await Purchases.purchasePackage({ aPackage: packageToBuy });
+  if (typeof purchaseResult.customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
+    // Unlock that great "pro" content
+  }
+} catch (error: any) {
+  if (error.code === PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR) {
+    // Purchase cancelled
+  } else {
+    // Error making purchase
+  }
+}
+
+// Note: if you are not using offerings/packages to purchase In-app products, you can use purchaseStoreProduct and getProducts
+
+try {
+  const purchaseResult = await Purchases.purchaseStoreProduct({
+    product: productToBuy
+  });
+  if (typeof purchaseResult.customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
+    // Unlock that great "pro" content
+  }
+} catch (error: any) {
+  if (error.code === PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR) {
+    // Purchase cancelled
+  } else {
+    // Error making purchase
+  }
+}
 ```
 ```csharp Unity
 Purchases purchases = GetComponent<Purchases>();

@@ -43,6 +43,11 @@ The SDK has a simple method, `purchase(package:)`, that takes a package from the
     "file": "code_blocks/🚀 Getting Started/making-purchases_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/making-purchases_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/🚀 Getting Started/making-purchases_8.cs"

@@ -66,11 +66,12 @@ See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-
 Make sure you configure *Purchases* with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
 ```swift 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     Purchases.debugLogsEnabled = true
     Purchases.configure(withAPIKey: "public_sdk_key")
-  
+
 }
 ```
 ```objectivec 
@@ -157,7 +158,7 @@ Below is an example of fetching Offerings. You can utilize Offerings to organize
 
 ```swift 
 Purchases.shared.offerings { (offerings, error) in
-	if let offerings = offerings {
+	if let offerings {
 	  // Display current offering with offerings.current
   }
 }
@@ -271,7 +272,7 @@ Purchases.shared.purchasePackage(package) { (transaction, purchaserInfo, error, 
     if purchaserInfo?.entitlements.all["your_entitlement_id"]?.isActive == true {
         // Unlock that great "pro" content
     }
-})
+}
 ```
 ```objectivec 
 [[RCPurchases sharedPurchases] purchasePackage:package withCompletionBlock:^(SKPaymentTransaction *transaction, RCPurchaserInfo *purchaserInfo, NSError *error, BOOL cancelled) {
@@ -285,7 +286,7 @@ Purchases.sharedInstance.purchasePackageWith(
   this,
   package,
   onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, purchaserInfo ->
+  onSuccess = { storeTransaction, purchaserInfo ->
     if (purchaserInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
     // Unlock that great "pro" content
   }
@@ -499,7 +500,7 @@ It's typical to call this method when deciding which UI to show the user and whe
 RevenueCat enables your users to restore their in-app purchases, reactivating any content that they previously purchased from the **same store account** (Apple or Google). We recommend that all apps have some way for users to trigger the restore method. Note that Apple does require a restore mechanism in the event a user loses access to their purchases (e.g: uninstalling/reinstalling the app, losing their account information, etc).
 ```swift 
 Purchases.shared.restoreTransactions { (purchaserInfo, error) in
-    //... check purchaserInfo to see if entitlement is now active
+    // ... check purchaserInfo to see if entitlement is now active
 }
 ```
 ```objectivec 

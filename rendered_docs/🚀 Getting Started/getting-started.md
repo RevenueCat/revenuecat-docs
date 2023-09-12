@@ -183,11 +183,12 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     Purchases.logLevel = .debug
     Purchases.configure(withAPIKey: <revenuecat_api_key>, appUserID: <app_user_id>)
-  
+
 }
 ```
 ```objectivec 
@@ -357,12 +358,12 @@ Below is an example of fetching Offerings. You can utilize Offerings to organize
 do {
     let offerings = try await Purchases.shared.offerings()
     // Display current offering with offerings.current
-} catch let error { 
+} catch let error {
     // handle error
 }
 // Using Completion Blocks
 Purchases.shared.getOfferings { (offerings, error) in
-	if let offerings = offerings {
+	if let offerings {
 	  // Display current offering with offerings.current
   }
 }
@@ -491,7 +492,7 @@ Purchases.shared.purchase(package: package) { (transaction, customerInfo, error,
 Purchases.sharedInstance.purchaseWith(
   PurchaseParams.Builder(this, package).build(),
   onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
+  onSuccess = { storeTransaction, customerInfo ->
     if (customerInfo.entitlements[<my_entitlement_identifier>]?.isActive == true) {
     // Unlock that great "pro" content
   }
@@ -711,7 +712,7 @@ RevenueCat enables your users to restore their in-app purchases, reactivating an
 
 ```swift 
 Purchases.shared.restorePurchases { (customerInfo, error) in
-    //... check customerInfo to see if entitlement is now active
+    // ... check customerInfo to see if entitlement is now active
 }
 ```
 ```objectivec 
@@ -796,12 +797,13 @@ Depending on your app, it may be sufficient to ignore the delegate and simply ha
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
 // on macOS and watchOS use `applicationDidFinishLaunching:` 
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     Purchases.logLevel = .debug
     Purchases.configure(withAPIKey: <revenuecat_api_key>)
     Purchases.shared.delegate = self // make sure to set this after calling configure
-    
+
     return true
 }
 

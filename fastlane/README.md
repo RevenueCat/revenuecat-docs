@@ -119,6 +119,14 @@ readme_api_key_test STRING Readme API key for the test project
 
 
 
+### check_links
+
+```sh
+[bundle exec] fastlane check_links
+```
+
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.

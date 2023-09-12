@@ -7,7 +7,7 @@ If this is your first time integrating RevenueCat into your app, we recommend fo
 
 > 📘 Using an older SDK (v3.x)?
 > 
-> View our migration guide to v4.x [here](doc:ios-native-3x-to-4x-migration) or view our legacy docs [here](https://docs.revenuecat.com/v3.3/docs).
+> View our migration guide to v4.x [here](doc:ios-native-3x-to-4x-migration).
 
 # Basic Configuration
 
@@ -62,9 +62,14 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
     "file": "code_blocks/🚀 Getting Started/configuring-sdk_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_8_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
-    "file": "code_blocks/🚀 Getting Started/configuring-sdk_8.cs"
+    "file": "code_blocks/🚀 Getting Started/configuring-sdk_9.cs"
   }
 ]
 [/block]
@@ -75,7 +80,7 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
 
 > 📘 SwiftUI App Protocol
 > 
-> Using SwiftUI's App protocol? Check out our [resource](https://docs.revenuecat.com/docs/swiftui-app-lifecycle) on setting up the _Purchases_ SDK with SwiftUI.
+> Using SwiftUI's App protocol? Check out our [resource](https://www.revenuecat.com/docs/swiftui-helpers) on setting up the _Purchases_ SDK with SwiftUI.
 
 ## Enabling Debug Logs
 

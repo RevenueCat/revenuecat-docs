@@ -9,7 +9,7 @@ If this is your first time integrating RevenueCat into your app, we recommend fo
 
 > 📘 Using an older SDK (v3.x)?
 > 
-> View our migration guide to v4.x [here](doc:ios-native-3x-to-4x-migration) or view our legacy docs [here](https://docs.revenuecat.com/v3.3/docs).
+> View our migration guide to v4.x [here](doc:ios-native-3x-to-4x-migration).
 
 # Basic Configuration
 
@@ -22,11 +22,12 @@ You should only configure _Purchases_ once, usually early in your application li
 Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](https://docs.revenuecat.com/docs/authentication).
 
 ```swift Swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     Purchases.logLevel = .debug
     Purchases.configure(withAPIKey: <public_apple_api_key>, appUserID: <app_user_id>)
-  
+
 }
 ```
 ```swift SwiftUI
@@ -185,6 +186,18 @@ function onDeviceReady() {
     Purchases.configureWith({ apiKey: <public_amazon_api_key>, useAmazon: true });
 }
 ```
+```typescript Capacitor
+const onDeviceReady = async () => {
+    await Purchases.setLogLevel(LOG_LEVEL.DEBUG);
+    if (Capacitor.getPlatform() === 'ios') {
+        await Purchases.configure({ apiKey: <public_apple_api_key> });
+    } else if (Capacitor.getPlatform() === 'android') {
+        await Purchases.configure({ apiKey: <public_google_api_key> });
+    }
+    // OR: if building for Amazon, be sure to follow the installation instructions then:
+    await Purchases.configure({ apiKey: <public_amazon_api_key>, useAmazon: true });
+}
+```
 ```csharp Unity
 // The SDK can be configured through the Unity Editor.
 // See Unity installation instructions https://docs.revenuecat.com/docs/unity
@@ -205,7 +218,7 @@ purchases.Configure(purchasesConfiguration);
 
 > 📘 SwiftUI App Protocol
 > 
-> Using SwiftUI's App protocol? Check out our [resource](https://docs.revenuecat.com/docs/swiftui-app-lifecycle) on setting up the _Purchases_ SDK with SwiftUI.
+> Using SwiftUI's App protocol? Check out our [resource](https://www.revenuecat.com/docs/swiftui-helpers) on setting up the _Purchases_ SDK with SwiftUI.
 
 ## Enabling Debug Logs
 

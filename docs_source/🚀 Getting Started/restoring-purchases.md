@@ -46,6 +46,11 @@ It is recommended that all apps have some way for users to trigger the `restoreP
     "file": "code_blocks/🚀 Getting Started/restoring-purchases_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/restoring-purchases_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/🚀 Getting Started/restoring-purchases_8.cs"
@@ -122,10 +127,16 @@ The legacy behavior is to merge (alias) any App User IDs that restore the same u
 
 `syncPurchases` is a method we provide in our SDK which allows you to programmatically trigger a restore. This method, much like restorePurchases, reactivates any content that had previously been purchased from the same store account (Apple, Google, or Amazon). 
 
-## syncPurchases considerations
+## Considerations
 
-- `syncPurchases` is usually used for [migrating subscriptions](doc:migrating-existing-subscriptions)
+- `syncPurchases` is typically used for [migrating subscriptions](doc:migrating-existing-subscriptions)
 - Since this method simulates restoring a purchase, there is a risk of transferring or aliasing an anonymous user
+
+# Restoring Purchases for Consumables and Non-renewing Subscriptions
+
+Consumables and non-renewing subscriptions can only be restored by using an acount system with custom [App User IDs](https://www.revenuecat.com/docs/user-ids). This is due to these types of in-app purchases not showing up on the underlying store receipt after the transaction is finished. 
+
+By logging in your users with a custom App User ID, RevenueCat can continue to provide transaction details in a user's [CustomerInfo](https://www.revenuecat.com/docs/customer-info) for their previous consumable and non-renewing subscription purchases.
 
 # Next Steps
 
