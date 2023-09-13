@@ -27,7 +27,12 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 ## Installation
 
-#### If you already have `RevenueCat` installed through Swift Package Manager:
+#### If you already have `RevenueCat` in your project:
+
+> 📘 
+> 
+> `RevenueCatUI` support on CocoaPods will come later: https://github.com/RevenueCat/purchases-ios/issues/3152
+> For now, you can follow the instructions below to add `RevenueCatUI` through SPM instead.
 
 1. Open your project settings and select "Package Dependencies":
 <img width="783" alt="Change version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/d317fd33-8270-4d9b-9b38-8f5f14342b04">
@@ -41,7 +46,7 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 4. Add `RevenueCatUI`:
 <img width="512" alt="Add RevenueCatUI dependency" src="https://github.com/RevenueCat/purchases-ios/assets/685609/c2a3498c-b80d-405c-bdf6-75de927ea58e">
 
-#### New project setup:
+#### First time integrating the RevenueCat SDK:
 
 1. Click File -> Add Packages...
 
@@ -52,12 +57,6 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 <img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
 
 4. Import `RevenueCatUI` at the point in the user experience when you want to display a paywall (see below)
-
-#### If you already have `RevenueCat` through a different package manager:
-
-`RevenueCatUI` support on CocoaPods will come later: https://github.com/RevenueCat/purchases-ios/issues/3152
-
-For now, you can follow the instructions above and add `RevenueCatUI` through SPM instead.
 
 ## Overview
 
