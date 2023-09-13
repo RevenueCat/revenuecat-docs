@@ -27,7 +27,7 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 ## Installation
 
-#### If you already have `RevenueCat` SPM dependency in your project:
+#### If you already have `RevenueCat` installed through Swift Package Manager:
 
 1. Open your project settings and select "Package Dependencies":
 <img width="783" alt="Change version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/d317fd33-8270-4d9b-9b38-8f5f14342b04">
