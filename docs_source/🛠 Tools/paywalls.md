@@ -56,8 +56,6 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 3. Add `RevenueCat` and `RevenueCatUI` SPM dependency to your project:
 <img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
 
-4. Import `RevenueCatUI` at the point in the user experience when you want to display a paywall (see below)
-
 ## Overview
 
 Our paywall templates use native code to deliver smooth, intuitive experiences to your customers when you’re ready to deliver them an Offering; and you can use our Dashboard to pick the right template and configuration to meet your needs.
@@ -65,6 +63,8 @@ Our paywall templates use native code to deliver smooth, intuitive experiences t
 To use RevenueCat Paywalls on iOS, simply:
 
 1. Create a Paywall on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
+
+2. `import RevenueCatUI` at the point in the user experience when you want to display a paywall. See [displaying paywalls](doc:displaying-paywalls) for more information.
 
 > 📘 
 > 
