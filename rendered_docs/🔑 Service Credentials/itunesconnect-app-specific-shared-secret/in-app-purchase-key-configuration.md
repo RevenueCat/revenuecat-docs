@@ -3,7 +3,7 @@ title: In-App Purchase Key Configuration
 slug: in-app-purchase-key-configuration
 excerpt: Guide on how to set up iOS in-app purchase keys.
 hidden: false
-parentDocSlug: itunesconnect-app-specific-shared-secret
+parentDoc: 649983b4c31b2e000a3c1859
 categorySlug: service-credentials
 order: 3
 ---
