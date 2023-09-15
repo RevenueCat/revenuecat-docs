@@ -62,7 +62,7 @@ Our paywall templates use native code to deliver smooth, intuitive experiences t
 
 To use RevenueCat Paywalls on iOS, simply:
 
-1. Create a Paywall on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
+1. [Create a Paywall](doc:creating-paywalls) on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
 
 2. `import RevenueCatUI` at the point in the user experience when you want to display a paywall. See [displaying paywalls](doc:displaying-paywalls) for more information.
 
