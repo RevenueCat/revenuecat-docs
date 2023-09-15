@@ -37,8 +37,8 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 1. Open your project settings and select "Package Dependencies":
 <img width="783" alt="Change version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/d317fd33-8270-4d9b-9b38-8f5f14342b04">
 
-2. Double-click and change version to `4.26.0-beta.4`:
-<img width="400" alt="Configure version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/33850d51-318d-4f02-8b17-3d82c39a1850">
+2. Double-click and make sure version is at least `4.26.0`:
+<img width="400" alt="Configure version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/f537a1e1-a1ab-4e6f-986c-05abdcf1dd9f">
 
 3. Open your target settings and find "Frameworks, Libraries, and Embedded Content":
 <img width="328" alt="Find frameworks in your target" src="https://github.com/RevenueCat/purchases-ios/assets/685609/af078e9a-4b98-42c6-8ca7-6f79aebdf3e0">
@@ -50,7 +50,7 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 1. Click File -> Add Packages...
 
-2. Search for `git@github.com:RevenueCat/purchases-ios.git` and change version to `4.26.0-beta.4`:
+2. Search for `git@github.com:RevenueCat/purchases-ios.git` and make sure version is at least `4.26.0`:
 <img width="1196" alt="Adding purchases-ios dependency" src="https://github.com/RevenueCat/purchases-ios/assets/685609/18291043-5710-4944-ba12-7d6d83bde240">
 
 3. Add `RevenueCat` and `RevenueCatUI` SPM dependency to your project:
