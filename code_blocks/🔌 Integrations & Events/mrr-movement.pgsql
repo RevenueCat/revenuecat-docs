@@ -10,15 +10,15 @@ subscribes AS (
           CASE
             WHEN is_in_intro_offer_period = 'true' THEN
               CASE
-                WHEN product_duration = 'P1Y' THEN (0.08333 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P6M' THEN (0.1666666 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P3M' THEN (0.333333 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P2M' THEN (0.5 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P1M' THEN (1 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P2W' THEN (2 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P1W' THEN (4 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P3D' THEN (10 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P1D' THEN (30 * price_in_usd)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 363 AND 375 THEN (0.08333 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 179 AND 185 THEN (0.1666666 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 88 AND 95 THEN (0.333333 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 58 AND 62 THEN (0.5 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 27 AND 33 THEN (1 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 12 AND 16 THEN (2 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 6 AND 8 THEN (4 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) = 3 THEN (10 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 0 AND 1 THEN (30 * price)::DECIMAL(18,2)
                 -- Fallback: Estimates duration when it is missing (undercounts MRR in all months except February)
                 ELSE ((28 / (extract(epoch from end_time - start_time)::float / (24 * 3600))) * price_in_usd)::DECIMAL(18,2)
               END
@@ -45,15 +45,15 @@ subscribes AS (
           CASE
             WHEN is_in_intro_offer_period = 'true' THEN
               CASE
-                WHEN product_duration = 'P1Y' THEN (0.08333 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P6M' THEN (0.1666666 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P3M' THEN (0.333333 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P2M' THEN (0.5 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P1M' THEN (1 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P2W' THEN (2 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P1W' THEN (4 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P3D' THEN (10 * price_in_usd)::DECIMAL(18,2)
-                WHEN product_duration = 'P1D' THEN (30 * price_in_usd)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 363 AND 375 THEN (0.08333 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 179 AND 185 THEN (0.1666666 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 88 AND 95 THEN (0.333333 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 58 AND 62 THEN (0.5 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 27 AND 33 THEN (1 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 12 AND 16 THEN (2 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 6 AND 8 THEN (4 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) = 3 THEN (10 * price)::DECIMAL(18,2)
+                WHEN extract(day from expires_date - purchase_date) BETWEEN 0 AND 1 THEN (30 * price)::DECIMAL(18,2)
                 ELSE ((28 / (extract(epoch from end_time - start_time)::float / (24 * 3600))) * price_in_usd)::DECIMAL(18,2)
               END
             ELSE
@@ -90,15 +90,15 @@ expirations AS (
       CASE
         WHEN is_in_intro_offer_period = 'true' THEN
           CASE
-            WHEN product_duration = 'P1Y' THEN (0.08333 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P6M' THEN (0.1666666 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P3M' THEN (0.333333 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P2M' THEN (0.5 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P1M' THEN (1 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P2W' THEN (2 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P1W' THEN (4 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P3D' THEN (10 * price_in_usd)::DECIMAL(18,2)
-            WHEN product_duration = 'P1D' THEN (30 * price_in_usd)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 363 AND 375 THEN (0.08333 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 179 AND 185 THEN (0.1666666 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 88 AND 95 THEN (0.333333 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 58 AND 62 THEN (0.5 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 27 AND 33 THEN (1 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 12 AND 16 THEN (2 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 6 AND 8 THEN (4 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) = 3 THEN (10 * price)::DECIMAL(18,2)
+            WHEN extract(day from expires_date - purchase_date) BETWEEN 0 AND 1 THEN (30 * price)::DECIMAL(18,2)
             ELSE ((28 / (extract(epoch from end_time - start_time)::float / (24 * 3600))) * price_in_usd)::DECIMAL(18,2)
           END
         ELSE
