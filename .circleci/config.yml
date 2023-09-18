@@ -232,7 +232,6 @@ jobs:
       - checkout
       - revenuecat/install-gem-unix-dependencies:
           cache-version: v1
-      - run: ruby --version
       - install-java
       - android/restore-gradle-cache:
           cache-prefix: v1
