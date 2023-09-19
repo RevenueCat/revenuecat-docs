@@ -6,7 +6,7 @@ hidden: false
 categorySlug: integrations
 order: 0
 ---
-Events notify you in near real-time to any changes that occur to a customer's subscription and can automatically be sent into a variety of [third-party tools](doc:/third-party-integrations) and [attribution networks](doc:attribution) to get clean, consistent, and trustworthy data in all of your systems.
+Events notify you in near real-time to any changes that occur to a customer's subscription and can automatically be sent into a variety of [third-party tools](doc:third-party-integrations) and [attribution networks](doc:attribution) to get clean, consistent, and trustworthy data in all of your systems.
 
 RevenueCat events work by connecting directly to the app stores to detect changes to the customer's subscription. This means events are not dependent on any in-app usage or activity and are always sent from RevenueCat's servers. Server-side event detection is crucial for subscription apps since most interesting events occur when your app is inactive (e.g. trial conversions, renewals, cancellations, etc.).  
 
