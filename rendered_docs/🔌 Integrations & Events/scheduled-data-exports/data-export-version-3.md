@@ -64,7 +64,7 @@ parentDoc: 649983b4c31b2e000a3c1929
     "6-2": "Expiration time of a grace period (if applicable) for a subscription. Will remain set while a subscription is in its grace period, or if it exited its grace period without renewing. Null when a subscription is not in a grace period or expiration was not due to a grace period.",
     "7-0": "`effective_end_time`\\*",
     "7-1": "✅",
-    "7-2": "Single reference point of a subscriber’s expiration and entitlement revocation; inclusive of each store’s logic for cancellations, grace periods, etc.",
+    "7-2": "Single reference point of a subscriber’s expiration and entitlement revocation; inclusive of each store’s logic for refunds, grace periods, cancellations (if one results in entitlement revocation), etc.",
     "8-0": "`store`",
     "8-1": "",
     "8-2": "The source of the transaction. Can be `app_store`, `play_store`, `stripe`, or [`promotional`](doc:promotionals).",

@@ -137,7 +137,7 @@ By sourcing your analysis' with these fields, you'll be able to measure gross re
     "9-3": "`2023-02-17 08:27:06`",
     "9-4": "✅",
     "10-0": "`effective_end_time`",
-    "10-1": "Single reference point of a subscriber’s expiration and entitlement revocation; inclusive of each store’s logic for cancellations, grace periods, etc.",
+    "10-1": "Single reference point of a subscriber’s expiration and entitlement revocation; inclusive of each store’s logic for refunds, grace periods, etc.",
     "10-2": "datetime",
     "10-3": "`2023-02-17 08:27:06`",
     "10-4": "✅",
