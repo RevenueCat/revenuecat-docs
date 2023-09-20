@@ -40,10 +40,10 @@ WITH
   subs AS (
     SELECT
       -- app user ID will be used to group billing cycles by user
-      ETL.app_user_id AS id,
+      rc.app_user_id AS id,
       -- first purchase date will be used to group billing cycles by cohort.
       DATE(MIN(start_time)) AS first_start_time
-    FROM ETL
+    FROM [revenuecat_data_table] rc
     WHERE start_time >= /* desired date range */
       -- count subscriptions only
       AND end_time IS NOT NULL
@@ -54,9 +54,9 @@ WITH
       -- remove any intro offer billing cycles
       AND is_in_intro_offer_period = 'false'
       -- remove any subscriptions that were acquired through Family Sharing
-      AND (ownership_type IS NULL OR ownership_type != 'FAMILY_SHARED')
+      AND ownership_type != 'FAMILY_SHARED'
       AND product_identifier = /* targeted product(s) */
-    GROUP BY ETL.app_user_id
+    GROUP BY rc.app_user_id
   ),
   
   -- retention is an intermediate table that counts the number of active
@@ -65,19 +65,16 @@ WITH
     SELECT
       -- cohorting subscriptions by their first start dates
       subs.first_start_time,
-      -- every billing cycle is labeled by its number. 30 is used here to filter
-      -- for monthly subscriptions. Change this to filter for different product
-      -- durations, e.g. 365 for yearly. So if a user subscribes in January,
-      -- unsubscribes so that they don't have an active subscription in
-      -- February, and resubscribes in March, they would be in the January
-      -- cohort and counted as retained for Month 2 (skipping February, which is
-      -- Month 1).
+      -- Each period number represents the number of billing cycles the
+      -- subscriber was active for. Be sure to divide the date difference by the
+      -- number of days for the product duration being analyzed (e.g. 30 for
+      -- monthly, 365 for yearly, etc).
       CAST(ROUND(DATEDIFF(day, subs.first_start_time, start_time) / CAST(30 AS NUMERIC)) AS INTEGER) AS period_number,
       -- count the number of active subscriptions in each cohort and billing
       -- cycle
       count(1) AS actives
-    FROM ETL
-    INNER JOIN subs ON subs.id = ETL.app_user_id
+    FROM rc
+    INNER JOIN subs ON subs.id = rc.app_user_id
     WHERE start_time >= /* desired date range */
       -- count subscriptions only
       AND end_time IS NOT NULL
@@ -88,16 +85,14 @@ WITH
       -- remove any intro offer billing cycles
       AND is_in_intro_offer_period = 'false'
       -- remove any subscriptions that were acquired through Family Sharing
-      AND (ownership_type IS NULL OR ownership_type != 'FAMILY_SHARED')
+      AND ownership_type != 'FAMILY_SHARED'
     AND product_identifier = /* targeted product(s) */
     GROUP BY 1, 2
   ),
   
-  -- pending_retention is an intermediate table that is identical to retention,
-  -- with the exception that it counts subscriptions that are expected to renew
-  -- in the future. Pending retention can change over time as users change their
-  -- auto-renewal status. It can be interpreted as a measure of future
-  -- retention.
+  -- pending_retention is an intermediate table that counts subscriptions that
+  -- are set to automatically renew in the future, and can therefore be thought
+  -- of possible future retention.
   pending_retention AS (
     SELECT
       subs.first_start_time,
@@ -106,8 +101,8 @@ WITH
       -- billing cycle in the future.
       CAST(ROUND(DATEDIFF(day, subs.first_start_time, start_time) / CAST(30 AS NUMERIC)) AS INTEGER) + 1 AS period_number,
       count(1) AS actives
-    FROM ETL
-    INNER JOIN subs ON subs.id = ETL.app_user_id
+    FROM [revenuecat_data_table] rc
+    INNER JOIN subs ON subs.id = rc.app_user_id
     WHERE
       -- count only subscriptions that are expected to renew
       is_auto_renewing = 'true'
@@ -118,7 +113,7 @@ WITH
       AND is_sandbox <> 'true'
       AND is_trial_period = 'false'
       AND is_in_intro_offer_period = 'false'
-      AND (ownership_type IS NULL OR ownership_type != 'FAMILY_SHARED')
+      AND ownership_type != 'FAMILY_SHARED'
     AND product_identifier = /* targeted product(s) */
     GROUP BY 1, 2
   ),
