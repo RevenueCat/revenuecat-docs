@@ -56,9 +56,14 @@ If you don't provide an App User ID when instantiating the Purchases SDK, Revenu
     "file": "code_blocks/👥 Customers/user-ids_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/user-ids_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
-    "file": "code_blocks/👥 Customers/user-ids_8.cs"
+    "file": "code_blocks/👥 Customers/user-ids_unity.cs"
   }
 ]
 [/block]
@@ -128,6 +133,11 @@ If you have your own App User IDs at app launch, you can pass those on instantia
     "file": "code_blocks/👥 Customers/user-ids_15.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/user-ids_configure_with_user_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/👥 Customers/user-ids_16.cs"
@@ -177,6 +187,11 @@ If your app doesn't receive its own App User ID until later in its lifecycle, yo
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/👥 Customers/user-ids_23.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/user-ids_configure_and_login.ts"
   },
   {
     "language": "csharp",

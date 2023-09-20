@@ -186,6 +186,18 @@ function onDeviceReady() {
     Purchases.configureWith({ apiKey: <public_amazon_api_key>, useAmazon: true });
 }
 ```
+```typescript Capacitor
+const onDeviceReady = async () => {
+    await Purchases.setLogLevel(LOG_LEVEL.DEBUG);
+    if (Capacitor.getPlatform() === 'ios') {
+        await Purchases.configure({ apiKey: <public_apple_api_key> });
+    } else if (Capacitor.getPlatform() === 'android') {
+        await Purchases.configure({ apiKey: <public_google_api_key> });
+    }
+    // OR: if building for Amazon, be sure to follow the installation instructions then:
+    await Purchases.configure({ apiKey: <public_amazon_api_key>, useAmazon: true });
+}
+```
 ```csharp Unity
 // The SDK can be configured through the Unity Editor.
 // See Unity installation instructions https://docs.revenuecat.com/docs/unity

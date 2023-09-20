@@ -6,7 +6,7 @@ hidden: false
 ---
 > 👍 
 > 
-> The Apple Search Ads (AdServices) integration is available on the [Pro](https://www.revenuecat.com/pricing) plan, Enterprise plan, and legacy Grow plan.
+> The Apple Search Ads (AdServices) integration is available on the [Pro](https://www.revenuecat.com/pricing) plan, Enterprise plan, and legacy Grow plan and is supported in iOS SDK version 4.10.0 and up
 
 With our Apple Search Ads integration you can:
 

@@ -25,22 +25,46 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 # How Paywalls work
 
+## Installation
+
+#### If you already have `RevenueCat` in your project:
+
+> 📘 
+> 
+> `RevenueCatUI` support on CocoaPods will come later: https://github.com/RevenueCat/purchases-ios/issues/3152
+> For now, you can follow the instructions below to add `RevenueCatUI` through SPM instead.
+
+1. Open your project settings and select "Package Dependencies":
+<img width="783" alt="Change version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/d317fd33-8270-4d9b-9b38-8f5f14342b04">
+
+2. Double-click and make sure version is at least `4.26.0`:
+<img width="400" alt="Configure version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/f537a1e1-a1ab-4e6f-986c-05abdcf1dd9f">
+
+3. Open your target settings and find "Frameworks, Libraries, and Embedded Content":
+<img width="328" alt="Find frameworks in your target" src="https://github.com/RevenueCat/purchases-ios/assets/685609/af078e9a-4b98-42c6-8ca7-6f79aebdf3e0">
+
+4. Add `RevenueCatUI`:
+<img width="512" alt="Add RevenueCatUI dependency" src="https://github.com/RevenueCat/purchases-ios/assets/685609/c2a3498c-b80d-405c-bdf6-75de927ea58e">
+
+#### First time integrating the RevenueCat SDK:
+
+1. Click File -> Add Packages...
+
+2. Search for `git@github.com:RevenueCat/purchases-ios.git` and make sure version is at least `4.26.0`:
+<img width="1196" alt="Adding purchases-ios dependency" src="https://github.com/RevenueCat/purchases-ios/assets/685609/18291043-5710-4944-ba12-7d6d83bde240">
+
+3. Add `RevenueCat` and `RevenueCatUI` SPM dependency to your project:
+<img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
+
 ## Overview
 
 Our paywall templates use native code to deliver smooth, intuitive experiences to your customers when you’re ready to deliver them an Offering; and you can use our Dashboard to pick the right template and configuration to meet your needs.
 
 To use RevenueCat Paywalls on iOS, simply:
 
-1. Create a Paywall on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
-2. Update your RevenueCat SDK to version `4.26.0-beta.3`:
+1. [Create a Paywall](doc:creating-paywalls) on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
 
-<img width="400" alt="Configure version" src="https://github.com/RevenueCat/purchases-ios/assets/685609/33850d51-318d-4f02-8b17-3d82c39a1850">
-
-3. Add the `RevenueCatUI` SPM dependency to your project:
-
-<img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
-
-4. Import `RevenueCatUI` at the point in the user experience when you want to display a paywall (see below)
+2. `import RevenueCatUI` at the point in the user experience when you want to display a paywall. See [displaying paywalls](doc:displaying-paywalls) for more information.
 
 > 📘 
 > 

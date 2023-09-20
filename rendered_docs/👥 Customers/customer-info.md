@@ -89,6 +89,14 @@ Purchases.getCustomerInfo(
   }
 );
 ```
+```typescript Capacitor
+try {
+  const customerInfo = await Purchases.getCustomerInfo();
+  // access latest customerInfo
+} catch (error) {
+  // Error fetching customer info
+}
+```
 ```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetCustomerInfo((customerInfo, error) =>
@@ -219,7 +227,7 @@ if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "und
   // Grant user "pro" access
 }
 ```
-```javascript Cordova
+```javascript Capacitor/Cordova
 if(typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
   // Grant user "pro" access
 }
@@ -262,7 +270,7 @@ if (Object.entries(customerInfo.entitlements.active).length) {
   //user has access to some entitlement
 }
 ```
-```javascript Cordova
+```javascript Capacitor/Cordova
 if (Object.entries(customerInfo.entitlements.active).length) {
   //user has access to some entitlement
 }
@@ -342,6 +350,11 @@ Purchases.addCustomerInfoUpdateListener((info) => {
 ```javascript Cordova
 window.addEventListener("onCustomerInfoUpdated", (info) => {
 	// handle any changes to customerInfo
+});
+```
+```typescript Capacitor
+await Purchases.addCustomerInfoUpdateListener((customerInfo) => {
+  // handle any changes to customerInfo
 });
 ```
 ```csharp Unity

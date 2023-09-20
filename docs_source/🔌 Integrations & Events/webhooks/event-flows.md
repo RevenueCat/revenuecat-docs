@@ -120,11 +120,11 @@ Android subscribers can pause their subscription, allowing them to halt subscrip
 
 ## Billing Issue Flow
 
-If a subscriber with an active subscription encounters a billing issue, RevenueCat will immediately dispatch a `BILLING_ISSUE` event. At the end of the billing period, a `CANCELLATION` event is sent with a `cancel_reason` of `BILLING_ERROR`. 
+If a subscriber with an active subscription encounters a billing issue, RevenueCat will immediately dispatch a `BILLING_ISSUE` event and a `CANCELLATION` event with a `cancel_reason` of `BILLING_ERROR`. 
 
-If you do not have grace periods enabled, you’ll receive an `EXPIRATION` webhook and the subscriber’s entitlements will be revoked. 
+If you do not have grace periods enabled, you’ll immediately receive an `EXPIRATION` webhook and the subscriber’s entitlements will be revoked. 
 
-If you have grace periods enabled, the subscriber will retain entitlements as the app store retries the subscriber’s billing method. At the end of the grace period, if billing has not been successful, an `EXPIRATION` event will be sent and entitlements will be revoked. If billing succeeds at any point during the grace period, you’ll receive a `RENEWAL` event and entitlements won’t be revoked. 
+If you do have grace periods enabled, the subscriber will retain entitlements as the app store retries the subscriber’s billing method. At the end of the grace period, if billing has not been successful, an `EXPIRATION` event will be sent and entitlements will be revoked. If billing succeeds at any point during the grace period, you’ll receive a `RENEWAL` event and entitlements won’t be revoked. (This `RENEWAL` event may show up before the billing issue in the Customer History timeline. Be sure to check the timestamps on the event pages.)
 
 It’s important to note that the `BILLING_ISSUE`, `CANCELLATION`, and `EXPIRATION` (if no grace period is involved) webhooks are dispatched in order at the same time, so it is unlikely but possible to receive these events in a different order than described here due to network irregularities.
 
