@@ -97,6 +97,18 @@ func displayUpsellScreen() {
   );
 }
 ```
+```typescript Capacitor
+const displayUpsellScreen = async () => {
+  try {
+    const offerings = await Purchases.getOfferings();
+    if (offerings.current !== null && offerings.current.availablePackages.length !== 0) {  
+      // Display packages for sale
+    }
+  } catch (error) {
+    // Handle error
+  }
+}
+```
 ```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetOfferings((offerings, error) =>
@@ -203,6 +215,16 @@ Purchases.getOfferings(
       }
   );
 ```
+```typescript Capacitor
+try {
+  const offerings = await Purchases.getOfferings();
+  if (offerings.all["experiment_group"].availablePackages.length !== 0) {  
+    // Display packages for sale
+  }
+} catch (error) {
+  // Handle error
+}
+```
 ```csharp Unity
 var purchases = GetComponent<Purchases>();
 purchases.GetOfferings((offerings, error) =>
@@ -281,7 +303,7 @@ offerings.all["experiment_group"].monthly
 // --
 offerings.all["experiment_group"].availablePackages.find(package => package === "<package_id>")
 ```
-```javascript Cordova
+```javascript Capacitor/Cordova
 offerings.all["experiment_group"].availablePackages
 // --
 offerings.all("experiment_group").monthly
@@ -393,6 +415,21 @@ func displayUpsellScreen() {
 
       }
   );
+}
+```
+```typescript Capacitor
+// Accessing the monthly product
+
+const displayUpsellScreen = async () => {
+  try {
+    const offerings = await Purchases.getOfferings();
+    if (offerings.current && offerings.current.monthly) {
+      const product = offerings.current.monthly;  
+      // Get the price and introductory period from the PurchasesProduct
+    }
+  } catch (error) {
+    // Handle error
+  }
 }
 ```
 ```csharp Unity
@@ -518,6 +555,24 @@ try {
 }
 ```
 ```javascript Cordova
+Purchases.getOfferings(
+      offerings => {
+        let packages;
+        if (user.isPaidDownload) {
+          packages = offerings.all["paid_download_offer"].availablePackages;
+        } else if (user.signedUpOver30DaysAgo) {
+          packages = offerings.all["long_term_offer"].availablePackages;
+        } else if (user.recentlyChurned) {
+          packages = offerings.all["ios_subscription_offer"].availablePackages;
+        }
+        presentPaywall(packages);
+      },
+      error => {
+
+      }
+  );
+```
+```typescript Capacitor
 Purchases.getOfferings(
       offerings => {
         let packages;

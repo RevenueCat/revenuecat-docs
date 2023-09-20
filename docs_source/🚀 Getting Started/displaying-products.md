@@ -59,6 +59,11 @@ The `getOfferings` method will fetch the Offerings from RevenueCat. These are pr
     "file": "code_blocks/🚀 Getting Started/displaying-products_7.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_get_offerings_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/🚀 Getting Started/displaying-products_8.cs"
@@ -127,6 +132,11 @@ It's also possible to access other Offerings besides the "Current Offering" dire
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🚀 Getting Started/displaying-products_15.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_get_offerings_custom_id_capacitor.ts"
   },
   {
     "language": "csharp",
@@ -199,7 +209,7 @@ Packages can be access in a few different ways:
   },
   {
     "language": "javascript",
-    "name": "Cordova",
+    "name": "Capacitor/Cordova",
     "file": "code_blocks/🚀 Getting Started/displaying-products_22.js"
   },
   {
@@ -255,6 +265,11 @@ Each Package includes an underlying product that includes more information about
     "file": "code_blocks/🚀 Getting Started/displaying-products_30.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_get_offerings_product_capacitor.ts"
+  },
+  {
     "language": "csharp",
     "name": "Unity",
     "file": "code_blocks/🚀 Getting Started/displaying-products_31.cs"
@@ -308,6 +323,11 @@ This can be accomplished with custom Offering identifiers for each of these "coh
   {
     "language": "javascript",
     "name": "Cordova",
+    "file": "code_blocks/🚀 Getting Started/displaying-products_38.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
     "file": "code_blocks/🚀 Getting Started/displaying-products_38.js"
   },
   {

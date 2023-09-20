@@ -211,7 +211,7 @@ import 'dart:io' show Platform;
 //...
 
 Future<void> initPlatformState() async {
-  await Purchases.setDebugLogsEnabled(true);
+  await Purchases.setLogLevel(LogLevel.debug);
   
   PurchasesConfiguration configuration;
   if (Platform.isAndroid) {
@@ -418,7 +418,7 @@ Purchases.sharedInstance.purchasePackageWith(
   this,
   package,
   onError = { error, userCancelled -> /* No purchase */ },
-  onSuccess = { product, customerInfo ->
+  onSuccess = { storeTransaction, customerInfo ->
     if (customerInfo.entitlements["my_entitlement_identifier"]?.isActive == true) {
     // Unlock that great "pro" content
   }

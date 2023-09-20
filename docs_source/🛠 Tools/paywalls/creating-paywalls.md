@@ -1,8 +1,21 @@
 ---
 title: Creating Paywalls
 slug: creating-paywalls
-hidden: true
+hidden: false
 ---
+
+[block:embed]
+{
+  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FPNiVCdExtkw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPNiVCdExtkw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPNiVCdExtkw%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+  "url": "https://www.youtube.com/watch?v=PNiVCdExtkw",
+  "title": "How to use RevenueCat Paywalls",
+  "favicon": "https://www.google.com/favicon.ico",
+  "image": "https://i.ytimg.com/vi/PNiVCdExtkw/hqdefault.jpg",
+  "provider": "https://www.youtube.com/",
+  "href": "https://www.youtube.com/watch?v=PNiVCdExtkw",
+  "typeOfEmbed": "youtube"
+}
+[/block]
 
 # How to create a new Paywall
 
@@ -65,7 +78,7 @@ We support the following variables:
 | product_name              | The name of the product from the store (e.g. product localized title from StoreKit) for a given package | CatGPT        |
 | price                     | The localized price of a given package                                                                  | $39.99            |
 | price_per_period          | The localized price of a given package with its period length if applicable                             | $39.99/yr         |
-| total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it has one                  | $39.99 ($1.67/mo) |
+| total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it has one                  | $39.99/yr ($3.33/mo) |
 | sub_price_per_month       | The localized price of a given package converted to a monthly equivalent price                          | $3.33             |
 | sub_duration              | The duration of the subscription; '1 month', '3 months', etc.                                           | 1 month           |
 | sub_period                | The length of each period of the standard offer on a given package                                      | Monthly           |
@@ -91,3 +104,80 @@ Use your own hex codes, select a custom color, or use our color picker to select
 > 📘 
 > 
 > The color picker can be used outside of your browser window as well if you need to grab colors from assets in other applications.
+
+## Localization
+
+RevenueCat Paywalls come with built-in support for localization. This will allow you to customize your paywall content for all the languages that your app supports.
+
+Locales can be added to your paywall through the 'Localization' dropdown.
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c53fb56-Screenshot_2023-08-31_at_3.51.13_PM.png",
+        "",
+        ""
+      ],
+      "align": "center"
+    }
+  ]
+}
+[/block]
+
+Each paywall template may differ in the localized values that you will need to provide. The options that most templates have are:
+- Title
+- Subtitle
+- Package details
+- Package details for an introductory offer
+- Call to action
+- Call to action for an introductory offer
+
+Since RevenueCatUI allows for dynamic text with [Variables](#variables), all the output of variables will automatically localized. This includes period lengths like "Annual", "Monthly" and "Weekly" being localized to "Anual", "Mensual", and "Semanalmente". Price per period like "$6.99/mo" and "$53.99/yr" will also be localized to "$6.99/m." and "$53.99/año".
+
+Other paywall components like "Restore purchases", "Terms of Service", and "Privacy Policy" will also automatically be localized.
+
+### Supported locales
+
+We currently support all 39 locales that are supported on [App Store Connect](https://www.apple.com/ios/feature-availability/#system-language-system-language).
+
+- Arabic (Saudi Arabia) - `ar`
+- Catalan - `ca`
+- Chinese (Simplified) - `zh`
+- Chinese (Traditional) - `zh`
+- Croatian - `hr`
+- Czech - `cs`
+- Danish - `da`
+- Dutch (Netherlands) - `nl`
+- English (Australia) - `en`
+- English (Canada) - `en`
+- English (United Kingdom) - `en`
+- English (United States) - `en`
+- Finnish - `fi`
+- French (Canada) - `fr`
+- French (France) - `fr`
+- German (Germany) - `de`
+- Greek - `el`
+- Hebrew - `he`
+- Hindi - `hi`
+- Hungarian - `hu`
+- Indonesian - `id`
+- Italian - `it`
+- Japanese - `ja`
+- Korean - `ko`
+- Malay - `ms`
+- Norwegian - `no`
+- Polish - `pl`
+- Portuguese (Brazil) - `pt`
+- Portuguese (Portugal) - `pt`
+- Romanian - `ro`
+- Russian - `ru`
+- Slovak - `sk`
+- Spanish (Mexico) - `es`
+- Spanish (Spain) - `es`
+- Swedish - `sv`
+- Thai - `th`
+- Turkish - `tr`
+- Ukrainian - `uk`
+- Vietnamese - `vi`

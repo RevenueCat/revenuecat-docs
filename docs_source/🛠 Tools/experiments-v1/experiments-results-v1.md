@@ -22,7 +22,7 @@ You can also click **Export chart CSV** to receive an export of all metrics by d
 {
   "type": "info",
   "title": "Data takes 24 hours to appear",
-  "body": "The results refresher runs once every 24 hours.\n \nIf you're not seeing any data or are seeing unexpected results, try:\n- **Ensuring each product that is a part of the experiment has been purchased at least once**\n- **Waiting another 24 hours until the model can process more data**\n\nWhen you stop an experiment, the results will continue to be updated for 28 days to capture any additional subscription events."
+  "body": "The results refresher runs once every 24 hours.\n \nIf you're not seeing any data or are seeing unexpected results, try:\n- **Ensuring each product that is a part of the experiment has been purchased at least once**\n- **Waiting another 24 hours until the model can process more data**\n\nWhen you stop an experiment, the results will continue to be updated for a full year to capture any additional subscription events, and allow you to see how your Realized LTV matures for each variant over time."
 }
 [/block]
 # Customer journey tables
@@ -53,6 +53,10 @@ In addition to the results per variant that are illustrated above, you can also 
 }
 [/block]
 The results from your experiment can also be exported in this table format using the **Export data CSV** button. This will included aggregate results per variant, and per product results, for flexible analysis.
+
+> 🚧 Automatic emails for poor performing tests
+> 
+> If the Realized LTV of your Treatment is performing meaningfully worse than your Control, we'll automatically email you to let you know about it so that you can run your test with confidence.
 
 # Metric definitions
 
@@ -133,6 +137,3 @@ The results from your experiment can also be exported in this table format using
   "body": "To keep your A and B cohorts on equal footing, only new users are added to experiments. Here's an example to illustrate what can happen if existing users are added to an experiment: an existing user who is placed in a cohort might make a purchase they wouldn't otherwise make because the variant they were shown had a lower price than the default offering they previously saw. This might mean that the user made a purchase out of fear that they were missing out on a sale and wanted to lock in the price in anticipation of it going back up."
 }
 [/block]
-## Example
-
-In the example shown in the below screenshot, there have been no trial completions, active subscriptions, or churn. While the model will be able to make a prediction (possibly with high confidence), it won't be representative of real-world user behavior, so in this case you should wait until you have a good distribution of data.

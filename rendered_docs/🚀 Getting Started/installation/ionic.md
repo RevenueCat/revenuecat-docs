@@ -8,26 +8,32 @@ order: 5
 parentDoc: 649983b4c31b2e000a3c1864
 ---
 
-We currently only offer an official Cordova plugin. Install the plugin depending on your framework: 
+We offer official plugins for both Capacitor and Cordova. We recommend using the Capacitor plugin when possible. Install the plugin depending on your framework:
 
+```text Capacitor
+// Install Capacitor plugin
+npm install @revenuecat/purchases-capacitor
+
+// Update native platform project(s) to include newly added plugin
+ionic cap sync
+```
 ```text Cordova
 npm install cordova-plugin-purchases
 
 ionic cordova plugin add cordova-plugin-purchases
-```
-```text Capacitor
-// Install Cordova plugin
-npm install cordova-plugin-purchases
-
-// Update native platform project(s) to include newly added plugin
-ionic cap sync
 ```
 
 ## TypeScript
 
 The types are shipped inside the npm package. You can import them like this:
 
-```typescript TypeScript types
+```text Capacitor Typescript types
+import {
+    Purchases,
+    PurchasesOfferings, // Types for TypeScript
+} from '@revenuecat/purchases-capacitor';
+```
+```text Cordova Typescript types
 import Purchases, {
     PurchasesOfferings, // Types for TypeScript
 } from 'cordova-plugin-purchases/www/plugin';
@@ -37,7 +43,22 @@ import Purchases, {
 
 Wait for the Platform to be ready, then configure the plugin in your `src/app/app.component.ts`:
 
-```typescript 
+```typescript Capacitor
+import { Platform } from "@ionic/angular";
+// TS typings for the plugin
+import { Purchases, LOG_LEVEL } from '@revenuecat/purchases-capacitor';
+
+constructor(platform: Platform) {
+    platform.ready().then(async () => {
+        await Purchases.setLogLevel(LOG_LEVEL.DEBUG); // Enable to get debug logs
+        await Purchases.configure({
+            apiKey: "my_api_key",
+            appUserID: "my_app_user_id" // Optional
+        });
+    });
+}
+```
+```typescript Cordova
 import { Platform } from "@ionic/angular";
 // TS typings for the plugin
 import Purchases, { LOG_LEVEL } from 'cordova-plugin-purchases/www/plugin';
@@ -57,7 +78,34 @@ constructor(platform: Platform) {
 
 Import the plugin object then use its static methods:
 
-```typescript 
+```typescript Capacitor
+import { Purchases, LOG_LEVEL } from '@revenuecat/purchases-capacitor';
+
+const Tab1: React.FC = () => {
+  useEffect(() => {
+    (async function () {
+      await Purchases.setLogLevel({ level: LOG_LEVEL.DEBUG }); // Enable to get debug logs
+      await Purchases.configure({
+        apiKey: "my_api_key",
+        appUserID: "my_app_user_id" // Optional
+      });
+    })();
+  }, []);
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>My App</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonButton onClick={purchasePackage}>Subscribe now</IonButton>
+      </IonContent>
+    </IonPage>
+  );
+};
+```
+```typescript Cordova
 import Purchases, { LOG_LEVEL } from 'cordova-plugin-purchases/www/plugin';
 
 const Tab1: React.FC = () => {
@@ -70,11 +118,11 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>My App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonButton onClick={openScanner}>Scan barcode</IonButton>
+        <IonButton onClick={purchasePackage}>Subscribe now</IonButton>
       </IonContent>
     </IonPage>
   );

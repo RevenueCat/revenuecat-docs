@@ -20,7 +20,7 @@ Our control for our paywall is shown below.
 
 In our current offerings, we add the metadata for the new button color and our description.
 
-<img width="800" alt="Metadata featuring key/value pairs for description and button color overrides" src="https://files.readme.io/dea200b-Color_Experiment_Metadata.png">
+![Color Experiment Metadata](https://github.com/RevenueCat/revenuecat-docs/assets/140117673/33a060e5-9668-4329-839c-ffa43eec645c)
 
 In our app, we set up our code to modify the appearance of our paywall if these keys are present, or fall back to our defaults if an active offering doesn’t contain these values.
 
@@ -44,7 +44,7 @@ With this update live and our metadata set in our current offering, our paywall 
 
 <img width="400" alt="Updated paywall using the new description and colors fed in via offering metadata" src="https://files.readme.io/86b4c8c-Color_Experiment.png">
 
-While this is a fairly simple and straightforward change, this methodology can be used to change copy or visuals on the fly, or set up visual differences that can be used in conjunction with [Experiments](doc:experiments-v1) to see which versions are more effective!
+While this is a fairly simple and straightforward change, this methodology can be used to change copy or visuals on the fly, or set up visual differences that can be used in conjunction with [Experiments](doc:experiments-v1) to see which versions are more effective! Similarly, values passed in this fashion can be used to swap otherwise hard-coded experiences within the app; if you have multiple paywalls coded into your app, you could include a value with the offering to indicate which should be used, like `paywall: 1` for one setup and `paywall: 2` for another to ensure that the experience a user is getting in-app most appropriately fits the offering they will be shown.
 
 ## Localization
 
@@ -54,17 +54,17 @@ Using the same base paywall as above, we’ll add some dynamic details for users
 
 In our metadata, we have set up keys and values for the languages and copy we want to use.
 
-<img width="800" alt="Metadata featuring key/value pairs for English and Spanish descriptions" src="https://files.readme.io/61ebb05-Language_Metadata.png">
+![Language Metadata](https://github.com/RevenueCat/revenuecat-docs/assets/140117673/6012253b-023d-4702-bc4f-76e1060054b5)
 
 > 📘 
 > 
-> You can opt to set each of these as their own key/value pairs or pass through a JSON library instead. Keep in mind that there is a limit of 500 characters of JSON encoded key/value pairs, so for dynamic copy like this, it’s best to keep it to shorter headlines or blurbs of dynamic text, with longer copy hard coded as needed.
+> Keep in mind that there is a limit of 500 characters in your metadata block, so for dynamic copy like this, it’s best to keep it to shorter headlines or blurbs of dynamic text, with longer copy hard coded as needed.
 
 Within our app, we handle the logic to check the primary language set on the device, and look to see if we find a matching metadata key. Otherwise, we fall back to our default text.
 
 ```kotlin 
 // Get the default device language
-var lang = Locale.getDefault().displayLanguage
+var lang = Locale.getDefault().language
 
 // Use the default device language as your metadata key
 var localizedCopy = offerings.current?.getMetadataString(lang, "Go premium!")
@@ -88,7 +88,7 @@ There may be cases where you want to offer a specific set of products to a user 
 
 In this example case, we’re using a coupon code that was present on a deeplink that the user used to access the app, as you might use in a promotional email to a user who had signed up for an account but not subscribed yet. For this particular sale, we set our metadata to use the corresponding coupon code that would be passed into our app via this deeplink, along with corresponding copy.
 
-<img width="800" alt="Metadata featuring key/value pairs for a coupon code and a custom description" src="https://files.readme.io/35e2d68-Coupon_Deeplink_Metadata.png">
+![Coupon Deeplink Metadata](https://github.com/RevenueCat/revenuecat-docs/assets/140117673/33f6d6b1-9813-4819-9a34-df284a88eb9d)
 
 In the app, we set up the logic to look for any offerings that have a matching coupon code.
 

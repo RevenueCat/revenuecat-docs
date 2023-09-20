@@ -1,7 +1,7 @@
 ---
 title: Displaying Paywalls
 slug: displaying-paywalls
-hidden: true
+hidden: false
 categorySlug: tools
 order: 999
 parentDoc: 64d0f9bdc52aeb0058f5ec3d
@@ -26,9 +26,16 @@ import RevenueCatUI
 struct App: View {
     var body: some View {
         ContentView()
-            .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro") { customerInfo in
-                print("Purchase completed: \(customerInfo.entitlements)")
-            }
+            .presentPaywallIfNeeded(
+                requiredEntitlementIdentifier: "pro",
+                purchaseCompleted: { customerInfo in
+                    print("Purchase completed: \(customerInfo.entitlements)")
+                },
+                restoreCompleted: { customerInfo in
+                    // Paywall will be dismissed automatically if "pro" is now active.
+                    print("Purchases restored: \(customerInfo.entitlements)")
+                }
+            )
     }
 }
 ```
@@ -46,6 +53,9 @@ struct App: View {
                 return customerInfo.entitlements.active.keys.contains("pro")
             } purchaseCompleted: { customerInfo in
                 print("Purchase completed: \(customerInfo.entitlements)")
+            } restoreCompleted: {
+                // Paywall will be dismissed automatically if "pro" is now active.
+                print("Purchases restored: \(customerInfo.entitlements)")
             }
     }
 }
@@ -62,8 +72,19 @@ struct App: View {
 
     var body: some View {
         ContentView()
-            .sheet(self.$displayPaywall) {
+            .sheet(isPresented: self.$displayPaywall) {
                 PaywallView()
+                // PaywallView does not have a close button 
+                // Manually add one to match your app's style 
+                .toolbar {
+                    ToolbarItem(placement: .destructiveAction) {
+                        Button {
+                            self.displayPaywall = false
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                    }
+                }
             }
     }
 }
@@ -97,6 +118,10 @@ extension ViewController: PaywallViewControllerDelegate {
 
 }
 ```
+
+### Close Button
+
+Paywalls displayed with `presentPaywallIfNeeded` will have a close button on the presented sheet. However, a `PaywallView` will not have a close button. This gives you full control on how to to navigate to and from your `PaywallView`. You can push it onto an existing navigation stack or show it in a sheet with a custom dismiss button using SwiftUI toolbar.
 
 ## How to display a footer Paywall on your custom paywall
 
@@ -202,3 +227,10 @@ class RoundedSystemFontProvider: PaywallFontProvider {
     }
 }
 ```
+
+## Default Paywall
+
+If you attempt to display a Paywall for an Offering that doesn't have one configured, the RevenueCatUI SDK will display a default Paywall.
+The default paywall displays all packages in the offering.
+On iOS it uses the app's `accentColor` for styling. 
+
