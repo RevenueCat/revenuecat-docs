@@ -84,13 +84,6 @@ To mark a base plan as backwards compatible, click the overflow menu on the base
 
 ![](https://files.readme.io/0375be4-f309ab8-Screen_Shot_2022-07-07_at_2.12.18_PM.png "f309ab8-Screen_Shot_2022-07-07_at_2.12.18_PM.png")
 
-[block:callout]
-{
-  "type": "danger",
-  "title": "Prepaid base plans not yet supported",
-  "body": "RevenueCat does not yet support base plans with the renewal type \"Prepaid\"."
-}
-[/block]
 ## (Optional) Create an offer
 
 If you wish to create an offer for your base plan, you can do so from the subscription page by clicking "Add offer". Offers can be free trials, discounts, or simply special price setups that apply when a customer first purchases a subscription.

@@ -33,8 +33,6 @@ RENDER_FOLDER = "rendered_docs"
 TEMPORARY_RENDER_FOLDER = "temp"
 REPO_NAME = "revenuecat-docs"
 
-update_fastlane
-
 default_platform(:ios)
 
 
