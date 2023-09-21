@@ -93,3 +93,4 @@ Therefore, you can create a unique Paywall for each of your Offerings, and can c
 
 * Now that you know how our paywalls work, read about [creating paywalls](doc:creating-paywalls)
 * Once you're ready to see your paywalls in action, you can follow our guides on [displaying paywalls](doc:displaying-paywalls)
+* If you need inspiration with some paywall examples, you can try our [Paywalls Tester app](https://github.com/RevenueCat/purchases-ios/tree/main/Tests/TestingApps/PaywallsTester)
