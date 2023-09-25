@@ -212,6 +212,10 @@ Build and run your app on your device. When you attempt to make a purchase, you 
 > 
 > Apple may prompt you to sign in with an Apple ID whenever you make or restore a purchase. When using the SDK, this could only happen when you call `.purchase(package:)` or `.restorePurchases`. Developers don't have control over the type of prompt that is shown (Face ID, Touch ID, password, etc.)
 
+> ❗️ Sandbox May Be Slow
+> 
+> Apple's App Store Sandbox is notoriously unperformant. A sandbox purchase experience may take upwards of 15s to fully complete. This is normal. In production, total purchase times are usually in the low seconds.
+
 # Verify the Transaction Appears in the Dashboard
 
 After a purchase is successful, you should be able to view the transaction immediately in the RevenueCat dashboard. If the purchase does not appear in the dashboard, it's **not** being tracked by RevenueCat.
