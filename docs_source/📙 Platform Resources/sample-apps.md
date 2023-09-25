@@ -36,6 +36,10 @@ Sample apps are currently included in each SDK repository and demonstrate how to
   [Installation :fa-arrow-right:](doc:reactnative) | [Sample App :fa-arrow-right:](https://github.com/RevenueCat/react-native-purchases/tree/main/examples/MagicWeather)
   *Hybrid platform example. Hosted in our React Native SDK GitHub repository*
 
+## Capacitor/Ionic
+  [Installation :fa-arrow-right:](doc:ionic) | [Sample App :fa-arrow-right:](https://github.com/RevenueCat/purchases-capacitor/tree/main/example/purchase-tester)
+  *Hybrid platform example. Hosted in our Capacitor SDK GitHub repository*
+
 ## Cordova
   [Installation :fa-arrow-right:](doc:cordova) | [Sample App :fa-arrow-right:](https://github.com/RevenueCat/cordova-plugin-purchases/tree/main/examples/cordova-sample/MyApp)
   *Hybrid platform example. Hosted in our Cordova SDK GitHub repository*

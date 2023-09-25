@@ -158,8 +158,8 @@ Install the SDK on your preferred platform with our installation guides below.
 - [Android Installation ](doc:android)
 - [React Native Installation ](doc:reactnative) 
 - [Flutter Installation ](doc:flutter)
-- [Cordova Installation ](doc:cordova) 
 - [Ionic Installation ](doc:ionic)
+- [Cordova Installation ](doc:cordova) 
 - [Unity Installation ](doc:unity) 
 - [macOS / Catalyst Installation ](doc:macos)
 
@@ -208,6 +208,11 @@ Make sure you configure _Purchases_ with your public SDK key only. You can read 
     "language": "typescript",
     "name": "React Native",
     "file": "code_blocks/🚀 Getting Started/getting-started_6.ts"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/getting-started_capacitor-configure-sdk.ts"
   },
   {
     "language": "javascript",
@@ -269,6 +274,11 @@ Below is an example of fetching Offerings. You can utilize Offerings to organize
     "language": "javascript",
     "name": "React Native",
     "file": "code_blocks/🚀 Getting Started/getting-started_14.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/getting-started_capacitor-get-offerings.ts"
   },
   {
     "language": "javascript",
@@ -341,6 +351,11 @@ The code sample below shows the process of purchasing a package and confirming i
     "file": "code_blocks/🚀 Getting Started/getting-started_23.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/getting-started_capacitor-purchase.ts"
+  },
+  {
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🚀 Getting Started/getting-started_24.js"
@@ -407,6 +422,11 @@ If you're not using Entitlements (you probably should be!) you can check the arr
     "language": "javascript",
     "name": "React Native",
     "file": "code_blocks/🚀 Getting Started/getting-started_32.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/getting-started_capacitor-get-customer-info.ts"
   },
   {
     "language": "javascript",
@@ -479,6 +499,11 @@ RevenueCat enables your users to restore their in-app purchases, reactivating an
     "file": "code_blocks/🚀 Getting Started/getting-started_41.js"
   },
   {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/getting-started_capacitor-restore-purchases.ts"
+  },
+  {
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🚀 Getting Started/getting-started_42.js"
@@ -542,6 +567,11 @@ Depending on your app, it may be sufficient to ignore the delegate and simply ha
     "language": "javascript",
     "name": "React Native",
     "file": "code_blocks/🚀 Getting Started/getting-started_49.js"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/getting-started-capacitor-react-subcription-changes.ts"
   },
   {
     "language": "javascript",
