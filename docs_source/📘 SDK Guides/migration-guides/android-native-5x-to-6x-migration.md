@@ -2,7 +2,7 @@
 title: Android Native - 5.x to 6.x Migration
 slug: android-native-5x-to-6x-migration
 excerpt: New Google subscription model migration
-hidden: false
+hidden: true
 ---
 ## Google Product setup
 
