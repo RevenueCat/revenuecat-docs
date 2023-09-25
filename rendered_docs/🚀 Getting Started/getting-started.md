@@ -160,8 +160,8 @@ Install the SDK on your preferred platform with our installation guides below.
 - [Android Installation ](doc:android)
 - [React Native Installation ](doc:reactnative) 
 - [Flutter Installation ](doc:flutter)
+- [Capacitor / Ionic Installation ](doc:ionic)
 - [Cordova Installation ](doc:cordova) 
-- [Ionic Installation ](doc:ionic)
 - [Unity Installation ](doc:unity) 
 - [macOS / Catalyst Installation ](doc:macos)
 
@@ -319,6 +319,18 @@ export default class App extends React.Component {
   }
 }
 ```
+```typescript Capacitor
+const onDeviceReady = async () => {
+  await Purchases.setLogLevel(LOG_LEVEL.DEBUG);
+  if (Capacitor.getPlatform() === 'ios') {
+    await Purchases.configure({ apiKey: <public_apple_api_key> });
+  } else if (Capacitor.getPlatform() === 'android') {
+    await Purchases.configure({ apiKey: <public_google_api_key> });
+  }
+  // OR: if building for Amazon, be sure to follow the installation instructions then:
+  await Purchases.configure({ apiKey: <public_amazon_api_key>, useAmazon: true });
+}
+```
 ```javascript Cordova
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -418,6 +430,18 @@ try {
   }
 } catch (e) {
 
+}
+```
+```typescript Capacitor
+func displayUpsellScreen() {
+  try {
+    const offerings = await Purchases.getOfferings();
+    if (offerings.current !== null) {  
+      // Display current offering with offerings.current
+    }
+  } catch (error) {
+    // Handle error
+  }
 }
 ```
 ```javascript Cordova
@@ -546,6 +570,37 @@ try {
 // Note: if you are using purchaseProduct to purchase Android In-app products, an optional third parameter needs to be provided when calling purchaseProduct. You can use the package system to avoid this
 await Purchases.purchaseProduct(<product_id>, null, Purchases.PURCHASE_TYPE.INAPP);
 ```
+```typescript Capacitor
+try {
+  const purchaseResult = await Purchases.purchasePackage({ aPackage: packageToBuy });
+  if (typeof purchaseResult.customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
+    // Unlock that great "pro" content
+  }
+} catch (error: any) {
+  if (error.code === PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR) {
+    // Purchase cancelled
+  } else {
+    // Error making purchase
+  }
+}
+
+// Note: if you are not using offerings/packages to purchase In-app products, you can use purchaseStoreProduct and getProducts
+
+try {
+  const purchaseResult = await Purchases.purchaseStoreProduct({
+    product: productToBuy
+  });
+  if (typeof purchaseResult.customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
+    // Unlock that great "pro" content
+  }
+} catch (error: any) {
+  if (error.code === PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR) {
+    // Purchase cancelled
+  } else {
+    // Error making purchase
+  }
+}
+```
 ```javascript Cordova
 Purchases.purchasePackage(package, ({ productIdentifier, customerInfo }) => {
     if (typeof customerInfo.entitlements.active[<my_entitlement_identifier>] !== "undefined") {
@@ -663,6 +718,14 @@ try {
  // Error fetching purchaser info
 }
 ```
+```typescript Capacitor
+try {
+  const customerInfo = await Purchases.getCustomerInfo();
+  // access latest customerInfo
+} catch (error) {
+  // Error fetching customer info
+}
+```
 ```javascript Cordova
 Purchases.getCustomerInfo(
   info => {
@@ -752,6 +815,14 @@ try {
   // ... check restored customerInfo to see if entitlement is now active
 } catch (e) {
 
+}
+```
+```typescript Capacitor
+try {
+  const customerInfo = await Purchases.restorePurchases();
+  //... check customerInfo to see if entitlement is now active
+} catch (error) {
+  // Error restoring purchases
 }
 ```
 ```javascript Cordova
@@ -854,6 +925,11 @@ Purchases.addPurchaserInfoUpdateListener((purchaserInfo) => {
 ```javascript React Native
 Purchases.addCustomerInfoUpdateListener(info => {
 	// handle any changes to purchaserInfo
+});
+```
+```typescript Capacitor
+await Purchases.addCustomerInfoUpdateListener((customerInfo) => {
+  // handle any changes to customerInfo
 });
 ```
 ```javascript Cordova
