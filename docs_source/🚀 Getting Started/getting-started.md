@@ -158,7 +158,7 @@ Install the SDK on your preferred platform with our installation guides below.
 - [Android Installation ](doc:android)
 - [React Native Installation ](doc:reactnative) 
 - [Flutter Installation ](doc:flutter)
-- [Ionic Installation ](doc:ionic)
+- [Capacitor / Ionic Installation ](doc:ionic)
 - [Cordova Installation ](doc:cordova) 
 - [Unity Installation ](doc:unity) 
 - [macOS / Catalyst Installation ](doc:macos)
