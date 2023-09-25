@@ -15,23 +15,11 @@ Read more about account security and two-factor authentication in our [Account S
 
 You can change your account email and name from your [account settings](https://app.revenuecat.com/settings/account) in the dashboard.
 
-## Transfer account ownership
-
-Projects cannot be transferred between RevenueCat accounts at this time. If you need to switch the owner of an account, please follow the instructions above for changing your account email.
-
-# Billing and plan changes
-
-You can change your RevenueCat account plan from the [Billing](https://app.revenuecat.com/settings/billing) page in account settings. 
-
 ## How does billing work?
 
-RevenueCat bills based on **Monthly Tracked Revenue**, or MTR, for each plan. MTR is different than Monthly Recurring Revenue, or MRR, and includes the revenue from all purchases and renewals including non-subscription products. 
+RevenueCat bills based on **Monthly Tracked Revenue**, or MTR, for each plan. MTR is different than Monthly Recurring Revenue, or MRR, and includes the revenue from all purchases and renewals including non-subscription products. You can see your account's current MTR [here](https://app.revenuecat.com/settings/billing).
 
 Read more on our [Pricing](https://www.revenuecat.com/pricing) page.
-
-### Changing Plans
-
-If you are under the Free plan's $10,000 MTR limit you can downgrade at any time, but once you start a paid plan you are committing to paying for that over the next month. Once you hit the $1,000 MTR limit on a paid plan, you will begin to get billed. For example, if you are on the Pro plan and then hit the $1,000 MTR limit on the 5th of the month, you will then be billed starting that day to the 5th of the next month. This will then have your billing cycle be on the 5th of every month. If you were to downgrade at any time, for example on the 17th, then you would still have access to the features of the Pro plan until the end of the cycle on the upcoming 5th where you will then be charged.
 
 ## Tax & VAT details
 
@@ -44,6 +32,10 @@ Please reach out to [RevenueCat Support](https://app.revenuecat.com/settings/sup
 ## Address details
 
 If needed, you can add additional address information to your invoices by clicking '**Update payment method**' and expanding the '**Invoice Details**' section: 
+
+<img width="500" alt="update payment method button" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/79b7b8e5-cb06-438d-91e9-9257c6921211">
+
+<img width="500" alt="invoice details expanded" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/a49a859b-1f45-438d-8b46-65e93ca4f48e">
 
 # Delete your account
 
