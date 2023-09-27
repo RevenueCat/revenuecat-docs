@@ -66,7 +66,11 @@ The logic to determine the offer that applies to the purchase is based on the fo
 
 ### More control over offer selection
 
-If you want to have greater control over which offer gets applied to purchases, you can pass a `SubscriptionOption` to `PurchaseParams.Builder` instead. Each subscription `StoreProduct` has a property `subscriptionOptions` which is a list of eligible options for subscribing to the product, including purchasing the base plan directly or purchasing an offer. The `subscriptionOptions` contain only offers that the current customer is eligible for. For example, if the customer previously had a free trial of this product which is configured as "new customer acquisition" on Google Play Console, the free trial will no longer be contained in the `subscriptionOptions`.
+If you want to have greater control over which offer gets applied to purchases, you can pass a `SubscriptionOption` to `PurchaseParams.Builder` instead. Each subscription `StoreProduct` has a property `subscriptionOptions` which is a list of eligible options for subscribing to the product, including purchasing the base plan directly or purchasing an offer.
+
+> 🚧 The `subscriptionOptions` contain only offers that the current customer is eligible for.
+>
+> For example, if the customer previously had a free trial of this product which is configured as "new customer acquisition" on Google Play Console, the free trial will no longer be contained in the `subscriptionOptions`.
 
 The `subscriptionOptions` property also has a number of convenience properties that allow finding the right offer to apply for your customer. The `defaultOption` property finds the offer with the longest free trial period or the cheapest introductory offer. In addition, the following properties are available:
 
