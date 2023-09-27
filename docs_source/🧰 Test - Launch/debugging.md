@@ -260,6 +260,10 @@ Xcode and Android Studio are our recommended IDEs for debugging. If you are a de
 
 [Install Android Studio from the Google Developers website.](https://developer.android.com/studio/install) You can open the main folder of your app in Android Studio either from the main menu or from your file finder. There shouldn't be any additional editing needed to build and run your app, although you most likely need to set up a [virtual Android device](https://developer.android.com/studio/run/managing-avds) when running your app for the first time. The debugging output will open automatically upon building within the Android Studio window, and from here you can follow the instructions above. 
 
+## No and Low Code App Builders
+
+When debugging with No and Low Code App Builders, it's important to remember that you'll still need to utilize the specific IDE associated with the device you're targeting. For instance, if you're trying to access debug logs for an app you created using FlutterFlow and you're running it on an iOS device, you'll need to build and run the app through XCode. If you're trying to run it on an Android device, you would need to run it through Android Studio. The process for retrieving debug logs remains the same as explained above.
+
 ## Considerations
 
 - You can open your Xcode project directly from Google - to do so, right click on the `ios` folder, hover over Flutter, and click "OpenIOS module in Xcode". 
