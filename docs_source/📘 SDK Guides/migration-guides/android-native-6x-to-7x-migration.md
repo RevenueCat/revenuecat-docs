@@ -22,7 +22,7 @@ or you can remove DEFERRED replacement options from your app.
 This migration guide has detailed class, property, and method changes.
 
 See [Android Native - 5.x to 6.x Migration](https://www.revenuecat.com/docs/android-native-5x-to-6x-migration) for a
-more thorough explanation of the new Google subscription model announced with BillingClient 5 and how to take advantage of it in V6.
+more thorough explanation of the new Google subscription model announced with BillingClient 5 and how to take advantage of it.
 
 ### Class/interface changes
 
