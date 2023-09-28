@@ -40,6 +40,19 @@ The first thing to do when creating a new Paywall is to select the template you�
 
 For example, if you’re trying to draw contrast between a few different packages you’re offering, try the **#2 - Sphynx** template. Or, if you want to try your own version of the [Blinkist Free Trial Paywall](https://uxplanet.org/how-solving-our-biggest-customer-complaint-at-blinkist-led-to-a-23-increase-in-conversion-b60ad514134b) start with the **#3 - Leopard** template.
 
+## Template Options
+
+For our Paywalls, we currently offer three different premade templates for you to quickly integrate into your app. 
+
+#### Template 1:
+<img width="343" alt="Screenshot 2023-09-28 at 3 04 07 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/2692acc4-8800-4650-aaa1-7e094a412cdb">
+
+#### Template 2: 
+<img width="344" alt="Screenshot 2023-09-28 at 3 04 19 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/818122c8-7b55-4afa-a92d-cb06b24bdbaf">
+
+#### Template 3: 
+<img width="344" alt="Screenshot 2023-09-28 at 3 04 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/9cb1ecfc-ab70-43c6-9393-64d104d70dbf">
+
 # How to configure your Paywall
 
 Once you’ve selected a template, you can configure any of its properties on the right side of the screen and see the change previewed immediately.
