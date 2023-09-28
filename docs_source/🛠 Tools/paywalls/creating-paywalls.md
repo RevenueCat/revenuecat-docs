@@ -45,13 +45,13 @@ For example, if you’re trying to draw contrast between a few different package
 For our Paywalls, we currently offer three different premade templates for you to quickly integrate into your app. 
 
 #### Template 1:
-<img width="343" alt="Screenshot 2023-09-28 at 3 04 07 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/2692acc4-8800-4650-aaa1-7e094a412cdb">
+<img width="343" alt="Screenshot 2023-09-28 at 3 04 07 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/16d20b5f-d1a9-46df-8611-345538d8c8ab">
 
 #### Template 2: 
-<img width="344" alt="Screenshot 2023-09-28 at 3 04 19 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/818122c8-7b55-4afa-a92d-cb06b24bdbaf">
+<img width="344" alt="Screenshot 2023-09-28 at 3 04 19 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/247c0c4a-48e7-4b4b-a850-95497d617de4">
 
 #### Template 3: 
-<img width="344" alt="Screenshot 2023-09-28 at 3 04 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/9cb1ecfc-ab70-43c6-9393-64d104d70dbf">
+<img width="344" alt="Screenshot 2023-09-28 at 3 04 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/110858590/97981ed7-3978-49f6-8165-3253835fe50b">
 
 # How to configure your Paywall
 
