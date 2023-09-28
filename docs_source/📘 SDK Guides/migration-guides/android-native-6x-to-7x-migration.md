@@ -4,7 +4,7 @@ slug: android-native-6x-to-7x-migration
 hidden: false
 ---
 
-Version 7 of the RevenueCat SDK uses BillingClient 6. This version of BillingClient brings little change compared
+This latest release updates the SDK to use BillingClient 6. This version of BillingClient brings little change compared
 with BillingClient 5 which brought an entire new subscription model which resulted in large changes across the entire SDK.
 
 The only modification at the API level involves replacing "ProrationMode" with "ReplacementMode". The specific replacement
@@ -40,6 +40,24 @@ more thorough explanation of the new Google subscription model announced with Bi
 | Temporarily removed      |
 |--------------------------|
 | `ProrationMode.DEFERRED` |
+
+### Bumped minimum Android SDK version
+
+RevenueCat SDK v7 bumps minimum Android SDK version from Android 4.0 (API level 14) to Android 4.4 (API level 19).
+
+### Support for Google Play InApp Messages
+
+We've added support for [Google Play InApp Messages](https://rev.cat/googleplayinappmessaging) which will show users a snackbar message during grace period and account hold once per day and provide them an opportunity to fix their payment without leaving the app.
+
+InApp Messages are shown by default. If you want to disable this behaviour during configuration of the RevenueCat SDK:
+
+```kotlin
+Purchases.configure(
+    PurchasesConfiguration.Builder(applicationContext, apiKey)
+        .showInAppMessagesAutomatically(false)
+        .build()
+)
+```
 
 ### Observer Mode
 
