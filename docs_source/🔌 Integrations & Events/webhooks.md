@@ -6,7 +6,7 @@ hidden: false
 ---
 > 👍 
 > 
-> Webhooks are available on the [Starter](https://www.revenuecat.com/pricing) plan or greater.
+> Webhooks are available on the all current plans. If you are on one of our legacy plans without access to webhooks, migrate to our new [Pro plan](https://www.revenuecat.com/pricing/) to get access.
 
 RevenueCat can send you notifications any time an event happens in your app. This is useful for subscription and purchase events, which will allow you to monitor state changes for your subscribers and react accordingly. 
 
@@ -16,17 +16,17 @@ With webhooks integrated, you can:
 
 # Registering Your Webhook URL
 
-> 📘 One webhook per project in RevenueCat
-> 
-> Each of your projects has a webhook URL field you can set. This way you can decide which of your projects need server-side notifications, and where they should be sent.
-
 1. Navigate to your project in the RevenueCat dashboard and find the _Integrations_ card in the left menu. Select **+ New** 
 
 ![](https://files.readme.io/6b982d2-app.revenuecat.com_projects_85ff18c7_collaborators_1.png)
 
 2. Choose 'Webhooks' from the Integrations menu
-3. Enter the HTTPS URL of the endpoint that you want to receive your webhooks
-4. (Optional) Set authorization header that will be sent with each POST request
+3. Name the new Webhook integration. You can set up multiple webhook URLs, the name helps differentiate them.
+4. Enter the HTTPS URL of the endpoint that you want to receive your webhooks
+5. (Optional) Set authorization header that will be sent with each POST request
+6. Select whether to send events for production purchases, sandbox purchases, or both
+7. Select if the webhook events should be sent only for one app or for all apps of the project
+8. (Optional) Filter the kinds of events that should be sent to the webhook URL.
 
 ![](https://files.readme.io/a747787-app.revenuecat.com_projects_85ff18c7_integrations_intercom_6.png)
 
@@ -37,6 +37,10 @@ With webhooks integrated, you can:
 RevenueCat will send `POST` requests to your server, in which the body will be a JSON representation of the notification. Your server should return a **200 status code**. Any other status code will be considered a failure by our backend. RevenueCat will retry later (up to 5 times) with an increasing delay (5, 10, 20, 40, and 80 minutes). After 5 retries, we will stop sending notifications.
 
 If you're receiving a webhook it's important to respond quickly so you don't accidentally run over a timeout limit. We recommend that apps defer processing until after the response has been sent.
+
+> 📘 Multiple webhook integrations per project
+> 
+> You can set up multiple webhook integrations per project – for example, if you use a different backend for production and sandbox/testing, you can set up two webhook integrations, filtered to the respective environment.
 
 # Webhook Events
 
