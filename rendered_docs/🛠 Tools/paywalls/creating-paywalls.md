@@ -3,7 +3,7 @@ title: Creating Paywalls
 slug: creating-paywalls
 hidden: false
 categorySlug: tools
-order: 999
+order: 0
 parentDoc: 64d0f9bdc52aeb0058f5ec3d
 ---
 

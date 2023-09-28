@@ -4,7 +4,7 @@ slug: app-store-connect-api-key-configuration
 hidden: false
 parentDoc: 649983b4c31b2e000a3c1859
 categorySlug: service-credentials
-order: 4
+order: 1
 ---
 You may upload an App Store Connect API key for RevenueCat to import products and prices from App Store Connect. 
 

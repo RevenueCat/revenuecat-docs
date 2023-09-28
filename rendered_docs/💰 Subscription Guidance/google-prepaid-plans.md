@@ -4,7 +4,7 @@ slug: google-prepaid-plans
 excerpt: Setting up your prepaid plan in Google Play Console
 hidden: false
 categorySlug: offers-lifecycle-guidance
-order: 999
+order: 6
 ---
 Starting May 11, 2022 Google introduced support for prepaid subscriptions among other [features](https://support.google.com/googleplay/android-developer/answer/12124625). This guide will go over what prepaid plans are and how to set them up and integrate them with RevenueCat.
 
