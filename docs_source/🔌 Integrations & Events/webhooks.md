@@ -50,7 +50,7 @@ For webhook event types and fields, see [here](https://www.revenuecat.com/docs/e
 
 You can test your server side implementation by purchasing [sandbox subscriptions](doc:sandbox) or by issuing test webhook events through [RevenueCat's dashboard](http://app.revenuecat.com).
 
-![](https://files.readme.io/46fc83e-app.revenuecat.com_projects_85ff18c7_integrations_intercom_7.png)
+![](https://github.com/RevenueCat/revenuecat-docs/assets/14286938/ad2c8e64-12ba-4ee1-9bf0-c841349f3b7e)
 
 When testing with sandbox purchases, the `environment` value will be `SANDBOX`. RevenueCat itself does not have sandbox and production environments, so this value is only determined by the type of transaction received from the store. The same customer in RevenueCat can have both sandbox and production transactions associated with their account. 
 
