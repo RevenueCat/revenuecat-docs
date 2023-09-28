@@ -1,7 +1,7 @@
 ---
 title: Android Native - 4.x to 5.x Migration
 slug: android-native-4x-to-5x-migration
-hidden: true
+hidden: false
 ---
 [block:callout]
 {
@@ -54,16 +54,16 @@ or for Amazon:
 ]
 [/block]
 ## Making purchases
-`purchasePackage` and `purchaseProduct` callbacks have been changed to return a `StoreTransaction` instead of a `Purchase` in the `onCompleted`.  
+`purchasePackage` and `purchaseProduct` callbacks have been changed to return a `StoreTransaction` instead of a `Purchase` in the `onCompleted`.
 
-This means that `MakePurchaseListener` has been deprecated in favor of `PurchaseCallback`. There is a helper extension function `MakePurchaseListener.toPurchaseCallback()` that can help migrate. For purchasing functions that accept an `UpgradeInfo`, `ProductChangeListener` has been deprecated in favor of `ProductChangeCallback`.  
+This means that `MakePurchaseListener` has been deprecated in favor of `PurchaseCallback`. There is a helper extension function `MakePurchaseListener.toPurchaseCallback()` that can help migrate. For purchasing functions that accept an `UpgradeInfo`, `ProductChangeListener` has been deprecated in favor of `ProductChangeCallback`.
 
 Similarly, you can use `ProductChangeListener.toProductChangeCallback()` and `MakePurchaseListener.toProductChangeCallback()` in Kotlin for an easy migration. Due to the same change, Kotlin helper `purchaseProductWith` now accepts a `StoreProduct` instead of a`SkuDetails`
 
 ## Getting products
-`getSubscriptionSkus` and `getNonSubscriptionSkus` callbacks has been changed to return `StoreProduct` objects instead of `SkuDetails`. 
+`getSubscriptionSkus` and `getNonSubscriptionSkus` callbacks has been changed to return `StoreProduct` objects instead of `SkuDetails`.
 
-This means that `GetSkusResponseListener` has been deprecated in favor of `GetStoreProductsCallback`. You can use `GetSkusResponseListener.toGetStoreProductsCallback()` in Kotlin for an easy migration. 
+This means that `GetSkusResponseListener` has been deprecated in favor of `GetStoreProductsCallback`. You can use `GetSkusResponseListener.toGetStoreProductsCallback()` in Kotlin for an easy migration.
 
 For the same reasons, `getSubscriptionSkusWith` and `getNonSubscriptionSkusWith` now receive `storeProducts` instead of `skus`.
 
@@ -98,7 +98,7 @@ Some deprecated functions have been removed: `identify`, `reset`, `createAlias`,
 
 For more information about recommended identity logic following the removal of these identification methods, see [Identifying Users](doc:user-ids).
 
-| Removed APIs |  
+| Removed APIs |
 |---------------------------------------------------------------------------|
 | `purchaseProduct(Activity, SkuDetails, UpgradeInfo, MakePurchaseListener)` |
 | `purchasePackage(Activity, Package, UpgradeInfo, MakePurchaseListener)` |
