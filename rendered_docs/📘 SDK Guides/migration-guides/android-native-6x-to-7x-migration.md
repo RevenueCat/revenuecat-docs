@@ -1,6 +1,7 @@
 ---
 title: Android Native - 6.x to 7.x Migration
 slug: android-native-6x-to-7x-migration
+categorySlug: sdk-reference
 hidden: false
 ---
 
