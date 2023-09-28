@@ -28,7 +28,7 @@ With webhooks integrated, you can:
 7. Select if the webhook events should be sent only for one app or for all apps of the project
 8. (Optional) Filter the kinds of events that should be sent to the webhook URL.
 
-![](https://files.readme.io/a747787-app.revenuecat.com_projects_85ff18c7_integrations_intercom_6.png)
+![](https://github.com/RevenueCat/revenuecat-docs/assets/14286938/6a07a8cf-0696-4a2f-8546-7d9cd735e95d)
 
 > 📘 Best Practices: Webhook authorization
 > 
