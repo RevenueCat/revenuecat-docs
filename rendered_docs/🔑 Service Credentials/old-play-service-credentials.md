@@ -4,7 +4,7 @@ slug: old-play-service-credentials
 excerpt: Step-by-step guide for creating your Play service credentials
 hidden: true
 categorySlug: service-credentials
-order: 5
+order: 3
 ---
 In order for RevenueCat's servers to communicate with Google on your behalf, you need to provide a set of service credentials. The process for configuring these credentials is a bit complex, but the added level of control improves security by providing RevenueCat with only the access we need. 
 [block:callout]
