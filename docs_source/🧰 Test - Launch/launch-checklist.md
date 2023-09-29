@@ -16,7 +16,7 @@ This document contains a checklist of things to consider before launching subscr
   "data": {
     "h-0": "Plan Limits",
     "h-1": "iOS",
-    "0-0": "There are usage limits on the free Build plan. When you hit the $10,000 MTR limit, we'll ask you to switch to a paid Starter or Pro plan. Consider upgrading beforehand and benefit from the Starter and Pro features from day 1. See the [pricing page](https://www.revenuecat.com/pricing) for more details.",
+    "0-0": "There are free usage limits on our base plan. When you hit the $2,500 MTR limit, we'll start charging you at 1% of tracked revenue. Consider adding your credit card details early to prevent temporarily losing access to some of our best features. See the [pricing page](https://www.revenuecat.com/pricing) for more details.",
     "0-1": "✅",
     "0-2": "✅",
     "h-2": "Android"
