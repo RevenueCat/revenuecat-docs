@@ -9,7 +9,7 @@ parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 
-> The Statsig integration is available on the [Pro](https://www.revenuecat.com/pricing) plan.
+> The Statsig integration is available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 Statsig can be a helpful integration for optimizing purchases and revenue, and understanding which features are causing product metrics to move. RevenueCat can automatically send billing, subscription, and revenue metrics to your Statsig project. 
 

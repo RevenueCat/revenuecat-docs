@@ -9,7 +9,7 @@ parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 
-> The Mixpanel integration is available on the [Pro](https://www.revenuecat.com/pricing) plan.
+> The Mixpanel integration is available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 Mixpanel can be a useful integration tool for seeing all events and revenue that occur for your app even if it’s not active for a period of time. You can use Mixpanel’s array of product analytical tools to help get new customers, and engage and retain old customers.
 

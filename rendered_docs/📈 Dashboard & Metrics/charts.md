@@ -9,7 +9,7 @@ order: 1
 [block:callout]
 {
   "type": "success",
-  "body": "Charts are available on [paid](https://www.revenuecat.com/pricing) plans."
+  "body": "Charts are available to all users signed up after September '23, the legacy Starter and Pro plans, and Enterprise plans. If you're on a legacy Free plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing)"
 }
 [/block]
 RevenueCat charts allow you to understand your user base with key subscription specific metrics, filters, and segments. All charts are generated from the current snapshot of purchase receipts saved in RevenueCat and work independently from any in-app usage.
