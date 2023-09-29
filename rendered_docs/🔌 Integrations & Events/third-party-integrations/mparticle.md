@@ -9,7 +9,7 @@ parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 
-> The mParticle integration is available on the [Pro](https://www.revenuecat.com/pricing) plan.
+> The mParticle integration is available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 mParticle can be a useful integration tool for seeing all events and revenue that occur for your app even if it’s not active for a period of time. You can use mParticle to clean up your data infrastructure and collect new customer data, which can then be connected with other tools through mParticle’s powerful API.
 

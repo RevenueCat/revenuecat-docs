@@ -9,7 +9,7 @@ parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 
-> The Slack integration is available on the [Starter](https://www.revenuecat.com/pricing) plan.
+> The Slack integration is available to all users signed up after September '23, the legacy Starter and Pro plans, and Enterprise plans. If you're on a legacy Free plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 RevenueCat can send you Slack message to a channel any time an event happens in your app. This lets you keep a close pulse on your app and celebrate those money making moments!
 

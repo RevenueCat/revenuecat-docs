@@ -9,7 +9,7 @@ parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
 > 
-> The Firebase integration is available on the [Starter](https://www.revenuecat.com/pricing) plan.
+> The Firebase integration is available to all users signed up after September '23, the legacy Starter and Pro plans, and Enterprise plans. If you're on a legacy Free plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 This extension uses Firebase services as your RevenueCat backend for in-app purchases on Apple App Store, Google Play Store, and Amazon Appstore to control access to premium content and sync customer purchase information to Firestore. For example, you might want to:
 
