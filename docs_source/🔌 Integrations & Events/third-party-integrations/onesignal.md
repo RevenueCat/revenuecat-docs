@@ -6,7 +6,7 @@ hidden: false
 ---
 > 👍 
 > 
-> The OneSignal integration is available on the [Pro](https://www.revenuecat.com/pricing) plan.
+> The OneSignal integration is available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 OneSignal can be a useful integration tool for understanding what stage a customer is in to react accordingly. RevenueCat can automatically update user tags in OneSignal with their latest subscription status.
 

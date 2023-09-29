@@ -7,7 +7,7 @@ hidden: false
 [block:callout]
 {
   "type": "success",
-  "body": "Attribution collection is only available on [paid](https://www.revenuecat.com/pricing) plans."
+  "body": "Attribution collection is only available to all users signed up after September '23, the legacy Starter and Pro plans, and Enterprise plans. If you're on a legacy Free plan and want to access attribution, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing)."
 }
 [/block]
 It’s important to know which marketing efforts are most effective at acquiring new users and keeping them engaged. RevenueCat can integrate with your attribution provider to track how much revenue was driven by each source and ad network.

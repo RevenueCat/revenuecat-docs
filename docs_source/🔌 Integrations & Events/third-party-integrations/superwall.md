@@ -6,7 +6,7 @@ hidden: false
 ---
 > 👍 
 > 
-> The Superwall integration is available on the [Pro](https://www.revenuecat.com/pricing) plan.
+> The Superwall integration is available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 Superwall can be a helpful integration for optimizing pricing and understanding which paywalls are producing customers with the highest LTV. RevenueCat can automatically send billing, subscription, and revenue metrics to Superwall, a paywall SDK that lets you remotely update every aspect of your paywall. 
 
