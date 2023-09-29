@@ -11,7 +11,7 @@ Lists are a segment of your customers inside RevenueCat, this can include both p
 [block:callout]
 {
   "type": "info",
-  "body": "Default lists are available on all plans, but you must be on a [paid](https://www.revenuecat.com/pricing) plan in order to export lists or create custom lists."
+  "body": "If you're on a legacy Free plan and want to access custom lists or export lists, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing)."
 }
 [/block]
 
