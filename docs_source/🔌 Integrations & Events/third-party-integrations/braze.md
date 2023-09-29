@@ -6,7 +6,7 @@ hidden: false
 ---
 > 👍 
 > 
-> The Braze integration is available on the [Pro](https://www.revenuecat.com/pricing) plan.
+> The Braze integration is available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
 Braze can be a helpful integration tool in understanding what stage a customer is in and reacting accordingly. Using Braze can help you to create content that understands the context of your customers and their actions. 
 
