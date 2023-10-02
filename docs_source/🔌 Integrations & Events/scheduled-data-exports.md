@@ -316,6 +316,11 @@ Scheduled Data Exports are a powerful way to add your own customizations on top 
     "language": "pgsql",
     "name": "Active Trials by Grace Period Status",
     "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_7.pgsql"
-  }
+  },
+  {
+    "language": "pgsql",
+    "name": "Realized LTV Per Paying Customer by Original Purchase Date",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_8.pgsql"
+  },
 ]
 [/block]
