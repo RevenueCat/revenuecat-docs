@@ -78,40 +78,40 @@ Attribute keys beginning with `$` are reserved for RevenueCat. The current list 
 
 ### General
 
-| Key                      | Description                                                                       |
-|:-------------------------|:----------------------------------------------------------------------------------|
-| `$displayName`           | Name that should be used to reference the user                                    |
-| `$apnsTokens`            | Apple push notification tokens for the user.                                      |
-| `$fcmTokens`             | Google push notification tokens for the user.                                     |
-| `$attConsentStatus`      | Apple App Tracking Transparency consent status for the user.                      |
-| `$ipAddress`             | Ip Address for the user.                                                          |
-| `$clevertapId `          | Clever Tap ID for the user.                                                       |
-| `$idfa`                  | iOS advertising identifier UUID.                                                  |
-| `$idfv`                  | iOS vender identifier UUID.                                                       |
-| `$gpsAdId`               | The advertising ID that is provided by Google Play services.                      |
-| `$androidId`             | Android device identifier.                                                        |
-| `$amazonAdId`            | Amazon Advertising ID.                                                            |
-| `$adjustId`              | The unique Adjust identifier for the user.                                        |
-| `$amplitudeDeviceId`     | The Amplitude Device ID.                                                          |
-| `$amplitudeUserId`       | The Amplitude User ID.                                                            |
-| `$appsflyerId`           | Appsflyer Id. The unique Appsflyer identifier for the user.                       |
-| `$brazeAliasName`        | The Braze 'alias_name' in User Alias Object.                                      |
-| `$brazeAliasLabel`       | The Braze 'alias_label' in User Alias Object.                                     |
-| `$clevertapId`           | The CleverTap ID for the user.                                                    |
-| `$fbAnonId`              | The Facebook Anonymous ID for the user.                                           |
-| `$attConsentStatus`      | Apple App Tracking Transparency consent status for the user.                      |
-| `$mparticleId`           | The unique mParticle user identifier (mpid).                                      |
-| `$onesignalId`           | The OneSignal Player Id for the user. Deprecated for OneSignal API versions >v9.0.|
-| `$onesignalUserId`       | The OneSignal Id (User Id) for the user. Use with OneSignal API versions >=v11.0. |
-| `$airshipChannelId`      | The Airship channel ID for the user.                                              |
-| `$iterableUserId`        | The Iterable ID for the user.                                                     |
-| `$iterableCampaignId`    | The Iterable campaign ID.                                                         |
-| `$iterableTemplateId`    | The Iterable template ID.                                                         |
-| `$firebaseAppInstanceId` | The Firebase instance identifier.                                                 |
-| `$mixpanelDistinctId`    | The Mixpanel user identifier.                                                     |
-| `$ip`                    | The IP address of the device.                                                     |
-| `$email`                 | Email address for the user.                                                       |
-| `$phoneNumber`           | Phone number for the user.                                                        |
+| Key                      | Description                                                                        |
+|:-------------------------|:-----------------------------------------------------------------------------------|
+| `$displayName`           | Name that should be used to reference the user                                     |
+| `$apnsTokens`            | Apple push notification tokens for the user.                                       |
+| `$fcmTokens`             | Google push notification tokens for the user.                                      |
+| `$attConsentStatus`      | Apple App Tracking Transparency consent status for the user.                       |
+| `$ipAddress`             | Ip Address for the user.                                                           |
+| `$clevertapId `          | Clever Tap ID for the user.                                                        |
+| `$idfa`                  | iOS advertising identifier UUID.                                                   |
+| `$idfv`                  | iOS vender identifier UUID.                                                        |
+| `$gpsAdId`               | The advertising ID that is provided by Google Play services.                       |
+| `$androidId`             | Android device identifier.                                                         |
+| `$amazonAdId`            | Amazon Advertising ID.                                                             |
+| `$adjustId`              | The unique Adjust identifier for the user.                                         |
+| `$amplitudeDeviceId`     | The Amplitude Device ID.                                                           |
+| `$amplitudeUserId`       | The Amplitude User ID.                                                             |
+| `$appsflyerId`           | Appsflyer Id. The unique Appsflyer identifier for the user.                        |
+| `$brazeAliasName`        | The Braze 'alias_name' in User Alias Object.                                       |
+| `$brazeAliasLabel`       | The Braze 'alias_label' in User Alias Object.                                      |
+| `$clevertapId`           | The CleverTap ID for the user.                                                     |
+| `$fbAnonId`              | The Facebook Anonymous ID for the user.                                            |
+| `$attConsentStatus`      | Apple App Tracking Transparency consent status for the user.                       |
+| `$mparticleId`           | The unique mParticle user identifier (mpid).                                       |
+| `$onesignalId`           | The OneSignal Player Id for the user. Deprecated for OneSignal API versions >v9.0. |
+| `$onesignalUserId`       | The OneSignal Id (User Id) for the user. Use with OneSignal API versions >=v11.0.  |
+| `$airshipChannelId`      | The Airship channel ID for the user.                                               |
+| `$iterableUserId`        | The Iterable ID for the user.                                                      |
+| `$iterableCampaignId`    | The Iterable campaign ID.                                                          |
+| `$iterableTemplateId`    | The Iterable template ID.                                                          |
+| `$firebaseAppInstanceId` | The Firebase instance identifier.                                                  |
+| `$mixpanelDistinctId`    | The Mixpanel user identifier.                                                      |
+| `$ip`                    | The IP address of the device.                                                      |
+| `$email`                 | Email address for the user.                                                        |
+| `$phoneNumber`           | Phone number for the user.                                                         |
 
 > 🚧 attConsentStatus is populated regardless of requesting any permission
 > 
