@@ -319,7 +319,7 @@ Scheduled Data Exports are a powerful way to add your own customizations on top 
   },
   {
     "language": "pgsql",
-    "name": "Realized LTV Per Paying Customer by Original Purchase Date",
+    "name": "Realized LTV Per Paying Customer by First Purchase Date",
     "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_8.pgsql"
   }
 ]
