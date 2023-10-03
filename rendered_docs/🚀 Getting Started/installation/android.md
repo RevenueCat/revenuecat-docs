@@ -20,7 +20,7 @@ Purchases for Android (Google Play and Amazon Appstore) is available on Maven an
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
 
 ```groovy build.gradle
-implementation 'com.revenuecat.purchases:purchases:6.0.0'
+implementation 'com.revenuecat.purchases:purchases:7.0.0'
 ```
 
 
@@ -52,8 +52,8 @@ We are adding Proguard rules to the library so you don't need to do anything. If
 Add a new dependency to the build.gradle apart from the regular `purchases` dependency. These new dependencies have the classes needed to use Amazon IAP:
 
 ```groovy build.gradle
-implementation 'com.revenuecat.purchases:purchases:6.0.0'
-implementation 'com.revenuecat.purchases:purchases-store-amazon:6.0.0'
+implementation 'com.revenuecat.purchases:purchases:7.0.0'
+implementation 'com.revenuecat.purchases:purchases-store-amazon:7.0.0'
 ```
 
 
