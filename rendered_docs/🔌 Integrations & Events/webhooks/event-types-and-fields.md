@@ -92,7 +92,7 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
     "9-5": "✅",
     "9-6": "❌",
     "10-0": "`TRANSFER`",
-    "10-1": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.",
+    "10-1": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.  \n  \nPlease note: The webhook will only be sent for the destination user despite us displaying this event in both customer histories because the event body is exactly the same for both users.",
     "10-2": "✅",
     "10-3": "✅",
     "10-4": "✅",
