@@ -77,10 +77,12 @@ For each period, we measure:
     "3-0": "Can I measure Subscription Retention across all product durations?",
     "3-1": "Subscription Retention is filtered by product duration based on the selected Retention Period, and does not support measuring retention across all product durations today.  \n  \nThis is to ensure that the selected Retention Period (e.g. Yearly) maps to the available retention points in a subscriber’s lifecycle.  \n  \nFor example, a monthly subscriber who retained for only 10 months would not be counted as a retained subscriber at 1 year, but has a vastly superior retention rate (and therefore lifetime value) when compared to the subscriber who retained for 2 months, and only the Monthly Retention Period would show that contrast.  \n  \nWe’ll continue improving this chart to allow for more flexible retention measurements in the future.",
     "4-0": "How are incomplete periods displayed in Subscription Retention?",
-    "4-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions."
+    "4-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions.",
+    "5-0": "How are introductory offers treated in this chart?",
+    "5-1": "Introductory offers are not included in the Subscription Retention chart. A subscription's first purchase date is treated as the date of its first payment of the standard subscription period. This differs from other charts which include introductory offers in the definition of "paid" subscribers because our methodology for measuring retention requires that all transactions in a given subscription are of a single duration."
   },
   "cols": 2,
-  "rows": 5,
+  "rows": 6,
   "align": [
     "left",
     "left"
