@@ -82,7 +82,7 @@ For each period, we measure:
     "4-0": "How are incomplete periods displayed in Subscription Retention?",
     "4-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions.",
     "5-0": "How are introductory offers treated in this chart?",
-    "5-1": "Introductory offers are not included in the Subscription Retention chart. A subscription's first purchase date is treated as the date of its first payment of the standard subscription period. This differs from other charts which include introductory offers in the definition of "paid" subscribers because our methodology for measuring retention requires that all transactions in a given subscription are of a single duration."
+    "5-1": "Introductory offers are not included in the Subscription Retention chart. A subscription's first purchase date is treated as the date of its first payment of the standard subscription period. This differs from other charts which include introductory offers in the definition of paid subscribers because our methodology for measuring retention requires that all transactions in a given subscription are of a single duration."
   },
   "cols": 2,
   "rows": 6,
