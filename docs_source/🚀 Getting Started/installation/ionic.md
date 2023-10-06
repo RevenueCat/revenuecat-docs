@@ -83,7 +83,7 @@ Import the plugin object then use its static methods:
 
 > 🚧 Important note if using Vue.js reactivity wrappers
 > 
-> If using Vue.js and its reactivity wrappers like [reactive](https://vuejs.org/api/reactivity-core.html#reactive) or [readonly](https://vuejs.org/api/reactivity-core.html#readonly), make sure you pass the raw objects to the capacitor plugin methods. You can use the [toRaw](https://vuejs.org/api/reactivity-advanced.html#toraw) method for that.
+> If using Vue.js and its Reactivity API wrappers like [reactive](https://vuejs.org/api/reactivity-core.html#reactive) or [readonly](https://vuejs.org/api/reactivity-core.html#readonly), make sure you pass the raw objects (rather than `Proxy` objects) to the Capacitor plugin methods. You can use the [toRaw](https://vuejs.org/api/reactivity-advanced.html#toraw) method to convert to the raw object.
 
 Import the plugin object then use its static methods:
 
