@@ -78,3 +78,21 @@ Import the plugin object then use its static methods:
   }
 ]
 [/block]
+
+## Vue.js
+
+> 🚧 Important note if using Vue.js reactivity wrappers
+> 
+> If using Vue.js and its reactivity wrappers like [reactive](https://vuejs.org/api/reactivity-core.html#reactive) or [readonly](https://vuejs.org/api/reactivity-core.html#readonly), make sure you pass the raw objects to the capacitor plugin methods. You can use the [toRaw](https://vuejs.org/api/reactivity-advanced.html#toraw) method for that.
+
+Import the plugin object then use its static methods:
+
+[block:file]
+[
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/🚀 Getting Started/installation/ionic_vuejs_capacitor.ts"
+  }
+]
+[/block]
