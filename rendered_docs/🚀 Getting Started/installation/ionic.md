@@ -128,3 +128,32 @@ const Tab1: React.FC = () => {
   );
 };
 ```
+
+## Vue.js
+
+> 🚧 Important note if using Vue.js reactivity wrappers
+> 
+> If using Vue.js and its Reactivity API wrappers like [reactive](https://vuejs.org/api/reactivity-core.html#reactive) or [readonly](https://vuejs.org/api/reactivity-core.html#readonly), make sure you pass the raw objects (rather than `Proxy` objects) to the Capacitor plugin methods. You can use the [toRaw](https://vuejs.org/api/reactivity-advanced.html#toraw) method to convert to the raw object.
+
+Import the plugin object then use its static methods:
+
+```typescript Capacitor
+import {LOG_LEVEL, Purchases} from "@revenuecat/purchases-capacitor";
+
+const app = createApp(App)
+  .use(IonicVue)
+  .use(router);
+
+const configure = async () => {
+  await Purchases.setLogLevel({ level: LOG_LEVEL.DEBUG }); // Enable to get debug logs
+  await Purchases.configure({
+    apiKey: "my_api_key",
+    appUserID: "my_app_user_id" // Optional
+  });
+};
+
+router.isReady().then(() => {
+  app.mount('#app');
+  configure().then(() => { "RevenueCat SDK configured!" });
+});
+```
