@@ -167,5 +167,5 @@ If you attempt to display a Paywall for an Offering that doesn't have one config
 The default paywall displays all packages in the offering.
 
 On iOS it uses the app's `accentColor` for styling.
-On Android, it uses the app's `ColorScheme`.
+On Android, it uses the app's `Material3`'s `ColorScheme`.
 
