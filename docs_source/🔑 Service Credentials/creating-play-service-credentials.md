@@ -110,7 +110,8 @@ All other choices are yours - the other boxes can be checked or unchecked accord
 Select invite user at the bottom of the page, and send the invite. You'll then be redirected to '**Users and Permissions**', where you should see your newly created account as active.
 
 <img width="1440" alt="Screen Shot 2023-10-11 at 4 17 16 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/bc8ba256-3cac-4af3-95e9-742b345e11ae">
-<img width="1440" alt="Screen Shot 2023-10-11 at 4 14 08 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/f609810f-5eee-4b71-beb0-e1de675eb44f">
+<img width="1440" alt="Screen Shot 2023-10-11 at 4 24 24 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/2854dd07-8ca8-4734-bc96-80d8adedbf05">
+
 
 ## 4. Enter the Credentials JSON in RevenueCat
 
