@@ -59,7 +59,7 @@ Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 
 RevenueCat's iOS 4.22.0+ and Android 6.9.2+ SDKs provide an overlay for your app that displays relevant details of the SDK configuration. The debug overlay includes each of your configured Offerings, with the option to purchase any of the products and validate access to entitlements.
 
-## iOS
+## iOS / macOS / visionOS
 
 [block:image]
 {
