@@ -16,28 +16,22 @@ In order for RevenueCat's servers to communicate with Google on your behalf, you
 
 Note that this setup takes place on both the Google Play Console and the Google Cloud Console. Due to the nature of the process, there’s some switching back and forth between each console that can’t be helped, but each step will make clear which console you should be looking at.
 
-## 1. Linking to a Google Cloud Project
+## 1. Enable the Google Developer and Reporting API
 
-- Where: [Google Play Console](https://play.google.com/console/u/0/developers)
-- Developer homepage :fa-arrow-right: Setup section of sidebar :fa-arrow-right: API Access
+To enable the Developer and Reporting APIs for your Google Cloud Project, you’ll want to do the following:
+1. Go to the [API Console](https://console.developers.google.com/).
+2. From the projects list, select a project or create a new one.
+3. Go to the [Google Play Android Developer API page](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com) and the [Google Play Developer Reporting API page](https://console.cloud.google.com/apis/library/playdeveloperreporting.googleapis.com) in Google Cloud Console.
+4. Click **Enable**. (This will say **Manage** when it is enabled.)
 
-In API Access, either link to connect an existing Google Cloud Project or create a new project. Make sure to save, and agree to any terms and conditions of service pop ups.
+<img width="1440" alt="Screen Shot 2023-10-10 at 9 13 34 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/eb11e0c6-d729-49df-861d-811b2094ecc7">
+<img width="1440" alt="Screen Shot 2023-10-10 at 1 52 03 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/77a04f0b-db92-4b3b-ab24-ba408dcf5d82">
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f61f0ff-Crede_Step1.gif",
-        null,
-        "Google Play Console"
-      ],
-      "align": "center",
-      "caption": "Google Play Console"
-    }
-  ]
-}
-[/block]
+After enabling the API, you will be redirected to your Google Cloud API page. From there, if you do not have credentials, you will need to create these following the prompt. You'll want to select that you are using the Google Play Android Developer API. Note that you'll want to generate these with either the owner of the project or a user that has the permissions from step 3 enabled in Google Play Console.
+<img width="1440" alt="Screen Shot 2023-10-10 at 9 19 33 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/2a1fee7d-cda6-410f-a214-81d76d3e9094">
+
+You will then be redirected to create your form of credentials which you can follow step 2 for. If you just created your credentials, you may see the “To use this API, you may need credentials” message on your API console, this is because your credentials have not yet been validated. This will be done automatically by Google.
+<img width="1440" alt="Screen Shot 2023-10-10 at 9 17 30 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/1a238dea-aae6-45ab-a753-16287b0a8a32">
 
 ## 2. Create a Service Account
 
@@ -103,11 +97,11 @@ Select Add Key, then Create new key. On the pop up, make sure JSON is selected, 
 ## 3. Grant Financial Access to RevenueCat
 
 - Where: Google Play Console
-- Developer homepage :fa-arrow-right: 'Setup' section of sidebar :fa-arrow-right: API Access
+- Developer homepage :fa-arrow-right: Users and permissions
 
-Back in the Google Play Console, on the same screen that we left off on in Step 1, select '**Manage Play Console Permissions**' for the service account you created in Step 2. If you don't see the account, try refreshing the page.
+In the Google Play Console, go to the '**Users and Permissions**' section' and select invite user. You'll want to invite the service account you created in Step 2. Under 'App permissions' you need to add your app. Then under 'Account permissions', you need to grant certain permissions in order for RevenueCat to properly work.
 
-### a. Grant the following permissions:
+### Grant the following permissions:
 
 - View app information and download bulk reports (read-only)
 - View financial data, orders, and cancellation survey response
@@ -115,43 +109,11 @@ Back in the Google Play Console, on the same screen that we left off on in Step 
 
 All other choices are yours - the other boxes can be checked or unchecked according to your needs, as long as those three are selected.
 
-Select invite user at the bottom of the page, and send the invite. You'll be redirected to '**Users and Permissions**', where you should see your newly created account as active.
+Select invite user at the bottom of the page, and send the invite. You'll then be redirected to '**Users and Permissions**', where you should see your newly created account as active.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0fbc79c-Crede_Step3a.gif",
-        null,
-        "Google Play Console"
-      ],
-      "align": "center",
-      "caption": "Google Play Console"
-    }
-  ]
-}
-[/block]
+<img width="1440" alt="Screen Shot 2023-10-11 at 4 17 16 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/bc8ba256-3cac-4af3-95e9-742b345e11ae">
+<img width="1440" alt="Screen Shot 2023-10-11 at 4 24 24 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/2854dd07-8ca8-4734-bc96-80d8adedbf05">
 
-### b. Apply permissions to your apps
-
-In the '**Users and Permissions**' section, select the service account and add your app to the account. The sheet that appears confirms the permissions we chose for this user in the last step. Select Apply, then Save Changes.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cf81d11-Crede_Step3b.gif",
-        null,
-        "Google Play Console"
-      ],
-      "align": "center",
-      "caption": "Google Play Console"
-    }
-  ]
-}
-[/block]
 
 ## 4. Enter the Credentials JSON in RevenueCat
 
