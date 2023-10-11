@@ -104,7 +104,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 
 - Depending on an entitlement with `PaywallDialog`
 - Custom logic with `PaywallDialog`
-- Manually with `PaywallView` or `PaywallActivityLauncher`
+- Manually with `PaywallView`, `PaywallDialog`, or `PaywallActivityLauncher`
 
 [block:file]
 [
