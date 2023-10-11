@@ -4,7 +4,7 @@ slug: cordova
 excerpt: Instructions for installing Purchases SDK for Cordova
 hidden: false
 categorySlug: documentation
-order: 4
+order: 5
 parentDoc: 649983b4c31b2e000a3c1864
 ---
 # What is RevenueCat?

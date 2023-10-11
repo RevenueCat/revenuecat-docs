@@ -16,9 +16,9 @@ On App Store Connect, [create a new App Store Connect API key](https://developer
 
 
 
-The newly created key needs to have at least the access level **Developer**:
+The newly created key needs to have at least the access level **App Manager**:
 
-![](https://files.readme.io/0f8e598-Screenshot_2023-01-03_at_22.00.26.png "Screenshot 2023-01-03 at 22.00.26.png")
+![](https://files.readme.io/2153907-generate_api_key.png "Screenshot 2023-01-03 at 22.00.26.png")
 
 
 
