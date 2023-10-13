@@ -12,6 +12,8 @@ RevenueCat can send you notifications any time an event happens in your app. Thi
 
 With webhooks integrated, you can:
 
+- Maintain an up-to-date record of subscriptions and purchases in your own backend
+- Trigger automations and workflows based on the subscription lifecycle 
 - Remind subscribers of the benefits of your app when they decide to unsubscribe, or let them know when there are billing issues. 
 
 # Registering Your Webhook URL
