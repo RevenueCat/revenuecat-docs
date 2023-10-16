@@ -7,7 +7,13 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 > ❗️
 > 
-> Paywalls are only available for iOS 15.0+ and Mac Catalyst 15.0+, but support for Android, tvOS, watchOS, and other platforms is coming soon!
+> Paywalls are available on the following platforms:
+> - iOS 15.0+
+> - visionOS 1.0+
+> - Mac Catalyst 15.0+
+> - Android 7.0 (API level 24) - on Beta!
+>
+> Support for more platforms is coming soon: watchOS, macOS, tvOS, and others!
 
 [block:embed]
 {
@@ -25,7 +31,7 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 # How Paywalls work
 
-## Installation
+## iOS Installation
 
 #### If you already have `RevenueCat` in your project:
 
@@ -56,21 +62,28 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 3. Add `RevenueCat` and `RevenueCatUI` SPM dependency to your project:
 <img width="400" alt="Add paywall" src="https://files.readme.io/9140485-Screenshot_2023-08-04_at_12.08.07.png">
 
+## Android Installation
+
+1. Add `RevenueCatUI`:
+```groovy build.gradle
+implementation 'com.revenuecat.purchases:purchases-ui:7.1.0-beta.1'
+```
+
 ## Overview
 
 Our paywall templates use native code to deliver smooth, intuitive experiences to your customers when you’re ready to deliver them an Offering; and you can use our Dashboard to pick the right template and configuration to meet your needs.
 
-To use RevenueCat Paywalls on iOS, simply:
+To use RevenueCat Paywalls, simply:
 
 1. [Create a Paywall](doc:creating-paywalls) on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
 
-2. `import RevenueCatUI` at the point in the user experience when you want to display a paywall. See [displaying paywalls](doc:displaying-paywalls) for more information.
+2. See [displaying paywalls](doc:displaying-paywalls) for how to display it into your app.
 
 > 📘 
 > 
-> RevenueCat Paywalls are only available on our iOS SDK and require version >= 4.26.
-> 
-> Android support is coming soon.
+> RevenueCat Paywalls are available on the following SDK versions:
+> - iOS: version >= 4.26.0
+> - Android: version >= 7.1.0 (beta)
 
 ## Offerings and Paywalls
 
@@ -82,12 +95,12 @@ Therefore, you can create a unique Paywall for each of your Offerings, and can c
 
 ## Platforms (support for more coming)
 * ✅  iOS 15.0 and higher
+* ✅  visionOS 1.0 and higher
 * ✅  Mac Catalyst 15.0 and higher
-* ❌ tvOS
+* ✅ Android 7.0 (API level 24)
 * ❌ watchOS
 * ❌ macOS
-* ❌ visionOS
-* ❌ Android
+* ❌ tvOS
 
 # Next Steps
 

@@ -6,7 +6,9 @@ hidden: false
 
 # Displaying Paywalls
 
-## How to display a fullscreen Paywall in your app
+## iOS
+
+### How to display a fullscreen Paywall in your app
 
 RevenueCat Paywalls will, by default, show paywalls fullscreen and there are multiple ways to do this with SwiftUI and UIKit.
 
@@ -43,7 +45,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 
 Paywalls displayed with `presentPaywallIfNeeded` will have a close button on the presented sheet. However, a `PaywallView` will not have a close button. This gives you full control on how to to navigate to and from your `PaywallView`. You can push it onto an existing navigation stack or show it in a sheet with a custom dismiss button using SwiftUI toolbar.
 
-## How to display a footer Paywall on your custom paywall
+### How to display a footer Paywall on your custom paywall
 
 RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle it. This is done by adding the `.paywallFooter()` view modifier to your view.
 
@@ -69,9 +71,7 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
 ]
 [/block]
 
-# Customization
-
-## How to use custom fonts
+### How to use custom fonts
 
 Paywalls can be configured to use the same font as your app using a `PaywallFontProvider`. A `PaywallFontProvider` can be passed as an argument into all methods for displaying the paywall.
 
@@ -96,9 +96,73 @@ If you need more control over your font preferences, you can create your own `Pa
 ]
 [/block]
 
+## Android (Beta)
+
+### How to display a fullscreen Paywall in your app
+
+RevenueCat Paywalls will, by default, show paywalls fullscreen and there are multiple ways to do this with `Activity`s and Jetpack Compose.
+
+- Depending on an entitlement with `PaywallDialog`
+- Custom logic with `PaywallDialog`
+- Manually with `PaywallView`, `PaywallDialog`, or `PaywallActivityLauncher`
+
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "Entitlement",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_1.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Custom Logic",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_2.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Manually",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_3.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Manually (Activity)",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_4.kt"
+  }
+]
+[/block]
+
+### How to display a footer Paywall on your custom paywall
+
+RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle it.
+This is done by using the `PaywallFooter` composable.
+
+The footer paywall mainly consists of the following:
+- Purchase button
+- Package details text
+- Package selection (if there are any multiple packages configured)
+
+This is all remotely configured and RevenueCatUI handles all the intro offer eligibility and purchase logic.
+
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "Current Offering",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_5.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Specific Offering",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_6.kt"
+  }
+]
+[/block]
+
 ## Default Paywall
 
 If you attempt to display a Paywall for an Offering that doesn't have one configured, the RevenueCatUI SDK will display a default Paywall.
 The default paywall displays all packages in the offering.
-On iOS it uses the app's `accentColor` for styling. 
+
+On iOS it uses the app's `accentColor` for styling.
+On Android, it uses the app's `Material3`'s `ColorScheme`.
 
