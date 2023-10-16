@@ -158,9 +158,6 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
 ]
 [/block]
 
-### How to use custom fonts
-TODO
-
 ## Default Paywall
 
 If you attempt to display a Paywall for an Offering that doesn't have one configured, the RevenueCatUI SDK will display a default Paywall.
