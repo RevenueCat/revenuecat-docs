@@ -96,7 +96,7 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
     "10-5": "✅",
     "10-6": "❌",
     "11-0": "`SUBSCRIPTION_EXTENDED`",
-    "11-1": "An existing subscription has been extended (the expiration date of the current subscription period has been pushed back to the future).",
+    "11-1": "An existing subscription has been extended (the expiration date of the current subscription period has been pushed back to the future).\n\nThis event is fired when a Apple App Store or Google Play Store subscription is extended through the store's API. On the Google Play Store, this event can also sometimes fire when Google defers charging for a renewal by less than 24 hours (for unknown reasons). In this case, you will receive a `SUBSCRIPTION_EXTENDED` webhook, followed by either a `RENEWAL` or `BILLING_ISSUE` webhook within the next 24 hours.",
     "11-2": "✅",
     "11-3": "✅",
     "11-4": "❌",
