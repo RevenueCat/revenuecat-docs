@@ -6,7 +6,7 @@ private fun LockedScreen() {
         PaywallDialogOptions.Builder()
             .setRequiredEntitlementIdentifier(Constants.ENTITLEMENT_ID)
             .setListener(
-                object : PaywallViewListener {
+                object : PaywallListener {
                     override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}
                     override fun onRestoreCompleted(customerInfo: CustomerInfo) {}
                 }

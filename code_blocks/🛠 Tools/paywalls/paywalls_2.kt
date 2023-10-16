@@ -11,7 +11,7 @@ private fun NavGraph(navController: NavHostController) {
                 PaywallDialogOptions.Builder()
                     .setShouldDisplayBlock { !it.entitlements.active.isEmpty() }
                     .setListener(
-                        object : PaywallViewListener {
+                        object : PaywallListener {
                             override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}
                             override fun onRestoreCompleted(customerInfo: CustomerInfo) {}
                         }
