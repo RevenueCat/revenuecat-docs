@@ -69,7 +69,6 @@ These are some representative samples of webhooks you might receive from Revenue
     "language": "json",
     "name": "Product Change",
     "file": "code_blocks/🔌 Integrations & Events/webhooks/sample-events_10.json"
-  }
   },
   {
     "language": "json",
