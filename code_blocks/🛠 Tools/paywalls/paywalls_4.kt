@@ -1,17 +1,11 @@
-class AppFragment : Fragment(), PaywallResultHandler {
+class MainActivity : AppCompatActivity(), PaywallResultHandler {
     private lateinit var paywallActivityLauncher: PaywallActivityLauncher
     private lateinit var root: View
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         paywallActivityLauncher = PaywallActivityLauncher(this, this)
-
-        root = inflater.inflate(R.layout.fragment, container, false)
-
-        return root
     }
 
     private fun performMagic() {
