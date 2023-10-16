@@ -96,7 +96,7 @@ If you need more control over your font preferences, you can create your own `Pa
 ]
 [/block]
 
-## Android
+## Android (Beta)
 
 ### How to display a fullscreen Paywall in your app
 

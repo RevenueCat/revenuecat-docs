@@ -11,7 +11,7 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 > - iOS 15.0+
 > - visionOS 1.0+
 > - Mac Catalyst 15.0+
-> - Android 7.0 (API level 24)
+> - Android 7.0 (API level 24) - on Beta!
 >
 > Support for more platforms is coming soon: watchOS, macOS, tvOS, and others!
 
@@ -81,9 +81,9 @@ To use RevenueCat Paywalls, simply:
 
 > 📘 
 > 
-> RevenueCat Paywalls are are available on the following versions:
+> RevenueCat Paywalls are available on the following SDK versions:
 > - iOS: version >= 4.26.0
-> - Android: version >= 7.1.0
+> - Android: version >= 7.1.0 (beta)
 
 ## Offerings and Paywalls
 
