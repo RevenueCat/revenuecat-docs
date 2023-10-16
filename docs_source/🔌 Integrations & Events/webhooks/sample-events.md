@@ -52,6 +52,11 @@ These are some representative samples of webhooks you might receive from Revenue
   },
   {
     "language": "json",
+    "name": "Expiration",
+    "file": "code_blocks/🔌 Integrations & Events/webhooks/sample-events_13.json"
+  },
+  {
+    "language": "json",
     "name": "Transfer",
     "file": "code_blocks/🔌 Integrations & Events/webhooks/sample-events_8.json"
   },
@@ -64,6 +69,12 @@ These are some representative samples of webhooks you might receive from Revenue
     "language": "json",
     "name": "Product Change",
     "file": "code_blocks/🔌 Integrations & Events/webhooks/sample-events_10.json"
+  }
+  },
+  {
+    "language": "json",
+    "name": "Subscription extended",
+    "file": "code_blocks/🔌 Integrations & Events/webhooks/sample-events_14.json"
   }
 ]
 [/block]
