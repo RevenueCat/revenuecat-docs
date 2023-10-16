@@ -9,7 +9,9 @@ parentDoc: 64d0f9bdc52aeb0058f5ec3d
 
 # Displaying Paywalls
 
-## How to display a fullscreen Paywall in your app
+## iOS
+
+### How to display a fullscreen Paywall in your app
 
 RevenueCat Paywalls will, by default, show paywalls fullscreen and there are multiple ways to do this with SwiftUI and UIKit.
 
@@ -120,7 +122,7 @@ extension ViewController: PaywallViewControllerDelegate {
 
 Paywalls displayed with `presentPaywallIfNeeded` will have a close button on the presented sheet. However, a `PaywallView` will not have a close button. This gives you full control on how to to navigate to and from your `PaywallView`. You can push it onto an existing navigation stack or show it in a sheet with a custom dismiss button using SwiftUI toolbar.
 
-## How to display a footer Paywall on your custom paywall
+### How to display a footer Paywall on your custom paywall
 
 RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle it. This is done by adding the `.paywallFooter()` view modifier to your view.
 
@@ -170,9 +172,7 @@ struct YourPaywall: View {
 }
 ```
 
-# Customization
-
-## How to use custom fonts
+### How to use custom fonts
 
 Paywalls can be configured to use the same font as your app using a `PaywallFontProvider`. A `PaywallFontProvider` can be passed as an argument into all methods for displaying the paywall.
 
@@ -225,9 +225,146 @@ class RoundedSystemFontProvider: PaywallFontProvider {
 }
 ```
 
+## Android (Beta)
+
+### How to display a fullscreen Paywall in your app
+
+RevenueCat Paywalls will, by default, show paywalls fullscreen and there are multiple ways to do this with `Activity`s and Jetpack Compose.
+
+- Depending on an entitlement with `PaywallDialog`
+- Custom logic with `PaywallDialog`
+- Manually with `PaywallView`, `PaywallDialog`, or `PaywallActivityLauncher`
+
+```kotlin Entitlement
+@Composable
+private fun LockedScreen() {
+    YourContent()
+
+    PaywallDialog(
+        PaywallDialogOptions.Builder()
+            .setRequiredEntitlementIdentifier(Constants.ENTITLEMENT_ID)
+            .setListener(
+                object : PaywallListener {
+                    override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}
+                    override fun onRestoreCompleted(customerInfo: CustomerInfo) {}
+                }
+            )
+            .build()
+    )
+}
+```
+```kotlin Custom Logic
+@Composable
+private fun NavGraph(navController: NavHostController) {
+    NavHost(
+        navController = navController,
+        startDestination = Screen.Main.route,
+    ) {
+        composable(route = Screen.Main.route) {
+            MainScreen()
+
+            PaywallDialog(
+                PaywallDialogOptions.Builder()
+                    .setShouldDisplayBlock { !it.entitlements.active.isEmpty() }
+                    .setListener(
+                        object : PaywallListener {
+                            override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}
+                            override fun onRestoreCompleted(customerInfo: CustomerInfo) {}
+                        }
+                    )
+                    .build()
+            )
+        }
+    }
+}
+```
+```kotlin Manually
+@Composable
+private fun NavGraph(navController: NavHostController) {
+    NavHost(
+        navController = navController,
+        startDestination = Screen.Main.route,
+    ) {
+        composable(route = Screen.Main.route) {
+            MainScreen()
+        }
+
+        composable(route = Screen.Paywall.route) {
+            Paywall(
+                options = PaywallOptions.Builder()
+                    .setListener(
+                        object : PaywallListener {
+                            override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}
+                            override fun onRestoreCompleted(customerInfo: CustomerInfo) {}
+                        }
+                    )
+                    .build()
+            )
+        }
+    }
+}
+```
+```kotlin Manually (Activity)
+class MainActivity : AppCompatActivity(), PaywallResultHandler {
+    private lateinit var paywallActivityLauncher: PaywallActivityLauncher
+    private lateinit var root: View
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        paywallActivityLauncher = PaywallActivityLauncher(this, this)
+    }
+
+    private fun performMagic() {
+        Purchases.sharedInstance.getCustomerInfoWith { 
+            if (it.entitlements[Constants.ENTITLEMENT_ID]?.isActive != true) {
+                paywallActivityLauncher.launch()
+            }
+        }
+    }
+
+    override fun onActivityResult(result: PaywallResult) {}
+}
+```
+
+### How to display a footer Paywall on your custom paywall
+
+RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle it.
+This is done by using the `PaywallFooter` composable.
+
+The footer paywall mainly consists of the following:
+- Purchase button
+- Package details text
+- Package selection (if there are any multiple packages configured)
+
+This is all remotely configured and RevenueCatUI handles all the intro offer eligibility and purchase logic.
+
+```kotlin Current Offering
+@Composable
+private fun PaywallScreen() {
+    PaywallFooter() {
+        CustomPaywallContent()        
+    }
+}
+```
+```kotlin Specific Offering
+@Composable
+private fun PaywallScreen(offering: Offering) {
+    PaywallFooter(
+        options = PaywallOptions.Builder()
+            .setOffering(offering)
+            .build()
+    ) {
+        CustomPaywallContent()        
+    }
+}
+```
+
 ## Default Paywall
 
 If you attempt to display a Paywall for an Offering that doesn't have one configured, the RevenueCatUI SDK will display a default Paywall.
 The default paywall displays all packages in the offering.
-On iOS it uses the app's `accentColor` for styling. 
+
+On iOS it uses the app's `accentColor` for styling.
+On Android, it uses the app's `Material3`'s `ColorScheme`.
 
