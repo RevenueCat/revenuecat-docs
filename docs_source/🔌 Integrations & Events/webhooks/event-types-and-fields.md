@@ -4,7 +4,7 @@ slug: event-types-and-fields
 excerpt: The types of webhooks sent from RevenueCat
 hidden: false
 ---
-RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook. 
+RevenueCat sends webhooks in response to events that occur in your app. Here these event types are defined, as well as the data contained in each webhook.
 
 # Event Types
 
@@ -95,13 +95,20 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
     "10-4": "✅",
     "10-5": "✅",
     "10-6": "❌",
-    "11-0": "`SUBSCRIBER_ALIAS`",
-    "11-1": "**Deprecated**. A new `app_user_id` has been registered for an existing subscriber.",
-    "11-2": "",
-    "11-3": "",
-    "11-4": "",
-    "11-5": "",
-    "11-6": ""
+    "11-0": "`SUBSCRIPTION_EXTENDED`",
+    "11-1": "An existing subscription has been extended (the expiration date of the current subscription period has been pushed back to the future).\n\nThis event is fired when a Apple App Store or Google Play Store subscription is extended through the store's API. On the Google Play Store, this event can also sometimes fire when Google defers charging for a renewal by less than 24 hours (for unknown reasons). In this case, you will receive a `SUBSCRIPTION_EXTENDED` webhook, followed by either a `RENEWAL` or `BILLING_ISSUE` webhook within the next 24 hours.",
+    "11-2": "✅",
+    "11-3": "✅",
+    "11-4": "❌",
+    "11-5": "✅",
+    "11-6": "❌",
+    "12-0": "`SUBSCRIBER_ALIAS`",
+    "12-1": "**Deprecated**. A new `app_user_id` has been registered for an existing subscriber.",
+    "12-2": "",
+    "12-3": "",
+    "12-4": "",
+    "12-5": "",
+    "12-6": ""
   },
   "cols": 7,
   "rows": 12,
@@ -119,7 +126,7 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
 
 # Events Format
 
-Webhook events are serialized in JSON. The body of a `POST` request to your server will contain the serialized event, as well as the API version. 
+Webhook events are serialized in JSON. The body of a `POST` request to your server will contain the serialized event, as well as the API version.
 
 [block:file]
 [
@@ -180,12 +187,12 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
 }
 [/block]
 
-> 📘 
-> 
+> 📘
+>
 > When looking up users from the webhook in your systems, make sure to search both the `original_app_user_id` and the `aliases` array.
 
-> 📘 
-> 
+> 📘
+>
 > If we have to retry a webhook for any reason, the retry will have the same `id` and `event_timestamp_ms` of the first attempt.
 
 # Subscription Lifecycle Events Fields
@@ -325,12 +332,12 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
 }
 [/block]
 
-> 📘 
-> 
+> 📘
+>
 > To get the RevenueCat event `id` from a Subscription Lifecycle webhook, simply make an API call to our GET `/subscribers`endpoint with the `app_user_id` after receiving the webhook and look for the latest purchase in the [subscription](https://www.revenuecat.com/reference/subscribers#the-subscription-object)/[non-subscription](https://www.revenuecat.com/reference/subscribers#the-non-subscription-object) object.
 
 > 📘 Determine trial and subscription duration
-> 
+>
 > To get a trial or subscription's duration from a webhook, you can subtract purchased_at_ms from expiration_at_ms and you will get the duration of the trial in milliseconds.
 
 # Cancellation and Expiration Reasons
