@@ -9,10 +9,7 @@ class MyActivity : ComponentActivity(), PaywallResultHandler {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         paywallActivityLauncher = PaywallActivityLauncher(this, this)
-        ...
     }
-
-    ...
 
     fun launchPaywall(offering: Offering? = null) {
         paywallActivityLauncher.launch(
