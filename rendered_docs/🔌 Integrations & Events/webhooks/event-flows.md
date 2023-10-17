@@ -123,9 +123,9 @@ Android subscribers can pause their subscription, allowing them to halt subscrip
 
 ## Billing Issue Flow
 
-If a subscriber with an active subscription encounters a billing issue, RevenueCat will immediately dispatch a `BILLING_ISSUE` event and a `CANCELLATION` event with a `cancel_reason` of `BILLING_ERROR`. 
+If a subscriber with an active subscription encounters a billing issue, RevenueCat will immediately dispatch a `BILLING_ISSUE` event and a `CANCELLATION` event with a `cancel_reason` of `BILLING_ERROR`.
 
-If you do not have grace periods enabled, you’ll immediately receive an `EXPIRATION` webhook and the subscriber’s entitlements will be revoked. 
+If you do not have grace periods enabled, you’ll immediately receive an `EXPIRATION` webhook and the subscriber’s entitlements will be revoked.
 
 If you do have grace periods enabled, the subscriber will retain entitlements as the app store retries the subscriber’s billing method. At the end of the grace period, if billing has not been successful, an `EXPIRATION` event will be sent and entitlements will be revoked. If billing succeeds at any point during the grace period, you’ll receive a `RENEWAL` event and entitlements won’t be revoked. (This `RENEWAL` event may show up before the billing issue in the Customer History timeline. Be sure to check the timestamps on the event pages.)
 
@@ -139,6 +139,30 @@ It’s important to note that the `BILLING_ISSUE`, `CANCELLATION`, and `EXPIRATI
         "https://files.readme.io/5838053-billing-issue.png",
         null,
         "billing issue flow"
+      ],
+      "align": "center",
+      "sizing": "500px"
+    }
+  ]
+}
+[/block]
+
+
+
+## Subscription Extended Flow
+
+If a subscription gets extended, when its expiration changes from a future date to a greater future date, RevenueCat will immediately dispatch a `SUBSCRIPTION_EXTENDED` event.
+
+This event is fired when a Apple App Store or Google Play Store subscription is extended through the store's API. On the Google Play Store, this event can also sometimes fire when Google defers charging for a renewal by less than 24 hours (for unknown reasons). In this case, you will receive a `SUBSCRIPTION_EXTENDED` webhook, followed by either a `RENEWAL` or `BILLING_ISSUE` webhook within the next 24 hours.
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://user-images.githubusercontent.com/2571283/275552420-88fa2dfa-3dd5-49e7-a6e0-9391e25453a2.png",
+        null,
+        "subscription extended flow"
       ],
       "align": "center",
       "sizing": "500px"
