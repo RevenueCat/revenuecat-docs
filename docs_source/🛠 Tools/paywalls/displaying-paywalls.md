@@ -189,7 +189,7 @@ If you need more control over your font preferences, you can create your own `Fo
     "language": "kotlin",
     "name": "Activity single Google font",
     "file": "code_blocks/🛠 Tools/paywalls/paywalls_activity_single_google_font.kt"
-  },
+  }
 ]
 [/block]
 
