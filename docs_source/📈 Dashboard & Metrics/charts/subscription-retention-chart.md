@@ -71,7 +71,7 @@ For each period, we measure:
     "0-0": "How are resubscribes handled in Subscription Retention?",
     "0-1": "If a user churns, but later resubscribes, they will be counted as a retained subscription in the original purchase period.",
     "1-0": "How are refunds handled in Subscription Retention?",
-    "1-1": "Refunded subscriptions are treated like subscriptions that churned during the period that the refund occurred in.",
+    "1-1": "Refunded subscriptions are treated like subscriptions that churned during the period that the refund occurred in on the App Store & Play Store, since their access to the product is immediately revoked. On Stripe, however, you can decide whether or not to revoke access, which will determine whether the underlying subscription is treated as churned or not.",
     "2-0": "How are product changes handled in Subscription Retention?",
     "2-1": "This chart measures retention on a per-product basis.  \n  \nIf a subscriber changes products, they would be counted as “churned” on the old product and start a new “retention journey” on the new one. Their new cohort would be based on the date the transaction for the new product was completed.",
     "3-0": "Can I measure Subscription Retention across all product durations?",
