@@ -68,6 +68,7 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 
 1. Add `RevenueCatUI`:
 ```groovy build.gradle
+implementation 'com.revenuecat.purchases:purchases:7.1.0-beta.2'
 implementation 'com.revenuecat.purchases:purchases-ui:7.1.0-beta.2'
 ```
 
