@@ -1,5 +1,5 @@
 ---
-title: Offering metadata (beta)
+title: Offering metadata
 slug: offering-metadata
 hidden: false
 categorySlug: tools
