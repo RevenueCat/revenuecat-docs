@@ -10,6 +10,11 @@ hidden: false
 
 RevenueCat can send you Slack message to a channel any time an event happens in your app. This lets you keep a close pulse on your app and celebrate those money making moments!
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue |  Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
+|:----------------:|:-------------------------:|:---------------------:|:------------------------------:|:---------------------:|:---------------:|
+|         ✅        |             ❌             | Toggle on in Settings |                ❌               |           ❌           |        ❌        |
+
 # Events
 
 The Slack integration tracks the following events:
