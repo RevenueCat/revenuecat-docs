@@ -104,7 +104,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 
 - Depending on an entitlement with `PaywallDialog`
 - Custom logic with `PaywallDialog`
-- Manually with `PaywallView`, `PaywallDialog`, or `PaywallActivityLauncher`
+- Manually with `Paywall`, `PaywallDialog`, or `PaywallActivityLauncher`
 
 [block:file]
 [
@@ -154,6 +154,41 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
     "language": "kotlin",
     "name": "Specific Offering",
     "file": "code_blocks/🛠 Tools/paywalls/paywalls_6.kt"
+  }
+]
+[/block]
+
+### How to use custom fonts
+
+Paywalls can be configured to use the same font as your app using a `FontProvider` when using Compose or `ParcelizableFontProvider` when using `PaywallActivityLauncher`. These can be passed to the `PaywallOptions` or `PaywallDialogOptions` builders or directly to the `launch` method in `PaywallActivityLauncher` into all methods for displaying the paywall.
+
+By default, a paywall will not use a font provider. This uses the current Material3 theme's Typography by default.
+
+We offer a `CustomFontProvider` and `CustomParcelizableFontProvider` which receives a single font family to use by all text styles in the paywall, if you don't need extra granularity control.
+
+If you need more control over your font preferences, you can create your own `FontProvider`. See the following examples for some common use cases:
+
+[block:file]
+[
+  {
+    "language": "kotlin",
+    "name": "Compose single font",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_compose_single_font.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Compose font per style",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_compose_font_per_style.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Activity single resource font",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_activity_single_resource_font.kt"
+  },
+  {
+    "language": "kotlin",
+    "name": "Activity single Google font",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_activity_single_google_font.kt"
   }
 ]
 [/block]
