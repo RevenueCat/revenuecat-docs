@@ -233,7 +233,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 
 - Depending on an entitlement with `PaywallDialog`
 - Custom logic with `PaywallDialog`
-- Manually with `PaywallView`, `PaywallDialog`, or `PaywallActivityLauncher`
+- Manually with `Paywall`, `PaywallDialog`, or `PaywallActivityLauncher`
 
 ```kotlin Entitlement
 @Composable
@@ -356,6 +356,90 @@ private fun PaywallScreen(offering: Offering) {
             .build()
     ) {
         CustomPaywallContent()        
+    }
+}
+```
+
+### How to use custom fonts
+
+Paywalls can be configured to use the same font as your app using a `FontProvider` when using Compose or `ParcelizableFontProvider` when using `PaywallActivityLauncher`. These can be passed to the `PaywallOptions` or `PaywallDialogOptions` builders or directly to the `launch` method in `PaywallActivityLauncher` into all methods for displaying the paywall.
+
+By default, a paywall will not use a font provider. This uses the current Material3 theme's Typography by default.
+
+We offer a `CustomFontProvider` and `CustomParcelizableFontProvider` which receives a single font family to use by all text styles in the paywall, if you don't need extra granularity control.
+
+If you need more control over your font preferences, you can create your own `FontProvider`. See the following examples for some common use cases:
+
+```kotlin Compose single font
+@Composable
+fun MyComposable() {
+    PaywallDialog(
+        PaywallDialogOptions.Builder { /* on dismiss */ }
+            .setFontProvider(CustomFontProvider(myFontFamily))
+            .build()
+    )
+}
+```
+```kotlin Compose font per style
+@Composable
+fun MyComposable() {
+    PaywallDialog(
+        PaywallDialogOptions.Builder { /* on dismiss */ }
+            .setFontProvider(object : FontProvider {
+                override fun getFont(type: TypographyType): FontFamily? {
+                    return when (type) {
+                        TypographyType.HEADLINE_LARGE -> headlineFontFamily
+                        TypographyType.BODY_LARGE -> bodyFontFamily
+                        else -> null // Will use default font
+                    }
+                }
+            })
+            .build()
+    )
+}
+```
+```kotlin Activity single resource font
+class MyActivity : ComponentActivity(), PaywallResultHandler {
+    private lateinit var paywallActivityLauncher: PaywallActivityLauncher
+    private val fontFamily = PaywallFontFamily(
+        fonts = listOf(
+            PaywallFont.ResourceFont(R.font.my_font)
+        )
+    )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        paywallActivityLauncher = PaywallActivityLauncher(this, this)
+    }
+
+    fun launchPaywall(offering: Offering? = null) {
+        paywallActivityLauncher.launch(
+            offering, 
+            CustomParcelizableFontProvider(fontFamily)
+        )
+    }
+}
+```
+```kotlin Activity single Google font
+class MyActivity : ComponentActivity(), PaywallResultHandler {
+    private lateinit var paywallActivityLauncher: PaywallActivityLauncher
+    private val googleFontProvider = GoogleFontProvider(R.array.com_google_android_gms_fonts_certs)
+    private val fontFamily = PaywallFontFamily(
+        fonts = listOf(
+            PaywallFont.GoogleFont("GOOGLE_FONT_NAME", googleFontProvider)
+        )
+    )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        paywallActivityLauncher = PaywallActivityLauncher(this, this)
+    }
+
+    fun launchPaywall(offering: Offering? = null) {
+        paywallActivityLauncher.launch(
+            offering,
+            CustomParcelizableFontProvider(fontFamily)
+        )
     }
 }
 ```
