@@ -150,7 +150,7 @@ Webhook events are serialized in JSON. The body of a `POST` request to your serv
     "0-0": "`type`",
     "0-1": "String",
     "0-2": "[Type of the event](doc:webhooks#section-event-types).",
-    "0-3": "`TEST`  \n  \n`INITIAL_PURCHASE`  \n  \n`NON_RENEWING_PURCHASE`  \n  \n `RENEWAL`  \n  \n `PRODUCT_CHANGE`  \n  \n `CANCELLATION`  \n  \n `BILLING_ISSUE`  \n  \n`SUBSCRIBER_ALIAS`  \n  \n`SUBSCRIPTION_PAUSED`  \n  \n`UNCANCELLATION`  \n  \n`TRANSFER`",
+    "0-3": "`TEST`  \n  \n`INITIAL_PURCHASE`  \n  \n`NON_RENEWING_PURCHASE`  \n  \n `RENEWAL`  \n  \n `PRODUCT_CHANGE`  \n  \n `CANCELLATION`  \n  \n `BILLING_ISSUE`  \n  \n`SUBSCRIBER_ALIAS`  \n  \n`SUBSCRIPTION_PAUSED`  \n  \n`UNCANCELLATION`  \n  \n`TRANSFER`  \n  \n`SUBSCRIPTION_EXTENDED`",
     "1-0": "`id`",
     "1-1": "String",
     "1-2": "Unique identifier of the event.",
