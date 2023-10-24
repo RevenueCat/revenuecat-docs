@@ -105,31 +105,6 @@ This version is only compatible with version 4.8.0 and above of Unity IAP which 
 
 To install download `Purchases.unityPackage` and install as normal. Then follow the instructions indicated in the "Troubleshooting "duplicated class" errors"
 
-## Purchases Unity 4.2.0+
-![RevenueCat's Purchases Unity SDK 4.2.0+](https://img.shields.io/badge/Purchases%20Unity-4.2.0%2B-%23f25a5a?style=flat-square)
-
-**side by side with Unity IAP 4.4.0 < 4.8.0**
-
-Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page.
-
-## Purchases Unity 4.0.0 and 4.1.0
-![RevenueCat's Purchases Unity SDK 4.1.0+](https://img.shields.io/badge/Purchases%20Unity-4.1.0%2B-%23f25a5a?style=flat-square)
-
-**side by side with Unity IAP 3.3.0 < 4.4.0**
-
-Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page. 
-
----
-
-## Troubleshooting "duplicated class" errors
-
-[block:callout]
-{
-  "type": "danger",
-  "body": "Follow this instruction if using RevenueCat alongside Unity IAP 2.2.0+, other plugin that includes the Android InAppBillingService class, or for some other reason you get an error regarding duplicated classes."
-}
-[/block]
-
 If using RevenueCat alongside Unity IAP 2.2.0+ or other plugin that includes the Android BillingClient library you will be getting an error when compiling that warns about some BillingClient classes being duplicated.
 
 The easiest way to remove the error would be to tell Gradle to not include the billingclient library that Unity IAP is already including.
@@ -153,11 +128,34 @@ Perform a clean up of the resolved dependencies using the `Assets/External Depen
 
 Also make sure to perform a resolve, so External Dependency Manager adds the right dependencies to the generated `build.gradle`.
 
+[block:callout]
+{
+  "type": "danger",
+  "body": "The above instructions instructions will also apply if using other plugin that includes the Android InAppBillingService class, or for some other reason you get an error regarding duplicated classes."
+}
+[/block]
+
 ## Troubleshooting "ClassNotFoundException" errors at Runtime in Android
 
 When exporting your project to Android, in the Build Settings window, make sure you uncheck the `Symlink Sources` checkbox. That will make it so Unity actually uses the correct source files for our SDK.
 
 ![](https://files.readme.io/98a2d95-unity-symlink-sources-unchecked.jpg "unity-symlink-sources-unchecked.jpg")
+
+## Installing old versions of the plugin
+
+### Purchases Unity 4.2.0+
+![RevenueCat's Purchases Unity SDK 4.2.0+](https://img.shields.io/badge/Purchases%20Unity-4.2.0%2B-%23f25a5a?style=flat-square)
+
+**side by side with Unity IAP 4.4.0 < 4.8.0**
+
+Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page.
+
+### Purchases Unity 4.0.0 and 4.1.0
+![RevenueCat's Purchases Unity SDK 4.1.0+](https://img.shields.io/badge/Purchases%20Unity-4.1.0%2B-%23f25a5a?style=flat-square)
+
+**side by side with Unity IAP 3.3.0 < 4.4.0**
+
+Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page. 
 
 # Next Steps
 
