@@ -47,3 +47,10 @@ Each integration configuration page in the RevenueCat dashboard will display a r
 If you're receiving errors, inspect the response message to troubleshoot.
 
 If you don't see any events dispatched, ensure that you're capturing any device specific information required by that integration and that you've recorded a recent purchase to RevenueCat.
+
+## Integrations FAQs
+| Question                                                       | Answer                                                                                                                                                                                                                                       |
+|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| What does it mean if my event returns with a negative revenue? | Events with negative revenue, most often a cancellation event, indicate that a refund has taken place. Not all integrations support negative revenue, and some may indicate refunds with a revenue of zero instead.                          |
+| Are any event types optional to send to integrations?          | This will vary by integration, and can be found on the specific integration details page. If an event type is optional, leaving the event name blank is your settings will indicate that you do not want RevenueCat to send that event type. |
+
