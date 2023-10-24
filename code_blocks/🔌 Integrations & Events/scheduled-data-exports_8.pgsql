@@ -26,6 +26,7 @@ SELECT
   SUM(CASE WHEN DATEADD(month, 12, first_purchase_date) > start_time THEN price_in_usd ELSE 0 END)::DECIMAL(18,2) AS total_ltv_12_months,
   SUM(CASE WHEN DATEADD(month, 24, first_purchase_date) > start_time THEN price_in_usd ELSE 0 END)::DECIMAL(18,2) AS total_ltv_24_months,
   SUM(price_in_usd) AS total_ltv_unbounded,
+  /* add calculated fields directly if your database supports it, or calculate them in a subsequent CTE */
   (total_ltv_7_days / paying_customers)::DECIMAL(18,2) AS avg_ltv_7_days,
   (total_ltv_30_days / paying_customers)::DECIMAL(18,2) AS avg_ltv_30_days,
   (total_ltv_6_months / paying_customers)::DECIMAL(18,2) AS avg_ltv_6_months,
@@ -34,6 +35,7 @@ SELECT
   (ltv_unbounded / paying_customers)::DECIMAL(18,2) AS avg_ltv_unbounded
 FROM filtered_transactions ft
 
-LEFT JOIN first_purchase_dates fpd ON fpd.rc_original_app_user_id = rc.rc_original_app_user_id
+LEFT JOIN first_purchase_dates fpd 
+  ON fpd.rc_original_app_user_id = ft.rc_original_app_user_id
 
 GROUP BY 1
