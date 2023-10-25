@@ -10,7 +10,9 @@ private fun NavGraph(navController: NavHostController) {
 
         composable(route = Screen.Paywall.route) {
             Paywall(
-                options = PaywallOptions.Builder()
+                options = PaywallOptions.Builder(
+                    onDismiss = { navController.popBackStack() }
+                )
                     .setListener(
                         object : PaywallListener {
                             override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}

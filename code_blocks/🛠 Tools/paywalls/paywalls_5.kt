@@ -1,6 +1,8 @@
 @Composable
-private fun PaywallScreen() {
-    PaywallFooter() {
+private fun PaywallScreen(dismissRequest: () -> Unit) {
+    PaywallFooter(
+        options = PaywallOptions.Builder(dismissRequest).build()
+    ) {
         CustomPaywallContent()        
     }
 }
