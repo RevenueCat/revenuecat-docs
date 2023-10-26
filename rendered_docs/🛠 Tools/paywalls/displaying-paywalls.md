@@ -291,7 +291,9 @@ private fun NavGraph(navController: NavHostController) {
 
         composable(route = Screen.Paywall.route) {
             Paywall(
-                options = PaywallOptions.Builder()
+                options = PaywallOptions.Builder(
+                    onDismiss = { navController.popBackStack() }
+                )
                     .setListener(
                         object : PaywallListener {
                             override fun onPurchaseCompleted(customerInfo: CustomerInfo, storeTransaction: StoreTransaction) {}
@@ -316,11 +318,7 @@ class MainActivity : AppCompatActivity(), PaywallResultHandler {
     }
 
     private fun performMagic() {
-        Purchases.sharedInstance.getCustomerInfoWith { 
-            if (it.entitlements[Constants.ENTITLEMENT_ID]?.isActive != true) {
-                paywallActivityLauncher.launch()
-            }
-        }
+        paywallActivityLauncher.launchIfNeeded(requiredEntitlementIdentifier = Constants.ENTITLEMENT_ID)
     }
 
     override fun onActivityResult(result: PaywallResult) {}
@@ -341,17 +339,21 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
 
 ```kotlin Current Offering
 @Composable
-private fun PaywallScreen() {
-    PaywallFooter() {
+private fun PaywallScreen(dismissRequest: () -> Unit) {
+    PaywallFooter(
+        options = PaywallOptions.Builder(dismissRequest).build()
+    ) {
         CustomPaywallContent()        
     }
 }
 ```
 ```kotlin Specific Offering
 @Composable
-private fun PaywallScreen(offering: Offering) {
+private fun PaywallScreen(offering: Offering, dismissRequest: () -> Unit) {
     PaywallFooter(
-        options = PaywallOptions.Builder()
+        options = PaywallOptions.Builder(
+            options = PaywallOptions.Builder(dismissRequest).build()
+        )
             .setOffering(offering)
             .build()
     ) {
