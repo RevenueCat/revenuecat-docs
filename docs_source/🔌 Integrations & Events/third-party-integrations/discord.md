@@ -121,13 +121,14 @@ You need to configure your Discord server to authorize a webhook to post to your
 
 Once you've set up a webhook in your Discord server. Enter the details into the Discord Integration section of your [dashboard](https://app.revenuecat.com).
 
-![](https://files.readme.io/b1cf4cb-app.revenuecat.com_projects_85ff18c7_integrations_intercom_3.png)
+<img width="934" alt="Discord integration setup" src="https://github.com/RevenueCat/revenuecat-docs/assets/287089/7764e4de-b9ea-4060-9a59-af0c959bebb0">
 
 > 👍 
 > 
 > You're all set! RevenueCat will start sending events into Discord!
+>
 
-![](https://files.readme.io/f1167d6-unnamed.png "unnamed.png")
+<img width="417" alt="Discord message example" src="https://github.com/RevenueCat/revenuecat-docs/assets/287089/07cde5bd-e440-47d0-a219-aceaac4fd516">
 
 # Sample Events
 
