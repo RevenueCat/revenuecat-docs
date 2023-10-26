@@ -2,7 +2,7 @@
 title: Discord
 slug: discord
 excerpt: Send in-app subscription events to Discord
-hidden: true
+hidden: false
 ---
 > 👍 
 > 
