@@ -8,7 +8,7 @@ hidden: true
 > 
 > The Discord integration is available to all users signed up after September '23, the legacy Starter and Pro plans, and Enterprise plans. If you're on a legacy Free plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
-RevenueCat can deliver updates directly to you Discord server when a new event happens in your app.
+Receive instant updates on your Discord server from RevenueCat whenever a new purchase event occurs in your app.
 
 # Events
 
