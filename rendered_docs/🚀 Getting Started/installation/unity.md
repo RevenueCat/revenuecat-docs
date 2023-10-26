@@ -37,9 +37,10 @@ We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the Ope
 {
   "type": "warning",
   "title": "If using UnityIAP alongside RevenueCat",
-  "body": "If you're using `UnityIAP`, you will need to install our SDK through the `Purchases-UnityIAP.unitypackage` method below. We currently don't distribute that version through UPM."
+  "body": "If you're using `UnityIAP`, you need to follow special instructions outlined below."
 }
 [/block]
+
 ## Import the Purchases Unity package
 
 Download the latest version of [**Purchases.unitypackage**](https://github.com/RevenueCat/purchases-unity/releases/latest/download/Purchases.unitypackage).
@@ -135,6 +136,7 @@ public class PurchasesListener : Purchases.UpdatedCustomerInfoListener
     }
 }
 ```
+
 # Unity Editor
 
 Running the Purchases SDK is unsupported in the Unity Editor at this time, and may result in `NullReferenceException: Object reference not set to an instance of an object` errors. Please build and run your app instead.
@@ -149,47 +151,32 @@ If you have enabled Minify in Unity, make sure to add these custom rules to your
 
 # Installation with Unity IAP side by side
 
-## Purchases Unity 4.0.0+ 
-![RevenueCat's Purchases Unity SDK 4.0.0+](https://img.shields.io/badge/Purchases%20Unity-4.0.0%2B-%23f25a5a?style=flat-square)
-
-**side by side with Unity IAP 4.4.0+**
-
-Download `Purchases.unityPackage` and install as normal. Skip the rest of the instructions in this page. 
-
-**side by side with Unity IAP 3.3.0 < 4.4.0**
-
-Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page. 
-
----
-
-## Purchases Unity versions 3.0.0 < 4.0.0
-![RevenueCat's Purchases Unity SDK 3.x](https://img.shields.io/badge/Purchases%20Unity-3.x-%23f25a5a?style=flat-square)
-
-Purchases Unity versions 3.0.0 < 4.0.0 are not compatible with Unity IAP. Please update to the latest version if you need compatibility with Unity IAP. 
-
 [block:callout]
 {
   "type": "danger",
-  "body": "Make sure to use version [3.2.0](https://github.com/RevenueCat/purchases-unity/releases/tag/3.2.0) of our plugin. Due to incompatibilities with the version of BillingClient used by Unity IAP, the latest versions of the plugin won't work alongside Unity IAP until Unity IAP gets updated to BillingClient 4.x.x.",
-  "title": "Unity IAP doesn't work with version 3.3.0<4.0.0 of the purchases plugin"
+  "body": "Make sure to use version [5.3.0](https://github.com/RevenueCat/purchases-unity/releases/tag/5.3.0) of our plugin. Due to incompatibilities with the version of BillingClient used by Unity IAP, the latest versions of the plugin won't work alongside Unity IAP until Unity IAP gets updated to BillingClient 6.x.x.",
+  "title": "Unity IAP doesn't work with version 6 of the purchases plugin"
 }
 [/block]
----
 
-## Troubleshooting "duplicated class" errors
-[block:callout]
-{
-  "type": "danger",
-  "body": "Follow this instruction if using RevenueCat alongside Unity IAP 2.2.0+, other plugin that includes the Android InAppBillingService class, or for some other reason you get an error regarding duplicated classes."
-}
-[/block]
+## Purchases Unity 5.0.0+
+![RevenueCat's Purchases Unity SDK 5.0.0+](https://img.shields.io/badge/Purchases%20Unity-5.0.0%2B-%23f25a5a?style=flat-square)
+
+**side by side with Unity IAP 4.8.0**
+
+This version is only compatible with version 4.8.0 and above of Unity IAP which are the ones that include BillingClient 5.
+
+To install download `Purchases.unityPackage` and install as normal. Then follow the instructions indicated in the "Troubleshooting "duplicated class" errors"
+
 If using RevenueCat alongside Unity IAP 2.2.0+ or other plugin that includes the Android BillingClient library you will be getting an error when compiling that warns about some BillingClient classes being duplicated.
 
 The easiest way to remove the error would be to tell Gradle to not include the billingclient library that Unity IAP is already including.
 
 In order to do that, make sure you have `Custom Main Gradle Template` selected in the Android Player Settings... That should create a `mainTemplate.gradle` inside the `Assets/Plugins/Android`.
 ![](https://files.readme.io/711eca6-8925eda-Screen_Shot_2020-05-05_at_1.49.57_PM.png "8925eda-Screen_Shot_2020-05-05_at_1.49.57_PM.png")
+
 Modify the `mainTemplate.gradle` to include the following at the end of the dependencies block:
+
 ```groovy 
 dependencies {
     ...
@@ -200,15 +187,40 @@ dependencies {
     }
 }
 ```
+
 Perform a clean up of the resolved dependencies using the `Assets/External Dependency Manager/Android Resolver/Delete Resolved Libraries` menu. This will cleanup the previously downloaded .aars in `Assets/Plugins/Android`. Otherwise you could end up with duplicated classes errors. 
 
 Also make sure to perform a resolve, so External Dependency Manager adds the right dependencies to the generated `build.gradle`.
+
+[block:callout]
+{
+  "type": "danger",
+  "body": "The above instructions instructions will also apply if using other plugin that includes the Android InAppBillingService class, or for some other reason you get an error regarding duplicated classes."
+}
+[/block]
 
 ## Troubleshooting "ClassNotFoundException" errors at Runtime in Android
 
 When exporting your project to Android, in the Build Settings window, make sure you uncheck the `Symlink Sources` checkbox. That will make it so Unity actually uses the correct source files for our SDK.
 
 ![](https://files.readme.io/98a2d95-unity-symlink-sources-unchecked.jpg "unity-symlink-sources-unchecked.jpg")
+
+## Installing old versions of the plugin
+
+### Purchases Unity 4.2.0+
+![RevenueCat's Purchases Unity SDK 4.2.0+](https://img.shields.io/badge/Purchases%20Unity-4.2.0%2B-%23f25a5a?style=flat-square)
+
+**side by side with Unity IAP 4.4.0 < 4.8.0**
+
+Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page.
+
+### Purchases Unity 4.0.0 and 4.1.0
+![RevenueCat's Purchases Unity SDK 4.1.0+](https://img.shields.io/badge/Purchases%20Unity-4.1.0%2B-%23f25a5a?style=flat-square)
+
+**side by side with Unity IAP 3.3.0 < 4.4.0**
+
+Download `Purchases-UnityIAP.unityPackage` and install as normal. Skip the rest of the instructions in this page. 
+
 # Next Steps
 
 * Now that you've installed the Purchases SDK in your Unity app, get started [building with Purchases :fa-arrow-right:](https://www.revenuecat.com/docs/getting-started#4-using-revenuecats-purchases-sdk)
