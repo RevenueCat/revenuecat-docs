@@ -2,13 +2,12 @@
 
 SELECT
   date_trunc('week', start_time) as week,
-  SUM(price_in_usd) as revenue
+  SUM(price_in_usd) as total_revenue
 FROM
   [revenuecat_data_table]
 WHERE date(start_time) BETWEEN [targeted_period_start_date] AND [targeted_period_end_date]
   AND is_trial_period = 'false'
-  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
   AND ownership_type != 'FAMILY_SHARED'
   AND store != 'promotional'
   AND is_sandbox != 'true'
-  GROUP BY week
+GROUP BY week
