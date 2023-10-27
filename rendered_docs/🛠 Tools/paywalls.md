@@ -105,6 +105,9 @@ Therefore, you can create a unique Paywall for each of your Offerings, and can c
 * ❌ macOS
 * ❌ tvOS
 
+## Android's Google Play developer determined offers
+Paywalls in Android will use the default subscription option which, in case you use [developer determined offers](doc:google-play-offers#eligibility-criteria), will always be available, providing these types of offers always to your users. If you want to avoid this behavior when using paywalls, add the `rc-ignore-offer` tag to the developer determined offer from your product.
+
 # Next Steps
 
 * Now that you know how our paywalls work, read about [creating paywalls](doc:creating-paywalls)

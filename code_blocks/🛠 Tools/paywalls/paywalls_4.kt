@@ -9,11 +9,7 @@ class MainActivity : AppCompatActivity(), PaywallResultHandler {
     }
 
     private fun performMagic() {
-        Purchases.sharedInstance.getCustomerInfoWith { 
-            if (it.entitlements[Constants.ENTITLEMENT_ID]?.isActive != true) {
-                paywallActivityLauncher.launch()
-            }
-        }
+        paywallActivityLauncher.launchIfNeeded(requiredEntitlementIdentifier = Constants.ENTITLEMENT_ID)
     }
 
     override fun onActivityResult(result: PaywallResult) {}
