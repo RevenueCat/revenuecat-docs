@@ -4,7 +4,7 @@ slug: superwall
 excerpt: Integrate in-app purchase events from RevenueCat with Superwall
 hidden: false
 categorySlug: integrations
-order: 13
+order: 14
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 

@@ -4,7 +4,7 @@ slug: segment
 excerpt: Integrate in-app subscription events from RevenueCat with Segment
 hidden: false
 categorySlug: integrations
-order: 10
+order: 11
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 

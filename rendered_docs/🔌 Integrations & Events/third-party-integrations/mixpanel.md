@@ -4,7 +4,7 @@ slug: mixpanel
 excerpt: Integrate in-app subscription events from RevenueCat with Mixpanel
 hidden: false
 categorySlug: integrations
-order: 7
+order: 8
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 

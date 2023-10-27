@@ -4,7 +4,7 @@ slug: intercom
 excerpt: Send in-app subscription events from RevenueCat to Intercom
 hidden: false
 categorySlug: integrations
-order: 5
+order: 6
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
