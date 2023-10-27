@@ -4,7 +4,7 @@ slug: discord
 excerpt: Send in-app subscription events to Discord
 hidden: false
 categorySlug: integrations
-order: 14
+order: 4
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 

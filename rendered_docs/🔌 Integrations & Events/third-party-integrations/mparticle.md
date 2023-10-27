@@ -4,7 +4,7 @@ slug: mparticle
 excerpt: Integrate in-app subscription events from RevenueCat with mParticle
 hidden: false
 categorySlug: integrations
-order: 8
+order: 9
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 

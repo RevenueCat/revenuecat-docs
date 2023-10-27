@@ -4,7 +4,7 @@ slug: iterable
 excerpt: Integrate in-app purchase events from RevenueCat with Iterable
 hidden: false
 categorySlug: integrations
-order: 6
+order: 7
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 

@@ -4,7 +4,7 @@ slug: statsig
 excerpt: Integrate in-app subscription events from RevenueCat with Statsig
 hidden: false
 categorySlug: integrations
-order: 12
+order: 13
 parentDoc: 649983b4c31b2e000a3c18f1
 ---
 > 👍 
