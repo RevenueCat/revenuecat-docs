@@ -67,11 +67,14 @@ RevenueCat can integrate data with the following platforms:
    [:fa-arrow-right: Connect with our Community](https://community.revenuecat.com/search/index?q=segment&search_type=tag)
 
 ##App Development
+  * Discord
+    [:fa-arrow-right: RevenueCat Integration Guide](doc:discord)
+    [:fa-arrow-right: Discord Docs](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)     
+    [:fa-arrow-right: Connect with our Community](https://community.revenuecat.com/search/index?q=discord&search_type=tag)
  * Firebase
     [:fa-arrow-right: RevenueCat Integration Guide](doc:firebase)
     [:fa-arrow-right: Firebase Docs](https://firebase.google.com/docs/)     
     [:fa-arrow-right: Connect with our Community](https://community.revenuecat.com/search/index?q=firebase&search_type=tag)
-
  * Slack
     [:fa-arrow-right: RevenueCat Integration Guide](doc:slack)
     [:fa-arrow-right: Slack Docs](https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack)     
