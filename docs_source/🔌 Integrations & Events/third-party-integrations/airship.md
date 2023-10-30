@@ -19,6 +19,12 @@ With our Airship Integration, you can:
 
 With accurate and up-to-date subscription data in Airship, you'll be set to turbocharge your users' engagement ⚡️
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue |       Sends Sandbox Events      | Includes Subscriber Attributes | Sends Transfer Events |                                                                   Optional Event Types                                                                   |
+|:----------------:|:-------------------------:|:-------------------------------:|:------------------------------:|:---------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:|
+|         ✅        |             ✅             | Requires Token and App key |    ✅    |           ❌           | non_subscription_purchase_event<br> uncancellation_event<br> subscription_paused_event<br> expiration_event<br>billing_issue_event<br> product_change_event<br> |
+
+
 # Events
 
 The Airship integration tracks the following events:

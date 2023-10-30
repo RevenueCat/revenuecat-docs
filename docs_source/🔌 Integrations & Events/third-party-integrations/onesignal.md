@@ -60,6 +60,11 @@ For every auto-renewing subscription event in RevenueCat, the following tags get
 > 
 > RevenueCat only updates data tags in OneSignal in response to auto-renewing subscription events.
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue | Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
+|:----------------:|:-------------------------:|:--------------------:|:------------------------------:|:---------------------:|:---------------:|
+|         ❌        |             ❌             |           ✅          |                ❌               |           ❌           |        ❌        |
+
 # Events
 
 The OneSignal integration tracks the following events:
