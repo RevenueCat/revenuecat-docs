@@ -21,6 +21,11 @@ With our Statsig integration, you can:
 
 With accurate and up-to-date subscription data in Statsig, you'll be set to turbocharge your product analytics ⚡️
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue |  Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
+|:----------------:|:-------------------------:|:---------------------:|:------------------------------:|:---------------------:|:---------------:|
+|         ✅        |             ✅             | Toggle on in Settings |                ✅               |           ✅           |        ❌        |
+
 # Events
 
 The Statsig integration tracks the following events:

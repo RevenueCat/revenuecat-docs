@@ -40,6 +40,12 @@ Each part of the integration requires additional setup, which you can see outlin
 }
 [/block]
 
+## Integration at a Glance 
+| Includes Revenue | Supports Negative Revenue | Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
+|:----------------:|:-------------------------:|:--------------------:|:------------------------------:|:---------------------:|:---------------:|
+|         ✅        |             ❌             |           ✅          |                ❌               |           ✅           |        ❌        |
+
+
 # 1. Set up Firebase services in your project
 
 Before installing this extension, set up the following Firebase services in your Firebase project.

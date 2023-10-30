@@ -20,6 +20,11 @@ With our Superwall integration, you can:
 - Find which product & paywall combinations have the highest LTVs
 - Offer discounts to users who churn
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue | Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
+|:----------------:|:-------------------------:|:--------------------:|:------------------------------:|:---------------------:|:---------------:|
+|         ✅        |             ✅             |           ✅          |                ✅               |           ✅           |        ❌        |
+
 # Events
 
 The Superwall integration tracks the following events:

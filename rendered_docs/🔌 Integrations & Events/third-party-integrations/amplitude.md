@@ -20,6 +20,11 @@ With our Amplitude integration, you can:
 
 With accurate and up-to-date subscription data in Amplitude, you'll be set to turbocharge your product analytics ⚡️
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue |  Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events |                                                                                Optional Event Types                                                                               |
+|:----------------:|:-------------------------:|:---------------------:|:------------------------------:|:---------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|         ✅        |             ✅             | Requires API key |    ✅    |           ❌           | non_subscription_purchase_event <br> uncancellation_event <br>subscription_paused_event <br> expiration_event <br> billing_issue_event <br>product_change_event |
+
 # Events
 
 The Amplitude integration tracks the following events:
