@@ -20,6 +20,12 @@ With our CleverTap integration, you can:
 
 With accurate and up-to-date subscription data in CleverTap, you'll be set to turbo-charge your user engagement ⚡️
 
+## Integration at a Glance
+
+| Includes Revenue | Supports Negative Revenue |      Sends Sandbox Events     | Includes Subscriber Attributes | Sends Transfer Events |                         Optional Event Types                         |
+|:----------------:|:-------------------------:|:-----------------------------:|:------------------------------:|:---------------------:|:---------------------------------------------------------------:|
+|         ✅        |             ❌             | Requires ID and Passcode |    ✅    |           ❌           | expiration_event<br>billing_issue_event<br>product_change_event |
+
 # Events
 
 The CleverTap integration tracks the following events:

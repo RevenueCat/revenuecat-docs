@@ -21,6 +21,11 @@ With our Braze integration, you can:
 
 With accurate and up-to-date subscription data in Braze, you'll be set to turbocharge your campaigns ⚡️
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue |  Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events |                                     Optional Event Types                                     |
+|:----------------:|:-------------------------:|:---------------------:|:------------------------------:|:---------------------:|:---------------------------------------------------------------------------------------:|
+|         ✅        |             ✅             | Requires API key |    Reserved Attributes Only    |           ❌           | uncancellation_event<br>expiration_event<br>billing_issue_event<br>product_change_event |
+
 # Events
 
 The Braze integration tracks the following events:

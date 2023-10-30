@@ -20,6 +20,11 @@ With our mParticle integration, you can:
 
 With accurate and up-to-date subscription data in mParticle, you'll be set to turbocharge your campaigns ⚡️
 
+## Integration at a Glance
+| Includes Revenue | Supports Negative Revenue | Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
+|:----------------:|:-------------------------:|:--------------------:|:------------------------------:|:---------------------:|:---------------:|
+|         ✅        |             ✅             |           ✅          |    ✅    |           ❌           |        ❌        |
+
 # Events
 
 The mParticle integration tracks the following events:
