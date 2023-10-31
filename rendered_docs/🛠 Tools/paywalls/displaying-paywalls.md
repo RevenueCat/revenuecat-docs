@@ -225,7 +225,7 @@ class RoundedSystemFontProvider: PaywallFontProvider {
 }
 ```
 
-## Android (Beta)
+## Android
 
 ### How to display a fullscreen Paywall in your app
 
@@ -236,6 +236,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 - Manually with `Paywall`, `PaywallDialog`, or `PaywallActivityLauncher`
 
 ```kotlin Entitlement
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun LockedScreen() {
     YourContent()
@@ -254,6 +255,7 @@ private fun LockedScreen() {
 }
 ```
 ```kotlin Custom Logic
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun NavGraph(navController: NavHostController) {
     NavHost(
@@ -279,6 +281,7 @@ private fun NavGraph(navController: NavHostController) {
 }
 ```
 ```kotlin Manually
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun NavGraph(navController: NavHostController) {
     NavHost(
@@ -307,6 +310,7 @@ private fun NavGraph(navController: NavHostController) {
 }
 ```
 ```kotlin Manually (Activity)
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 class MainActivity : AppCompatActivity(), PaywallResultHandler {
     private lateinit var paywallActivityLauncher: PaywallActivityLauncher
     private lateinit var root: View
@@ -338,6 +342,7 @@ The footer paywall mainly consists of the following:
 This is all remotely configured and RevenueCatUI handles all the intro offer eligibility and purchase logic.
 
 ```kotlin Current Offering
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun PaywallScreen(dismissRequest: () -> Unit) {
     PaywallFooter(
@@ -348,6 +353,7 @@ private fun PaywallScreen(dismissRequest: () -> Unit) {
 }
 ```
 ```kotlin Specific Offering
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun PaywallScreen(offering: Offering, dismissRequest: () -> Unit) {
     PaywallFooter(
@@ -373,6 +379,7 @@ We offer a `CustomFontProvider` and `CustomParcelizableFontProvider` which recei
 If you need more control over your font preferences, you can create your own `FontProvider`. See the following examples for some common use cases:
 
 ```kotlin Compose single font
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 fun MyComposable() {
     PaywallDialog(
@@ -383,6 +390,7 @@ fun MyComposable() {
 }
 ```
 ```kotlin Compose font per style
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 fun MyComposable() {
     PaywallDialog(
@@ -401,6 +409,7 @@ fun MyComposable() {
 }
 ```
 ```kotlin Activity single resource font
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 class MyActivity : ComponentActivity(), PaywallResultHandler {
     private lateinit var paywallActivityLauncher: PaywallActivityLauncher
     private val fontFamily = PaywallFontFamily(
@@ -423,6 +432,7 @@ class MyActivity : ComponentActivity(), PaywallResultHandler {
 }
 ```
 ```kotlin Activity single Google font
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 class MyActivity : ComponentActivity(), PaywallResultHandler {
     private lateinit var paywallActivityLauncher: PaywallActivityLauncher
     private val googleFontProvider = GoogleFontProvider(R.array.com_google_android_gms_fonts_certs)
