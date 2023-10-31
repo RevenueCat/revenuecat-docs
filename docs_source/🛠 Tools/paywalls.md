@@ -15,6 +15,12 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 >
 > Support for more platforms is coming soon: watchOS, macOS, tvOS, and others!
 
+> ❗️
+> 
+> RevenueCat's Paywalls are currently in beta.
+> It is safe to release apps with RevenueCat Paywalls. We guarantee that they will continue to work and changes will always be backwards compatible with existing paywalls.
+> They are stable, but migration steps may be required in the future . We'll do our best to minimize any changes you have to make.
+
 [block:embed]
 {
   "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fh_1PDVAj4QQ%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dh_1PDVAj4QQ&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fh_1PDVAj4QQ%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
@@ -69,6 +75,12 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 implementation 'com.revenuecat.purchases:purchases:7.1.0'
 implementation 'com.revenuecat.purchases:purchases-ui:7.1.0'
 ```
+
+> ❗️
+> 
+> Android paywalls is currently behind an experimental flag (`ExperimentalPreviewRevenueCatUIPurchasesAPI`).
+> It is safe to release app updates with it. We guarantee that paywalls will continue to work and any changes will always be backwards compatible.
+> They are stable, but migration steps may be required in the future. We'll do our best to minimize any changes you have to make.
 
 ## Overview
 
