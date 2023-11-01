@@ -307,3 +307,5 @@ Whenever RevenueCat sends an event to Braze, we'll update the `rc_subscription_s
 | promotional         | The customer has access to an entitlement through a granted RevenueCat promotional subscription.                                   |
 | expired_promotional | The customer previously had access to an entitlement through a granted RevenueCat promotional subscription that has since expired. |
 | paused              | The customer has a paid subscription which has been paused and is set to resume at some future date.       
+
+For customer's with multiple active subscriptions, this attribute will represent the status of only the subscription for which the most recent event occurred. Therefore, we recommend using `rc_active_entitlements` to understand whether your customers have multiple active subscriptions to be accounted for.
