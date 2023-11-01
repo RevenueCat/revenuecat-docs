@@ -10,18 +10,7 @@ struct App: View {
     var body: some View {
         ContentView()
             .sheet(isPresented: self.$displayPaywall) {
-                PaywallView()
-                // PaywallView does not have a close button 
-                // Manually add one to match your app's style 
-                .toolbar {
-                    ToolbarItem(placement: .destructiveAction) {
-                        Button {
-                            self.displayPaywall = false
-                        } label: {
-                            Image(systemName: "xmark")
-                        }
-                    }
-                }
+                PaywallView(displayCloseButton: true)
             }
     }
 }
