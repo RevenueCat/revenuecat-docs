@@ -1,3 +1,4 @@
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun NavGraph(navController: NavHostController) {
     NavHost(

@@ -1,3 +1,4 @@
+@OptIn(ExperimentalPreviewRevenueCatUIPurchasesAPI::class)
 @Composable
 private fun PaywallScreen(dismissRequest: () -> Unit) {
     PaywallFooter(
