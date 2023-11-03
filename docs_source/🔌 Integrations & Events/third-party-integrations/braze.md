@@ -292,7 +292,7 @@ Below are sample JSONs that are delivered to Braze for most events.
 
 # Subscription Status Attribute
 
-Whenever RevenueCat sends an event to Braze, we'll update the `rc_subscription_status` user attribtue with any applicable changes, using one of the following values:
+Whenever RevenueCat sends an event to Braze, we'll update the `rc_subscription_status` user attribute with any applicable changes, using one of the following values:
 
 | Status              | Description                                                                                                                        |
 | :------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
@@ -308,4 +308,4 @@ Whenever RevenueCat sends an event to Braze, we'll update the `rc_subscription_s
 | expired_promotional | The customer previously had access to an entitlement through a granted RevenueCat promotional subscription that has since expired. |
 | paused              | The customer has a paid subscription which has been paused and is set to resume at some future date.       
 
-For customer's with multiple active subscriptions, this attribute will represent the status of only the subscription for which the most recent event occurred. Therefore, we recommend using `rc_active_entitlements` to understand whether your customers have multiple active subscriptions to be accounted for.
+For customers with multiple active subscriptions, this attribute will represent the status of only the subscription for which the most recent event occurred. Therefore, we recommend using `rc_active_entitlements` to understand whether your customers have multiple active subscriptions to be accounted for.
