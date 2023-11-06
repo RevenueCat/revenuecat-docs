@@ -45,7 +45,9 @@ For every auto-renewing subscription event in RevenueCat, the following tags get
     "9-0": "`active_subscription`",
     "9-1": "The value will be set to `true` on any purchase/renewal event, and `false` on `EXPIRATION`",
     "10-0": "`grace_period_expiration_at`",
-    "10-1": "If a billing issue occurs we will send the date of the grace period expiration."
+    "10-1": "If a billing issue occurs we will send the date of the grace period expiration.",
+    "11-0": "`subscription_status`",
+    "11-1": "The state of the user's subscription at the time the event was received."
   },
   "cols": 2,
   "rows": 11,
