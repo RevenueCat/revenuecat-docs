@@ -51,6 +51,11 @@ RevenueCat's SDK will log important information and errors to help you understan
     "language": "javascript",
     "name": "Cordova",
     "file": "code_blocks/🧰 Test - Launch/debugging_8.js"
+  },
+  {
+    "language": "javascript",
+    "name": "Capacitor",
+    "file": "code_blocks/🧰 Test - Launch/debugging_9.js"
   }
 ]
 [/block]
