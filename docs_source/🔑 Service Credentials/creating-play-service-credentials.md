@@ -22,14 +22,12 @@ To enable the Developer and Reporting APIs for your Google Cloud Project, you’
 3. Go to the [Google Play Android Developer API page](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com) and the [Google Play Developer Reporting API page](https://console.cloud.google.com/apis/library/playdeveloperreporting.googleapis.com) in Google Cloud Console.
 4. Click **Enable**. (This will say **Manage** when it is enabled.)
 
-<img width="1440" alt="Screen Shot 2023-10-10 at 9 13 34 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/eb11e0c6-d729-49df-861d-811b2094ecc7">
-<img width="1440" alt="Screen Shot 2023-10-10 at 1 52 03 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/77a04f0b-db92-4b3b-ab24-ba408dcf5d82">
+![steponeGIFv2](https://github.com/RevenueCat/revenuecat-docs/assets/112121235/97660d3a-b963-4b1e-8be0-d5bc28080b33)
 
 After enabling the API, you will be redirected to your Google Cloud API page. From there, if you do not have credentials, you will need to create these following the prompt. You'll want to select that you are using the Google Play Android Developer API. Note that you'll want to generate these with either the owner of the project or a user that has the permissions from step 3 enabled in Google Play Console.
-<img width="1440" alt="Screen Shot 2023-10-10 at 9 19 33 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/2a1fee7d-cda6-410f-a214-81d76d3e9094">
 
 You will then be redirected to create your form of credentials which you can follow step 2 for. If you just created your credentials, you may see the “To use this API, you may need credentials” message on your API console, this is because your credentials have not yet been validated. This will be done automatically by Google.
-<img width="1440" alt="Screen Shot 2023-10-10 at 9 17 30 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/1a238dea-aae6-45ab-a753-16287b0a8a32">
+
 
 ## 2. Create a Service Account
 
@@ -109,8 +107,7 @@ All other choices are yours - the other boxes can be checked or unchecked accord
 
 Select invite user at the bottom of the page, and send the invite. You'll then be redirected to '**Users and Permissions**', where you should see your newly created account as active.
 
-<img width="1440" alt="Screen Shot 2023-10-11 at 4 17 16 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/bc8ba256-3cac-4af3-95e9-742b345e11ae">
-<img width="1440" alt="Screen Shot 2023-10-11 at 4 24 24 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/2854dd07-8ca8-4734-bc96-80d8adedbf05">
+![stepthreeGIF](https://github.com/RevenueCat/revenuecat-docs/assets/112121235/1bebe299-60db-4001-9329-0250324edb12)
 
 
 ## 4. Enter the Credentials JSON in RevenueCat
