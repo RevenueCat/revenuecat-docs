@@ -48,6 +48,9 @@ Purchases.SetLogLevel(Purchases.LogLevel.Debug);
 ```javascript Cordova
 Purchases.setLogLevel(LOG_LEVEL.DEBUG);
 ```
+```javascript Capacitor
+Purchases.setLogLevel({ level: LOG_LEVEL.DEBUG });
+```
 
 > 📘 OS_ACTIVITY_MODE
 > 

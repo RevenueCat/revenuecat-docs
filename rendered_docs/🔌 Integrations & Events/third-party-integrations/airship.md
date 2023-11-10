@@ -326,7 +326,7 @@ public void onCreate(Bundle savedInstanceState) {
 After you've set up the _Purchase_ SDK and Airship SDK to have the same user identity, you can "turn on" the integration and configure the event names from the RevenueCat dashboard.
 
 1. Navigate to your app in the RevenueCat dashboard and choose 'Airship' from the integrations menu
-2. Add your [Airship app key and token](https://docs.airship.com/guides/wallet/user-guide/admin/security/app-keys-secrets/)
+2. Add your [Airship app key and token](https://docs.airship.com/guides/admin/security/account-security/)
 3. Select the location of your Airship cloud site
 4. Enter the event names that RevenueCat will send or choose the default event names
 5. Select whether you want sales reported as gross revenue (before app store commission), or after store commission and/or estimated taxes.
