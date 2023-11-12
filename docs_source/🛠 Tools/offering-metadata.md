@@ -5,11 +5,15 @@ hidden: false
 ---
 Metadata allows you to attach a custom JSON object to your Offering that can be used to control how to display your products inside your app, determine the Offering to show based on provided attributes, and much more. The metadata you configure in an Offering is available from the RevenueCat SDK. For example, you could use it to remotely configure strings on your paywall, or even URLs of images shown on the paywall.
 
-> 📘 
-> 
-> Offering metadata is supported in iOS SDK version 4.20.0 and up, and Android SDK version 6.3.0 and up.
-> 
-> Flutter, React Native, and Cordova support coming soon.
+## Offering metadata is supported in the following SDK versions:
+| RevenueCat SDK           | Version required for Offering Metadata | 
+| :----------------------- | :--------------------------------------------- |
+| purchases-ios            | 4.20.0 and up                                  |
+| purchases-android        | 6.3.0 and up                                   |
+| react-native-purchases   | 6.0.0 and up                                   | 
+| purchases-flutter        | 5.0.0 and up                                   | 
+| cordova-plugin-purchases | 4.0.0 and up                                   |
+
 
 ## Benefits of using Offering metadata
 
