@@ -102,33 +102,41 @@ The Braze integration tracks the following events:
     "7-5": "✅",
     "7-6": "✅",
     "7-7": "✅",
-    "8-0": "Expiration",
-    "8-1": "rc_expiration_event",
-    "8-2": "A subscription has expired and access should be removed.  \n  \nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.  \n  \nIf you do not have notifications configured, delays may be approximately 1 hour.",
-    "8-3": "✅",
+    "8-0": "Subscription paused",
+    "8-1": "rc_subscription_paused_event",
+    "8-2": "A subscription has been paused.",
+    "8-3": "❌",
     "8-4": "✅",
-    "8-5": "✅",
-    "8-6": "✅",
-    "8-7": "✅",
-    "9-0": "Billing Issues",
-    "9-1": "rc_billing_issue_event",
-    "9-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.  \n  \nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
+    "8-5": "❌",
+    "8-6": "❌",
+    "8-7": "❌",
+    "9-0": "Expiration",
+    "9-1": "rc_expiration_event",
+    "9-2": "A subscription has expired and access should be removed.  \n  \nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.  \n  \nIf you do not have notifications configured, delays may be approximately 1 hour.",
     "9-3": "✅",
     "9-4": "✅",
     "9-5": "✅",
     "9-6": "✅",
-    "9-7": "❌",
-    "10-0": "Product Change",
-    "10-1": "rc_product_change_event",
-    "10-2": "A subscriber has changed the product of their subscription.  \n  \nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](https://www.revenuecat.com/docs/managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "9-7": "✅",
+    "10-0": "Billing Issues",
+    "10-1": "rc_billing_issue_event",
+    "10-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.  \n  \nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
     "10-3": "✅",
     "10-4": "✅",
-    "10-5": "❌",
+    "10-5": "✅",
     "10-6": "✅",
-    "10-7": "❌"
+    "10-7": "❌",
+    "11-0": "Product Change",
+    "11-1": "rc_product_change_event",
+    "11-2": "A subscriber has changed the product of their subscription.  \n  \nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](https://www.revenuecat.com/docs/managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "11-3": "✅",
+    "11-4": "✅",
+    "11-5": "❌",
+    "11-6": "✅",
+    "11-7": "❌"
   },
   "cols": 8,
-  "rows": 11,
+  "rows": 12,
   "align": [
     "left",
     "left",
@@ -254,14 +262,7 @@ Below are sample JSONs that are delivered to Braze for most events.
     "language": "json",
     "name": "Renewal",
     "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/braze_8.json"
-  }
-]
-[/block]
-
-
-
-[block:file]
-[
+  },
   {
     "language": "json",
     "name": "Cancellation",
@@ -269,8 +270,18 @@ Below are sample JSONs that are delivered to Braze for most events.
   },
   {
     "language": "json",
+    "name": "Uncancellation",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/braze_15.json"
+  },
+  {
+    "language": "json",
     "name": "Non Subscription Purchase",
     "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/braze_10.json"
+  },
+  {
+    "language": "json",
+    "name": "Subscription Paused",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/braze_14.json"
   },
   {
     "language": "json",

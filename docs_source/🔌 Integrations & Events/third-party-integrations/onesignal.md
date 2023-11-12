@@ -136,25 +136,49 @@ The OneSignal integration tracks the following events:
     "6-5": "✅",
     "6-6": "❌",
     "6-7": "❌",
-    "7-0": "Expiration",
-    "7-1": "expiration",
-    "7-2": "A subscription has expired and access should be removed.  \n  \nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.  \n  \nIf you do not have notifications configured, delays may be approximately 1 hour.",
+    "7-0": "Non Subscription Purchase",
+    "7-1": "non_subscription_purchase",
+    "7-2": "A customer has made a purchase that will not auto-renew.",
     "7-3": "✅",
     "7-4": "✅",
     "7-5": "✅",
     "7-6": "✅",
     "7-7": "✅",
-    "8-0": "Billing Issue",
-    "8-1": "billing_issue",
-    "8-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.  \n  \nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
-    "8-3": "✅",
+    "8-0": "Subscription paused",
+    "8-1": "subscription_paused",
+    "8-2": "A subscription has been paused.",
+    "8-3": "❌",
     "8-4": "✅",
-    "8-5": "✅",
-    "8-6": "✅",
-    "8-7": "❌"
+    "8-5": "❌",
+    "8-6": "❌",
+    "8-7": "❌",
+    "9-0": "Expiration",
+    "9-1": "expiration",
+    "9-2": "A subscription has expired and access should be removed.  \n  \nIf you have [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) configured, this event will occur as soon as we are notified (within seconds to minutes) of the expiration.  \n  \nIf you do not have notifications configured, delays may be approximately 1 hour.",
+    "9-3": "✅",
+    "9-4": "✅",
+    "9-5": "✅",
+    "9-6": "✅",
+    "9-7": "✅",
+    "10-0": "Billing Issue",
+    "10-1": "billing_issue",
+    "10-2": "There has been a problem trying to charge the subscriber. This does not mean the subscription has expired.  \n  \nCan be safely ignored if listening to CANCELLATION event + cancel_reason=BILLING_ERROR.",
+    "10-3": "✅",
+    "10-4": "✅",
+    "10-5": "✅",
+    "10-6": "✅",
+    "10-7": "❌",
+    "11-0": "Product Change",
+    "11-1": "product_change",
+    "11-2": "A subscriber has changed the product of their subscription.  \n  \nThis does not mean the new subscription is in effect immediately. See [Managing Subscriptions](https://www.revenuecat.com/docs/managing-subscriptions) for more details on updates, downgrades, and crossgrades.",
+    "11-3": "✅",
+    "11-4": "✅",
+    "11-5": "❌",
+    "11-6": "✅",
+    "11-7": "❌"
   },
   "cols": 8,
-  "rows": 9,
+  "rows": 12,
   "align": [
     "left",
     "left",
@@ -281,6 +305,16 @@ Below are sample JSONs that are delivered to OneSignal for events.
   },
   {
     "language": "json",
+    "name": "Non Subscription Purchase",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_12.json"
+  },
+  {
+    "language": "json",
+    "name": "Subscription Paused",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_13.json"
+  },
+  {
+    "language": "json",
     "name": "Expiration",
     "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_9.json"
   },
@@ -288,6 +322,11 @@ Below are sample JSONs that are delivered to OneSignal for events.
     "language": "json",
     "name": "Billing Issue",
     "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_10.json"
+  },
+  {
+    "language": "json",
+    "name": "Product Change",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_11.json"
   }
 ]
 [/block]
@@ -301,3 +340,21 @@ Below are sample JSONs that are delivered to OneSignal for events.
 > 👍 You've done it!
 > 
 > You should start seeing subscription data from RevenueCat appear on users in OneSignal.
+
+# Subscription Status Attribute
+
+Whenever RevenueCat sends an event to OneSignal, we'll send a `subscription_status` user attribute with any applicable changes, using one of the following values:
+
+| Status              | Description                                                                                                                        |
+| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
+| active              | The customer has an active, paid subscription which is set to renew at their next renewal date.                                    |
+| intro               | The customer has an active, paid subscription through a paid introductory offer.                                                   |
+| cancelled           | The customer has a paid subscription which is set to expire at their next renewal date.                                            |
+| grace_period        | The customer has a paid subscription which has entered a grace period after failing to renew successfully.                         |
+| trial               | The customer is in a trial period which is set to convert to paid at the end of their trial period.                                |
+| cancelled_trial     | The customer is in a trial period which is set to expire at the end of their trial period.                                         |
+| grace_period_trial  | The customer was in a trial period and has now entered a grace period after failing to renew successfully.                         |
+| expired             | The customer's subscription has expired.                                                                                           |
+| promotional         | The customer has access to an entitlement through a granted RevenueCat promotional subscription.                                   |
+| expired_promotional | The customer previously had access to an entitlement through a granted RevenueCat promotional subscription that has since expired. |
+| paused              | The customer has a paid subscription which has been paused and is set to resume at some future date.       
