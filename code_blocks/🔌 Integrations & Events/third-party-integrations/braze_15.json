@@ -4,7 +4,7 @@
             "name": "rc_uncancellation_event",
             "time": "2023-09-15T17: 20: 01.000000",
             "properties": {
-                "product_id": "yearly,sub",
+                "product_id": "monthly.sub.1",
                 "store": "PLAY_STORE",
                 "revenue": 0,
                 "app_id": "1234567890"
