@@ -13,7 +13,7 @@ With our Singular integration you can:
 ## Integration at a Glance
 | Includes Revenue | Supports Negative Revenue |   Sends Sandbox Events   |  Includes Subscriber Attributes  | Sends Transfer Events |                                                                   Optional Event Types                                                                   |
 |:----------------:|:-------------------------:|:------------------------:|:--------------------------------:|:---------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|         ✅        |             ✅             | Requires sandbox API key | Certain Reserved Attributes only |           ❌           | non_subscription_purchase_event<br>uncancellation_event<br>subscription_paused_event<br>expiration_event<br>billing_issues_event<br>product_change_event |
+|         ✅        |             ✅             | Requires sandbox SDK key | Certain Reserved Attributes only |           ❌           | non_subscription_purchase_event<br>uncancellation_event<br>subscription_paused_event<br>expiration_event<br>billing_issues_event<br>product_change_event |
 
 
 # 1. Send device data to RevenueCat
@@ -92,7 +92,7 @@ After you've set up the _Purchases SDK_ to send device data to RevenueCat, you c
 ![](https://files.readme.io/0087649-app.revenuecat.com_projects_85ff18c7_collaborators_1.png)
 
 2. Choose **Singular** from the Integrations menu.
-3. Add your Singular API key, and an optional sandbox API key. The sandbox API key will be used for any sandbox purchases so you don't have to send them to your production Singular instance.
+3. Add your Singular SDK key, and an optional sandbox SDK key. The sandbox SDK key will be used for any sandbox purchases so you don't have to send them to your production Singular instance.
 4. Enter the event names that RevenueCat will send or choose the default event names.
 5. Select whether you want RevenueCat to report proceeds (after app store cut) or revenue (gross sales).
 
@@ -116,9 +116,9 @@ After you've set up the _Purchases SDK_ to send device data to RevenueCat, you c
 
 You can test the Singular integration end-to-end before going live. It's recommended that you test the integration is working properly for new users, and any existing users that may update their app to a new version.
 
-## Add a sandbox API key in the RevenueCat dashboard
+## Add a sandbox SDK key in the RevenueCat dashboard
 
-Before you test the integration, make sure you have a Singular API key set in the "Sandbox API key" field in RevenueCat. This is required if you want the integration to trigger for sandbox purchases.
+Before you test the integration, make sure you have a Singular SDK key set in the "Sandbox API key" field in RevenueCat. This is required if you want the integration to trigger for sandbox purchases.
 
 ## Make a sandbox purchase with a new user
 
