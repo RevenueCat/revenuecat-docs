@@ -1,5 +1,5 @@
 ---
-title: Paywalls (beta)
+title: Paywalls
 slug: paywalls
 hidden: false
 ---
@@ -14,12 +14,6 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 > - Android 7.0 (API level 24)
 >
 > Support for more platforms is coming soon: watchOS, macOS, tvOS, and others!
-
-> ❗️
-> 
-> RevenueCat's Paywalls are currently in beta.
-> It is safe to release apps with RevenueCat Paywalls. We guarantee that they will continue to work and changes will always be backwards compatible with existing paywalls.
-> They are stable, but migration steps may be required in the future . We'll do our best to minimize any changes you have to make.
 
 [block:embed]
 {
