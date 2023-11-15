@@ -6,13 +6,13 @@ hidden: false
 
 [block:embed]
 {
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FPNiVCdExtkw%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPNiVCdExtkw&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FPNiVCdExtkw%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=PNiVCdExtkw",
-  "title": "How to use RevenueCat Paywalls",
+  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FxSc9ICeyJpk%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DxSc9ICeyJpk&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FxSc9ICeyJpk%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+  "url": "https://www.youtube.com/watch?v=xSc9ICeyJpk",
+  "title": "Introducing RevenueCat Paywalls",
   "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/PNiVCdExtkw/hqdefault.jpg",
+  "image": "https://i.ytimg.com/vi/xSc9ICeyJpk/hqdefault.jpg",
   "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=PNiVCdExtkw",
+  "href": "https://www.youtube.com/watch?v=xSc9ICeyJpk",
   "typeOfEmbed": "youtube"
 }
 [/block]
