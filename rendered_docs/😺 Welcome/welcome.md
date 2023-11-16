@@ -17,7 +17,7 @@ RevenueCat is a powerful and reliable in-app purchase server that makes it easy 
 
 [block:html]
 {
-  "html": "<section class=\"get-started landing\">\n <div class=\"get-started-description\">\n <p>\n Start selling subscriptions and in-app purchases in your iOS, Android, and Amazon apps.\n </p>\n <a class=\"cta\" href=\"/docs/building-new\" target=\"_self\">Get Started →</a>\n </div>\n <div class=\"get-started-image resources\">\n <img src=\"https://revenuecat.dreamhosters.com/wp-content/uploads/2023/11/Powering-existing-subscriptions-with-RevenueCat-1.png\" alt=\"RevenueCat flow diagram\">\n </div>\n</section>"
+  "html": "<section class=\"get-started landing\">\n <div class=\"get-started-description\">\n <p>\n Start selling subscriptions and in-app purchases in your iOS, Android, and Amazon apps.\n </p>\n <a class=\"cta\" href=\"/docs/building-new\" target=\"_self\">Get Started →</a>\n </div>\n <div class=\"get-started-image resources\">\n <img src=\"https://revenuecat.dreamhosters.com/wp-content/uploads/2023/11/Powering-existing-subscriptions-with-RevenueCat-1.png" alt="RevenueCat flow diagram">\n </div>\n</section>"
 }
 [/block]
 
@@ -27,7 +27,7 @@ RevenueCat is a powerful and reliable in-app purchase server that makes it easy 
 
 [block:html]
 {
-  "html": "<section class=\"get-started landing\">\n <div class=\"get-started-description\">\n <p>\n If you already have 1 or 1 millions subscribers, use RevenueCat to supercharge your business.\n </p>\n <a class=\"cta\" href=\"/docs/existing-apps\" target=\"_self\">Learn More →</a>\n </div>\n <div class=\"get-started-image resources\">\n <img src=\"https://revenuecat.dreamhosters.com/wp-content/uploads/2023/11/Powering-existing-subscriptions-with-RevenueCat.png\" alt=\"RevenueCat supported stores\">\n </div>\n</section>"
+  "html": "<section class=\"get-started landing\">\n <div class=\"get-started-description\">\n <p>\n If you already have 1 or 1 millions subscribers, use RevenueCat to supercharge your business.\n </p>\n <a class=\"cta\" href=\"/docs/existing-apps\" target=\"_self\">Learn More →</a>\n </div>\n <div class=\"get-started-image resources\">\n <img src=\"https://revenuecat.dreamhosters.com/wp-content/uploads/2023/11/Powering-existing-subscriptions-with-RevenueCat.png" alt="RevenueCat supported stores">\n </div>\n</section>"
 }
 [/block]
 
