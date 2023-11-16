@@ -11,9 +11,10 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 > - iOS 15.0+
 > - visionOS 1.0+
 > - Mac Catalyst 15.0+
+> - watchOS 8.0+
 > - Android 7.0 (API level 24)
 >
-> Support for more platforms is coming soon: watchOS, macOS, tvOS, and others!
+> Support for more platforms is coming soon: macOS, tvOS, and others!
 
 [block:embed]
 {
@@ -109,10 +110,10 @@ Therefore, you can create a unique Paywall for each of your Offerings, and can c
 * ✅  iOS 15.0 and higher
 * ✅  visionOS 1.0 and higher
 * ✅  Mac Catalyst 15.0 and higher
-* ✅ Android 7.0 (API level 24)
-* ❌ watchOS
-* ❌ macOS
-* ❌ tvOS
+* ✅  watchOS 8.0 and higher
+* ✅  Android 7.0 (API level 24)
+* ❌  macOS
+* ❌  tvOS
 
 ## Android's Google Play developer determined offers
 Paywalls in Android will use the default subscription option which, in case you use [developer determined offers](doc:google-play-offers#eligibility-criteria), will always be available, providing these types of offers always to your users. If you want to avoid this behavior when using paywalls, add the `rc-ignore-offer` tag to the developer determined offer from your product.
