@@ -21,11 +21,11 @@ RevenueCat is a powerful and reliable in-app purchase server that makes it easy 
 
 
 
-# Powering existing subscriptions with RevenueCat
+# Migrate existing subscriptions to RevenueCat
 
 [block:html]
 {
-  "html": "<section class=\"get-started landing\">\n <div class=\"get-started-description\">\n <p>\n If you already have 1 or 1 millions subscribers, use RevenueCat to supercharge your business.\n </p>\n <a class=\"cta\" href=\"/docs/existing-apps\" target=\"_self\">Learn More →</a>\n </div>\n <div class=\"get-started-image resources\">\n <img src=\"https://revenuecat.dreamhosters.com/wp-content/uploads/2023/11/Powering-existing-subscriptions-with-RevenueCat.png\" alt=\"RevenueCat supported stores\">\n </div>\n</section>"
+  "html": "<section class=\"get-started landing\">\n <div class=\"get-started-description\">\n <p>\n If you already have 1 or 1 millions subscribers, easily replace your existing setup with RevenueCat to supercharge your business.\n </p>\n <a class=\"cta\" href=\"/docs/existing-apps\" target=\"_self\">Learn More →</a>\n </div>\n <div class=\"get-started-image resources\">\n <img src=\"https://revenuecat.dreamhosters.com/wp-content/uploads/2023/11/Powering-existing-subscriptions-with-RevenueCat.png\" alt=\"RevenueCat supported stores\">\n </div>\n</section>"
 }
 [/block]
 
