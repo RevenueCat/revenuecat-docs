@@ -156,7 +156,7 @@ Our SDK seamlessly implements purchases and subscriptions across platforms while
 
 Install the SDK on your preferred platform with our installation guides below.
 
-- [iOS Installation ](doc:ios) 
+- [iOS/watchOS/tvOS Installation](doc:ios) 
 - [Android Installation ](doc:android)
 - [React Native Installation ](doc:reactnative) 
 - [Flutter Installation ](doc:flutter)

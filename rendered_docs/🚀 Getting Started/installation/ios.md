@@ -14,7 +14,16 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 # Requirements
 
 Xcode 14.0.0+
-Minimum target: iOS 11.0+
+
+# Supported Platforms
+
+| Platform | Minimum target |
+| --- | --- |
+| iOS | 11.0+ |
+| tvOS | 11.0+ |
+| macOS | 10.13+ |
+| watchOS | 6.2+ |
+| visionOS | 1.0+ |
 
 # Installation
 
