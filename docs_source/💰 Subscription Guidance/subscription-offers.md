@@ -92,10 +92,6 @@ The `subscriptionOptions` property also has a number of convenience properties t
 
 Apple supports several types of subscription offers which we detail in our [Apple Subscription Offers](doc:ios-subscription-offers) guide.
 
-> 🚧 Accurate revenue tracking not supported for offer codes
-> 
-> Due to limitations of available information on App Store Offer Codes, accurate revenue tracking is not yet supported in the RevenueCat dashboard. All initial purchases made with Offer Codes are assumed to be $0 transactions. Revenue from subsequent renewal transactions will be tracked normally.
-
 ## Google Play
 
 Google has several types of subscription offers, as well as Promo Codes to offer to customers.
