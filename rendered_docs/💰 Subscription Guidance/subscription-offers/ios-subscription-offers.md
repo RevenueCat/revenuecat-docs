@@ -214,7 +214,7 @@ When users click your link within your app to redeem the offer code, it will tak
 
 ## Considerations
 
-- Due to limitations of available information on Offer Codes, accurate revenue tracking is not yet supported in the RevenueCat dashboard. All initial purchases made with Offer Codes are assumed to be $0 transactions. Revenue from subsequent renewal transactions will be tracked normally. 
+- In order for RevenueCat to accurately track revenue for offer codes, you will need to upload an in-app purchase key. See our guide on [In-App Purchase Key Configuration](doc:in-app-purchase-key-configuration) for step-by-step instructions.
 
 # Next Steps
 
