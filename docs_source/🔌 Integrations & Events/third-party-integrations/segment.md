@@ -311,3 +311,7 @@ Whenever RevenueCat sends an event to Segment, we'll update the `rc_subscription
 | promotional         | The customer has access to an entitlement through a granted RevenueCat promotional subscription.                                   |
 | expired_promotional | The customer previously had access to an entitlement through a granted RevenueCat promotional subscription that has since expired. |
 | paused              | The customer has a paid subscription which has been paused and is set to resume at some future date.       
+
+For customers with multiple active subscriptions, this attribute will represent the status of only the subscription for which the most recent event occurred.
+
+Please note that since this attribute is set and updated when events are delivered, subscribers with events prior to our release of this attribute (during November 2023) will not have this attribute set until/unless a future event (renewal, cancellation, etc) occurs.
