@@ -151,7 +151,7 @@ In addition, if you're looking to add a new rule that's similar to an existing o
     "h-0": "Dimension",
     "h-1": "Definition",
     "0-0": "Country",
-    "0-1": "The storefront a customer is currently using on supported SDK versions\\*, or their geolocation otherwise.  \n  \n\\*Available on iOS SDK Version x and Android SDK version y",
+    "0-1": "The storefront a customer is currently using on supported SDK versions\\*, or their geolocation otherwise.  \n  \n\\*Available on iOS SDK Versions >= 4.30.4 with support on other SDKs coming soon",
     "1-0": "App",
     "1-1": "The App that your customer is currently using. Commonly used to target by platform.",
     "2-0": "App Version",
