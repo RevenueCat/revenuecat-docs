@@ -1,9 +1,3 @@
----
-title: Targeting
-slug: targeting
-excerpt: Define audiences to target with unique Offerings
-hidden: true
----
 Targeting allows you to create rules for serving distinct audiences their own Offering. Instead of having a single Current Offering that all customers receive, you can instead create a cascading sequence of rules to deliver different Offerings to each audience that you define.
 
 This allows you to create paywall experiences that are tailored to each of your audiences so you can make an effective pitch for your product and maximize lifetime value.
@@ -17,6 +11,7 @@ This allows you to create paywall experiences that are tailored to each of your 
 | Targeting        | The ability to assign a distinct Offering to a distinct audience of customers based on Targeting Rules you create.                                                                                                     |
 | Targeting Rule   | A collection of conditions that, when they are true for a given customer, will result in that customer matching the rule and being served the corresponding Offering.                                                  |
 | Conditions       | The filters such as App, Country, and App Version that can be used to construct a Targeting Rule.                                                                                                                      |
+| Audience         | The customers who would be included in a Targeting Rule due to matching its conditions.                                                                                                                                |
 | Live             | The Targeting Rules that are actively being used to determine which customers which receive Offerings, as determined by their conditions, assessed in order from top to bottom.                                        |
 | Inactive         | The Targeting Rules that are not actively being used. These may be drafts, rules you previously used,  rules you intend to set live in the future, etc.                                                                |
 
@@ -43,7 +38,7 @@ Once you setup Targeting Rules, you unlock an additional level of customization,
 
 When determining which (if any) Targeting Rule a customer matches, we'll assess them from top to bottom as you've ordered them in the Dashboard.
 
-## Creating & Ordering Targeting Rules
+## Creating Targeting Rules
 
 First, navigate to "Targeting" in the "Monetization tools" section of your Project Settings. Then click on "Create a New Rule" to begin.
 
@@ -86,13 +81,23 @@ Then, create your rule by:
 [/block]
 
 
-Once you've entered all of the required fields for your rule, click "Save". If you've set the rule as "Inactive", you'll be taken to that list. If you've set the rule as "Live", you'll be taken to that list and prompted to order it.
+Once you've entered all of the required fields for your rule, click "Save" and it will be added to the list of rules in State you've selected.
 
-> 📘 Targeting Rule States
+## Ordering Targeting Rules
+
+### How Live rules are added to the list
+
+When a rule is newly set Live (either when it's created or when an Inactive rule is set Live), it'll be ordered at the bottom of that list so that if its targeted audience has any overlap with other Live rules, the existing Live rules will "outrank" the new rule when determining what a customer receives.
+
+> 📘 
 > 
-> When setting a rule to be Live, if you have at least 1 existing rule you'll be prompted to order them. Ordering is used to determine which rule will take precedence if an individual customer may match multiple rules.
-> 
-> If you don't save your changes when ordering your new Live rule, we'll automatically place that rule at the bottom of the list so that it's served to the narrowest possible audience until you reorder it.
+> Live rules can be reordered at any time.
+
+### Ordering Live rules
+
+1. Click "Order rules" to enter the ordering mode
+2. Drag the rules you wish to reorder to their correct location in the list
+3. Click "Save order" when you've set them in the order you'd like them to be evaluated in
 
 [block:image]
 {
@@ -112,7 +117,7 @@ Once you've entered all of the required fields for your rule, click "Save". If y
 
 > 📘 
 > 
-> Live rules can be reordered at any time.
+> Ordering only applies to cases where 1 customer may match multiple Live rules. If your Live rules are mutually exclusive, their order will have no impact on how customers are assigned to them.
 
 ## Editing, deleting, and more
 
