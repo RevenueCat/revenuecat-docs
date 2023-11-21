@@ -1,3 +1,8 @@
+---
+title: Targeting
+slug: targeting
+hidden: true
+---
 Targeting allows you to create rules for serving distinct audiences their own Offering. Instead of having a single Current Offering that all customers receive, you can instead create a cascading sequence of rules to deliver different Offerings to each audience that you define.
 
 This allows you to create paywall experiences that are tailored to each of your audiences so you can make an effective pitch for your product and maximize lifetime value.
