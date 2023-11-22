@@ -5,9 +5,17 @@ hidden: false
 ---
 RevenueCat's Paywalls allow you to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
+## Paywalls are supported in the following SDK versions:
+| RevenueCat SDK           | Version required for Offering Metadata | 
+| :----------------------- | :--------------------------------------------- |
+| purchases-ios            | 4.26.0 and up                                  |
+| purchases-android        | 7.1.0 and up                                   |
+| react-native-purchases   | 7.4.0-beta.2                                   | 
+| purchases-flutter        | 6.3.0-beta.1                                   | 
+
 > ❗️
 > 
-> Paywalls are available on the following platforms:
+> Within the SDKs, Paywalls are available on the following platforms:
 > - iOS 15.0+
 > - visionOS 1.0+
 > - Mac Catalyst 15.0+
@@ -82,6 +90,14 @@ implementation 'com.revenuecat.purchases:purchases-ui:7.1.0'
 > It is safe to release app updates with it. We guarantee that paywalls will continue to work and any changes will always be backwards compatible.
 > They are stable, but migration steps may be required in the future. We'll do our best to minimize any changes you have to make.
 
+## React Native (Beta) Installation
+
+See `7.4.0-beta-.2` [release notes](https://github.com/RevenueCat/react-native-purchases/releases/tag/7.4.0-beta.2)
+
+## Flutter (Beta) Installation
+
+See `6.3.0-beta.1` [release notes](https://github.com/RevenueCat/purchases-flutter/releases/tag/6.3.0-beta.1)
+
 ## Overview
 
 Our paywall templates use native code to deliver smooth, intuitive experiences to your customers when you’re ready to deliver them an Offering; and you can use our Dashboard to pick the right template and configuration to meet your needs.
@@ -91,12 +107,6 @@ To use RevenueCat Paywalls, simply:
 1. [Create a Paywall](doc:creating-paywalls) on the Dashboard for the [Offering](doc:entitlements) you intend to serve to your customers
 
 2. See [displaying paywalls](doc:displaying-paywalls) for how to display it into your app.
-
-> 📘 
-> 
-> RevenueCat Paywalls are available on the following SDK versions:
-> - iOS: version >= 4.26.0
-> - Android: version >= 7.1.0
 
 ## Offerings and Paywalls
 
