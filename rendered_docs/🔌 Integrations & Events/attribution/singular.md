@@ -98,21 +98,7 @@ After you've set up the _Purchases SDK_ to send device data to RevenueCat, you c
 4. Enter the event names that RevenueCat will send or choose the default event names.
 5. Select whether you want RevenueCat to report proceeds (after app store cut) or revenue (gross sales).
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/42f9f89-app.revenuecat.com_projects_85ff18c7_integrations_branch_4.png",
-        null,
-        "Singular configuration screen"
-      ],
-      "align": "center",
-      "caption": "Singular configuration screen"
-    }
-  ]
-}
-[/block]
+<img width="416" alt="Screenshot 2023-11-21 at 11 38 23 AM" src="https://github.com/RevenueCat/revenuecat-docs/assets/112121235/ea9c992f-ad9b-4f96-b6b9-44b770c70240">
 
 # 3. Testing the Singular integration
 
