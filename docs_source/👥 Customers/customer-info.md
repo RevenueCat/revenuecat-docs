@@ -108,7 +108,7 @@ The `CustomerInfo` object gives you access to the following information about a 
     "8-0": "Active Subscriptions",
     "8-1": "An array of subscription product identifiers that are active. You should be using [entitlement](doc:entitlements) though.",
     "9-0": "Entitlements",
-    "9-1": "`EntitlementInfo` objects that contain information about the user's entitlements, such as subscription state. See more [below](doc:purchaserinfo#section-get-entitlement-information)."
+    "9-1": "`EntitlementInfo` objects that contain information about the user's entitlements, such as subscription state. [See more below](doc:customer-info#get-entitlement-information)."
   },
   "cols": 2,
   "rows": 10,
