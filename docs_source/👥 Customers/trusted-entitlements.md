@@ -133,4 +133,3 @@ In this way, apps using the old version of the SDK would continue to work, but t
 
 - Android 4.4+
 - iOS 13.x+
-- _Coming soon to our other SDKs_
