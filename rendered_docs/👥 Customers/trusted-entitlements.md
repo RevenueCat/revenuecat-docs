@@ -46,6 +46,30 @@ Purchases.configure(
         .build()
 )
 ```
+```dart Flutter
+PurchasesConfiguration configuration = PurchasesConfiguration(<public_api_key>);
+configuration.entitlementVerificationMode = EntitlementVerificationMode.informational;
+await Purchases.configure(configuration);
+```
+```typescript React native
+await Purchases.configure({ 
+    apiKey: <public_api_key>, 
+    entitlementVerificationMode: ENTITLEMENT_VERIFICATION_MODE.INFORMATIONAL
+});
+```
+```typescript Capacitor
+await Purchases.configure({ 
+    apiKey: <public_api_key>, 
+    entitlementVerificationMode: ENTITLEMENT_VERIFICATION_MODE.INFORMATIONAL
+});
+```
+```csharp Unity
+Purchases.PurchasesConfiguration.Builder builder = Purchases.PurchasesConfiguration.Builder.Init(<public_api_key>);
+Purchases.PurchasesConfiguration purchasesConfiguration =
+    .SetEntitlementVerificationMode(Purchases.EntitlementVerificationMode.Informational)
+    .Build();
+purchases.Configure(purchasesConfiguration);
+```
 
 ## Verification
 
@@ -123,6 +147,102 @@ Purchases.sharedInstance.getCustomerInfoWith({ error -> /* Optional error handli
     }
 }
 ```
+```dart Flutter
+final customerInfo = await Purchases.getCustomerInfo();
+switch (customerInfo.entitlements.verification) {
+  // No verification was done.
+  //
+  // This can happen for multiple reasons:
+  //  1. Verification is not enabled in Configuration
+  //  2. Verification can't be performed prior to Android 4.4
+  case VerificationResult.notRequested:
+
+  // Entitlements were verified with our server.
+  case VerificationResult.verified:
+
+  // Entitlements were verified on device.
+  case VerificationResult.verifiedOnDevice:
+    // Grant access
+    break;
+
+  // Entitlement verification failed, possibly due to a MiTM attack.
+  case VerificationResult.failed:
+    // Failed verification
+    break;
+}
+```
+```typescript React native
+const customerInfo = await Purchases.getCustomerInfo();
+switch (customerInfo.entitlements.verification) {
+    // No verification was done.
+    //
+    // This can happen for multiple reasons:
+    //  1. Verification is not enabled in Configuration
+    //  2. Verification can't be performed prior to Android 4.4
+    case VERIFICATION_RESULT.NOT_REQUESTED:
+
+    // Entitlements were verified with our server.
+    case VERIFICATION_RESULT.VERIFIED:
+
+    // Entitlements were verified on device.
+    case VERIFICATION_RESULT.VERIFIED_ON_DEVICE:
+        // Grant access
+        break;
+
+    case VERIFICATION_RESULT.FAILED:
+        // Failed verification
+        break;
+}
+```
+```typescript Capacitor
+const customerInfo = await Purchases.getCustomerInfo().customerInfo;
+switch (customerInfo.entitlements.verification) {
+    // No verification was done.
+    //
+    // This can happen for multiple reasons:
+    //  1. Verification is not enabled in Configuration
+    //  2. Verification can't be performed prior to Android 4.4
+    case VERIFICATION_RESULT.NOT_REQUESTED:
+
+    // Entitlements were verified with our server.
+    case VERIFICATION_RESULT.VERIFIED:
+
+    // Entitlements were verified on device.
+    case VERIFICATION_RESULT.VERIFIED_ON_DEVICE:
+        // Grant access
+        break;
+
+    case VERIFICATION_RESULT.FAILED:
+        // Failed verification
+        break;
+}
+```
+```csharp Unity
+purchases.GetCustomerInfo((info, error) =>
+{
+    switch (info.Entitlements.Verification) {
+        // No verification was done.
+        //
+        // This can happen for multiple reasons:
+        //  1. Verification is not enabled in Configuration
+        //  2. Verification can't be performed prior to Android 4.4
+        case Purchases.VerificationResult.NotRequested:
+
+        // Entitlements were verified with our server.
+        case Purchases.VerificationResult.Verified:
+
+        // Entitlements were verified on device.
+        case Purchases.VerificationResult.VerifiedOnDevice:
+            // Grant access
+            break;
+
+        // Entitlement verification failed, possibly due to a MiTM attack.
+        case Purchases.VerificationResult.Failed:
+            // Verification failed
+            break;
+    }
+});
+```
 
 Additionally, verification errors are always forwarded to `Purchases.errorHandler`.
 
@@ -146,4 +266,3 @@ In this way, apps using the old version of the SDK would continue to work, but t
 
 - Android 4.4+
 - iOS 13.x+
-- _Coming soon to our other SDKs_
