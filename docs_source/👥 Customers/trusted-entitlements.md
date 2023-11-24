@@ -43,6 +43,26 @@ SDKs can be configured in one of 3 `EntitlementVerificationMode`'s:
     "language": "kotlin",
     "name": "",
     "file": "code_blocks/👥 Customers/trusted-entitlements.kt"
+  },
+  {
+    "language": "dart",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/trusted-entitlements.dart"
+  },
+  {
+    "language": "typescript",
+    "name": "React native",
+    "file": "code_blocks/👥 Customers/trusted-entitlements-rn.ts"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/trusted-entitlements-capacitor.ts"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/trusted-entitlements.cs"
   }
 ]
 [/block]
@@ -67,6 +87,26 @@ When configuring the SDK with `EntitlementVerificationMode.informational`, `Enti
     "language": "kotlin",
     "name": "",
     "file": "code_blocks/👥 Customers/verification-result.kt"
+  },
+  {
+    "language": "dart",
+    "name": "Flutter",
+    "file": "code_blocks/👥 Customers/verification-result.dart"
+  },
+  {
+    "language": "typescript",
+    "name": "React native",
+    "file": "code_blocks/👥 Customers/verification-result-rn.ts"
+  },
+  {
+    "language": "typescript",
+    "name": "Capacitor",
+    "file": "code_blocks/👥 Customers/verification-result-capacitor.ts"
+  },
+  {
+    "language": "csharp",
+    "name": "Unity",
+    "file": "code_blocks/👥 Customers/verification-result.cs"
   }
 ]
 [/block]
