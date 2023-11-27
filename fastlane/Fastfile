@@ -256,7 +256,23 @@ def update_doc_information(filename, category_id, order, parent_doc_id)
         yaml_data = YAML.load(yaml_header)
 
         original_category = yaml_data['categorySlug']
+
         category_slug = find_category_slug_from_id(category_id)
+        if category_slug.nil?
+            file_dir = File.dirname(filename)
+            parent_dir = File.dirname(file_dir)
+            slug_file_path = File.join(file_dir, '.slug')
+            unless File.exist?(slug_file_path)
+                # If not found, try the directory right above
+                slug_file_path = File.join(parent_dir, '.slug')
+                unless File.exist?(slug_file_path)
+                    UI.message("No .slug file found for #{filename}")
+                    return
+                end
+            end
+            category_slug = File.read(slug_file_path).strip
+        end
+
         yaml_data.delete('category') # we don't want any category id, only the slug
         if category_slug && original_category != category_slug
             UI.message("Updating category of #{filename} from #{original_category} to #{category_slug}")
