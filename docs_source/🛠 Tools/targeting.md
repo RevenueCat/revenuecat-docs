@@ -7,6 +7,10 @@ Targeting allows you to create rules for serving distinct audiences their own Of
 
 This allows you to create paywall experiences that are tailored to each of your audiences so you can make an effective pitch for your product and maximize lifetime value.
 
+> 📘 
+> 
+> Targeting is available on Pro, Scale, and Enterprise plans. [Click here](https://app.revenuecat.com/settings/billing) to review your plan and consider upgrading.
+
 ## Terminology
 
 | Term             | Definition                                                                                                                                                                                                             |
