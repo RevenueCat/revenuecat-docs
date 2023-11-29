@@ -15,4 +15,4 @@ WHERE date(effective_end_time) > [targeted_date]
   AND ownership_type != 'FAMILY_SHARED'
   AND store != 'promotional'
   AND is_sandbox != 'true'
-  GROUP BY period_type
+GROUP BY period_type
