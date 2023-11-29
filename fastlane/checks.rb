@@ -5,11 +5,15 @@ def check_links_in_folder(folder)
     markdown_files(folder).each do |markdown_file|
         errors = check_links_in_file(markdown_file)
         errors.each do |error|
-            all_errors << error unless all_errors.include?(error)  # Add error if not already present
+            all_errors << error unless all_errors.include?(error) # Add error if not already present
         end
     end
     return all_errors
 end
+
+ALLOWLISTED_URLS = [
+    "https://www.amazon.com/gp/mas/get/amazonapp",
+]
 
 def check_links_in_file(markdown_file)
     markdown_content = get_file_contents(markdown_file)
@@ -26,6 +30,11 @@ def check_links_in_file(markdown_file)
     errors = []
     links.each do |url|
         next unless url.start_with?('http')
+
+        if ALLOWLISTED_URLS.include?(url)
+            Fastlane::UI.message("Skipping allowlisted URL: #{url}")
+            next
+        end
 
         begin
             response = URI.open(url)
