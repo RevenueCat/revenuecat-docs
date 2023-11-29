@@ -58,7 +58,7 @@ Ex: Checking the event_timestamp_ms will show that the renewal occurs after the 
 
 # Refunding Purchases
 
-Android purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access.
+Android purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access. By refunding directly through RevenueCat you can ensure that refunds are accounted for immediately in all charts and integrations.
 
 ![](https://files.readme.io/e2cb2fe-Screenshot_2023-06-12_at_15.01.32.png)
 
