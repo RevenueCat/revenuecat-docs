@@ -11,7 +11,7 @@ RevenueCat is a powerful and reliable in-app purchase server that makes it easy 
 
 > 💡
 > 
-> We host live office hours every other Friday, where we demo the platform and answer your questions live. [Register for the next office hours →]([https://www.revenuecat.com/talk-to-sales/](https://app.livestorm.co/revenuecat/live-revenuecat-demo?type=detailed))
+> We host live office hours every other Friday, where we demo the platform and answer your questions live. [Register for the next office hours →](https://app.livestorm.co/revenuecat/live-revenuecat-demo?type=detailed)
 
 # Adding in-app purchases to your app
 
