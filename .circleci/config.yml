@@ -297,6 +297,13 @@ jobs:
 workflows:
   version: 2
 
+  danger:
+    when:
+      not:
+        equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
+    jobs:
+      - revenuecat/danger
+
   open-syncing-pr:
     jobs:
       - open-syncing-pr:
