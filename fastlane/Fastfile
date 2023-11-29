@@ -24,6 +24,7 @@ import 'files.rb'
 import 'circleci_api/api.rb'
 import 'code_blocks/code_blocks.rb'
 import 'rendering.rb'
+import 'checks.rb'
 
 VERSION_FILE = "docs_source/.version"
 SOURCE_FOLDER = "docs_source"
@@ -32,15 +33,16 @@ RENDER_FOLDER = "rendered_docs"
 TEMPORARY_RENDER_FOLDER = "temp"
 REPO_NAME = "revenuecat-docs"
 
-update_fastlane
-
 default_platform(:ios)
 
 
 lane :sync_files_to_readme do |options|
+    readme_api_key = ENV["RDME_API_KEY"]
+    UI.user_error!("Missing README API key") unless readme_api_key
+
     current_version = get_current_version
     Dir.chdir(root_dir) do
-        sh "rdme docs rendered_docs --version\=#{current_version} --key\=#{options[:readme_api_key]}"
+        sh("rdme", "docs", "rendered_docs", "--version", "#{current_version}")
     end
     UI.message("🔨 Syncing files to Readme...")
 end
@@ -58,12 +60,19 @@ desc <<-DESC
 Embeds code blocks from all files and opens a pull request preparing the docs for syncing to Readme
 DESC
 lane :open_syncing_pr do |options|
-    readme_api_key = options[:readme_api_key]
+    readme_api_key = ENV["RDME_API_KEY"]
     UI.user_error!("Missing README API key") unless readme_api_key
 
-    github_pr_token = options[:github_pr_token]
+    github_pr_token = ENV["GITHUB_API_TOKEN"]
 
-    latest_commit_sha = get_latest_commit_sha
+    latest_commit = last_git_commit
+    latest_commit_message = latest_commit[:message]
+    latest_commit_sha = latest_commit[:abbreviated_commit_hash]
+
+    if latest_commit_message.start_with?("[SKIP]")
+        UI.message("Skipping the lane due to commit message starting with [SKIP]: #{latest_commit_message}")
+        next
+    end
 
     current_version = get_current_version
 
@@ -106,7 +115,7 @@ desc "Embeds code blocks from all files within the [block:file] and [/block] tag
 lane :post_circleci_artifacts do |options|
     circleci_build_num = ENV['CIRCLE_BUILD_NUM']
     circleci_token = ENV['CIRCLE_TOKEN']
-    github_token = ENV['GITHUB_TOKEN']
+    github_token = ENV['GITHUB_API_TOKEN']
 
     post_circleci_artifacts(circleci_build_num, circleci_token, github_token)
 end
@@ -116,7 +125,7 @@ Updates rendered docs folder to the current category, order and parent informati
 readme_api_key, STRING Readme API key for the project
 DESC
 lane :update_docs_structure do |options|
-    readme_api_key = options[:readme_api_key]
+    readme_api_key = ENV["RDME_API_KEY"]
     UI.user_error!("Missing README API key") unless readme_api_key
 
     folder_path = RENDER_FOLDER
@@ -192,6 +201,45 @@ lane :migration do |options|
     markdown_files = markdown_files(SOURCE_FOLDER)
     extract_code_blocks(SOURCE_FOLDER, CODE_BLOCKS_FOLDER, markdown_files)
     clean_docs_source_headers
+end
+
+lane :check_links do |options|
+    errors = check_links_in_folder(SOURCE_FOLDER)
+    if errors.length > 0
+        if options[:notify_slack]
+            post_to_slack("Found #{errors.length} broken links:\n#{errors.join("\n")}")
+        end
+        UI.user_error!("Found #{errors.length} broken links:\n#{errors.join("\n")}")
+    end
+end
+
+lane :build_android do |options|
+    begin
+        gradle(
+            task: "assembleDebug",
+            project_dir: "projects/android",
+            )
+    rescue => error
+        if options[:notify_slack]
+            post_to_slack("Android project build failed with error: #{error.message}")
+        end
+
+        raise error
+    end
+end
+
+lane :build_ios do |options|
+    Dir.chdir(root_dir) do
+        Dir.chdir("projects/iOS/DocsTester") do
+            sh("swift", "build", error_callback: ->(result) {
+                if options[:notify_slack]
+                    post_to_slack("iOS project build failed with error: #{result}")
+                end
+                UI.user_error!("iOS project build failed with error: #{result}")
+                raise error
+            })
+        end
+    end
 end
 
 # Updates the category, order and parent for a given document.
@@ -307,7 +355,7 @@ end
 def validate_local_config_status_for_bump(new_branch, github_pr_token)
     # Ensure GitHub API token is set
     if github_pr_token.nil? || github_pr_token.empty?
-        UI.error("A github_pr_token parameter or an environment variable GITHUB_PULL_REQUEST_API_TOKEN is required to create a pull request")
+        UI.error("A github_pr_token parameter or an environment variable GITHUB_API_TOKEN is required to create a pull request")
         UI.error("Please make a fastlane/.env file from the fastlane/.env.SAMPLE template")
         UI.user_error!("Could not find value for GITHUB_PULL_REQUEST_API_TOKEN")
     end
@@ -362,4 +410,12 @@ def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labe
         labels: labels,
         team_reviewers: ['support']
     )
+end
+
+def post_to_slack(message)
+    slack(
+        message: message,
+        slack_url: ENV["SLACK_WEBHOOK_URL"],
+        success: false,
+        )
 end
