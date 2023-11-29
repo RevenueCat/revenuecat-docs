@@ -32,6 +32,10 @@ Refunds are handled differently on each platform. It's recommended to set up [Pl
 [/block]
 ## RevenueCat Dashboard
 
+> 🚧 Refunded transactions will report as $0 in events
+> 
+> In our Scheduled Data Exports and webhook events, we set the price of refunded transactions to $0. This is so we don't send negative revenue for these transactions that have been refunded and is to make sure that the information provided is accurate to developers for these events.
+
 **Android** purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access. By refunding directly through RevenueCat you can ensure that refunds are accounted for in all charts and integrations.
 
 Apple doesn’t allow developers to grant refunds themselves, only through Apple customer support. However, Apple refunds are tracked with RevenueCat and accounted for in all charts and integrations.
