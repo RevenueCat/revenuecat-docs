@@ -2,15 +2,13 @@ import 'files.rb'
 require_relative 'circleci_api/api.rb'
 require_relative 'github_api/api.rb'
 
-UI = Fastlane::UI
-
 def post_circleci_artifacts(job_id, circleci_token, github_token)
-    UI.message("Posting artifacts for job #{job_id}")
+    Fastlane::UI.message("Posting artifacts for job #{job_id}")
 
     artifacts = get_artifacts(job_id, circleci_token)
 
     unless artifacts.length > 0
-        UI.message("No artifacts found for job #{job_id}")
+        Fastlane::UI.message("No artifacts found for job #{job_id}")
         return
     end
 
