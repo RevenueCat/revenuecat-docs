@@ -1,6 +1,6 @@
 // To display the overlay in UIKit, use the `presentDebugRevenueCatOverlay` method on any UIViewController:
-self.presentDebugRevenueCatOverlay()  
+self.presentDebugRevenueCatOverlay()
 
 // or, initialize the DebugViewController and present it manually:
-let debugOverlay = RevenueCat.DebugViewController()  
+let debugOverlay = RevenueCat.DebugViewController()
 self.present(debugOverlay, animated: true)

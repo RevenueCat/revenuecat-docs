@@ -1,20 +1,20 @@
-# Writing Documentation in Github
+# Writing Documentation in GitHub
 
-## 🧐 Why Github?
+## 🧐 Why GitHub?
 
-We have switched from editing our [docs](https://www.revenuecat.com/docs) in ReadMe to editing them in Github. There are two reasons for the switch:
+We have switched from editing our [docs](https://www.revenuecat.com/docs) in ReadMe to editing them in GitHub. There are two reasons for the switch:
 
 1. Code samples management:
     1. Reuse code blocks between files
     2. Have the code blocks in their own files with their own extension, which code editors like visual studio code will recognize and highlight possible errors
     3. Potentially unit test these code blocks (we don’t do this at the moment)
-2. ReadMe’s native version control is immature compared to Github, and doesn’t offer essential features like branches and merging. This leads to duplicated or sometimes lost work when versions change. 
+2. ReadMe’s native version control is immature compared to GitHub, and doesn’t offer essential features like branches and merging. This leads to duplicated or sometimes lost work when versions change. 
     1. To give a clear example, let’s say someone makes a change to version 4, while version 5 is getting ready to be published. There’s no easy way in Readme to bring those updates from v4 to v5 while this one is in the works.
     2. There’s also not a clear way to find out someone made a change to a particular version in Readme since edits can be made directly to the docs without using the “Suggested edits” functionality
 
-#### If you aren't comfortable using Github, please let Support know or open an Issue with your requested change here: https://github.com/RevenueCat/revenuecat-docs/issues/new
+#### If you aren't comfortable using GitHub, please let Support know or open an Issue with your requested change here: https://github.com/RevenueCat/revenuecat-docs/issues/new
 
-## 🗂️ Github organization
+## 🗂️ GitHub organization
 
 [The repository](https://github.com/RevenueCat/revenuecat-docs) contains two important folders:
 
@@ -24,15 +24,15 @@ We have switched from editing our [docs](https://www.revenuecat.com/docs) in Rea
 
 **code_blocks** contains the code blocks (snippets) that get embedded in the files in the `rendered_docs` folder
 
-## 🔧 How it works
+## 🔧 How it works
 
 Edit documents in **docs_source**. When you finish editing, open a pull request (PR).
 
-When your PR is approved, a CircleCI job is triggered to render the documents into ReadMe-flavored markdown in **rendered_docs.**
+When your PR is approved and merged, a CircleCI job is triggered to render the documents into ReadMe-flavored markdown inside the **rendered_docs** folder. This job will open a second PR which contains your rendered documents and should be reviewed thoroughly for any errors in the rendering process. 
 
-A second PR will be automatically generated. This PR contains your rendered documents and should be reviewed thoroughly for any errors in the rendering process. 
+When the second PR is reviewed and ready to be synced, manually approve the hold job called `manual-approval-to-sync-with-readme`. Another CircleCI build is triggered to send all of our docs to ReadMe through their API.
 
-When the second PR is approved, another CircleCI build is triggered to send all of our docs to ReadMe through their API.
+Finally, merge that syncing pull request into the `main` branch of the repository.
 
 ## 💻 Adding code snippets
 
@@ -50,9 +50,9 @@ If you want to add a snippet to a file in the **docs_source** folder, create a f
 [/block]
 ```
 
-If you want to add a tab with another language so it looks like this: 
+If you want to add a tab with another language so it looks like this:
 
-![image](https://github.com/RevenueCat/revenuecat-docs/assets/664544/e7adf318-332a-4089-ba4b-84807cdb72d0)
+<img width="500" alt="code1" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/74a5f259-fc56-44af-a410-966e4d1472c8">
 
 
 Simply add a [block:file] block with a JSON array with the other files for the other snippets:
@@ -72,68 +72,87 @@ Simply add a [block:file] block with a JSON array with the other files for the o
 [/block]
 ```
 
-## ⛓️ Current limitations
+## ⛓️ Current limitations
 
-- ReadMe categories cannot be edited or rearranged in Github. They must be edited in ReadMe itself. This is due to limitations in the Readme API.
-- When the second (auto-generated) PR is deleted, **your changes are still in the main branch.** Unless you revert these changes, they will be sent to Github the next time any synchronizing PR is approved. The synchronizing PR will show all the changes that will be synchronized after merged.
+- ReadMe categories cannot be edited or rearranged in GitHub. They must be edited in ReadMe itself. This is due to limitations in the Readme API.
+- When the second (auto-generated) PR is deleted, **your changes are still in the main branch.** Unless you revert these changes, they will be sent to GitHub the next time any synchronizing PR is approved. The synchronizing PR will show all the changes that will be synchronized after merged.
 
-## 🎁 Features planned
+## 🎁 Features planned
 
-- Allow folders in Github to be rearranged and edited, with those changes reflected in ReadMe
+- Allow folders in GitHub to be rearranged and edited, with those changes reflected in ReadMe
 - Reduce the editing process to a single PR
 - We don’t currently test any code block. In the future we are going to add unit testing for those files that live in `code_blocks` .  We are going to create projects in the different languages for that. We will probably keep the code blocks and the testing projects in the `revenuecat-docs` repository.
 
-## 📄 Editing a single document
+## 📄 Editing a single document
 
-Small edits can easily be made within Github itself, without the need to clone (download) the repository.
+Small edits can easily be made within GitHub itself, without the need to clone (download) the repository.
 
 ### Pull request #1
 
-1. Make a new branch in Github
+Make a new branch in GitHub
 
-![Choose a descriptive name, such as [your name]/[description]](https://github.com/RevenueCat/revenuecat-docs/assets/664544/2105b93c-c7f1-4017-8867-35f5248b97ae)
+<img width="430" alt="img1" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/063f6b42-ebd4-4118-9fa6-ac33b6eacef2">
 
-1. Select your file from **docs_source**
+Select your file from **docs_source**
 
-<img width="406" alt="Screenshot 2023-06-26 at 4 06 36 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/a0d7e9b2-706d-4312-8d6e-bc41fff233be">
+<img width="385" alt="img2" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/9999c215-2b63-4b82-9353-3776402f2c57">
 
-1. Click **Edit this file** in the upper-right corner
+Click **Edit this file** in the upper-right corner
 
-<img width="544" alt="Screenshot 2023-06-26 at 4 06 52 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b899b891-25e1-49fa-a219-19f047793828">
+<img width="500" alt="img3" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/5f67b98e-02ae-4bc3-9574-3c3bd7b792e9">
 
-1. When you are done editing the document, click **Commit changes…** in the upper-right corner
+When you are done editing the document, click **Commit changes…** in the upper-right corner
 
-<img width="536" alt="Add a descriptive message in the pop-up that follows." src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/b397d44e-6de7-4c6c-b49b-a5fef6981899">
+<img width="500" alt="img4" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/d9e5bcce-0afd-433c-89d5-9b8325c01b6e">
 
-1. You can choose to start a pull request with the changes, if you don’t, navigate to the **Pull requests** tab. A banner will pop up with your new branch. Click **Compare & pull request**
+You can choose to start a pull request with the changes, if you don’t, navigate to the **Pull requests** tab. A banner will pop up with your new branch. Click **Compare & pull request**
 
-<img width="634" alt="If the banner is missing, click ********************************New pull request******************************** and select your branch" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/c7cea5c0-1f35-406f-9549-ebbf15a7fd18">
+<img width="500" alt="img5" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/d816af65-ad19-461e-b2f0-3dbaa2815b94">
 
-1. Make any changes to the PR template (1), select **RevenueCat/support** as a reviewer (2), and click **Create pull request** (3)
+Make any changes to the PR template (1), select **RevenueCat/support** as a reviewer (2), and click **Create pull request** (3)
+
+If you don't want to sync this Pull Request with ReadMe yet, add the prefix `[SKIP]` to the PR title. 
+
+After getting your pull request reviewed by your team mates and making any necessary changes, click **Squash and merge** at the bottom of the page.
+You can also add the `[SKIP]` prefix to the commit message if you're not planning on syncing changes yet. This is useful when batching several pull requests into a single sync.
 
 ### Pull request #2
 
-A second PR will be auto-generated. After reviewing the **rendered_docs** in the PR, approve the PR squash and merge it.
+A second PR will be auto-generated. After reviewing the **rendered_docs** in the PR, approve the PR:
 
-<img width="745" alt="Screenshot 2023-06-26 at 4 08 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/4ee4bbe4-ae20-4004-9681-77a35d7ea781">
+<img width="500" alt="img6" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/20df6f60-9659-4e9f-88e5-81e16c5f5c38">
 
-## 📑 Editing multiple documents
+Then un-hold the hold job called `manual-approval-to-sync-with-readme` in CircleCI:
+
+<img width="500" alt="img7" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/097c2e20-aab5-40f6-a780-c2945a11abee">
+&nbsp
+<img width="500" alt="img8" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/62525850-f90b-445d-bccd-db3ae1ae7e84">
+&nbsp
+<img width="500" alt="img9" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/126151c8-3a89-4beb-9153-dd14478d34c7">
+
+A new job will start to run called `sync-files-if-syncing-pr`. When the job finishes and all checks have passed the docs will be synced. You can go ahead squash and merge the Pull Request:
+
+<img width="500" alt="img10" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/ee00b08e-29f9-45d7-a2be-9a71e34da313">
+
+If you don’t want to sync the changes with Readme yet, feel free to close the pull request and delete the branch.
+
+## 📑 Editing multiple documents
 
 Once your branch is creating in the previous step, you can keep editing docs in that branch. Pick your branch in the home of the repository by clicking the caret down next to `main`:
 
-<img width="460" alt="Screenshot 2023-06-26 at 4 08 54 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/3b33477c-8adc-4439-afce-efe402e3b54f">
+<img width="430" alt="img11" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/e6071278-425c-45ae-a526-d1350b7367f3">
 
 Once in your branch, follow the same steps and navigate to another file and edit it.
 
-<img width="543" alt="Screenshot 2023-06-26 at 4 09 05 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/77268b41-9934-4dcf-9f94-5c501e3e2b14">
+<img width="500" alt="img12" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/2b560227-788b-4388-8840-e889e114b78b">
 
 After making the changes, and pressing the `Commit changes…` button, make sure you select `Commit directly to the ...` button, so the changes are pushed to the branch that was opened before.
 
-<img width="345" alt="Screenshot 2023-06-26 at 4 09 18 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/664544/93cde391-bc7b-4f1d-83c2-1f8c7644c1f1">
+<img width="335" alt="img13" src="https://github.com/RevenueCat/revenuecat-docs/assets/110489217/c6c81bc6-0b26-4f1e-b47b-143f7333f0e8">
 
 **Note:** At this time, changing the folder of a doc, or removing whole folders is not supported. Feel free to reach out to [Support](https://revenuecat.slack.com/archives/CSSCSV4TF) for assistance, for these type of changes that require technical knowledge of Git.
 
-## 🖊️ Markdown Tutorial
+## 🖊️ Markdown Tutorial
 
 For a guide to writing in Markdown, see this [(hidden) page](https://www.revenuecat.com/docs/readme-markdown-tutorial) in our docs.
 
