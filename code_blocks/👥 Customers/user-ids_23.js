@@ -1,5 +1,5 @@
 // Configure Purchases on app launch
-Purchases.setup(<public_sdk_key>);
+Purchases.configureWith({ apiKey: <public_sdk_key> });
 
 //...
 

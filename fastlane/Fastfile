@@ -33,8 +33,6 @@ RENDER_FOLDER = "rendered_docs"
 TEMPORARY_RENDER_FOLDER = "temp"
 REPO_NAME = "revenuecat-docs"
 
-update_fastlane
-
 default_platform(:ios)
 
 
@@ -208,7 +206,39 @@ end
 lane :check_links do |options|
     errors = check_links_in_folder(SOURCE_FOLDER)
     if errors.length > 0
+        if options[:notify_slack]
+            post_to_slack("Found #{errors.length} broken links:\n#{errors.join("\n")}")
+        end
         UI.user_error!("Found #{errors.length} broken links:\n#{errors.join("\n")}")
+    end
+end
+
+lane :build_android do |options|
+    begin
+        gradle(
+            task: "assembleDebug",
+            project_dir: "projects/android",
+            )
+    rescue => error
+        if options[:notify_slack]
+            post_to_slack("Android project build failed with error: #{error.message}")
+        end
+
+        raise error
+    end
+end
+
+lane :build_ios do |options|
+    Dir.chdir(root_dir) do
+        Dir.chdir("projects/iOS/DocsTester") do
+            sh("swift", "build", error_callback: ->(result) {
+                if options[:notify_slack]
+                    post_to_slack("iOS project build failed with error: #{result}")
+                end
+                UI.user_error!("iOS project build failed with error: #{result}")
+                raise error
+            })
+        end
     end
 end
 
@@ -380,4 +410,12 @@ def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labe
         labels: labels,
         team_reviewers: ['support']
     )
+end
+
+def post_to_slack(message)
+    slack(
+        message: message,
+        slack_url: ENV["SLACK_WEBHOOK_URL"],
+        success: false,
+        )
 end

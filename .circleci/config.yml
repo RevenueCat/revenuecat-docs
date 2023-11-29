@@ -21,6 +21,11 @@ aliases:
           - /^sync\/.*/
           - main
 
+parameters:
+  action:
+    type: string
+    default: ""
+
 commands:
   setup-git-credentials:
     steps:
@@ -127,13 +132,17 @@ jobs:
   check-links:
     docker:
       - image: cimg/ruby:3.1.2
+    parameters:
+      notify_slack:
+        type: boolean
+        default: false
     steps:
       - checkout
       - revenuecat/install-gem-unix-dependencies:
           cache-version: v1
       - run:
           name: Check links
-          command: bundle exec fastlane check_links
+          command: bundle exec fastlane check_links notify_slack:<< parameters.notify_slack >>
 
   check-categories:
     docker:
@@ -196,6 +205,10 @@ jobs:
     macos:
       xcode: 14.3.0
     shell: /bin/bash --login -o pipefail
+    parameters:
+      notify_slack:
+        type: boolean
+        default: false
     steps:
       - checkout
       - setup-git-credentials
@@ -203,24 +216,28 @@ jobs:
       - revenuecat/install-gem-mac-dependencies:
           cache-version: v1
       - run:
-          name: Build Swift project
-          working_directory: projects/iOS/DocsTester
-          command: swift build
+          name: Build Android project
+          command: bundle exec fastlane build_ios notify_slack:<< parameters.notify_slack >>
 
   build-projects-android:
     executor:
       name: android/android-machine
       resource-class: medium
       tag: 2023.07.1
+    parameters:
+      notify_slack:
+        type: boolean
+        default: false
     steps:
       - checkout
+      - revenuecat/install-gem-unix-dependencies:
+          cache-version: v1
       - install-java
       - android/restore-gradle-cache:
           cache-prefix: v1
       - run:
           name: Build Android project
-          working_directory: projects/android
-          command: ./gradlew assembleDebug
+          command: bundle exec fastlane build_android notify_slack:<< parameters.notify_slack >>
       - android/save-gradle-cache:
           cache-prefix: v1
 
@@ -280,6 +297,13 @@ jobs:
 workflows:
   version: 2
 
+  danger:
+    when:
+      not:
+        equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
+    jobs:
+      - revenuecat/danger
+
   open-syncing-pr:
     jobs:
       - open-syncing-pr:
@@ -288,6 +312,12 @@ workflows:
               ignore: /.*/
             branches:
               only: main
+
+  trigger-open-syncing-pr:
+    when:
+      equal: [ sync, << pipeline.parameters.action >> ]
+    jobs:
+      - open-syncing-pr
 
   sync:
     jobs:
@@ -319,3 +349,14 @@ workflows:
     jobs:
       - lint-android-project: *non-syncing-branches
       - lint-ios-project: *non-syncing-branches
+
+  nightly-build:
+    when:
+      equal: [ build, << pipeline.parameters.action >> ]
+    jobs:
+      - build-projects-macos:
+          notify_slack: true
+      - build-projects-android:
+          notify_slack: true
+      - check-links:
+          notify_slack: true
