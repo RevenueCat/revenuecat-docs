@@ -13,7 +13,7 @@ Metadata allows you to attach a custom JSON object to your Offering that can be 
 | react-native-purchases   | 6.0.0 and up                                   | 
 | purchases-flutter        | 5.0.0 and up                                   | 
 | cordova-plugin-purchases | 4.0.0 and up                                   |
-
+| purchases-unity          | 5.0.0 and up                                   |
 
 ## Benefits of using Offering metadata
 
