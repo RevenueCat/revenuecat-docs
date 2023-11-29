@@ -60,7 +60,7 @@ Add your Stripe products to your project's [entitlements](doc:entitlements) to e
 
 # 5. Send Stripe tokens to RevenueCat
 
-You can send your Stripe subscriptions to RevenueCat through the [POST receipt endpoint](https://docs.revenuecat.com/reference#receipts). If you are using Stripe Checkout, you should send the subscription after the checkout.session.completed event.
+You can send your Stripe subscriptions to RevenueCat through the [POST receipt endpoint](https://docs.revenuecat.com/reference#receipts). When using Stripe Checkout, you should listen to and send subscriptions to RevenueCat after both the customer.subscription.created and checkout.session.completed events. 
 
 The only required fields are:
 
