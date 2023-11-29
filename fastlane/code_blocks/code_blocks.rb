@@ -234,7 +234,10 @@ def embed_code_from_files(code_blocks_group_with_tags)
         file_path = code_block_information['file']
         name = code_block_information['name']
         region = code_block_information['region']
-        next unless file_exists(file_path)
+        
+        unless file_exists(file_path)
+            Fastlane::UI.user_error!("Code block file doesn't exist: #{file_path}")
+        end
 
         file_content = extract_region_from_file(file_path, region, language)
         embedded_code_blocks_group.push "```#{language} #{name}\n#{file_content}\n```"

@@ -2,7 +2,7 @@
 
 // This will display it automatically on app-launch:
 ContentView()
-  .debugRevenueCatOverlay()
+    .debugRevenueCatOverlay()
 
 // Alternatively, you can control when to present it:
 @State private var debugOverlayVisible: Bool = false
@@ -11,7 +11,7 @@ var body: some View {
     Button {
         self.debugOverlayVisible = true
     } label: {
-        Text("Display debug screen"
+        Text("Display debug screen")
     }
-        .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
+    .debugRevenueCatOverlay(isPresented: self.$debugOverlayVisible)
 }
