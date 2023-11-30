@@ -40,6 +40,10 @@ Once you setup Targeting Rules, you unlock an additional level of customization,
 2. Offerings are fetched
 3. Your list of Offerings is returned, along with the identifier of the Offering for the first rule that the customer matched as the **Current Offering** for that customer
    1. If the customer does not match any specified rules, the **Default Offering** will be set as their Current Offering
+  
+> 🚧
+>
+> In December 2023 we began referring to a Project's current Offering as it's default Offering. Learn more [here](https://www.revenuecat.com/docs/displaying-products#fetching-offerings).
 
 When determining which (if any) Targeting Rule a customer matches, we'll assess them from top to bottom as you've ordered them in the Dashboard.
 
