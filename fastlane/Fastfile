@@ -410,6 +410,9 @@ def create_pr_to_main(title, body, repo_name, head_branch, github_pr_token, labe
         labels: labels,
         team_reviewers: ['support']
     )
+    pull_request_number = lane_context[SharedValues::CREATE_PULL_REQUEST_NUMBER]
+    pull_request_id = get_pull_request_id(pull_request_number, github_pr_token)
+    enable_auto_merge(pull_request_id, github_pr_token)
 end
 
 def post_to_slack(message)
