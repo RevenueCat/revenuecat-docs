@@ -382,11 +382,6 @@ curl --request GET \
 
 RevenueCat can handle refunds across all platforms for both subscription and non-subscription products. As soon as RevenueCat detects a refund, the <<glossary:CustomerInfo>> will be updated to reflect the correct entitlement status - no action required on your part! If you have questions about refunds, take a look at our [community article](https://community.revenuecat.com/general-questions-7/how-do-i-issue-a-refund-115) covering the topic.
 
-> 📘 Granting refunds for Google Play subscriptions
-> 
-> In order for RevenueCat to detect refunds for Google Play, you must grant the refund via the [RevenueCat dashboard](https://docs.revenuecat.com/docs/customer-history#refunding-purchases) or [API](https://docs.revenuecat.com/reference#revoke-a-google-subscription).
-> 
-> Refunds granted via the Google Play Console are not properly detected as refunds in RevenueCat.
 
 ## Next Steps
 
