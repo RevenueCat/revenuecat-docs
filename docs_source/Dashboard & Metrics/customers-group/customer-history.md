@@ -28,7 +28,7 @@ Below is a table with all the event types you can expect in the customer history
 | Opted out of renewal                              | Disabled the auto-renew status for an active subscription.                                                                     | `CANCELLATION`                  |
 | Resubscribed                                      | Re-enabled the auto-renew status for an active subscription after previously cancelling.                                       | `UNCANCELLATION`                |
 | Had a billing issue                               | Apple / Google received an error when attempting to charge the user's credit card.                                             | `BILLING_ISSUE`                 |
-| Was issued a refund                               | Apple customer support cancelled and refunded a user's subscription, or a Google subscription was refunded through RevenueCat. | `CANCELLATION`                  |
+| Was issued a refund                               | Apple customer support cancelled and refunded a user's subscription, or a Google subscription was refunded. | `CANCELLATION`                  |
 | Cancelled due to not agreeing to a price increase | Did not agree to a price increase.                                                                                             | `CANCELLATION`                  |
 | Cancelled due to a billing error                  | Apple / Google was not able to charge the user's credit card and their subscription failed to renew.                           | `CANCELLATION`                  |
 | Cancelled due to unknown reasons                  | Apple cancelled the user's subscription and did not provide a cancellation reason.                                             | `CANCELLATION`                  |
@@ -58,7 +58,7 @@ Ex: Checking the event_timestamp_ms will show that the renewal occurs after the 
 
 # Refunding Purchases
 
-Android purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access. By refunding directly through RevenueCat you can ensure that refunds are accounted for in all charts and integrations.
+Android purchases can be refunded directly through the RevenueCat dashboard. Granting a refund will immediately expire the subscription and remove any entitlement access. By refunding directly through RevenueCat you can ensure that refunds are accounted for immediately in all charts and integrations.
 
 ![](https://files.readme.io/e2cb2fe-Screenshot_2023-06-12_at_15.01.32.png)
 
