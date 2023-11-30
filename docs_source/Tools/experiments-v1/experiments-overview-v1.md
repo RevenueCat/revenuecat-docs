@@ -3,11 +3,11 @@ title: Experiments Overview
 slug: experiments-overview-v1
 hidden: false
 ---
-Experiments allow you to answer questions about your users' behaviors and app's business by A/B testing two offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
+Experiments allow you to answer questions about your users' behaviors and app's business by A/B testing two Offerings in your app and analyzing the full subscription lifecycle to understand which variant is producing more value for your business.
 
 While price testing is one of the most common forms of A/B testing in mobile apps, Experiments are based on RevenueCat Offerings, allowing you A/B test more than just prices, including: trial length, subscription length, different groupings of products, etc.
 
-Plus, by attaching metadata to your offerings and programming your paywall to be responsive to it, you can remotely test any aspect of your paywall. [Learn more here](https://www.revenuecat.com/docs/offering-metadata).
+Plus, by attaching metadata to your Offerings and programming your paywall to be responsive to it, you can remotely test any aspect of your paywall. [Learn more here](https://www.revenuecat.com/docs/offering-metadata).
 
 > 📘 
 > 
@@ -15,17 +15,17 @@ Plus, by attaching metadata to your offerings and programming your paywall to be
 
 ## How does it work?
 
-After configuring the two Offerings you want and adding them to an Experiment, RevenueCat will randomly assign users to a cohort where they will only see one of the two Offerings. Everything is done server-side, so no changes to your app are required if you're already displaying the `current` offering in your app! 
+After configuring the two Offerings you want and adding them to an Experiment, RevenueCat will randomly assign users to a cohort where they will only see one of the two Offerings. Everything is done server-side, so no changes to your app are required if you're already displaying the `current` Offering for a given customer in your app! 
 
 > 🚧 
 > 
-> Programmatically displaying the `current` offering in your app when you fetch offerings is **required** to ensure customers are evenly split between variants.
+> Programmatically displaying the `current` Offering in your app when you fetch Offerings is **required** to ensure customers are evenly split between variants.
 
 If you need help making your paywall more dynamic, see [Displaying Products](doc:displaying-products). The [Swift sample app](https://github.com/RevenueCat/purchases-ios/tree/main/Examples) has an example of a [dynamic paywall](https://github.com/RevenueCat/purchases-ios/blob/main/Examples/MagicWeather/MagicWeather/Sources/Controllers/PaywallViewController.swift) that is Experiments-ready. Dynamic paywall examples in other languages can be found within our other [sample apps](https://www.revenuecat.com/docs/sample-apps) as well.
 
 > 📘 
 > 
-> To learn more about creating a new Offering to test, and some tips to keep in mind when creating new Products on the stores, [check out our guide here](doc:creating-offerings-to-test).
+> To learn more about creating a new Offering to test, and some tips to keep in mind when creating new Products on the stores, [check out our guide here](doc:creating-Offerings-to-test).
 
 ![](https://files.readme.io/34bba5f-ab-test.png "ab-test.png")
 
@@ -37,7 +37,7 @@ As soon as a customer is enrolled in an experiment, they'll be included in the "
 
 ## Implementation steps
 
-**Experiments requires you to use offerings and have a dynamic paywall in your app that displays the current offering.** While Experiments will work with iOS and Android SDKs 3.0.0+, it is recommended to use these versions:
+**Experiments requires you to use Offerings and have a dynamic paywall in your app that displays the current Offering for a given customer.** While Experiments will work with iOS and Android SDKs 3.0.0+, it is recommended to use these versions:
 
 | SDK          | Version |
 | :----------- | :------ |
@@ -52,10 +52,10 @@ If you meet these requirements, you can start using Experiments without any app 
 
 **Implementation Overview**
 
-1. Create two offerings that you want to test (make sure your app displays the `current` offering.) You can skip this step if you already have the offerings you want to test.
-2. Create an Experiment and choose the two offerings to test.
+1. Create two Offerings that you want to test (make sure your app displays the `current` Offering.) You can skip this step if you already have the Offerings you want to test.
+2. Create an Experiment and choose the two Offerings to test.
 3. Run your experiment and monitor the results. There is no time limit on experiments, so stop it when you feel confident choosing an outcome. (Learn more about interpreting your results [here](doc:experiments-results-v1))
-4. Once you’re satisfied with the results you can set the winning offering, if any, as current manually.
+4. Once you’re satisfied with the results you can set the winning Offering, if any, as default manually.
 5. Then, you're ready to run a new experiment.
 
 ## Tips for Using Experiments
@@ -84,8 +84,8 @@ If you want to run another test, you must stop the one currently running. You ca
 
 ** Running a test with a control**
 
-Sometimes you want to compare a different offering to the one that is already current. If so, you can set one of the variants to the offering that is currently used in your app.
+Sometimes you want to compare a different Offering to the one that is already the default. If so, you can set one of the variants to the Offering that is currently used in your app.
 
 ** Run follow-up tests after completing one test**
 
-After you run a test and find that one offering won over the other, try running another test comparing the winning offering against another similar offering. This way, you can continually optimize for lifetime value (LTV). For example, if you were running a price test between a $5 product and a $7 product and the $7 offering won, try running another test between a $8 product and the $7 winner to find the optimal price for the product that results in the highest LTV.
+After you run a test and find that one Offering won over the other, try running another test comparing the winning Offering against another similar Offering. This way, you can continually optimize for lifetime value (LTV). For example, if you were running a price test between a $5 product and a $7 product and the $7 Offering won, try running another test between a $8 product and the $7 winner to find the optimal price for the product that results in the highest LTV.
