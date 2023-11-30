@@ -95,17 +95,20 @@ We track three distinct Offer Types:
     "h-1": "Description",
     "h-2": "Example Offer (where rc.annual.39_99 is the product)",
     "0-0": "Intro Offer",
-    "0-1": "A paid introductory offer than the customer accepts as a discount on their initial subscription period. This does NOT include free trial periods.  \n  \nIncludes:  \n- App Store Introductory Offers  \n- Play Store paid offers applied on an initial subscription period",
+    "0-1": "A paid introductory offer than the customer accepts as a discount on their initial subscription period. This does NOT include free trial periods.  \n  \nIncludes:  \n- App Store Introductory Offers  \n- Play Store paid offers applied on initial subscription periods",
     "0-2": "Intro Offer (rc.annual.39_99)",
-    "1-0": "Promo Code",
+    "1-0": "Offer Code",
     "1-1": "A promo code that the customer enters to receive a discount or free trial (depending on the offer & store).  \n  \nIncludes:  \n- App Store Promo Codes  \n- Play Store Promo Codes",
     "1-2": "black_friday_discount (rc.annual.39_99)",
     "2-0": "Promotional Offer",
     "2-1": "An offer that the customer received through your own custom logic.  \n  \nIncludes:  \n- App Store Promotional Offers",
-    "2-2": "power_user_promo_offer (rc.annual.39_99)"
+    "2-2": "power_user_promo_offer (rc.annual.39_99)",
+    "3-0": "No Offer",
+    "3-1": "When none of the above Offer Types were used on the transaction",
+    "3-2": "No Offer"
   },
   "cols": 3,
-  "rows": 3,
+  "rows": 4,
   "align": [
     "left",
     "left",
@@ -117,7 +120,7 @@ We track three distinct Offer Types:
 
 > 🚧 Supported Offers
 > 
-> At this time, Google Play Offers on Billing Client 5 and above are only supported when they are applied as offers on an initial subscription period.
+> At this time, Google Play Offers on Billing Client 5 and above are only supported when they are applied as offers on initial subscription periods.
 > 
 > In addition, Stripe coupon codes are not supported at this time.
 > 
