@@ -137,6 +137,10 @@ And of course, you can mix and match filters as needed to create your ideal view
 1. [Active Subscriptions filtered to the App Store segmented by Offer Type](https://app.revenuecat.com/charts/actives?chart_type=Line&conversion_timeframe=7%20days&customer_lifetime=30%20days&filter=store%3A%3D%3Aapp_store&range=Last%2090%20days%3A2023-09-01%3A2023-11-29&segment=offer_type)
 2. [Revenue filtered to the Offer Code Offer Type segmented by Offer](https://app.revenuecat.com/charts/revenue?chart_type=Stacked%20area&conversion_timeframe=7%20days&customer_lifetime=30%20days&filter=offer_type%3A%3D%3Aoffer_code&range=Last%2012%20months%3A2022-11-29%3A2023-11-29&segment=offer)
 
+> 📘 
+> 
+> In order for RevenueCat to accurately track revenue for offer codes, you will need to upload an in-app purchase key. See our guide on [In-App Purchase Key Configuration](https://www.revenuecat.com/docs/in-app-purchase-key-configuration) for step-by-step instructions.
+
 # Conversion Charts
 
 ## Cohorting
