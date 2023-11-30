@@ -1,7 +1,7 @@
 ---
 title: Offering Override
 slug: offering-override
-excerpt: Override the current offering that displays in your app
+excerpt: Override the default offering that displays in your app for a given customer
 hidden: false
 ---
 You can override the current offering that displays in your app on a per-user basis by selecting a different offering in the **Current Offering** card. This can be useful for:
