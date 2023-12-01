@@ -97,7 +97,7 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 ## Custom Offering identifiers
 
-It's also possible to access other Offerings besides the default Offering directly by its identifier.
+It's also possible to access other Offerings besides the Default Offering directly by its identifier.
 
 [block:file]
 [
