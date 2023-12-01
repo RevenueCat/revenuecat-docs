@@ -39,7 +39,7 @@ Once you setup Targeting Rules, you unlock an additional level of customization,
 1. RevenueCat is initialized
 2. Offerings are fetched
 3. Your list of Offerings is returned, along with the identifier of the Offering for the first rule that the customer matched as the **Current Offering** for that customer
-   1. If the customer does not match any specified rules, the **Default Offering** will be set as their Current Offering
+   1. If the customer does not match any specified rules, they'll receive the **Default Offering** for your Project.
   
 > 🚧
 >
