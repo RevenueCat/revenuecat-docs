@@ -137,8 +137,8 @@ In order to use the overlay, you need to include the debug view library which is
 [![Release](https://img.shields.io/github/release/RevenueCat/purchases-android.svg?style=flat)](https://github.com/RevenueCat/purchases-android/releases)
 
 ```groovy build.gradle
-debugImplementation "com.revenuecat.purchase:purchases-debugview:6.9.2"
-releaseImplementation "com.revenuecat.purchase:purchases-debugview-noop:6.9.2"
+debugImplementation "com.revenuecat.purchases:purchases-debug-view:6.9.2"
+releaseImplementation "com.revenuecat.purchases:purchases-debug-view-noop:6.9.2"
 ```
 
 Then, you can use it from your own `@Composable`'s like this:
