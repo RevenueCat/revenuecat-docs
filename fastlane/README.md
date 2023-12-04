@@ -127,6 +127,22 @@ readme_api_key_test STRING Readme API key for the test project
 
 
 
+### build_android
+
+```sh
+[bundle exec] fastlane build_android
+```
+
+
+
+### build_ios
+
+```sh
+[bundle exec] fastlane build_ios
+```
+
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
