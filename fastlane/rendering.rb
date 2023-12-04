@@ -1,6 +1,7 @@
 import 'files.rb'
 require_relative 'circleci_api/api.rb'
 require_relative 'github_api/api.rb'
+require_relative 'github_api/graphql.rb'
 
 def post_circleci_artifacts(job_id, circleci_token, github_token)
     Fastlane::UI.message("Posting artifacts for job #{job_id}")
