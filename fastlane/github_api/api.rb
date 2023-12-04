@@ -81,15 +81,20 @@ def get_pull_request_id(pull_request_number, github_token)
             pullRequest(number: #{pull_request_number}) {
                 id
             }
-        } 
+        }
     }
     GRAPHQL
 
     request.body = { query: query_id }.to_json
     response = http.request(request)
     if response.is_a?(Net::HTTPSuccess)
-        Fastlane::UI.message("Pull request ID queried successfully!")
-        return JSON.parse(response.body)["data"]["repository"]["pullRequest"]["id"]
+        pull_request_id = JSON.parse(response.body)["data"]["repository"]["pullRequest"]["id"]
+        if pull_request_id.nil?
+            Fastlane::UI.user_error!("Error querying pull request. Pull request ID is nil.")
+        else
+            Fastlane::UI.message("Pull request ID queried successfully!")
+            return pull_request_id
+        end
     else
         Fastlane::UI.user_error!("Error querying pull request.\nCode: #{response.code}\nBody: #{response.read_body}")
     end
