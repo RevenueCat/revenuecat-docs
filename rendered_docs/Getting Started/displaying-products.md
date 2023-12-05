@@ -129,9 +129,13 @@ purchases.GetOfferings((offerings, error) =>
 > 
 > You can find more info about trouble shooting this issue in our [Help Center](https://support.revenuecat.com/hc/en-us/articles/360041793174).
 
-You must choose one Offering that is the "Current Offering" - which can easily be accessed via the `current` property of the returned offerings.
+You must choose one Offering that is the "Default Offering" - which can easily be accessed via the `current` property of the returned offerings for a given customer.
 
-To change the current Offering, navigate to the Offerings tab for your project in the RevenueCat dashboard and click **Make current** next to the Offering you'd like to enable.
+> 📘 What's the difference between a current Offering and a default Offering?
+>
+> The current Offering for a given customer may change based on the experiment they're enrolled in, any targeting rules they match, or the default Offering of your Project. Your Project's default Offering is the Offering that will be served as "current" when no other conditions apply for that customer.
+
+To change the default Offering, navigate to the Offerings tab for your project in the RevenueCat dashboard and click **Make default** next to the Offering you'd like to enable.
 
 ![](https://files.readme.io/a6ff351-app.revenuecat.com_projects_85ff18c7_offerings_packages_pkge2ed0611690_attach_3.png "app.revenuecat.com_projects_85ff18c7_offerings_packages_pkge2ed0611690_attach (3).png")
 
@@ -141,7 +145,7 @@ Offerings can be updated at any time, and the changes will go into effect for al
 
 ## Custom Offering identifiers
 
-It's also possible to access other Offerings besides the "Current Offering" directly by its identifier.
+It's also possible to access other Offerings besides the Default Offering directly by its identifier.
 
 ```swift Swift
 Purchases.shared.getOfferings { (offerings, error) in

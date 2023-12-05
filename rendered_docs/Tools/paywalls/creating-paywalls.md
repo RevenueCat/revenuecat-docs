@@ -35,7 +35,7 @@ Then, click **+ Add paywall** next to the Offering that you want to create a Pay
 
 > 📘 
 > 
-> If you’re looking to experiment with a new paywall, consider duplicating your current Offering and attaching your new paywall to the duplicated Offering.
+> If you’re looking to experiment with a new paywall, consider duplicating your default Offering and attaching your new paywall to the duplicated Offering.
 
 ## Select a template
 

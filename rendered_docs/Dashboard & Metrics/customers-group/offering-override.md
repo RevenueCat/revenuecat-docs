@@ -1,7 +1,7 @@
 ---
 title: Offering Override
 slug: offering-override
-excerpt: Override the current offering that displays in your app
+excerpt: Override the default offering that displays in your app for a given customer
 hidden: false
 categorySlug: dashboard
 order: 3
