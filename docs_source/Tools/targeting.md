@@ -3,7 +3,7 @@ title: Targeting
 slug: targeting
 hidden: true
 ---
-Targeting allows you to create rules for serving distinct audiences their own Offering. Instead of having a single Current Offering that all customers receive, you can instead create a cascading sequence of rules to deliver different Offerings to each audience that you define.
+Targeting allows you to create rules for serving distinct audiences their own Offering. Instead of having a single Default Offering that all customers receive, you can instead create a cascading sequence of rules to deliver different Offerings to each audience that you define.
 
 This allows you to create paywall experiences that are tailored to each of your audiences so you can make an effective pitch for your product and maximize lifetime value.
 
@@ -16,7 +16,7 @@ This allows you to create paywall experiences that are tailored to each of your 
 | Term             | Definition                                                                                                                                                                                                             |
 | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Offering         | The set of Packages, metadata, and an optional paywall UI you can create to remotely control your paywall experience.                                                                                                  |
-| Current Offering | The Offering that is set as "Current" in the RevenueCat Dashboard. We recommend designing your app so that the paywall always shows the Current Offering so that you can remotely control which Offering is presented. |
+| Default Offering | The Offering that is set as "Default" in the RevenueCat Dashboard. We recommend designing your app so that the paywall always shows the Default Offering so that you can remotely control which Offering is presented. |
 | Targeting        | The ability to assign a distinct Offering to a distinct audience of customers based on Targeting Rules you create.                                                                                                     |
 | Targeting Rule   | A collection of conditions that, when they are true for a given customer, will result in that customer matching the rule and being served the corresponding Offering.                                                  |
 | Conditions       | The filters such as App, Country, and App Version that can be used to construct a Targeting Rule.                                                                                                                      |
@@ -30,20 +30,20 @@ Before you setup any Targeting Rules, if you use Offerings, here's how they're r
 
 1. RevenueCat is initialized
 2. Offerings are fetched
-3. Your list of Offerings is returned, along with the identifier of your **Current Offering**
+3. Your list of Offerings is returned, along with the identifier of the **Current Offering** for a given customer
 
-As long as your app is setup to display the Current Offering on your paywall, then you can change that Offering at any time from our Dashboard, or run an Experiment to serve two different Offerings to specific audiences.
+As long as your app is setup to display a customer's Current Offering on your paywall, then you can change the Default Offering that gets provided for a customer at any time from our Dashboard, or run an Experiment to serve two different Offerings to specific audiences.
 
 Once you setup Targeting Rules, you unlock an additional level of customization, because the **Current Offering** that gets returned for each customer will be based on the Rule they qualify for. For example:
 
 1. RevenueCat is initialized
 2. Offerings are fetched
 3. Your list of Offerings is returned, along with the identifier of the Offering for the first rule that the customer matched as the **Current Offering** for that customer
-   1. If the customer does not match any specified rules, the **Current Offering** will be set as your default Offering
-
-> 📘 
-> 
-> Think of your "default Offering" just like your "Current Offering" if you have no Targeting Rules setup. It's the Offering that will get served if no other rules apply.
+   1. If the customer does not match any specified rules, they'll receive the **Default Offering** for your Project.
+  
+> 🚧
+>
+> In December 2023 we began referring to a Project's current Offering as it's default Offering. Learn more [here](https://www.revenuecat.com/docs/displaying-products#fetching-offerings).
 
 When determining which (if any) Targeting Rule a customer matches, we'll assess them from top to bottom as you've ordered them in the Dashboard.
 
