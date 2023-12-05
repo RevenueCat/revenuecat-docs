@@ -13,12 +13,25 @@ This allows you to create paywall experiences that are tailored to each of your 
 > 
 > Targeting is available on Pro, Scale, and Enterprise plans. [Click here](https://app.revenuecat.com/settings/billing) to review your plan and consider upgrading.
 
+[block:embed]
+{
+  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FNLNp_q7_RAQ%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DNLNp_q7_RAQ&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FNLNp_q7_RAQ%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+  "url": "https://www.youtube.com/watch?v=NLNp_q7_RAQ",
+  "title": "Introducing Targeting: Customize Your Offerings for Every Audience",
+  "favicon": "https://www.google.com/favicon.ico",
+  "image": "https://i.ytimg.com/vi/NLNp_q7_RAQ/hqdefault.jpg",
+  "provider": "youtube.com",
+  "href": "https://www.youtube.com/watch?v=NLNp_q7_RAQ",
+  "typeOfEmbed": "youtube"
+}
+[/block]
+
 ## Terminology
 
 | Term             | Definition                                                                                                                                                                                                             |
 | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Offering         | The set of Packages, metadata, and an optional paywall UI you can create to remotely control your paywall experience.                                                                                                  |
-| Default Offering | The Offering that is set as "Default" in the RevenueCat Dashboard. We recommend designing your app so that the paywall always shows the Default Offering so that you can remotely control which Offering is presented. |
+| Default Offering | The Offering that is set as "Default" in the RevenueCat Dashboard for your Project. We recommend designing your app so that the paywall always shows a customer's Current Offering, which will be your Project's Default Offering if no other conditions apply. |
 | Targeting        | The ability to assign a distinct Offering to a distinct audience of customers based on Targeting Rules you create.                                                                                                     |
 | Targeting Rule   | A collection of conditions that, when they are true for a given customer, will result in that customer matching the rule and being served the corresponding Offering.                                                  |
 | Conditions       | The filters such as App, Country, and App Version that can be used to construct a Targeting Rule.                                                                                                                      |
