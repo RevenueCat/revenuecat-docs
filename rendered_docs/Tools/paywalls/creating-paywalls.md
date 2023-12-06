@@ -83,7 +83,8 @@ We support the following variables:
 | price_per_period          | The localized price of a given package with its period length if applicable                             | $39.99/yr         |
 | total_price_and_per_month | The localized price of a given package with its monthly equivalent price if it has one                  | $39.99/yr ($3.33/mo) |
 | sub_price_per_month       | The localized price of a given package converted to a monthly equivalent price                          | $3.33             |
-| sub_duration              | The duration of the subscription; '1 month', '3 months', etc.                                           | 1 month           |
+| sub_duration              | The duration of the subscription; '1 month', '3 months', '1 year', etc.                                 | 1 year            |
+| sub_duration_in_months    | The duration of the subscription in months; '3 months', '12 months', etc.                               | 12 months         |
 | sub_period                | The length of each period of the standard offer on a given package                                      | Monthly           |
 | sub_offer_duration        | The period of the introductory offer on a given package                                                 | 7 days               |
 | sub_offer_duration_2      | The period of the second introductory offer on a given package (Google Play only)                       | 7 days               |
