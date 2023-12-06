@@ -10,7 +10,7 @@ The API reference documentation provides detailed information for each of the cl
 
 <a href="https://sdk.revenuecat.com/android/index.html" target="_blank">Android Reference :fa-arrow-right:</a>
 
-<a href="https://pub.dev/packages/purchases_flutter" target="_blank">Flutter Reference :fa-arrow-right:</a>
+<a href="https://pub.dev/documentation/purchases_flutter/6.5.0/" target="_blank">Flutter Reference :fa-arrow-right:</a>
 
 <a href="https://revenuecat.github.io/react-native-purchases-docs" target="_blank">React Native Reference :fa-arrow-right:</a>
 
