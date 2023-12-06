@@ -135,10 +135,22 @@ You must choose one Offering that is the "Default Offering" - which can easily b
 >
 > The current Offering for a given customer may change based on the experiment they're enrolled in, any targeting rules they match, or the default Offering of your Project. Your Project's default Offering is the Offering that will be served as "current" when no other conditions apply for that customer.
 
-To change the default Offering, navigate to the Offerings tab for your project in the RevenueCat dashboard and click **Make default** next to the Offering you'd like to enable.
+To change the default Offering of your Project, navigate to the Offerings tab for that Project in the RevenueCat dashboard, and find the Offering you'd like to make default. Then, click on the icon in the Actions column of that Offering to reveal the available options, and click **Make Default** to make the change.
 
-![](https://files.readme.io/a6ff351-app.revenuecat.com_projects_85ff18c7_offerings_packages_pkge2ed0611690_attach_3.png "app.revenuecat.com_projects_85ff18c7_offerings_packages_pkge2ed0611690_attach (3).png")
-
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/7508f4b-Screenshot_2023-12-05_at_10.17.25_PM.png",
+        "",
+        ""
+      ],
+      "align": "center"
+    }
+  ]
+}
+[/block]
 
 
 Offerings can be updated at any time, and the changes will go into effect for all users right away.
