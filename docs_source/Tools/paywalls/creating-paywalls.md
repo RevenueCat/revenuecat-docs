@@ -83,7 +83,6 @@ We support the following variables:
 | sub_duration              | The duration of the subscription; '1 month', '3 months', '1 year', etc.                                 | 1 year            |
 | sub_duration_per_month    | The duration of the subscription in months; '3 months', '12 months', etc.                               | 12 months         |
 | sub_period                | The length of each period of the standard offer on a given package                                      | Monthly           |
-| sub_relative_discount     | The discount of a given package when compared with the most expensive offered                           | 33% off           |
 | sub_offer_duration        | The period of the introductory offer on a given package                                                 | 7 days               |
 | sub_offer_duration_2      | The period of the second introductory offer on a given package (Google Play only)                       | 7 days               |
 | sub_offer_price           | The localized price of the introductory offer of a given package                                        | $4.99                |
