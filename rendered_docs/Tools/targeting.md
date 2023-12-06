@@ -1,7 +1,7 @@
 ---
 title: Targeting
 slug: targeting
-hidden: true
+hidden: false
 categorySlug: tools
 order: 999
 ---
