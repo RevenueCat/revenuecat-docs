@@ -5,7 +5,7 @@ excerpt: Guide on how to set up iOS in-app purchase keys.
 hidden: false
 parentDoc: 649983b4c31b2e000a3c1859
 ---
-For RevenueCat to securely validate purchases through Apple Store Kit 2, authenticate and validate [Subscription Offers](https://docs.revenuecat.com/docs/ios-subscription-offers) request with Apple and enable [customer lookup](https://docs.revenuecat.com/docs/customer-lists#find-an-individual-customer) via Order ID for iOS apps you need to upload an in-app purchase key, Key ID and Issuer ID. Find instructions on how to do it below. 
+For RevenueCat to securely validate purchases through Apple Store Kit 2, authenticate and validate [Subscription Offers](https://docs.revenuecat.com/docs/ios-subscription-offers) request with Apple and enable [customer lookup](https://docs.revenuecat.com/docs/customer-lists#find-an-individual-customer) via Order ID for iOS apps, you need to upload an in-app purchase key, and you'll also need to provide an Issuer ID.
 
 ## 1. Generating an In-App Purchase Key
 
