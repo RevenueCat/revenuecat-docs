@@ -64,7 +64,7 @@ From **Project Settings > Apps** in the left menu of the project dashboard, sele
 }
 [/block]
 
-The field **App name** is required to add your app to RevenueCat. To make test and production purchases, the **Bundle ID** (iOS) / **Package Name** (Android) as well as the **Shared Secret** (iOS) / **Service Credentials** (Android) **must be configured**.
+The field **App name** is required to add your app to RevenueCat. To make test and production purchases, the **Bundle ID** (iOS) / **Package Name** (Android) as well as the **Shared Secret** and **In-App Purchase Key**(iOS) / **Service Credentials** (Android) **must be configured**.
 
 > 📘 
 > 
@@ -104,7 +104,7 @@ The rest of the configuration fields can be added later.
 
 ## ▶️ Service Credentials
 
-Service credentials need to be set up for RevenueCat to communicate with the app stores on your behalf. See our guides [App Store Connect Shared Secret](doc:itunesconnect-app-specific-shared-secret), [Play Service Credentials](doc:creating-play-service-credentials), and [Amazon Appstore Shared Secret](doc:amazon-appstore) for more information. 
+Service credentials need to be set up for RevenueCat to communicate with the app stores on your behalf. See our guides [App Store Connect Shared Secret](doc:itunesconnect-app-specific-shared-secret), [App Store In-App Purchase Key](doc:in-app-purchase-key-configuration), [Play Service Credentials](doc:creating-play-service-credentials), and [Amazon Appstore Shared Secret](doc:amazon-appstore) for more information. 
 
 Note that Play service credentials can take up to 36 hours to propagate throughout Google's servers.
 
