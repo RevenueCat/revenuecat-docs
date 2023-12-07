@@ -64,7 +64,7 @@ From **Project Settings > Apps** in the left menu of the project dashboard, sele
 }
 [/block]
 
-The field **App name** is required to add your app to RevenueCat. To make test and production purchases, the **Bundle ID** (iOS) / **Package Name** (Android) as well as the **Shared Secret** and **In-App Purchase Key**(iOS) / **Service Credentials** (Android) **must be configured**.
+The field **App name** is required to add your app to RevenueCat. For iOS apps **In-App Purchase Key**(iOS) is also required. To make test and production purchases, the **Bundle ID** (iOS) / **Package Name** (Android) as well as the **Shared Secret**(iOS) / **Service Credentials** (Android) **must be configured**.
 
 > 📘 
 > 
@@ -72,13 +72,14 @@ The field **App name** is required to add your app to RevenueCat. To make test a
 
 The rest of the configuration fields can be added later. 
 
+
 [block:image]
 {
   "images": [
     {
       "image": [
-        "https://files.readme.io/6b4ca31-Screen_Shot_2022-11-16_at_3.35.46_PM.png",
-        "Screen Shot 2022-11-16 at 3.35.46 PM.png",
+        "https://github.com/RevenueCat/revenuecat-docs/assets/5860245/7ddfb6e9-d730-4440-baba-d94bef820288",
+        "iOS App Creation Form.png",
         1682
       ],
       "align": "center",
