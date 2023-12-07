@@ -5,7 +5,7 @@ excerpt: Guide on how to set up iOS in-app purchase keys.
 hidden: false
 parentDoc: 649983b4c31b2e000a3c1859
 ---
-For RevenueCat to securely authenticate and validate a [Subscription Offer](https://docs.revenuecat.com/docs/ios-subscription-offers) request with Apple, you'll need to upload an in-app purchase key. In order to enable [customer lookup](https://docs.revenuecat.com/docs/customer-lists#find-an-individual-customer) via Order ID for iOS apps, you'll also need to provide an Issuer ID.
+For RevenueCat to securely validate purchases through Apple Store Kit 2, authenticate and validate [Subscription Offers](https://docs.revenuecat.com/docs/ios-subscription-offers) request with Apple and enable [customer lookup](https://docs.revenuecat.com/docs/customer-lists#find-an-individual-customer) via Order ID for iOS apps, you need to upload an in-app purchase key, and you'll also need to provide an Issuer ID.
 
 ## 1. Generating an In-App Purchase Key
 
@@ -33,7 +33,8 @@ In the RevenueCat dashboard, select your iOS app from the **Apps** tab in your p
 
 Within your app settings, under the tab **In-app purchase key configuration**, you'll see an area to upload your In-App Purchase Key .p8 file that you downloaded from App Store Connect.
 
-![](https://files.readme.io/29734b9-app.revenuecat.com_projects_85ff18c7_apps_appefe5647c50_2.png)
+
+![](https://github.com/RevenueCat/revenuecat-docs/assets/5860245/ae091b84-891d-4132-842c-3d35d9c66d4a)
 
 
 
@@ -50,8 +51,7 @@ Copy the Issuer ID, which is now shown at the top of the page, and paste into th
 ![](https://files.readme.io/ab962c9-Screenshot_at_Feb_01_12-02-57.png "Screenshot at Feb 01 12-02-57.png")
 
 
-
-![](https://files.readme.io/6b5df1b-issuer_id.png "issuer_id.png")
+![](https://github.com/RevenueCat/revenuecat-docs/assets/5860245/fdd4e307-8eaa-4bfe-a3e4-56f590106991)
 
 
 
