@@ -107,7 +107,7 @@ You can test the Singular integration end-to-end before going live. It's recomme
 
 ## Add a sandbox SDK key in the RevenueCat dashboard
 
-Before you test the integration, make sure you have a Singular SDK key set in the "Sandbox API key" field in RevenueCat. This is required if you want the integration to trigger for sandbox purchases.
+Before you test the integration, make sure you have a Singular SDK key set in the "SDK key (sandbox)" field in RevenueCat. This is required if you want the integration to trigger for sandbox purchases.
 
 ## Make a sandbox purchase with a new user
 
