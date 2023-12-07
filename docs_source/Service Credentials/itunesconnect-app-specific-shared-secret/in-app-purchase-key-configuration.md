@@ -33,7 +33,8 @@ In the RevenueCat dashboard, select your iOS app from the **Apps** tab in your p
 
 Within your app settings, under the tab **In-app purchase key configuration**, you'll see an area to upload your In-App Purchase Key .p8 file that you downloaded from App Store Connect.
 
-![](https://files.readme.io/29734b9-app.revenuecat.com_projects_85ff18c7_apps_appefe5647c50_2.png)
+
+![](https://github.com/RevenueCat/revenuecat-docs/assets/5860245/ae091b84-891d-4132-842c-3d35d9c66d4a)
 
 
 
@@ -50,8 +51,7 @@ Copy the Issuer ID, which is now shown at the top of the page, and paste into th
 ![](https://files.readme.io/ab962c9-Screenshot_at_Feb_01_12-02-57.png "Screenshot at Feb 01 12-02-57.png")
 
 
-
-![](https://files.readme.io/6b5df1b-issuer_id.png "issuer_id.png")
+![](https://github.com/RevenueCat/revenuecat-docs/assets/5860245/fdd4e307-8eaa-4bfe-a3e4-56f590106991)
 
 
 
