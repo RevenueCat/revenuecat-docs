@@ -6,12 +6,12 @@ hidden: false
 RevenueCat's Paywalls allow you to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
 ## Paywalls are supported in the following SDK versions:
-| RevenueCat SDK           | Version required for Offering Metadata | 
+| RevenueCat SDK           | Version required for Paywalls | 
 | :----------------------- | :--------------------------------------------- |
 | purchases-ios            | 4.26.0 and up                                  |
 | purchases-android        | 7.1.0 and up                                   |
-| react-native-purchases   | 7.4.0-beta.2                                   | 
-| purchases-flutter        | 6.3.0-beta.1                                   | 
+| react-native-purchases   | 7.4.0-beta.3                                   | 
+| purchases-flutter        | 6.3.0-beta.2                                   | 
 
 > ❗️
 > 
@@ -92,11 +92,11 @@ implementation 'com.revenuecat.purchases:purchases-ui:7.1.0'
 
 ## React Native (Beta) Installation
 
-See `7.4.0-beta-.2` [release notes](https://github.com/RevenueCat/react-native-purchases/releases/tag/7.4.0-beta.2)
+See `7.4.0-beta.3` [release notes](https://github.com/RevenueCat/react-native-purchases/releases/tag/7.4.0-beta.3)
 
 ## Flutter (Beta) Installation
 
-See `6.3.0-beta.1` [release notes](https://github.com/RevenueCat/purchases-flutter/releases/tag/6.3.0-beta.1)
+See `6.3.0-beta.2` [release notes](https://github.com/RevenueCat/purchases-flutter/releases/tag/6.3.0-beta.2)
 
 ## Overview
 
