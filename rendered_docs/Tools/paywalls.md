@@ -8,7 +8,7 @@ order: 3
 RevenueCat's Paywalls allow you to remotely configure your entire paywall view without any code changes or app updates. Whether you’re building a new app, exploring new paywall concepts, or diving into experimentation; RevenueCat’s Paywalls make it easy to get started.
 
 ## Paywalls are supported in the following SDK versions:
-| RevenueCat SDK           | Version required for Offering Metadata | 
+| RevenueCat SDK           | Version required for Paywalls | 
 | :----------------------- | :--------------------------------------------- |
 | purchases-ios            | 4.26.0 and up                                  |
 | purchases-android        | 7.1.0 and up                                   |
