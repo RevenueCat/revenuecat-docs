@@ -196,9 +196,9 @@ The OneSignal integration tracks the following events:
 
 # 1. Send device data to RevenueCat
 
-> 📘 Only OneSignal's device-centric API versions supported (9.0 and below)
+> 📘 Only device-centric API versions of OneSignal (versions 9.0 and below) are supported.
 > 
-> Support for OneSignal's user-centric API versions (11.0 and above) coming soon.
+> Support for user-centric API versions of OneSignal (11.0 and above) coming soon.
 
 
 The OneSignal integration requires some device-specific data. RevenueCat will only update users in OneSignal if the below data has been added as [Subscriber Attributes](doc:subscriber-attributes) for the user.
