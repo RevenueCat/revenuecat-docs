@@ -250,10 +250,15 @@ _Applicable to the latest version_
     "42-1": "The time the customer was first seen by RevenueCat.",
     "42-2": "datetime",
     "42-3": "`2023-01-01 03:00:00`",
-    "42-4": ""
+    "42-4": "",
+    "43-0": "`auto_resume_time`\\*",
+    "43-1": "The time when a Play Store subscription would resume after being paused.",
+    "43-2": "datetime",
+    "43-3": "`2023-03-20 03:00:00`",
+    "43-4": "✅"
   },
   "cols": 5,
-  "rows": 43,
+  "rows": 44,
   "align": [
     "left",
     "left",
