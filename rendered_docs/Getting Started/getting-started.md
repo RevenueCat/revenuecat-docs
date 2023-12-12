@@ -12,10 +12,6 @@ This guide will walk you through how to get up and running with subscriptions an
 
 Sign up for a new RevenueCat account [here](https://app.revenuecat.com). 
 
-> 📘 💡 Here's a tip!
-> 
-> We recommend creating a separate RevenueCat account for each app / project you have, especially if you ever intend on selling the app. This will speed up the transfer process, since you can transfer the entire account rather than waiting for RevenueCat Support to transfer individual projects.
-
 ### Organizations / Enterprise
 
 We recommend using a company account when registering for RevenueCat and setting up your app within a project. You'll be able to invite the rest of your team as [collaborators](doc:collaborators) to your project, but **only the project owner can manage billing**. Project collaborators can't manage billing details.
