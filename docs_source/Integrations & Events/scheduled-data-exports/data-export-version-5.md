@@ -20,6 +20,10 @@ We've added `offer` and `offer_type` so that you can measure the performance of 
 
 We've added `first_seen_time` so that you can cohort subscribers by the date they were first seen by RevenueCat. All of RevenueCat's Conversion Rate and Lifetime Value charts use this cohorting definition so you can measure the performance of cohorts of new customers over time.
 
+## Auto resume time
+
+In addition, we've added `auto_resume_time` so that you can track when a paused Play Store subscription will be resumed.
+
 # Full export format
 
 > 📘 
@@ -248,10 +252,15 @@ We've added `first_seen_time` so that you can cohort subscribers by the date the
     "42-1": "The time the customer was first seen by RevenueCat.",
     "42-2": "datetime",
     "42-3": "`2023-01-01 03:00:00`",
-    "42-4": ""
+    "42-4": "",
+    "43-0": "`auto_resume_time`\\*",
+    "43-1": "The time when a Play Store subscription would resume after being paused.",
+    "43-2": "datetime",
+    "43-3": "`2023-03-20 03:00:00`",
+    "43-4": "✅"
   },
   "cols": 5,
-  "rows": 43,
+  "rows": 44,
   "align": [
     "left",
     "left",
