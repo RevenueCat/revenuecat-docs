@@ -72,7 +72,7 @@ Segments allow you to break down the chart totals into underlying data segments.
 | First Purchase Month      | The month that the first purchase (incl. free trials) was recorded for the user (segment option only).                              |
 | Install Month             | The month that the user was first seen by RevenueCat (segment option only).                                                         |
 | Offer                     | The offer that was used for a transaction (if applicable).                                                                          |
-| Offer type                | They type of offer that was used for a transaction (if applicable).                                                                 |
+| Offer type                | The type of offer that was used for a transaction (if applicable).                                                                 |
 | Offering                  | The offering identifier set in RevenueCat.                                                                                          |
 | Product Duration          | The duration of the normal subscription period (not trial or intro period).                                                         |
 | Product                   | The product identifier set in the store.                                                                                            |
