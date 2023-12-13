@@ -19,10 +19,9 @@ Note that this setup takes place on both the Google Play Console and the Google 
 To enable the Developer and Reporting APIs for your Google Cloud Project, you’ll want to do the following:
 1. Go to the [API Console](https://console.developers.google.com/).
 2. From the projects list, select a project or create a new one.
-3. Go to the following pages and click **Enable**:
+3. Go to the following pages and click **Enable** ((This will say **Manage** when it is enabled):
     1. [Google Play Android Developer API page](https://console.cloud.google.com/apis/library/androidpublisher.googleapis.com)
     2. [Google Play Developer Reporting API page](https://console.cloud.google.com/apis/library/playdeveloperreporting.googleapis.com)
-4. Click **Enable**. (This will say **Manage** when it is enabled.)
 
 ![steponeGIFv2](https://github.com/RevenueCat/revenuecat-docs/assets/112121235/97660d3a-b963-4b1e-8be0-d5bc28080b33)
 
