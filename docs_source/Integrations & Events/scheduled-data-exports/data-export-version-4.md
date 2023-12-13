@@ -1,7 +1,7 @@
 ---
 title: Data Export Version 4
 slug: data-export-version-4
-excerpt: Available since June 2023 (latest version)
+excerpt: Available since June 2023
 hidden: false
 ---
 > 👍 

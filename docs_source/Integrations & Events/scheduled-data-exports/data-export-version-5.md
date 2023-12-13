@@ -1,28 +1,30 @@
 ---
-title: Scheduled Data Exports
-slug: scheduled-data-exports
-excerpt: Data deliveries of all of your apps' transaction data (formerly ETL Exports)
+title: Data Export Version 5
+slug: data-export-version-5
+excerpt: Available since December 2023 (latest version)
 hidden: false
 ---
 > 👍 
 > 
 > Scheduled data exports are available to all users signed up after September '23, the legacy Grow and Pro plans, and Enterprise plans. If you're on a legacy Free or Starter plan and want to access this integration, migrate to our new pricing via your [billing settings](https://app.revenuecat.com/settings/billing).
 
-RevenueCat can automatically send data deliveries of all of your apps' transaction data to various cloud storage providers. These are in the form of [gzip compressed](https://en.wikipedia.org/wiki/Gzip) .csv files delivered daily.
+# Version 5 Change Log
 
-# Setup Instructions
+## Newly added fields
 
-- [Amazon S3 Setup ](doc:scheduled-data-exports-s3)
-- [Google Cloud Storage Setup ](doc:scheduled-data-exports-gcp)
+### Measuring Offer usage
 
-# Version Change Log
+We've added `offer` and `offer_type` so that you can measure the performance of your Offers at your desired level of specificity. To learn more about how Offers are tracked, [click here](https://www.revenuecat.com/docs/charts#understanding-offers).
 
-- [Data Export Version 4](https://www.revenuecat.com/docs/data-export-version-4) (Latest)
-- [Data Export Version 3](https://www.revenuecat.com/docs/data-export-version-3)
+### First seen time
 
-# Transaction Format
+We've added `first_seen_time` so that you can cohort subscribers by the date they were first seen by RevenueCat. All of RevenueCat's Conversion Rate and Lifetime Value charts use this cohorting definition so you can measure the performance of cohorts of new customers over time.
 
-_Applicable to the latest version_
+## Auto resume time
+
+In addition, we've added `auto_resume_time` so that you can track when a paused Play Store subscription will be resumed.
+
+# Full export format
 
 > 📘 
 > 
@@ -269,78 +271,7 @@ _Applicable to the latest version_
 }
 [/block]
 
-\*Available only on our most recent export version
 
-> 📘 Re-enable integration to update to latest version
-> 
-> If your exports don't contain all of the columns above, you may be on an older export version. To update to the latest version just delete, and re-add the integration from the RevenueCat dashboard.
+\*Newly added fields for Version 5
 
-## A note on transaction data
-
-All transaction data is based on the store receipts that RevenueCat has received. Receipts often have inconsistencies and quirks which may need to be considered. For example:
-
-- The expiration date of a purchase can be before the purchase date. This is Google's way of invalidating a transaction, for example when Google is unable to bill a user some time after a subscription renews. This doesn’t occur on iOS.
-- If you migrated to RevenueCat, Google subscriptions that were expired for more then 60 days before being migrated will not have transaction histories in export files.
-- Apple and Google do not provide the transaction price directly, so we must rely on historical data for the products that we have. This isn’t 100% accurate in cases where the prices were changed or receipts were imported.
-- Renewal numbers start at 1, even for trials. Trial conversions increase the renewal number.
-- Data is pulled from a snapshot of the current receipt state, this means that the same transaction can be different from one delivery to another if something changed, e.g.refunds, and billing issues. You should recompute metrics for past time periods periodically to take these changes into account.
-
-We try to normalize or at least annotate these quirks as much as possible, but by and large we consider receipts as the sources of truth, so any inconsistencies in the transaction data can always be traced back to the receipt
-
-# Sample queries for RevenueCat measures
-
-You can use the following sample queries (written in Postgresql) as starting points for reproducing common RevenueCat measures.
-
-[block:file]
-[
-  {
-    "language": "pgsql",
-    "name": "Active Trials",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_1.pgsql"
-  },
-  {
-    "language": "pgsql",
-    "name": "Active Subscriptions",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_2.pgsql"
-  },
-  {
-    "language": "pgsql",
-    "name": "Revenue",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_3.pgsql"
-  }
-]
-[/block]
-
-# Sample queries for customized measures
-
-Scheduled Data Exports are a powerful way to add your own customizations on top of the core measures provided by RevenueCat. Check out the following sample queries (written in Postgresql) for some ideas.
-
-[block:file]
-[
-  {
-    "language": "pgsql",
-    "name": "Active Subs by Custom Attribute",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_4.pgsql"
-  },
-  {
-    "language": "pgsql",
-    "name": "Weekly Revenue (starting Monday)",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_5.pgsql"
-  },
-  {
-    "language": "pgsql",
-    "name": "Realized LTV Segments",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_6.pgsql"
-  },
-  {
-    "language": "pgsql",
-    "name": "Active Trials by Grace Period Status",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_7.pgsql"
-  },
-  {
-    "language": "pgsql",
-    "name": "Realized LTV Per Paying Customer by First Purchase Date",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_8.pgsql"
-  }
-]
-[/block]
+To learn more about how to use our transaction data, or get started with sample queries, [click here](https://www.revenuecat.com/docs/scheduled-data-exports).
