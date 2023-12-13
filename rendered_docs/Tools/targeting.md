@@ -3,7 +3,7 @@ title: Targeting
 slug: targeting
 hidden: false
 categorySlug: tools
-order: 999
+order: 6
 ---
 Targeting allows you to create rules for serving distinct audiences their own Offering. Instead of having a single Default Offering that all customers receive, you can instead create a cascading sequence of rules to deliver different Offerings to each audience that you define.
 
