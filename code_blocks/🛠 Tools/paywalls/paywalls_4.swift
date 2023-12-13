@@ -18,7 +18,10 @@ extension ViewController: PaywallViewControllerDelegate {
 
     func paywallViewController(_ controller: PaywallViewController,
                                didFinishPurchasingWith customerInfo: CustomerInfo) {
-
+        // When presenting paywalls manually, it's also
+        // your responsponsibility to dismiss it when desired,
+        // like when a purchase is completed.
+        [controller dismissViewControllerAnimated: true completion:nil];
     }
 
 }
