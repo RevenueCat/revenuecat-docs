@@ -89,7 +89,7 @@ Add the sandbox account credentials that you previously created. (The sandbox ac
 
 # iOS 14+ Only: Testing on the Simulator
 
-Starting from iOS 14, you can test sandbox purchases in the simulator. If you're using a physical device, you can skip this section.
+Starting from iOS 14, you can [test sandbox purchases in the simulator](https://developer.apple.com/documentation/xcode/setting-up-storekit-testing-in-xcode/). If you're using a physical device, you can skip this section.
 
 Testing on the simulator requires one of these SDK versions:
 
@@ -121,7 +121,11 @@ Testing on the simulator requires one of these SDK versions:
 
 ## Step 1: Add a StoreKit Configuration File
 
-Go to **File > New > File...** in the menu bar and select **StoreKit Configuration File**. Save the file in the top-level folder of your project and add it to your targets.
+Go to **File > New > File...** in the menu bar and select **StoreKit Configuration File**.
+
+You can enable the "Sync this file with an app in App Store Connect" checkbox to have the file automatically configured with the in-app purchases or subscriptions already set up in App Store Connect.
+
+Save the file in the top-level folder of your project and add it to your targets.
 
 [block:image]
 {
