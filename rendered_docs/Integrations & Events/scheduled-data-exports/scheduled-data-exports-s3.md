@@ -4,7 +4,7 @@ slug: scheduled-data-exports-s3
 excerpt: Setting up S3 access keys for data transfer
 hidden: false
 categorySlug: integrations
-order: 0
+order: 1
 parentDoc: 649983b4c31b2e000a3c1929
 ---
 To start receiving these deliveries, you'll need the following details:
