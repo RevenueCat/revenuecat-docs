@@ -307,6 +307,11 @@ You can use the following sample queries (written in Postgresql) as starting poi
     "language": "pgsql",
     "name": "Revenue",
     "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_3.pgsql"
+  },
+  {
+    "language": "pgsql",
+    "name": "Subscriber Retention",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_9.pgsql"
   }
 ]
 [/block]
