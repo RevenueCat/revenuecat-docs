@@ -39,12 +39,11 @@ With Performance Summaries, you can subscribe to a weekly recap of your key subs
   "images": [
     {
       "image": [
-        "https://files.readme.io/784c1dc-Screenshot_2023-12-13_at_10.59.09_PM.png",
+        "https://files.readme.io/6dbeb98-Screenshot_2023-12-15_at_12.08.29_PM.png",
         "",
-        "Placeholder image"
+        ""
       ],
-      "align": "center",
-      "caption": "Placeholder image"
+      "align": "center"
     }
   ]
 }
