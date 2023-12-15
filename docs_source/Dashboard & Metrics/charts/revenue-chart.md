@@ -72,10 +72,12 @@ For each period, we measure:
     "2-0": "How are product price changes accounted for in revenue?",
     "2-1": "Once we detect a product price change in a specific country or currency, we’ll begin applying it to new subscribers immediately. We expect that existing subscribers are grandfathered in at the current price, and therefore revenue reporting will be inaccurate if that is not the case.  \nWe recommend creating a new product instead of changing the price on an existing product. [Learn more here](https://www.revenuecat.com/docs/price-changes).",
     "3-0": "What exchange rates are used when converting to USD?",
-    "3-1": "We convert transactions to USD using the exchange rate of the purchased currency on the day of purchase. This may differ from how other sources handle exchange rates. For example, Apple's Sales and Trends reports use a rolling average of the previous month's exchange rates, while their payments to developers are exchanged at or near the time of payment. [More info] (https://developer.apple.com/help/app-store-connect/measure-app-performance/differences-in-reporting-tools)."
+    "3-1": "We convert transactions to USD using the exchange rate of the purchased currency on the day of purchase. This may differ from how other sources handle exchange rates. For example, Apple's Sales and Trends reports use a rolling average of the previous month's exchange rates, while their payments to developers are exchanged at or near the time of payment. [More info] (https://developer.apple.com/help/app-store-connect/measure-app-performance/differences-in-reporting-tools).",
+    "4-0": "Why are Proceeds less than $0 for a period?",
+    "4-1": "Proceeds may be less than $0 for a period if that period contains Stripe transactions that were low enough prices where Stripe's fee for that transaction exceeded its revenue\, resulting in negative proceeds for that transaction. If the negative Proceeds for a period exceed the positive Proceeds from other transactions\, the period's Proceeds will be negative."
   },
   "cols": 2,
-  "rows": 4,
+  "rows": 5,
   "align": [
     "left",
     "left"
