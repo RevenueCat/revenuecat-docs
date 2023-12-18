@@ -21,7 +21,7 @@ An Offering may include:
   "images": [
     {
       "image": [
-        "https://files.readme.io/9869d29-Untitled_11.png",
+        "https://files.readme.io/3b5660c-Untitled_11.png",
         "",
         ""
       ],
@@ -35,7 +35,7 @@ You can set a Default Offering on the RevenueCat Dashboard to be served to all c
 
 # How should I use Offerings on my paywall?
 
-We recommend displaying the **Current Offering** for a given customer on your paywall to ensure you can take advantage of all the remote flexibility of Offerings, which you can [learn how to do here](https://www.revenuecat.com/docs/displaying-products#fetching-offerings).
+We recommend displaying the **Current Offering** for a given customer on your paywall to ensure you can take advantage of all the remote flexibility of Offerings, which you can learn how to do [here](https://www.revenuecat.com/docs/displaying-products#fetching-offerings).
 
 > 📘 Current Offering vs. Default Offering
 > 
