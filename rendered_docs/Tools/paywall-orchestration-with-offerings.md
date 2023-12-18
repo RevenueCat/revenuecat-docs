@@ -4,6 +4,7 @@ slug: offerings-guide
 excerpt: How to use Offerings for remote paywall orchestration
 hidden: false
 categorySlug: tools
+order: 999
 ---
 # What are Offerings?
 
