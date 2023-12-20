@@ -324,6 +324,11 @@ Scheduled Data Exports are a powerful way to add your own customizations on top 
   },
   {
     "language": "pgsql",
+    "name": "Active Subs by Auto Renew Status",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_9.pgsql"
+  },
+  {
+    "language": "pgsql",
     "name": "Weekly Revenue (starting Monday)",
     "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_5.pgsql"
   },
