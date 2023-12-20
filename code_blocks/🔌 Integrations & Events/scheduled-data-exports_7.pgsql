@@ -4,7 +4,7 @@ SELECT
   CASE
     WHEN grace_period_end_time IS NOT NULL THEN 'in_grace_period'
     ELSE 'in_trial_period'
-    end_as period_type,
+    END as period_type,
   COUNT(*) as active_trials
 FROM
   [revenuecat_data_table]
