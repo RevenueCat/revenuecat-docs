@@ -370,6 +370,27 @@ WHERE date(effective_end_time) > [targeted_date]
   AND is_sandbox != 'true'
   AND json_extract_path_text(custom_subscriber_attributes, '[custom_attribute_key].value') = [custom_attribute_value]
 ```
+```pgsql Active Subs by Auto Renew Status
+-- What is my split of Active Subs by auto renew status?
+  
+SELECT
+  CASE 
+    WHEN unsubscribe_detected_at IS NOT NULL THEN 'Set to cancel' 
+    ELSE 'Set to renew' 
+    END) as auto_renew_status,
+  COUNT(*) as active_subscriptions
+FROM
+  [revenuecat_data_table] rc
+  
+WHERE date(effective_end_time) > [targeted_date]
+  AND date(start_time) <= [targeted_date]
+  AND is_trial_period = 'false'
+  AND (effective_end_time IS NULL OR DATE_DIFF('s', start_time, effective_end_time)::float > 0)
+  AND ownership_type != 'FAMILY_SHARED'
+  AND store != 'promotional'
+  AND is_sandbox != 'true'
+  GROUP BY 1
+```
 ```pgsql Weekly Revenue (starting Monday)
 -- What is my weekly revenue, where Monday is set as the start day of the week?
 
@@ -418,7 +439,7 @@ SELECT
   CASE
     WHEN grace_period_end_time IS NOT NULL THEN 'in_grace_period'
     ELSE 'in_trial_period'
-    end_as period_type,
+    END as period_type,
   COUNT(*) as active_trials
 FROM
   [revenuecat_data_table]
