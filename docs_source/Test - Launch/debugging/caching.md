@@ -41,10 +41,10 @@ A user’s app user id is cached on the device, so this value will persist betwe
 
 The latest `CustomerInfo` is automatically fetched and cached when the _Purchases SDK_ is configured and throughout the lifecycle of your app, so in most cases the `getCustomerInfo()` method will return synchronously. It is safe to call `getCustomerInfo()`  as often as needed and is a good idea to call it any time a user accesses premium content.
 
-The SDK will update the cache:
+The SDK will update the cache after:
 
-- after 5 minutes with the app in the foreground
-- after 25 hours with the app in the background
+- 5 minutes with the app in the foreground
+- 25 hours with the app in the background
 - a purchase is made or restored
 
 For faster `customerInfo` updates, we recommed enabling [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) and the `CustomerInfo` [listener](https://www.revenuecat.com/docs/configuring-sdk#advanced-configuration). 
