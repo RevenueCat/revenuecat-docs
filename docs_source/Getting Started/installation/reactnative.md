@@ -76,7 +76,7 @@ We also have a blog post that goes step-by-step into how to make an app with Exp
 [/block]
 # Additional iOS Setup
 
-**Important: ** Make sure that the deployment target for iOS is set to at least 11.0 [as defined here](https://github.com/facebook/react-native#-requirements), both in the project and in the Podfile if you're using Cocoapods. 
+**Important: ** Make sure that the deployment target for iOS is set to at least 13.4 [as defined here](https://github.com/facebook/react-native#-requirements), both in the project and in the Podfile if you're using Cocoapods. 
 
 ## Option 1. Installing with Cocoapods / ExpoKit (with Auto-linking)
 
