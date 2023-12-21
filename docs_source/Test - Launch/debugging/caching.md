@@ -49,7 +49,7 @@ The SDK will update the cache after:
 
 For faster `CustomerInfo` updates, we recommed enabling [Platform Server Notifications](https://www.revenuecat.com/docs/server-notifications) and the `CustomerInfo` [listener](https://www.revenuecat.com/docs/configuring-sdk#advanced-configuration). 
 
-See here for information on the [CustomerInfo's fetchPolicy](https://revenuecat.github.io/purchases-ios-docs/4.19.0/documentation/revenuecat/purchases/customerinfo(fetchpolicy:)/).
+See here for information on the [CustomerInfo's fetchPolicy](https://revenuecat.github.io/purchases-ios-docs/4.31.5/documentation/revenuecat/purchases/customerinfo(fetchpolicy:)/).
 
 The SDK caches this subscription information to reduce your app's reliance on the network, and as such users who unlock entitlements will be able to access them even without an internet connection.  The cache's default behavior is `cachedOrFetched`, which is that the SDK returns the cached data if available (even if stale), or fetches up-to-date data. See here for information on the [SDK's fetchPolicy](https://revenuecat.github.io/purchases-ios-docs/4.19.0/documentation/revenuecat/cachefetchpolicy/).
 
