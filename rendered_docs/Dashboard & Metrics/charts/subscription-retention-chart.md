@@ -82,10 +82,12 @@ For each period, we measure:
     "4-0": "How are incomplete periods displayed in Subscription Retention?",
     "4-1": "The final, incomplete period of a given cohort is indicated with a hashed background.  \n  \nIt shows how many subscriptions are set to renew by the end of the period, taking into account the auto-renewal preference of the subscriptions.",
     "5-0": "How are introductory offers treated in this chart?",
-    "5-1": "Introductory offers are not included in the Subscription Retention chart. A subscription's first purchase date is treated as the date of its first payment of the standard subscription period. This differs from other charts which include introductory offers in the definition of paid subscribers because our methodology for measuring retention requires that all transactions in a given subscription are of a single duration."
+    "5-1": "Introductory offers are not included in the Subscription Retention chart. A subscription's first purchase date is treated as the date of its first payment of the standard subscription period. This differs from other charts which include introductory offers in the definition of paid subscribers because our methodology for measuring retention requires that all transactions in a given subscription are of a single duration.",
+    "6-0": "How does the Subscription Retention chart compare with the Retention report from App Store Connect?",
+    "6-1": "The biggest difference between our chart and App Store Connect's report is that we'll always credit a new payment from the same subscriber on the same product as a renewal of their original subscription, even if it occurs during their Billing Retry period or later. App Store Connect, on the other hand, treats payments during the Billing Retry period or later as new subscriptions.   \n  \nThis may result in discrepancies between the number of subscriptions started in a given period (may be higher in ASC), and the reported retention rates in a given period (may be higher in RC)."
   },
   "cols": 2,
-  "rows": 6,
+  "rows": 7,
   "align": [
     "left",
     "left"
