@@ -4,42 +4,6 @@ slug: targeting
 hidden: false
 ---
 
-ReadMe
-RevenueCat
-v5.1
-ENTERPRISE PROJECT
-Belongs to revenuecat-group
-
-Home
-DEVELOPER DASHBOARD
-My Developers
-PROJECT
-Metrics
-Configuration
-Appearance
-Owlbot AI
-Versions
-Suggested Edits
-24
-DOCUMENTATION
-Landing Page
-Guides
-Reusable Content
-Recipes
-API Reference
-Changelog
-Custom Pages
-
-Guides
-
-Save
-
-
-NEW CATEGORY
-
-Targeting
-Description (optional)
-
 Targeting allows you to create rules for serving distinct audiences their own Offering. Instead of having a single Default Offering that all customers receive, you can instead create a cascading sequence of rules to deliver different Offerings to each audience that you define, or even to schedule new Offerings to be served in the future.
 
 This allows you to create paywall experiences that are tailored to each of your audiences so you can make an effective pitch for your product and maximize lifetime value.
