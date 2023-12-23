@@ -92,9 +92,11 @@ If an identified App User ID restores and the owner of the receipt is anonymous,
 
 ### Google Play on Android
 
-Due to platform limitations, purchases will be transferred as soon as you call `configure` if a user's purchases are already associated with another app user ID.
+On Android SDK versions before 6.9.4, purchases will be transferred as soon as you call `configure` if a user's purchases are already associated with another app user ID.
 
 This may cause unexpected transfers of purchases between app user IDs, especially for apps with optional logins or users with multiple devices. To prevent this behavior, you should wait to call `configure` until you have the appropriate app user ID for your customer.
+
+If you update to v6.9.4 or above, this behavior no longer happens.
 
 ## Transfer if there are no active subscriptions
 
