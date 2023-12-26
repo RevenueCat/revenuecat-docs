@@ -172,7 +172,7 @@ You should only configure the shared instance of _Purchases_ once, usually on ap
 
 See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-sdk) for more information and best practices.
 
-Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
+Make sure you configure _Purchases_ with your public SDK key only. This API key can be found in the API Keys Project settings page. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
 [block:file]
 [
