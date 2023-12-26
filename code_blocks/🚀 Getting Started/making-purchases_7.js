@@ -1,3 +1,4 @@
+// Using Offerings/Packages
 Purchases.purchasePackage(package, ({ productIdentifier, customerInfo }) => {
     if (typeof customerInfo.entitlements.active.my_entitlement_identifier !== "undefined") {
       // Unlock that great "pro" content
@@ -8,8 +9,9 @@ Purchases.purchasePackage(package, ({ productIdentifier, customerInfo }) => {
   }
 );
 
+// -----
+// If you are NOT using Offerings/Packages
 // Note: if you are using purchaseProduct to purchase Android In-app products, an optional third parameter needs to be provided when calling purchaseProduct. You can use the package system to avoid this.
-
 Purchases.purchaseProduct("product_id", ({ productIdentifier, customerInfo }) => {
 }, ({error, userCancelled}) => {
     // Error making purchase
