@@ -1,7 +1,7 @@
 // Using Offerings/Packages
 try {
   const {customerInfo, productIdentifier} = await Purchases.purchasePackage(package);
-  if (typeof purchaseResult.customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
+  if (typeof customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
     // Unlock that great "pro" content
   }
 } catch (e) {
@@ -14,7 +14,7 @@ try {
 
 try {
   const {customerInfo, productIdentifier} = await Purchases.purchaseStoreProduct(productToBuy);
-  if (typeof purchaseResult.customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
+  if (typeof customerInfo.entitlements.active['my_entitlement_identifier'] !== "undefined") {
     // Unlock that great "pro" content
   }
 } catch (e) {
