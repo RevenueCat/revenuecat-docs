@@ -352,7 +352,7 @@ Revenue for Iterable campaign reporting will not be accurate due to refund event
 Iterable provides two event-tracking APIs:
 
 * [Track Purchase API](https://api.iterable.com/api/docs#commerce_trackPurchase): This aggregates all purchase-related events into a single purchase event for tracking overall revenue. However, it does not distinguish between the types of purchase events (like initial purchases, trials, renewals, etc.).
-* [Track Custom Event API](https://api.iterable.com/api/docs#events_track): While it allows for detailed tracking of individual purchase events, it doesn't recognize revenue—revenue tracking is exclusive to the Track Purchase API.
+* [Track Custom Event API](https://api.iterable.com/api/docs#events_track): While it allows for detailed tracking of individual purchase events, it doesn't recognize revenue, revenue tracking is exclusive to the Track Purchase API.
 
 You have the flexibility to use one or both APIs depending on whether you need detailed insights into specific events or an aggregate revenue perspective.
 
