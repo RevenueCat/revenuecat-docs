@@ -356,4 +356,6 @@ Iterable provides two event-tracking APIs:
 
 You have the flexibility to use one or both APIs depending on whether you need detailed insights into specific events or an aggregate revenue perspective.
 
+Ensure [Allow new custom events into the system](https://support.iterable.com/hc/en-us/articles/115002065083-Managing-Custom-Events-#event-handling-for-newly-encountered-events) is enabled in your Iterable project settings, or manually add all the event names you want to track as custom events to the Iterable project settings.
+
 Learn more about tracking events with this integration in Iterable RevenueCat's [documentation](https://support.iterable.com/hc/en-us/articles/5167223724436-RevenueCat-Iterable-Integration-#in-iterable) or Iterable's [tracking docs](https://support.iterable.com/hc/en-us/articles/205480285-Tracking-Conversions-Purchases-and-Revenue-#step-4-track-custom-events-and-purchases).
