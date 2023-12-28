@@ -174,30 +174,30 @@ You should only configure the shared instance of _Purchases_ once, usually on ap
 
 See our guide on [Configuring SDK](https://docs.revenuecat.com/docs/configuring-sdk) for more information and best practices.
 
-Make sure you configure _Purchases_ with your public SDK key only. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
+Make sure you configure _Purchases_ with your public SDK key only. This API key can be found in the API Keys Project settings page. You can read more about the different API keys available in our [Authentication guide](doc:authentication).
 
 ```swift 
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
-// on macOS and watchOS use `applicationDidFinishLaunching:` 
+// on macOS and watchOS use `applicationDidFinishLaunching:`
 
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     Purchases.logLevel = .debug
-    Purchases.configure(withAPIKey: <revenuecat_api_key>, appUserID: <app_user_id>)
+    Purchases.configure(withAPIKey: <revenuecat_project_apple_api_key>, appUserID: <app_user_id>)
 
 }
 ```
 ```objectivec 
 // on iOS and tvOS, use `application:didFinishLaunchingWithOptions:`
-// on macOS and watchOS use `applicationDidFinishLaunching:` 
+// on macOS and watchOS use `applicationDidFinishLaunching:`
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+
     RCPurchases.logLevel = RCLogLevelDebug;
-    [RCPurchases configureWithAPIKey:@<revenuecat_api_key> appUserID:<app_user_id>];
-    
+    [RCPurchases configureWithAPIKey:@<revenuecat_project_apple_api_key> appUserID:<app_user_id>];
+
     return YES;
 }
 ```
@@ -207,7 +207,7 @@ class MainApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         Purchases.logLevel = LogLevel.DEBUG
-        Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())
+        Purchases.configure(PurchasesConfiguration.Builder(this, <revenuecat_project_google_api_key>).build())
     }
 }
 
@@ -221,7 +221,7 @@ productFlavors {
 
     google {
         buildConfigField "String", "STORE", "\"google\""
-    }       
+    }
 }
 
 ///...
@@ -230,11 +230,11 @@ class MainApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         Purchases.logLevel = LogLevel.DEBUG
-          
+
         if (BuildConfig.STORE.equals("amazon")) {
-            Purchases.configure(AmazonConfiguration.Builder(this, <public_amazon_sdk_key>).build())
+            Purchases.configure(AmazonConfiguration.Builder(this, <revenuecat_project_amazon_api_key>).build())
         } else if (BuildConfig.STORE.equals("google")) {
-            Purchases.configure(PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build())
+            Purchases.configure(PurchasesConfiguration.Builder(this, <revenuecat_project_google_api_key>).build())
         }
     }
 }
@@ -246,11 +246,11 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Purchases.setLogLevel(LogLevel.DEBUG);
-        Purchases.configure(new PurchasesConfiguration.Builder(this, <public_google_sdk_key>).build());
+        Purchases.configure(new PurchasesConfiguration.Builder(this, <revenuecat_project_google_api_key>).build());
     }
 }
 
-// If you're building for the Amazon Appstore, 
+// If you're building for the Amazon Appstore,
 // click the Kotlin tab to see how to set up flavors in your build.gradle:
 ///...
 
@@ -259,15 +259,15 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Purchases.setLogLevel(LogLevel.DEBUG);
-      
+
         PurchasesConfiguration.Builder builder = null;
-      
+
         if (BuildConfig.STORE.equals("amazon")) {
-            builder = new AmazonConfiguration.Builder(this, <public_amazon_sdk_key>);
+            builder = new AmazonConfiguration.Builder(this, <revenuecat_project_amazon_api_key>);
         } else if (BuildConfig.STORE.equals("google")) {
-            builder = new PurchasesConfiguration.Builder(this, <public_google_sdk_key>);
+            builder = new PurchasesConfiguration.Builder(this, <revenuecat_project_google_api_key>);
         }
-      
+
         Purchases.configure(builder.build());
     }
 }
@@ -279,17 +279,17 @@ import 'dart:io' show Platform;
 
 Future<void> initPlatformState() async {
   await Purchases.setDebugLogsEnabled(true);
-  
+
   PurchasesConfiguration configuration;
   if (Platform.isAndroid) {
-    configuration = PurchasesConfiguration(<public_google_sdk_key>);
-    if (buildingForAmazon) { 
+    configuration = PurchasesConfiguration(<revenuecat_project_google_api_key>);
+    if (buildingForAmazon) {
       // use your preferred way to determine if this build is for Amazon store
       // checkout our MagicWeather sample for a suggestion
-      configuration = AmazonConfiguration(<public_amazon_sdk_key>);
+      configuration = AmazonConfiguration(<revenuecat_project_amazon_api_key>);
     }
   } else if (Platform.isIOS) {
-    configuration = PurchasesConfiguration(<public_ios_sdk_key>);
+    configuration = PurchasesConfiguration(<revenuecat_project_apple_api_key>);
   }
   await Purchases.configure(configuration);
 }
@@ -300,19 +300,19 @@ import { Platform } from 'react-native';
 //...
 
 export default class App extends React.Component {
- 
+
   componentDidMount() {
     Purchases.setLogLevel(LOG_LEVEL.VERBOSE);
-    
+
     if (Platform.OS === 'ios') {
-       Purchases.configure({apiKey: <public_ios_sdk_key>});
+       Purchases.configure({apiKey: <revenuecat_project_apple_api_key>});
     } else if (Platform.OS === 'android') {
-       Purchases.configure({apiKey: <public_google_sdk_key>});
-      
+       Purchases.configure({apiKey: <revenuecat_project_google_api_key>});
+
       // OR: if building for Amazon, be sure to follow the installation instructions then:
-       Purchases.configure({ apiKey: <public_amazon_sdk_key>, useAmazon: true });
+       Purchases.configure({ apiKey: <revenuecat_project_amazon_api_key>, useAmazon: true });
     }
-    
+
   }
 }
 ```
@@ -334,11 +334,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
   Purchases.setLogLevel(LOG_LEVEL.DEBUG);
   if (window.cordova.platformId === 'ios') {
-    Purchases.configure(<public_ios_sdk_key>);
+    Purchases.configure(<revenuecat_project_apple_api_key>);
   } else if (window.cordova.platformId === 'android') {
-    Purchases.configure(<public_google_sdk_key>);
+    Purchases.configure(<revenuecat_project_google_api_key>);
     // OR: if building for Amazon, be sure to follow the installation instructions then:
-    await Purchases.configure({apiKey: <public_amazon_sdk_key>, useAmazon: true});
+    await Purchases.configure({apiKey: <revenuecat_project_amazon_api_key>, useAmazon: true});
   }
 }
 ```
