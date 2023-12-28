@@ -347,3 +347,13 @@ Below are sample JSONs that are delivered to Iterable for events.
 ## Refunds
 
 Revenue for Iterable campaign reporting will not be accurate due to refund events. You can build custom workflows around a "refund" event and independently calculate the total revenue refunded for your campaigns.
+
+## Purchase event tracking
+Iterable provides two event-tracking APIs:
+
+* [Track Purchase API](https://api.iterable.com/api/docs#commerce_trackPurchase): This aggregates all purchase-related events into a single purchase event for tracking overall revenue. However, it does not distinguish between the types of purchase events (like initial purchases, trials, renewals, etc.).
+* [Track Custom Event API](https://api.iterable.com/api/docs#events_track): While it allows for detailed tracking of individual purchase events, it doesn't recognize revenue—revenue tracking is exclusive to the Track Purchase API.
+
+You have the flexibility to use one or both APIs depending on whether you need detailed insights into specific events or an aggregate revenue perspective.
+
+Learn more about tracking events with this integration in Iterable RevenueCat's [documentation](https://support.iterable.com/hc/en-us/articles/5167223724436-RevenueCat-Iterable-Integration-#in-iterable) or Iterable's [tracking docs](https://support.iterable.com/hc/en-us/articles/205480285-Tracking-Conversions-Purchases-and-Revenue-#step-4-track-custom-events-and-purchases).
