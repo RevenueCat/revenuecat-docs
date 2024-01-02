@@ -25,7 +25,7 @@ You can also click **Export chart CSV** to receive an export of all metrics by d
 {
   "type": "info",
   "title": "Data takes 24 hours to appear",
-  "body": "The results refresher runs once every 24 hours.\n \nIf you're not seeing any data or are seeing unexpected results, try:\n- **Ensuring each product that is a part of the experiment has been purchased at least once**\n- **Waiting another 24 hours until the model can process more data**\n\nWhen you stop an experiment, the results will continue to be updated for a full year to capture any additional subscription events, and allow you to see how your Realized LTV matures for each variant over time."
+  "body": "The results refresher runs once every 24 hours.\n \nIf you're not seeing any data or are seeing unexpected results, try:\n- **Ensuring each product that is a part of the experiment has been purchased at least once**\n- **Waiting another 24 hours until the model can process more data**\n\nWhen you stop an experiment, the results will continue to be updated for the next 400 days to capture any additional subscription events, and allow you to see how your Realized LTV matures for each variant over time."
 }
 [/block]
 # Customer journey tables
