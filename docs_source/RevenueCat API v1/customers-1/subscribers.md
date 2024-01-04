@@ -46,7 +46,7 @@ If the provided `app_user_id` exists, the response will contain the latest purch
     "9-0": "`other_purchases`",
     "9-1": "Deprecated. See `non_subscriptions`",
     "10-0": "`subscriber_attributes`",
-    "10-1": "A dictionary of subscriber attribute keys to [Subscriber Attribute objects](ref:subscribers#the-subscriber-attribute-object). **Only included in requests made with secret keys.**  \n  \nFor more details on subscriber attributes, see our [Subscriber Attributes](doc:subscriber-attributes) guide."
+    "10-1": "A dictionary of subscriber attribute keys to [Subscriber Attribute objects](ref:subscribers#the-subscriber-attribute-object). **Only included in requests made with secret keys.**  \n  \nFor more details on subscriber attributes, see our [Subscriber Attributes](doc:subscriber-attributes) guide.",
     "11-0": "`experiment`",
     "11-1": "[Experiment object](ref:subscribers#the-experiment-object)."
   },
