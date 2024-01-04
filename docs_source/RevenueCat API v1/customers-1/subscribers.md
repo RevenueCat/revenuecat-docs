@@ -132,12 +132,19 @@ If the provided `app_user_id` exists, the response will contain the latest purch
 }
 [/block]
 
+## The Experiment object:
+
+| Attribute | Description                                                                                                                                  |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`      | The identifier of the Experiment that the Subscriber was or is enrolled in.                                                                  |
+| `variant` | The variant of the Experiment that the Subscriber was or is assigned to, where `a` represents the Control, and `b` represents the Treatment. |
+
 ## The Subscriber Attribute object:
 
-| Attribute       | Description                                                |    |
-| :-------------- | :--------------------------------------------------------- | :- |
-| `value`         | The string value of the attribute.                         |    |
-| `updated_at_ms` | The Unix timestamp of when the attribute was last updated. |    |
+| Attribute       | Description                                                |
+| :-------------- | :--------------------------------------------------------- |
+| `value`         | The string value of the attribute.                         |
+| `updated_at_ms` | The Unix timestamp of when the attribute was last updated. |
 
 > 🚧 Secret API Key Required For Subscriber Attributes
 > 
