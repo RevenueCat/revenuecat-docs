@@ -151,11 +151,13 @@ The results from your experiment can also be exported in this table format using
     "1-1": "There are many potential reasons for this, but the two most common occur when (1) there are areas of your app that serve products outside of the Current Offering returned by RevenueCat for a given customer, or (2) the offered Subscription Group on the App Store contains additional products outside of that variant's Offering.  \n  \nFor the first case, please check and confirm that all places where you serve Products in your app are relying on the Current Offering from RevenueCat to determiner what to display.  \n  \nFor the second case, we recommend creating new Subscription Groups on the App Store for each Offering so that a customer who purchases from that Offering will only have that same set of options to select from one when considering changing or canceling their subscription from Subscription Settings on iOS.",
     "2-0": "When I end an Experiment, what Offering will be served to the customers who were enrolled in that Experiment?",
     "2-1": "When an Experiment is ended, all customers previously enrolled in it will be served the Default Offering the next time they reach a paywall in your app.",
-    "3-0": "How can I review the individual transactions that have occurred in my experiment?",
-    "3-1": "Our [Scheduled Data Exports](https://www.revenuecat.com/docs/scheduled-data-exports) include the experiment enrollment of each subscriber in the reported transactions, and by subscribing to them you can receive daily exports of all of your transactions to analyze the experiment results further."
+    "3-0": "How can I review the individual customers who were enrolled in my experiment?",
+    "3-1": "When using the Get or Create Subscriber endpoint you'll be able to see if an individual subscriber was enrolled in an experiment, and which variant they were assigned to, and can then pass that fact to other destinations like an analytics provider like Amplitude & Mixpanel, or your own internal database.",
+    "4-0": "How can I review the individual transactions that have occurred in my experiment?",
+    "4-1": "Our [Scheduled Data Exports](https://www.revenuecat.com/docs/scheduled-data-exports) include the experiment enrollment of each subscriber in the reported transactions, and by subscribing to them you can receive daily exports of all of your transactions to analyze the experiment results further."
   },
   "cols": 2,
-  "rows": 4,
+  "rows": 5,
   "align": [
     "left",
     "left"
