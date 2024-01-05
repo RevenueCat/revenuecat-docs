@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity implements PaywallResultHand
         launcher = new PaywallActivityLauncher(this, this);
     }
 
-    private void performMagic() {
+    private void launchPaywallActivity() {
         // This will launch the paywall only if the user doesn't have the given entitlement id active.
         launcher.launchIfNeeded(requiredEntitlementIdentifier);
         // or if you want to launch it without any conditions
