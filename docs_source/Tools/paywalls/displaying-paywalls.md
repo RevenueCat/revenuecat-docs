@@ -130,6 +130,11 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
     "language": "kotlin",
     "name": "Manually (Activity)",
     "file": "code_blocks/🛠 Tools/paywalls/paywalls_4.kt"
+  },
+  {
+    "language": "java",
+    "name": "Manually (Activity) (Java)",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_activity_java.java"
   }
 ]
 [/block]
