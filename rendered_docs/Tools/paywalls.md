@@ -98,7 +98,7 @@ See `7.15.0-rc.1` [release notes](https://github.com/RevenueCat/react-native-pur
 
 ## Flutter (Beta) Installation
 
-See `6.6.0-beta.3` [release notes](https://github.com/RevenueCat/purchases-flutter/releases/tag/6.6.0-beta.3)
+See `6.15.0-beta.4` [release notes](https://github.com/RevenueCat/purchases-flutter/releases/tag/6.15.0-beta.4)
 
 ## Overview
 
