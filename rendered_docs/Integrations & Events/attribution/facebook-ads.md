@@ -54,7 +54,7 @@ Purchases.configure(withAPIKey: "public_sdk_key")
 Purchases.shared.attribution.collectDeviceIdentifiers()
 
 // REQUIRED: Set the Facebook anonymous Id
-Purchases.shared.attribution.setFBAnonymousID(FBSDKCoreKit.AppEvents.anonymousID)
+Purchases.shared.attribution.setFBAnonymousID(FBSDKCoreKit.AppEvents.shared.anonymousID)
 
 // Optionally set additional user data
 Purchases.shared.attribution.setEmail("test@example.com")
