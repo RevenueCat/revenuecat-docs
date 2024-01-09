@@ -7,6 +7,12 @@ categorySlug: offers-lifecycle-guidance
 order: 1
 parentDoc: 649983b4c31b2e000a3c18f5
 ---
+> 🚧 Google Promo Codes will be treated as regular purchases
+>
+> Due to limitations in Google's Play Billing Library 5, we are currently unable to detect when promo codes are redeemed to purchase a subscription.
+>
+> All purchases will be reflected in RevenueCat at full-price.
+
 [block:callout]
 {
   "type": "success",
