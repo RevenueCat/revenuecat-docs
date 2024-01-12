@@ -214,7 +214,7 @@ There are several ways to present paywalls:
   {
     "language": "typescript",
     "name": "RevenueCatUI.presentPaywall",
-    "file": "code_blocks/🛠 Tools/paywalls/paywalls_rn_1.tsx"
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_rn_1.ts"
   },
   {
     "language": "typescript",
