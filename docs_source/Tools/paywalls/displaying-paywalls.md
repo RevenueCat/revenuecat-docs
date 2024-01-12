@@ -206,7 +206,7 @@ If you need more control over your font preferences, you can create your own `Fo
 There are several ways to present paywalls:
 
 - Using `RevenueCatUI.presentPaywall`: this will display a paywall when invoked.
-- Using`RevenueCatUI.presentPaywallIfNeeded`: this will present a paywall only if the customer does not have an unlocked entitlement.
+- Using `RevenueCatUI.presentPaywallIfNeeded`: this will present a paywall only if the customer does not have an unlocked entitlement.
 - Manually presenting `<RevenueCatUI.Paywall>`: this gives you more flexibility on how the paywall is presented.
 
 [block:file]
@@ -249,7 +249,22 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
 
 # Flutter
 
-...
+## How to display a fullscreen Paywall in your app
+
+There are two ways to present paywalls:
+
+- Using `RevenueCatUI.presentPaywall`: this will display a paywall when invoked.
+- Using `RevenueCatUI.presentPaywallIfNeeded`: this will present a paywall only if the customer does not have an unlocked entitlement.
+
+[block:file]
+[
+  {
+    "language": "typescript",
+    "name": "RevenueCatUI.presentPaywall",
+    "file": "code_blocks/🛠 Tools/paywalls/paywalls_flutter_1.dart"
+  }
+]
+[/block]
 
 # Default Paywall
 
