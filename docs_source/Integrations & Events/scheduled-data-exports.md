@@ -17,7 +17,8 @@ RevenueCat can automatically send data deliveries of all of your apps' transacti
 
 # Version Change Log
 
-- [Data Export Version 4](https://www.revenuecat.com/docs/data-export-version-4) (Latest)
+- [Data Export Version 5] (https://www.revenuecat.com/docs/data-export-version-5) (Latest)
+- [Data Export Version 4](https://www.revenuecat.com/docs/data-export-version-4)
 - [Data Export Version 3](https://www.revenuecat.com/docs/data-export-version-3)
 
 # Transaction Format
@@ -271,9 +272,9 @@ _Applicable to the latest version_
 
 \*Available only on our most recent export version
 
-> 📘 Re-enable integration to update to latest version
+> 📘 Updating to the latest version
 > 
-> If your exports don't contain all of the columns above, you may be on an older export version. To update to the latest version just delete, and re-add the integration from the RevenueCat dashboard.
+> If you're on an older version of our exports, navigate to your export in the Dashboard to see the prompt to updating to the latest version. Be sure to review the documented changes of all prior versions (linked at the top of this doc) before updating to be certain your data ingestion pipeline is setup to handle all changes.
 
 ## A note on transaction data
 
