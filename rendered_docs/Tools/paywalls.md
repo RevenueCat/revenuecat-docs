@@ -12,8 +12,8 @@ RevenueCat's Paywalls allow you to remotely configure your entire paywall view w
 |:--------------------------|:------------------------------|
 | purchases-ios             | 4.26.0 and up                 |
 | purchases-android         | 7.1.0 and up                  |
-| react-native-purchases-ui | 7.15.0-rc.1                   | 
-| purchases-flutter         | 6.6.0-beta.3                  |
+| react-native-purchases-ui | 7.15.0 and up                 | 
+| purchases-flutter         | 6.15.0 and up                 |
 
 > ❗️
 > 
@@ -92,13 +92,27 @@ implementation 'com.revenuecat.purchases:purchases-ui:7.1.0'
 > It is safe to release app updates with it. We guarantee that paywalls will continue to work and any changes will always be backwards compatible.
 > They are stable, but migration steps may be required in the future. We'll do our best to minimize any changes you have to make.
 
-## React Native (Release Candidate) Installation
+## React Native Installation
 
-See `7.15.0-rc.1` [release notes](https://github.com/RevenueCat/react-native-purchases/releases/tag/7.15.0-rc.1)
+- Update your `package.json` to include `react-native-purchases-ui`:
+```json
+{
+  "dependencies": {
+    "react-native-purchases": "7.15.0",
+    "react-native-purchases-ui": "7.15.0"
+  }
+}
+```
 
-## Flutter (Beta) Installation
+## Flutter Installation
 
-See `6.15.0-beta.4` [release notes](https://github.com/RevenueCat/purchases-flutter/releases/tag/6.15.0-beta.4)
+- Add `purchases-ui-flutter` in your `pubspec.yaml`:
+```yaml
+dependencies:
+  purchases_flutter: 6.15.0
+  purchases_ui_flutter: 6.15.0
+```
+- For Android, you need to change your `MainActivity` to subclass `FlutterFragmentActivity` instead of `FlutterActivity`.
 
 ## Overview
 
