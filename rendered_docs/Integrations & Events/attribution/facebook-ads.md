@@ -133,10 +133,10 @@ As noted above, you'll need to disable all client side tracking of revenue to pr
 
 ```swift 
 // disable automatic tracking
-FBSDKCoreKit.Settings.isAutoLogAppEventsEnabled = false
+FBSDKCoreKit.Settings.shared.isAutoLogAppEventsEnabled = false
 
 // optional: call activateApp
-FBSDKCoreKit.AppEvents.activateApp()
+FBSDKCoreKit.AppEvents.shared.activateApp()
 ```
 
 
