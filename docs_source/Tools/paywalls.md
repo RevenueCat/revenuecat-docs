@@ -102,6 +102,11 @@ implementation 'com.revenuecat.purchases:purchases-ui:7.1.0'
 }
 ```
 
+> ❗️
+> 
+> `PaywallFooterContainerView` only works correctly when phone is in portrait mode.
+> Landscape mode support for `PaywallFooterContainerView` is coming soon.
+
 ## Flutter Installation
 
 - Add `purchases-ui-flutter` in your `pubspec.yaml`:
