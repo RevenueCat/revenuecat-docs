@@ -508,27 +508,15 @@ async function presentPaywallIfNeeded() {
 ```
 ```typescript RevenueCatUI.Paywall
 import React from 'react';
+import { View } from 'react-native';
+
 import RevenueCatUI from 'react-native-purchases-ui';
 
-import { StyleSheet, View } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import RootStackParamList from '../RootStackParamList';
-
-type Props = NativeStackScreenProps<RootStackParamList, 'Paywall'>;
-
-const PaywallScreen: React.FC<Props> = () => {
-    const styles = StyleSheet.create({
-        flex1: {
-            flex: 1,
-        },
-    });
-
-    return (
-        <View style={styles.flex1}>
-            <RevenueCatUI.Paywall />
-        </View>
-    );
-};
+return (
+    <View style={{ flex: 1 }}>
+        <RevenueCatUI.Paywall />
+    </View>
+);
 ```
 
 ## How to display a footer Paywall on your custom paywall
@@ -546,23 +534,17 @@ This is all remotely configured and RevenueCatUI handles all the intro offer eli
 
 ```typescript RevenueCatUI.PaywallFooterContainerView
 import React from 'react';
+import { Text } from 'react-native';
+
 import RevenueCatUI from 'react-native-purchases-ui';
 
-import { Text } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import RootStackParamList from '../RootStackParamList';
-
-type Props = NativeStackScreenProps<RootStackParamList, 'FooterPaywall'>;
-
-const FooterPaywallScreen: React.FC<Props> = () => {
-    return (
-        <RevenueCatUI.PaywallFooterContainerView style={{ backgroundColor: '#f8f8f8' }}>
-            <Text>
-                Your Custom Paywall Design
-            </Text>
-        </RevenueCatUI.PaywallFooterContainerView>
-    );
-};
+return (
+    <RevenueCatUI.PaywallFooterContainerView style={{ backgroundColor: '#f8f8f8' }}>
+        <Text>
+            Your Custom Paywall Design
+        </Text>
+    </RevenueCatUI.PaywallFooterContainerView>
+);
 ```
 
 # Flutter
