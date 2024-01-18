@@ -15,7 +15,7 @@ RevenueCat provides a backend and a wrapper around StoreKit and Google Play Bill
 
 We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the OpenUPM registry, or as a `.unitypackage`.
 
-## Install using OpenUPM
+## Option 1 (recommended): Install using OpenUPM
   
 1. First you need to import the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) plugin into your project if you haven't already. This plugin will add all the Android and iOS dependencies automatically when building your project. To do this, you can:
    - Download the `external-dependency-manager-latest.unitypackage` file from the root of the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) repo.
@@ -41,7 +41,7 @@ We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the Ope
 }
 [/block]
 
-## Import the Purchases Unity package
+## Option 2: Import the Purchases Unity package
 
 Download the latest version of [**Purchases.unitypackage**](https://github.com/RevenueCat/purchases-unity/releases/latest/download/Purchases.unitypackage).
 
