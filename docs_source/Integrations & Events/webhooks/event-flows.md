@@ -235,9 +235,9 @@ Immediate changes occur:
   "images": [
     {
       "image": [
-        "https://files.readme.io/64d9f5b-upgrade.png",
+        "https://github.com/RevenueCat/revenuecat-docs/assets/14286938/461fc856-60c5-4a9b-b568-22ef7295e212",
         null,
-        "upgrade flow"
+        "immediate product change flow"
       ],
       "align": "center",
       "sizing": "500px"
@@ -245,8 +245,6 @@ Immediate changes occur:
   ]
 }
 [/block]
-
-
 
 ## Product Change at Period End
 
@@ -263,9 +261,9 @@ Changes at period end occur:
   "images": [
     {
       "image": [
-        "https://files.readme.io/ffd1487-downgrade.png",
+        "https://github.com/RevenueCat/revenuecat-docs/assets/14286938/6441cc2b-aef9-4c45-8477-e5154829756a",
         null,
-        "downgrade flow"
+        "product change at end of period flow"
       ],
       "align": "center",
       "sizing": "500px"
