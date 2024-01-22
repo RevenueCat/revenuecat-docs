@@ -142,7 +142,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 Paywalls displayed with `Paywall` will have a close button on the presented sheet.
 However, a `PaywallDialog` will not have a close button by default. This gives you full control over how to navigate to and from your `PaywallDialog`. You can push this to the existing navigation stack or display it in a sheet with a custom dismiss button using Android's navigation components and fragments.
 
-If desired, you can pass `shoulDisplayDismissButton: true` when creating `PaywallView` to display a close button automatically.
+If desired, you can use `PaywallOptions.Builder`'s `setShouldDisplayDismissButton(true)` method when creating a `Paywall` to display a close button automatically.
 
 ## How to display a footer Paywall on your custom paywall
 
