@@ -223,15 +223,11 @@ Manually save the text of the private key in a file called `SubscriptionKey_XXXX
 We only accept files smaller than 512B. We recommend utilizing an editor such as Visual Studio Code when creating your .p8 file. 
 
 ## Step 3: Upload your file to RevenueCat
-This file can now be uploaded to the RevenueCat dashboard under your iOS app settings page → Storekit Subscription Offer Key.
-
-<img width="904" alt="Upload Storekit Subscription Offer Key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/e91c1d44-9036-446b-86c5-62f707b9e208">
-
-Be sure to copy and paste over your key ID from Xcode to the `Key ID` box.
+This file can now be uploaded to the RevenueCat dashboard under your iOS app settings page → Storekit Subscription Offer Key. Be sure to copy and paste over your key ID from Xcode to the `Key ID` box.
 
 <img width="898" alt="Add key ID" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/44dfcdcb-ccc0-46a3-80e6-68b887f68f38">
 
-Don't forget to click 'Save Changes' in the upper right after you added your key ID.
+Don't forget to click 'Save Changes' in the upper right.
 
 > 👍 You did it!
 > 
