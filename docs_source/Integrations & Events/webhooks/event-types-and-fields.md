@@ -40,7 +40,7 @@ RevenueCat sends webhooks in response to events that occur in your app. Here the
     "2-5": "✅",
     "2-6": "❌",
     "3-0": "`CANCELLATION`",
-    "3-1": "A subscription or non-renewing purchase has been cancelled or refunded. Note that in the event of refunds, a subscription's auto-renewal setting may still be active. See [cancellation reasons](https://www.revenuecat.com/docs/event-types-and-fields#cancellation-and-expiration-reasons) for more details.",
+    "3-1": "A subscription or non-renewing purchase has been cancelled or refunded. Note that in the event of refunds, a subscription's auto-renewal setting may still be active. See [cancellation reasons](https://www.revenuecat.com/docs/event-types-and-fields#cancellation-and-expiration-reasons) for more details. This event won't be sent if there's refund corresponding to a subscription period that is not the latest one.",
     "3-2": "✅",
     "3-3": "✅",
     "3-4": "✅",
