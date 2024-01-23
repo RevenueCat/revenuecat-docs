@@ -482,7 +482,7 @@ There are several ways to present paywalls:
 - Manually presenting `<RevenueCatUI.Paywall>`: this gives you more flexibility on how the paywall is presented.
 
 ```typescript RevenueCatUI.presentPaywall
-import RevenueCatUI, { PAYWALL_RESULT } from "../react-native-purchases-ui";
+import RevenueCatUI, { PAYWALL_RESULT } from "react-native-purchases-ui";
 
 async function presentPaywall(): Promise<boolean> {
     const paywallResult: PAYWALL_RESULT = await RevenueCatUI.presentPaywall();
