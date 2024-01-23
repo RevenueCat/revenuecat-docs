@@ -209,7 +209,7 @@ Go to your app's configuration page in your RevenueCat project settings (**Proje
 For sandbox and production [subscription offers](doc:ios-subscription-offers), they are signed using the [In-App Key](doc:in-app-purchase-key-configuration). However, when using a StoreKit Configuration file, the key used to sign offers must be exported from Xcode directly.
 
 ## Step 1: Finding your Subscription Offers Key
-Open the  `.storekit` file where the promotional offers are configured, and go to Editor → Subscription Offers Key.
+Open the  `.storekit` file where the subscriptions offers are configured, and go to Editor → Subscription Offers Key.
 <img width="505" alt="Find Subscription Offers Key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/25ec7b3e-312d-46e1-afb4-549714da9487">
 
 After selecting 'Subscription Offers Key', you will see your key ID and private key. 
@@ -218,7 +218,7 @@ After selecting 'Subscription Offers Key', you will see your key ID and private 
 Note that the private key stored in the “.storekit” file is unique per file and Xcode allows you to re-generate the key for a given file. If you re-generate your key, be sure to follow these steps again to upload your new key to RevenueCat.
 
 ## Step 2: Save your private key as a .p8 file
-You will notice that there is no option to download the key. Manually save the text of the key in a file called `SubscriptionKey_XXXXXX.p8` where `XXXXXX` is the key ID. Following this example, the file would be named `SubscriptionKey_BD3A7A04.p8`.
+Manually save the text of the private key in a file called `SubscriptionKey_XXXXXX.p8` where `XXXXXX` is the key ID. Following this example, the file would be named `SubscriptionKey_BD3A7A04.p8`.
 
 We only accept files smaller than 512B. We recommend utilizing an editor such as Visual Studio Code when creating your .p8 file. 
 
