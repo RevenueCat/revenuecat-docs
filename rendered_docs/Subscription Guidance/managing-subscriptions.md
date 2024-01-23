@@ -111,6 +111,10 @@ Google documentation provides [examples of each proration mode](https://develope
 
 Amazon does not support changing products. Customers will need to cancel their existing subscription and re-subscribe to a different product.
 
+## Stripe
+
+Stripe allows changing products for subscriptions through the API (immediate, by manipulating the [subscription](https://stripe.com/docs/api/subscriptions), and deferred, through [subscription schedules](https://stripe.com/docs/api/subscription_schedules)), as well as the [customer portal](https://stripe.com/docs/no-code/customer-portal). RevenueCat accurately detects and sends events for product changes, but [does not currently accurately calculate pro-rated revenue](doc:stripe#upgrading-and-downgrading).
+
 ## Considerations
 
 ### [PRODUCT_CHANGE](doc:customer-history#event-types) events and webhooks
