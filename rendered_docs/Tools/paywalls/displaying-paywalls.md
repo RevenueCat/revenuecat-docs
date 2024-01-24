@@ -111,6 +111,7 @@ Paywalls displayed with `presentPaywallIfNeeded` will have a close button on the
 However, a `PaywallView` will not have a close button by default. This gives you full control on how to to navigate to and from your `PaywallView`. You can push it onto an existing navigation stack or show it in a sheet with a custom dismiss button using SwiftUI toolbar.
 
 If desired, you can pass `displayCloseButton: true` when creating `PaywallView` to display a close button automatically.
+This close button will automatically take the color of your app's tint color. You can also override it by using [`View.tintColor`](https://developer.apple.com/documentation/swiftui/view/tint(_:)-23xyq): `PaywallView(...).tintColor(Color.red)`.
 
 ## How to display a footer Paywall on your custom paywall
 
