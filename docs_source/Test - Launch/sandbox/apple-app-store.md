@@ -210,7 +210,7 @@ For sandbox and production [subscription offers](doc:ios-subscription-offers), t
 
 ## Step 1: Finding your Subscription Offers Key
 Open the  `.storekit` file where the subscriptions offers are configured, and go to Editor → Subscription Offers Key.
-<img width="505" alt="Find Subscription Offers Key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/25ec7b3e-312d-46e1-afb4-549714da9487">
+<img width="517" alt="Find Subscription Offers Key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/57cf8008-7c6e-4103-b8ad-6e4e2b9bb0a0">
 
 After selecting 'Subscription Offers Key', you will see your key ID and private key. 
 <img width="575" alt="Key ID and private key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/e83f6f2e-e4dc-4354-874f-27281f7e1acf">
