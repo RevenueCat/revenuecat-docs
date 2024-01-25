@@ -4,7 +4,7 @@ slug: data-export-version-3
 excerpt: Available from January 2023 to June 2023.
 hidden: false
 categorySlug: integrations
-order: 3
+order: 4
 parentDoc: 649983b4c31b2e000a3c1929
 ---
 > 👍 
