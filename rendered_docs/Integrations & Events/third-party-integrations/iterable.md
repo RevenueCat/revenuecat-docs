@@ -296,25 +296,12 @@ After you've set up the Purchase SDK and Iterable SDK to have the same user iden
 ![](https://files.readme.io/82692c7-app.revenuecat.com_projects_85ff18c7_collaborators_1.png)
 
 2. Choose **Iterable** from the Integrations menu
-3. Add your Iterable [Server-side API key](https://support.iterable.com/hc/en-us/articles/360043464871-API-Keys-#creating-api-keys) to the **API key** field in RevenueCat
+3. Add your Iterable [Server-side API key](https://support.iterable.com/hc/en-us/articles/360043464871-API-Keys-#creating-api-keys) to the **API key** field in RevenueCat. You can setup the data center region to use the [EU or US based Iterable data centers](https://support.iterable.com/hc/en-us/articles/360043464871-API-Keys-#api-keys-projects-and-data-centers) depending on your api key region.
 4. Enter the event names that RevenueCat will send or choose the default event names
 5. Select whether you want sales reported as gross revenue (before app store commission), or after store commission and/or estimated taxes.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/519b30e-app.revenuecat.com_projects_85ff18c7_integrations_intercom.png",
-        null,
-        "Iterable configuration page"
-      ],
-      "align": "center",
-      "caption": "Iterable configuration page"
-    }
-  ]
-}
-[/block]
+![App RevenueCat Iterable Integration](https://github.com/RevenueCat/revenuecat-docs/assets/287089/fd4241a2-38db-4736-a032-704544e6169d)
+
 
 > 📘 Iterable sandbox environment
 > 
