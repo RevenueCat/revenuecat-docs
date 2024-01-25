@@ -379,3 +379,32 @@ Below are sample JSONs that are delivered to Intercom for each event.
   }
 }
 ```
+
+# Subscription Status Attribute
+
+> 📘 Intercom API V2
+> 
+> If you created your Intercom integration before February 2024, you may be using the Intercom API V1. If so, you'll need 
+> to upgrade to API V2 to receive the `subscription_status` attribute. You can upgrade from your Intercom integration page in RevenueCat.
+
+
+Whenever RevenueCat sends an event to Intercom, we'll send a `subscription_status` user custom attribute with any applicable changes, using one of the following values:
+
+| Status              | Description                                                                                                                        |
+| :------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
+| active              | The customer has an active, paid subscription which is set to renew at their next renewal date.                                    |
+| intro               | The customer has an active, paid subscription through a paid introductory offer.                                                   |
+| cancelled           | The customer has a paid subscription which is set to expire at their next renewal date.                                            |
+| grace_period        | The customer has a paid subscription which has entered a grace period after failing to renew successfully.                         |
+| trial               | The customer is in a trial period which is set to convert to paid at the end of their trial period.                                |
+| cancelled_trial     | The customer is in a trial period which is set to expire at the end of their trial period.                                         |
+| grace_period_trial  | The customer was in a trial period and has now entered a grace period after failing to renew successfully.                         |
+| expired             | The customer's subscription has expired.                                                                                           |
+| promotional         | The customer has access to an entitlement through a granted RevenueCat promotional subscription.                                   |
+| expired_promotional | The customer previously had access to an entitlement through a granted RevenueCat promotional subscription that has since expired. |
+| paused              | The customer has a paid subscription which has been paused and is set to resume at some future date.       
+
+For customers with multiple active subscriptions, this attribute will represent the status of only the subscription for which the most recent event occurred.
+
+Please note that since this attribute is set and updated when events are delivered, subscribers with events prior to our release of this attribute (during January 2024) will not have this attribute set until/unless a future event (renewal, cancellation, etc) occurs.
+

@@ -274,9 +274,35 @@ _Applicable to the latest version_
 
 \*Available only on our most recent export version
 
-> 📘 Updating to the latest version
+## Updating to the latest version
+
+If you're on an older version of our exports, updating is easy:
+
+1. Open [app.revenuecat.com](https://app.revenuecat.com)
+2. Navigate to your Project in Project Settings
+3. Click on your **Scheduled Data Exports** integration in the “Integrations” side panel
+4. Click **UPDATE TEMPLATE**
+5. After confirming that your data pipeline is configured to ingest the described changes, click **UPDATE** in the confirmation modal to complete the update.
+
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://files.readme.io/c12c793-v2.png",
+        "",
+        ""
+      ],
+      "align": "center"
+    }
+  ]
+}
+[/block]
+
+
+> 🚧 Data Format Changes
 > 
-> If you're on an older version of our exports, navigate to your export in the Dashboard where you'll see a prompt to update to the latest version. Be sure to review the documented changes of all prior versions (linked at the top of this doc) before updating to be certain your data ingestion pipeline is setup to handle all changes.
+> Please note that Version 4 and all subsequent templates include data format changes which must be incorporated into your data pipeline before updating. [Learn more here](https://www.revenuecat.com/docs/data-export-version-4).
 
 ## A note on transaction data
 
