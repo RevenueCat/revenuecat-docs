@@ -4,7 +4,7 @@ slug: data-export-version-4
 excerpt: Available since June 2023
 hidden: false
 categorySlug: integrations
-order: 4
+order: 3
 parentDoc: 649983b4c31b2e000a3c1929
 ---
 > 👍 
