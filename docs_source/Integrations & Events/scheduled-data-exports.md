@@ -282,11 +282,11 @@ All transaction data is based on the store receipts that RevenueCat has received
 
 - The expiration date of a purchase can be before the purchase date. This is Google's way of invalidating a transaction, for example when Google is unable to bill a user some time after a subscription renews. This doesn’t occur on iOS.
 - If you migrated to RevenueCat, Google subscriptions that were expired for more then 60 days before being migrated will not have transaction histories in export files.
-- Apple and Google do not provide the transaction price directly, so we must rely on historical data for the products that we have. This isn’t 100% accurate in cases where the prices were changed or receipts were imported.
+- Apple and Google do not always provide the transaction price directly, so we rely on historical data & store APIs. This may result in inaccuracies if receipts were imported, or if a product price was increased before your [App Store Connect API Key](https://www.revenuecat.com/docs/price-changes#price-detection) was added.
 - Renewal numbers start at 1, even for trials. Trial conversions increase the renewal number.
-- Data is pulled from a snapshot of the current receipt state, this means that the same transaction can be different from one delivery to another if something changed, e.g.refunds, and billing issues. You should recompute metrics for past time periods periodically to take these changes into account.
+- Data is pulled from a snapshot of the current receipt state, this means that the same transaction can be different from one delivery to another if something changed (e.g. due to a refund or billing issue). You should recompute metrics for past time periods periodically to take these changes into account. You can use the `updated_at` field to detect if a transaction may have changed since a prior export.
 
-We try to normalize or at least annotate these quirks as much as possible, but by and large we consider receipts as the sources of truth, so any inconsistencies in the transaction data can always be traced back to the receipt
+We try to normalize or at least annotate these quirks as much as possible, but by and large we consider receipts as the sources of truth, so any inconsistencies in the transaction data can always be traced back to the receipt.
 
 # Updating to the latest version
 
