@@ -29,7 +29,7 @@ In addition, we've added `auto_resume_time` so that you can track when a paused 
 
 # Updating to Version 5
 
-If you're on an older version of our exports, updating is easy -- [click here](https://www.revenuecat.com/docs/scheduled-data-exports#updating-to-the-latest-version for a walkthrough.
+If you're on an older version of our exports, updating is easy -- [click here](https://www.revenuecat.com/docs/scheduled-data-exports#updating-to-the-latest-version) for a walkthrough.
 
 # Full export format
 
