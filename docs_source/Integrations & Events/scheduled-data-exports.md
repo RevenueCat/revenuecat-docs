@@ -17,7 +17,7 @@ RevenueCat can automatically send data deliveries of all of your apps' transacti
 
 > 📘 
 > 
-> Customers on our Enterprise plan have the option to receive data exports more frequently than once per day when receiving new & updated transactions only. Contact your Customer Success Manager with questions, or visit our [Pricing Page](https://www.revenuecat.com/pricing/) to learn more.
+> Customers on our Enterprise plan have the option to receive data exports more frequently than once per day when receiving new and updated transactions only. Contact your Customer Success Manager with questions, or visit our [Pricing Page](https://www.revenuecat.com/pricing/) to learn more.
 
 # Version Change Log
 
