@@ -17,6 +17,10 @@ RevenueCat can automatically send data deliveries of all of your apps' transacti
 - [Amazon S3 Setup ](doc:scheduled-data-exports-s3)
 - [Google Cloud Storage Setup ](doc:scheduled-data-exports-gcp)
 
+> 📘 
+> 
+> Customers on our Enterprise plan have the option to receive data exports more frequently than once per day when receiving new and updated transactions only. Contact your Customer Success Manager with questions, or visit our [Pricing Page](https://www.revenuecat.com/pricing/) to learn more.
+
 # Version Change Log
 
 - [Data Export Version 5](https://www.revenuecat.com/docs/data-export-version-5) (Latest)
@@ -274,7 +278,19 @@ _Applicable to the latest version_
 
 \*Available only on our most recent export version
 
-## Updating to the latest version
+## A note on transaction data
+
+All transaction data is based on the store receipts that RevenueCat has received. Receipts often have inconsistencies and quirks which may need to be considered. For example:
+
+- The expiration date of a purchase can be before the purchase date. This is Google's way of invalidating a transaction, for example when Google is unable to bill a user some time after a subscription renews. This doesn’t occur on iOS.
+- If you migrated to RevenueCat, Google subscriptions that were expired for more then 60 days before being migrated will not have transaction histories in export files.
+- Apple and Google do not always provide the transaction price directly, so we rely on historical data & store APIs. This may result in inaccuracies if receipts were imported, or if a product price was increased before your [App Store Connect API Key](https://www.revenuecat.com/docs/price-changes#price-detection) was added.
+- Renewal numbers start at 1, even for trials. Trial conversions increase the renewal number.
+- Data is pulled from a snapshot of the current receipt state, this means that the same transaction can be different from one delivery to another if something changed (e.g. due to a refund or billing issue). You should recompute metrics for past time periods periodically to take these changes into account. You can use the `updated_at` field to detect if a transaction may have changed since a prior export.
+
+We try to normalize or at least annotate these quirks as much as possible, but by and large we consider receipts as the sources of truth, so any inconsistencies in the transaction data can always be traced back to the receipt.
+
+# Updating to the latest version
 
 If you're on an older version of our exports, updating is easy:
 
@@ -299,22 +315,9 @@ If you're on an older version of our exports, updating is easy:
 }
 [/block]
 
-
 > 🚧 Data Format Changes
 > 
 > Please note that Version 4 and all subsequent templates include data format changes which must be incorporated into your data pipeline before updating. [Learn more here](https://www.revenuecat.com/docs/data-export-version-4).
-
-## A note on transaction data
-
-All transaction data is based on the store receipts that RevenueCat has received. Receipts often have inconsistencies and quirks which may need to be considered. For example:
-
-- The expiration date of a purchase can be before the purchase date. This is Google's way of invalidating a transaction, for example when Google is unable to bill a user some time after a subscription renews. This doesn’t occur on iOS.
-- If you migrated to RevenueCat, Google subscriptions that were expired for more then 60 days before being migrated will not have transaction histories in export files.
-- Apple and Google do not provide the transaction price directly, so we must rely on historical data for the products that we have. This isn’t 100% accurate in cases where the prices were changed or receipts were imported.
-- Renewal numbers start at 1, even for trials. Trial conversions increase the renewal number.
-- Data is pulled from a snapshot of the current receipt state, this means that the same transaction can be different from one delivery to another if something changed, e.g.refunds, and billing issues. You should recompute metrics for past time periods periodically to take these changes into account.
-
-We try to normalize or at least annotate these quirks as much as possible, but by and large we consider receipts as the sources of truth, so any inconsistencies in the transaction data can always be traced back to the receipt
 
 # Sample queries for RevenueCat measures
 
