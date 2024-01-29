@@ -208,6 +208,34 @@ Go to your app's configuration page in your RevenueCat project settings (**Proje
 > 
 > You're ready to make purchases locally in the simulator!
 
+# Testing Subscription Offers on the Simulator 
+For sandbox and production [subscription offers](doc:ios-subscription-offers), they are signed using the [In-App Key](doc:in-app-purchase-key-configuration). However, when using a StoreKit Configuration file, the key used to sign offers must be exported from Xcode directly.
+
+## Step 1: Finding your Subscription Offers Key
+Open the  `.storekit` file where the subscriptions offers are configured, and go to Editor → Subscription Offers Key.
+<img width="517" alt="Find Subscription Offers Key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/57cf8008-7c6e-4103-b8ad-6e4e2b9bb0a0">
+
+After selecting 'Subscription Offers Key', you will see your key ID and private key. 
+<img width="575" alt="Key ID and private key" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/e83f6f2e-e4dc-4354-874f-27281f7e1acf">
+
+Note that the private key stored in the “.storekit” file is unique per file and Xcode allows you to re-generate the key for a given file. If you re-generate your key, be sure to follow these steps again to upload your new key to RevenueCat.
+
+## Step 2: Save your private key as a .p8 file
+Manually save the text of the private key in a file called `SubscriptionKey_XXXXXX.p8` where `XXXXXX` is the key ID. Following this example, the file would be named `SubscriptionKey_BD3A7A04.p8`.
+
+We only accept files smaller than 512B. We recommend utilizing an editor such as Visual Studio Code when creating your .p8 file. 
+
+## Step 3: Upload your file to RevenueCat
+This file can now be uploaded to the RevenueCat dashboard under your iOS app settings page → Storekit Subscription Offer Key. Be sure to copy and paste over your key ID from Xcode to the `Key ID` box.
+
+<img width="898" alt="Add key ID" src="https://github.com/RevenueCat/revenuecat-docs/assets/36222014/44dfcdcb-ccc0-46a3-80e6-68b887f68f38">
+
+Don't forget to click 'Save Changes' in the upper right.
+
+> 👍 You did it!
+> 
+> You're ready to make Subscription Offer purchases locally in the simulator!
+
 # Make a Purchase
 
 Build and run your app on your device. When you attempt to make a purchase, you may be still be prompted to sign in with the sandbox account you just created. 
