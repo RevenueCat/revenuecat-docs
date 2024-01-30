@@ -23,7 +23,7 @@ With accurate and up-to-date subscription data in mParticle, you'll be set to tu
 ## Integration at a Glance
 | Includes Revenue | Supports Negative Revenue | Sends Sandbox Events | Includes Subscriber Attributes | Sends Transfer Events | Optional Event Types |
 |:----------------:|:-------------------------:|:--------------------:|:------------------------------:|:---------------------:|:---------------:|
-|         ✅        |             ✅             |           ✅          |    ✅    |           ❌           |        ❌        |
+|         ✅        |             ✅             |           ✅          |    ✅    |           ✅           |        ❌        |
 
 # Events
 
@@ -136,17 +136,25 @@ The mParticle integration tracks the following events:
     "11-5": "❌",
     "11-6": "✅",
     "11-7": "❌",
-    "12-0": "Refund",
-    "12-1": "refund",
-    "12-2": "When a user canceled their subscription via customer support",
+    "12-0": "Transfer",
+    "12-1": "rc_transfer_event",
+    "12-2": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.  \n  \nPlease note: Two events will be sent for each transfer, one for the original user and another for the destination user.",
     "12-3": "✅",
     "12-4": "✅",
     "12-5": "✅",
     "12-6": "✅",
     "12-7": "❌"
+    "13-0": "Refund",
+    "13-1": "refund",
+    "13-2": "When a user canceled their subscription via customer support",
+    "13-3": "✅",
+    "13-4": "✅",
+    "13-5": "✅",
+    "13-6": "✅",
+    "13-7": "❌"
   },
   "cols": 8,
-  "rows": 13,
+  "rows": 14,
   "align": [
     "left",
     "left",

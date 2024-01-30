@@ -114,7 +114,7 @@ The Superwall integration tracks the following events:
     "8-7": "❌",
     "9-0": "Transfer\t\t\t",
     "9-1": "`TRANSFER`",
-    "9-2": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.",
+    "9-2": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.  \n  \nPlease note: Two events will be sent for each transfer, one for the original user and another for the destination user.",
     "9-3": "✅",
     "9-4": "✅",
     "9-5": "✅",
