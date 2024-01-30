@@ -101,10 +101,18 @@ The Statsig integration tracks the following events:
     "7-4": "✅",
     "7-5": "✅",
     "7-6": "✅",
-    "7-7": "❌"
+    "7-7": "❌",
+    "8-0": "Transfer",
+    "8-1": "rc_transfer_event",
+    "8-2": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.  \n  \nPlease note: Two events will be sent for each transfer, one for the original user and another for the destination user.",
+    "8-3": "✅",
+    "8-4": "✅",
+    "8-5": "✅",
+    "8-6": "✅",
+    "8-7": "❌"
   },
   "cols": 8,
-  "rows": 8,
+  "rows": 9,
   "align": [
     "left",
     "left",

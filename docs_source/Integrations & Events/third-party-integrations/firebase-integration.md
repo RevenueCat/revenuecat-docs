@@ -264,7 +264,7 @@ The Google Analytics portion of the Firebase integration tracks the following ev
     "9-7": "❌",
     "10-0": "Transfer",
     "10-1": "rc_transfer_event",
-    "10-2": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.",
+    "10-2": "A transfer of transactions and entitlements was initiated between one App User ID(s) to another.  \n  \nPlease note: Two events will be sent for each transfer, one for the original user and another for the destination user.",
     "10-3": "✅",
     "10-4": "✅",
     "10-5": "✅",
