@@ -5,6 +5,8 @@ import RevenueCatUI from 'react-native-purchases-ui';
 
 return (
     <View style={{ flex: 1 }}>
-        <RevenueCatUI.Paywall />
+        <RevenueCatUI.Paywall options={{
+            offering: offering // Optional custom offering
+        }} />
     </View>
 );
