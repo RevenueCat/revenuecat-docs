@@ -486,7 +486,9 @@ There are several ways to present paywalls:
 import RevenueCatUI, { PAYWALL_RESULT } from "react-native-purchases-ui";
 
 async function presentPaywall(): Promise<boolean> {
-    const paywallResult: PAYWALL_RESULT = await RevenueCatUI.presentPaywall();
+    const paywallResult: PAYWALL_RESULT = await RevenueCatUI.presentPaywall({
+        offering: offering // Optional offering parameter
+    });
 
     switch (paywallResult) {
         case PAYWALL_RESULT.NOT_PRESENTED:
@@ -503,6 +505,7 @@ async function presentPaywall(): Promise<boolean> {
 
 async function presentPaywallIfNeeded() {
     const paywallResult: PAYWALL_RESULT = await RevenueCatUI.presentPaywallIfNeeded({
+        offering: offering, // Optional offering parameter
         requiredEntitlementIdentifier: "pro"
     });
 }
