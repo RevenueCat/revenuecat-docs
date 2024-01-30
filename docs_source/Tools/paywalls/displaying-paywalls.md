@@ -39,7 +39,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 ]
 [/block]
 
-## iOS Close Button
+## Close Button
 
 Paywalls displayed with `presentPaywallIfNeeded` will have a close button on the presented sheet.
 However, a `PaywallView` will not have a close button by default. This gives you full control on how to to navigate to and from your `PaywallView`. You can push it onto an existing navigation stack or show it in a sheet with a custom dismiss button using SwiftUI toolbar.
@@ -138,7 +138,7 @@ RevenueCat Paywalls will, by default, show paywalls fullscreen and there are mul
 ]
 [/block]
 
-## Android Close Button
+## Close Button
 
 Paywalls displayed with `PaywallDialog` will have a close button on the presented sheet.
 However, a `Paywall` will not have a close button by default. This gives you full control over how to navigate to and from your `Paywall` composable. You can push this to the existing navigation stack or display it in a sheet with a custom dismiss button using Android's navigation components and fragments.
