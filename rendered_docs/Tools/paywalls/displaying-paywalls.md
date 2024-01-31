@@ -345,6 +345,14 @@ public class MainActivity extends AppCompatActivity implements PaywallResultHand
 }
 ```
 
+## Close Button
+
+Paywalls displayed with `PaywallDialog` will have a close button on the presented sheet.
+However, a `Paywall` will not have a close button by default. This gives you full control over how to navigate to and from your `Paywall` composable. You can push this to the existing navigation stack or display it in a sheet with a custom dismiss button using Android's navigation components and fragments.
+When presenting the paywall using the `PaywallActivityLauncher`, the close button will be shown by default since the paywall will be displayed as a new activity on top of the current stack.
+
+If desired, you can use `PaywallOptions.Builder`'s `setShouldDisplayDismissButton(true)` method when creating a `Paywall` to display a close button automatically.
+
 ## How to display a footer Paywall on your custom paywall
 
 RevenueCatUI also has a paywall variation that can be displayed as a footer below your custom paywall. This allows you to design your paywall exactly as you want with native components while still using RevenueCat UI to handle it.
