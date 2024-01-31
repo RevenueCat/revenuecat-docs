@@ -140,7 +140,7 @@ The mParticle integration tracks the following events:
     "12-4": "✅",
     "12-5": "✅",
     "12-6": "✅",
-    "12-7": "❌"
+    "12-7": "❌",
     "13-0": "Refund",
     "13-1": "refund",
     "13-2": "When a user canceled their subscription via customer support",
