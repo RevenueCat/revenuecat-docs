@@ -140,7 +140,7 @@ If a test that you've created does not meet the above criteria, we'll alert you 
 **Scenario #2 -- Multiple tests on identical audiences**
 
 1. Test A is running against 20% of new customers in Brazil
-2. Test B, targeting 40% of new customers in Brazil, can also be run since its targeted audience is identical with Test, and no more than 100% of that audience is being enrolled in running experiments
+2. Test B, targeting 40% of new customers in Brazil, can also be run since its targeted audience is identical with Test A, and no more than 100% of that audience is being enrolled in running experiments
 
 ### Examples of invalid tests to run simultaneously
 
