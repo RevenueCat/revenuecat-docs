@@ -38,6 +38,10 @@ We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the Ope
 }
 [/block]
 
+### Configure a Main Gradle Template
+
+
+
 ## Option 2: Import the Purchases Unity package
 
 Download the latest version of [**Purchases.unitypackage**](https://github.com/RevenueCat/purchases-unity/releases/latest/download/Purchases.unitypackage).
