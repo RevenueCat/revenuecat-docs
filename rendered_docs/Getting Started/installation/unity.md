@@ -41,6 +41,18 @@ We provide 2 ways to install our SDK: via Unity Package Manager (UPM) in the Ope
 }
 [/block]
 
+### Configure a Main Gradle Template
+
+Go to Project -> Build Settings -> Player Settings -> Android tab -> Publishing Settings, and check "Custom Base Gradle Template", then close that window.
+
+<img width="537" alt="Screenshot 2024-02-02 at 12 52 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/3922667/af2757ff-d156-4aef-af78-7ec0edbf1de2">
+
+Go to Assets -> External Dependency Manager -> Android Resolver -> Settings, then check "Patch mainTemplate.gradle"
+
+<img width="722" alt="Screenshot 2024-02-01 at 12 13 50 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/3922667/ece21dbe-bfc6-478f-ab68-d15456810a60">
+
+<img width="537" alt="Screenshot 2024-02-02 at 12 52 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/3922667/d480097d-c873-4f9d-92d3-2114b64d71b4">
+
 ## Option 2: Import the Purchases Unity package
 
 Download the latest version of [**Purchases.unitypackage**](https://github.com/RevenueCat/purchases-unity/releases/latest/download/Purchases.unitypackage).
@@ -56,6 +68,18 @@ If you're running `purchases-unity` v3.5.1 or later, also make sure that the `Re
   "body": "Make sure the ExternalDependencyManager is properly installed. Otherwise our plugin will not be able to compile. If you don't see the option under the Assets menu after restarting the editor, try reinstalling the RevenueCat plugin or manually importing the [EDM4U](https://github.com/googlesamples/unity-jar-resolver) plugin."
 }
 [/block]
+
+### Configure a Main Gradle Template
+
+Go to Project -> Build Settings -> Player Settings -> Android tab -> Publishing Settings, and check "Custom Base Gradle Template", then close that window.
+
+<img width="537" alt="Screenshot 2024-02-02 at 12 52 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/3922667/af2757ff-d156-4aef-af78-7ec0edbf1de2">
+
+Go to Assets -> External Dependency Manager -> Android Resolver -> Settings, then check "Patch mainTemplate.gradle"
+
+<img width="722" alt="Screenshot 2024-02-01 at 12 13 50 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/3922667/ece21dbe-bfc6-478f-ab68-d15456810a60">
+
+<img width="537" alt="Screenshot 2024-02-02 at 12 52 35 PM" src="https://github.com/RevenueCat/revenuecat-docs/assets/3922667/d480097d-c873-4f9d-92d3-2114b64d71b4">
 
 ## Create a GameObject with the Purchases behavior
 The Purchases package will include a MonoBehavior called Purchases. This will be your access point to RevenueCat from inside Unity. It should be instantiated once and kept as a singleton. You can use properties to configure your API Key, app user ID (if you have one), and product identifiers you want to fetch.
