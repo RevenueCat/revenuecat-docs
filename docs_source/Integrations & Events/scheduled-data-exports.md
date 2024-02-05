@@ -19,6 +19,10 @@ RevenueCat can automatically send data deliveries of all of your apps' transacti
 > 
 > Customers on our Enterprise plan have the option to receive data exports more frequently than once per day when receiving new and updated transactions only. Contact your Customer Success Manager with questions, or visit our [Pricing Page](https://www.revenuecat.com/pricing/) to learn more.
 
+> 📘 
+> 
+> The date and time set in **Next export start time** via the dashboard is when the next export should start getting generated and is not when the next export should be delivered.
+
 # Version Change Log
 
 - [Data Export Version 5](https://www.revenuecat.com/docs/data-export-version-5) (Latest)
@@ -285,6 +289,7 @@ All transaction data is based on the store receipts that RevenueCat has received
 - Apple and Google do not always provide the transaction price directly, so we rely on historical data & store APIs. This may result in inaccuracies if receipts were imported, or if a product price was increased before your [App Store Connect API Key](https://www.revenuecat.com/docs/price-changes#price-detection) was added.
 - Renewal numbers start at 1, even for trials. Trial conversions increase the renewal number.
 - Data is pulled from a snapshot of the current receipt state, this means that the same transaction can be different from one delivery to another if something changed (e.g. due to a refund or billing issue). You should recompute metrics for past time periods periodically to take these changes into account. You can use the `updated_at` field to detect if a transaction may have changed since a prior export.
+- Data is up to date as of the export beginning to be generated. Thus, changes could occur between the start of an export generating and its delivery that would not be reflected in that export.
 
 We try to normalize or at least annotate these quirks as much as possible, but by and large we consider receipts as the sources of truth, so any inconsistencies in the transaction data can always be traced back to the receipt.
 
