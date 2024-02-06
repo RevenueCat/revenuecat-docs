@@ -7,7 +7,7 @@ SELECT
     END) as auto_renew_status,
   COUNT(*) as active_subscriptions
 FROM
-  [revenuecat_data_table] rc
+  [revenuecat_data_table]
   
 WHERE date(effective_end_time) > [targeted_date]
   AND date(start_time) <= [targeted_date]
