@@ -1,4 +1,4 @@
--- Active Subscriptions Movement as of a specified date range
+-- Active Subscriptions Movement within a specified date range
 
 WITH
 
