@@ -1,4 +1,4 @@
--- What is my Active Subs Movement for a specified date range?
+-- Active Subscriptions Movement as of a specified date range
 
 WITH
 
@@ -10,7 +10,7 @@ filtered_transactions AS (
     WHERE (start_time BETWEEN [targeted_start_date] and [targeted_end_date] 
         OR effective_end_time BETWEEN [targeted_start_date] and [targeted_end_date])
         AND is_trial_period = 'false'
-        AND DATE_DIFF('s', start_time, effective_end_time)::float > 0
+        AND DATE_DIFF('s', start_time, end_time)::float > 0
         AND ownership_type != 'FAMILY_SHARED'
         AND store != 'promotional'
         AND is_sandbox != 'true'),
