@@ -4,7 +4,7 @@ WITH
 
 filtered_transactions AS (
     SELECT
-    *
+        *
     FROM
         [revenuecat_data_table]
     WHERE (start_time BETWEEN [targeted_start_date] and [targeted_end_date] 
@@ -42,6 +42,8 @@ expirations AS (
   SELECT
     DATE(effective_end_time) AS date,
     COUNT(*) AS num_expirations
+  FROM filtered_transactions
+  GROUP BY 1)
 
 SELECT
     COALESCE(a.date, e.date) AS date,
