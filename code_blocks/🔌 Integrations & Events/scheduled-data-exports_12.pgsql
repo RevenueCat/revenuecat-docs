@@ -1,4 +1,4 @@
--- What is my total MRR as of a specified date?
+-- MRR as of a specified date
 
 SELECT
     SUM(
@@ -63,7 +63,7 @@ WHERE app_id = 698600
   AND date(effective_end_time) > '2024-02-06'
   AND date(start_time) <= '2024-02-06'
   AND is_trial_period = 'false'
-  AND DATE_DIFF('s', start_time, effective_end_time)::float > 0
+  AND DATE_DIFF('s', start_time, end_time)::float > 0
   AND ownership_type != 'FAMILY_SHARED'
   AND store != 'promotional'
   AND is_sandbox != 'true'
