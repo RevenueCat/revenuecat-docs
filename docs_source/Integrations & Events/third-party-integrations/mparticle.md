@@ -264,6 +264,8 @@ mParticle also allows you to log a user in after starting the SDK and log a user
 
 In mParticle, add the RevenueCat feed input and create two feeds: one for the Android platform and one for the iOS platform. Copy each feed's Server to Server Key and Server to Server Secret for setup on RevenueCat. Refer to [mParticle's documentation](https://docs.mparticle.com/guides/feeds/) to learn more about feeds.
 
+> ❗️ RevenueCat requires [Create & Update Profile](https://docs.mparticle.com/guides/personalization/profiles/#input-protections) permissions in order to send purchase & subscription lifecycle events into mParticle
+
 ![](https://files.readme.io/adc36bb-2020-06-17_22.04.49_app.mparticle.com_a4031d73e6bc.png "2020-06-17 22.04.49 app.mparticle.com a4031d73e6bc.png")
 
 ![](https://files.readme.io/595280f-mParticle.png "mParticle.png")
