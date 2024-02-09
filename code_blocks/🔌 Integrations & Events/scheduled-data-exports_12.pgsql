@@ -56,12 +56,12 @@ SELECT
             END
         END 
     ) AS active_mrr
-FROM
-  [revenuecat_data_table] 
+FROM [revenuecat_data_table] 
 
-WHERE app_id = 698600
-  AND date(effective_end_time) > '2024-02-06'
+/* Filter down to the date range that you want to measure MRR Movement for */
+WHERE date(effective_end_time) > '2024-02-06'
   AND date(start_time) <= '2024-02-06'
+  /* Exclude trials, which do not contribute to MRR */
   AND is_trial_period = 'false'
   AND DATE_DIFF('s', start_time, end_time)::float > 0
   AND ownership_type != 'FAMILY_SHARED'
