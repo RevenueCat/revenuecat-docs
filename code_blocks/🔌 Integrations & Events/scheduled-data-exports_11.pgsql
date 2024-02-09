@@ -2,7 +2,7 @@
 
 WITH
 
-filtered_transactions AS (
+filtered_subscriptipon_transactions AS (
     SELECT
         *,
         CASE WHEN effective_end_time IS NOT NULL THEN
@@ -46,10 +46,11 @@ filtered_transactions AS (
                 ELSE ((28 / (DATE_DIFF('s', start_time, end_time)::float / (24 * 3600))) * price)::DECIMAL(18,2)
             END
         END AS transaction_mrr
-    FROM
-        [revenuecat_data_table]
+    FROM [revenuecat_data_table]
+    /* Filter down to the date range that you want to measure MRR Movement for */
     WHERE (start_time BETWEEN [targeted_start_date] and [targeted_end_date] 
         OR effective_end_time BETWEEN [targeted_start_date] and [targeted_end_date])
+        /* Exclude trials, which do not contribute to MRR */
         AND is_trial_period = 'false'
         AND DATE_DIFF('s', start_time, end_time)::float > 0
         AND ownership_type != 'FAMILY_SHARED'
@@ -61,9 +62,7 @@ actives AS (
     DATE(start_time) AS date,
     SUM(
         CASE
-            WHEN expires_date IS NOT NULL 
-                AND is_trial_period = 'false' 
-                AND (is_trial_conversion = 'false' AND renewal_number = 1) 
+            WHEN renewal_number = 1
                 OR is_trial_conversion = 'true' 
             THEN transaction_mrr
             ELSE null
@@ -72,23 +71,21 @@ actives AS (
     
     SUM(
         CASE
-            WHEN expires_date IS NOT NULL 
-                AND is_trial_period = 'false' 
+            WHEN renewal_number > 1 
                 AND is_trial_conversion = 'false' 
-                AND renewal_number > 1 
             THEN transaction_mrr
             ELSE null
         END
     ) AS renewal_mrr
     
-  FROM filtered_transactions
+  FROM filtered_subscriptipon_transactions
   GROUP BY 1),
   
 expirations AS (
   SELECT
     DATE(effective_end_time) AS date,
     SUM(transaction_mrr) AS expired_mrr
-  FROM filtered_transactions
+  FROM filtered_subscriptipon_transactions
   GROUP BY 1)
 
 SELECT
@@ -97,9 +94,7 @@ SELECT
     COALESCE(a.renewal_mrr, 0) as renewal_mrr,
     COALESCE(e.expired_mrr, 0) as expired_mrr,
     expired_mrr - renewal_mrr as churned_mrr
-FROM 
-    actives a
-FULL JOIN 
-    expirations e ON a.date = e.date
+FROM actives a
+FULL JOIN expirations e ON a.date = e.date
 WHERE a.date BETWEEN [targeted_start_date] AND [targeted_end_date]
     AND e.date BETWEEN [targeted_start_date] AND [targeted_end_date]
