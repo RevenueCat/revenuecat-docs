@@ -2,13 +2,14 @@
 
 WITH
 
-filtered_transactions AS (
+filtered_subscriptipon_transactions AS (
     SELECT
         *
-    FROM
-        [revenuecat_data_table]
+    FROM [revenuecat_data_table]
+    /* Filter down to the date range that you want to measure MRR Movement for */
     WHERE (start_time BETWEEN [targeted_start_date] and [targeted_end_date] 
         OR effective_end_time BETWEEN [targeted_start_date] and [targeted_end_date])
+        /* Exclude trials, which do not contribute to MRR */
         AND is_trial_period = 'false'
         AND DATE_DIFF('s', start_time, end_time)::float > 0
         AND ownership_type != 'FAMILY_SHARED'
@@ -20,29 +21,28 @@ actives AS (
     DATE(start_time) AS date,
     COUNT(
         CASE 
-            WHEN ((is_trial_conversion = 'false' AND renewal_number = 1) 
-                OR (is_trial_conversion = 'true' AND renewal_number > 1))
+            WHEN renewal_number = 1
+                OR is_trial_conversion = 'true'
             THEN 1 
             ELSE NULL 
         END) AS num_new_actives,
     COUNT(
         CASE 
-            WHEN 
-                is_trial_conversion = 'false' 
-                AND renewal_number > 1 
+            WHEN renewal_number > 1
+                AND is_trial_conversion = 'false'  
             THEN 1 
             ELSE NULL 
         END
     ) AS num_renewals
     
-  FROM filtered_transactions
+  FROM filtered_subscriptipon_transactions
   GROUP BY 1),
   
 expirations AS (
   SELECT
     DATE(effective_end_time) AS date,
     COUNT(*) AS num_expirations
-  FROM filtered_transactions
+  FROM filtered_subscriptipon_transactions
   GROUP BY 1)
 
 SELECT
@@ -51,9 +51,7 @@ SELECT
     COALESCE(a.num_renewals, 0) AS num_renewals,
     COALESCE(e.num_expirations, 0) AS num_expirations,
     num_expirations - num_renewals AS churned_actives,
-FROM 
-    actives a
-FULL JOIN 
-    expirations e ON a.date = e.date
+FROM actives a
+FULL JOIN expirations e ON a.date = e.date
 WHERE a.date BETWEEN [targeted_start_date] AND [targeted_end_date]
     AND e.date BETWEEN [targeted_start_date] AND [targeted_end_date]
