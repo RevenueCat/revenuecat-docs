@@ -3,6 +3,10 @@ title: SDK Reference
 slug: reference
 hidden: true
 ---
+
+> 👍 Looking where to start?
+> If you are looking for a quick overlook and trying to get started, check the [SDK Quickstart](doc:getting-started) first.
+
 The API reference documentation provides detailed information for each of the classes and methods in the RevenueCat SDK. Choose your platform from the list below.
 
 
