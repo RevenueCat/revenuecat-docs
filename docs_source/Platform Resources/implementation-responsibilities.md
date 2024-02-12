@@ -55,7 +55,7 @@ For more information about the Dashboard and Charts, check out our docs [here](h
     "6-1": "✅",
     "7-0": "Syncing, parsing and verifying receipts",
     "7-2": "✅",
-    "8-0": "[Tracking entitlement status](https://docs.revenuecat.com/docs/purchaserinfo)",
+    "8-0": "[Tracking entitlement status](doc:purchaserinfo)",
     "8-2": "✅",
     "9-0": "[Tracking purchase history](https://docs.revenuecat.com/docs/customer-history)",
     "9-2": "✅",

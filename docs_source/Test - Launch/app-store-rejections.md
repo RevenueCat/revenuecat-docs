@@ -93,7 +93,7 @@ There are momentary outages in sandbox from time-to-time, but occasionally outag
 
 Your app could also get rejected even if there are no issues during the purchase process, but the content does not get unlocked after purchasing. You should be able to reproduce this issue in a test environment.
 
-Double check that you're [checking the subscription status correctly](https://docs.revenuecat.com/docs/purchaserinfo) and all of the [products are added to Entitlements](https://docs.revenuecat.com/docs/entitlements) as needed.
+Double check that you're [checking the subscription status correctly](doc:purchaserinfo) and all of the [products are added to Entitlements](https://docs.revenuecat.com/docs/entitlements) as needed.
 
 # Other Tips
 
