@@ -1,3 +1,12 @@
+---
+### ⚠️ This repository is no longer maintained
+
+This is a legacy repo for RevenueCat's documentation, and is no longer actively maintained.
+
+View our current docs [here](https://docs.revenuecat.com/) or submit feedback to our support team [here](https://app.revenuecat.com/settings/support).
+
+---
+
 # Writing Documentation in GitHub
 
 ## 🧐 Why GitHub?
