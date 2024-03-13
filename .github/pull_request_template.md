@@ -1,7 +1,1 @@
-## Motivation / Description
-
-## Changes introduced
-
-## Linear ticket (if any)
-
-## Additional comments
+This repo is no longer in use. Please use the new RevenueCat documentation repo.
