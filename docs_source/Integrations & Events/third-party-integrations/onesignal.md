@@ -195,12 +195,28 @@ The OneSignal integration tracks the following events:
 [/block]
 
 # 1. Send device data to RevenueCat
+## 1.1 User-centric API versions of OneSignal (11.0 and above)
+The OneSignal integration requires some user-specific data. RevenueCat will only update users in OneSignal if the below data has been added as [Subscriber Attributes](doc:subscriber-attributes) for the user.
 
-> 📘 Only device-centric API versions of OneSignal (9.0 and below) are supported.
-> 
-> Support for user-centric API versions of OneSignal (11.0 and above) coming soon.
+| Key                | Description                                                                                                    | Required |
+|:-------------------|:---------------------------------------------------------------------------------------------------------------| :------- |
+| `$onesignalUserId` | The [OneSignal ID](https://documentation.onesignal.com/docs/users#user-properties) used to represent the user. | ✅        |
 
+This property can be set manually, like any other [Subscriber Attributes](doc:subscriber-attributes), or through the helper method `setOnesignalUserID()`. 
 
+You can listen for changes to the OneSignal Id through their SDK, and send the value to RevenueCat. If you already have OneSignal set up, you should make sure that you're also sending the OneSignal Id for users that are updating to the latest version of your app.
+
+[block:file]
+[
+  {
+    "language": "swift",
+    "name": "",
+    "file": "code_blocks/🔌 Integrations & Events/third-party-integrations/onesignal_14.swift"
+  }
+]
+[/block]
+
+## 1.2 Device-centric API versions of OneSignal (9.0 and below)
 The OneSignal integration requires some device-specific data. RevenueCat will only update users in OneSignal if the below data has been added as [Subscriber Attributes](doc:subscriber-attributes) for the user.
 
 | Key            | Description                                                                                       | Required |
