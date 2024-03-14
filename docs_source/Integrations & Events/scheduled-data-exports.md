@@ -325,13 +325,28 @@ You can use the following sample queries (written in Postgresql) as starting poi
 [
   {
     "language": "pgsql",
-    "name": "Active Trials",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_1.pgsql"
+    "name": "Active Subscriptions",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_2.pgsql"
   },
   {
     "language": "pgsql",
-    "name": "Active Subscriptions",
-    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_2.pgsql"
+    "name": "Active Subscriptions Movement",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_10.pgsql"
+  },
+  {
+    "language": "pgsql",
+    "name": "MRR",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_12.pgsql"
+  },
+  {
+    "language": "pgsql",
+    "name": "MRR Movement",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_11.pgsql"
+  },
+  {
+    "language": "pgsql",
+    "name": "Active Trials",
+    "file": "code_blocks/🔌 Integrations & Events/scheduled-data-exports_1.pgsql"
   },
   {
     "language": "pgsql",
