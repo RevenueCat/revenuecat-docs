@@ -7,6 +7,10 @@ View our current docs [here](https://docs.revenuecat.com/) or submit feedback to
 
 ---
 
+<div style="background-color: #fff3cd; color: #856404; border-left: 6px solid #ffeeba; padding: 0.5em;">
+  <strong>⚠️</strong> This repo is no longer in use. Please use the new RevenueCat documentation repo: https://github.com/RevenueCat/docusaurus
+</div>
+
 # Writing Documentation in GitHub
 
 ## 🧐 Why GitHub?
